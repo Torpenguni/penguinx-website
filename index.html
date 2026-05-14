@@ -96,7 +96,7 @@ nav.top{
 /* === HERO === */
 .hero{
   min-height:85vh;
-  padding:140px 32px 80px;
+  padding:140px 32px 110px;
   display:flex;flex-direction:column;justify-content:space-between;
   position:relative;
   overflow:hidden;
@@ -136,7 +136,6 @@ nav.top{
   background:var(--accent);
   margin-left:0.04em;
   vertical-align:baseline;
-  margin-bottom:0.08em;
 }
 
 .hero-bottom{
@@ -185,7 +184,7 @@ nav.top{
   position:absolute;
   bottom:24px;left:0;right:0;
   border-top:1px solid var(--line);
-  padding-top:18px;
+  padding-top:28px;
   overflow:hidden;
   white-space:nowrap;
 }
@@ -236,7 +235,6 @@ section{padding:120px 32px;position:relative}
   width:0.1em;height:0.1em;
   background:var(--accent);
   vertical-align:baseline;
-  margin-bottom:0.08em;
   margin-left:0.02em;
 }
 
@@ -650,20 +648,12 @@ section{padding:120px 32px;position:relative}
   flex-wrap:wrap;
   margin-top:8px;
 }
-.cc-badge{
-  display:inline-flex;
-  flex-direction:column;
-  padding:8px 14px;
-  background:var(--accent);
-  color:var(--bg);
-  border-radius:12px;
-  font-weight:700;
-  line-height:1.05;
-  letter-spacing:-0.005em;
-  box-shadow:0 4px 14px rgba(219,169,58,0.25);
+.cc-badge-img{
+  display:block;
+  height:64px;
+  width:auto;
+  filter:drop-shadow(0 4px 14px rgba(219,169,58,0.25));
 }
-.cc-badge .b-main{font-size:15px}
-.cc-badge .b-sub{font-size:10px;font-weight:500;opacity:0.75;margin-top:2px}
 .cc-tagline{
   font-size:clamp(16px,1.5vw,18px);
   color:var(--ink-mute);
@@ -821,12 +811,14 @@ section{padding:120px 32px;position:relative}
 .founder-photo{
   aspect-ratio:16/9;
   width:100%;
-  background:linear-gradient(135deg,var(--bg-3) 0%,#222220 50%,#1a1a18 100%);
+  background-color:var(--bg-3);
   background-size:cover;
   background-position:center top;
   position:relative;
   border-bottom:1px solid var(--line);
 }
+.founder-photo.tor{background-color:#e8a73a}
+.founder-photo.san{background-color:#c8702f}
 .founder-photo::after{
   content:attr(data-initials);
   position:absolute;
@@ -836,8 +828,8 @@ section{padding:120px 32px;position:relative}
   justify-content:center;
   font-family:'Anuphan',sans-serif;
   font-size:64px;
-  font-weight:600;
-  color:rgba(219,169,58,0.12);
+  font-weight:700;
+  color:rgba(0,0,0,0.18);
   letter-spacing:-0.04em;
 }
 .founder-body{
@@ -932,7 +924,6 @@ section{padding:120px 32px;position:relative}
   width:0.1em;height:0.1em;
   background:var(--accent);
   vertical-align:baseline;
-  margin-bottom:0.08em;
 }
 .cta-btn{
   display:inline-flex;align-items:center;gap:12px;
@@ -1354,10 +1345,7 @@ footer{padding:60px 32px 32px;background:var(--bg);border-top:1px solid var(--li
       <span class="light">to</span> <span class="accent">community</span><span class="end-dot"></span>
     </h2>
     <div class="cc-titleline">
-      <div class="cc-badge">
-        <span class="b-main">#ลงแขก</span>
-        <span class="b-sub">กินข้าวร้านเพื่อน</span>
-      </div>
+      <img src="Community/ลงแขก.png" alt="#ลงแขก กินข้าวร้านเพื่อน" class="cc-badge-img">
       <p class="cc-tagline">Built by restaurant owners, for restaurant owners — peer-to-peer network across 45 provinces nationwide.</p>
     </div>
   </div>
@@ -1484,7 +1472,7 @@ footer{padding:60px 32px 32px;background:var(--bg);border-top:1px solid var(--li
   </div>
   <div class="founder-grid">
     <article class="founder-card">
-      <div class="founder-photo" data-initials="TOR"></div>
+      <div class="founder-photo tor" style="background-image:url('Founder/Tor.png')"></div>
       <div class="founder-body">
         <header class="founder-head">
           <div class="founder-avatar">TOR</div>
@@ -1504,7 +1492,7 @@ footer{padding:60px 32px 32px;background:var(--bg);border-top:1px solid var(--li
       </div>
     </article>
     <article class="founder-card">
-      <div class="founder-photo" data-initials="SAN"></div>
+      <div class="founder-photo san" style="background-image:url('Founder/San.png')"></div>
       <div class="founder-body">
         <header class="founder-head">
           <div class="founder-avatar">SAN</div>
