@@ -596,7 +596,7 @@ section{padding:120px 32px;position:relative}
 }
 .why-stat{
   font-family:'Anuphan',sans-serif;
-  font-size:68px;
+  font-size:clamp(36px,3.8vw,56px);
   font-weight:600;
   background:linear-gradient(160deg,var(--accent-2) 0%,var(--accent) 100%);
   -webkit-background-clip:text;
@@ -609,6 +609,8 @@ section{padding:120px 32px;position:relative}
   align-items:baseline;
   gap:4px;
   position:relative;
+  white-space:nowrap;
+  overflow:hidden;
 }
 .why-stat .unit{
   font-size:0.32em;
@@ -633,6 +635,125 @@ section{padding:120px 32px;position:relative}
   color:var(--ink-mute);
   margin-top:8px;
   position:relative;
+}
+
+/* === COMMUNITY === */
+.community{
+  background:var(--bg);
+  position:relative;
+  padding-bottom:60px;
+}
+.cc-titleline{
+  display:flex;
+  align-items:center;
+  gap:18px;
+  flex-wrap:wrap;
+  margin-top:8px;
+}
+.cc-badge{
+  display:inline-flex;
+  flex-direction:column;
+  padding:8px 14px;
+  background:var(--accent);
+  color:var(--bg);
+  border-radius:12px;
+  font-weight:700;
+  line-height:1.05;
+  letter-spacing:-0.005em;
+  box-shadow:0 4px 14px rgba(219,169,58,0.25);
+}
+.cc-badge .b-main{font-size:15px}
+.cc-badge .b-sub{font-size:10px;font-weight:500;opacity:0.75;margin-top:2px}
+.cc-tagline{
+  font-size:clamp(16px,1.5vw,18px);
+  color:var(--ink-mute);
+  line-height:1.6;
+  max-width:680px;
+  margin-top:6px;
+}
+.community-collage{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:3px;
+  border-radius:16px;
+  overflow:hidden;
+  border:1px solid var(--line);
+  margin-bottom:56px;
+}
+.cp-tile{
+  aspect-ratio:4/3;
+  background-size:cover;
+  background-position:center;
+  filter:contrast(1.05) saturate(0.92) brightness(0.95);
+  transition:filter 0.5s ease, transform 0.7s ease;
+}
+.cp-tile:hover{
+  filter:contrast(1.1) saturate(1.05) brightness(1);
+  transform:scale(1.02);
+}
+.cc-stats{
+  display:flex;
+  flex-wrap:wrap;
+  gap:48px;
+  padding:24px 0;
+  border-top:1px solid var(--line);
+  border-bottom:1px solid var(--line);
+}
+.cc-stat .num{
+  font-family:'Anuphan',sans-serif;
+  font-size:clamp(32px,3.4vw,44px);
+  font-weight:600;
+  letter-spacing:-0.04em;
+  background:linear-gradient(160deg,var(--accent-2) 0%,var(--accent) 100%);
+  -webkit-background-clip:text;
+  background-clip:text;
+  -webkit-text-fill-color:transparent;
+  line-height:1;
+  white-space:nowrap;
+}
+.cc-stat .label{
+  font-size:11px;
+  text-transform:uppercase;
+  letter-spacing:0.14em;
+  color:var(--ink-mute);
+  margin-top:10px;
+  font-weight:500;
+}
+.cc-body{display:block}
+.cc-block h4{
+  font-family:'Anuphan',sans-serif;
+  font-size:11px;
+  text-transform:uppercase;
+  letter-spacing:0.18em;
+  color:var(--accent);
+  margin-bottom:14px;
+  font-weight:600;
+  display:flex;
+  align-items:center;
+  gap:10px;
+}
+.cc-block h4::before{
+  content:'';
+  width:14px;height:1px;
+  background:var(--accent);
+}
+.cc-block p{
+  font-size:clamp(15px,1.4vw,17px);
+  line-height:1.65;
+  color:var(--ink);
+  max-width:640px;
+  font-weight:400;
+}
+.cc-block ul{
+  list-style:none;
+  display:flex;
+  flex-direction:column;
+  gap:6px;
+}
+.cc-block li{
+  font-size:13.5px;
+  line-height:1.55;
+  color:var(--ink);
 }
 
 /* === CLIENTS === */
@@ -896,6 +1017,12 @@ footer{padding:60px 32px 32px;background:var(--bg);border-top:1px solid var(--li
   .eco-card.media,.eco-card.event,.eco-card.education,.eco-card.solution{grid-column:span 1}
   .why{padding:80px 20px}
   .why-grid{grid-template-columns:repeat(2,1fr);gap:12px}
+  .community{padding:64px 20px}
+  .community-collage{grid-template-columns:repeat(2,1fr);margin-bottom:32px}
+  .cc-stats{gap:32px;margin-bottom:32px;padding:20px 0}
+  .cc-titleline{gap:14px;margin-top:6px}
+  .cc-stats{gap:24px;padding:18px 0}
+  .cc-stat .num{font-size:30px}
   .why-card{padding:24px 22px;min-height:240px}
   .why-stat{font-size:52px}
   .case-row{grid-template-columns:30px 1fr 60px;gap:16px}
@@ -999,7 +1126,7 @@ footer{padding:60px 32px 32px;background:var(--bg);border-top:1px solid var(--li
         <div class="eco-arrow">↗</div>
       </div>
       <div>
-        <div class="eco-name">Media<br><span class="light">Storytelling</span></div>
+        <div class="eco-name">Media <span class="light">/ Storytelling</span></div>
         <div class="eco-sub">
           <span>Torpenguin</span><span>Tungtua</span>
         </div>
@@ -1041,7 +1168,7 @@ footer{padding:60px 32px 32px;background:var(--bg);border-top:1px solid var(--li
         <div class="eco-arrow">↗</div>
       </div>
       <div>
-        <div class="eco-name">Solution<br><span class="light">Agency</span></div>
+        <div class="eco-name">Solution <span class="light">/ Agency</span></div>
         <div class="eco-sub">
           <span>Super Supp</span>
         </div>
@@ -1216,6 +1343,39 @@ footer{padding:60px 32px 32px;background:var(--bg);border-top:1px solid var(--li
   </div>
 </section>
 
+<!-- ====== COMMUNITY ====== -->
+<section class="community" id="community">
+  <div class="section-head">
+    <div>
+      <div class="section-num">05 / Community</div>
+    </div>
+    <h2 class="section-title">
+      Turns <span class="light">competitors</span><br>
+      <span class="light">to</span> <span class="accent">community</span><span class="end-dot"></span>
+    </h2>
+    <div class="cc-titleline">
+      <div class="cc-badge">
+        <span class="b-main">#ลงแขก</span>
+        <span class="b-sub">กินข้าวร้านเพื่อน</span>
+      </div>
+      <p class="cc-tagline">Built by restaurant owners, for restaurant owners — peer-to-peer network across 45 provinces nationwide.</p>
+    </div>
+  </div>
+  <div class="community-collage">
+    <div class="cp-tile" style="background-image:url('https://images.unsplash.com/photo-1530103862676-de8c9debad1d?w=900&q=80')"></div>
+    <div class="cp-tile" style="background-image:url('https://images.unsplash.com/photo-1543007630-9710e4a00a20?w=900&q=80')"></div>
+    <div class="cp-tile" style="background-image:url('https://images.unsplash.com/photo-1559223607-a43c990c692c?w=900&q=80')"></div>
+    <div class="cp-tile" style="background-image:url('https://images.unsplash.com/photo-1511795409834-ef04bbd61622?w=900&q=80')"></div>
+    <div class="cp-tile" style="background-image:url('https://images.unsplash.com/photo-1556761175-4b46a572b786?w=900&q=80')"></div>
+    <div class="cp-tile" style="background-image:url('https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=900&q=80')"></div>
+  </div>
+  <div class="cc-stats">
+    <div class="cc-stat"><div class="num">45</div><div class="label">Provinces</div></div>
+    <div class="cc-stat"><div class="num">90</div><div class="label">Times Hosted</div></div>
+    <div class="cc-stat"><div class="num">10,000<span style="font-size:0.5em;font-weight:400">+</span></div><div class="label">Participants</div></div>
+  </div>
+</section>
+
 <!-- ====== CLIENTS ====== -->
 <section class="clients">
   <div class="clients-label mono">Trusted by 200+ global & F&B brands</div>
@@ -1315,7 +1475,7 @@ footer{padding:60px 32px 32px;background:var(--bg);border-top:1px solid var(--li
 <section class="founder" id="about">
   <div class="section-head">
     <div>
-      <div class="section-num">05 / Founder</div>
+      <div class="section-num">06 / Founder</div>
     </div>
     <h2 class="section-title">
       Leadership<br>
