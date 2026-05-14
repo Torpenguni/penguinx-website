@@ -158,11 +158,11 @@ nav.top{
 }
 .hero-desc strong{color:var(--ink);font-weight:600}
 .hero-stats{
-  display:flex;
-  gap:40px;
-  align-items:flex-start;
-  flex-wrap:wrap;
+  display:grid;
+  grid-template-columns:repeat(4,minmax(0,1fr));
+  column-gap:32px;
   row-gap:24px;
+  align-items:flex-start;
 }
 .stat{min-width:0}
 .stat .num{
@@ -173,7 +173,7 @@ nav.top{
   letter-spacing:-0.04em;
   white-space:nowrap;
 }
-.stat .label{max-width:140px}
+.stat .label{max-width:none}
 .stat .num .light{font-weight:300;font-size:0.7em;color:var(--ink-mute)}
 .stat .label{
   font-size:11px;color:var(--ink-mute);
@@ -438,11 +438,9 @@ section{padding:120px 32px;position:relative}
 }
 .service-card{
   background:var(--accent);
-  padding:32px 30px 28px;
-  min-height:220px;
+  padding:22px 22px 20px;
   display:flex;flex-direction:column;
-  justify-content:space-between;
-  gap:28px;
+  gap:14px;
   cursor:pointer;
   position:relative;
   overflow:hidden;
@@ -515,56 +513,126 @@ section{padding:120px 32px;position:relative}
 .s-desc{
   font-size:13.5px;
   color:rgba(0,0,0,0.6);
-  line-height:1.55;
-  margin-top:10px;
+  line-height:1.5;
+  margin-top:6px;
   font-weight:400;
   max-width:380px;
   transition:color 0.4s ease;
   position:relative;
 }
 
-/* === WHY === */
-.why{padding:120px 32px;background:var(--bg)}
+/* === WHY (modern) === */
+.why{padding:120px 32px;background:var(--bg);position:relative;overflow:hidden}
+.why::before{
+  content:'';
+  position:absolute;
+  inset:0;
+  background:radial-gradient(ellipse 80% 40% at 50% 0%,rgba(219,169,58,0.06) 0%,transparent 70%);
+  pointer-events:none;
+}
+.why .section-head{position:relative}
 .why-grid{
   display:grid;
-  grid-template-columns:repeat(2,1fr);
-  gap:0;
-  border:1px solid var(--line);
+  grid-template-columns:repeat(4,1fr);
+  gap:14px;
+  position:relative;
 }
 .why-card{
-  padding:48px 40px;
-  border-right:1px solid var(--line);
-  border-bottom:1px solid var(--line);
-  min-height:300px;
-  display:flex;flex-direction:column;justify-content:space-between;
-  background:var(--bg);
-  transition:background 0.3s ease;
+  position:relative;
+  padding:32px 26px 28px;
+  min-height:280px;
+  background:linear-gradient(180deg,rgba(244,241,234,0.03) 0%,rgba(244,241,234,0.005) 60%,transparent 100%);
+  border:1px solid var(--line);
+  border-radius:16px;
+  overflow:hidden;
+  isolation:isolate;
+  display:flex;
+  flex-direction:column;
+  transition:transform 0.4s ease,border-color 0.4s ease,background 0.4s ease,box-shadow 0.4s ease;
 }
-.why-card:hover{background:var(--bg-2)}
-.why-card:nth-child(2n){border-right:none}
-.why-card:nth-child(n+3){border-bottom:none}
-.why-icon{
+.why-card::before{
+  content:'';
+  position:absolute;
+  top:0;left:0;right:0;
+  height:1px;
+  background:linear-gradient(90deg,transparent,var(--accent),transparent);
+  transform:scaleX(0);
+  transition:transform 0.6s cubic-bezier(0.4,0,0.2,1);
+}
+.why-card::after{
+  content:'';
+  position:absolute;
+  top:0;right:0;
+  width:140px;height:140px;
+  background:radial-gradient(circle at top right,rgba(219,169,58,0.1) 0%,transparent 65%);
+  opacity:0;
+  transition:opacity 0.5s ease;
+  pointer-events:none;
+}
+.why-card:hover{
+  border-color:rgba(219,169,58,0.35);
+  background:linear-gradient(180deg,rgba(219,169,58,0.04) 0%,rgba(244,241,234,0.01) 50%,transparent 100%);
+  transform:translateY(-3px);
+  box-shadow:0 24px 60px rgba(0,0,0,0.45);
+}
+.why-card:hover::before{transform:scaleX(1)}
+.why-card:hover::after{opacity:1}
+.why-eyebrow{
   font-family:'Anuphan',sans-serif;
-  font-size:64px;
-  font-weight:300;
-  color:var(--accent);
+  font-size:11px;
+  font-weight:500;
+  color:var(--ink-mute);
+  letter-spacing:0.2em;
+  text-transform:uppercase;
+  position:relative;
+  display:flex;
+  align-items:center;
+  gap:10px;
+}
+.why-eyebrow::before{
+  content:'';
+  width:14px;height:1px;
+  background:var(--accent);
+}
+.why-stat{
+  font-family:'Anuphan',sans-serif;
+  font-size:68px;
+  font-weight:600;
+  background:linear-gradient(160deg,var(--accent-2) 0%,var(--accent) 100%);
+  -webkit-background-clip:text;
+  background-clip:text;
+  -webkit-text-fill-color:transparent;
+  letter-spacing:-0.045em;
   line-height:1;
-  letter-spacing:-0.04em;
+  margin-top:22px;
+  display:flex;
+  align-items:baseline;
+  gap:4px;
+  position:relative;
+}
+.why-stat .unit{
+  font-size:0.32em;
+  font-weight:400;
+  letter-spacing:0.02em;
+  -webkit-text-fill-color:var(--ink-mute);
+  background:none;
 }
 .why-title{
   font-family:'Anuphan',sans-serif;
-  font-size:28px;
+  font-size:18px;
   font-weight:600;
-  letter-spacing:-0.03em;
-  margin-top:24px;
-  line-height:1.15;
+  letter-spacing:-0.02em;
+  margin-top:36px;
+  line-height:1.25;
+  color:var(--ink);
+  position:relative;
 }
 .why-desc{
-  font-size:14px;
-  line-height:1.6;
+  font-size:13px;
+  line-height:1.55;
   color:var(--ink-mute);
-  margin-top:12px;
-  max-width:400px;
+  margin-top:8px;
+  position:relative;
 }
 
 /* === CLIENTS === */
@@ -812,6 +880,7 @@ footer{padding:60px 32px 32px;background:var(--bg);border-top:1px solid var(--li
 }
 @media (max-width:560px){
   .service-grid{grid-template-columns:1fr}
+  .why-grid{grid-template-columns:1fr}
 }
 @media (max-width:900px){
   nav.top{padding:14px 20px}
@@ -820,14 +889,15 @@ footer{padding:60px 32px 32px;background:var(--bg);border-top:1px solid var(--li
   .hero{padding:120px 20px 60px}
   .hero-bottom{gap:36px}
   .hero-desc{font-size:16px;line-height:1.7;flex:1 1 100%;max-width:none}
-  .hero-stats{gap:28px;flex:1 1 100%}
+  .hero-stats{grid-template-columns:repeat(2,1fr);column-gap:24px;row-gap:20px;width:100%}
   .stat .num{font-size:36px}
   .section-head{gap:18px;margin-bottom:40px}
   .eco-grid{grid-template-columns:1fr}
   .eco-card.media,.eco-card.event,.eco-card.education,.eco-card.solution{grid-column:span 1}
-  .why-grid{grid-template-columns:1fr}
-  .why-card{border-right:none!important;border-bottom:1px solid var(--line)!important}
-  .why-card:last-child{border-bottom:none!important}
+  .why{padding:80px 20px}
+  .why-grid{grid-template-columns:repeat(2,1fr);gap:12px}
+  .why-card{padding:24px 22px;min-height:240px}
+  .why-stat{font-size:52px}
   .case-row{grid-template-columns:30px 1fr 60px;gap:16px}
   .case-tags,.case-result{display:none}
   .case-name{font-size:22px}
@@ -1120,32 +1190,28 @@ footer{padding:60px 32px 32px;background:var(--bg);border-top:1px solid var(--li
   </div>
   <div class="why-grid">
     <div class="why-card">
-      <div class="why-icon">01</div>
-      <div>
-        <div class="why-title">Food Industry Expertise</div>
-        <div class="why-desc">10+ years of hands-on F&B experience — understanding both restaurant owners and brand buyers from the inside.</div>
-      </div>
+      <div class="why-eyebrow">01 / Expertise</div>
+      <div class="why-stat">15<span class="unit">yrs</span></div>
+      <div class="why-title">Food Industry Expertise</div>
+      <div class="why-desc">Hands-on F&B operating experience — understanding both restaurant owners and brand buyers from the inside.</div>
     </div>
     <div class="why-card">
-      <div class="why-icon">02</div>
-      <div>
-        <div class="why-title">Powerful Media & Network</div>
-        <div class="why-desc">Backed by Thailand's largest F&B business media (1.5M+ followers) and a trusted ecosystem of suppliers and operators.</div>
-      </div>
+      <div class="why-eyebrow">02 / Network</div>
+      <div class="why-stat">2.0M<span class="unit">+</span></div>
+      <div class="why-title">Powerful Media & Network</div>
+      <div class="why-desc">Backed by Thailand's largest F&B business media and a trusted ecosystem of suppliers and operators.</div>
     </div>
     <div class="why-card">
-      <div class="why-icon">03</div>
-      <div>
-        <div class="why-title">Event Collaboration Power</div>
-        <div class="why-desc">IMPACT's event expertise meets Torpenguin's marketing influence — creating experiences that deliver real business outcomes.</div>
-      </div>
+      <div class="why-eyebrow">03 / Collaboration</div>
+      <div class="why-stat">IMPACT<span class="unit">×Tor</span></div>
+      <div class="why-title">Event Collaboration Power</div>
+      <div class="why-desc">IMPACT's event expertise meets Torpenguin's marketing influence — experiences that deliver real outcomes.</div>
     </div>
     <div class="why-card">
-      <div class="why-icon">04</div>
-      <div>
-        <div class="why-title">Proven Results & Track Record</div>
-        <div class="why-desc">Trusted nationwide with proven gains in awareness, engagement, and lead conversion across 500+ partner brands.</div>
-      </div>
+      <div class="why-eyebrow">04 / Results</div>
+      <div class="why-stat">200<span class="unit">+</span></div>
+      <div class="why-title">Proven Track Record</div>
+      <div class="why-desc">Trusted nationwide with proven gains in awareness, engagement, and conversion across partner brands.</div>
     </div>
   </div>
 </section>
