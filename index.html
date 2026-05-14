@@ -909,6 +909,70 @@ section{padding:80px 32px;position:relative}
   background:var(--accent);
   border-radius:50%;
 }
+/* === NEWS === */
+.news{padding:80px 32px;background:var(--bg);border-top:1px solid var(--line)}
+.news-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:36px 28px;
+}
+.news-card{
+  display:flex;
+  flex-direction:column;
+  gap:16px;
+  cursor:pointer;
+  text-decoration:none;
+  color:inherit;
+}
+.news-thumb{
+  aspect-ratio:16/10;
+  background-color:var(--bg-2);
+  background-size:cover;
+  background-position:center;
+  border-radius:10px;
+  overflow:hidden;
+  border:1px solid var(--line);
+  filter:contrast(1.05) saturate(0.95);
+  transition:filter 0.5s ease, transform 0.5s ease;
+}
+.news-card:hover .news-thumb{
+  filter:contrast(1.1) saturate(1.05);
+  transform:scale(1.02);
+}
+.news-meta{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  font-family:'Anuphan',sans-serif;
+  font-size:11px;
+  color:var(--accent);
+  letter-spacing:0.18em;
+  text-transform:uppercase;
+  font-weight:600;
+}
+.news-meta::before{
+  content:'';
+  width:14px;height:1px;
+  background:var(--accent);
+}
+.news-title{
+  font-family:'Anuphan',sans-serif;
+  font-size:18px;
+  font-weight:600;
+  letter-spacing:-0.02em;
+  line-height:1.3;
+  color:var(--ink);
+  transition:color 0.3s ease;
+}
+.news-card:hover .news-title{color:var(--accent)}
+.news-read{
+  font-size:11px;
+  color:var(--ink-mute);
+  letter-spacing:0.12em;
+  text-transform:uppercase;
+  margin-top:-4px;
+}
+
 /* === CTA === */
 .cta{
   padding:90px 32px;
@@ -997,10 +1061,12 @@ footer{padding:60px 32px 32px;background:var(--bg);border-top:1px solid var(--li
 /* === RESPONSIVE === */
 @media (max-width:1100px){
   .service-grid{grid-template-columns:repeat(2,1fr)}
+  .news-grid{grid-template-columns:repeat(2,1fr)}
 }
 @media (max-width:560px){
   .service-grid{grid-template-columns:1fr}
   .why-grid{grid-template-columns:1fr}
+  .news-grid{grid-template-columns:1fr}
 }
 @media (max-width:900px){
   nav.top{padding:14px 20px}
@@ -1502,6 +1568,57 @@ footer{padding:60px 32px 32px;background:var(--bg);border-top:1px solid var(--li
         </ul>
       </div>
     </article>
+  </div>
+</section>
+
+<!-- ====== NEWS ====== -->
+<section class="news" id="news">
+  <div class="section-head">
+    <div>
+      <div class="section-num">07 / News</div>
+    </div>
+    <h2 class="section-title">
+      Latest <span class="accent">stories</span><br>
+      <span class="light">from the</span> ecosystem<span class="end-dot"></span>
+    </h2>
+  </div>
+  <div class="news-grid">
+    <a href="#" class="news-card">
+      <div class="news-thumb" style="background-image:url('https://images.unsplash.com/photo-1556761175-5973dc0f32e7?w=900&q=80')"></div>
+      <div class="news-meta">Industry</div>
+      <h3 class="news-title">PenguinX named F&B Marketing Agency of the Year 2025</h3>
+      <div class="news-read">5 min read</div>
+    </a>
+    <a href="#" class="news-card">
+      <div class="news-thumb" style="background-image:url('https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=900&q=80')"></div>
+      <div class="news-meta">Event</div>
+      <h3 class="news-title">Inside TRC 2025: How 4,500 restaurant owners convened in Bangkok</h3>
+      <div class="news-read">7 min read</div>
+    </a>
+    <a href="#" class="news-card">
+      <div class="news-thumb" style="background-image:url('https://images.unsplash.com/photo-1530103862676-de8c9debad1d?w=900&q=80')"></div>
+      <div class="news-meta">Community</div>
+      <h3 class="news-title">Behind #LongKaek — turning competitors into trusted allies</h3>
+      <div class="news-read">4 min read</div>
+    </a>
+    <a href="#" class="news-card">
+      <div class="news-thumb" style="background-image:url('https://images.unsplash.com/photo-1556761175-4b46a572b786?w=900&q=80')"></div>
+      <div class="news-meta">Case Study</div>
+      <h3 class="news-title">How Lineman Wongnai drove nationwide brand activations with PenguinX</h3>
+      <div class="news-read">6 min read</div>
+    </a>
+    <a href="#" class="news-card">
+      <div class="news-thumb" style="background-image:url('https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?w=900&q=80')"></div>
+      <div class="news-meta">Education</div>
+      <h3 class="news-title">Restaurant MBA program opens second cohort for 2025</h3>
+      <div class="news-read">3 min read</div>
+    </a>
+    <a href="#" class="news-card">
+      <div class="news-thumb" style="background-image:url('https://images.unsplash.com/photo-1514933651103-005eec06c04b?w=900&q=80')"></div>
+      <div class="news-meta">Event</div>
+      <h3 class="news-title">Damn Expo returns: Thailand's nightlife industry comes together</h3>
+      <div class="news-read">5 min read</div>
+    </a>
   </div>
 </section>
 
