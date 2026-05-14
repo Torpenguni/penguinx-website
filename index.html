@@ -265,6 +265,7 @@ section{padding:120px 32px;position:relative}
 .eco-card.event{grid-column:span 7}
 .eco-card.education{grid-column:span 7}
 .eco-card.solution{grid-column:span 5}
+.eco-card.community{grid-column:span 12}
 
 /* Background image layer */
 .eco-bg{
@@ -810,10 +811,12 @@ section{padding:120px 32px;position:relative}
 }
 .founder-photo{
   aspect-ratio:16/9;
+  max-height:260px;
   width:100%;
   background-color:var(--bg-3);
   background-size:cover;
-  background-position:center top;
+  background-position:center;
+  background-repeat:no-repeat;
   position:relative;
   border-bottom:1px solid var(--line);
 }
@@ -998,14 +1001,14 @@ footer{padding:60px 32px 32px;background:var(--bg);border-top:1px solid var(--li
   nav.top{padding:14px 20px}
   .nav-links{display:none}
   section{padding:80px 20px}
-  .hero{padding:120px 20px 60px}
+  .hero{padding:120px 20px 110px}
   .hero-bottom{gap:36px}
   .hero-desc{font-size:16px;line-height:1.7;flex:1 1 100%;max-width:none}
   .hero-stats{grid-template-columns:repeat(2,1fr);column-gap:24px;row-gap:20px;width:100%}
   .stat .num{font-size:36px}
   .section-head{gap:18px;margin-bottom:40px}
   .eco-grid{grid-template-columns:1fr}
-  .eco-card.media,.eco-card.event,.eco-card.education,.eco-card.solution{grid-column:span 1}
+  .eco-card.media,.eco-card.event,.eco-card.education,.eco-card.solution,.eco-card.community{grid-column:span 1}
   .why{padding:80px 20px}
   .why-grid{grid-template-columns:repeat(2,1fr);gap:12px}
   .community{padding:64px 20px}
@@ -1058,7 +1061,7 @@ footer{padding:60px 32px 32px;background:var(--bg);border-top:1px solid var(--li
   </div>
   <div class="hero-bottom">
     <p class="hero-desc">
-      <strong>PenguinX</strong> เป็น F&B ecosystem builder ที่เชื่อม media, events, education และ business solutions เข้าด้วยกัน — เพื่อให้ทุกร้านอาหารในไทยเติบโตได้อย่างยั่งยืน
+      <strong>PenguinX</strong> is an F&B ecosystem builder connecting media, events, education, and business solutions — empowering every restaurant in Thailand to grow sustainably.
     </p>
     <div class="hero-stats">
       <div class="stat">
@@ -1104,13 +1107,13 @@ footer{padding:60px 32px 32px;background:var(--bg);border-top:1px solid var(--li
       <div class="section-num">01 / Ecosystem</div>
     </div>
     <h2 class="section-title">
-      Four pillars<span class="end-dot"></span><br>
+      Five pillars<span class="end-dot"></span><br>
       <span class="light">One</span> <span class="accent">ecosystem</span><span class="end-dot"></span>
     </h2>
   </div>
   <div class="eco-grid">
     <div class="eco-card media">
-      <div class="eco-bg" style="background-image:url('https://images.unsplash.com/photo-1542038784456-1ea8e935640e?w=1200&q=80')"></div>
+      <div class="eco-bg" style="background-image:url('Selected wroks/Media.png')"></div>
       <div class="eco-overlay"></div>
       <div>
         <div class="eco-tag">→ PenguinX Media</div>
@@ -1124,21 +1127,21 @@ footer{padding:60px 32px 32px;background:var(--bg);border-top:1px solid var(--li
       </div>
     </div>
     <div class="eco-card event">
-      <div class="eco-bg" style="background-image:url('https://images.unsplash.com/photo-1511795409834-ef04bbd61622?w=1200&q=80')"></div>
+      <div class="eco-bg" style="background-image:url('Selected wroks/Event.png')"></div>
       <div class="eco-overlay"></div>
       <div>
         <div class="eco-tag">→ PenguinX Event</div>
         <div class="eco-arrow">↗</div>
       </div>
       <div>
-        <div class="eco-name">Event <span class="light">/ Industry Gathering</span></div>
+        <div class="eco-name">Event <span class="light">/ Seminar</span></div>
         <div class="eco-sub">
-          <span>TRC 2025</span><span>Damn Expo</span><span>Restech</span><span>CafCon</span><span>ลงแขก</span>
+          <span>TRC 2025</span><span>Damn Expo</span><span>Restech</span><span>CafCon</span>
         </div>
       </div>
     </div>
     <div class="eco-card education">
-      <div class="eco-bg" style="background-image:url('https://images.unsplash.com/photo-1556761175-5973dc0f32e7?w=1200&q=80')"></div>
+      <div class="eco-bg" style="background-image:url('Selected wroks/Education.png')"></div>
       <div class="eco-overlay"></div>
       <div>
         <div class="eco-tag">→ PenguinX Education</div>
@@ -1152,7 +1155,7 @@ footer{padding:60px 32px 32px;background:var(--bg);border-top:1px solid var(--li
       </div>
     </div>
     <div class="eco-card solution">
-      <div class="eco-bg" style="background-image:url('https://images.unsplash.com/photo-1556761175-b413da4baf72?w=1200&q=80')"></div>
+      <div class="eco-bg" style="background-image:url('Selected wroks/Solution.png')"></div>
       <div class="eco-overlay"></div>
       <div>
         <div class="eco-tag">→ PenguinX Solution</div>
@@ -1162,6 +1165,20 @@ footer{padding:60px 32px 32px;background:var(--bg);border-top:1px solid var(--li
         <div class="eco-name">Solution <span class="light">/ Agency</span></div>
         <div class="eco-sub">
           <span>Super Supp</span>
+        </div>
+      </div>
+    </div>
+    <div class="eco-card community">
+      <div class="eco-bg" style="background-image:url('Selected wroks/community.png')"></div>
+      <div class="eco-overlay"></div>
+      <div>
+        <div class="eco-tag">→ PenguinX Community</div>
+        <div class="eco-arrow">↗</div>
+      </div>
+      <div>
+        <div class="eco-name">Community <span class="light">/ Gathering</span></div>
+        <div class="eco-sub">
+          <span>Longkaek</span>
         </div>
       </div>
     </div>
@@ -1233,13 +1250,13 @@ footer{padding:60px 32px 32px;background:var(--bg);border-top:1px solid var(--li
       <div class="section-num">03 / Services</div>
     </div>
     <h2 class="section-title">
-      Full-funnel demand<br>
-      <span class="light">generation</span><span class="end-dot" style="background:var(--bg)"></span>
+      Full-funnel <span class="light">marketing</span><br>
+      services<span class="end-dot" style="background:var(--bg)"></span>
     </h2>
   </div>
   <div class="service-grid">
     <div class="service-card">
-      <div class="s-bg" style="background-image:url('https://images.unsplash.com/photo-1542038784456-1ea8e935640e?w=900&q=80')"></div>
+      <div class="s-bg" style="background-image:url('Services/story telling.png')"></div>
       <div class="s-overlay"></div>
       <div class="s-num">01</div>
       <div>
@@ -1248,7 +1265,7 @@ footer{padding:60px 32px 32px;background:var(--bg);border-top:1px solid var(--li
       </div>
     </div>
     <div class="service-card">
-      <div class="s-bg" style="background-image:url('https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=900&q=80')"></div>
+      <div class="s-bg" style="background-image:url('Services/marketing strategy.png')"></div>
       <div class="s-overlay"></div>
       <div class="s-num">02</div>
       <div>
@@ -1257,7 +1274,7 @@ footer{padding:60px 32px 32px;background:var(--bg);border-top:1px solid var(--li
       </div>
     </div>
     <div class="service-card">
-      <div class="s-bg" style="background-image:url('https://images.unsplash.com/photo-1511795409834-ef04bbd61622?w=900&q=80')"></div>
+      <div class="s-bg" style="background-image:url('Services/Event lead.png')"></div>
       <div class="s-overlay"></div>
       <div class="s-num">03</div>
       <div>
@@ -1266,7 +1283,7 @@ footer{padding:60px 32px 32px;background:var(--bg);border-top:1px solid var(--li
       </div>
     </div>
     <div class="service-card">
-      <div class="s-bg" style="background-image:url('https://images.unsplash.com/photo-1556761175-4b46a572b786?w=900&q=80')"></div>
+      <div class="s-bg" style="background-image:url('Services/Business matching .png')"></div>
       <div class="s-overlay"></div>
       <div class="s-num">04</div>
       <div>
@@ -1275,7 +1292,7 @@ footer{padding:60px 32px 32px;background:var(--bg);border-top:1px solid var(--li
       </div>
     </div>
     <div class="service-card">
-      <div class="s-bg" style="background-image:url('https://images.unsplash.com/photo-1551836022-deb4988cc6c0?w=900&q=80')"></div>
+      <div class="s-bg" style="background-image:url('Services/business development.png')"></div>
       <div class="s-overlay"></div>
       <div class="s-num">05</div>
       <div>
@@ -1284,7 +1301,7 @@ footer{padding:60px 32px 32px;background:var(--bg);border-top:1px solid var(--li
       </div>
     </div>
     <div class="service-card">
-      <div class="s-bg" style="background-image:url('https://images.unsplash.com/photo-1475721027785-f74eccf877e2?w=900&q=80')"></div>
+      <div class="s-bg" style="background-image:url('Services/speaker.png')"></div>
       <div class="s-overlay"></div>
       <div class="s-num">06</div>
       <div>
@@ -1535,6 +1552,7 @@ footer{padding:60px 32px 32px;background:var(--bg);border-top:1px solid var(--li
       <a href="#">Event</a>
       <a href="#">Education</a>
       <a href="#">Solution</a>
+      <a href="#">Community</a>
     </div>
     <div class="foot-col">
       <h4>Company</h4>
