@@ -253,7 +253,7 @@ section{padding:120px 32px;position:relative}
 .eco-card{
   background:var(--bg-2);
   padding:28px 28px;
-  min-height:260px;
+  min-height:220px;
   display:flex;flex-direction:column;justify-content:space-between;
   gap:20px;
   position:relative;
@@ -263,9 +263,9 @@ section{padding:120px 32px;position:relative}
 }
 .eco-card.media{grid-column:span 5}
 .eco-card.event{grid-column:span 7}
-.eco-card.education{grid-column:span 7}
-.eco-card.solution{grid-column:span 5}
-.eco-card.community{grid-column:span 12}
+.eco-card.education{grid-column:span 4}
+.eco-card.solution{grid-column:span 4}
+.eco-card.community{grid-column:span 4}
 
 /* Background image layer */
 .eco-bg{
@@ -316,19 +316,31 @@ section{padding:120px 32px;position:relative}
 }
 .eco-name{
   font-family:'Anuphan',sans-serif;
-  font-size:54px;
+  font-size:clamp(36px,3.5vw,50px);
   font-weight:600;
-  line-height:0.95;
-  letter-spacing:-0.045em;
-  margin-top:auto;
+  line-height:1.1;
+  letter-spacing:-0.04em;
   position:relative;
   text-shadow:0 2px 24px rgba(0,0,0,0.4);
+}
+.eco-card.education .eco-name .light,
+.eco-card.solution .eco-name .light,
+.eco-card.community .eco-name .light{
+  display:block;
+}
+.eco-card > div:last-of-type{
+  display:flex;
+  flex-direction:column;
+  min-height:160px;
 }
 .eco-name .light{font-weight:300;color:rgba(244,241,234,0.65)}
 .eco-sub{
   display:flex;flex-wrap:wrap;gap:8px;
-  margin-top:24px;
+  margin-top:auto;
+  padding-top:24px;
   position:relative;
+  align-content:flex-start;
+  min-height:84px;
 }
 .eco-sub span{
   font-size:11px;
@@ -367,7 +379,7 @@ section{padding:120px 32px;position:relative}
 .case-list{display:flex;flex-direction:column}
 .case-row{
   display:grid;
-  grid-template-columns:60px 1.4fr 1fr 1fr 80px;
+  grid-template-columns:60px 1fr 80px;
   gap:32px;
   padding:36px 0;
   border-bottom:1px solid var(--line);
@@ -653,6 +665,7 @@ section{padding:120px 32px;position:relative}
   display:block;
   height:64px;
   width:auto;
+  flex-shrink:0;
   filter:drop-shadow(0 4px 14px rgba(219,169,58,0.25));
 }
 .cc-tagline{
@@ -663,23 +676,20 @@ section{padding:120px 32px;position:relative}
   margin-top:6px;
 }
 .community-collage{
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:3px;
   border-radius:16px;
   overflow:hidden;
   border:1px solid var(--line);
   margin-bottom:56px;
 }
-.cp-tile{
-  aspect-ratio:4/3;
-  background-size:cover;
-  background-position:center;
-  filter:contrast(1.05) saturate(0.92) brightness(0.95);
+.cc-collage-img{
+  display:block;
+  width:100%;
+  height:auto;
+  filter:contrast(1.05) saturate(0.95);
   transition:filter 0.5s ease, transform 0.7s ease;
 }
-.cp-tile:hover{
-  filter:contrast(1.1) saturate(1.05) brightness(1);
+.community-collage:hover .cc-collage-img{
+  filter:contrast(1.1) saturate(1.05);
   transform:scale(1.02);
 }
 .cc-stats{
@@ -1009,10 +1019,13 @@ footer{padding:60px 32px 32px;background:var(--bg);border-top:1px solid var(--li
   .section-head{gap:18px;margin-bottom:40px}
   .eco-grid{grid-template-columns:1fr}
   .eco-card.media,.eco-card.event,.eco-card.education,.eco-card.solution,.eco-card.community{grid-column:span 1}
+  .eco-card{min-height:240px;padding:24px 22px}
+  .eco-card > div:last-of-type{min-height:140px}
+  .eco-sub{min-height:64px}
   .why{padding:80px 20px}
   .why-grid{grid-template-columns:repeat(2,1fr);gap:12px}
   .community{padding:64px 20px}
-  .community-collage{grid-template-columns:repeat(2,1fr);margin-bottom:32px}
+  .community-collage{margin-bottom:32px}
   .cc-stats{gap:32px;margin-bottom:32px;padding:20px 0}
   .cc-titleline{gap:14px;margin-top:6px}
   .cc-stats{gap:24px;padding:18px 0}
@@ -1120,7 +1133,7 @@ footer{padding:60px 32px 32px;background:var(--bg);border-top:1px solid var(--li
         <div class="eco-arrow">↗</div>
       </div>
       <div>
-        <div class="eco-name">Media <span class="light">/ Storytelling</span></div>
+        <div class="eco-name">Media<br><span class="light">/ Storytelling</span></div>
         <div class="eco-sub">
           <span>Torpenguin</span><span>Tungtua</span>
         </div>
@@ -1134,7 +1147,7 @@ footer{padding:60px 32px 32px;background:var(--bg);border-top:1px solid var(--li
         <div class="eco-arrow">↗</div>
       </div>
       <div>
-        <div class="eco-name">Event <span class="light">/ Seminar</span></div>
+        <div class="eco-name">Event<br><span class="light">/ Seminar</span></div>
         <div class="eco-sub">
           <span>TRC 2025</span><span>Damn Expo</span><span>Restech</span><span>CafCon</span>
         </div>
@@ -1200,44 +1213,32 @@ footer{padding:60px 32px 32px;background:var(--bg);border-top:1px solid var(--li
   <div class="case-list">
     <div class="case-row">
       <div class="case-num">001</div>
-      <div class="case-name">Bar B Q Plaza <span class="light">— Anniversary Campaign</span></div>
-      <div class="case-tags"><span>Branding</span><span>Content</span><span>Event</span></div>
-      <div class="case-result"><strong>+340%</strong>Engagement uplift</div>
+      <div class="case-name">Lineman Wongnai <span class="light">— Awareness / Brand Activations</span></div>
       <div class="case-arrow">→</div>
     </div>
     <div class="case-row">
       <div class="case-num">002</div>
-      <div class="case-name">Café Amazon <span class="light">— New Format Launch</span></div>
-      <div class="case-tags"><span>Strategy</span><span>Launch</span></div>
-      <div class="case-result"><strong>1.2M</strong>Reach in 30 days</div>
+      <div class="case-name">Thaifex Horec <span class="light">— Conference Management</span></div>
       <div class="case-arrow">→</div>
     </div>
     <div class="case-row">
       <div class="case-num">003</div>
-      <div class="case-name">TRC 2025 <span class="light">— Thailand Restaurant Conference</span></div>
-      <div class="case-tags"><span>Event</span><span>Lead Gen</span></div>
-      <div class="case-result"><strong>4,500</strong>Restaurant owners</div>
+      <div class="case-name">Makro <span class="light">— New Product Launch / Co-Host Event</span></div>
       <div class="case-arrow">→</div>
     </div>
     <div class="case-row">
       <div class="case-num">004</div>
-      <div class="case-name">Damn Expo <span class="light">— Nightlife & Craft Liquor</span></div>
-      <div class="case-tags"><span>Trade Show</span><span>B2B</span></div>
-      <div class="case-result"><strong>70</strong>Exhibitors onboarded</div>
+      <div class="case-name">Pepsi Co. <span class="light">— Awareness / Nationwide Lead Gen</span></div>
       <div class="case-arrow">→</div>
     </div>
     <div class="case-row">
       <div class="case-num">005</div>
-      <div class="case-name">After You <span class="light">— Brand Repositioning</span></div>
-      <div class="case-tags"><span>Branding</span><span>Strategy</span></div>
-      <div class="case-result"><strong>+58%</strong>Brand consideration</div>
+      <div class="case-name">Impact <span class="light">— New Business Initiative</span></div>
       <div class="case-arrow">→</div>
     </div>
     <div class="case-row">
       <div class="case-num">006</div>
-      <div class="case-name">Restech 2025 <span class="light">— Restaurant Tech Expo</span></div>
-      <div class="case-tags"><span>Event</span><span>B2B Matching</span></div>
-      <div class="case-result"><strong>120+</strong>Business meetings</div>
+      <div class="case-name">Streamwash <span class="light">— Full Funnel Lead Generation</span></div>
       <div class="case-arrow">→</div>
     </div>
   </div>
@@ -1337,10 +1338,10 @@ footer{padding:60px 32px 32px;background:var(--bg);border-top:1px solid var(--li
       <div class="why-desc">Backed by Thailand's largest F&B business media and a trusted ecosystem of suppliers and operators.</div>
     </div>
     <div class="why-card">
-      <div class="why-eyebrow">03 / Collaboration</div>
-      <div class="why-stat">IMPACT<span class="unit">×Tor</span></div>
-      <div class="why-title">Event Collaboration Power</div>
-      <div class="why-desc">IMPACT's event expertise meets Torpenguin's marketing influence — experiences that deliver real outcomes.</div>
+      <div class="why-eyebrow">03 / Alliance</div>
+      <div class="why-stat">10<span class="unit">+</span></div>
+      <div class="why-title">Strategic Alliances</div>
+      <div class="why-desc">From the Thai Chamber of Commerce to IMPACT and top-tier media — strategic allies that bring unique strengths to every campaign.</div>
     </div>
     <div class="why-card">
       <div class="why-eyebrow">04 / Results</div>
@@ -1363,16 +1364,11 @@ footer{padding:60px 32px 32px;background:var(--bg);border-top:1px solid var(--li
     </h2>
     <div class="cc-titleline">
       <img src="Community/ลงแขก.png" alt="#ลงแขก กินข้าวร้านเพื่อน" class="cc-badge-img">
-      <p class="cc-tagline">Built by restaurant owners, for restaurant owners — peer-to-peer network across 45 provinces nationwide.</p>
+      <p class="cc-tagline">Built by restaurant owners, for restaurant owners — a peer-to-peer network that turns local competitors into trusted allies, gathering F&B operators across 45 provinces to share, learn, and grow together.</p>
     </div>
   </div>
   <div class="community-collage">
-    <div class="cp-tile" style="background-image:url('https://images.unsplash.com/photo-1530103862676-de8c9debad1d?w=900&q=80')"></div>
-    <div class="cp-tile" style="background-image:url('https://images.unsplash.com/photo-1543007630-9710e4a00a20?w=900&q=80')"></div>
-    <div class="cp-tile" style="background-image:url('https://images.unsplash.com/photo-1559223607-a43c990c692c?w=900&q=80')"></div>
-    <div class="cp-tile" style="background-image:url('https://images.unsplash.com/photo-1511795409834-ef04bbd61622?w=900&q=80')"></div>
-    <div class="cp-tile" style="background-image:url('https://images.unsplash.com/photo-1556761175-4b46a572b786?w=900&q=80')"></div>
-    <div class="cp-tile" style="background-image:url('https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=900&q=80')"></div>
+    <img src="Community/community.png" alt="LongKaek community gatherings across Thailand" class="cc-collage-img">
   </div>
   <div class="cc-stats">
     <div class="cc-stat"><div class="num">45</div><div class="label">Provinces</div></div>
