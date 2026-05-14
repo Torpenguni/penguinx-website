@@ -254,9 +254,10 @@ section{padding:120px 32px;position:relative}
 }
 .eco-card{
   background:var(--bg-2);
-  padding:40px 32px;
-  min-height:360px;
+  padding:28px 28px;
+  min-height:260px;
   display:flex;flex-direction:column;justify-content:space-between;
+  gap:20px;
   position:relative;
   overflow:hidden;
   cursor:pointer;
@@ -316,7 +317,7 @@ section{padding:120px 32px;position:relative}
 }
 .eco-name{
   font-family:'Anuphan',sans-serif;
-  font-size:68px;
+  font-size:54px;
   font-weight:600;
   line-height:0.95;
   letter-spacing:-0.045em;
@@ -437,9 +438,11 @@ section{padding:120px 32px;position:relative}
 }
 .service-card{
   background:var(--accent);
-  padding:24px 22px;
+  padding:32px 30px 28px;
+  min-height:220px;
   display:flex;flex-direction:column;
-  gap:20px;
+  justify-content:space-between;
+  gap:28px;
   cursor:pointer;
   position:relative;
   overflow:hidden;
@@ -469,6 +472,7 @@ section{padding:120px 32px;position:relative}
   opacity:1;
   transform:scale(1.06);
   filter:grayscale(0) contrast(1.1);
+  mix-blend-mode:normal;
 }
 .service-card:hover .s-overlay{opacity:1}
 .service-card:hover .s-num{color:rgba(244,241,234,0.45)}
@@ -476,29 +480,45 @@ section{padding:120px 32px;position:relative}
 .service-card:hover .s-desc{color:rgba(244,241,234,0.82)}
 .s-num{
   font-family:'Anuphan',sans-serif;
-  font-size:28px;
-  font-weight:300;
-  color:rgba(0,0,0,0.3);
-  letter-spacing:-0.03em;
+  font-size:11px;
+  font-weight:500;
+  color:rgba(0,0,0,0.55);
+  letter-spacing:0.18em;
+  text-transform:uppercase;
   transition:color 0.4s ease;
   line-height:1;
   position:relative;
+  display:flex;
+  align-items:center;
+  gap:10px;
+}
+.s-num::before{
+  content:'';
+  width:24px;height:1px;
+  background:rgba(0,0,0,0.4);
+  display:inline-block;
+  transition:background 0.4s ease, width 0.4s ease;
+}
+.service-card:hover .s-num::before{
+  background:rgba(244,241,234,0.4);
+  width:32px;
 }
 .s-name{
   font-family:'Anuphan',sans-serif;
   font-size:26px;
   font-weight:600;
   line-height:1.15;
-  letter-spacing:-0.025em;
+  letter-spacing:-0.028em;
   transition:color 0.4s ease;
   position:relative;
 }
 .s-desc{
-  font-size:12.5px;
-  color:rgba(0,0,0,0.65);
-  line-height:1.5;
-  margin-top:6px;
+  font-size:13.5px;
+  color:rgba(0,0,0,0.6);
+  line-height:1.55;
+  margin-top:10px;
   font-weight:400;
+  max-width:380px;
   transition:color 0.4s ease;
   position:relative;
 }
@@ -905,13 +925,13 @@ footer{padding:60px 32px 32px;background:var(--bg);border-top:1px solid var(--li
       <div class="eco-bg" style="background-image:url('https://images.unsplash.com/photo-1542038784456-1ea8e935640e?w=1200&q=80')"></div>
       <div class="eco-overlay"></div>
       <div>
-        <div class="eco-tag">→ Penguin Media</div>
+        <div class="eco-tag">→ PenguinX Media</div>
         <div class="eco-arrow">↗</div>
       </div>
       <div>
         <div class="eco-name">Media<br><span class="light">Storytelling</span></div>
         <div class="eco-sub">
-          <span>Torpenguin</span><span>ตั้งตัว</span><span>โคตรเฟ้ม</span>
+          <span>Torpenguin</span><span>Tungtua</span>
         </div>
       </div>
     </div>
@@ -919,7 +939,7 @@ footer{padding:60px 32px 32px;background:var(--bg);border-top:1px solid var(--li
       <div class="eco-bg" style="background-image:url('https://images.unsplash.com/photo-1511795409834-ef04bbd61622?w=1200&q=80')"></div>
       <div class="eco-overlay"></div>
       <div>
-        <div class="eco-tag">→ Penguin Event</div>
+        <div class="eco-tag">→ PenguinX Event</div>
         <div class="eco-arrow">↗</div>
       </div>
       <div>
@@ -933,13 +953,13 @@ footer{padding:60px 32px 32px;background:var(--bg);border-top:1px solid var(--li
       <div class="eco-bg" style="background-image:url('https://images.unsplash.com/photo-1556761175-5973dc0f32e7?w=1200&q=80')"></div>
       <div class="eco-overlay"></div>
       <div>
-        <div class="eco-tag">→ Penguin Education</div>
+        <div class="eco-tag">→ PenguinX Education</div>
         <div class="eco-arrow">↗</div>
       </div>
       <div>
         <div class="eco-name">Education <span class="light">/ Knowledge</span></div>
         <div class="eco-sub">
-          <span>Restaurant Business Academy</span><span>RMBA × UTCC</span><span>Books</span>
+          <span>Restaurant Business Academy</span><span>Restaurant MBA</span><span>Books</span>
         </div>
       </div>
     </div>
@@ -947,13 +967,13 @@ footer{padding:60px 32px 32px;background:var(--bg);border-top:1px solid var(--li
       <div class="eco-bg" style="background-image:url('https://images.unsplash.com/photo-1556761175-b413da4baf72?w=1200&q=80')"></div>
       <div class="eco-overlay"></div>
       <div>
-        <div class="eco-tag">→ Penguin Solution</div>
+        <div class="eco-tag">→ PenguinX Solution</div>
         <div class="eco-arrow">↗</div>
       </div>
       <div>
         <div class="eco-name">Solution<br><span class="light">Agency</span></div>
         <div class="eco-sub">
-          <span>Super Supp</span><span>F&B Marketing</span>
+          <span>Super Supp</span>
         </div>
       </div>
     </div>
