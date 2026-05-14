@@ -6,8 +6,7 @@
 <title>PenguinX — F&B Ecosystem Builder</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://api.fontshare.com/v2/css?f[]=general-sans@200,300,400,500,600,700&display=swap" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;1,9..144,300;1,9..144,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Anuphan:wght@100;200;300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
 :root{
   --bg:#0a0a0a;
@@ -17,21 +16,21 @@
   --ink-mute:#8a8680;
   --line:rgba(244,241,234,0.1);
   --line-soft:rgba(244,241,234,0.05);
-  --accent:#ffd60a;
-  --accent-2:#ffe347;
+  --accent:#dba93a;
+  --accent-2:#e8c050;
 }
 *{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth}
 body{
   background:var(--bg);
   color:var(--ink);
-  font-family:'General Sans',sans-serif;
+  font-family:'Anuphan',sans-serif;
   font-weight:400;
   -webkit-font-smoothing:antialiased;
   overflow-x:hidden;
 }
-.serif{font-family:'Fraunces',serif;font-variation-settings:"opsz" 144}
-.mono{font-family:'JetBrains Mono',monospace;font-size:11px;text-transform:uppercase;letter-spacing:0.12em}
+.serif{font-family:'Anuphan',sans-serif;font-variation-settings:"opsz" 144}
+.mono{font-family:'Anuphan',sans-serif;font-size:11px;text-transform:uppercase;letter-spacing:0.12em}
 
 /* Grain overlay */
 body::before{
@@ -56,19 +55,13 @@ nav.top{
   border-bottom:1px solid var(--line-soft);
 }
 .logo{
-  font-family:'General Sans',sans-serif;
-  font-size:24px;
-  letter-spacing:-0.035em;
   display:flex;align-items:center;
+  height:32px;
 }
-.logo .bold{font-weight:700}
-.logo .light{font-weight:300}
-.logo .dot{
-  display:inline-block;
-  width:7px;height:7px;
-  background:var(--accent);
-  margin-left:3px;
-  margin-bottom:3px;
+.logo img{
+  height:100%;
+  width:auto;
+  display:block;
 }
 .nav-links{display:flex;gap:36px;list-style:none}
 .nav-links a{
@@ -118,22 +111,22 @@ nav.top{
   animation:pulse 2s ease-in-out infinite;
 }
 @keyframes pulse{
-  0%,100%{opacity:1;transform:scale(1);box-shadow:0 0 0 0 rgba(255,214,10,0.5)}
-  50%{opacity:0.7;transform:scale(0.9);box-shadow:0 0 0 8px rgba(255,214,10,0)}
+  0%,100%{opacity:1;transform:scale(1);box-shadow:0 0 0 0 rgba(219,169,58,0.5)}
+  50%{opacity:0.7;transform:scale(0.9);box-shadow:0 0 0 8px rgba(219,169,58,0)}
 }
 
 .hero-title{
-  font-family:'General Sans',sans-serif;
-  font-size:clamp(56px,11.5vw,200px);
+  font-family:'Anuphan',sans-serif;
+  font-size:clamp(38px,6.6vw,115px);
   font-weight:600;
-  line-height:0.92;
-  letter-spacing:-0.045em;
+  line-height:0.95;
+  letter-spacing:-0.04em;
   margin-top:36px;
 }
 .hero-title .light{font-weight:300;color:var(--ink-mute)}
 .hero-title .accent{color:var(--accent)}
 .hero-title .serif-em{
-  font-family:'Fraunces',serif;
+  font-family:'Anuphan',sans-serif;
   font-style:italic;
   font-weight:300;
 }
@@ -147,27 +140,40 @@ nav.top{
 }
 
 .hero-bottom{
-  display:grid;
-  grid-template-columns:1fr 1fr 1fr;
+  display:flex;
+  align-items:flex-end;
+  justify-content:space-between;
   gap:60px;
   margin-top:64px;
-  align-items:end;
+  flex-wrap:wrap;
 }
 .hero-desc{
-  font-size:16px;line-height:1.55;
+  flex:1 1 380px;
+  font-size:17px;
+  line-height:1.75;
   color:var(--ink-mute);
-  max-width:440px;
+  max-width:560px;
   font-weight:400;
+  letter-spacing:-0.005em;
 }
 .hero-desc strong{color:var(--ink);font-weight:600}
-.hero-stats{display:flex;gap:48px}
+.hero-stats{
+  display:flex;
+  gap:40px;
+  align-items:flex-start;
+  flex-wrap:wrap;
+  row-gap:24px;
+}
+.stat{min-width:0}
 .stat .num{
-  font-family:'General Sans',sans-serif;
-  font-size:52px;
+  font-family:'Anuphan',sans-serif;
+  font-size:40px;
   font-weight:600;
   line-height:1;
   letter-spacing:-0.04em;
+  white-space:nowrap;
 }
+.stat .label{max-width:140px}
 .stat .num .light{font-weight:300;font-size:0.7em;color:var(--ink-mute)}
 .stat .label{
   font-size:11px;color:var(--ink-mute);
@@ -203,14 +209,14 @@ section{padding:120px 32px;position:relative}
   align-items:end;
 }
 .section-num{
-  font-family:'JetBrains Mono',monospace;
+  font-family:'Anuphan',sans-serif;
   font-size:11px;
   color:var(--ink-mute);
   letter-spacing:0.15em;
   text-transform:uppercase;
 }
 .section-title{
-  font-family:'General Sans',sans-serif;
+  font-family:'Anuphan',sans-serif;
   font-size:clamp(40px,6.5vw,96px);
   font-weight:600;
   line-height:0.95;
@@ -219,7 +225,7 @@ section{padding:120px 32px;position:relative}
 .section-title .light{font-weight:300;color:var(--ink-mute)}
 .section-title .accent{color:var(--accent)}
 .section-title .serif-em{
-  font-family:'Fraunces',serif;
+  font-family:'Anuphan',sans-serif;
   font-style:italic;
   font-weight:300;
 }
@@ -298,7 +304,7 @@ section{padding:120px 32px;position:relative}
 }
 
 .eco-tag{
-  font-family:'JetBrains Mono',monospace;
+  font-family:'Anuphan',sans-serif;
   font-size:10px;
   color:var(--accent);
   letter-spacing:0.18em;
@@ -307,7 +313,7 @@ section{padding:120px 32px;position:relative}
   position:relative;
 }
 .eco-name{
-  font-family:'General Sans',sans-serif;
+  font-family:'Anuphan',sans-serif;
   font-size:68px;
   font-weight:600;
   line-height:0.95;
@@ -379,9 +385,9 @@ section{padding:120px 32px;position:relative}
 .case-row:hover::before{opacity:1}
 .case-row:hover .case-name{color:var(--accent)}
 .case-row:hover .case-arrow{transform:translateX(8px);color:var(--accent)}
-.case-num{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--ink-mute)}
+.case-num{font-family:'Anuphan',sans-serif;font-size:11px;color:var(--ink-mute)}
 .case-name{
-  font-family:'General Sans',sans-serif;
+  font-family:'Anuphan',sans-serif;
   font-size:32px;
   font-weight:600;
   letter-spacing:-0.03em;
@@ -391,7 +397,7 @@ section{padding:120px 32px;position:relative}
 .case-name .light{font-weight:300;color:var(--ink-mute)}
 .case-tags{display:flex;gap:8px;flex-wrap:wrap}
 .case-tags span{
-  font-family:'JetBrains Mono',monospace;
+  font-family:'Anuphan',sans-serif;
   font-size:10px;
   color:var(--ink-mute);
   letter-spacing:0.1em;
@@ -400,7 +406,7 @@ section{padding:120px 32px;position:relative}
 .case-result{font-size:13px;color:var(--ink-mute)}
 .case-result strong{
   color:var(--ink);
-  font-family:'General Sans',sans-serif;
+  font-family:'Anuphan',sans-serif;
   font-weight:600;
   font-size:22px;
   display:block;
@@ -438,7 +444,7 @@ section{padding:120px 32px;position:relative}
 .service-card:hover{background:var(--accent-2)}
 .service-card:hover .s-num{color:var(--bg)}
 .s-num{
-  font-family:'General Sans',sans-serif;
+  font-family:'Anuphan',sans-serif;
   font-size:48px;
   font-weight:300;
   color:rgba(0,0,0,0.3);
@@ -446,7 +452,7 @@ section{padding:120px 32px;position:relative}
   transition:color 0.3s ease;
 }
 .s-name{
-  font-family:'General Sans',sans-serif;
+  font-family:'Anuphan',sans-serif;
   font-size:22px;
   font-weight:600;
   line-height:1.15;
@@ -481,7 +487,7 @@ section{padding:120px 32px;position:relative}
 .why-card:nth-child(2n){border-right:none}
 .why-card:nth-child(n+3){border-bottom:none}
 .why-icon{
-  font-family:'General Sans',sans-serif;
+  font-family:'Anuphan',sans-serif;
   font-size:64px;
   font-weight:300;
   color:var(--accent);
@@ -489,7 +495,7 @@ section{padding:120px 32px;position:relative}
   letter-spacing:-0.04em;
 }
 .why-title{
-  font-family:'General Sans',sans-serif;
+  font-family:'Anuphan',sans-serif;
   font-size:28px;
   font-weight:600;
   letter-spacing:-0.03em;
@@ -530,7 +536,7 @@ section{padding:120px 32px;position:relative}
   align-items:center;
 }
 .client-logo{
-  font-family:'General Sans',sans-serif;
+  font-family:'Anuphan',sans-serif;
   font-size:30px;
   font-weight:600;
   color:var(--ink-mute);
@@ -561,21 +567,21 @@ section{padding:120px 32px;position:relative}
 }
 .founder-img::after{
   content:'TOR';
-  font-family:'General Sans',sans-serif;
+  font-family:'Anuphan',sans-serif;
   font-size:140px;
   font-weight:600;
-  color:rgba(255,214,10,0.15);
+  color:rgba(219,169,58,0.15);
   letter-spacing:-0.05em;
 }
 .founder-quote{
-  font-family:'General Sans',sans-serif;
+  font-family:'Anuphan',sans-serif;
   font-size:38px;
   font-weight:500;
   line-height:1.25;
   letter-spacing:-0.03em;
 }
 .founder-quote .serif-em{
-  font-family:'Fraunces',serif;
+  font-family:'Anuphan',sans-serif;
   font-style:italic;
   font-weight:300;
   color:var(--accent);
@@ -583,14 +589,14 @@ section{padding:120px 32px;position:relative}
 .founder-quote::before{
   content:'"';
   color:var(--accent);
-  font-family:'Fraunces',serif;
+  font-family:'Anuphan',sans-serif;
   font-size:1.2em;
   margin-right:4px;
 }
 .founder-name{margin-top:32px}
 .founder-name strong{
   display:block;
-  font-family:'General Sans',sans-serif;
+  font-family:'Anuphan',sans-serif;
   font-size:20px;
   font-weight:600;
   letter-spacing:-0.015em;
@@ -611,7 +617,7 @@ section{padding:120px 32px;position:relative}
 }
 .cta-eyebrow{color:var(--ink-mute);margin-bottom:32px}
 .cta-title{
-  font-family:'General Sans',sans-serif;
+  font-family:'Anuphan',sans-serif;
   font-size:clamp(48px,9vw,144px);
   font-weight:600;
   line-height:0.95;
@@ -643,7 +649,7 @@ section{padding:120px 32px;position:relative}
 .cta-btn:hover{
   background:var(--accent-2);
   transform:translateY(-2px);
-  box-shadow:0 12px 40px rgba(255,214,10,0.3);
+  box-shadow:0 12px 40px rgba(219,169,58,0.3);
 }
 .cta-btn::after{content:'→'}
 
@@ -655,7 +661,7 @@ footer{padding:60px 32px 32px;background:var(--bg);border-top:1px solid var(--li
   gap:60px;
   margin-bottom:60px;
 }
-.foot-brand .logo{font-size:32px;margin-bottom:18px}
+.foot-brand .logo{height:44px;margin-bottom:18px}
 .foot-brand p{
   color:var(--ink-mute);
   font-size:13px;
@@ -694,8 +700,10 @@ footer{padding:60px 32px 32px;background:var(--bg);border-top:1px solid var(--li
   .nav-links{display:none}
   section{padding:80px 20px}
   .hero{padding:120px 20px 60px}
-  .hero-bottom{grid-template-columns:1fr;gap:32px}
-  .hero-stats{gap:32px}
+  .hero-bottom{gap:36px}
+  .hero-desc{font-size:16px;line-height:1.7;flex:1 1 100%;max-width:none}
+  .hero-stats{gap:28px;flex:1 1 100%}
+  .stat .num{font-size:36px}
   .section-head{grid-template-columns:1fr;gap:24px}
   .eco-grid,.service-grid{grid-template-columns:1fr}
   .eco-card.media,.eco-card.event,.eco-card.education,.eco-card.solution{grid-column:span 1}
@@ -715,7 +723,7 @@ footer{padding:60px 32px 32px;background:var(--bg);border-top:1px solid var(--li
 
 <!-- ====== NAV ====== -->
 <nav class="top">
-  <div class="logo"><span class="bold">Penguin</span><span class="light">X</span><span class="dot"></span></div>
+  <a href="#" class="logo"><img src="penguinx-logo.png" alt="PenguinX"></a>
   <ul class="nav-links">
     <li><a href="#ecosystem">Ecosystem</a></li>
     <li><a href="#work">Work</a></li>
@@ -744,19 +752,22 @@ footer{padding:60px 32px 32px;background:var(--bg);border-top:1px solid var(--li
     <p class="hero-desc">
       <strong>PenguinX</strong> เป็น F&B ecosystem builder ที่เชื่อม media, events, education และ business solutions เข้าด้วยกัน — เพื่อให้ทุกร้านอาหารในไทยเติบโตได้อย่างยั่งยืน
     </p>
-    <div></div>
     <div class="hero-stats">
       <div class="stat">
-        <div class="num">1.5M<span class="light">+</span></div>
-        <div class="label">Community</div>
+        <div class="num">2.0M<span class="light">+</span></div>
+        <div class="label">Followers</div>
       </div>
       <div class="stat">
-        <div class="num">500<span class="light">+</span></div>
+        <div class="num">200<span class="light">+</span></div>
         <div class="label">Brand Partners</div>
       </div>
       <div class="stat">
-        <div class="num">10<span class="light">yrs</span></div>
+        <div class="num">15<span class="light">yrs</span></div>
         <div class="label">In the Industry</div>
+      </div>
+      <div class="stat">
+        <div class="num">5<span class="light">+</span></div>
+        <div class="label">Food Business Events</div>
       </div>
     </div>
   </div>
@@ -1086,7 +1097,7 @@ footer{padding:60px 32px 32px;background:var(--bg);border-top:1px solid var(--li
 <footer>
   <div class="foot-grid">
     <div class="foot-brand">
-      <div class="logo"><span class="bold">Penguin</span><span class="light">X</span><span class="dot"></span></div>
+      <a href="#" class="logo"><img src="penguinx-logo.png" alt="PenguinX"></a>
       <p>F&B Branding and Marketing Agency. A restaurant ecosystem builder firm based in Bangkok, Thailand.</p>
     </div>
     <div class="foot-col">
