@@ -1,0 +1,1121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PenguinX — F&B Ecosystem Builder</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://api.fontshare.com/v2/css?f[]=general-sans@200,300,400,500,600,700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;1,9..144,300;1,9..144,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#0a0a0a;
+  --bg-2:#141413;
+  --bg-3:#1a1a18;
+  --ink:#f4f1ea;
+  --ink-mute:#8a8680;
+  --line:rgba(244,241,234,0.1);
+  --line-soft:rgba(244,241,234,0.05);
+  --accent:#ffd60a;
+  --accent-2:#ffe347;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  background:var(--bg);
+  color:var(--ink);
+  font-family:'General Sans',sans-serif;
+  font-weight:400;
+  -webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
+}
+.serif{font-family:'Fraunces',serif;font-variation-settings:"opsz" 144}
+.mono{font-family:'JetBrains Mono',monospace;font-size:11px;text-transform:uppercase;letter-spacing:0.12em}
+
+/* Grain overlay */
+body::before{
+  content:'';
+  position:fixed;inset:0;
+  background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.35 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  opacity:0.5;
+  pointer-events:none;
+  z-index:9999;
+  mix-blend-mode:overlay;
+}
+
+/* === NAV === */
+nav.top{
+  position:fixed;top:0;left:0;right:0;
+  z-index:100;
+  padding:20px 32px;
+  display:flex;justify-content:space-between;align-items:center;
+  background:rgba(10,10,10,0.8);
+  backdrop-filter:blur(16px);
+  -webkit-backdrop-filter:blur(16px);
+  border-bottom:1px solid var(--line-soft);
+}
+.logo{
+  font-family:'General Sans',sans-serif;
+  font-size:24px;
+  letter-spacing:-0.035em;
+  display:flex;align-items:center;
+}
+.logo .bold{font-weight:700}
+.logo .light{font-weight:300}
+.logo .dot{
+  display:inline-block;
+  width:7px;height:7px;
+  background:var(--accent);
+  margin-left:3px;
+  margin-bottom:3px;
+}
+.nav-links{display:flex;gap:36px;list-style:none}
+.nav-links a{
+  color:var(--ink);
+  text-decoration:none;
+  font-size:14px;
+  font-weight:500;
+  letter-spacing:-0.005em;
+  position:relative;
+  padding:6px 0;
+}
+.nav-links a::after{
+  content:'';position:absolute;bottom:0;left:0;
+  width:0;height:1px;background:var(--accent);
+  transition:width 0.3s ease;
+}
+.nav-links a:hover::after{width:100%}
+.nav-cta{
+  padding:10px 20px;
+  background:var(--accent);color:var(--bg);
+  border-radius:100px;
+  font-size:13px;font-weight:600;
+  text-decoration:none;
+  display:inline-flex;align-items:center;gap:8px;
+  transition:all 0.25s ease;
+  letter-spacing:-0.005em;
+}
+.nav-cta:hover{background:var(--accent-2);transform:translateY(-1px)}
+.nav-cta::after{content:'→';transition:transform 0.2s}
+.nav-cta:hover::after{transform:translateX(2px)}
+
+/* === HERO === */
+.hero{
+  min-height:100vh;
+  padding:140px 32px 80px;
+  display:flex;flex-direction:column;justify-content:space-between;
+  position:relative;
+  overflow:hidden;
+}
+.hero-eyebrow{
+  display:flex;gap:14px;align-items:center;
+  color:var(--ink-mute);
+}
+.hero-eyebrow .live{
+  width:7px;height:7px;border-radius:50%;
+  background:var(--accent);
+  animation:pulse 2s ease-in-out infinite;
+}
+@keyframes pulse{
+  0%,100%{opacity:1;transform:scale(1);box-shadow:0 0 0 0 rgba(255,214,10,0.5)}
+  50%{opacity:0.7;transform:scale(0.9);box-shadow:0 0 0 8px rgba(255,214,10,0)}
+}
+
+.hero-title{
+  font-family:'General Sans',sans-serif;
+  font-size:clamp(56px,11.5vw,200px);
+  font-weight:600;
+  line-height:0.92;
+  letter-spacing:-0.045em;
+  margin-top:36px;
+}
+.hero-title .light{font-weight:300;color:var(--ink-mute)}
+.hero-title .accent{color:var(--accent)}
+.hero-title .serif-em{
+  font-family:'Fraunces',serif;
+  font-style:italic;
+  font-weight:300;
+}
+.hero-title .end-dot{
+  display:inline-block;
+  width:0.12em;height:0.12em;
+  background:var(--accent);
+  margin-left:0.04em;
+  vertical-align:baseline;
+  margin-bottom:0.08em;
+}
+
+.hero-bottom{
+  display:grid;
+  grid-template-columns:1fr 1fr 1fr;
+  gap:60px;
+  margin-top:64px;
+  align-items:end;
+}
+.hero-desc{
+  font-size:16px;line-height:1.55;
+  color:var(--ink-mute);
+  max-width:440px;
+  font-weight:400;
+}
+.hero-desc strong{color:var(--ink);font-weight:600}
+.hero-stats{display:flex;gap:48px}
+.stat .num{
+  font-family:'General Sans',sans-serif;
+  font-size:52px;
+  font-weight:600;
+  line-height:1;
+  letter-spacing:-0.04em;
+}
+.stat .num .light{font-weight:300;font-size:0.7em;color:var(--ink-mute)}
+.stat .label{
+  font-size:11px;color:var(--ink-mute);
+  text-transform:uppercase;letter-spacing:0.12em;
+  margin-top:10px;font-weight:500;
+}
+
+.hero-marquee{
+  position:absolute;
+  bottom:24px;left:0;right:0;
+  border-top:1px solid var(--line);
+  padding-top:18px;
+  overflow:hidden;
+  white-space:nowrap;
+}
+.marquee-track{
+  display:inline-block;
+  animation:scroll 40s linear infinite;
+  font-size:15px;
+  color:var(--ink-mute);
+  font-weight:500;
+}
+.marquee-track span{margin:0 28px}
+.marquee-track .dotsep{color:var(--accent);margin:0 8px;font-size:8px;vertical-align:middle}
+@keyframes scroll{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+
+/* === SECTION HEADERS === */
+section{padding:120px 32px;position:relative}
+.section-head{
+  display:grid;grid-template-columns:1fr 2fr;
+  gap:60px;
+  margin-bottom:72px;
+  align-items:end;
+}
+.section-num{
+  font-family:'JetBrains Mono',monospace;
+  font-size:11px;
+  color:var(--ink-mute);
+  letter-spacing:0.15em;
+  text-transform:uppercase;
+}
+.section-title{
+  font-family:'General Sans',sans-serif;
+  font-size:clamp(40px,6.5vw,96px);
+  font-weight:600;
+  line-height:0.95;
+  letter-spacing:-0.04em;
+}
+.section-title .light{font-weight:300;color:var(--ink-mute)}
+.section-title .accent{color:var(--accent)}
+.section-title .serif-em{
+  font-family:'Fraunces',serif;
+  font-style:italic;
+  font-weight:300;
+}
+.section-title .end-dot{
+  display:inline-block;
+  width:0.1em;height:0.1em;
+  background:var(--accent);
+  vertical-align:baseline;
+  margin-bottom:0.08em;
+  margin-left:0.02em;
+}
+
+/* === ECOSYSTEM === */
+.ecosystem{
+  background:var(--bg-2);
+  border-top:1px solid var(--line);
+}
+.eco-grid{
+  display:grid;
+  grid-template-columns:repeat(12,1fr);
+  gap:1px;
+  background:var(--line);
+  border:1px solid var(--line);
+}
+.eco-card{
+  background:var(--bg-2);
+  padding:40px 32px;
+  min-height:360px;
+  display:flex;flex-direction:column;justify-content:space-between;
+  position:relative;
+  overflow:hidden;
+  cursor:pointer;
+  isolation:isolate;
+}
+.eco-card.media{grid-column:span 5}
+.eco-card.event{grid-column:span 7}
+.eco-card.education{grid-column:span 7}
+.eco-card.solution{grid-column:span 5}
+
+/* Background image layer */
+.eco-bg{
+  position:absolute;
+  inset:0;
+  background-size:cover;
+  background-position:center;
+  z-index:-2;
+  opacity:0.25;
+  filter:grayscale(0.4) contrast(1.05);
+  transition:opacity 0.6s ease, filter 0.6s ease, transform 0.8s ease;
+  transform:scale(1.02);
+}
+.eco-card:hover .eco-bg{
+  opacity:0.55;
+  filter:grayscale(0) contrast(1.1);
+  transform:scale(1.06);
+}
+
+/* Gradient overlay to ensure text legibility */
+.eco-overlay{
+  position:absolute;
+  inset:0;
+  z-index:-1;
+  background:
+    linear-gradient(180deg,
+      rgba(10,10,10,0.55) 0%,
+      rgba(10,10,10,0.4) 35%,
+      rgba(10,10,10,0.85) 100%);
+  transition:opacity 0.4s ease;
+}
+.eco-card:hover .eco-overlay{
+  background:
+    linear-gradient(180deg,
+      rgba(10,10,10,0.35) 0%,
+      rgba(10,10,10,0.25) 40%,
+      rgba(10,10,10,0.8) 100%);
+}
+
+.eco-tag{
+  font-family:'JetBrains Mono',monospace;
+  font-size:10px;
+  color:var(--accent);
+  letter-spacing:0.18em;
+  text-transform:uppercase;
+  font-weight:500;
+  position:relative;
+}
+.eco-name{
+  font-family:'General Sans',sans-serif;
+  font-size:68px;
+  font-weight:600;
+  line-height:0.95;
+  letter-spacing:-0.045em;
+  margin-top:auto;
+  position:relative;
+  text-shadow:0 2px 24px rgba(0,0,0,0.4);
+}
+.eco-name .light{font-weight:300;color:rgba(244,241,234,0.65)}
+.eco-sub{
+  display:flex;flex-wrap:wrap;gap:8px;
+  margin-top:24px;
+  position:relative;
+}
+.eco-sub span{
+  font-size:11px;
+  padding:6px 12px;
+  border:1px solid rgba(244,241,234,0.2);
+  border-radius:100px;
+  color:var(--ink);
+  background:rgba(10,10,10,0.5);
+  backdrop-filter:blur(8px);
+  -webkit-backdrop-filter:blur(8px);
+  font-weight:500;
+  letter-spacing:-0.005em;
+}
+.eco-arrow{
+  position:absolute;top:32px;right:32px;
+  width:38px;height:38px;
+  border:1px solid rgba(244,241,234,0.25);
+  border-radius:50%;
+  display:flex;align-items:center;justify-content:center;
+  font-size:14px;
+  transition:all 0.3s ease;
+  color:var(--ink);
+  background:rgba(10,10,10,0.4);
+  backdrop-filter:blur(8px);
+  -webkit-backdrop-filter:blur(8px);
+}
+.eco-card:hover .eco-arrow{
+  background:var(--accent);
+  color:var(--bg);
+  border-color:var(--accent);
+  transform:rotate(-45deg);
+}
+
+/* === SHOWCASE === */
+.showcase{padding-bottom:60px}
+.case-list{display:flex;flex-direction:column}
+.case-row{
+  display:grid;
+  grid-template-columns:60px 1.4fr 1fr 1fr 80px;
+  gap:32px;
+  padding:36px 0;
+  border-bottom:1px solid var(--line);
+  align-items:center;
+  cursor:pointer;
+  transition:all 0.3s ease;
+  position:relative;
+}
+.case-row::before{
+  content:'';
+  position:absolute;
+  left:-32px;right:-32px;top:0;bottom:0;
+  background:var(--bg-2);
+  opacity:0;z-index:-1;
+  transition:opacity 0.3s;
+}
+.case-row:hover::before{opacity:1}
+.case-row:hover .case-name{color:var(--accent)}
+.case-row:hover .case-arrow{transform:translateX(8px);color:var(--accent)}
+.case-num{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--ink-mute)}
+.case-name{
+  font-family:'General Sans',sans-serif;
+  font-size:32px;
+  font-weight:600;
+  letter-spacing:-0.03em;
+  line-height:1.1;
+  transition:color 0.3s ease;
+}
+.case-name .light{font-weight:300;color:var(--ink-mute)}
+.case-tags{display:flex;gap:8px;flex-wrap:wrap}
+.case-tags span{
+  font-family:'JetBrains Mono',monospace;
+  font-size:10px;
+  color:var(--ink-mute);
+  letter-spacing:0.1em;
+  text-transform:uppercase;
+}
+.case-result{font-size:13px;color:var(--ink-mute)}
+.case-result strong{
+  color:var(--ink);
+  font-family:'General Sans',sans-serif;
+  font-weight:600;
+  font-size:22px;
+  display:block;
+  letter-spacing:-0.025em;
+  margin-bottom:2px;
+}
+.case-arrow{font-size:22px;text-align:right;transition:all 0.3s ease;color:var(--ink)}
+
+/* === SERVICES === */
+.services{
+  background:var(--accent);
+  color:var(--bg);
+  border-top:1px solid var(--line);
+  border-bottom:1px solid var(--line);
+}
+.services .section-num{color:rgba(0,0,0,0.55)}
+.services .section-title{color:var(--bg)}
+.services .section-title .light{color:rgba(0,0,0,0.45)}
+.services .section-title .accent{color:var(--bg)}
+.service-grid{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:1px;
+  background:rgba(0,0,0,0.1);
+  border:1px solid rgba(0,0,0,0.1);
+}
+.service-card{
+  background:var(--accent);
+  padding:36px 28px;
+  min-height:260px;
+  display:flex;flex-direction:column;justify-content:space-between;
+  cursor:pointer;
+  transition:all 0.3s ease;
+}
+.service-card:hover{background:var(--accent-2)}
+.service-card:hover .s-num{color:var(--bg)}
+.s-num{
+  font-family:'General Sans',sans-serif;
+  font-size:48px;
+  font-weight:300;
+  color:rgba(0,0,0,0.3);
+  letter-spacing:-0.03em;
+  transition:color 0.3s ease;
+}
+.s-name{
+  font-family:'General Sans',sans-serif;
+  font-size:22px;
+  font-weight:600;
+  line-height:1.15;
+  letter-spacing:-0.025em;
+}
+.s-desc{
+  font-size:13px;
+  color:rgba(0,0,0,0.65);
+  line-height:1.55;
+  margin-top:8px;
+  font-weight:400;
+}
+
+/* === WHY === */
+.why{padding:120px 32px;background:var(--bg)}
+.why-grid{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:0;
+  border:1px solid var(--line);
+}
+.why-card{
+  padding:48px 40px;
+  border-right:1px solid var(--line);
+  border-bottom:1px solid var(--line);
+  min-height:300px;
+  display:flex;flex-direction:column;justify-content:space-between;
+  background:var(--bg);
+  transition:background 0.3s ease;
+}
+.why-card:hover{background:var(--bg-2)}
+.why-card:nth-child(2n){border-right:none}
+.why-card:nth-child(n+3){border-bottom:none}
+.why-icon{
+  font-family:'General Sans',sans-serif;
+  font-size:64px;
+  font-weight:300;
+  color:var(--accent);
+  line-height:1;
+  letter-spacing:-0.04em;
+}
+.why-title{
+  font-family:'General Sans',sans-serif;
+  font-size:28px;
+  font-weight:600;
+  letter-spacing:-0.03em;
+  margin-top:24px;
+  line-height:1.15;
+}
+.why-desc{
+  font-size:14px;
+  line-height:1.6;
+  color:var(--ink-mute);
+  margin-top:12px;
+  max-width:400px;
+}
+
+/* === CLIENTS === */
+.clients{
+  background:var(--bg-2);
+  padding:80px 32px;
+  border-top:1px solid var(--line);
+  border-bottom:1px solid var(--line);
+}
+.clients-label{
+  text-align:center;
+  margin-bottom:48px;
+  color:var(--ink-mute);
+}
+.clients-marquee{overflow:hidden;position:relative}
+.clients-marquee::before,.clients-marquee::after{
+  content:'';
+  position:absolute;top:0;bottom:0;width:120px;z-index:2;
+}
+.clients-marquee::before{left:0;background:linear-gradient(90deg,var(--bg-2),transparent)}
+.clients-marquee::after{right:0;background:linear-gradient(-90deg,var(--bg-2),transparent)}
+.clients-track{
+  display:inline-flex;
+  gap:80px;
+  animation:scroll 50s linear infinite;
+  align-items:center;
+}
+.client-logo{
+  font-family:'General Sans',sans-serif;
+  font-size:30px;
+  font-weight:600;
+  color:var(--ink-mute);
+  white-space:nowrap;
+  letter-spacing:-0.03em;
+}
+.client-logo .light{font-weight:300;opacity:0.7}
+
+/* === FOUNDER === */
+.founder{
+  padding:140px 32px;
+  background:var(--bg-2);
+  border-bottom:1px solid var(--line);
+}
+.founder-grid{
+  display:grid;
+  grid-template-columns:1fr 1.5fr;
+  gap:80px;
+  align-items:center;
+}
+.founder-img{
+  aspect-ratio:4/5;
+  background:linear-gradient(135deg,var(--bg-3),#222220);
+  border:1px solid var(--line);
+  position:relative;
+  overflow:hidden;
+  display:flex;align-items:center;justify-content:center;
+}
+.founder-img::after{
+  content:'TOR';
+  font-family:'General Sans',sans-serif;
+  font-size:140px;
+  font-weight:600;
+  color:rgba(255,214,10,0.15);
+  letter-spacing:-0.05em;
+}
+.founder-quote{
+  font-family:'General Sans',sans-serif;
+  font-size:38px;
+  font-weight:500;
+  line-height:1.25;
+  letter-spacing:-0.03em;
+}
+.founder-quote .serif-em{
+  font-family:'Fraunces',serif;
+  font-style:italic;
+  font-weight:300;
+  color:var(--accent);
+}
+.founder-quote::before{
+  content:'"';
+  color:var(--accent);
+  font-family:'Fraunces',serif;
+  font-size:1.2em;
+  margin-right:4px;
+}
+.founder-name{margin-top:32px}
+.founder-name strong{
+  display:block;
+  font-family:'General Sans',sans-serif;
+  font-size:20px;
+  font-weight:600;
+  letter-spacing:-0.015em;
+}
+.founder-name span{
+  color:var(--ink-mute);
+  font-size:13px;
+  margin-top:4px;
+  display:block;
+}
+
+/* === CTA === */
+.cta{
+  padding:160px 32px;
+  text-align:center;
+  border-bottom:1px solid var(--line);
+  background:var(--bg);
+}
+.cta-eyebrow{color:var(--ink-mute);margin-bottom:32px}
+.cta-title{
+  font-family:'General Sans',sans-serif;
+  font-size:clamp(48px,9vw,144px);
+  font-weight:600;
+  line-height:0.95;
+  letter-spacing:-0.045em;
+  max-width:1200px;margin:0 auto;
+}
+.cta-title .light{font-weight:300;color:var(--ink-mute)}
+.cta-title .accent{color:var(--accent)}
+.cta-title .end-dot{
+  display:inline-block;
+  width:0.1em;height:0.1em;
+  background:var(--accent);
+  vertical-align:baseline;
+  margin-bottom:0.08em;
+}
+.cta-btn{
+  display:inline-flex;align-items:center;gap:12px;
+  margin-top:48px;
+  padding:18px 36px;
+  background:var(--accent);
+  color:var(--bg);
+  border-radius:100px;
+  font-weight:600;
+  font-size:15px;
+  text-decoration:none;
+  letter-spacing:-0.005em;
+  transition:all 0.3s ease;
+}
+.cta-btn:hover{
+  background:var(--accent-2);
+  transform:translateY(-2px);
+  box-shadow:0 12px 40px rgba(255,214,10,0.3);
+}
+.cta-btn::after{content:'→'}
+
+/* === FOOTER === */
+footer{padding:60px 32px 32px;background:var(--bg);border-top:1px solid var(--line)}
+.foot-grid{
+  display:grid;
+  grid-template-columns:2fr 1fr 1fr 1fr;
+  gap:60px;
+  margin-bottom:60px;
+}
+.foot-brand .logo{font-size:32px;margin-bottom:18px}
+.foot-brand p{
+  color:var(--ink-mute);
+  font-size:13px;
+  line-height:1.6;
+  max-width:320px;
+}
+.foot-col h4{
+  font-size:11px;
+  text-transform:uppercase;
+  letter-spacing:0.15em;
+  color:var(--ink-mute);
+  margin-bottom:16px;
+  font-weight:500;
+}
+.foot-col a{
+  display:block;
+  color:var(--ink);
+  text-decoration:none;
+  font-size:14px;
+  padding:5px 0;
+  transition:color 0.2s;
+  font-weight:500;
+}
+.foot-col a:hover{color:var(--accent)}
+.foot-bottom{
+  border-top:1px solid var(--line);
+  padding-top:24px;
+  display:flex;justify-content:space-between;
+  color:var(--ink-mute);
+  font-size:12px;
+}
+
+/* === RESPONSIVE === */
+@media (max-width:900px){
+  nav.top{padding:14px 20px}
+  .nav-links{display:none}
+  section{padding:80px 20px}
+  .hero{padding:120px 20px 60px}
+  .hero-bottom{grid-template-columns:1fr;gap:32px}
+  .hero-stats{gap:32px}
+  .section-head{grid-template-columns:1fr;gap:24px}
+  .eco-grid,.service-grid{grid-template-columns:1fr}
+  .eco-card.media,.eco-card.event,.eco-card.education,.eco-card.solution{grid-column:span 1}
+  .why-grid{grid-template-columns:1fr}
+  .why-card{border-right:none!important;border-bottom:1px solid var(--line)!important}
+  .why-card:last-child{border-bottom:none!important}
+  .case-row{grid-template-columns:30px 1fr 60px;gap:16px}
+  .case-tags,.case-result{display:none}
+  .case-name{font-size:22px}
+  .founder-grid{grid-template-columns:1fr;gap:40px}
+  .founder-quote{font-size:24px}
+  .foot-grid{grid-template-columns:1fr 1fr;gap:32px}
+}
+</style>
+</head>
+<body>
+
+<!-- ====== NAV ====== -->
+<nav class="top">
+  <div class="logo"><span class="bold">Penguin</span><span class="light">X</span><span class="dot"></span></div>
+  <ul class="nav-links">
+    <li><a href="#ecosystem">Ecosystem</a></li>
+    <li><a href="#work">Work</a></li>
+    <li><a href="#services">Services</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#insights">Insights</a></li>
+  </ul>
+  <a href="#contact" class="nav-cta">Let's talk</a>
+</nav>
+
+<!-- ====== HERO ====== -->
+<section class="hero">
+  <div>
+    <div class="hero-eyebrow mono">
+      <span class="live"></span>
+      <span>F&B Ecosystem Builder · Est. since Torpenguin</span>
+    </div>
+    <h1 class="hero-title">
+      <span class="light">We don't just</span><br>
+      market restaurants.<br>
+      <span class="light">We build the</span> <span class="accent">ecosystem</span><br>
+      they grow in<span class="end-dot"></span>
+    </h1>
+  </div>
+  <div class="hero-bottom">
+    <p class="hero-desc">
+      <strong>PenguinX</strong> เป็น F&B ecosystem builder ที่เชื่อม media, events, education และ business solutions เข้าด้วยกัน — เพื่อให้ทุกร้านอาหารในไทยเติบโตได้อย่างยั่งยืน
+    </p>
+    <div></div>
+    <div class="hero-stats">
+      <div class="stat">
+        <div class="num">1.5M<span class="light">+</span></div>
+        <div class="label">Community</div>
+      </div>
+      <div class="stat">
+        <div class="num">500<span class="light">+</span></div>
+        <div class="label">Brand Partners</div>
+      </div>
+      <div class="stat">
+        <div class="num">10<span class="light">yrs</span></div>
+        <div class="label">In the Industry</div>
+      </div>
+    </div>
+  </div>
+  <div class="hero-marquee">
+    <div class="marquee-track">
+      <span>Brand Storytelling</span><span class="dotsep">●</span>
+      <span>Marketing Strategy</span><span class="dotsep">●</span>
+      <span>Event Lead Generation</span><span class="dotsep">●</span>
+      <span>Business Matching</span><span class="dotsep">●</span>
+      <span>Corporate Training</span><span class="dotsep">●</span>
+      <span>Public Speaking</span><span class="dotsep">●</span>
+      <span>Brand Storytelling</span><span class="dotsep">●</span>
+      <span>Marketing Strategy</span><span class="dotsep">●</span>
+      <span>Event Lead Generation</span><span class="dotsep">●</span>
+      <span>Business Matching</span><span class="dotsep">●</span>
+      <span>Corporate Training</span><span class="dotsep">●</span>
+      <span>Public Speaking</span><span class="dotsep">●</span>
+    </div>
+  </div>
+</section>
+
+<!-- ====== ECOSYSTEM ====== -->
+<section class="ecosystem" id="ecosystem">
+  <div class="section-head">
+    <div>
+      <div class="section-num">01 / Ecosystem</div>
+    </div>
+    <h2 class="section-title">
+      Four pillars<span class="end-dot"></span><br>
+      <span class="light">One</span> <span class="accent">ecosystem</span><span class="end-dot"></span>
+    </h2>
+  </div>
+  <div class="eco-grid">
+    <div class="eco-card media">
+      <div class="eco-bg" style="background-image:url('https://images.unsplash.com/photo-1542038784456-1ea8e935640e?w=1200&q=80')"></div>
+      <div class="eco-overlay"></div>
+      <div>
+        <div class="eco-tag">→ Penguin Media</div>
+        <div class="eco-arrow">↗</div>
+      </div>
+      <div>
+        <div class="eco-name">Media<br><span class="light">Storytelling</span></div>
+        <div class="eco-sub">
+          <span>Torpenguin</span><span>ตั้งตัว</span><span>โคตรเฟ้ม</span>
+        </div>
+      </div>
+    </div>
+    <div class="eco-card event">
+      <div class="eco-bg" style="background-image:url('https://images.unsplash.com/photo-1511795409834-ef04bbd61622?w=1200&q=80')"></div>
+      <div class="eco-overlay"></div>
+      <div>
+        <div class="eco-tag">→ Penguin Event</div>
+        <div class="eco-arrow">↗</div>
+      </div>
+      <div>
+        <div class="eco-name">Event <span class="light">/ Industry Gathering</span></div>
+        <div class="eco-sub">
+          <span>TRC 2025</span><span>Damn Expo</span><span>Restech</span><span>CafCon</span><span>ลงแขก</span>
+        </div>
+      </div>
+    </div>
+    <div class="eco-card education">
+      <div class="eco-bg" style="background-image:url('https://images.unsplash.com/photo-1556761175-5973dc0f32e7?w=1200&q=80')"></div>
+      <div class="eco-overlay"></div>
+      <div>
+        <div class="eco-tag">→ Penguin Education</div>
+        <div class="eco-arrow">↗</div>
+      </div>
+      <div>
+        <div class="eco-name">Education <span class="light">/ Knowledge</span></div>
+        <div class="eco-sub">
+          <span>Restaurant Business Academy</span><span>RMBA × UTCC</span><span>Books</span>
+        </div>
+      </div>
+    </div>
+    <div class="eco-card solution">
+      <div class="eco-bg" style="background-image:url('https://images.unsplash.com/photo-1556761175-b413da4baf72?w=1200&q=80')"></div>
+      <div class="eco-overlay"></div>
+      <div>
+        <div class="eco-tag">→ Penguin Solution</div>
+        <div class="eco-arrow">↗</div>
+      </div>
+      <div>
+        <div class="eco-name">Solution<br><span class="light">Agency</span></div>
+        <div class="eco-sub">
+          <span>Super Supp</span><span>F&B Marketing</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ====== WORK / CASE STUDIES ====== -->
+<section class="showcase" id="work">
+  <div class="section-head">
+    <div>
+      <div class="section-num">02 / Selected Work</div>
+    </div>
+    <h2 class="section-title">
+      Brands that grew<br>
+      <span class="light">with</span> <span class="accent">us</span><span class="end-dot"></span>
+    </h2>
+  </div>
+  <div class="case-list">
+    <div class="case-row">
+      <div class="case-num">001</div>
+      <div class="case-name">Bar B Q Plaza <span class="light">— Anniversary Campaign</span></div>
+      <div class="case-tags"><span>Branding</span><span>Content</span><span>Event</span></div>
+      <div class="case-result"><strong>+340%</strong>Engagement uplift</div>
+      <div class="case-arrow">→</div>
+    </div>
+    <div class="case-row">
+      <div class="case-num">002</div>
+      <div class="case-name">Café Amazon <span class="light">— New Format Launch</span></div>
+      <div class="case-tags"><span>Strategy</span><span>Launch</span></div>
+      <div class="case-result"><strong>1.2M</strong>Reach in 30 days</div>
+      <div class="case-arrow">→</div>
+    </div>
+    <div class="case-row">
+      <div class="case-num">003</div>
+      <div class="case-name">TRC 2025 <span class="light">— Thailand Restaurant Conference</span></div>
+      <div class="case-tags"><span>Event</span><span>Lead Gen</span></div>
+      <div class="case-result"><strong>4,500</strong>Restaurant owners</div>
+      <div class="case-arrow">→</div>
+    </div>
+    <div class="case-row">
+      <div class="case-num">004</div>
+      <div class="case-name">Damn Expo <span class="light">— Nightlife & Craft Liquor</span></div>
+      <div class="case-tags"><span>Trade Show</span><span>B2B</span></div>
+      <div class="case-result"><strong>70</strong>Exhibitors onboarded</div>
+      <div class="case-arrow">→</div>
+    </div>
+    <div class="case-row">
+      <div class="case-num">005</div>
+      <div class="case-name">After You <span class="light">— Brand Repositioning</span></div>
+      <div class="case-tags"><span>Branding</span><span>Strategy</span></div>
+      <div class="case-result"><strong>+58%</strong>Brand consideration</div>
+      <div class="case-arrow">→</div>
+    </div>
+    <div class="case-row">
+      <div class="case-num">006</div>
+      <div class="case-name">Restech 2025 <span class="light">— Restaurant Tech Expo</span></div>
+      <div class="case-tags"><span>Event</span><span>B2B Matching</span></div>
+      <div class="case-result"><strong>120+</strong>Business meetings</div>
+      <div class="case-arrow">→</div>
+    </div>
+  </div>
+</section>
+
+<!-- ====== SERVICES ====== -->
+<section class="services" id="services">
+  <div class="section-head">
+    <div>
+      <div class="section-num">03 / Services</div>
+    </div>
+    <h2 class="section-title">
+      Full-funnel demand<br>
+      <span class="light">generation</span><span class="end-dot" style="background:var(--bg)"></span>
+    </h2>
+  </div>
+  <div class="service-grid">
+    <div class="service-card">
+      <div class="s-num">01</div>
+      <div>
+        <div class="s-name">Brand Storytelling</div>
+        <div class="s-desc">Craft your brand narrative across owned, earned, and paid channels.</div>
+      </div>
+    </div>
+    <div class="service-card">
+      <div class="s-num">02</div>
+      <div>
+        <div class="s-name">Marketing Strategy</div>
+        <div class="s-desc">Data-driven growth plans built for F&B unit economics.</div>
+      </div>
+    </div>
+    <div class="service-card">
+      <div class="s-num">03</div>
+      <div>
+        <div class="s-name">Event Lead Generation</div>
+        <div class="s-desc">Industry events that convert into pipeline & partnerships.</div>
+      </div>
+    </div>
+    <div class="service-card">
+      <div class="s-num">04</div>
+      <div>
+        <div class="s-name">Business Matching</div>
+        <div class="s-desc">Connect brands, suppliers, and operators that move the needle.</div>
+      </div>
+    </div>
+    <div class="service-card">
+      <div class="s-num">05</div>
+      <div>
+        <div class="s-name">Business Development</div>
+        <div class="s-desc">Strategic partnerships, franchising, and expansion roadmaps.</div>
+      </div>
+    </div>
+    <div class="service-card">
+      <div class="s-num">06</div>
+      <div>
+        <div class="s-name">Corporate Training</div>
+        <div class="s-desc">In-house workshops for restaurant teams & F&B leadership.</div>
+      </div>
+    </div>
+    <div class="service-card">
+      <div class="s-num">07</div>
+      <div>
+        <div class="s-name">Public Speaking</div>
+        <div class="s-desc">Industry insights from Tor and PenguinX leadership.</div>
+      </div>
+    </div>
+    <div class="service-card">
+      <div class="s-num">08</div>
+      <div>
+        <div class="s-name">Full-Funnel Demand</div>
+        <div class="s-desc">Awareness → consideration → conversion, end to end.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ====== WHY US ====== -->
+<section class="why" id="why">
+  <div class="section-head">
+    <div>
+      <div class="section-num">04 / Why PenguinX</div>
+    </div>
+    <h2 class="section-title">
+      Built on <span class="accent">real</span><br>
+      <span class="light">industry</span> equity<span class="end-dot"></span>
+    </h2>
+  </div>
+  <div class="why-grid">
+    <div class="why-card">
+      <div class="why-icon">01</div>
+      <div>
+        <div class="why-title">Food Industry Expertise</div>
+        <div class="why-desc">10+ years of hands-on F&B experience — understanding both restaurant owners and brand buyers from the inside.</div>
+      </div>
+    </div>
+    <div class="why-card">
+      <div class="why-icon">02</div>
+      <div>
+        <div class="why-title">Powerful Media & Network</div>
+        <div class="why-desc">Backed by Thailand's largest F&B business media (1.5M+ followers) and a trusted ecosystem of suppliers and operators.</div>
+      </div>
+    </div>
+    <div class="why-card">
+      <div class="why-icon">03</div>
+      <div>
+        <div class="why-title">Event Collaboration Power</div>
+        <div class="why-desc">IMPACT's event expertise meets Torpenguin's marketing influence — creating experiences that deliver real business outcomes.</div>
+      </div>
+    </div>
+    <div class="why-card">
+      <div class="why-icon">04</div>
+      <div>
+        <div class="why-title">Proven Results & Track Record</div>
+        <div class="why-desc">Trusted nationwide with proven gains in awareness, engagement, and lead conversion across 500+ partner brands.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ====== CLIENTS ====== -->
+<section class="clients">
+  <div class="clients-label mono">Trusted by 500+ F&B brands</div>
+  <div class="clients-marquee">
+    <div class="clients-track">
+      <span class="client-logo">Bar B Q <span class="light">Plaza</span></span>
+      <span class="client-logo">Café <span class="light">Amazon</span></span>
+      <span class="client-logo">After <span class="light">You</span></span>
+      <span class="client-logo">Yayoi</span>
+      <span class="client-logo">Ootoya</span>
+      <span class="client-logo">Sizzler</span>
+      <span class="client-logo">MK <span class="light">Restaurants</span></span>
+      <span class="client-logo">Inthanin</span>
+      <span class="client-logo">Bonchon</span>
+      <span class="client-logo">Bar B Q <span class="light">Plaza</span></span>
+      <span class="client-logo">Café <span class="light">Amazon</span></span>
+      <span class="client-logo">After <span class="light">You</span></span>
+      <span class="client-logo">Yayoi</span>
+      <span class="client-logo">Ootoya</span>
+      <span class="client-logo">Sizzler</span>
+      <span class="client-logo">MK <span class="light">Restaurants</span></span>
+      <span class="client-logo">Inthanin</span>
+      <span class="client-logo">Bonchon</span>
+    </div>
+  </div>
+</section>
+
+<!-- ====== FOUNDER ====== -->
+<section class="founder" id="about">
+  <div class="section-head">
+    <div>
+      <div class="section-num">05 / Founder</div>
+    </div>
+    <h2 class="section-title">
+      An architect who<br>
+      builds <span class="accent">ecosystems</span><span class="end-dot"></span>
+    </h2>
+  </div>
+  <div class="founder-grid">
+    <div class="founder-img"></div>
+    <div>
+      <p class="founder-quote">
+        We're not here to make restaurants visible. We're here to make them <span class="serif-em">last</span> — through community, knowledge, and the right partnerships.
+      </p>
+      <div class="founder-name">
+        <strong>Thanapong "Tor" Penguin</strong>
+        <span>Founder & CEO, PenguinX Co., Ltd.</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ====== CTA ====== -->
+<section class="cta" id="contact">
+  <div class="cta-eyebrow mono">— Let's build something together —</div>
+  <h2 class="cta-title">
+    Your brand<span class="end-dot"></span><br>
+    <span class="light">Our</span> <span class="accent">ecosystem</span><span class="end-dot"></span>
+  </h2>
+  <a href="mailto:tor@penguinx.co" class="cta-btn">Start a project</a>
+</section>
+
+<!-- ====== FOOTER ====== -->
+<footer>
+  <div class="foot-grid">
+    <div class="foot-brand">
+      <div class="logo"><span class="bold">Penguin</span><span class="light">X</span><span class="dot"></span></div>
+      <p>F&B Branding and Marketing Agency. A restaurant ecosystem builder firm based in Bangkok, Thailand.</p>
+    </div>
+    <div class="foot-col">
+      <h4>Ecosystem</h4>
+      <a href="#">Media</a>
+      <a href="#">Event</a>
+      <a href="#">Education</a>
+      <a href="#">Solution</a>
+    </div>
+    <div class="foot-col">
+      <h4>Company</h4>
+      <a href="#">About</a>
+      <a href="#">Work</a>
+      <a href="#">Services</a>
+      <a href="#">Insights</a>
+    </div>
+    <div class="foot-col">
+      <h4>Contact</h4>
+      <a href="mailto:tor@penguinx.co">tor@penguinx.co</a>
+      <a href="mailto:supersupp@penguinx.co">supersupp@penguinx.co</a>
+      <a href="tel:+66934514265">+66 93 951 4265</a>
+      <a href="tel:+66894493399">+66 89 449 3399</a>
+    </div>
+  </div>
+  <div class="foot-bottom">
+    <span>© 2026 Penguin X Co., Ltd. & Supersup Agency Co., Ltd.</span>
+    <span class="mono">www.penguinx.co</span>
+  </div>
+</footer>
+
+</body>
+</html>
