@@ -238,6 +238,154 @@ section{padding:120px 32px;position:relative}
   margin-left:0.02em;
 }
 
+/* === EVENTS (nested inside Ecosystem) === */
+.events-subhead{
+  margin-top:80px;
+  margin-bottom:32px;
+  padding-top:32px;
+  border-top:1px solid var(--line);
+  display:flex;
+  flex-direction:column;
+  gap:14px;
+}
+.events-sub-num{
+  font-family:'Anuphan',sans-serif;
+  font-size:11px;
+  color:var(--accent);
+  letter-spacing:0.15em;
+  text-transform:uppercase;
+  font-weight:500;
+}
+.events-sub-title{
+  font-family:'Anuphan',sans-serif;
+  font-size:clamp(22px,2.6vw,32px);
+  font-weight:600;
+  letter-spacing:-0.025em;
+  line-height:1.25;
+  color:var(--ink);
+  max-width:780px;
+}
+.events-sub-title .light{font-weight:300;color:var(--ink-mute)}
+.events-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  gap:16px;
+}
+.event-card{
+  background:var(--bg-2);
+  border:1px solid var(--line);
+  border-radius:14px;
+  overflow:hidden;
+  display:flex;flex-direction:column;
+  transition:transform 0.35s ease, border-color 0.35s ease, box-shadow 0.35s ease;
+}
+.event-card:hover{
+  border-color:rgba(219,169,58,0.4);
+  transform:translateY(-4px);
+  box-shadow:0 24px 60px rgba(0,0,0,0.4);
+}
+.event-head{
+  padding:22px 22px 18px;
+  display:flex;gap:14px;align-items:flex-start;
+  border-bottom:1px solid var(--line);
+}
+.event-badge{
+  width:54px;height:54px;
+  background:linear-gradient(135deg,var(--bg-3),#222220);
+  border:1px solid var(--line);
+  border-radius:10px;
+  display:flex;align-items:center;justify-content:center;
+  font-family:'Anuphan',sans-serif;
+  font-weight:700;
+  font-size:14px;
+  color:var(--accent);
+  letter-spacing:-0.02em;
+  flex-shrink:0;
+  text-align:center;
+  line-height:1.05;
+  padding:4px;
+}
+.event-info{min-width:0}
+.event-info h3{
+  font-family:'Anuphan',sans-serif;
+  font-size:17px;
+  font-weight:600;
+  letter-spacing:-0.02em;
+  line-height:1.2;
+  color:var(--ink);
+}
+.event-info p{
+  font-size:12.5px;
+  color:var(--ink-mute);
+  margin-top:5px;
+  line-height:1.45;
+  font-weight:400;
+}
+.event-media{
+  display:grid;
+  grid-template-rows:1fr 1fr;
+  gap:2px;
+  background:var(--line);
+  aspect-ratio:4/5;
+}
+.event-img{
+  background-size:cover;
+  background-position:center;
+  filter:grayscale(0.3) contrast(1.05);
+  transition:filter 0.5s ease, transform 0.6s ease;
+  transform:scale(1.01);
+}
+.event-card:hover .event-img{
+  filter:grayscale(0) contrast(1.1);
+  transform:scale(1.04);
+}
+.event-foot{
+  padding:22px;
+  display:flex;
+  justify-content:space-between;
+  align-items:flex-end;
+  gap:12px;
+}
+.event-stat .num{
+  font-family:'Anuphan',sans-serif;
+  font-size:30px;
+  font-weight:600;
+  color:var(--accent);
+  line-height:1;
+  letter-spacing:-0.03em;
+}
+.event-stat .num .plus{font-size:0.7em;font-weight:400;margin-left:1px}
+.event-stat .label{
+  font-size:10px;
+  text-transform:uppercase;
+  letter-spacing:0.14em;
+  color:var(--ink-mute);
+  margin-top:6px;
+  font-weight:500;
+}
+.event-link{
+  font-size:12px;
+  padding:9px 14px;
+  border:1px solid var(--line);
+  border-radius:100px;
+  color:var(--ink);
+  text-decoration:none;
+  font-weight:500;
+  letter-spacing:-0.005em;
+  transition:all 0.25s ease;
+  display:inline-flex;
+  align-items:center;
+  gap:6px;
+  white-space:nowrap;
+}
+.event-link:hover{
+  background:var(--accent);
+  color:var(--bg);
+  border-color:var(--accent);
+}
+.event-link::after{content:'↗';font-size:11px;transition:transform 0.2s}
+.event-link:hover::after{transform:translate(2px,-2px)}
+
 /* === ECOSYSTEM === */
 .ecosystem{
   background:var(--bg-2);
@@ -428,42 +576,77 @@ section{padding:120px 32px;position:relative}
 .services .section-title .accent{color:var(--bg)}
 .service-grid{
   display:grid;
-  grid-template-columns:repeat(4,1fr);
+  grid-template-columns:repeat(3,1fr);
   gap:1px;
   background:rgba(0,0,0,0.1);
   border:1px solid rgba(0,0,0,0.1);
 }
 .service-card{
   background:var(--accent);
-  padding:36px 28px;
-  min-height:260px;
-  display:flex;flex-direction:column;justify-content:space-between;
+  padding:24px 22px;
+  display:flex;flex-direction:column;
+  gap:20px;
   cursor:pointer;
+  position:relative;
+  overflow:hidden;
+  isolation:isolate;
   transition:all 0.3s ease;
 }
-.service-card:hover{background:var(--accent-2)}
-.service-card:hover .s-num{color:var(--bg)}
+.s-bg{
+  position:absolute;
+  inset:0;
+  z-index:-2;
+  background-size:cover;
+  background-position:center;
+  opacity:0;
+  transform:scale(1.02);
+  transition:opacity 0.5s ease, transform 0.7s ease, filter 0.5s ease;
+  filter:grayscale(0.2) contrast(1.05);
+}
+.s-overlay{
+  position:absolute;
+  inset:0;
+  z-index:-1;
+  background:linear-gradient(180deg,rgba(10,10,10,0.45) 0%,rgba(10,10,10,0.78) 100%);
+  opacity:0;
+  transition:opacity 0.5s ease;
+}
+.service-card:hover .s-bg{
+  opacity:1;
+  transform:scale(1.06);
+  filter:grayscale(0) contrast(1.1);
+}
+.service-card:hover .s-overlay{opacity:1}
+.service-card:hover .s-num{color:rgba(244,241,234,0.45)}
+.service-card:hover .s-name{color:var(--ink)}
+.service-card:hover .s-desc{color:rgba(244,241,234,0.82)}
 .s-num{
   font-family:'Anuphan',sans-serif;
-  font-size:48px;
+  font-size:28px;
   font-weight:300;
   color:rgba(0,0,0,0.3);
   letter-spacing:-0.03em;
-  transition:color 0.3s ease;
+  transition:color 0.4s ease;
+  line-height:1;
+  position:relative;
 }
 .s-name{
   font-family:'Anuphan',sans-serif;
-  font-size:22px;
+  font-size:26px;
   font-weight:600;
   line-height:1.15;
   letter-spacing:-0.025em;
+  transition:color 0.4s ease;
+  position:relative;
 }
 .s-desc{
-  font-size:13px;
+  font-size:12.5px;
   color:rgba(0,0,0,0.65);
-  line-height:1.55;
-  margin-top:8px;
+  line-height:1.5;
+  margin-top:6px;
   font-weight:400;
+  transition:color 0.4s ease;
+  position:relative;
 }
 
 /* === WHY === */
@@ -618,7 +801,7 @@ section{padding:120px 32px;position:relative}
 .cta-eyebrow{color:var(--ink-mute);margin-bottom:32px}
 .cta-title{
   font-family:'Anuphan',sans-serif;
-  font-size:clamp(48px,9vw,144px);
+  font-size:clamp(34px,6.3vw,100px);
   font-weight:600;
   line-height:0.95;
   letter-spacing:-0.045em;
@@ -695,6 +878,12 @@ footer{padding:60px 32px 32px;background:var(--bg);border-top:1px solid var(--li
 }
 
 /* === RESPONSIVE === */
+@media (max-width:1100px){
+  .service-grid{grid-template-columns:repeat(2,1fr)}
+}
+@media (max-width:560px){
+  .service-grid{grid-template-columns:1fr}
+}
 @media (max-width:900px){
   nav.top{padding:14px 20px}
   .nav-links{display:none}
@@ -705,7 +894,7 @@ footer{padding:60px 32px 32px;background:var(--bg);border-top:1px solid var(--li
   .hero-stats{gap:28px;flex:1 1 100%}
   .stat .num{font-size:36px}
   .section-head{grid-template-columns:1fr;gap:24px}
-  .eco-grid,.service-grid{grid-template-columns:1fr}
+  .eco-grid{grid-template-columns:1fr}
   .eco-card.media,.eco-card.event,.eco-card.education,.eco-card.solution{grid-column:span 1}
   .why-grid{grid-template-columns:1fr}
   .why-card{border-right:none!important;border-bottom:1px solid var(--line)!important}
@@ -858,6 +1047,117 @@ footer{padding:60px 32px 32px;background:var(--bg);border-top:1px solid var(--li
       </div>
     </div>
   </div>
+
+  <div class="events-subhead">
+    <div class="events-sub-num">↘ Inside Penguin Event</div>
+    <h3 class="events-sub-title">5 Signature Events <span class="light">— annual touchpoints to the Thai F&B market</span></h3>
+  </div>
+  <div class="events-grid">
+    <article class="event-card">
+      <div class="event-head">
+        <div class="event-badge">TRC<br>2025</div>
+        <div class="event-info">
+          <h3>TRC 2025</h3>
+          <p>Thailand Restaurant Conference</p>
+        </div>
+      </div>
+      <div class="event-media">
+        <div class="event-img" style="background-image:url('https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=900&q=80')"></div>
+        <div class="event-img" style="background-image:url('https://images.unsplash.com/photo-1559223607-a43c990c692c?w=900&q=80')"></div>
+      </div>
+      <div class="event-foot">
+        <div class="event-stat">
+          <div class="num">4,000<span class="plus">+</span></div>
+          <div class="label">Attendees</div>
+        </div>
+        <a href="#" class="event-link" target="_blank" rel="noopener">Visit</a>
+      </div>
+    </article>
+
+    <article class="event-card">
+      <div class="event-head">
+        <div class="event-badge">RES<br>TECH</div>
+        <div class="event-info">
+          <h3>Restech 2025</h3>
+          <p>Restaurant Technology & Equipment Expo</p>
+        </div>
+      </div>
+      <div class="event-media">
+        <div class="event-img" style="background-image:url('https://images.unsplash.com/photo-1556761175-4b46a572b786?w=900&q=80')"></div>
+        <div class="event-img" style="background-image:url('https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=900&q=80')"></div>
+      </div>
+      <div class="event-foot">
+        <div class="event-stat">
+          <div class="num">15,000<span class="plus">+</span></div>
+          <div class="label">Attendees</div>
+        </div>
+        <a href="#" class="event-link" target="_blank" rel="noopener">Visit</a>
+      </div>
+    </article>
+
+    <article class="event-card">
+      <div class="event-head">
+        <div class="event-badge">DAMN<br>EXPO</div>
+        <div class="event-info">
+          <h3>Damn Expo</h3>
+          <p>Nightlife Business & Networking Expo</p>
+        </div>
+      </div>
+      <div class="event-media">
+        <div class="event-img" style="background-image:url('https://images.unsplash.com/photo-1514933651103-005eec06c04b?w=900&q=80')"></div>
+        <div class="event-img" style="background-image:url('https://images.unsplash.com/photo-1543007630-9710e4a00a20?w=900&q=80')"></div>
+      </div>
+      <div class="event-foot">
+        <div class="event-stat">
+          <div class="num">4,500<span class="plus">+</span></div>
+          <div class="label">Attendees</div>
+        </div>
+        <a href="#" class="event-link" target="_blank" rel="noopener">Visit</a>
+      </div>
+    </article>
+
+    <article class="event-card">
+      <div class="event-head">
+        <div class="event-badge">CAF<br>CON</div>
+        <div class="event-info">
+          <h3>CafCon</h3>
+          <p>Café Business Conference & Trade Show</p>
+        </div>
+      </div>
+      <div class="event-media">
+        <div class="event-img" style="background-image:url('https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=900&q=80')"></div>
+        <div class="event-img" style="background-image:url('https://images.unsplash.com/photo-1453614512568-c4024d13c247?w=900&q=80')"></div>
+      </div>
+      <div class="event-foot">
+        <div class="event-stat">
+          <div class="num">5,000<span class="plus">+</span></div>
+          <div class="label">Attendees</div>
+        </div>
+        <a href="#" class="event-link" target="_blank" rel="noopener">Visit</a>
+      </div>
+    </article>
+
+    <article class="event-card">
+      <div class="event-head">
+        <div class="event-badge">ลงแขก</div>
+        <div class="event-info">
+          <h3>ลงแขก</h3>
+          <p>F&B Community Gathering & Networking</p>
+        </div>
+      </div>
+      <div class="event-media">
+        <div class="event-img" style="background-image:url('https://images.unsplash.com/photo-1530103862676-de8c9debad1d?w=900&q=80')"></div>
+        <div class="event-img" style="background-image:url('https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=900&q=80')"></div>
+      </div>
+      <div class="event-foot">
+        <div class="event-stat">
+          <div class="num">2,000<span class="plus">+</span></div>
+          <div class="label">Attendees</div>
+        </div>
+        <a href="#" class="event-link" target="_blank" rel="noopener">Visit</a>
+      </div>
+    </article>
+  </div>
 </section>
 
 <!-- ====== WORK / CASE STUDIES ====== -->
@@ -930,6 +1230,8 @@ footer{padding:60px 32px 32px;background:var(--bg);border-top:1px solid var(--li
   </div>
   <div class="service-grid">
     <div class="service-card">
+      <div class="s-bg" style="background-image:url('https://images.unsplash.com/photo-1542038784456-1ea8e935640e?w=900&q=80')"></div>
+      <div class="s-overlay"></div>
       <div class="s-num">01</div>
       <div>
         <div class="s-name">Brand Storytelling</div>
@@ -937,6 +1239,8 @@ footer{padding:60px 32px 32px;background:var(--bg);border-top:1px solid var(--li
       </div>
     </div>
     <div class="service-card">
+      <div class="s-bg" style="background-image:url('https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=900&q=80')"></div>
+      <div class="s-overlay"></div>
       <div class="s-num">02</div>
       <div>
         <div class="s-name">Marketing Strategy</div>
@@ -944,6 +1248,8 @@ footer{padding:60px 32px 32px;background:var(--bg);border-top:1px solid var(--li
       </div>
     </div>
     <div class="service-card">
+      <div class="s-bg" style="background-image:url('https://images.unsplash.com/photo-1511795409834-ef04bbd61622?w=900&q=80')"></div>
+      <div class="s-overlay"></div>
       <div class="s-num">03</div>
       <div>
         <div class="s-name">Event Lead Generation</div>
@@ -951,6 +1257,8 @@ footer{padding:60px 32px 32px;background:var(--bg);border-top:1px solid var(--li
       </div>
     </div>
     <div class="service-card">
+      <div class="s-bg" style="background-image:url('https://images.unsplash.com/photo-1556761175-4b46a572b786?w=900&q=80')"></div>
+      <div class="s-overlay"></div>
       <div class="s-num">04</div>
       <div>
         <div class="s-name">Business Matching</div>
@@ -958,6 +1266,8 @@ footer{padding:60px 32px 32px;background:var(--bg);border-top:1px solid var(--li
       </div>
     </div>
     <div class="service-card">
+      <div class="s-bg" style="background-image:url('https://images.unsplash.com/photo-1551836022-deb4988cc6c0?w=900&q=80')"></div>
+      <div class="s-overlay"></div>
       <div class="s-num">05</div>
       <div>
         <div class="s-name">Business Development</div>
@@ -965,24 +1275,12 @@ footer{padding:60px 32px 32px;background:var(--bg);border-top:1px solid var(--li
       </div>
     </div>
     <div class="service-card">
+      <div class="s-bg" style="background-image:url('https://images.unsplash.com/photo-1475721027785-f74eccf877e2?w=900&q=80')"></div>
+      <div class="s-overlay"></div>
       <div class="s-num">06</div>
       <div>
-        <div class="s-name">Corporate Training</div>
-        <div class="s-desc">In-house workshops for restaurant teams & F&B leadership.</div>
-      </div>
-    </div>
-    <div class="service-card">
-      <div class="s-num">07</div>
-      <div>
-        <div class="s-name">Public Speaking</div>
-        <div class="s-desc">Industry insights from Tor and PenguinX leadership.</div>
-      </div>
-    </div>
-    <div class="service-card">
-      <div class="s-num">08</div>
-      <div>
-        <div class="s-name">Full-Funnel Demand</div>
-        <div class="s-desc">Awareness → consideration → conversion, end to end.</div>
+        <div class="s-name">Corporate Training & Public Speaking</div>
+        <div class="s-desc">In-house workshops and industry keynotes from Tor and PenguinX leadership for F&B teams.</div>
       </div>
     </div>
   </div>
