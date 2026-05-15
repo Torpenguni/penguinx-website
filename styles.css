@@ -883,6 +883,18 @@ section{padding:80px 32px;position:relative}
   font-weight:500;
   letter-spacing:0.005em;
 }
+.founder-email{
+  display:inline-block;
+  margin-top:6px;
+  font-size:12.5px;
+  color:var(--ink-mute);
+  text-decoration:none;
+  letter-spacing:-0.005em;
+  font-weight:500;
+  transition:color 0.2s ease;
+  word-break:break-all;
+}
+.founder-email:hover{color:var(--accent)}
 .founder-points{
   list-style:none;
   display:flex;
