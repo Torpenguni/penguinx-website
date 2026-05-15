@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Work Modal Preview — PenguinX</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anuphan:wght@100;200;300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#0a0a0a;
+    --bg-2:#141413;
+    --bg-3:#1a1a18;
+    --ink:#f4f1ea;
+    --ink-mute:#8a8680;
+    --accent:#dba93a;
+    --accent-2:#e8c050;
+    --line:rgba(244,241,234,0.08);
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{
+    background:var(--bg);
+    color:var(--ink);
+    font-family:'Anuphan','Inter',-apple-system,sans-serif;
+    font-weight:300;
+    overflow-x:hidden;
+  }
+
+  /* PREVIEW BANNER */
+  .preview-banner{
+    background:var(--accent);
+    color:var(--bg);
+    padding:10px 24px;
+    text-align:center;
+    font-size:13px;
+    font-weight:500;
+    letter-spacing:0.5px;
+  }
+
+  /* CASE LIST (mirrors homepage) */
+  .wrap{max-width:1240px;margin:0 auto;padding:80px 40px}
+  .section-num{
+    font-size:12px;color:var(--ink-mute);
+    letter-spacing:0.15em;text-transform:uppercase;
+    margin-bottom:20px;
+  }
+  .section-title{
+    font-size:64px;font-weight:600;line-height:1.05;
+    letter-spacing:-0.02em;margin-bottom:60px;
+  }
+  .section-title .light{color:var(--ink-mute);font-weight:300}
+  .section-title .accent{color:var(--accent)}
+
+  .case-list{display:flex;flex-direction:column}
+  .case-row{
+    display:grid;
+    grid-template-columns:60px 1fr 80px;
+    gap:24px;
+    padding:32px 16px;
+    align-items:center;
+    border-bottom:1px solid var(--line);
+    cursor:pointer;
+    position:relative;
+    transition:all 0.3s ease;
+  }
+  .case-row::before{
+    content:'';position:absolute;inset:0;
+    background:linear-gradient(90deg,rgba(219,169,58,0.06) 0%,transparent 100%);
+    opacity:0;transition:opacity 0.3s ease;pointer-events:none;
+  }
+  .case-row:hover::before{opacity:1}
+  .case-row:hover .case-name{color:var(--accent)}
+  .case-row:hover .case-arrow{transform:translateX(8px);color:var(--accent)}
+  .case-num{font-size:11px;color:var(--ink-mute);letter-spacing:0.1em}
+  .case-name{font-size:28px;font-weight:600;transition:color 0.3s ease}
+  .case-name .light{font-weight:300;color:var(--ink-mute)}
+  .case-arrow{font-size:22px;text-align:right;transition:all 0.3s ease;color:var(--ink)}
+
+  /* MODAL OVERLAY */
+  .modal{
+    position:fixed;inset:0;
+    background:rgba(5,5,5,0.94);
+    backdrop-filter:blur(8px);
+    -webkit-backdrop-filter:blur(8px);
+    z-index:1000;
+    display:none;
+    opacity:0;
+    transition:opacity 0.35s ease;
+    overflow-y:auto;
+    overscroll-behavior:contain;
+  }
+  .modal.open{display:block;opacity:1}
+  .modal.open .modal-inner{transform:translateY(0)}
+
+  .modal-inner{
+    max-width:980px;
+    margin:0 auto;
+    padding:80px 24px 120px;
+    transform:translateY(20px);
+    transition:transform 0.4s cubic-bezier(0.2,0.8,0.2,1);
+  }
+
+  /* MODAL CLOSE / NAV BAR */
+  .modal-bar{
+    position:fixed;
+    top:0;left:0;right:0;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:20px 32px;
+    background:linear-gradient(180deg,rgba(10,10,10,0.85) 0%,transparent 100%);
+    z-index:10;
+    backdrop-filter:blur(4px);
+  }
+  .modal-counter{
+    font-size:12px;color:var(--ink-mute);
+    letter-spacing:0.15em;text-transform:uppercase;
+  }
+  .modal-counter b{color:var(--ink);font-weight:500}
+  .modal-close{
+    background:none;border:1px solid var(--line);
+    color:var(--ink);
+    width:44px;height:44px;border-radius:50%;
+    cursor:pointer;font-size:18px;
+    display:flex;align-items:center;justify-content:center;
+    transition:all 0.2s ease;
+  }
+  .modal-close:hover{
+    background:var(--accent);color:var(--bg);
+    border-color:var(--accent);
+    transform:rotate(90deg);
+  }
+
+  /* MODAL HEADER (minimal copy) */
+  .modal-head{
+    margin-bottom:48px;
+    padding-bottom:32px;
+    border-bottom:1px solid var(--line);
+  }
+  .modal-tags{
+    display:flex;gap:12px;flex-wrap:wrap;
+    margin-bottom:20px;
+  }
+  .modal-tag{
+    font-size:11px;letter-spacing:0.15em;text-transform:uppercase;
+    color:var(--accent);
+    padding:6px 12px;
+    border:1px solid rgba(219,169,58,0.3);
+    border-radius:100px;
+  }
+  .modal-tag.muted{
+    color:var(--ink-mute);
+    border-color:var(--line);
+  }
+  .modal-title{
+    font-size:56px;font-weight:600;line-height:1.05;
+    letter-spacing:-0.02em;
+    margin-bottom:20px;
+  }
+  .modal-lede{
+    font-size:18px;color:var(--ink-mute);
+    line-height:1.5;
+    max-width:680px;
+  }
+
+  /* GALLERY (the focus — scroll through images) */
+  .gallery{display:flex;flex-direction:column;gap:16px}
+  .gallery-item{
+    width:100%;
+    border-radius:8px;
+    overflow:hidden;
+    background:var(--bg-2);
+    position:relative;
+  }
+  .gallery-item img{
+    display:block;width:100%;height:auto;
+    object-fit:cover;
+  }
+  .gallery-item.tall img{aspect-ratio:4/5;object-fit:cover}
+  .gallery-item.wide img{aspect-ratio:16/9;object-fit:cover}
+  .gallery-item.square img{aspect-ratio:1/1;object-fit:cover}
+  .gallery-caption{
+    position:absolute;bottom:0;left:0;right:0;
+    padding:20px 24px;
+    background:linear-gradient(180deg,transparent 0%,rgba(0,0,0,0.7) 100%);
+    font-size:13px;color:var(--ink);
+    letter-spacing:0.05em;
+  }
+
+  /* FOOTER NAV INSIDE MODAL */
+  .modal-foot{
+    display:flex;justify-content:space-between;align-items:center;
+    margin-top:64px;
+    padding-top:32px;
+    border-top:1px solid var(--line);
+  }
+  .modal-nav{
+    background:none;border:none;color:var(--ink);
+    font-size:14px;letter-spacing:0.1em;text-transform:uppercase;
+    cursor:pointer;
+    display:flex;align-items:center;gap:12px;
+    padding:12px 0;
+    transition:color 0.2s ease;
+  }
+  .modal-nav:hover{color:var(--accent)}
+  .modal-nav:disabled{opacity:0.3;cursor:not-allowed}
+  .modal-nav .label{font-size:11px;color:var(--ink-mute);display:block;margin-bottom:4px}
+  .modal-nav .title{font-size:16px;text-transform:none;letter-spacing:0;font-weight:500}
+  .modal-nav.next{text-align:right;flex-direction:row-reverse}
+
+  /* lock body scroll when modal open */
+  body.modal-open{overflow:hidden}
+
+  @media (max-width:720px){
+    .wrap{padding:60px 20px}
+    .section-title{font-size:40px;margin-bottom:40px}
+    .case-row{grid-template-columns:30px 1fr 50px;gap:16px;padding:24px 8px}
+    .case-name{font-size:20px}
+    .modal-inner{padding:90px 16px 80px}
+    .modal-title{font-size:36px}
+    .modal-lede{font-size:16px}
+    .modal-bar{padding:14px 20px}
+  }
+</style>
+</head>
+<body>
+
+<div class="preview-banner">PREVIEW · Click any case row to see the modal pattern</div>
+
+<div class="wrap">
+  <div class="section-num">02 / Selected Work</div>
+  <h2 class="section-title">
+    Brands that grew<br>
+    <span class="light">with</span> <span class="accent">us</span>.
+  </h2>
+
+  <div class="case-list">
+    <div class="case-row" data-case="0">
+      <div class="case-num">001</div>
+      <div class="case-name">Lineman Wongnai <span class="light">— Awareness / Brand Activations</span></div>
+      <div class="case-arrow">→</div>
+    </div>
+    <div class="case-row" data-case="1">
+      <div class="case-num">002</div>
+      <div class="case-name">Thaifex Horec <span class="light">— Conference Management</span></div>
+      <div class="case-arrow">→</div>
+    </div>
+    <div class="case-row" data-case="2">
+      <div class="case-num">003</div>
+      <div class="case-name">Makro <span class="light">— New Product Launch / Co-Host Event</span></div>
+      <div class="case-arrow">→</div>
+    </div>
+    <div class="case-row" data-case="3">
+      <div class="case-num">004</div>
+      <div class="case-name">Pepsi Co. <span class="light">— Awareness / Nationwide Lead Gen</span></div>
+      <div class="case-arrow">→</div>
+    </div>
+    <div class="case-row" data-case="4">
+      <div class="case-num">005</div>
+      <div class="case-name">Impact <span class="light">— New Business Initiative</span></div>
+      <div class="case-arrow">→</div>
+    </div>
+    <div class="case-row" data-case="5">
+      <div class="case-num">006</div>
+      <div class="case-name">Streamwash <span class="light">— Full Funnel Lead Generation</span></div>
+      <div class="case-arrow">→</div>
+    </div>
+  </div>
+</div>
+
+<!-- MODAL -->
+<div class="modal" id="modal" aria-hidden="true">
+  <div class="modal-bar">
+    <div class="modal-counter">Case <b id="caseNum">001</b> / <span id="caseTotal">006</span></div>
+    <button class="modal-close" id="closeBtn" aria-label="Close">✕</button>
+  </div>
+  <div class="modal-inner" id="modalInner">
+    <!-- content injected by JS -->
+  </div>
+</div>
+
+<script>
+  const CASES = [
+    {
+      num:'001', name:'Lineman Wongnai',
+      tags:['Awareness','Brand Activations','2024'],
+      title:'Nationwide brand activations for Thailand\'s biggest food platform.',
+      lede:'A multi-city campaign turning Lineman Wongnai from a delivery app into a household name with real F&B operators.',
+      images:[
+        {src:'https://images.unsplash.com/photo-1556761175-4b46a572b786?w=1400&q=85', ratio:'wide', cap:'Bangkok launch event · 800+ operators'},
+        {src:'https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=1400&q=85', ratio:'tall', cap:'Regional roadshow — Chiang Mai'},
+        {src:'https://images.unsplash.com/photo-1530103862676-de8c9debad1d?w=1400&q=85', ratio:'square', cap:'Partner-operator workshops'},
+        {src:'https://images.unsplash.com/photo-1559339352-11d035aa65de?w=1400&q=85', ratio:'wide', cap:'Behind-the-scenes content reach: 4.2M'},
+      ]
+    },
+    {
+      num:'002', name:'Thaifex Horec',
+      tags:['Conference','B2B','2025'],
+      title:'Conference programming for Asia\'s largest F&B trade show.',
+      lede:'Curated speakers, tracks, and matchmaking for thousands of regional operators and suppliers.',
+      images:[
+        {src:'https://images.unsplash.com/photo-1505236858219-8359eb29e329?w=1400&q=85', ratio:'wide', cap:'Mainstage · day one'},
+        {src:'https://images.unsplash.com/photo-1551836022-d5d88e9218df?w=1400&q=85', ratio:'tall', cap:'Operator matchmaking floor'},
+        {src:'https://images.unsplash.com/photo-1559136555-9303baea8ebd?w=1400&q=85', ratio:'wide', cap:'Panel: scaling QSR in SEA'},
+      ]
+    },
+    {
+      num:'003', name:'Makro',
+      tags:['Product Launch','Co-Host','2024'],
+      title:'Co-hosted launch event for Makro\'s new F&B lineup.',
+      lede:'A launch built around the people who actually buy — restaurant owners, chefs, and procurement leads.',
+      images:[
+        {src:'https://images.unsplash.com/photo-1542838132-92c53300491e?w=1400&q=85', ratio:'wide', cap:'Product showcase floor'},
+        {src:'https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=1400&q=85', ratio:'tall', cap:'Chef demo stage'},
+        {src:'https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=1400&q=85', ratio:'square', cap:'B2B matchmaking sessions'},
+      ]
+    },
+    {
+      num:'004', name:'Pepsi Co.',
+      tags:['Awareness','Nationwide Lead Gen','2025'],
+      title:'Nationwide lead generation for PepsiCo\'s F&B channel.',
+      lede:'Connecting Pepsi\'s B2B team with operators across 45 provinces — turning awareness into qualified accounts.',
+      images:[
+        {src:'https://images.unsplash.com/photo-1561758033-d89a9ad46330?w=1400&q=85', ratio:'wide', cap:'Regional activation · Khon Kaen'},
+        {src:'https://images.unsplash.com/photo-1452860606245-08befc0ff44b?w=1400&q=85', ratio:'tall', cap:'Owner roundtable'},
+        {src:'https://images.unsplash.com/photo-1543007630-9710e4a00a20?w=1400&q=85', ratio:'wide', cap:'Sampling tour route map'},
+      ]
+    },
+    {
+      num:'005', name:'Impact',
+      tags:['New Business','Partnership','2025'],
+      title:'A new business initiative with IMPACT.',
+      lede:'IMPACT\'s event infrastructure meets PenguinX\'s F&B network — building a new format that brings both audiences into one room.',
+      images:[
+        {src:'https://images.unsplash.com/photo-1517457373958-b7bdd4587205?w=1400&q=85', ratio:'wide', cap:'Joint venue planning'},
+        {src:'https://images.unsplash.com/photo-1531058020387-3be344556be6?w=1400&q=85', ratio:'square', cap:'Co-branded format announcement'},
+        {src:'https://images.unsplash.com/photo-1511795409834-ef04bbd61622?w=1400&q=85', ratio:'tall', cap:'Pilot event — IMPACT Muang Thong'},
+      ]
+    },
+    {
+      num:'006', name:'Streamwash',
+      tags:['Full Funnel','B2B Lead Gen','2024'],
+      title:'Full-funnel lead generation for Streamwash.',
+      lede:'From awareness to qualified pipeline — a B2B program that turned Streamwash into a category-defining brand for F&B operators.',
+      images:[
+        {src:'https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=1400&q=85', ratio:'wide', cap:'Brand campaign hero'},
+        {src:'https://images.unsplash.com/photo-1497366216548-37526070297c?w=1400&q=85', ratio:'tall', cap:'Sales enablement deck — excerpt'},
+        {src:'https://images.unsplash.com/photo-1556761175-5973dc0f32e7?w=1400&q=85', ratio:'wide', cap:'Pipeline + conversion data'},
+      ]
+    },
+  ];
+
+  const modal = document.getElementById('modal');
+  const modalInner = document.getElementById('modalInner');
+  const caseNumEl = document.getElementById('caseNum');
+  const caseTotalEl = document.getElementById('caseTotal');
+  caseTotalEl.textContent = String(CASES.length).padStart(3,'0');
+
+  let currentIdx = 0;
+
+  function render(idx){
+    const c = CASES[idx];
+    currentIdx = idx;
+    caseNumEl.textContent = c.num;
+    const tagsHtml = c.tags.map((t,i)=>`<span class="modal-tag${i>0?' muted':''}">${t}</span>`).join('');
+    const galleryHtml = c.images.map(img=>`
+      <div class="gallery-item ${img.ratio}">
+        <img src="${img.src}" alt="${c.name}" loading="lazy">
+        ${img.cap?`<div class="gallery-caption">${img.cap}</div>`:''}
+      </div>
+    `).join('');
+    const prev = idx > 0 ? CASES[idx-1] : null;
+    const next = idx < CASES.length-1 ? CASES[idx+1] : null;
+    modalInner.innerHTML = `
+      <div class="modal-head">
+        <div class="modal-tags">${tagsHtml}</div>
+        <h1 class="modal-title">${c.title}</h1>
+        <p class="modal-lede">${c.lede}</p>
+      </div>
+      <div class="gallery">${galleryHtml}</div>
+      <div class="modal-foot">
+        <button class="modal-nav prev" ${prev?'':'disabled'} onclick="render(${idx-1})">
+          ${prev ? `← <span><span class="label">Previous</span><span class="title">${prev.name}</span></span>` : '←'}
+        </button>
+        <button class="modal-nav next" ${next?'':'disabled'} onclick="render(${idx+1})">
+          ${next ? `→ <span><span class="label">Next</span><span class="title">${next.name}</span></span>` : '→'}
+        </button>
+      </div>
+    `;
+    modal.scrollTop = 0;
+  }
+
+  function open(idx){
+    render(idx);
+    modal.classList.add('open');
+    modal.setAttribute('aria-hidden','false');
+    document.body.classList.add('modal-open');
+  }
+  function close(){
+    modal.classList.remove('open');
+    modal.setAttribute('aria-hidden','true');
+    document.body.classList.remove('modal-open');
+  }
+
+  document.querySelectorAll('.case-row').forEach(row=>{
+    row.addEventListener('click',()=>open(Number(row.dataset.case)));
+  });
+  document.getElementById('closeBtn').addEventListener('click',close);
+  modal.addEventListener('click',(e)=>{if(e.target===modal)close()});
+  document.addEventListener('keydown',(e)=>{
+    if(!modal.classList.contains('open'))return;
+    if(e.key==='Escape')close();
+    if(e.key==='ArrowRight'&&currentIdx<CASES.length-1)render(currentIdx+1);
+    if(e.key==='ArrowLeft'&&currentIdx>0)render(currentIdx-1);
+  });
+</script>
+
+</body>
+</html>
