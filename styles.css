@@ -163,7 +163,7 @@ nav.top{
   white-space:nowrap;
 }
 .stat .label{max-width:none}
-.stat .num .light{font-weight:300;font-size:0.84em;color:var(--ink-mute)}
+.stat .num .light{font-weight:300;font-size:1em;color:var(--ink-mute)}
 .stat .label{
   font-size:11px;color:var(--ink-mute);
   text-transform:uppercase;letter-spacing:0.12em;
@@ -693,7 +693,7 @@ section{padding:80px 32px;position:relative}
 }
 .cc-stat .num{
   font-family:'Anuphan',sans-serif;
-  font-size:clamp(32px,3.4vw,44px);
+  font-size:clamp(38px,4.1vw,53px);
   font-weight:600;
   letter-spacing:-0.04em;
   background:linear-gradient(160deg,var(--accent-2) 0%,var(--accent) 100%);
@@ -704,11 +704,11 @@ section{padding:80px 32px;position:relative}
   white-space:nowrap;
 }
 .cc-stat .label{
-  font-size:11px;
+  font-size:13px;
   text-transform:uppercase;
   letter-spacing:0.14em;
   color:var(--ink-mute);
-  margin-top:10px;
+  margin-top:12px;
   font-weight:500;
 }
 .cc-body{display:block}
@@ -853,7 +853,7 @@ section{padding:80px 32px;position:relative}
 .founder-name-text strong{
   display:block;
   font-family:'Anuphan',sans-serif;
-  font-size:20px;
+  font-size:24px;
   font-weight:600;
   letter-spacing:-0.015em;
   color:var(--ink);
@@ -1287,7 +1287,7 @@ footer{padding:60px 32px 32px;background:var(--bg);border-top:1px solid var(--li
   .cc-stats{gap:32px;margin-bottom:32px;padding:20px 0}
   .cc-titleline{gap:14px;margin-top:6px}
   .cc-stats{gap:24px;padding:18px 0}
-  .cc-stat .num{font-size:30px}
+  .cc-stat .num{font-size:36px}
   .why-card{padding:24px 22px;min-height:240px}
   .why-stat{font-size:52px}
   .case-row{grid-template-columns:30px 1fr 60px;gap:16px}
