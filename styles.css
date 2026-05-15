@@ -163,7 +163,7 @@ nav.top{
   white-space:nowrap;
 }
 .stat .label{max-width:none}
-.stat .num .light{font-weight:300;font-size:0.7em;color:var(--ink-mute)}
+.stat .num .light{font-weight:300;font-size:0.84em;color:var(--ink-mute)}
 .stat .label{
   font-size:11px;color:var(--ink-mute);
   text-transform:uppercase;letter-spacing:0.12em;
@@ -849,23 +849,11 @@ section{padding:80px 32px;position:relative}
   padding-bottom:20px;
   border-bottom:1px solid var(--line);
 }
-.founder-avatar{
-  width:52px;height:52px;
-  border-radius:50%;
-  background:linear-gradient(135deg,var(--bg-3),#222220);
-  border:1px solid var(--line);
-  display:flex;align-items:center;justify-content:center;
-  font-family:'Anuphan',sans-serif;
-  font-size:12px;
-  font-weight:700;
-  color:var(--accent);
-  letter-spacing:0.02em;
-  flex-shrink:0;
-}
+.founder-avatar{display:none}
 .founder-name-text strong{
   display:block;
   font-family:'Anuphan',sans-serif;
-  font-size:17px;
+  font-size:20px;
   font-weight:600;
   letter-spacing:-0.015em;
   color:var(--ink);
