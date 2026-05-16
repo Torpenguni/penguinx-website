@@ -386,9 +386,14 @@ section{padding:80px 32px;position:relative}
   content:'';
   position:absolute;
   left:-32px;right:-32px;top:0;bottom:0;
-  background:var(--bg-2);
+  background-color:var(--bg-2);
+  background-image:var(--brand-img);
+  background-size:cover;
+  background-position:center;
+  background-blend-mode:luminosity;
   opacity:0;z-index:-1;
-  transition:opacity 0.3s;
+  transition:opacity 0.4s ease;
+  filter:contrast(1.05) brightness(0.55);
 }
 .case-row:hover::before{opacity:1}
 .case-row:hover .case-name{color:var(--accent)}
