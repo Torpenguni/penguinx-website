@@ -321,8 +321,27 @@
       <p class="cc-tagline">Built by restaurant owners, for restaurant owners — a peer-to-peer network that turns local competitors into trusted allies, gathering F&B operators across 45 provinces to share, learn, and grow together.</p>
     </div>
   </div>
-  <div class="community-collage">
-    <img src="Community/community.png" alt="LongKaek community gatherings across Thailand" class="cc-collage-img">
+  <div class="community-slider">
+    <div class="community-track">
+      <img src="Community/community1.jpg" alt="LongKaek community" loading="lazy">
+      <img src="Community/community2.JPG" alt="LongKaek community" loading="lazy">
+      <img src="Community/community3.JPG" alt="LongKaek community" loading="lazy">
+      <img src="Community/community4.JPG" alt="LongKaek community" loading="lazy">
+      <img src="Community/community5.JPG" alt="LongKaek community" loading="lazy">
+      <img src="Community/community6.JPG" alt="LongKaek community" loading="lazy">
+      <img src="Community/community7.JPG" alt="LongKaek community" loading="lazy">
+      <img src="Community/community8.JPG" alt="LongKaek community" loading="lazy">
+      <img src="Community/community9.JPG" alt="LongKaek community" loading="lazy">
+      <img src="Community/community1.jpg" alt="" aria-hidden="true" loading="lazy">
+      <img src="Community/community2.JPG" alt="" aria-hidden="true" loading="lazy">
+      <img src="Community/community3.JPG" alt="" aria-hidden="true" loading="lazy">
+      <img src="Community/community4.JPG" alt="" aria-hidden="true" loading="lazy">
+      <img src="Community/community5.JPG" alt="" aria-hidden="true" loading="lazy">
+      <img src="Community/community6.JPG" alt="" aria-hidden="true" loading="lazy">
+      <img src="Community/community7.JPG" alt="" aria-hidden="true" loading="lazy">
+      <img src="Community/community8.JPG" alt="" aria-hidden="true" loading="lazy">
+      <img src="Community/community9.JPG" alt="" aria-hidden="true" loading="lazy">
+    </div>
   </div>
   <div class="cc-stats">
     <div class="cc-stat"><div class="num">45</div><div class="label">Provinces</div></div>
@@ -484,7 +503,7 @@
 <section class="shorts" id="shorts">
   <div class="shorts-head">
     <div class="shorts-head-left">
-      <div class="shorts-num">06.5 / Shorts</div>
+      <div class="shorts-num">06.5 / Videos</div>
       <h2 class="shorts-title">
         From <span class="light">the</span> <span class="accent">channel</span>.
       </h2>
@@ -764,7 +783,7 @@
     function escapeHtml(s){return String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));}
     function render(items){
       scroller.innerHTML = items.map(s=>`
-        <a class="short" href="https://www.youtube.com/shorts/${encodeURIComponent(s.id)}" target="_blank" rel="noopener">
+        <a class="short" href="https://www.youtube.com/watch?v=${encodeURIComponent(s.id)}" target="_blank" rel="noopener">
           <img src="${escapeHtml(s.thumb)}" alt="${escapeHtml(s.title)}" loading="lazy">
           <div class="short-overlay"></div>
           ${s.views?`<div class="short-views">${escapeHtml(s.views)} views</div>`:''}
@@ -781,11 +800,11 @@
       render(data.items);
     }catch(e){
       render([
-        {id:'dQw4w9WgXcQ',title:'เปิดร้านก๋วยเตี๋ยว ทำไมถึงเจ๊ง',thumb:'https://i.ytimg.com/vi/dQw4w9WgXcQ/maxresdefault.jpg',duration:'0:58',views:'1.2M'},
-        {id:'abc123',title:'5 ข้อที่ร้านอาหารต้องรู้ก่อนเปิดสาขา',thumb:'https://i.ytimg.com/vi/abc123/maxresdefault.jpg',duration:'1:02',views:'880K'},
-        {id:'def456',title:'ทำไม Cloud Kitchen ถึงยังไม่ work ในไทย',thumb:'https://i.ytimg.com/vi/def456/maxresdefault.jpg',duration:'0:45',views:'650K'},
-        {id:'ghi789',title:'ราคาวัตถุดิบขึ้น ร้านต้องขึ้นราคามั้ย',thumb:'https://i.ytimg.com/vi/ghi789/maxresdefault.jpg',duration:'1:15',views:'420K'},
-        {id:'jkl012',title:'เจ้าของร้านควรเข้าครัวเองมั้ย',thumb:'https://i.ytimg.com/vi/jkl012/maxresdefault.jpg',duration:'0:52',views:'310K'},
+        {id:'',title:'เปิดร้านก๋วยเตี๋ยว ทำไมถึงเจ๊ง',thumb:'https://i.ytimg.com/vi/_/hqdefault.jpg',duration:'12:34',views:'1.2M'},
+        {id:'',title:'5 ข้อที่ร้านอาหารต้องรู้ก่อนเปิดสาขา',thumb:'https://i.ytimg.com/vi/_/hqdefault.jpg',duration:'18:02',views:'880K'},
+        {id:'',title:'ทำไม Cloud Kitchen ถึงยังไม่ work ในไทย',thumb:'https://i.ytimg.com/vi/_/hqdefault.jpg',duration:'15:45',views:'650K'},
+        {id:'',title:'ราคาวัตถุดิบขึ้น ร้านต้องขึ้นราคามั้ย',thumb:'https://i.ytimg.com/vi/_/hqdefault.jpg',duration:'11:15',views:'420K'},
+        {id:'',title:'เจ้าของร้านควรเข้าครัวเองมั้ย',thumb:'https://i.ytimg.com/vi/_/hqdefault.jpg',duration:'14:52',views:'310K'},
       ]);
     }
   })();

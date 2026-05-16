@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Shorts Section Preview — PenguinX</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anuphan:wght@100;200;300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#0a0a0a;
+    --bg-2:#141413;
+    --ink:#f4f1ea;
+    --ink-mute:#8a8680;
+    --accent:#dba93a;
+    --accent-2:#e8c050;
+    --line:rgba(244,241,234,0.1);
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{
+    background:var(--bg);
+    color:var(--ink);
+    font-family:'Anuphan',sans-serif;
+    font-weight:400;
+    -webkit-font-smoothing:antialiased;
+  }
+
+  .banner{
+    background:var(--accent);color:var(--bg);
+    padding:10px;text-align:center;
+    font-size:13px;font-weight:600;letter-spacing:0.5px;
+  }
+
+  /* SECTION HEADER */
+  .shorts{
+    padding:80px 32px;
+    background:var(--bg);
+    border-top:1px solid var(--line);
+  }
+  .shorts-head{
+    display:flex;
+    align-items:flex-end;
+    justify-content:space-between;
+    gap:24px;
+    max-width:1440px;
+    margin:0 auto 40px;
+    flex-wrap:wrap;
+  }
+  .shorts-head-left{display:flex;flex-direction:column;gap:16px}
+  .shorts-num{
+    font-size:11px;
+    color:var(--ink-mute);
+    letter-spacing:0.15em;
+    text-transform:uppercase;
+  }
+  .shorts-title{
+    font-size:clamp(36px,5vw,72px);
+    font-weight:600;
+    line-height:0.95;
+    letter-spacing:-0.04em;
+  }
+  .shorts-title .light{color:var(--ink-mute);font-weight:300}
+  .shorts-title .accent{color:var(--accent)}
+  .shorts-cta{
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    color:var(--ink);
+    text-decoration:none;
+    font-size:14px;
+    font-weight:500;
+    padding:12px 20px;
+    border:1px solid var(--line);
+    border-radius:100px;
+    transition:all 0.25s ease;
+  }
+  .shorts-cta:hover{
+    background:var(--accent);
+    color:var(--bg);
+    border-color:var(--accent);
+  }
+  .shorts-cta .yt{
+    width:20px;height:14px;
+    background:#FF0000;
+    border-radius:4px;
+    position:relative;
+    display:inline-block;
+  }
+  .shorts-cta .yt::after{
+    content:'';
+    position:absolute;
+    top:50%;left:50%;
+    transform:translate(-40%,-50%);
+    width:0;height:0;
+    border-left:6px solid white;
+    border-top:4px solid transparent;
+    border-bottom:4px solid transparent;
+  }
+
+  /* SCROLLER */
+  .shorts-scroller{
+    display:flex;
+    gap:16px;
+    overflow-x:auto;
+    overflow-y:hidden;
+    scroll-snap-type:x mandatory;
+    padding:4px 32px 24px;
+    margin:0 -32px;
+    scrollbar-width:thin;
+    scrollbar-color:var(--ink-mute) transparent;
+  }
+  .shorts-scroller::-webkit-scrollbar{height:6px}
+  .shorts-scroller::-webkit-scrollbar-track{background:transparent}
+  .shorts-scroller::-webkit-scrollbar-thumb{background:var(--line);border-radius:100px}
+  .shorts-scroller::-webkit-scrollbar-thumb:hover{background:var(--ink-mute)}
+
+  /* CARD */
+  .short{
+    flex:0 0 calc((100% - 64px) / 5);
+    min-width:220px;
+    max-width:300px;
+    aspect-ratio:9/16;
+    border-radius:12px;
+    overflow:hidden;
+    position:relative;
+    cursor:pointer;
+    background:var(--bg-2);
+    scroll-snap-align:start;
+    transition:transform 0.3s ease;
+    text-decoration:none;
+    color:inherit;
+    display:block;
+  }
+  .short:hover{transform:translateY(-4px)}
+  .short img{
+    position:absolute;inset:0;
+    width:100%;height:100%;
+    object-fit:cover;
+    transition:transform 0.6s ease;
+  }
+  .short:hover img{transform:scale(1.05)}
+  .short-overlay{
+    position:absolute;inset:0;
+    background:linear-gradient(180deg,
+      rgba(0,0,0,0) 0%,
+      rgba(0,0,0,0) 50%,
+      rgba(0,0,0,0.85) 100%);
+    pointer-events:none;
+  }
+  .short-duration{
+    position:absolute;
+    bottom:12px;left:12px;
+    background:rgba(0,0,0,0.7);
+    color:var(--ink);
+    padding:4px 8px;
+    border-radius:4px;
+    font-size:11px;
+    font-weight:500;
+    display:flex;align-items:center;gap:4px;
+  }
+  .short-play{
+    position:absolute;
+    top:50%;left:50%;
+    transform:translate(-50%,-50%) scale(0.9);
+    width:48px;height:48px;
+    background:rgba(0,0,0,0.6);
+    backdrop-filter:blur(8px);
+    border-radius:50%;
+    display:flex;align-items:center;justify-content:center;
+    opacity:0;
+    transition:all 0.3s ease;
+  }
+  .short:hover .short-play{
+    opacity:1;
+    transform:translate(-50%,-50%) scale(1);
+  }
+  .short-play::after{
+    content:'';
+    width:0;height:0;
+    border-left:14px solid var(--accent);
+    border-top:9px solid transparent;
+    border-bottom:9px solid transparent;
+    margin-left:4px;
+  }
+  .short-title{
+    position:absolute;
+    bottom:0;left:0;right:0;
+    padding:16px 14px;
+    font-size:14px;
+    font-weight:600;
+    line-height:1.35;
+    color:var(--ink);
+    display:-webkit-box;
+    -webkit-line-clamp:2;
+    -webkit-box-orient:vertical;
+    overflow:hidden;
+  }
+  .short-views{
+    position:absolute;
+    top:12px;right:12px;
+    background:rgba(0,0,0,0.7);
+    backdrop-filter:blur(4px);
+    color:var(--ink);
+    padding:4px 10px;
+    border-radius:100px;
+    font-size:10px;
+    font-weight:500;
+    letter-spacing:0.05em;
+  }
+
+  /* CHANNEL BAR (below scroller) */
+  .channel-bar{
+    max-width:1440px;
+    margin:24px auto 0;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:20px 0;
+    border-top:1px solid var(--line);
+    flex-wrap:wrap;
+    gap:16px;
+  }
+  .channel-info{display:flex;align-items:center;gap:14px}
+  .channel-avatar{
+    width:44px;height:44px;
+    border-radius:50%;
+    background:linear-gradient(135deg,var(--accent),var(--accent-2));
+    display:flex;align-items:center;justify-content:center;
+    font-weight:700;
+    color:var(--bg);
+  }
+  .channel-name{font-size:15px;font-weight:600}
+  .channel-handle{font-size:13px;color:var(--ink-mute)}
+  .channel-stats{
+    font-size:12px;color:var(--ink-mute);
+    letter-spacing:0.1em;text-transform:uppercase;
+  }
+  .channel-stats b{color:var(--ink);font-weight:600}
+
+  @media (max-width:900px){
+    .short{flex:0 0 60%;min-width:200px}
+  }
+  @media (max-width:600px){
+    .shorts{padding:60px 20px}
+    .shorts-scroller{margin:0 -20px;padding:4px 20px 24px}
+    .short{flex:0 0 65%}
+  }
+</style>
+</head>
+<body>
+
+<div class="banner">PREVIEW · Shorts section with auto-sync (YouTube) — scroll horizontally to browse</div>
+
+<section class="shorts" id="shorts">
+  <div class="shorts-head">
+    <div class="shorts-head-left">
+      <div class="shorts-num">04.5 / Shorts</div>
+      <h2 class="shorts-title">
+        From <span class="light">the</span> <span class="accent">channel</span>.
+      </h2>
+    </div>
+    <a class="shorts-cta" href="https://www.youtube.com/@torpenguin" target="_blank" rel="noopener">
+      <span class="yt"></span>
+      <span>Watch on YouTube</span>
+      <span>→</span>
+    </a>
+  </div>
+
+  <div class="shorts-scroller" id="shortsScroller">
+    <!-- injected by JS -->
+  </div>
+
+  <div class="channel-bar">
+    <div class="channel-info">
+      <div class="channel-avatar">T</div>
+      <div>
+        <div class="channel-name">Torpenguin</div>
+        <div class="channel-handle">@torpenguin · YouTube</div>
+      </div>
+    </div>
+    <div class="channel-stats">
+      <b>2.0M+</b> Subscribers · <b>500+</b> Videos · <b>Updated daily</b>
+    </div>
+  </div>
+</section>
+
+<script>
+  // Placeholder data — would be auto-fetched from YouTube API in production
+  const SHORTS = [
+    {
+      id:'dQw4w9WgXcQ',
+      title:'เปิดร้านก๋วยเตี๋ยว ทำไมถึงเจ๊ง',
+      thumb:'https://images.unsplash.com/photo-1569718212165-3a8278d5f624?w=600&h=1066&fit=crop&q=80',
+      duration:'0:58',
+      views:'1.2M'
+    },
+    {
+      id:'abc123',
+      title:'5 ข้อที่ร้านอาหารต้องรู้ก่อนเปิดสาขา',
+      thumb:'https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=600&h=1066&fit=crop&q=80',
+      duration:'1:02',
+      views:'880K'
+    },
+    {
+      id:'def456',
+      title:'ทำไม Cloud Kitchen ถึงยังไม่ work ในไทย',
+      thumb:'https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=600&h=1066&fit=crop&q=80',
+      duration:'0:45',
+      views:'650K'
+    },
+    {
+      id:'ghi789',
+      title:'ราคาวัตถุดิบขึ้น ร้านต้องขึ้นราคามั้ย',
+      thumb:'https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=600&h=1066&fit=crop&q=80',
+      duration:'1:15',
+      views:'420K'
+    },
+    {
+      id:'jkl012',
+      title:'เจ้าของร้านควรเข้าครัวเองมั้ย',
+      thumb:'https://images.unsplash.com/photo-1556761175-5973dc0f32e7?w=600&h=1066&fit=crop&q=80',
+      duration:'0:52',
+      views:'310K'
+    },
+    {
+      id:'mno345',
+      title:'Cafe vs Coffee Shop ต่างกันยังไง',
+      thumb:'https://images.unsplash.com/photo-1559339352-11d035aa65de?w=600&h=1066&fit=crop&q=80',
+      duration:'0:48',
+      views:'280K'
+    },
+    {
+      id:'pqr678',
+      title:'ทำไม Menu น้อย ๆ ถึงขายดีกว่า',
+      thumb:'https://images.unsplash.com/photo-1542838132-92c53300491e?w=600&h=1066&fit=crop&q=80',
+      duration:'1:08',
+      views:'195K'
+    },
+  ];
+
+  const scroller = document.getElementById('shortsScroller');
+  scroller.innerHTML = SHORTS.map(s => `
+    <a class="short" href="https://www.youtube.com/shorts/${s.id}" target="_blank" rel="noopener">
+      <img src="${s.thumb}" alt="${s.title}" loading="lazy">
+      <div class="short-overlay"></div>
+      <div class="short-views">${s.views} views</div>
+      <div class="short-play"></div>
+      <div class="short-duration">▶ ${s.duration}</div>
+      <div class="short-title">${s.title}</div>
+    </a>
+  `).join('');
+</script>
+
+</body>
+</html>

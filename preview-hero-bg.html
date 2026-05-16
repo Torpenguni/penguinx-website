@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hero Background Preview — PenguinX</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anuphan:wght@100;200;300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#0a0a0a;
+    --ink:#f4f1ea;
+    --ink-mute:#8a8680;
+    --accent:#dba93a;
+    --line:rgba(244,241,234,0.1);
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{
+    background:var(--bg);
+    color:var(--ink);
+    font-family:'Anuphan',sans-serif;
+    font-weight:400;
+    -webkit-font-smoothing:antialiased;
+  }
+
+  .banner{
+    position:sticky;top:0;
+    background:var(--accent);color:var(--bg);
+    padding:10px;text-align:center;
+    font-size:13px;font-weight:600;letter-spacing:0.5px;
+    z-index:1000;
+  }
+
+  /* HERO BASE */
+  .hero{
+    min-height:85vh;
+    padding:80px 32px 60px;
+    display:flex;flex-direction:column;justify-content:space-between;
+    position:relative;
+    overflow:hidden;
+    isolation:isolate;
+  }
+
+  /* === BACKGROUND IMAGE LAYER === */
+  .hero-bg{
+    position:absolute;
+    inset:0;
+    background-image:url('cover.JPG');
+    background-size:cover;
+    background-position:center;
+    z-index:-2;
+  }
+
+  /* Gradient overlay for legibility */
+  .hero-overlay{
+    position:absolute;
+    inset:0;
+    z-index:-1;
+    pointer-events:none;
+  }
+
+  /* === VARIANT A — Subtle (10% opacity, dark gradient) === */
+  .v-a .hero-bg{opacity:0.10;filter:grayscale(0.3)}
+  .v-a .hero-overlay{
+    background:linear-gradient(180deg,
+      rgba(10,10,10,0.4) 0%,
+      rgba(10,10,10,0.2) 50%,
+      rgba(10,10,10,0.95) 100%);
+  }
+
+  /* === VARIANT B — Medium (18% opacity, cinematic gradient) === */
+  .v-b .hero-bg{opacity:0.18;filter:grayscale(0.15) contrast(1.05)}
+  .v-b .hero-overlay{
+    background:
+      radial-gradient(ellipse at top right, rgba(219,169,58,0.08) 0%, transparent 50%),
+      linear-gradient(180deg,
+        rgba(10,10,10,0.55) 0%,
+        rgba(10,10,10,0.3) 40%,
+        rgba(10,10,10,0.9) 100%);
+  }
+
+  /* === VARIANT C — Dramatic (25% opacity, vignette + gold tint) === */
+  .v-c .hero-bg{opacity:0.25;filter:contrast(1.1) saturate(0.85)}
+  .v-c .hero-overlay{
+    background:
+      radial-gradient(ellipse at center,
+        transparent 0%,
+        rgba(10,10,10,0.3) 60%,
+        rgba(10,10,10,0.85) 100%),
+      linear-gradient(180deg,
+        rgba(10,10,10,0.4) 0%,
+        transparent 30%,
+        transparent 60%,
+        rgba(10,10,10,0.95) 100%);
+  }
+
+  /* HERO CONTENT (matches site) */
+  .hero-label{
+    display:inline-block;
+    background:rgba(0,0,0,0.6);
+    backdrop-filter:blur(8px);
+    border:1px solid var(--accent);
+    color:var(--accent);
+    padding:6px 14px;border-radius:100px;
+    font-size:13px;font-weight:600;letter-spacing:0.5px;
+    margin-bottom:24px;
+  }
+  .hero-eyebrow{
+    display:flex;gap:14px;align-items:center;
+    color:var(--ink-mute);
+    font-size:11px;text-transform:uppercase;letter-spacing:0.12em;
+  }
+  .hero-eyebrow .live{
+    width:7px;height:7px;border-radius:50%;
+    background:var(--accent);
+    animation:pulse 2s ease-in-out infinite;
+  }
+  @keyframes pulse{
+    0%,100%{opacity:1;transform:scale(1);box-shadow:0 0 0 0 rgba(219,169,58,0.5)}
+    50%{opacity:0.7;transform:scale(0.9);box-shadow:0 0 0 8px rgba(219,169,58,0)}
+  }
+  .hero-title{
+    font-size:clamp(38px,5.5vw,90px);
+    font-weight:600;
+    line-height:0.95;
+    letter-spacing:-0.04em;
+    margin-top:24px;
+  }
+  .hero-title .light{font-weight:300;color:var(--ink-mute)}
+  .hero-title .accent{color:var(--accent)}
+  .hero-title .end-dot{
+    display:inline-block;
+    width:0.12em;height:0.12em;
+    background:var(--accent);
+    margin-left:0.04em;
+    vertical-align:baseline;
+  }
+  .hero-bottom{
+    display:flex;
+    align-items:flex-end;
+    justify-content:space-between;
+    gap:40px;
+    margin-top:48px;
+    flex-wrap:wrap;
+  }
+  .hero-desc{
+    flex:1 1 380px;
+    font-size:15px;
+    line-height:1.7;
+    color:var(--ink-mute);
+    max-width:520px;
+  }
+  .hero-desc strong{color:var(--ink);font-weight:600}
+  .hero-stats{
+    display:grid;
+    grid-template-columns:repeat(4,minmax(0,1fr));
+    column-gap:24px;row-gap:20px;
+  }
+  .stat .num{
+    font-size:32px;font-weight:600;line-height:1;
+    letter-spacing:-0.04em;
+    white-space:nowrap;
+  }
+  .stat .num .light{font-weight:300;color:var(--ink-mute)}
+  .stat .label{
+    font-size:10px;color:var(--ink-mute);
+    text-transform:uppercase;letter-spacing:0.12em;
+    margin-top:8px;font-weight:500;
+  }
+
+  /* SECTION DIVIDER */
+  .divider{
+    padding:12px 32px;
+    background:var(--bg);
+    border-top:1px solid var(--line);
+    border-bottom:1px solid var(--line);
+    text-align:center;
+    font-size:11px;
+    color:var(--ink-mute);
+    letter-spacing:0.2em;
+    text-transform:uppercase;
+  }
+  .divider b{color:var(--accent);font-weight:700}
+</style>
+</head>
+<body>
+
+<div class="banner">PREVIEW · 3 variants of hero background — scroll down to compare A / B / C</div>
+
+<!-- VARIANT A — SUBTLE -->
+<div class="divider">Variant <b>A · Subtle</b> · 10% opacity · safe & minimal</div>
+<section class="hero v-a">
+  <div class="hero-bg"></div>
+  <div class="hero-overlay"></div>
+  <div>
+    <span class="hero-label">A</span>
+    <div class="hero-eyebrow">
+      <span class="live"></span>
+      <span>Building Thailand's F&B Ecosystem</span>
+    </div>
+    <h1 class="hero-title">
+      <span class="light">We don't just</span><br>
+      market restaurants.<br>
+      <span class="light">We build the</span> <span class="accent">ecosystem</span><br>
+      they grow in<span class="end-dot"></span>
+    </h1>
+  </div>
+  <div class="hero-bottom">
+    <p class="hero-desc">
+      <strong>PenguinX</strong> is an F&B ecosystem builder connecting media, events, education, and business solutions — empowering every restaurant in Thailand to grow sustainably.
+    </p>
+    <div class="hero-stats">
+      <div class="stat"><div class="num">2.0M<span class="light">+</span></div><div class="label">Followers</div></div>
+      <div class="stat"><div class="num">200<span class="light">+</span></div><div class="label">Brand Partners</div></div>
+      <div class="stat"><div class="num">15<span class="light">yrs</span></div><div class="label">In the Industry</div></div>
+      <div class="stat"><div class="num">5<span class="light">+</span></div><div class="label">Events</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- VARIANT B — MEDIUM -->
+<div class="divider">Variant <b>B · Medium</b> · 18% opacity · cinematic + gold tint · RECOMMENDED</div>
+<section class="hero v-b">
+  <div class="hero-bg"></div>
+  <div class="hero-overlay"></div>
+  <div>
+    <span class="hero-label">B</span>
+    <div class="hero-eyebrow">
+      <span class="live"></span>
+      <span>Building Thailand's F&B Ecosystem</span>
+    </div>
+    <h1 class="hero-title">
+      <span class="light">We don't just</span><br>
+      market restaurants.<br>
+      <span class="light">We build the</span> <span class="accent">ecosystem</span><br>
+      they grow in<span class="end-dot"></span>
+    </h1>
+  </div>
+  <div class="hero-bottom">
+    <p class="hero-desc">
+      <strong>PenguinX</strong> is an F&B ecosystem builder connecting media, events, education, and business solutions — empowering every restaurant in Thailand to grow sustainably.
+    </p>
+    <div class="hero-stats">
+      <div class="stat"><div class="num">2.0M<span class="light">+</span></div><div class="label">Followers</div></div>
+      <div class="stat"><div class="num">200<span class="light">+</span></div><div class="label">Brand Partners</div></div>
+      <div class="stat"><div class="num">15<span class="light">yrs</span></div><div class="label">In the Industry</div></div>
+      <div class="stat"><div class="num">5<span class="light">+</span></div><div class="label">Events</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- VARIANT C — DRAMATIC -->
+<div class="divider">Variant <b>C · Dramatic</b> · 25% opacity · vignette · เห็นรูปชัด</div>
+<section class="hero v-c">
+  <div class="hero-bg"></div>
+  <div class="hero-overlay"></div>
+  <div>
+    <span class="hero-label">C</span>
+    <div class="hero-eyebrow">
+      <span class="live"></span>
+      <span>Building Thailand's F&B Ecosystem</span>
+    </div>
+    <h1 class="hero-title">
+      <span class="light">We don't just</span><br>
+      market restaurants.<br>
+      <span class="light">We build the</span> <span class="accent">ecosystem</span><br>
+      they grow in<span class="end-dot"></span>
+    </h1>
+  </div>
+  <div class="hero-bottom">
+    <p class="hero-desc">
+      <strong>PenguinX</strong> is an F&B ecosystem builder connecting media, events, education, and business solutions — empowering every restaurant in Thailand to grow sustainably.
+    </p>
+    <div class="hero-stats">
+      <div class="stat"><div class="num">2.0M<span class="light">+</span></div><div class="label">Followers</div></div>
+      <div class="stat"><div class="num">200<span class="light">+</span></div><div class="label">Brand Partners</div></div>
+      <div class="stat"><div class="num">15<span class="light">yrs</span></div><div class="label">In the Industry</div></div>
+      <div class="stat"><div class="num">5<span class="light">+</span></div><div class="label">Events</div></div>
+    </div>
+  </div>
+</section>
+
+<div class="divider">END · เลือก variant ที่ชอบ บอกผมเพื่อใส่ใน index.html</div>
+
+</body>
+</html>
