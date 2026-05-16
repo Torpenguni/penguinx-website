@@ -708,7 +708,7 @@ section{padding:80px 32px;position:relative}
   overflow:hidden;
   border-radius:16px;
   border:1px solid var(--line);
-  margin-bottom:56px;
+  margin-bottom:28px;
   mask-image:linear-gradient(90deg,transparent 0%,#000 6%,#000 94%,transparent 100%);
   -webkit-mask-image:linear-gradient(90deg,transparent 0%,#000 6%,#000 94%,transparent 100%);
 }
@@ -1334,7 +1334,7 @@ footer{padding:60px 32px 32px;background:var(--bg);border-top:1px solid var(--li
   .why-grid{grid-template-columns:repeat(2,1fr);gap:12px}
   .community{padding:64px 20px}
   .community-collage{margin-bottom:32px}
-  .community-slider{margin-bottom:32px}
+  .community-slider{margin-bottom:16px}
   .community-track img{height:180px}
   .community-track{gap:12px;padding:12px}
   .cc-stats{gap:32px;margin-bottom:32px;padding:20px 0}
