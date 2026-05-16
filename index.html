@@ -26,6 +26,8 @@
 
 <!-- ====== HERO ====== -->
 <section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-overlay"></div>
   <div>
     <div class="hero-eyebrow mono">
       <span class="live"></span>
@@ -478,6 +480,38 @@
   </div>
 </section>
 
+<!-- ====== SHORTS ====== -->
+<section class="shorts" id="shorts">
+  <div class="shorts-head">
+    <div class="shorts-head-left">
+      <div class="shorts-num">06.5 / Shorts</div>
+      <h2 class="shorts-title">
+        From <span class="light">the</span> <span class="accent">channel</span>.
+      </h2>
+    </div>
+    <a class="shorts-cta" href="https://www.youtube.com/@torpenguin" target="_blank" rel="noopener">
+      <span class="yt"></span>
+      <span>Watch on YouTube</span>
+      <span>→</span>
+    </a>
+  </div>
+
+  <div class="shorts-scroller" id="shortsScroller"></div>
+
+  <div class="channel-bar">
+    <div class="channel-info">
+      <div class="channel-avatar">T</div>
+      <div>
+        <div class="channel-name">Torpenguin</div>
+        <div class="channel-handle">@torpenguin · YouTube</div>
+      </div>
+    </div>
+    <div class="channel-stats">
+      <b>2.0M+</b> Subscribers · <b>Updated daily</b>
+    </div>
+  </div>
+</section>
+
 <!-- ====== NEWS ====== -->
 <section class="news" id="news">
   <div class="section-head">
@@ -720,6 +754,40 @@
       if(e.key==='ArrowRight' && idx<WORK_CASES.length-1) render(idx+1);
       if(e.key==='ArrowLeft' && idx>0) render(idx-1);
     });
+  })();
+</script>
+
+<script>
+  (async function(){
+    const scroller = document.getElementById('shortsScroller');
+    if(!scroller) return;
+    function escapeHtml(s){return String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));}
+    function render(items){
+      scroller.innerHTML = items.map(s=>`
+        <a class="short" href="https://www.youtube.com/shorts/${encodeURIComponent(s.id)}" target="_blank" rel="noopener">
+          <img src="${escapeHtml(s.thumb)}" alt="${escapeHtml(s.title)}" loading="lazy">
+          <div class="short-overlay"></div>
+          ${s.views?`<div class="short-views">${escapeHtml(s.views)} views</div>`:''}
+          <div class="short-play"></div>
+          ${s.duration?`<div class="short-duration">▶ ${escapeHtml(s.duration)}</div>`:''}
+          <div class="short-title">${escapeHtml(s.title)}</div>
+        </a>`).join('');
+    }
+    try{
+      const res = await fetch('/api/youtube-shorts',{cache:'no-store'});
+      if(!res.ok) throw new Error('Shorts API failed');
+      const data = await res.json();
+      if(!data.items || !data.items.length) throw new Error('Empty');
+      render(data.items);
+    }catch(e){
+      render([
+        {id:'dQw4w9WgXcQ',title:'เปิดร้านก๋วยเตี๋ยว ทำไมถึงเจ๊ง',thumb:'https://i.ytimg.com/vi/dQw4w9WgXcQ/maxresdefault.jpg',duration:'0:58',views:'1.2M'},
+        {id:'abc123',title:'5 ข้อที่ร้านอาหารต้องรู้ก่อนเปิดสาขา',thumb:'https://i.ytimg.com/vi/abc123/maxresdefault.jpg',duration:'1:02',views:'880K'},
+        {id:'def456',title:'ทำไม Cloud Kitchen ถึงยังไม่ work ในไทย',thumb:'https://i.ytimg.com/vi/def456/maxresdefault.jpg',duration:'0:45',views:'650K'},
+        {id:'ghi789',title:'ราคาวัตถุดิบขึ้น ร้านต้องขึ้นราคามั้ย',thumb:'https://i.ytimg.com/vi/ghi789/maxresdefault.jpg',duration:'1:15',views:'420K'},
+        {id:'jkl012',title:'เจ้าของร้านควรเข้าครัวเองมั้ย',thumb:'https://i.ytimg.com/vi/jkl012/maxresdefault.jpg',duration:'0:52',views:'310K'},
+      ]);
+    }
   })();
 </script>
 
