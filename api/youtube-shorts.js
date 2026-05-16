@@ -25,7 +25,7 @@ export default async function handler(){
     return new Response(JSON.stringify({error:'Missing env vars'}),{status:500});
   }
   try{
-    const searchUrl = `https://www.googleapis.com/youtube/v3/search?part=snippet&channelId=${CHANNEL_ID}&maxResults=20&order=date&type=video&key=${API_KEY}`;
+    const searchUrl = `https://www.googleapis.com/youtube/v3/search?part=snippet&channelId=${CHANNEL_ID}&maxResults=50&order=date&type=video&key=${API_KEY}`;
     const search = await fetch(searchUrl).then(r=>r.json());
     const ids = (search.items||[]).map(i=>i.id.videoId).filter(Boolean).join(',');
     if(!ids) return new Response(JSON.stringify({items:[]}));
@@ -39,7 +39,7 @@ export default async function handler(){
         const hrs = parseInt(m?.[1]||'0',10);
         const mins = parseInt(m?.[2]||'0',10);
         const secs = parseInt(m?.[3]||'0',10);
-        return hrs*3600 + mins*60 + secs > 60;
+        return hrs*3600 + mins*60 + secs >= 300;
       })
       .slice(0,MAX_RESULTS)
       .map(v=>({
