@@ -446,13 +446,10 @@ section{padding:80px 32px;position:relative}
   padding:22px 22px 20px;
   display:flex;flex-direction:column;
   gap:14px;
-  cursor:pointer;
   position:relative;
   overflow:hidden;
   isolation:isolate;
   transition:all 0.3s ease;
-  text-decoration:none;
-  color:inherit;
 }
 .s-bg{
   position:absolute;
