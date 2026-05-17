@@ -3,165 +3,304 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>PenguinX Media — Storytelling for the F&B industry</title>
+<title>PenguinX Media — The stories that move F&B Thailand</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Anuphan:wght@100;200;300;400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/styles.css">
+<style>
+  :root{
+    --bg:#0a0a0a;
+    --bg-2:#141413;
+    --ink:#f4f1ea;
+    --ink-mute:#8a8680;
+    --accent:#dba93a;
+    --line:rgba(244,241,234,0.1);
+    --line-soft:rgba(244,241,234,0.05);
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    background:var(--bg);color:var(--ink);
+    font-family:'Anuphan',sans-serif;font-weight:400;
+    -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;line-height:1.5;
+  }
+
+  .pg-nav{
+    display:flex;justify-content:space-between;align-items:center;
+    padding:24px 40px;border-bottom:1px solid var(--line);
+  }
+  .pg-back{
+    color:var(--ink-mute);text-decoration:none;
+    font-size:13px;letter-spacing:0.05em;
+    display:inline-flex;align-items:center;gap:8px;
+    transition:color 0.2s ease;
+  }
+  .pg-back:hover{color:var(--accent)}
+  .pg-pillar{
+    font-size:11px;letter-spacing:0.15em;text-transform:uppercase;
+    color:var(--ink-mute);
+  }
+  .pg-pillar b{color:var(--accent);font-weight:600}
+
+  .pg-hero{padding:120px 40px 80px;border-bottom:1px solid var(--line)}
+  .pg-hero-grid{
+    display:grid;grid-template-columns:1fr 320px;gap:80px;
+    max-width:1600px;margin:0 auto;align-items:end;
+  }
+  .pg-hero-title{
+    font-size:clamp(56px,9vw,160px);font-weight:600;
+    line-height:0.92;letter-spacing:-0.045em;
+  }
+  .pg-hero-title .light{color:var(--ink-mute);font-weight:300;font-style:italic}
+  .pg-hero-title .accent{color:var(--accent)}
+
+  .pg-meta{display:flex;flex-direction:column;gap:24px;padding-bottom:12px}
+  .pg-meta-block{
+    display:grid;grid-template-columns:90px 1fr;gap:16px;
+    padding-bottom:18px;border-bottom:1px solid var(--line-soft);
+  }
+  .pg-meta-block:last-child{border-bottom:none}
+  .pg-meta-label{
+    font-size:11px;color:var(--ink-mute);text-transform:uppercase;
+    letter-spacing:0.15em;padding-top:3px;
+  }
+  .pg-meta-value{font-size:14px;color:var(--ink);line-height:1.5}
+
+  .pg-cover{
+    width:100%;aspect-ratio:21/9;
+    background:#222 center/cover no-repeat;
+    background-image:url('https://images.unsplash.com/photo-1556761175-4b46a572b786?w=2200&q=85');
+  }
+  .pg-cover-caption{
+    padding:14px 40px;font-size:12px;color:var(--ink-mute);
+    display:flex;justify-content:space-between;border-bottom:1px solid var(--line);
+  }
+
+  .pg-lede{max-width:1100px;margin:0 auto;padding:120px 40px 100px}
+  .pg-lede-text{
+    font-size:clamp(24px,2.6vw,38px);line-height:1.35;
+    font-weight:400;color:var(--ink);letter-spacing:-0.015em;
+    max-width:900px;
+  }
+  .pg-lede-text em{font-style:italic;color:var(--ink-mute);font-weight:300}
+
+  .pg-section{padding:0 40px 80px;max-width:1600px;margin:0 auto}
+  .pg-section-head{
+    display:flex;justify-content:space-between;align-items:flex-end;
+    margin-bottom:48px;padding-bottom:24px;border-bottom:1px solid var(--line);
+    flex-wrap:wrap;gap:24px;
+  }
+  .pg-section-num{
+    font-size:11px;color:var(--ink-mute);
+    letter-spacing:0.15em;text-transform:uppercase;margin-bottom:8px;
+  }
+  .pg-section-title{
+    font-size:clamp(28px,3vw,48px);font-weight:600;
+    letter-spacing:-0.025em;line-height:1.05;
+  }
+  .pg-section-meta{font-size:12px;color:var(--ink-mute);letter-spacing:0.05em}
+
+  .pg-grid{display:grid;grid-template-columns:repeat(12,1fr);gap:16px}
+  .pg-item{
+    text-decoration:none;color:inherit;display:block;
+    cursor:pointer;transition:opacity 0.3s ease;
+  }
+  .pg-item:hover{opacity:0.85}
+  .pg-item-img{
+    width:100%;background:#1a1a18 center/cover no-repeat;
+    margin-bottom:16px;overflow:hidden;border-radius:2px;
+  }
+  .pg-item-img img{
+    display:block;width:100%;height:100%;object-fit:cover;
+    transition:transform 0.8s ease;
+  }
+  .pg-item:hover .pg-item-img img{transform:scale(1.03)}
+  .pg-item-tag{
+    font-size:11px;color:var(--accent);letter-spacing:0.1em;
+    text-transform:uppercase;margin-bottom:6px;
+  }
+  .pg-item-title{
+    font-size:22px;font-weight:600;line-height:1.2;
+    letter-spacing:-0.02em;margin-bottom:6px;
+  }
+  .pg-item-sub{font-size:14px;color:var(--ink-mute);line-height:1.4}
+
+  .pg-item.span-7{grid-column:span 7}
+  .pg-item.span-5{grid-column:span 5}
+  .pg-item.span-6{grid-column:span 6}
+  .pg-item.span-4{grid-column:span 4}
+  .pg-item.span-8{grid-column:span 8}
+  .pg-item.span-12{grid-column:span 12}
+  .pg-item.span-7 .pg-item-img{aspect-ratio:16/10}
+  .pg-item.span-5 .pg-item-img{aspect-ratio:5/4}
+  .pg-item.span-6 .pg-item-img{aspect-ratio:4/3}
+  .pg-item.span-4 .pg-item-img{aspect-ratio:1/1}
+  .pg-item.span-8 .pg-item-img{aspect-ratio:16/9}
+  .pg-item.span-12 .pg-item-img{aspect-ratio:21/9}
+  .pg-item.span-7 .pg-item-title,
+  .pg-item.span-8 .pg-item-title,
+  .pg-item.span-12 .pg-item-title{font-size:32px}
+
+  .pg-text{max-width:900px;margin:0 auto;padding:80px 40px;border-top:1px solid var(--line)}
+  .pg-text h2{
+    font-size:clamp(28px,3.2vw,48px);font-weight:600;
+    letter-spacing:-0.025em;margin-bottom:32px;line-height:1.1;
+  }
+  .pg-text p{
+    font-size:17px;line-height:1.65;color:var(--ink-mute);
+    margin-bottom:20px;font-weight:300;
+  }
+  .pg-text p strong{color:var(--ink);font-weight:500}
+
+  .pg-stats{
+    padding:80px 40px;border-top:1px solid var(--line);
+    border-bottom:1px solid var(--line);background:var(--bg-2);
+  }
+  .pg-stats-grid{
+    display:grid;grid-template-columns:repeat(4,1fr);
+    gap:60px;max-width:1400px;margin:0 auto;
+  }
+  .pg-stat .num{
+    font-size:clamp(48px,5vw,80px);font-weight:600;
+    letter-spacing:-0.04em;line-height:1;color:var(--accent);
+  }
+  .pg-stat .lbl{
+    font-size:13px;color:var(--ink-mute);
+    text-transform:uppercase;letter-spacing:0.12em;margin-top:14px;
+  }
+
+  .pg-next{padding:120px 40px;border-top:1px solid var(--line);text-align:center}
+  .pg-next-tag{
+    font-size:11px;color:var(--ink-mute);
+    text-transform:uppercase;letter-spacing:0.2em;margin-bottom:24px;
+  }
+  .pg-next-title{
+    font-size:clamp(48px,7vw,120px);font-weight:600;
+    line-height:0.95;letter-spacing:-0.04em;margin-bottom:32px;
+  }
+  .pg-next-title a{
+    color:var(--ink);text-decoration:none;
+    border-bottom:2px solid transparent;transition:all 0.3s ease;
+  }
+  .pg-next-title a:hover{color:var(--accent);border-bottom-color:var(--accent)}
+
+  @media (max-width:900px){
+    .pg-hero{padding:60px 24px 40px}
+    .pg-hero-grid{grid-template-columns:1fr;gap:48px}
+    .pg-lede{padding:60px 24px}
+    .pg-section{padding:0 24px 60px}
+    .pg-text{padding:60px 24px}
+    .pg-stats{padding:60px 24px}
+    .pg-stats-grid{grid-template-columns:repeat(2,1fr);gap:40px}
+    .pg-item.span-7,.pg-item.span-5,
+    .pg-item.span-6,.pg-item.span-4,
+    .pg-item.span-8{grid-column:span 12}
+    .pg-cover-caption{padding:14px 24px}
+  }
+</style>
 </head>
 <body>
 
-<!-- ====== NAV ====== -->
-<nav class="top">
-  <a href="/" class="logo"><img src="/penguinx-logo.png" alt="PenguinX"></a>
-  <ul class="nav-links">
-    <li><a href="/#ecosystem">Ecosystem</a></li>
-    <li><a href="/#work">Work</a></li>
-    <li><a href="/#services">Services</a></li>
-    <li><a href="/#about">About</a></li>
-    <li><a href="/#news">News</a></li>
-  </ul>
-  <a href="/#contact" class="nav-cta">Let's talk</a>
-</nav>
-
-<!-- ====== ARTICLE HERO ====== -->
-<section class="article-hero">
-  <a href="/#ecosystem" class="article-back">Back to Ecosystem</a>
-  <div class="article-meta">
-    <span class="category">Pillar · Media</span>
-    <span class="sep">·</span>
-    <span>4 min read</span>
-  </div>
-  <h1 class="article-title">PenguinX Media — <span class="light">storytelling that runs the F&B industry's conversation</span></h1>
-  <p class="article-lede">
-    Two houses, one editorial voice. Torpenguin and Tungtua reach more F&B operators in a week than most trade publications reach in a year — and they shape what restaurant owners actually talk about.
-  </p>
-</section>
-
-<!-- ====== COVER IMAGE ====== -->
-<div class="article-cover">
-  <img src="/Selected%20wroks/Media.png" alt="PenguinX Media — content production for the F&B industry">
+<div class="pg-nav">
+  <a href="/" class="pg-back">← Back to PenguinX</a>
+  <div class="pg-pillar">01 / Pillar · <b>Media</b></div>
 </div>
 
-<!-- ====== ARTICLE BODY ====== -->
-<article class="article-body">
-  <p>
-    The Media pillar is where PenguinX starts every conversation. Long before a brand campaign goes live or an event opens its doors, the audience has already been built — through years of operator-first content that treats restaurant owners as the protagonists, not the targets.
-  </p>
-
-  <h2>What sits under this pillar</h2>
-  <p>
-    Media is run as a portfolio of operator-facing properties. Each has its own voice, audience, and content rhythm — but they all share the same editorial backbone.
-  </p>
-
-  <h3>Torpenguin</h3>
-  <p>
-    The flagship channel and the industry's largest F&B operator network. Daily content on running restaurants in Thailand — unit economics, marketing tactics, supplier deals, the human side of the business. This is where Tor's voice as the F&B industry's most-read founder-operator lives.
-  </p>
-
-  <h3>Tungtua</h3>
-  <p>
-    The expansion property. Where Torpenguin speaks to existing operators, Tungtua reaches the next layer — aspiring owners, F&B-curious consumers, and the broader food-business audience that surrounds the industry. Same standards, wider doorway.
-  </p>
-
-  <div class="article-facts">
-    <div>
-      <div class="fact-num">2.0M+</div>
-      <div class="fact-label">Followers</div>
-    </div>
-    <div>
-      <div class="fact-num">15 yrs</div>
-      <div class="fact-label">In the industry</div>
-    </div>
-    <div>
-      <div class="fact-num">#1</div>
-      <div class="fact-label">F&B media in Thailand</div>
+<section class="pg-hero">
+  <div class="pg-hero-grid">
+    <h1 class="pg-hero-title">
+      <span class="light">The stories</span><br>
+      that move<br>
+      <span class="accent">F&B Thailand</span>.
+    </h1>
+    <div class="pg-meta">
+      <div class="pg-meta-block">
+        <div class="pg-meta-label">Pillar</div>
+        <div class="pg-meta-value">PenguinX Media</div>
+      </div>
+      <div class="pg-meta-block">
+        <div class="pg-meta-label">Properties</div>
+        <div class="pg-meta-value">Torpenguin · Tungtua</div>
+      </div>
+      <div class="pg-meta-block">
+        <div class="pg-meta-label">Reach</div>
+        <div class="pg-meta-value">2.0M+ followers across owned channels</div>
+      </div>
+      <div class="pg-meta-block">
+        <div class="pg-meta-label">Since</div>
+        <div class="pg-meta-value">2010</div>
+      </div>
     </div>
   </div>
+</section>
 
-  <h2>How it connects to the rest of the ecosystem</h2>
-  <p>
-    Media isn't a standalone product — it's the amplifier that makes everything else work. Events get pre-built audiences. Education programs get qualified applicants. Solution agency clients get earned distribution that no paid campaign can buy.
+<div class="pg-cover"></div>
+<div class="pg-cover-caption">
+  <span>Torpenguin x Operators · Studio Bangkok</span>
+  <span>Photo · PenguinX</span>
+</div>
+
+<div class="pg-lede">
+  <p class="pg-lede-text">
+    Owned media is how PenguinX earns the right to convene the industry. <em>Long-form interviews, short-form explainers, daily news</em> — built for the operators who actually decide what to buy, hire, or open.
   </p>
-  <p>
-    It also runs the other direction. Operators we feature on Torpenguin become hosts at #LongKaek. Knowledge that surfaces in Education programs becomes content that loops back into the feed. The ecosystem feeds itself.
-  </p>
+</div>
 
-  <blockquote>
-    "If you want to reach Thai restaurant owners, you don't run ads at them — you talk to them like an insider. That's what PenguinX Media is."
-  </blockquote>
+<section class="pg-section">
+  <div class="pg-section-head">
+    <div>
+      <div class="pg-section-num">01 / Properties</div>
+      <h2 class="pg-section-title">Two house brands.</h2>
+    </div>
+    <div class="pg-section-meta">One for operators, one for consumers</div>
+  </div>
 
-  <h2>Why brands work with us through Media</h2>
-  <p>
-    Brand partners come to PenguinX Media for one reason: <strong>trusted distribution</strong>. A feature on Torpenguin doesn't read like an ad — it reads like the industry's most-followed operator vouching for you, because it is.
-  </p>
-  <ul>
-    <li>Founder-led content with Tor</li>
-    <li>Long-form features on operator pages, brand stories, and product launches</li>
-    <li>Multi-platform amplification across owned channels</li>
-    <li>Co-created content with house brands during industry events</li>
-  </ul>
-</article>
-
-<!-- ====== RELATED ====== -->
-<section class="article-related">
-  <h3>Related stories</h3>
-  <div class="news-grid">
-    <a href="#" class="news-card">
-      <div class="news-thumb" style="background-image:url('https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=900&q=80')"></div>
-      <div class="news-meta">Event</div>
-      <h3 class="news-title">Inside TRC 2025: How 4,500 restaurant owners convened in Bangkok</h3>
-      <div class="news-read">7 min read</div>
+  <div class="pg-grid">
+    <a class="pg-item span-6" href="#">
+      <div class="pg-item-img"><img src="https://images.unsplash.com/photo-1559339352-11d035aa65de?w=1400&q=85" alt=""></div>
+      <div class="pg-item-tag">Operator-focused · Flagship</div>
+      <div class="pg-item-title">Torpenguin</div>
+      <div class="pg-item-sub">The original PenguinX channel. Restaurant owners, multi-unit operators, and supply chain leaders — the most-watched F&B operator brand in Thailand.</div>
     </a>
-    <a href="#" class="news-card">
-      <div class="news-thumb" style="background-image:url('https://images.unsplash.com/photo-1530103862676-de8c9debad1d?w=900&q=80')"></div>
-      <div class="news-meta">Community</div>
-      <h3 class="news-title">Behind #LongKaek — turning competitors into trusted allies</h3>
-      <div class="news-read">4 min read</div>
-    </a>
-    <a href="#" class="news-card">
-      <div class="news-thumb" style="background-image:url('https://images.unsplash.com/photo-1556761175-4b46a572b786?w=900&q=80')"></div>
-      <div class="news-meta">Case Study</div>
-      <h3 class="news-title">How Lineman Wongnai drove nationwide brand activations with PenguinX</h3>
-      <div class="news-read">6 min read</div>
+    <a class="pg-item span-6" href="#">
+      <div class="pg-item-img"><img src="https://images.unsplash.com/photo-1559136555-9303baea8ebd?w=1400&q=85" alt=""></div>
+      <div class="pg-item-tag">Consumer-facing · Discovery</div>
+      <div class="pg-item-title">Tungtua</div>
+      <div class="pg-item-sub">Where consumers find the restaurants the industry is talking about — turning operator-side trust into consumer demand.</div>
     </a>
   </div>
 </section>
 
-<!-- ====== FOOTER ====== -->
-<footer>
-  <div class="foot-grid">
-    <div class="foot-brand">
-      <a href="/" class="logo"><img src="/penguinx-logo.png" alt="PenguinX"></a>
-      <p>F&B Branding and Marketing Agency. A restaurant ecosystem builder firm based in Bangkok, Thailand.</p>
-    </div>
-    <div class="foot-col">
-      <h4>Ecosystem</h4>
-      <a href="/#ecosystem">Media</a>
-      <a href="/#ecosystem">Event</a>
-      <a href="/#ecosystem">Education</a>
-      <a href="/#ecosystem">Solution</a>
-    </div>
-    <div class="foot-col">
-      <h4>Company</h4>
-      <a href="/#about">About</a>
-      <a href="/#work">Work</a>
-      <a href="/#services">Services</a>
-      <a href="/#news">News</a>
-    </div>
-    <div class="foot-col">
-      <h4>Contact</h4>
-      <a href="mailto:tor@penguinx.co">tor@penguinx.co</a>
-      <a href="mailto:supersupp@penguinx.co">supersupp@penguinx.co</a>
-      <a href="tel:+66934514265">+66 93 951 4265</a>
-      <a href="tel:+66894493399">+66 89 449 3399</a>
-    </div>
+<article class="pg-text">
+  <h2>Editorial trust, used commercially.</h2>
+  <p>
+    The audience PenguinX Media built over 15 years isn't just reach — it's <strong>credibility with the operators brand partners want to sell to</strong>. When Torpenguin reviews a piece of equipment, walks through a P&L, or sits down with a founder, operators watch because the editorial track record has earned that attention.
+  </p>
+  <p>
+    For brand partners, that means a different kind of distribution. A sponsored explainer with Torpenguin doesn't read like an ad — it reads like an industry recommendation. Tungtua's consumer-facing coverage closes the loop: operators trust the brand, and the brand reaches the customers operators want.
+  </p>
+  <p>
+    Owned media is the asset the entire ecosystem compounds on. Every event, every cohort, every agency engagement runs faster because the audience is already there.
+  </p>
+</article>
+
+<section class="pg-stats">
+  <div class="pg-stats-grid">
+    <div class="pg-stat"><div class="num">2.0M+</div><div class="lbl">Followers</div></div>
+    <div class="pg-stat"><div class="num">500+</div><div class="lbl">Videos / yr</div></div>
+    <div class="pg-stat"><div class="num">15 yrs</div><div class="lbl">On-air</div></div>
+    <div class="pg-stat"><div class="num">45</div><div class="lbl">Provinces covered</div></div>
   </div>
-  <div class="foot-bottom">
-    <span>© 2026 Penguin X Co., Ltd. & Supersup Agency Co., Ltd.</span>
-    <span class="mono">www.penguinx.co</span>
-  </div>
-</footer>
+</section>
+
+<section class="pg-next">
+  <div class="pg-next-tag">— Next Pillar —</div>
+  <h2 class="pg-next-title">
+    <a href="/ecosystem/event.html">Event ↗</a>
+  </h2>
+  <a href="/" class="pg-back">↑ Back to PenguinX</a>
+</section>
 
 </body>
 </html>

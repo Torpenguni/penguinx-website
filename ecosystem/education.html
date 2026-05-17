@@ -3,143 +3,310 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>PenguinX Education — Knowledge that compounds across operators — PenguinX</title>
+<title>PenguinX Education — How the industry learns</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Anuphan:wght@100;200;300;400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/styles.css">
+<style>
+  :root{
+    --bg:#0a0a0a;
+    --bg-2:#141413;
+    --ink:#f4f1ea;
+    --ink-mute:#8a8680;
+    --accent:#dba93a;
+    --line:rgba(244,241,234,0.1);
+    --line-soft:rgba(244,241,234,0.05);
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    background:var(--bg);color:var(--ink);
+    font-family:'Anuphan',sans-serif;font-weight:400;
+    -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;line-height:1.5;
+  }
+
+  .pg-nav{
+    display:flex;justify-content:space-between;align-items:center;
+    padding:24px 40px;border-bottom:1px solid var(--line);
+  }
+  .pg-back{
+    color:var(--ink-mute);text-decoration:none;
+    font-size:13px;letter-spacing:0.05em;
+    display:inline-flex;align-items:center;gap:8px;
+    transition:color 0.2s ease;
+  }
+  .pg-back:hover{color:var(--accent)}
+  .pg-pillar{
+    font-size:11px;letter-spacing:0.15em;text-transform:uppercase;
+    color:var(--ink-mute);
+  }
+  .pg-pillar b{color:var(--accent);font-weight:600}
+
+  .pg-hero{padding:120px 40px 80px;border-bottom:1px solid var(--line)}
+  .pg-hero-grid{
+    display:grid;grid-template-columns:1fr 320px;gap:80px;
+    max-width:1600px;margin:0 auto;align-items:end;
+  }
+  .pg-hero-title{
+    font-size:clamp(56px,9vw,160px);font-weight:600;
+    line-height:0.92;letter-spacing:-0.045em;
+  }
+  .pg-hero-title .light{color:var(--ink-mute);font-weight:300;font-style:italic}
+  .pg-hero-title .accent{color:var(--accent)}
+
+  .pg-meta{display:flex;flex-direction:column;gap:24px;padding-bottom:12px}
+  .pg-meta-block{
+    display:grid;grid-template-columns:90px 1fr;gap:16px;
+    padding-bottom:18px;border-bottom:1px solid var(--line-soft);
+  }
+  .pg-meta-block:last-child{border-bottom:none}
+  .pg-meta-label{
+    font-size:11px;color:var(--ink-mute);text-transform:uppercase;
+    letter-spacing:0.15em;padding-top:3px;
+  }
+  .pg-meta-value{font-size:14px;color:var(--ink);line-height:1.5}
+
+  .pg-cover{
+    width:100%;aspect-ratio:21/9;
+    background:#222 center/cover no-repeat;
+    background-image:url('https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=2200&q=85');
+  }
+  .pg-cover-caption{
+    padding:14px 40px;font-size:12px;color:var(--ink-mute);
+    display:flex;justify-content:space-between;border-bottom:1px solid var(--line);
+  }
+
+  .pg-lede{max-width:1100px;margin:0 auto;padding:120px 40px 100px}
+  .pg-lede-text{
+    font-size:clamp(24px,2.6vw,38px);line-height:1.35;
+    font-weight:400;color:var(--ink);letter-spacing:-0.015em;
+    max-width:900px;
+  }
+  .pg-lede-text em{font-style:italic;color:var(--ink-mute);font-weight:300}
+
+  .pg-section{padding:0 40px 80px;max-width:1600px;margin:0 auto}
+  .pg-section-head{
+    display:flex;justify-content:space-between;align-items:flex-end;
+    margin-bottom:48px;padding-bottom:24px;border-bottom:1px solid var(--line);
+    flex-wrap:wrap;gap:24px;
+  }
+  .pg-section-num{
+    font-size:11px;color:var(--ink-mute);
+    letter-spacing:0.15em;text-transform:uppercase;margin-bottom:8px;
+  }
+  .pg-section-title{
+    font-size:clamp(28px,3vw,48px);font-weight:600;
+    letter-spacing:-0.025em;line-height:1.05;
+  }
+  .pg-section-meta{font-size:12px;color:var(--ink-mute);letter-spacing:0.05em}
+
+  .pg-grid{display:grid;grid-template-columns:repeat(12,1fr);gap:16px}
+  .pg-item{
+    text-decoration:none;color:inherit;display:block;
+    cursor:pointer;transition:opacity 0.3s ease;
+  }
+  .pg-item:hover{opacity:0.85}
+  .pg-item-img{
+    width:100%;background:#1a1a18 center/cover no-repeat;
+    margin-bottom:16px;overflow:hidden;border-radius:2px;
+  }
+  .pg-item-img img{
+    display:block;width:100%;height:100%;object-fit:cover;
+    transition:transform 0.8s ease;
+  }
+  .pg-item:hover .pg-item-img img{transform:scale(1.03)}
+  .pg-item-tag{
+    font-size:11px;color:var(--accent);letter-spacing:0.1em;
+    text-transform:uppercase;margin-bottom:6px;
+  }
+  .pg-item-title{
+    font-size:22px;font-weight:600;line-height:1.2;
+    letter-spacing:-0.02em;margin-bottom:6px;
+  }
+  .pg-item-sub{font-size:14px;color:var(--ink-mute);line-height:1.4}
+
+  .pg-item.span-7{grid-column:span 7}
+  .pg-item.span-5{grid-column:span 5}
+  .pg-item.span-6{grid-column:span 6}
+  .pg-item.span-4{grid-column:span 4}
+  .pg-item.span-8{grid-column:span 8}
+  .pg-item.span-12{grid-column:span 12}
+  .pg-item.span-7 .pg-item-img{aspect-ratio:16/10}
+  .pg-item.span-5 .pg-item-img{aspect-ratio:5/4}
+  .pg-item.span-6 .pg-item-img{aspect-ratio:4/3}
+  .pg-item.span-4 .pg-item-img{aspect-ratio:1/1}
+  .pg-item.span-8 .pg-item-img{aspect-ratio:16/9}
+  .pg-item.span-12 .pg-item-img{aspect-ratio:21/9}
+  .pg-item.span-7 .pg-item-title,
+  .pg-item.span-8 .pg-item-title,
+  .pg-item.span-12 .pg-item-title{font-size:32px}
+
+  .pg-text{max-width:900px;margin:0 auto;padding:80px 40px;border-top:1px solid var(--line)}
+  .pg-text h2{
+    font-size:clamp(28px,3.2vw,48px);font-weight:600;
+    letter-spacing:-0.025em;margin-bottom:32px;line-height:1.1;
+  }
+  .pg-text p{
+    font-size:17px;line-height:1.65;color:var(--ink-mute);
+    margin-bottom:20px;font-weight:300;
+  }
+  .pg-text p strong{color:var(--ink);font-weight:500}
+
+  .pg-stats{
+    padding:80px 40px;border-top:1px solid var(--line);
+    border-bottom:1px solid var(--line);background:var(--bg-2);
+  }
+  .pg-stats-grid{
+    display:grid;grid-template-columns:repeat(4,1fr);
+    gap:60px;max-width:1400px;margin:0 auto;
+  }
+  .pg-stat .num{
+    font-size:clamp(48px,5vw,80px);font-weight:600;
+    letter-spacing:-0.04em;line-height:1;color:var(--accent);
+  }
+  .pg-stat .lbl{
+    font-size:13px;color:var(--ink-mute);
+    text-transform:uppercase;letter-spacing:0.12em;margin-top:14px;
+  }
+
+  .pg-next{padding:120px 40px;border-top:1px solid var(--line);text-align:center}
+  .pg-next-tag{
+    font-size:11px;color:var(--ink-mute);
+    text-transform:uppercase;letter-spacing:0.2em;margin-bottom:24px;
+  }
+  .pg-next-title{
+    font-size:clamp(48px,7vw,120px);font-weight:600;
+    line-height:0.95;letter-spacing:-0.04em;margin-bottom:32px;
+  }
+  .pg-next-title a{
+    color:var(--ink);text-decoration:none;
+    border-bottom:2px solid transparent;transition:all 0.3s ease;
+  }
+  .pg-next-title a:hover{color:var(--accent);border-bottom-color:var(--accent)}
+
+  @media (max-width:900px){
+    .pg-hero{padding:60px 24px 40px}
+    .pg-hero-grid{grid-template-columns:1fr;gap:48px}
+    .pg-lede{padding:60px 24px}
+    .pg-section{padding:0 24px 60px}
+    .pg-text{padding:60px 24px}
+    .pg-stats{padding:60px 24px}
+    .pg-stats-grid{grid-template-columns:repeat(2,1fr);gap:40px}
+    .pg-item.span-7,.pg-item.span-5,
+    .pg-item.span-6,.pg-item.span-4,
+    .pg-item.span-8{grid-column:span 12}
+    .pg-cover-caption{padding:14px 24px}
+  }
+</style>
 </head>
 <body>
 
-<!-- ====== NAV ====== -->
-<nav class="top">
-  <a href="/" class="logo"><img src="/penguinx-logo.png" alt="PenguinX"></a>
-  <ul class="nav-links">
-    <li><a href="/#ecosystem">Ecosystem</a></li>
-    <li><a href="/#work">Work</a></li>
-    <li><a href="/#services">Services</a></li>
-    <li><a href="/#about">About</a></li>
-    <li><a href="/#news">News</a></li>
-  </ul>
-  <a href="/#contact" class="nav-cta">Let's talk</a>
-</nav>
-
-<!-- ====== ARTICLE HERO ====== -->
-<section class="article-hero">
-  <a href="/#ecosystem" class="article-back">Back to Ecosystem</a>
-  <div class="article-meta">
-    <span class="category">Pillar · Education</span>
-    <span class="sep">·</span>
-    <span>5 min read</span>
-    <span class="sep">·</span>
-    <span>Month 0, 2026</span>
-  </div>
-  <h1 class="article-title">PenguinX Education — Knowledge that compounds across operators</h1>
-  <p class="article-lede">
-    Restaurant Business Academy, Restaurant MBA, and a growing body of books and content that elevate the entire F&B industry.
-  </p>
-</section>
-
-<!-- ====== COVER IMAGE (optional) ====== -->
-<div class="article-cover">
-  <img src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?w=1600&q=85" alt="Cover image alt text">
+<div class="pg-nav">
+  <a href="/" class="pg-back">← Back to PenguinX</a>
+  <div class="pg-pillar">03 / Pillar · <b>Education</b></div>
 </div>
 
-<!-- ====== ARTICLE BODY ====== -->
-<article class="article-body">
-  <p>
-    Knowledge compounds — and in an industry where most operators learn by trial and a lot of error, the compounding curve matters more than any single tactic. The Education pillar is where PenguinX invests in the long game: programs that lift the floor of the entire F&B industry.
+<section class="pg-hero">
+  <div class="pg-hero-grid">
+    <h1 class="pg-hero-title">
+      <span class="light">How the</span><br>
+      industry<br>
+      <span class="accent">learns</span>.
+    </h1>
+    <div class="pg-meta">
+      <div class="pg-meta-block">
+        <div class="pg-meta-label">Pillar</div>
+        <div class="pg-meta-value">PenguinX Education</div>
+      </div>
+      <div class="pg-meta-block">
+        <div class="pg-meta-label">Properties</div>
+        <div class="pg-meta-value">Restaurant Business Academy · Restaurant MBA · Books</div>
+      </div>
+      <div class="pg-meta-block">
+        <div class="pg-meta-label">Reach</div>
+        <div class="pg-meta-value">3,000+ operators trained</div>
+      </div>
+      <div class="pg-meta-block">
+        <div class="pg-meta-label">Since</div>
+        <div class="pg-meta-value">2019</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="pg-cover"></div>
+<div class="pg-cover-caption">
+  <span>Restaurant MBA · Cohort 2</span>
+  <span>Photo · PenguinX</span>
+</div>
+
+<div class="pg-lede">
+  <p class="pg-lede-text">
+    Real F&B operators teaching real F&B operators. <em>Cohort programs, deep-dive workshops, published frameworks</em> — the curriculum the industry didn't have before.
   </p>
+</div>
 
-  <h2>What sits under this pillar</h2>
+<section class="pg-section">
+  <div class="pg-section-head">
+    <div>
+      <div class="pg-section-num">01 / Properties</div>
+      <h2 class="pg-section-title">Three formats.</h2>
+    </div>
+    <div class="pg-section-meta">From foundations to senior cohorts to printed reference</div>
+  </div>
 
-  <h3>Restaurant Business Academy</h3>
-  <p>
-    Practical operator training across the disciplines that actually run a restaurant — unit economics, marketing, supply chain, team management. Built for owners who are scaling and managers who want to grow into ownership.
-  </p>
-
-  <h3>Restaurant MBA</h3>
-  <p>
-    The flagship long-form program. A serious business-school-style cohort for restaurant founders, multi-brand operators, and senior F&B leaders. The first program of its kind in Thailand purpose-built for the industry.
-  </p>
-
-  <h3>Books</h3>
-  <p>
-    Best-selling operator-facing books authored by Tor and the PenguinX team. Long-form knowledge that lives outside the social feed and ends up on every serious operator's shelf.
-  </p>
-
-  <h2>How it connects to the rest of the ecosystem</h2>
-  <p>
-    Education is the long-cycle counterpart to Media. Where Media reaches operators in their feed every day, Education locks in the relationships that matter most — the founders building the brands that will shape the next decade of Thai F&B.
-  </p>
-  <p>
-    Cohort graduates become Event speakers. Their stories become Media features. Their growing brands become Solution-agency clients. It's a loop, and Education is the part that turns audience into community.
-  </p>
-
-  <blockquote>
-    "If you want to professionalize an industry, you start with the people running it. Education is the slowest channel and the most important one."
-  </blockquote>
-</article>
-
-<!-- ====== RELATED ====== -->
-<section class="article-related">
-  <h3>Related stories</h3>
-  <div class="news-grid">
-    <a href="#" class="news-card">
-      <div class="news-thumb" style="background-image:url('https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=900&q=80')"></div>
-      <div class="news-meta">Event</div>
-      <h3 class="news-title">Inside TRC 2025: How 4,500 restaurant owners convened in Bangkok</h3>
-      <div class="news-read">7 min read</div>
+  <div class="pg-grid">
+    <a class="pg-item span-4" href="#">
+      <div class="pg-item-img"><img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=1100&q=85" alt=""></div>
+      <div class="pg-item-tag">Foundations</div>
+      <div class="pg-item-title">Restaurant Business Academy</div>
+      <div class="pg-item-sub">Self-paced curriculum on unit economics, operations, marketing — the basics every new operator should know.</div>
     </a>
-    <a href="#" class="news-card">
-      <div class="news-thumb" style="background-image:url('https://images.unsplash.com/photo-1530103862676-de8c9debad1d?w=900&q=80')"></div>
-      <div class="news-meta">Community</div>
-      <h3 class="news-title">Behind #LongKaek — turning competitors into trusted allies</h3>
-      <div class="news-read">4 min read</div>
+    <a class="pg-item span-4" href="#">
+      <div class="pg-item-img"><img src="https://images.unsplash.com/photo-1542838132-92c53300491e?w=1100&q=85" alt=""></div>
+      <div class="pg-item-tag">Cohort · Senior</div>
+      <div class="pg-item-title">Restaurant MBA</div>
+      <div class="pg-item-sub">Live cohort program for multi-unit operators. Small classes, real case studies, peer accountability — the program graduates come back as guest faculty.</div>
     </a>
-    <a href="#" class="news-card">
-      <div class="news-thumb" style="background-image:url('https://images.unsplash.com/photo-1556761175-4b46a572b786?w=900&q=80')"></div>
-      <div class="news-meta">Case Study</div>
-      <h3 class="news-title">How Lineman Wongnai drove nationwide brand activations with PenguinX</h3>
-      <div class="news-read">6 min read</div>
+    <a class="pg-item span-4" href="#">
+      <div class="pg-item-img"><img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=1100&q=85" alt=""></div>
+      <div class="pg-item-tag">Published · Reference</div>
+      <div class="pg-item-title">Books</div>
+      <div class="pg-item-sub">The frameworks codified into print. The reference shelf every restaurant office should have.</div>
     </a>
   </div>
 </section>
 
-<!-- ====== FOOTER ====== -->
-<footer>
-  <div class="foot-grid">
-    <div class="foot-brand">
-      <a href="/" class="logo"><img src="/penguinx-logo.png" alt="PenguinX"></a>
-      <p>F&B Branding and Marketing Agency. A restaurant ecosystem builder firm based in Bangkok, Thailand.</p>
-    </div>
-    <div class="foot-col">
-      <h4>Ecosystem</h4>
-      <a href="/#ecosystem">Media</a>
-      <a href="/#ecosystem">Event</a>
-      <a href="/#ecosystem">Education</a>
-      <a href="/#ecosystem">Solution</a>
-    </div>
-    <div class="foot-col">
-      <h4>Company</h4>
-      <a href="/#about">About</a>
-      <a href="/#work">Work</a>
-      <a href="/#services">Services</a>
-      <a href="/#news">News</a>
-    </div>
-    <div class="foot-col">
-      <h4>Contact</h4>
-      <a href="mailto:tor@penguinx.co">tor@penguinx.co</a>
-      <a href="mailto:supersupp@penguinx.co">supersupp@penguinx.co</a>
-      <a href="tel:+66934514265">+66 93 951 4265</a>
-      <a href="tel:+66894493399">+66 89 449 3399</a>
-    </div>
+<article class="pg-text">
+  <h2>Curriculum the industry didn't have.</h2>
+  <p>
+    Most operator education in Thailand came from two places: academic programs written by people who had never run a P&L, or vendor seminars built to sell something at the end. PenguinX Education exists because <strong>neither was good enough</strong>.
+  </p>
+  <p>
+    Each format is taught by operators who've made the mistakes — multi-unit founders, senior chefs, supply-chain leaders, marketers who've sat through real launch cycles. The case studies are local; the frameworks are tested; the peer relationships outlast the syllabus.
+  </p>
+  <p>
+    Graduates leave with two things: a clearer playbook, and a class full of operators they can call when the next decision shows up.
+  </p>
+</article>
+
+<section class="pg-stats">
+  <div class="pg-stats-grid">
+    <div class="pg-stat"><div class="num">3,000+</div><div class="lbl">Operators trained</div></div>
+    <div class="pg-stat"><div class="num">2</div><div class="lbl">Cohorts / yr</div></div>
+    <div class="pg-stat"><div class="num">5</div><div class="lbl">Books published</div></div>
+    <div class="pg-stat"><div class="num">12</div><div class="lbl">Industry faculty</div></div>
   </div>
-  <div class="foot-bottom">
-    <span>© 2026 Penguin X Co., Ltd. & Supersup Agency Co., Ltd.</span>
-    <span class="mono">www.penguinx.co</span>
-  </div>
-</footer>
+</section>
+
+<section class="pg-next">
+  <div class="pg-next-tag">— Next Pillar —</div>
+  <h2 class="pg-next-title">
+    <a href="/ecosystem/solution.html">Solution ↗</a>
+  </h2>
+  <a href="/" class="pg-back">↑ Back to PenguinX</a>
+</section>
 
 </body>
 </html>

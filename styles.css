@@ -723,7 +723,6 @@ section{padding:80px 32px;position:relative}
   flex-wrap:wrap;
   gap:48px;
   padding:24px 0;
-  border-top:1px solid var(--line);
 }
 .cc-stat .num{
   font-family:'Anuphan',sans-serif;

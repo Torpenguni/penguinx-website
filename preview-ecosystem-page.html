@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>PenguinX Event — Where the F&B industry convenes</title>
+<title>PenguinX Event — Ecosystem Sub-page Preview</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Anuphan:wght@100;200;300;400;500;600;700&display=swap" rel="stylesheet">
@@ -20,170 +20,312 @@
   *{box-sizing:border-box;margin:0;padding:0}
   html{scroll-behavior:smooth}
   body{
-    background:var(--bg);color:var(--ink);
-    font-family:'Anuphan',sans-serif;font-weight:400;
+    background:var(--bg);
+    color:var(--ink);
+    font-family:'Anuphan',sans-serif;
+    font-weight:400;
     -webkit-font-smoothing:antialiased;
-    overflow-x:hidden;line-height:1.5;
+    overflow-x:hidden;
+    line-height:1.5;
   }
 
+  .banner{
+    position:sticky;top:0;z-index:200;
+    background:var(--accent);color:var(--bg);
+    padding:10px;text-align:center;
+    font-size:13px;font-weight:600;letter-spacing:0.5px;
+  }
+
+  /* ====== TOP BAR ====== */
   .pg-nav{
     display:flex;justify-content:space-between;align-items:center;
-    padding:24px 40px;border-bottom:1px solid var(--line);
+    padding:24px 40px;
+    border-bottom:1px solid var(--line);
   }
   .pg-back{
-    color:var(--ink-mute);text-decoration:none;
-    font-size:13px;letter-spacing:0.05em;
+    color:var(--ink-mute);
+    text-decoration:none;
+    font-size:13px;
+    letter-spacing:0.05em;
     display:inline-flex;align-items:center;gap:8px;
     transition:color 0.2s ease;
   }
   .pg-back:hover{color:var(--accent)}
   .pg-pillar{
-    font-size:11px;letter-spacing:0.15em;text-transform:uppercase;
+    font-size:11px;
+    letter-spacing:0.15em;
+    text-transform:uppercase;
     color:var(--ink-mute);
   }
   .pg-pillar b{color:var(--accent);font-weight:600}
 
-  .pg-hero{padding:120px 40px 80px;border-bottom:1px solid var(--line)}
+  /* ====== HERO ====== */
+  .pg-hero{
+    padding:120px 40px 80px;
+    border-bottom:1px solid var(--line);
+  }
   .pg-hero-grid{
-    display:grid;grid-template-columns:1fr 320px;gap:80px;
-    max-width:1600px;margin:0 auto;align-items:end;
+    display:grid;
+    grid-template-columns:1fr 320px;
+    gap:80px;
+    max-width:1600px;
+    margin:0 auto;
+    align-items:end;
   }
   .pg-hero-title{
-    font-size:clamp(56px,9vw,160px);font-weight:600;
-    line-height:0.92;letter-spacing:-0.045em;
+    font-size:clamp(56px,9vw,160px);
+    font-weight:600;
+    line-height:0.92;
+    letter-spacing:-0.045em;
   }
-  .pg-hero-title .light{color:var(--ink-mute);font-weight:300;font-style:italic}
+  .pg-hero-title .light{
+    color:var(--ink-mute);
+    font-weight:300;
+    font-style:italic;
+  }
   .pg-hero-title .accent{color:var(--accent)}
 
-  .pg-meta{display:flex;flex-direction:column;gap:24px;padding-bottom:12px}
+  .pg-meta{
+    display:flex;flex-direction:column;
+    gap:24px;
+    padding-bottom:12px;
+  }
   .pg-meta-block{
-    display:grid;grid-template-columns:90px 1fr;gap:16px;
-    padding-bottom:18px;border-bottom:1px solid var(--line-soft);
+    display:grid;
+    grid-template-columns:90px 1fr;
+    gap:16px;
+    padding-bottom:18px;
+    border-bottom:1px solid var(--line-soft);
   }
   .pg-meta-block:last-child{border-bottom:none}
   .pg-meta-label{
-    font-size:11px;color:var(--ink-mute);text-transform:uppercase;
-    letter-spacing:0.15em;padding-top:3px;
+    font-size:11px;
+    color:var(--ink-mute);
+    text-transform:uppercase;
+    letter-spacing:0.15em;
+    padding-top:3px;
   }
-  .pg-meta-value{font-size:14px;color:var(--ink);line-height:1.5}
+  .pg-meta-value{
+    font-size:14px;
+    color:var(--ink);
+    line-height:1.5;
+  }
 
+  /* ====== COVER ====== */
   .pg-cover{
-    width:100%;aspect-ratio:21/9;
+    width:100%;
+    aspect-ratio:21/9;
     background:#222 center/cover no-repeat;
     background-image:url('https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=2200&q=85');
   }
   .pg-cover-caption{
-    padding:14px 40px;font-size:12px;color:var(--ink-mute);
-    display:flex;justify-content:space-between;border-bottom:1px solid var(--line);
+    padding:14px 40px;
+    font-size:12px;
+    color:var(--ink-mute);
+    display:flex;justify-content:space-between;
+    border-bottom:1px solid var(--line);
   }
 
-  .pg-lede{max-width:1100px;margin:0 auto;padding:120px 40px 100px}
+  /* ====== LEDE ====== */
+  .pg-lede{
+    max-width:1100px;
+    margin:0 auto;
+    padding:120px 40px 100px;
+  }
   .pg-lede-text{
-    font-size:clamp(24px,2.6vw,38px);line-height:1.35;
-    font-weight:400;color:var(--ink);letter-spacing:-0.015em;
+    font-size:clamp(24px,2.6vw,38px);
+    line-height:1.35;
+    font-weight:400;
+    color:var(--ink);
+    letter-spacing:-0.015em;
     max-width:900px;
   }
-  .pg-lede-text em{font-style:italic;color:var(--ink-mute);font-weight:300}
+  .pg-lede-text em{
+    font-style:italic;
+    color:var(--ink-mute);
+    font-weight:300;
+  }
 
-  .pg-section{padding:0 40px 80px;max-width:1600px;margin:0 auto}
+  /* ====== PROPERTIES GRID (Pentagram-style mixed sizes) ====== */
+  .pg-section{
+    padding:0 40px 80px;
+    max-width:1600px;
+    margin:0 auto;
+  }
   .pg-section-head{
     display:flex;justify-content:space-between;align-items:flex-end;
-    margin-bottom:48px;padding-bottom:24px;border-bottom:1px solid var(--line);
+    margin-bottom:48px;
+    padding-bottom:24px;
+    border-bottom:1px solid var(--line);
     flex-wrap:wrap;gap:24px;
   }
   .pg-section-num{
     font-size:11px;color:var(--ink-mute);
-    letter-spacing:0.15em;text-transform:uppercase;margin-bottom:8px;
+    letter-spacing:0.15em;text-transform:uppercase;
+    margin-bottom:8px;
   }
   .pg-section-title{
-    font-size:clamp(28px,3vw,48px);font-weight:600;
-    letter-spacing:-0.025em;line-height:1.05;
+    font-size:clamp(28px,3vw,48px);
+    font-weight:600;
+    letter-spacing:-0.025em;
+    line-height:1.05;
   }
-  .pg-section-meta{font-size:12px;color:var(--ink-mute);letter-spacing:0.05em}
+  .pg-section-meta{
+    font-size:12px;
+    color:var(--ink-mute);
+    letter-spacing:0.05em;
+  }
 
-  .pg-grid{display:grid;grid-template-columns:repeat(12,1fr);gap:16px}
+  /* Modular grid: rows of varied column counts */
+  .pg-grid{
+    display:grid;
+    grid-template-columns:repeat(12,1fr);
+    gap:16px;
+  }
   .pg-item{
-    text-decoration:none;color:inherit;display:block;
-    cursor:pointer;transition:opacity 0.3s ease;
+    text-decoration:none;
+    color:inherit;
+    display:block;
+    cursor:pointer;
+    transition:opacity 0.3s ease;
   }
   .pg-item:hover{opacity:0.85}
   .pg-item-img{
-    width:100%;background:#1a1a18 center/cover no-repeat;
-    margin-bottom:16px;overflow:hidden;border-radius:2px;
+    width:100%;
+    background:#1a1a18 center/cover no-repeat;
+    margin-bottom:16px;
+    overflow:hidden;
+    border-radius:2px;
   }
   .pg-item-img img{
-    display:block;width:100%;height:100%;object-fit:cover;
+    display:block;
+    width:100%;
+    height:100%;
+    object-fit:cover;
     transition:transform 0.8s ease;
   }
   .pg-item:hover .pg-item-img img{transform:scale(1.03)}
   .pg-item-tag{
-    font-size:11px;color:var(--accent);letter-spacing:0.1em;
-    text-transform:uppercase;margin-bottom:6px;
+    font-size:11px;
+    color:var(--accent);
+    letter-spacing:0.1em;
+    text-transform:uppercase;
+    margin-bottom:6px;
   }
   .pg-item-title{
-    font-size:22px;font-weight:600;line-height:1.2;
-    letter-spacing:-0.02em;margin-bottom:6px;
+    font-size:22px;
+    font-weight:600;
+    line-height:1.2;
+    letter-spacing:-0.02em;
+    margin-bottom:6px;
   }
-  .pg-item-sub{font-size:14px;color:var(--ink-mute);line-height:1.4}
+  .pg-item-sub{
+    font-size:14px;
+    color:var(--ink-mute);
+    line-height:1.4;
+  }
 
+  /* Row 1: 1 big + 2 medium */
   .pg-item.span-7{grid-column:span 7}
   .pg-item.span-5{grid-column:span 5}
   .pg-item.span-6{grid-column:span 6}
   .pg-item.span-4{grid-column:span 4}
   .pg-item.span-8{grid-column:span 8}
   .pg-item.span-12{grid-column:span 12}
+
   .pg-item.span-7 .pg-item-img{aspect-ratio:16/10}
   .pg-item.span-5 .pg-item-img{aspect-ratio:5/4}
   .pg-item.span-6 .pg-item-img{aspect-ratio:4/3}
   .pg-item.span-4 .pg-item-img{aspect-ratio:1/1}
   .pg-item.span-8 .pg-item-img{aspect-ratio:16/9}
   .pg-item.span-12 .pg-item-img{aspect-ratio:21/9}
+
   .pg-item.span-7 .pg-item-title,
   .pg-item.span-8 .pg-item-title,
   .pg-item.span-12 .pg-item-title{font-size:32px}
 
-  .pg-text{max-width:900px;margin:0 auto;padding:80px 40px;border-top:1px solid var(--line)}
+  /* ====== TEXT SECTION ====== */
+  .pg-text{
+    max-width:900px;
+    margin:0 auto;
+    padding:80px 40px;
+    border-top:1px solid var(--line);
+  }
   .pg-text h2{
-    font-size:clamp(28px,3.2vw,48px);font-weight:600;
-    letter-spacing:-0.025em;margin-bottom:32px;line-height:1.1;
+    font-size:clamp(28px,3.2vw,48px);
+    font-weight:600;
+    letter-spacing:-0.025em;
+    margin-bottom:32px;
+    line-height:1.1;
   }
   .pg-text p{
-    font-size:17px;line-height:1.65;color:var(--ink-mute);
-    margin-bottom:20px;font-weight:300;
+    font-size:17px;
+    line-height:1.65;
+    color:var(--ink-mute);
+    margin-bottom:20px;
+    font-weight:300;
   }
   .pg-text p strong{color:var(--ink);font-weight:500}
 
+  /* ====== PULL STATS ====== */
   .pg-stats{
-    padding:80px 40px;border-top:1px solid var(--line);
-    border-bottom:1px solid var(--line);background:var(--bg-2);
+    padding:80px 40px;
+    border-top:1px solid var(--line);
+    border-bottom:1px solid var(--line);
+    background:var(--bg-2);
   }
   .pg-stats-grid{
-    display:grid;grid-template-columns:repeat(4,1fr);
-    gap:60px;max-width:1400px;margin:0 auto;
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:60px;
+    max-width:1400px;
+    margin:0 auto;
   }
   .pg-stat .num{
-    font-size:clamp(48px,5vw,80px);font-weight:600;
-    letter-spacing:-0.04em;line-height:1;color:var(--accent);
+    font-size:clamp(48px,5vw,80px);
+    font-weight:600;
+    letter-spacing:-0.04em;
+    line-height:1;
+    color:var(--accent);
   }
   .pg-stat .lbl{
-    font-size:13px;color:var(--ink-mute);
-    text-transform:uppercase;letter-spacing:0.12em;margin-top:14px;
+    font-size:13px;
+    color:var(--ink-mute);
+    text-transform:uppercase;
+    letter-spacing:0.12em;
+    margin-top:14px;
   }
 
-  .pg-next{padding:120px 40px;border-top:1px solid var(--line);text-align:center}
+  /* ====== NEXT ====== */
+  .pg-next{
+    padding:120px 40px;
+    border-top:1px solid var(--line);
+    text-align:center;
+  }
   .pg-next-tag{
-    font-size:11px;color:var(--ink-mute);
-    text-transform:uppercase;letter-spacing:0.2em;margin-bottom:24px;
+    font-size:11px;
+    color:var(--ink-mute);
+    text-transform:uppercase;
+    letter-spacing:0.2em;
+    margin-bottom:24px;
   }
   .pg-next-title{
-    font-size:clamp(48px,7vw,120px);font-weight:600;
-    line-height:0.95;letter-spacing:-0.04em;margin-bottom:32px;
+    font-size:clamp(48px,7vw,120px);
+    font-weight:600;
+    line-height:0.95;
+    letter-spacing:-0.04em;
+    margin-bottom:32px;
   }
   .pg-next-title a{
-    color:var(--ink);text-decoration:none;
-    border-bottom:2px solid transparent;transition:all 0.3s ease;
+    color:var(--ink);
+    text-decoration:none;
+    border-bottom:2px solid transparent;
+    transition:all 0.3s ease;
   }
-  .pg-next-title a:hover{color:var(--accent);border-bottom-color:var(--accent)}
+  .pg-next-title a:hover{
+    color:var(--accent);
+    border-bottom-color:var(--accent);
+  }
 
   @media (max-width:900px){
     .pg-hero{padding:60px 24px 40px}
@@ -202,11 +344,15 @@
 </head>
 <body>
 
+<div class="banner">PREVIEW · Ecosystem sub-page in Pentagram style — example: Event pillar</div>
+
+<!-- TOP NAV -->
 <div class="pg-nav">
   <a href="/" class="pg-back">← Back to PenguinX</a>
   <div class="pg-pillar">02 / Pillar · <b>Event</b></div>
 </div>
 
+<!-- HERO -->
 <section class="pg-hero">
   <div class="pg-hero-grid">
     <h1 class="pg-hero-title">
@@ -235,18 +381,21 @@
   </div>
 </section>
 
+<!-- COVER -->
 <div class="pg-cover"></div>
 <div class="pg-cover-caption">
   <span>TRC 2025 · Bangkok</span>
   <span>Photo · PenguinX</span>
 </div>
 
+<!-- LEDE -->
 <div class="pg-lede">
   <p class="pg-lede-text">
     Events are where the F&B industry actually convenes. <em>Conferences, expos, peer dinners, networking forums</em> — the moments when operators get into the same room, in person, and decide who they trust.
   </p>
 </div>
 
+<!-- PROPERTIES GRID -->
 <section class="pg-section">
   <div class="pg-section-head">
     <div>
@@ -257,6 +406,7 @@
   </div>
 
   <div class="pg-grid">
+    <!-- Row 1: BIG TRC + medium Damn Expo -->
     <a class="pg-item span-7" href="#">
       <div class="pg-item-img"><img src="https://images.unsplash.com/photo-1505236858219-8359eb29e329?w=1400&q=85" alt=""></div>
       <div class="pg-item-tag">Conference · Flagship</div>
@@ -269,6 +419,8 @@
       <div class="pg-item-title">Damn Expo</div>
       <div class="pg-item-sub">Nightlife and craft-liquor home expo. Bar owners, distributors, beverage brands on one floor.</div>
     </a>
+
+    <!-- Row 2: Restech + CafCon + LongKaek -->
     <a class="pg-item span-4" href="#">
       <div class="pg-item-img"><img src="https://images.unsplash.com/photo-1559136555-9303baea8ebd?w=900&q=85" alt=""></div>
       <div class="pg-item-tag">Expo · Tech</div>
@@ -290,6 +442,7 @@
   </div>
 </section>
 
+<!-- TEXT -->
 <article class="pg-text">
   <h2>Built for commercial intent, not just attendance.</h2>
   <p>
@@ -303,19 +456,33 @@
   </p>
 </article>
 
+<!-- STATS -->
 <section class="pg-stats">
   <div class="pg-stats-grid">
-    <div class="pg-stat"><div class="num">10,000+</div><div class="lbl">Decision-makers / yr</div></div>
-    <div class="pg-stat"><div class="num">5</div><div class="lbl">Flagship properties</div></div>
-    <div class="pg-stat"><div class="num">45</div><div class="lbl">Provinces represented</div></div>
-    <div class="pg-stat"><div class="num">90+</div><div class="lbl">Editions hosted</div></div>
+    <div class="pg-stat">
+      <div class="num">10,000+</div>
+      <div class="lbl">Decision-makers / yr</div>
+    </div>
+    <div class="pg-stat">
+      <div class="num">5</div>
+      <div class="lbl">Flagship properties</div>
+    </div>
+    <div class="pg-stat">
+      <div class="num">45</div>
+      <div class="lbl">Provinces represented</div>
+    </div>
+    <div class="pg-stat">
+      <div class="num">90+</div>
+      <div class="lbl">Editions hosted</div>
+    </div>
   </div>
 </section>
 
+<!-- NEXT PILLAR -->
 <section class="pg-next">
   <div class="pg-next-tag">— Next Pillar —</div>
   <h2 class="pg-next-title">
-    <a href="/ecosystem/education.html">Education ↗</a>
+    <a href="#">Education ↗</a>
   </h2>
   <a href="/" class="pg-back">↑ Back to PenguinX</a>
 </section>
