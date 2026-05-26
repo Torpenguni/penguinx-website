@@ -77,10 +77,13 @@
   .pg-grid.cols-2 .pg-item-img{aspect-ratio:1/1}
   .pg-item-img img{display:block;width:100%;height:100%;object-fit:cover;transition:transform 0.8s ease}
   .pg-item:hover .pg-item-img img{transform:scale(1.04)}
-  .pg-slider{display:flex;width:100%;height:100%;overflow-x:auto;overflow-y:hidden;scroll-snap-type:x mandatory;scrollbar-width:none;-webkit-overflow-scrolling:touch}
-  .pg-slider::-webkit-scrollbar{display:none}
-  .pg-slider img{flex:0 0 100%;width:100%;height:100%;object-fit:cover;scroll-snap-align:start;transition:none}
-  .pg-item:hover .pg-slider img{transform:none}
+  .pg-track{display:flex;width:100%;height:100%;transition:transform 0.45s cubic-bezier(0.4,0,0.2,1)}
+  .pg-track img{flex:0 0 100%;width:100%;height:100%;object-fit:cover}
+  .pg-arrow{position:absolute;top:50%;transform:translateY(-50%);width:36px;height:36px;border-radius:50%;background:rgba(10,10,10,0.6);backdrop-filter:blur(8px);border:1px solid rgba(244,241,234,0.2);color:var(--ink);font-size:20px;line-height:1;cursor:pointer;display:flex;align-items:center;justify-content:center;opacity:0;transition:opacity 0.25s ease, background 0.2s ease;z-index:2;padding:0;font-family:inherit}
+  .pg-item-img:hover .pg-arrow{opacity:1}
+  .pg-arrow.prev{left:10px}
+  .pg-arrow.next{right:10px}
+  .pg-arrow:hover{background:var(--accent);color:var(--bg);border-color:var(--accent)}
   .pg-item{cursor:default}
   .pg-item:hover{opacity:1}
   .pg-item-ext{position:absolute;top:14px;right:14px;width:36px;height:36px;border-radius:50%;background:rgba(10,10,10,0.6);backdrop-filter:blur(8px);display:flex;align-items:center;justify-content:center;color:var(--ink);font-size:14px;transition:all 0.3s ease;border:1px solid rgba(244,241,234,0.15)}
@@ -213,61 +216,61 @@
   </div>
   <div class="pg-grid cols-5">
     <div class="pg-item">
-      <div class="pg-item-img"><div class="pg-slider">
+      <div class="pg-item-img"><div class="pg-track" data-index="0">
         <img src="/ecosystem/Event/TRC/210FF5B1-33DD-438D-B98D-8FEEE85EA9A1.jpg" alt="" loading="lazy">
         <img src="/ecosystem/Event/TRC/2D291DFC-1C92-4CD8-8037-3B6CD8C6F4EC.jpg" alt="" loading="lazy">
         <img src="/ecosystem/Event/TRC/AW_Promote%20%E0%B8%82%E0%B8%B6%E0%B9%89%E0%B8%99%E0%B8%88%E0%B8%AD-04.jpg" alt="" loading="lazy">
         <img src="/ecosystem/Event/TRC/BFC82304-FA60-4760-AA0F-D3AC0BF1CE8E.jpg" alt="" loading="lazy">
         <img src="/ecosystem/Event/TRC/C%20%281%20of%2062%29%20%281%29.jpg" alt="" loading="lazy">
-      </div></div>
+      </div><button class="pg-arrow prev" data-dir="-1" type="button" aria-label="Previous">‹</button><button class="pg-arrow next" data-dir="1" type="button" aria-label="Next">›</button></div>
       <div class="pg-item-tag">Conference · Flagship</div>
       <div class="pg-item-title">TRC — Thailand Restaurant Conference</div>
       <div class="pg-item-sub">Multi-day, multi-track programming for owners and senior operators. The room where annual decisions get made.</div>
     </div>
     <div class="pg-item">
-      <div class="pg-item-img"><div class="pg-slider">
+      <div class="pg-item-img"><div class="pg-track" data-index="0">
         <img src="/ecosystem/Event/Damn/07C31903-AA5F-4ACE-BE31-B72C2A6E6D21.jpg" alt="" loading="lazy">
         <img src="/ecosystem/Event/Damn/48E85867-5200-41E0-9290-57616873CBE1.jpg" alt="" loading="lazy">
         <img src="/ecosystem/Event/Damn/4A74281A-8C9B-4215-9A67-CA0B199D881E.jpg" alt="" loading="lazy">
         <img src="/ecosystem/Event/Damn/50A9E040-ED32-451A-9496-E42096D8585D.jpg" alt="" loading="lazy">
         <img src="/ecosystem/Event/Damn/606043E1-53E4-4079-BCF9-26D7379A20A8.jpg" alt="" loading="lazy">
-      </div></div>
+      </div><button class="pg-arrow prev" data-dir="-1" type="button" aria-label="Previous">‹</button><button class="pg-arrow next" data-dir="1" type="button" aria-label="Next">›</button></div>
       <div class="pg-item-tag">Expo · Nightlife</div>
       <div class="pg-item-title">Damn Expo</div>
       <div class="pg-item-sub">Nightlife and craft-liquor home expo. Bar owners, distributors, beverage brands on one floor.</div>
     </div>
     <div class="pg-item">
-      <div class="pg-item-img"><div class="pg-slider">
+      <div class="pg-item-img"><div class="pg-track" data-index="0">
         <img src="/ecosystem/Event/Restech/2C5417A9-4121-49E4-A9C5-8E4E868438DF.jpg" alt="" loading="lazy">
         <img src="/ecosystem/Event/Restech/56CE5217-4A33-4718-9D86-16655C5B36D2.jpg" alt="" loading="lazy">
         <img src="/ecosystem/Event/Restech/87344F47-0C61-4B5C-AC89-7035C0B973B1.jpg" alt="" loading="lazy">
         <img src="/ecosystem/Event/Restech/87ECB4F6-B376-4B43-882C-309C81A4EEFC.jpg" alt="" loading="lazy">
         <img src="/ecosystem/Event/Restech/A699275D-8395-493A-98C9-5A65346FA71A.jpg" alt="" loading="lazy">
-      </div></div>
+      </div><button class="pg-arrow prev" data-dir="-1" type="button" aria-label="Previous">‹</button><button class="pg-arrow next" data-dir="1" type="button" aria-label="Next">›</button></div>
       <div class="pg-item-tag">Expo · Tech</div>
       <div class="pg-item-title">Restech</div>
       <div class="pg-item-sub">Restaurant tech and equipment expo — live demos, comparison, on-floor procurement.</div>
     </div>
     <div class="pg-item">
-      <div class="pg-item-img"><div class="pg-slider">
+      <div class="pg-item-img"><div class="pg-track" data-index="0">
         <img src="/ecosystem/Event/Cafcon/C%20%2838%20of%2062%29.jpg" alt="" loading="lazy">
         <img src="/ecosystem/Event/Cafcon/C%20%2839%20of%2062%29%20%281%29.jpg" alt="" loading="lazy">
         <img src="/ecosystem/Event/Cafcon/C%20%2839%20of%2062%29.jpg" alt="" loading="lazy">
         <img src="/ecosystem/Event/Cafcon/C%20%2841%20of%2062%29%20%281%29.jpg" alt="" loading="lazy">
         <img src="/ecosystem/Event/Cafcon/C%20%2841%20of%2062%29.jpg" alt="" loading="lazy">
-      </div></div>
+      </div><button class="pg-arrow prev" data-dir="-1" type="button" aria-label="Previous">‹</button><button class="pg-arrow next" data-dir="1" type="button" aria-label="Next">›</button></div>
       <div class="pg-item-tag">Conference · Café</div>
       <div class="pg-item-title">CafCon</div>
       <div class="pg-item-sub">The café business conference — coffee shop owners, roasters, category suppliers, one playbook.</div>
     </div>
     <div class="pg-item">
-      <div class="pg-item-img"><div class="pg-slider">
+      <div class="pg-item-img"><div class="pg-track" data-index="0">
         <img src="/ecosystem/Event/%E0%B8%A5%E0%B8%87%E0%B9%81%E0%B8%82%E0%B8%81/147A1A0E-B09E-4DED-AD1C-BBEEA38A7670.jpg" alt="" loading="lazy">
         <img src="/ecosystem/Event/%E0%B8%A5%E0%B8%87%E0%B9%81%E0%B8%82%E0%B8%81/3CF05A64-FFD1-4F76-98D0-8F9FCA680A2E.jpg" alt="" loading="lazy">
         <img src="/ecosystem/Event/%E0%B8%A5%E0%B8%87%E0%B9%81%E0%B8%82%E0%B8%81/4C3A2463-CCB0-48F0-A862-03730AF4E10D.jpg" alt="" loading="lazy">
         <img src="/ecosystem/Event/%E0%B8%A5%E0%B8%87%E0%B9%81%E0%B8%82%E0%B8%81/571959E7-FE87-4771-B0B5-3AB01848671F.jpg" alt="" loading="lazy">
         <img src="/ecosystem/Event/%E0%B8%A5%E0%B8%87%E0%B9%81%E0%B8%82%E0%B8%81/658B22D9-0FFC-4966-A2F5-6631C39F63A0.jpg" alt="" loading="lazy">
-      </div></div>
+      </div><button class="pg-arrow prev" data-dir="-1" type="button" aria-label="Previous">‹</button><button class="pg-arrow next" data-dir="1" type="button" aria-label="Next">›</button></div>
       <div class="pg-item-tag">Community · Dinner</div>
       <div class="pg-item-title">#LongKaek</div>
       <div class="pg-item-sub">Founder-only peer dinners — competitors turning into trusted allies, by invitation.</div>
@@ -290,5 +293,23 @@
   <a href="/" class="pg-back">↑ Back to PenguinX</a>
 </section>
 
+
+<script>
+  document.querySelectorAll('.pg-arrow').forEach(btn=>{
+    btn.addEventListener('click', e=>{
+      e.preventDefault(); e.stopPropagation();
+      const track = btn.parentElement.querySelector('.pg-track');
+      if(!track) return;
+      const dir = parseInt(btn.dataset.dir,10);
+      const count = track.children.length;
+      const cur = parseInt(track.dataset.index || '0',10);
+      let next = cur + dir;
+      if(next < 0) next = count - 1;
+      if(next >= count) next = 0;
+      track.dataset.index = next;
+      track.style.transform = 'translateX(-' + (next*100) + '%)';
+    });
+  });
+</script>
 </body>
 </html>

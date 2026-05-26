@@ -77,10 +77,13 @@
   .pg-grid.cols-2 .pg-item-img{aspect-ratio:1/1}
   .pg-item-img img{display:block;width:100%;height:100%;object-fit:cover;transition:transform 0.8s ease}
   .pg-item:hover .pg-item-img img{transform:scale(1.04)}
-  .pg-slider{display:flex;width:100%;height:100%;overflow-x:auto;overflow-y:hidden;scroll-snap-type:x mandatory;scrollbar-width:none;-webkit-overflow-scrolling:touch}
-  .pg-slider::-webkit-scrollbar{display:none}
-  .pg-slider img{flex:0 0 100%;width:100%;height:100%;object-fit:cover;scroll-snap-align:start;transition:none}
-  .pg-item:hover .pg-slider img{transform:none}
+  .pg-track{display:flex;width:100%;height:100%;transition:transform 0.45s cubic-bezier(0.4,0,0.2,1)}
+  .pg-track img{flex:0 0 100%;width:100%;height:100%;object-fit:cover}
+  .pg-arrow{position:absolute;top:50%;transform:translateY(-50%);width:36px;height:36px;border-radius:50%;background:rgba(10,10,10,0.6);backdrop-filter:blur(8px);border:1px solid rgba(244,241,234,0.2);color:var(--ink);font-size:20px;line-height:1;cursor:pointer;display:flex;align-items:center;justify-content:center;opacity:0;transition:opacity 0.25s ease, background 0.2s ease;z-index:2;padding:0;font-family:inherit}
+  .pg-item-img:hover .pg-arrow{opacity:1}
+  .pg-arrow.prev{left:10px}
+  .pg-arrow.next{right:10px}
+  .pg-arrow:hover{background:var(--accent);color:var(--bg);border-color:var(--accent)}
   .pg-item{cursor:default}
   .pg-item:hover{opacity:1}
   .pg-item-ext{position:absolute;top:14px;right:14px;width:36px;height:36px;border-radius:50%;background:rgba(10,10,10,0.6);backdrop-filter:blur(8px);display:flex;align-items:center;justify-content:center;color:var(--ink);font-size:14px;transition:all 0.3s ease;border:1px solid rgba(244,241,234,0.15)}
@@ -212,33 +215,33 @@
   </div>
   <div class="pg-grid cols-3">
     <div class="pg-item">
-      <div class="pg-item-img"><div class="pg-slider">
+      <div class="pg-item-img"><div class="pg-track" data-index="0">
         <img src="/ecosystem/Media/TP.png" alt="" loading="lazy">
         <img src="/ecosystem/Media/1000035581.JPG" alt="" loading="lazy">
         <img src="/ecosystem/Media/C%20%285%20of%207%29.jpg" alt="" loading="lazy">
         <img src="/ecosystem/Media/C%20%287%20of%207%29.jpg" alt="" loading="lazy">
-      </div></div>
+      </div><button class="pg-arrow prev" data-dir="-1" type="button" aria-label="Previous">‹</button><button class="pg-arrow next" data-dir="1" type="button" aria-label="Next">›</button></div>
       <div class="pg-item-tag">Operator-focused · Flagship</div>
       <div class="pg-item-title">Torpenguin</div>
       <div class="pg-item-sub">The flagship PenguinX channel. Restaurant owners, multi-unit operators, supply chain leaders — the most-watched F&B operator brand in Thailand.</div>
     </div>
     <div class="pg-item">
-      <div class="pg-item-img"><div class="pg-slider">
+      <div class="pg-item-img"><div class="pg-track" data-index="0">
         <img src="/ecosystem/Media/C%20%282%20of%207%29.jpg" alt="" loading="lazy">
         <img src="/ecosystem/Media/C%20%283%20of%207%29.jpg" alt="" loading="lazy">
         <img src="/ecosystem/Media/C%20%284%20of%207%29.jpg" alt="" loading="lazy">
         <img src="/ecosystem/Media/3A46728F-77C1-4004-A936-B17A1DCB4D9A.jpg" alt="" loading="lazy">
-      </div></div>
+      </div><button class="pg-arrow prev" data-dir="-1" type="button" aria-label="Previous">‹</button><button class="pg-arrow next" data-dir="1" type="button" aria-label="Next">›</button></div>
       <div class="pg-item-tag">Consumer · Discovery</div>
       <div class="pg-item-title">Tang Tua</div>
       <div class="pg-item-sub">Where consumers find the restaurants the industry is talking about — turning operator-side trust into consumer demand.</div>
     </div>
     <div class="pg-item">
-      <div class="pg-item-img"><div class="pg-slider">
+      <div class="pg-item-img"><div class="pg-track" data-index="0">
         <img src="/ecosystem/Media/Production.jpg" alt="" loading="lazy">
         <img src="/ecosystem/Media/724BAB64-C284-4050-9DF4-9B7C2FC72ECF.jpg" alt="" loading="lazy">
         <img src="/ecosystem/Media/CFB8EC1B-61CF-47FC-A9BA-4E1C3D754ADC.jpg" alt="" loading="lazy">
-      </div></div>
+      </div><button class="pg-arrow prev" data-dir="-1" type="button" aria-label="Previous">‹</button><button class="pg-arrow next" data-dir="1" type="button" aria-label="Next">›</button></div>
       <div class="pg-item-tag">Studio · Service</div>
       <div class="pg-item-title">Media Production</div>
       <div class="pg-item-sub">Full-service video and editorial production for brand partners. Documentary-grade storytelling rooted in 15 years of F&B context.</div>
@@ -261,5 +264,23 @@
   <a href="/" class="pg-back">↑ Back to PenguinX</a>
 </section>
 
+
+<script>
+  document.querySelectorAll('.pg-arrow').forEach(btn=>{
+    btn.addEventListener('click', e=>{
+      e.preventDefault(); e.stopPropagation();
+      const track = btn.parentElement.querySelector('.pg-track');
+      if(!track) return;
+      const dir = parseInt(btn.dataset.dir,10);
+      const count = track.children.length;
+      const cur = parseInt(track.dataset.index || '0',10);
+      let next = cur + dir;
+      if(next < 0) next = count - 1;
+      if(next >= count) next = 0;
+      track.dataset.index = next;
+      track.style.transform = 'translateX(-' + (next*100) + '%)';
+    });
+  });
+</script>
 </body>
 </html>
