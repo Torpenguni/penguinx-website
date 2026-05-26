@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Selected Work — 3 Layout Options</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anuphan:wght@100;200;300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#0a0a0a;--bg-2:#141413;--ink:#f4f1ea;--ink-mute:#8a8680;
+    --accent:#dba93a;--line:rgba(244,241,234,0.1);--line-soft:rgba(244,241,234,0.05);
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{background:var(--bg);color:var(--ink);font-family:'Anuphan',sans-serif;font-weight:400;-webkit-font-smoothing:antialiased;line-height:1.5}
+
+  .banner{position:sticky;top:0;z-index:200;background:var(--accent);color:var(--bg);padding:10px;text-align:center;font-size:13px;font-weight:600;letter-spacing:0.5px}
+  .divider{padding:14px 32px;background:var(--bg);border-top:1px solid var(--line);border-bottom:1px solid var(--line);text-align:center;font-size:11px;color:var(--ink-mute);letter-spacing:0.2em;text-transform:uppercase}
+  .divider b{color:var(--accent);font-weight:700}
+  .divider .sub{display:block;color:rgba(244,241,234,0.5);text-transform:none;letter-spacing:0.02em;font-size:12px;margin-top:6px}
+
+  /* ====== SHARED HEADER ====== */
+  .sec{padding:80px 32px;max-width:1600px;margin:0 auto}
+  .sec-head{margin-bottom:48px}
+  .sec-num{font-size:11px;color:var(--ink-mute);letter-spacing:0.15em;text-transform:uppercase;margin-bottom:16px}
+  .sec-title{font-size:clamp(40px,5vw,80px);font-weight:600;line-height:0.95;letter-spacing:-0.04em}
+  .sec-title .light{color:var(--ink-mute);font-weight:300}
+  .sec-title .accent{color:var(--accent)}
+
+  /* =============== VARIANT A — COVER GRID =============== */
+  .va-grid{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:16px;
+  }
+  .va-card{
+    position:relative;
+    aspect-ratio:4/5;
+    background:#1a1a18;
+    border-radius:4px;
+    overflow:hidden;
+    text-decoration:none;color:inherit;
+    cursor:pointer;
+    isolation:isolate;
+  }
+  .va-card img{
+    position:absolute;inset:0;
+    width:100%;height:100%;object-fit:cover;
+    z-index:-2;
+    transition:transform 0.8s ease, filter 0.5s ease;
+    filter:grayscale(0.4) brightness(0.75);
+  }
+  .va-card::before{
+    content:'';position:absolute;inset:0;z-index:-1;
+    background:linear-gradient(180deg,rgba(0,0,0,0.1) 0%,rgba(0,0,0,0.85) 100%);
+  }
+  .va-card:hover img{transform:scale(1.05);filter:grayscale(0) brightness(0.95)}
+  .va-num{
+    position:absolute;top:18px;left:20px;
+    font-size:11px;color:var(--ink-mute);letter-spacing:0.15em;
+  }
+  .va-arrow{
+    position:absolute;top:18px;right:20px;
+    width:34px;height:34px;border-radius:50%;
+    border:1px solid rgba(244,241,234,0.25);
+    display:flex;align-items:center;justify-content:center;
+    font-size:13px;color:var(--ink);
+    transition:all 0.3s ease;
+  }
+  .va-card:hover .va-arrow{background:var(--accent);color:var(--bg);border-color:var(--accent)}
+  .va-foot{
+    position:absolute;bottom:0;left:0;right:0;
+    padding:24px 20px;
+  }
+  .va-tag{font-size:10px;color:var(--accent);letter-spacing:0.15em;text-transform:uppercase;margin-bottom:8px;font-weight:500}
+  .va-name{font-size:22px;font-weight:600;line-height:1.15;letter-spacing:-0.02em}
+
+  /* =============== VARIANT B — HOVER PREVIEW (cursor-following) =============== */
+  .vb-list{display:flex;flex-direction:column;border-top:1px solid var(--line);position:relative}
+  .vb-row{
+    display:grid;
+    grid-template-columns:60px 1fr 1fr 60px;
+    gap:24px;
+    padding:32px 16px;
+    align-items:center;
+    border-bottom:1px solid var(--line);
+    text-decoration:none;color:inherit;
+    transition:padding 0.3s ease;
+    position:relative;
+  }
+  .vb-row:hover{padding-left:28px}
+  .vb-num{font-size:11px;color:var(--ink-mute);letter-spacing:0.1em}
+  .vb-name{font-size:28px;font-weight:600;letter-spacing:-0.02em;transition:color 0.3s ease}
+  .vb-row:hover .vb-name{color:var(--accent)}
+  .vb-tag{font-size:13px;color:var(--ink-mute);letter-spacing:0.02em;text-align:right}
+  .vb-arrow{text-align:right;font-size:22px;color:var(--ink-mute);transition:all 0.3s ease}
+  .vb-row:hover .vb-arrow{color:var(--accent);transform:translateX(8px)}
+
+  /* Cursor-following image preview */
+  .vb-preview{
+    position:fixed;
+    pointer-events:none;
+    width:320px;height:200px;
+    border-radius:6px;
+    overflow:hidden;
+    opacity:0;
+    transform:translate(-50%,-50%) scale(0.9);
+    transition:opacity 0.25s ease, transform 0.4s ease;
+    z-index:300;
+    box-shadow:0 20px 60px rgba(0,0,0,0.6);
+  }
+  .vb-preview.show{opacity:1;transform:translate(-50%,-50%) scale(1)}
+  .vb-preview img{width:100%;height:100%;object-fit:cover;display:block}
+
+  /* =============== VARIANT C — FEATURED + LOGO WALL =============== */
+  .vc-featured{
+    display:grid;grid-template-columns:1.4fr 1fr;
+    gap:48px;
+    margin-bottom:64px;
+    padding-bottom:64px;
+    border-bottom:1px solid var(--line);
+  }
+  .vc-feat-img{
+    aspect-ratio:4/3;
+    border-radius:4px;overflow:hidden;
+    background:#1a1a18;
+    position:relative;
+  }
+  .vc-feat-img img{width:100%;height:100%;object-fit:cover}
+  .vc-feat-info{display:flex;flex-direction:column;justify-content:center;gap:20px}
+  .vc-feat-eyebrow{
+    font-size:11px;color:var(--accent);
+    letter-spacing:0.15em;text-transform:uppercase;
+    display:flex;align-items:center;gap:10px;
+  }
+  .vc-feat-eyebrow::before{content:'';width:24px;height:1px;background:var(--accent)}
+  .vc-feat-name{
+    font-size:clamp(40px,4vw,64px);font-weight:600;
+    line-height:1.05;letter-spacing:-0.035em;
+  }
+  .vc-feat-tag{font-size:18px;color:var(--ink-mute)}
+  .vc-feat-stats{
+    display:grid;grid-template-columns:repeat(3,1fr);
+    gap:24px;
+    margin-top:12px;
+    padding-top:24px;
+    border-top:1px solid var(--line-soft);
+  }
+  .vc-feat-stat .num{font-size:32px;color:var(--accent);font-weight:600;letter-spacing:-0.03em;line-height:1}
+  .vc-feat-stat .lbl{font-size:11px;color:var(--ink-mute);text-transform:uppercase;letter-spacing:0.1em;margin-top:6px}
+  .vc-feat-cta{
+    display:inline-flex;align-items:center;gap:8px;
+    color:var(--ink);text-decoration:none;
+    font-size:13px;font-weight:500;letter-spacing:0.05em;
+    padding:12px 0;
+    border-bottom:1px solid var(--ink);
+    align-self:flex-start;
+    margin-top:8px;
+    transition:all 0.25s ease;
+  }
+  .vc-feat-cta:hover{color:var(--accent);border-color:var(--accent)}
+
+  .vc-grid{
+    display:grid;grid-template-columns:repeat(5,1fr);
+    gap:1px;background:var(--line);
+    border:1px solid var(--line);
+  }
+  .vc-logo{
+    aspect-ratio:1/1;
+    background:var(--bg);
+    display:flex;align-items:center;justify-content:center;
+    text-decoration:none;color:inherit;
+    cursor:pointer;
+    transition:all 0.3s ease;
+    position:relative;
+    overflow:hidden;
+    padding:24px;
+  }
+  .vc-logo:hover{background:var(--bg-2)}
+  .vc-logo-name{
+    font-size:18px;font-weight:600;
+    letter-spacing:-0.015em;
+    color:rgba(244,241,234,0.55);
+    transition:color 0.3s ease;
+    text-align:center;
+    line-height:1.1;
+  }
+  .vc-logo:hover .vc-logo-name{color:var(--accent)}
+  .vc-logo-tag{
+    position:absolute;bottom:14px;left:0;right:0;
+    text-align:center;
+    font-size:9px;color:var(--ink-mute);
+    letter-spacing:0.15em;text-transform:uppercase;
+    opacity:0;transition:opacity 0.3s ease;
+  }
+  .vc-logo:hover .vc-logo-tag{opacity:1}
+
+  /* Responsive */
+  @media (max-width:1100px){
+    .va-grid{grid-template-columns:repeat(3,1fr)}
+    .vc-grid{grid-template-columns:repeat(4,1fr)}
+    .vc-featured{grid-template-columns:1fr;gap:32px}
+  }
+  @media (max-width:700px){
+    .sec{padding:50px 20px}
+    .va-grid{grid-template-columns:repeat(2,1fr);gap:10px}
+    .va-name{font-size:16px}
+    .vb-row{grid-template-columns:36px 1fr 30px;gap:12px;padding:22px 8px}
+    .vb-tag{display:none}
+    .vb-name{font-size:18px}
+    .vb-preview{display:none}
+    .vc-grid{grid-template-columns:repeat(2,1fr)}
+    .vc-feat-name{font-size:36px}
+  }
+</style>
+</head>
+<body>
+
+<div class="banner">PREVIEW · 3 layout options for "Selected Work" — scroll to compare A / B / C</div>
+
+<!-- ====== VARIANT A ====== -->
+<div class="divider">Variant <b>A · Cover Grid</b><span class="sub">รูปนำเสนอเด่น · 4 คอลัมน์ × หลายแถว · เหมาะกับ portfolio agency แบบ visual-first</span></div>
+<section class="sec">
+  <div class="sec-head">
+    <div class="sec-num">02 / Selected Work</div>
+    <h2 class="sec-title">Brands that grew <span class="light">with</span> <span class="accent">us.</span></h2>
+  </div>
+
+  <div class="va-grid">
+    <a class="va-card" href="#"><img src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=900&q=80" alt=""><div class="va-num">001</div><div class="va-arrow">↗</div><div class="va-foot"><div class="va-tag">Awareness · Brand Activations</div><div class="va-name">Lineman Wongnai</div></div></a>
+    <a class="va-card" href="#"><img src="https://images.unsplash.com/photo-1505236858219-8359eb29e329?w=900&q=80" alt=""><div class="va-num">002</div><div class="va-arrow">↗</div><div class="va-foot"><div class="va-tag">Conference Mgmt</div><div class="va-name">Thaifex Horec</div></div></a>
+    <a class="va-card" href="#"><img src="https://images.unsplash.com/photo-1542838132-92c53300491e?w=900&q=80" alt=""><div class="va-num">003</div><div class="va-arrow">↗</div><div class="va-foot"><div class="va-tag">Product Launch</div><div class="va-name">Makro</div></div></a>
+    <a class="va-card" href="#"><img src="https://images.unsplash.com/photo-1561758033-d89a9ad46330?w=900&q=80" alt=""><div class="va-num">004</div><div class="va-arrow">↗</div><div class="va-foot"><div class="va-tag">Nationwide Lead Gen</div><div class="va-name">Pepsi Co.</div></div></a>
+    <a class="va-card" href="#"><img src="https://images.unsplash.com/photo-1517457373958-b7bdd4587205?w=900&q=80" alt=""><div class="va-num">005</div><div class="va-arrow">↗</div><div class="va-foot"><div class="va-tag">New Business</div><div class="va-name">Impact</div></div></a>
+    <a class="va-card" href="#"><img src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?w=900&q=80" alt=""><div class="va-num">006</div><div class="va-arrow">↗</div><div class="va-foot"><div class="va-tag">Full Funnel</div><div class="va-name">Streamwash</div></div></a>
+    <a class="va-card" href="#"><img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=900&q=80" alt=""><div class="va-num">007</div><div class="va-arrow">↗</div><div class="va-foot"><div class="va-tag">Brand Storytelling</div><div class="va-name">CP Foods</div></div></a>
+    <a class="va-card" href="#"><img src="https://images.unsplash.com/photo-1559339352-11d035aa65de?w=900&q=80" alt=""><div class="va-num">008</div><div class="va-arrow">↗</div><div class="va-foot"><div class="va-tag">Strategy</div><div class="va-name">Singha</div></div></a>
+    <a class="va-card" href="#"><img src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?w=900&q=80" alt=""><div class="va-num">009</div><div class="va-arrow">↗</div><div class="va-foot"><div class="va-tag">Brand Campaign</div><div class="va-name">After You</div></div></a>
+    <a class="va-card" href="#"><img src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=900&q=80" alt=""><div class="va-num">010</div><div class="va-arrow">↗</div><div class="va-foot"><div class="va-tag">Franchise Growth</div><div class="va-name">Bar B Q Plaza</div></div></a>
+  </div>
+</section>
+
+<!-- ====== VARIANT B ====== -->
+<div class="divider">Variant <b>B · Editorial List + Hover Preview</b><span class="sub">List แบบเดิมแต่เด่นขึ้น · เลื่อน mouse บนชื่อ → รูปลอยขึ้นตาม cursor (Pentagram-style)</span></div>
+<section class="sec" id="vb-section">
+  <div class="sec-head">
+    <div class="sec-num">02 / Selected Work</div>
+    <h2 class="sec-title">Brands that grew <span class="light">with</span> <span class="accent">us.</span></h2>
+  </div>
+
+  <div class="vb-list">
+    <a class="vb-row" href="#" data-preview="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=600&q=80"><span class="vb-num">001</span><span class="vb-name">Lineman Wongnai</span><span class="vb-tag">Awareness / Brand Activations · 2024</span><span class="vb-arrow">→</span></a>
+    <a class="vb-row" href="#" data-preview="https://images.unsplash.com/photo-1505236858219-8359eb29e329?w=600&q=80"><span class="vb-num">002</span><span class="vb-name">Thaifex Horec</span><span class="vb-tag">Conference Management · 2025</span><span class="vb-arrow">→</span></a>
+    <a class="vb-row" href="#" data-preview="https://images.unsplash.com/photo-1542838132-92c53300491e?w=600&q=80"><span class="vb-num">003</span><span class="vb-name">Makro</span><span class="vb-tag">Product Launch / Co-Host · 2024</span><span class="vb-arrow">→</span></a>
+    <a class="vb-row" href="#" data-preview="https://images.unsplash.com/photo-1561758033-d89a9ad46330?w=600&q=80"><span class="vb-num">004</span><span class="vb-name">Pepsi Co.</span><span class="vb-tag">Nationwide Lead Gen · 2025</span><span class="vb-arrow">→</span></a>
+    <a class="vb-row" href="#" data-preview="https://images.unsplash.com/photo-1517457373958-b7bdd4587205?w=600&q=80"><span class="vb-num">005</span><span class="vb-name">Impact</span><span class="vb-tag">New Business Initiative · 2025</span><span class="vb-arrow">→</span></a>
+    <a class="vb-row" href="#" data-preview="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?w=600&q=80"><span class="vb-num">006</span><span class="vb-name">Streamwash</span><span class="vb-tag">Full Funnel Lead Generation · 2024</span><span class="vb-arrow">→</span></a>
+    <a class="vb-row" href="#" data-preview="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=600&q=80"><span class="vb-num">007</span><span class="vb-name">CP Foods</span><span class="vb-tag">Brand Storytelling · 2023</span><span class="vb-arrow">→</span></a>
+    <a class="vb-row" href="#" data-preview="https://images.unsplash.com/photo-1559339352-11d035aa65de?w=600&q=80"><span class="vb-num">008</span><span class="vb-name">Singha</span><span class="vb-tag">Marketing Strategy · 2024</span><span class="vb-arrow">→</span></a>
+    <a class="vb-row" href="#" data-preview="https://images.unsplash.com/photo-1551836022-d5d88e9218df?w=600&q=80"><span class="vb-num">009</span><span class="vb-name">After You</span><span class="vb-tag">Brand Campaign · 2024</span><span class="vb-arrow">→</span></a>
+    <a class="vb-row" href="#" data-preview="https://images.unsplash.com/photo-1497366216548-37526070297c?w=600&q=80"><span class="vb-num">010</span><span class="vb-name">Bar B Q Plaza</span><span class="vb-tag">Franchise Growth · 2023</span><span class="vb-arrow">→</span></a>
+  </div>
+</section>
+
+<!-- The floating image preview -->
+<div class="vb-preview" id="vbPreview"><img src="" alt=""></div>
+
+<!-- ====== VARIANT C ====== -->
+<div class="divider">Variant <b>C · Featured + Logo Wall</b><span class="sub">1 case โชว์ใหญ่พร้อมเลข impact · ล่างเป็น grid 5×2 ของ client ที่เหลือ — เห็นความเชื่อถือทันที</span></div>
+<section class="sec">
+  <div class="sec-head">
+    <div class="sec-num">02 / Selected Work</div>
+    <h2 class="sec-title">Brands that grew <span class="light">with</span> <span class="accent">us.</span></h2>
+  </div>
+
+  <!-- Featured -->
+  <div class="vc-featured">
+    <div class="vc-feat-img">
+      <img src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=1400&q=85" alt="">
+    </div>
+    <div class="vc-feat-info">
+      <div class="vc-feat-eyebrow">Featured Case · 2024</div>
+      <h3 class="vc-feat-name">Lineman Wongnai</h3>
+      <div class="vc-feat-tag">Nationwide brand activations · 45 provinces</div>
+      <div class="vc-feat-stats">
+        <div class="vc-feat-stat"><div class="num">4.2M</div><div class="lbl">Reach</div></div>
+        <div class="vc-feat-stat"><div class="num">800+</div><div class="lbl">Operators</div></div>
+        <div class="vc-feat-stat"><div class="num">28%</div><div class="lbl">CTR lift</div></div>
+      </div>
+      <a href="#" class="vc-feat-cta">View case study →</a>
+    </div>
+  </div>
+
+  <!-- Logo wall (other 9) -->
+  <div class="vc-grid">
+    <a class="vc-logo" href="#"><div class="vc-logo-name">Thaifex<br>Horec</div><div class="vc-logo-tag">Conference</div></a>
+    <a class="vc-logo" href="#"><div class="vc-logo-name">Makro</div><div class="vc-logo-tag">Product Launch</div></a>
+    <a class="vc-logo" href="#"><div class="vc-logo-name">Pepsi Co.</div><div class="vc-logo-tag">Lead Gen</div></a>
+    <a class="vc-logo" href="#"><div class="vc-logo-name">Impact</div><div class="vc-logo-tag">New Business</div></a>
+    <a class="vc-logo" href="#"><div class="vc-logo-name">Streamwash</div><div class="vc-logo-tag">Full Funnel</div></a>
+    <a class="vc-logo" href="#"><div class="vc-logo-name">CP Foods</div><div class="vc-logo-tag">Storytelling</div></a>
+    <a class="vc-logo" href="#"><div class="vc-logo-name">Singha</div><div class="vc-logo-tag">Strategy</div></a>
+    <a class="vc-logo" href="#"><div class="vc-logo-name">After You</div><div class="vc-logo-tag">Campaign</div></a>
+    <a class="vc-logo" href="#"><div class="vc-logo-name">Bar B Q<br>Plaza</div><div class="vc-logo-tag">Franchise</div></a>
+    <a class="vc-logo" href="#"><div class="vc-logo-name" style="color:var(--accent)">View all<br>→</div></a>
+  </div>
+</section>
+
+<div class="divider">END · บอกได้ว่าชอบ A · B · C — หรือผสม</div>
+
+<script>
+  // Variant B: cursor-following image preview
+  (function(){
+    const preview = document.getElementById('vbPreview');
+    const img = preview.querySelector('img');
+    const rows = document.querySelectorAll('.vb-row');
+    let currentSrc = '';
+
+    rows.forEach(row=>{
+      row.addEventListener('mouseenter', ()=>{
+        const src = row.dataset.preview;
+        if(src !== currentSrc){
+          img.src = src;
+          currentSrc = src;
+        }
+        preview.classList.add('show');
+      });
+      row.addEventListener('mouseleave', ()=>{
+        preview.classList.remove('show');
+      });
+    });
+
+    document.addEventListener('mousemove',(e)=>{
+      preview.style.left = (e.clientX + 20) + 'px';
+      preview.style.top = e.clientY + 'px';
+    });
+  })();
+</script>
+
+</body>
+</html>
