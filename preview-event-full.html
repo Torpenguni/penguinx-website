@@ -213,15 +213,86 @@
   .pg-item-foot .arrow{color:var(--accent);transition:transform 0.3s ease}
   .pg-item:hover .pg-item-foot .arrow{transform:translate(3px,-3px)}
 
+  /* === RESPONSIVE === */
+
+  /* Tablet (≤1100px) — value prop stacks, grid → 3 cols */
   @media (max-width:1100px){
-    .vp-body{grid-template-columns:1fr;gap:40px}
+    .vp{padding:80px 32px 50px}
+    .vp-body{grid-template-columns:1fr;gap:48px}
+    .vp-img{aspect-ratio:16/10;max-height:560px}
+    .pg-section{padding:50px 32px 80px}
     .pg-grid-5{grid-template-columns:repeat(3,1fr)}
   }
+
+  /* Small tablet (≤900px) — head stacks vertical */
+  @media (max-width:900px){
+    .vp-head{flex-direction:column;align-items:flex-start;gap:14px}
+    .vp-tag{align-self:flex-start;order:-1}
+    .pg-section-head{flex-direction:column;align-items:flex-start;gap:12px}
+    .pg-section-meta{max-width:none}
+  }
+
+  /* Mobile (≤700px) — tighter spacing, horizontal scroll for cards */
   @media (max-width:700px){
-    .vp{padding:60px 20px 40px}
-    .pg-section{padding:40px 20px 80px}
-    .pg-grid-5{grid-template-columns:repeat(2,1fr);gap:14px}
+    .banner{padding:8px;font-size:12px}
+    .vp{padding:56px 20px 40px}
+    .vp-head{margin-bottom:32px;padding-bottom:18px}
+    .vp-num{font-size:10px;margin-bottom:6px}
+    .vp-title{font-size:34px;line-height:1.05}
+    .vp-tag{font-size:10px;padding:5px 12px}
+    .vp-body{gap:32px}
     .vp-img{aspect-ratio:4/3}
+    .vp-img-cap{padding:14px 18px;font-size:11px;gap:10px}
+    .vp-lead{font-size:18px;line-height:1.45}
+    .vp-text{gap:24px}
+    .vp-benefit{
+      grid-template-columns:32px 1fr;
+      gap:14px;padding:18px 0;
+    }
+    .vp-b-num{font-size:13px}
+    .vp-b-h{font-size:15px;margin-bottom:4px}
+    .vp-b-d{font-size:13px;line-height:1.5}
+
+    .pg-section{padding:32px 0 80px}
+    .pg-section-head{padding:0 20px 18px;margin-bottom:24px}
+    .pg-section-num{font-size:10px}
+    .pg-section-title{font-size:28px}
+    .pg-section-meta{font-size:11px}
+
+    /* Horizontal-scroll carousel on mobile */
+    .pg-grid-5{
+      grid-template-columns:none;
+      display:flex;
+      overflow-x:auto;
+      overflow-y:hidden;
+      gap:12px;
+      padding:4px 20px 24px;
+      scroll-snap-type:x mandatory;
+      scrollbar-width:thin;
+      scrollbar-color:var(--ink-mute) transparent;
+      -webkit-overflow-scrolling:touch;
+    }
+    .pg-grid-5::-webkit-scrollbar{height:4px}
+    .pg-grid-5::-webkit-scrollbar-thumb{background:var(--line);border-radius:100px}
+    .pg-item{
+      flex:0 0 72%;
+      min-width:240px;
+      scroll-snap-align:start;
+    }
+    .pg-item-img{aspect-ratio:3/4;margin-bottom:14px}
+    .pg-item-ext{width:32px;height:32px;font-size:12px;top:10px;right:10px}
+    .pg-item-tag{font-size:9px;margin-bottom:8px}
+    .pg-item-title{font-size:17px;margin-bottom:8px}
+    .pg-item-sub{font-size:12.5px;line-height:1.45}
+    .pg-item-foot{margin-top:10px;padding-top:10px;font-size:10px}
+  }
+
+  /* Small mobile (≤420px) — tightest */
+  @media (max-width:420px){
+    .vp-title{font-size:28px}
+    .vp-lead{font-size:16px}
+    .pg-section-title{font-size:24px}
+    .pg-item{flex:0 0 80%}
   }
 </style>
 </head>

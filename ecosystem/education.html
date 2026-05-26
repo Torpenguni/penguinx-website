@@ -9,199 +9,161 @@
 <link href="https://fonts.googleapis.com/css2?family=Anuphan:wght@100;200;300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
   :root{
-    --bg:#0a0a0a;
-    --bg-2:#141413;
-    --ink:#f4f1ea;
-    --ink-mute:#8a8680;
-    --accent:#dba93a;
-    --line:rgba(244,241,234,0.1);
-    --line-soft:rgba(244,241,234,0.05);
+    --bg:#0a0a0a;--bg-2:#141413;--ink:#f4f1ea;--ink-mute:#8a8680;
+    --accent:#dba93a;--line:rgba(244,241,234,0.1);--line-soft:rgba(244,241,234,0.05);
   }
   *{box-sizing:border-box;margin:0;padding:0}
   html{scroll-behavior:smooth}
-  body{
-    background:var(--bg);color:var(--ink);
-    font-family:'Anuphan',sans-serif;font-weight:400;
-    -webkit-font-smoothing:antialiased;
-    overflow-x:hidden;line-height:1.5;
-  }
+  body{background:var(--bg);color:var(--ink);font-family:'Anuphan',sans-serif;font-weight:400;-webkit-font-smoothing:antialiased;overflow-x:hidden;line-height:1.5}
 
-  .pg-nav{
-    display:flex;justify-content:space-between;align-items:center;
-    padding:24px 40px;border-bottom:1px solid var(--line);
-  }
-  .pg-back{
-    color:var(--ink-mute);text-decoration:none;
-    font-size:13px;letter-spacing:0.05em;
-    display:inline-flex;align-items:center;gap:8px;
-    transition:color 0.2s ease;
-  }
+  /* === TOP BAR === */
+  .pg-nav{display:flex;justify-content:space-between;align-items:center;padding:24px 40px;border-bottom:1px solid var(--line)}
+  .pg-back{color:var(--ink-mute);text-decoration:none;font-size:13px;letter-spacing:0.05em;display:inline-flex;align-items:center;gap:8px;transition:color 0.2s ease}
   .pg-back:hover{color:var(--accent)}
-  .pg-pillar{
-    font-size:11px;letter-spacing:0.15em;text-transform:uppercase;
-    color:var(--ink-mute);
-  }
+  .pg-pillar{font-size:11px;letter-spacing:0.15em;text-transform:uppercase;color:var(--ink-mute)}
   .pg-pillar b{color:var(--accent);font-weight:600}
 
-  .pg-hero{padding:60px 40px 40px;border-bottom:1px solid var(--line)}
-  .pg-hero-grid{
-    display:grid;grid-template-columns:1fr;gap:0;
-    max-width:1600px;margin:0 auto;align-items:end;
-  }
-  .pg-hero-title{
-    font-size:clamp(28px,4.5vw,80px);font-weight:600;
-    line-height:0.92;letter-spacing:-0.045em;
-  }
+  /* === HERO === */
+  .pg-hero{padding:120px 40px 80px;border-bottom:1px solid var(--line)}
+  .pg-hero-grid{display:grid;grid-template-columns:1fr 320px;gap:80px;max-width:1600px;margin:0 auto;align-items:end}
+  .pg-hero-title{font-size:clamp(56px,9vw,160px);font-weight:600;line-height:0.92;letter-spacing:-0.045em}
   .pg-hero-title .light{color:var(--ink-mute);font-weight:300;font-style:italic}
   .pg-hero-title .accent{color:var(--accent)}
-
   .pg-meta{display:flex;flex-direction:column;gap:24px;padding-bottom:12px}
-  .pg-meta-block{
-    display:grid;grid-template-columns:90px 1fr;gap:16px;
-    padding-bottom:18px;border-bottom:1px solid var(--line-soft);
-  }
+  .pg-meta-block{display:grid;grid-template-columns:90px 1fr;gap:16px;padding-bottom:18px;border-bottom:1px solid var(--line-soft)}
   .pg-meta-block:last-child{border-bottom:none}
-  .pg-meta-label{
-    font-size:11px;color:var(--ink-mute);text-transform:uppercase;
-    letter-spacing:0.15em;padding-top:3px;
-  }
+  .pg-meta-label{font-size:11px;color:var(--ink-mute);text-transform:uppercase;letter-spacing:0.15em;padding-top:3px}
   .pg-meta-value{font-size:14px;color:var(--ink);line-height:1.5}
 
-  .pg-cover{
-    width:100%;aspect-ratio:21/9;
-    background:#222 center/cover no-repeat;
-    background-image:url('https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=2200&q=85');
-  }
-  .pg-cover-caption{
-    padding:14px 40px;font-size:12px;color:var(--ink-mute);
-    display:flex;justify-content:space-between;border-bottom:1px solid var(--line);
-  }
+  /* === COVER === */
+  .pg-cover{width:100%;aspect-ratio:21/9;background:#222 center/cover no-repeat}
+  .pg-cover-caption{padding:14px 40px;font-size:12px;color:var(--ink-mute);display:flex;justify-content:space-between;border-bottom:1px solid var(--line)}
 
-  .pg-lede{max-width:1100px;margin:0 auto;padding:120px 40px 100px}
-  .pg-lede-text{
-    font-size:clamp(24px,2.6vw,38px);line-height:1.35;
-    font-weight:400;color:var(--ink);letter-spacing:-0.015em;
-    max-width:900px;
-  }
-  .pg-lede-text em{font-style:italic;color:var(--ink-mute);font-weight:300}
+  /* === VALUE-PROP === */
+  .vp{padding:100px 40px 60px;max-width:1600px;margin:0 auto}
+  .vp-head{margin-bottom:48px;padding-bottom:24px;border-bottom:1px solid var(--line);display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:24px}
+  .vp-num{font-size:11px;color:var(--ink-mute);letter-spacing:0.15em;text-transform:uppercase;margin-bottom:8px}
+  .vp-title{font-size:clamp(36px,5vw,72px);font-weight:600;line-height:1;letter-spacing:-0.035em}
+  .vp-title .light{color:var(--ink-mute);font-weight:300;font-style:italic}
+  .vp-title .accent{color:var(--accent)}
+  .vp-tag{font-size:11px;color:var(--accent);border:1px solid rgba(219,169,58,0.4);padding:6px 14px;border-radius:100px;letter-spacing:0.12em;text-transform:uppercase}
+  .vp-body{display:grid;grid-template-columns:1.2fr 1fr;gap:60px;align-items:center}
+  .vp-img{width:100%;aspect-ratio:4/5;background:#1a1a18 center/cover no-repeat;border-radius:2px;overflow:hidden;position:relative}
+  .vp-img img{display:block;width:100%;height:100%;object-fit:cover}
+  .vp-img-cap{position:absolute;bottom:0;left:0;right:0;padding:20px 24px;background:linear-gradient(180deg,transparent 0%,rgba(0,0,0,0.7) 100%);font-size:12px;color:var(--ink-mute);display:flex;justify-content:space-between}
+  .vp-text{display:flex;flex-direction:column;gap:32px}
+  .vp-lead{font-size:clamp(20px,2vw,28px);line-height:1.4;color:var(--ink);letter-spacing:-0.015em;font-weight:400}
+  .vp-lead em{color:var(--accent);font-style:normal;font-weight:500}
+  .vp-benefits{display:flex;flex-direction:column;gap:0;border-top:1px solid var(--line)}
+  .vp-benefit{padding:22px 0;border-bottom:1px solid var(--line-soft);display:grid;grid-template-columns:48px 1fr;gap:20px;align-items:start}
+  .vp-benefit:last-child{border-bottom:none}
+  .vp-b-num{font-size:14px;color:var(--accent);font-weight:600;letter-spacing:0.05em;padding-top:2px}
+  .vp-b-h{font-size:16px;font-weight:600;color:var(--ink);margin-bottom:6px;letter-spacing:-0.01em}
+  .vp-b-d{font-size:13.5px;color:var(--ink-mute);line-height:1.55}
 
-  .pg-section{padding:0 40px 80px;max-width:1600px;margin:0 auto}
-  .pg-section-head{
-    display:flex;justify-content:space-between;align-items:flex-end;
-    margin-bottom:48px;padding-bottom:24px;border-bottom:1px solid var(--line);
-    flex-wrap:wrap;gap:24px;
-  }
-  .pg-section-num{
-    font-size:11px;color:var(--ink-mute);
-    letter-spacing:0.15em;text-transform:uppercase;margin-bottom:8px;
-  }
-  .pg-section-title{
-    font-size:clamp(28px,3vw,48px);font-weight:600;
-    letter-spacing:-0.025em;line-height:1.05;
-  }
+  /* === PROPERTIES GRID === */
+  .pg-section{padding:60px 40px 100px;max-width:1600px;margin:0 auto}
+  .pg-section-head{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:48px;padding-bottom:24px;border-bottom:1px solid var(--line);flex-wrap:wrap;gap:24px}
+  .pg-section-num{font-size:11px;color:var(--ink-mute);letter-spacing:0.15em;text-transform:uppercase;margin-bottom:8px}
+  .pg-section-title{font-size:clamp(28px,3vw,48px);font-weight:600;letter-spacing:-0.025em;line-height:1.05}
   .pg-section-meta{font-size:12px;color:var(--ink-mute);letter-spacing:0.05em}
+  .pg-grid{display:grid;gap:20px}
+  .pg-grid.cols-5{grid-template-columns:repeat(5,1fr)}
+  .pg-grid.cols-3{grid-template-columns:repeat(3,1fr)}
+  .pg-grid.cols-2{grid-template-columns:repeat(2,1fr);gap:32px}
+  .pg-item{text-decoration:none;color:inherit;display:block;cursor:pointer;transition:opacity 0.3s ease;position:relative}
+  .pg-item:hover{opacity:0.92}
+  .pg-item-img{width:100%;aspect-ratio:3/4;background:#1a1a18 center/cover no-repeat;margin-bottom:18px;overflow:hidden;border-radius:2px;position:relative}
+  .pg-grid.cols-2 .pg-item-img{aspect-ratio:4/5}
+  .pg-item-img img{display:block;width:100%;height:100%;object-fit:cover;transition:transform 0.8s ease}
+  .pg-item:hover .pg-item-img img{transform:scale(1.04)}
+  .pg-item-ext{position:absolute;top:14px;right:14px;width:36px;height:36px;border-radius:50%;background:rgba(10,10,10,0.6);backdrop-filter:blur(8px);display:flex;align-items:center;justify-content:center;color:var(--ink);font-size:14px;transition:all 0.3s ease;border:1px solid rgba(244,241,234,0.15)}
+  .pg-item:hover .pg-item-ext{background:var(--accent);color:var(--bg);border-color:var(--accent);transform:rotate(-45deg)}
+  .pg-item-tag{font-size:10px;color:var(--accent);letter-spacing:0.15em;text-transform:uppercase;margin-bottom:10px;font-weight:500}
+  .pg-item-title{font-size:20px;font-weight:600;line-height:1.2;letter-spacing:-0.02em;margin-bottom:10px}
+  .pg-grid.cols-2 .pg-item-title{font-size:28px}
+  .pg-item-sub{font-size:13.5px;color:var(--ink-mute);line-height:1.5}
+  .pg-grid.cols-2 .pg-item-sub{font-size:15px}
+  .pg-item-foot{margin-top:14px;padding-top:12px;border-top:1px solid var(--line-soft);font-size:11px;color:var(--ink-mute);letter-spacing:0.08em;text-transform:uppercase;display:flex;justify-content:space-between;align-items:center}
+  .pg-item-foot .arrow{color:var(--accent);transition:transform 0.3s ease}
+  .pg-item:hover .pg-item-foot .arrow{transform:translate(3px,-3px)}
 
-  .pg-grid{display:grid;grid-template-columns:repeat(12,1fr);gap:16px}
-  .pg-item{
-    text-decoration:none;color:inherit;display:block;
-    cursor:pointer;transition:opacity 0.3s ease;
-  }
-  .pg-item:hover{opacity:0.85}
-  .pg-item-img{
-    width:100%;background:#1a1a18 center/cover no-repeat;
-    margin-bottom:16px;overflow:hidden;border-radius:2px;
-  }
-  .pg-item-img img{
-    display:block;width:100%;height:100%;object-fit:cover;
-    transition:transform 0.8s ease;
-  }
-  .pg-item:hover .pg-item-img img{transform:scale(1.03)}
-  .pg-item-tag{
-    font-size:11px;color:var(--accent);letter-spacing:0.1em;
-    text-transform:uppercase;margin-bottom:6px;
-  }
-  .pg-item-title{
-    font-size:22px;font-weight:600;line-height:1.2;
-    letter-spacing:-0.02em;margin-bottom:6px;
-  }
-  .pg-item-sub{font-size:14px;color:var(--ink-mute);line-height:1.4}
+  /* === STATS === */
+  .pg-stats{padding:80px 40px;border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:var(--bg-2)}
+  .pg-stats-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:60px;max-width:1400px;margin:0 auto}
+  .pg-stat .num{font-size:clamp(48px,5vw,80px);font-weight:600;letter-spacing:-0.04em;line-height:1;color:var(--accent)}
+  .pg-stat .lbl{font-size:13px;color:var(--ink-mute);text-transform:uppercase;letter-spacing:0.12em;margin-top:14px}
 
-  .pg-item.span-7{grid-column:span 7}
-  .pg-item.span-5{grid-column:span 5}
-  .pg-item.span-6{grid-column:span 6}
-  .pg-item.span-4{grid-column:span 4}
-  .pg-item.span-8{grid-column:span 8}
-  .pg-item.span-12{grid-column:span 12}
-  .pg-item.span-7 .pg-item-img{aspect-ratio:16/10}
-  .pg-item.span-5 .pg-item-img{aspect-ratio:5/4}
-  .pg-item.span-6 .pg-item-img{aspect-ratio:4/3}
-  .pg-item.span-4 .pg-item-img{aspect-ratio:1/1}
-  .pg-item.span-8 .pg-item-img{aspect-ratio:16/9}
-  .pg-item.span-12 .pg-item-img{aspect-ratio:21/9}
-  .pg-item.span-7 .pg-item-title,
-  .pg-item.span-8 .pg-item-title,
-  .pg-item.span-12 .pg-item-title{font-size:32px}
-
-  .pg-text{max-width:900px;margin:0 auto;padding:80px 40px;border-top:1px solid var(--line)}
-  .pg-text h2{
-    font-size:clamp(28px,3.2vw,48px);font-weight:600;
-    letter-spacing:-0.025em;margin-bottom:32px;line-height:1.1;
-  }
-  .pg-text p{
-    font-size:17px;line-height:1.65;color:var(--ink-mute);
-    margin-bottom:20px;font-weight:300;
-  }
-  .pg-text p strong{color:var(--ink);font-weight:500}
-
-  .pg-stats{
-    padding:80px 40px;border-top:1px solid var(--line);
-    border-bottom:1px solid var(--line);background:var(--bg-2);
-  }
-  .pg-stats-grid{
-    display:grid;grid-template-columns:repeat(4,1fr);
-    gap:60px;max-width:1400px;margin:0 auto;
-  }
-  .pg-stat .num{
-    font-size:clamp(48px,5vw,80px);font-weight:600;
-    letter-spacing:-0.04em;line-height:1;color:var(--accent);
-  }
-  .pg-stat .lbl{
-    font-size:13px;color:var(--ink-mute);
-    text-transform:uppercase;letter-spacing:0.12em;margin-top:14px;
-  }
-
+  /* === NEXT === */
   .pg-next{padding:120px 40px;border-top:1px solid var(--line);text-align:center}
-  .pg-next-tag{
-    font-size:11px;color:var(--ink-mute);
-    text-transform:uppercase;letter-spacing:0.2em;margin-bottom:24px;
-  }
-  .pg-next-title{
-    font-size:clamp(48px,7vw,120px);font-weight:600;
-    line-height:0.95;letter-spacing:-0.04em;margin-bottom:32px;
-  }
-  .pg-next-title a{
-    color:var(--ink);text-decoration:none;
-    border-bottom:2px solid transparent;transition:all 0.3s ease;
-  }
+  .pg-next-tag{font-size:11px;color:var(--ink-mute);text-transform:uppercase;letter-spacing:0.2em;margin-bottom:24px}
+  .pg-next-title{font-size:clamp(48px,7vw,120px);font-weight:600;line-height:0.95;letter-spacing:-0.04em;margin-bottom:32px}
+  .pg-next-title a{color:var(--ink);text-decoration:none;border-bottom:2px solid transparent;transition:all 0.3s ease}
   .pg-next-title a:hover{color:var(--accent);border-bottom-color:var(--accent)}
 
+  /* === RESPONSIVE === */
+  @media (max-width:1100px){
+    .pg-hero{padding:80px 32px 50px}
+    .pg-hero-grid{grid-template-columns:1fr;gap:48px}
+    .vp{padding:80px 32px 50px}
+    .vp-body{grid-template-columns:1fr;gap:48px}
+    .vp-img{aspect-ratio:16/10;max-height:560px}
+    .pg-section{padding:50px 32px 80px}
+    .pg-grid.cols-5{grid-template-columns:repeat(3,1fr)}
+  }
   @media (max-width:900px){
-    .pg-hero{padding:32px 24px 24px}
-    .pg-hero-grid{grid-template-columns:1fr;gap:24px}
-    .pg-lede{padding:60px 24px}
-    .pg-section{padding:0 24px 60px}
-    .pg-text{padding:60px 24px}
+    .vp-head,.pg-section-head{flex-direction:column;align-items:flex-start;gap:14px}
+    .vp-tag{align-self:flex-start;order:-1}
+    .pg-grid.cols-3{grid-template-columns:repeat(2,1fr)}
+  }
+  @media (max-width:700px){
+    .pg-hero{padding:60px 20px 40px}
+    .pg-cover-caption{padding:14px 20px}
+    .vp{padding:56px 20px 40px}
+    .vp-head{margin-bottom:32px;padding-bottom:18px}
+    .vp-num{font-size:10px}
+    .vp-title{font-size:34px;line-height:1.05}
+    .vp-tag{font-size:10px;padding:5px 12px}
+    .vp-body{gap:32px}
+    .vp-img{aspect-ratio:4/3}
+    .vp-img-cap{padding:14px 18px;font-size:11px}
+    .vp-lead{font-size:18px;line-height:1.45}
+    .vp-text{gap:24px}
+    .vp-benefit{grid-template-columns:32px 1fr;gap:14px;padding:18px 0}
+    .vp-b-num{font-size:13px}
+    .vp-b-h{font-size:15px;margin-bottom:4px}
+    .vp-b-d{font-size:13px;line-height:1.5}
+    .pg-section{padding:32px 0 80px}
+    .pg-section-head{padding:0 20px 18px;margin-bottom:24px}
+    .pg-section-num{font-size:10px}
+    .pg-section-title{font-size:28px}
+    .pg-section-meta{font-size:11px}
+    .pg-grid{grid-template-columns:none;display:flex;overflow-x:auto;overflow-y:hidden;gap:12px;padding:4px 20px 24px;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;scrollbar-width:thin}
+    .pg-grid::-webkit-scrollbar{height:4px}
+    .pg-grid::-webkit-scrollbar-thumb{background:var(--line);border-radius:100px}
+    .pg-item{flex:0 0 72%;min-width:240px;scroll-snap-align:start}
+    .pg-grid.cols-2 .pg-item{flex:0 0 80%}
+    .pg-item-img{aspect-ratio:3/4;margin-bottom:14px}
+    .pg-item-ext{width:32px;height:32px;font-size:12px;top:10px;right:10px}
+    .pg-item-tag{font-size:9px;margin-bottom:8px}
+    .pg-item-title{font-size:17px;margin-bottom:8px}
+    .pg-grid.cols-2 .pg-item-title{font-size:20px}
+    .pg-item-sub{font-size:12.5px;line-height:1.45}
+    .pg-grid.cols-2 .pg-item-sub{font-size:13px}
+    .pg-item-foot{margin-top:10px;padding-top:10px;font-size:10px}
     .pg-stats{padding:60px 24px}
     .pg-stats-grid{grid-template-columns:repeat(2,1fr);gap:40px}
-    .pg-item.span-7,.pg-item.span-5,
-    .pg-item.span-6,.pg-item.span-4,
-    .pg-item.span-8{grid-column:span 12}
-    .pg-cover-caption{padding:14px 24px}
+    .pg-next{padding:80px 24px}
+  }
+  @media (max-width:420px){
+    .vp-title{font-size:28px}
+    .vp-lead{font-size:16px}
+    .pg-section-title{font-size:24px}
+    .pg-item{flex:0 0 80%}
   }
 </style>
 </head>
 <body>
-
 <div class="pg-nav">
   <a href="/" class="pg-back">← Back to PenguinX</a>
   <div class="pg-pillar">03 / Pillar · <b>Education</b></div>
@@ -211,67 +173,83 @@
   <div class="pg-hero-grid">
     <h1 class="pg-hero-title">
       <span class="light">How the</span><br>
-      industry<br>
-      <span class="accent">learns</span>.
+      industry <span class="accent">learns</span>.
     </h1>
+    <div class="pg-meta">
+      <div class="pg-meta-block"><div class="pg-meta-label">Pillar</div><div class="pg-meta-value">PenguinX Education</div></div>
+      <div class="pg-meta-block"><div class="pg-meta-label">Properties</div><div class="pg-meta-value">Restaurant Business Academy · Restaurant MBA · Restaurant Publishing</div></div>
+      <div class="pg-meta-block"><div class="pg-meta-label">Reach</div><div class="pg-meta-value">3,000+ operators trained</div></div>
+      <div class="pg-meta-block"><div class="pg-meta-label">Since</div><div class="pg-meta-value">2019</div></div>
+    </div>
   </div>
 </section>
 
-<div class="pg-cover"></div>
+<div class="pg-cover" style="background-image:url('https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=2200&q=85')"></div>
 <div class="pg-cover-caption">
   <span>Restaurant MBA · Cohort 2</span>
   <span>Photo · PenguinX</span>
 </div>
 
-<div class="pg-lede">
-  <p class="pg-lede-text">
-    Real F&B operators teaching real F&B operators. <em>Cohort programs, deep-dive workshops, published frameworks</em> — the curriculum the industry didn't have before.
-  </p>
-</div>
+<section class="vp">
+  <div class="vp-head">
+    <div>
+      <div class="vp-num">01 / What we do</div>
+      <h2 class="vp-title">
+        <span class="light">How PenguinX</span><br>
+        teaches the <span class="accent">F&B playbook</span> the industry didn't have.
+      </h2>
+    </div>
+    <div class="vp-tag">For F&B Operators</div>
+  </div>
+  <div class="vp-body">
+    <div class="vp-img">
+      <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=1400&q=85" alt="">
+      <div class="vp-img-cap"><span>Restaurant MBA · Cohort 2</span><span>120+ alumni so far</span></div>
+    </div>
+    <div class="vp-text">
+      <p class="vp-lead">Most F&B education is academic. Ours is <em>operator-taught, operator-tested</em> — built from 15 years of running real restaurants, not lecturing about them.</p>
+      <div class="vp-benefits">
+        <div class="vp-benefit"><div class="vp-b-num">01</div><div><div class="vp-b-h">Curriculum from real operators</div><div class="vp-b-d">Every module is taught by someone who runs (or has run) a restaurant. The frameworks come from P&L sheets, not textbooks.</div></div></div>
+        <div class="vp-benefit"><div class="vp-b-num">02</div><div><div class="vp-b-h">Cohort accountability</div><div class="vp-b-d">Live cohort programs with peer accountability — your classmates become your sounding board long after the program ends.</div></div></div>
+        <div class="vp-benefit"><div class="vp-b-num">03</div><div><div class="vp-b-h">Network beyond classroom</div><div class="vp-b-d">Graduates plug into a community of 3,000+ operators across Thailand — the alumni network is the real ROI.</div></div></div>
+        <div class="vp-benefit"><div class="vp-b-num">04</div><div><div class="vp-b-h">Frameworks codified</div><div class="vp-b-d">What gets taught gets published. Books, templates, and playbooks you can pull off the shelf when you need them.</div></div></div>
+      </div>
+    </div>
+  </div>
+</section>
 
 <section class="pg-section">
   <div class="pg-section-head">
     <div>
-      <div class="pg-section-num">01 / Properties</div>
-      <h2 class="pg-section-title">Three formats.</h2>
+      <div class="pg-section-num">02 / Properties</div>
+      <h2 class="pg-section-title">Three learning paths.</h2>
     </div>
-    <div class="pg-section-meta">From foundations to senior cohorts to printed reference</div>
+    <div class="pg-section-meta">From self-paced foundations to founder-level cohorts</div>
   </div>
-
-  <div class="pg-grid">
-    <a class="pg-item span-4" href="#">
-      <div class="pg-item-img"><img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=1100&q=85" alt=""></div>
-      <div class="pg-item-tag">Foundations</div>
+  <div class="pg-grid cols-3">
+    <a class="pg-item" href="https://rba.penguinx.co" target="_blank" rel="noopener">
+      <div class="pg-item-img"><img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=900&q=85" alt=""><div class="pg-item-ext">↗</div></div>
+      <div class="pg-item-tag">Self-paced · Foundations</div>
       <div class="pg-item-title">Restaurant Business Academy</div>
-      <div class="pg-item-sub">Self-paced curriculum on unit economics, operations, marketing — the basics every new operator should know.</div>
+      <div class="pg-item-sub">On-demand curriculum on unit economics, operations, marketing — the basics every new operator should master before signing a lease.</div>
+      <div class="pg-item-foot"><span>rba.penguinx.co</span><span class="arrow">↗</span></div>
     </a>
-    <a class="pg-item span-4" href="#">
-      <div class="pg-item-img"><img src="https://images.unsplash.com/photo-1542838132-92c53300491e?w=1100&q=85" alt=""></div>
+    <a class="pg-item" href="https://restaurantmba.co" target="_blank" rel="noopener">
+      <div class="pg-item-img"><img src="https://images.unsplash.com/photo-1542838132-92c53300491e?w=900&q=85" alt=""><div class="pg-item-ext">↗</div></div>
       <div class="pg-item-tag">Cohort · Senior</div>
       <div class="pg-item-title">Restaurant MBA</div>
-      <div class="pg-item-sub">Live cohort program for multi-unit operators. Small classes, real case studies, peer accountability — the program graduates come back as guest faculty.</div>
+      <div class="pg-item-sub">Live cohort program for multi-unit operators. Small classes, real case studies, peer accountability — graduates come back as guest faculty.</div>
+      <div class="pg-item-foot"><span>restaurantmba.co</span><span class="arrow">↗</span></div>
     </a>
-    <a class="pg-item span-4" href="#">
-      <div class="pg-item-img"><img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=1100&q=85" alt=""></div>
-      <div class="pg-item-tag">Published · Reference</div>
-      <div class="pg-item-title">Books</div>
-      <div class="pg-item-sub">The frameworks codified into print. The reference shelf every restaurant office should have.</div>
+    <a class="pg-item" href="https://penguinx.co/books" target="_blank" rel="noopener">
+      <div class="pg-item-img"><img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=900&q=85" alt=""><div class="pg-item-ext">↗</div></div>
+      <div class="pg-item-tag">Books · Reference</div>
+      <div class="pg-item-title">Restaurant Publishing</div>
+      <div class="pg-item-sub">The frameworks codified into print. The reference shelf every restaurant office should have — from operations manuals to industry research.</div>
+      <div class="pg-item-foot"><span>penguinx.co/books</span><span class="arrow">↗</span></div>
     </a>
   </div>
 </section>
-
-<article class="pg-text">
-  <h2>Curriculum the industry didn't have.</h2>
-  <p>
-    Most operator education in Thailand came from two places: academic programs written by people who had never run a P&L, or vendor seminars built to sell something at the end. PenguinX Education exists because <strong>neither was good enough</strong>.
-  </p>
-  <p>
-    Each format is taught by operators who've made the mistakes — multi-unit founders, senior chefs, supply-chain leaders, marketers who've sat through real launch cycles. The case studies are local; the frameworks are tested; the peer relationships outlast the syllabus.
-  </p>
-  <p>
-    Graduates leave with two things: a clearer playbook, and a class full of operators they can call when the next decision shows up.
-  </p>
-</article>
 
 <section class="pg-stats">
   <div class="pg-stats-grid">
@@ -284,9 +262,7 @@
 
 <section class="pg-next">
   <div class="pg-next-tag">— Next Pillar —</div>
-  <h2 class="pg-next-title">
-    <a href="/ecosystem/solution.html">Solution ↗</a>
-  </h2>
+  <h2 class="pg-next-title"><a href="/ecosystem/solution.html">Solution ↗</a></h2>
   <a href="/" class="pg-back">↑ Back to PenguinX</a>
 </section>
 
