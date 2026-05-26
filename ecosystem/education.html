@@ -73,8 +73,8 @@
   .pg-grid.cols-2{grid-template-columns:repeat(2,1fr);gap:32px}
   .pg-item{text-decoration:none;color:inherit;display:block;cursor:pointer;transition:opacity 0.3s ease;position:relative}
   .pg-item:hover{opacity:0.92}
-  .pg-item-img{width:100%;aspect-ratio:3/4;background:#1a1a18 center/cover no-repeat;margin-bottom:18px;overflow:hidden;border-radius:2px;position:relative}
-  .pg-grid.cols-2 .pg-item-img{aspect-ratio:4/5}
+  .pg-item-img{width:100%;aspect-ratio:1/1;background:#1a1a18 center/cover no-repeat;margin-bottom:18px;overflow:hidden;border-radius:2px;position:relative}
+  .pg-grid.cols-2 .pg-item-img{aspect-ratio:1/1}
   .pg-item-img img{display:block;width:100%;height:100%;object-fit:cover;transition:transform 0.8s ease}
   .pg-item:hover .pg-item-img img{transform:scale(1.04)}
   .pg-item-ext{position:absolute;top:14px;right:14px;width:36px;height:36px;border-radius:50%;background:rgba(10,10,10,0.6);backdrop-filter:blur(8px);display:flex;align-items:center;justify-content:center;color:var(--ink);font-size:14px;transition:all 0.3s ease;border:1px solid rgba(244,241,234,0.15)}
@@ -89,10 +89,10 @@
   .pg-item:hover .pg-item-foot .arrow{transform:translate(3px,-3px)}
 
   /* === STATS === */
-  .pg-stats{padding:80px 40px;border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:var(--bg-2)}
-  .pg-stats-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:60px;max-width:1400px;margin:0 auto}
-  .pg-stat .num{font-size:clamp(48px,5vw,80px);font-weight:600;letter-spacing:-0.04em;line-height:1;color:var(--accent)}
-  .pg-stat .lbl{font-size:13px;color:var(--ink-mute);text-transform:uppercase;letter-spacing:0.12em;margin-top:14px}
+  .pg-stats{padding:48px 40px;border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:var(--bg-2)}
+  .pg-stats-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:40px;max-width:1400px;margin:0 auto}
+  .pg-stat .num{font-size:clamp(28px,3vw,44px);font-weight:600;letter-spacing:-0.04em;line-height:1;color:var(--accent)}
+  .pg-stat .lbl{font-size:11px;color:var(--ink-mute);text-transform:uppercase;letter-spacing:0.12em;margin-top:10px}
 
   /* === NEXT === */
   .pg-next{padding:120px 40px;border-top:1px solid var(--line);text-align:center}
@@ -143,7 +143,7 @@
     .pg-grid::-webkit-scrollbar-thumb{background:var(--line);border-radius:100px}
     .pg-item{flex:0 0 72%;min-width:240px;scroll-snap-align:start}
     .pg-grid.cols-2 .pg-item{flex:0 0 80%}
-    .pg-item-img{aspect-ratio:3/4;margin-bottom:14px}
+    .pg-item-img{aspect-ratio:1/1;margin-bottom:14px}
     .pg-item-ext{width:32px;height:32px;font-size:12px;top:10px;right:10px}
     .pg-item-tag{font-size:9px;margin-bottom:8px}
     .pg-item-title{font-size:17px;margin-bottom:8px}
@@ -151,8 +151,8 @@
     .pg-item-sub{font-size:12.5px;line-height:1.45}
     .pg-grid.cols-2 .pg-item-sub{font-size:13px}
     .pg-item-foot{margin-top:10px;padding-top:10px;font-size:10px}
-    .pg-stats{padding:60px 24px}
-    .pg-stats-grid{grid-template-columns:repeat(2,1fr);gap:40px}
+    .pg-stats{padding:40px 24px}
+    .pg-stats-grid{grid-template-columns:repeat(2,1fr);gap:24px}
     .pg-next{padding:80px 24px}
   }
   @media (max-width:420px){
@@ -167,27 +167,6 @@
 <div class="pg-nav">
   <a href="/" class="pg-back">← Back to PenguinX</a>
   <div class="pg-pillar">03 / Pillar · <b>Education</b></div>
-</div>
-
-<section class="pg-hero">
-  <div class="pg-hero-grid">
-    <h1 class="pg-hero-title">
-      <span class="light">How the</span><br>
-      industry <span class="accent">learns</span>.
-    </h1>
-    <div class="pg-meta">
-      <div class="pg-meta-block"><div class="pg-meta-label">Pillar</div><div class="pg-meta-value">PenguinX Education</div></div>
-      <div class="pg-meta-block"><div class="pg-meta-label">Properties</div><div class="pg-meta-value">Restaurant Business Academy · Restaurant MBA · Restaurant Publishing</div></div>
-      <div class="pg-meta-block"><div class="pg-meta-label">Reach</div><div class="pg-meta-value">3,000+ operators trained</div></div>
-      <div class="pg-meta-block"><div class="pg-meta-label">Since</div><div class="pg-meta-value">2019</div></div>
-    </div>
-  </div>
-</section>
-
-<div class="pg-cover" style="background-image:url('https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=2200&q=85')"></div>
-<div class="pg-cover-caption">
-  <span>Restaurant MBA · Cohort 2</span>
-  <span>Photo · PenguinX</span>
 </div>
 
 <section class="vp">
