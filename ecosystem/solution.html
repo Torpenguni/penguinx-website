@@ -77,6 +77,12 @@
   .pg-grid.cols-2 .pg-item-img{aspect-ratio:1/1}
   .pg-item-img img{display:block;width:100%;height:100%;object-fit:cover;transition:transform 0.8s ease}
   .pg-item:hover .pg-item-img img{transform:scale(1.04)}
+  .pg-slider{display:flex;width:100%;height:100%;overflow-x:auto;overflow-y:hidden;scroll-snap-type:x mandatory;scrollbar-width:none;-webkit-overflow-scrolling:touch}
+  .pg-slider::-webkit-scrollbar{display:none}
+  .pg-slider img{flex:0 0 100%;width:100%;height:100%;object-fit:cover;scroll-snap-align:start;transition:none}
+  .pg-item:hover .pg-slider img{transform:none}
+  .pg-item{cursor:default}
+  .pg-item:hover{opacity:1}
   .pg-item-ext{position:absolute;top:14px;right:14px;width:36px;height:36px;border-radius:50%;background:rgba(10,10,10,0.6);backdrop-filter:blur(8px);display:flex;align-items:center;justify-content:center;color:var(--ink);font-size:14px;transition:all 0.3s ease;border:1px solid rgba(244,241,234,0.15)}
   .pg-item:hover .pg-item-ext{background:var(--accent);color:var(--bg);border-color:var(--accent);transform:rotate(-45deg)}
   .pg-item-tag{font-size:10px;color:var(--accent);letter-spacing:0.15em;text-transform:uppercase;margin-bottom:10px;font-weight:500}
@@ -205,20 +211,23 @@
     <div class="pg-section-meta">Brand and business growth, built for F&B</div>
   </div>
   <div class="pg-grid cols-2">
-    <a class="pg-item" href="https://penguinx.co/brand-strategy" target="_blank" rel="noopener">
-      <div class="pg-item-img"><img src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=1400&q=85" alt=""><div class="pg-item-ext">↗</div></div>
+    <div class="pg-item">
+      <div class="pg-item-img"><div class="pg-slider">
+        <img src="/ecosystem/Solution/861F27B8-0F2F-475C-A8ED-B81C701461D8.jpg" alt="" loading="lazy">
+        <img src="/ecosystem/Solution/ECEDCC0F-0FC2-4456-A271-7700EB227BEA.jpg" alt="" loading="lazy">
+      </div></div>
       <div class="pg-item-tag">Strategy · Brand</div>
       <div class="pg-item-title">Brand Strategy Consulting</div>
       <div class="pg-item-sub">Positioning, narrative architecture, and go-to-market playbooks for F&B brands. From challenger startups to established chains, we work with brands ready to scale beyond category norms.</div>
-      <div class="pg-item-foot"><span>penguinx.co/brand-strategy</span><span class="arrow">↗</span></div>
-    </a>
-    <a class="pg-item" href="https://penguinx.co/business-development" target="_blank" rel="noopener">
-      <div class="pg-item-img"><img src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=1400&q=85" alt=""><div class="pg-item-ext">↗</div></div>
+    </div>
+    <div class="pg-item">
+      <div class="pg-item-img"><div class="pg-slider">
+        <img src="/ecosystem/Solution/F94CA0BB-9006-4279-8C3A-3F8EB5985E93.jpg" alt="" loading="lazy">
+      </div></div>
       <div class="pg-item-tag">Growth · Expansion</div>
       <div class="pg-item-title">Business Development</div>
       <div class="pg-item-sub">Franchising frameworks, partnership structuring, and expansion roadmaps. Strategic deals that compound — built around the operator economics that actually work in Thailand.</div>
-      <div class="pg-item-foot"><span>penguinx.co/business-development</span><span class="arrow">↗</span></div>
-    </a>
+    </div>
   </div>
 </section>
 

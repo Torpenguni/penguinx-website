@@ -77,6 +77,12 @@
   .pg-grid.cols-2 .pg-item-img{aspect-ratio:1/1}
   .pg-item-img img{display:block;width:100%;height:100%;object-fit:cover;transition:transform 0.8s ease}
   .pg-item:hover .pg-item-img img{transform:scale(1.04)}
+  .pg-slider{display:flex;width:100%;height:100%;overflow-x:auto;overflow-y:hidden;scroll-snap-type:x mandatory;scrollbar-width:none;-webkit-overflow-scrolling:touch}
+  .pg-slider::-webkit-scrollbar{display:none}
+  .pg-slider img{flex:0 0 100%;width:100%;height:100%;object-fit:cover;scroll-snap-align:start;transition:none}
+  .pg-item:hover .pg-slider img{transform:none}
+  .pg-item{cursor:default}
+  .pg-item:hover{opacity:1}
   .pg-item-ext{position:absolute;top:14px;right:14px;width:36px;height:36px;border-radius:50%;background:rgba(10,10,10,0.6);backdrop-filter:blur(8px);display:flex;align-items:center;justify-content:center;color:var(--ink);font-size:14px;transition:all 0.3s ease;border:1px solid rgba(244,241,234,0.15)}
   .pg-item:hover .pg-item-ext{background:var(--accent);color:var(--bg);border-color:var(--accent);transform:rotate(-45deg)}
   .pg-item-tag{font-size:10px;color:var(--accent);letter-spacing:0.15em;text-transform:uppercase;margin-bottom:10px;font-weight:500}
@@ -205,27 +211,38 @@
     <div class="pg-section-meta">From self-paced foundations to founder-level cohorts</div>
   </div>
   <div class="pg-grid cols-3">
-    <a class="pg-item" href="https://rba.penguinx.co" target="_blank" rel="noopener">
-      <div class="pg-item-img"><img src="/ecosystem/Education/RBA/RBA1.jpg" alt=""><div class="pg-item-ext">↗</div></div>
+    <div class="pg-item">
+      <div class="pg-item-img"><div class="pg-slider">
+        <img src="/ecosystem/Education/RBA/RBA1.jpg" alt="" loading="lazy">
+        <img src="/ecosystem/Education/RBA/C%20%287%20of%2017%29.jpg" alt="" loading="lazy">
+        <img src="/ecosystem/Education/RBA/RBA.jpg" alt="" loading="lazy">
+        <img src="/ecosystem/Education/RBA/S__3784711_0.jpg" alt="" loading="lazy">
+        <img src="/ecosystem/Education/RBA/S__3784712_0.jpg" alt="" loading="lazy">
+      </div></div>
       <div class="pg-item-tag">Self-paced · Foundations</div>
       <div class="pg-item-title">Restaurant Business Academy</div>
       <div class="pg-item-sub">On-demand curriculum on unit economics, operations, marketing — the basics every new operator should master before signing a lease.</div>
-      <div class="pg-item-foot"><span>rba.penguinx.co</span><span class="arrow">↗</span></div>
-    </a>
-    <a class="pg-item" href="https://restaurantmba.co" target="_blank" rel="noopener">
-      <div class="pg-item-img"><img src="/ecosystem/Education/RMBA/rmba4.jpg" alt=""><div class="pg-item-ext">↗</div></div>
+    </div>
+    <div class="pg-item">
+      <div class="pg-item-img"><div class="pg-slider">
+        <img src="/ecosystem/Education/RMBA/rmba4.jpg" alt="" loading="lazy">
+        <img src="/ecosystem/Education/RMBA/RMBA.jpg" alt="" loading="lazy">
+        <img src="/ecosystem/Education/RMBA/RMBA2.jpg" alt="" loading="lazy">
+        <img src="/ecosystem/Education/RMBA/C%20%2810%20of%2017%29.jpg" alt="" loading="lazy">
+        <img src="/ecosystem/Education/RMBA/C%20%2821%20of%2062%29.jpg" alt="" loading="lazy">
+      </div></div>
       <div class="pg-item-tag">Cohort · Senior</div>
       <div class="pg-item-title">Restaurant MBA</div>
       <div class="pg-item-sub">Live cohort program for multi-unit operators. Small classes, real case studies, peer accountability — graduates come back as guest faculty.</div>
-      <div class="pg-item-foot"><span>restaurantmba.co</span><span class="arrow">↗</span></div>
-    </a>
-    <a class="pg-item" href="https://penguinx.co/books" target="_blank" rel="noopener">
-      <div class="pg-item-img"><img src="/ecosystem/Education/Publishing/Publishing.jpg" alt=""><div class="pg-item-ext">↗</div></div>
+    </div>
+    <div class="pg-item">
+      <div class="pg-item-img"><div class="pg-slider">
+        <img src="/ecosystem/Education/Publishing/Publishing.jpg" alt="" loading="lazy">
+      </div></div>
       <div class="pg-item-tag">Books · Reference</div>
       <div class="pg-item-title">Restaurant Publishing</div>
       <div class="pg-item-sub">The frameworks codified into print. The reference shelf every restaurant office should have — from operations manuals to industry research.</div>
-      <div class="pg-item-foot"><span>penguinx.co/books</span><span class="arrow">↗</span></div>
-    </a>
+    </div>
   </div>
 </section>
 
