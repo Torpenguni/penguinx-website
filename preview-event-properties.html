@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Event Properties Layout Preview</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anuphan:wght@100;200;300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#0a0a0a;
+    --bg-2:#141413;
+    --ink:#f4f1ea;
+    --ink-mute:#8a8680;
+    --accent:#dba93a;
+    --line:rgba(244,241,234,0.1);
+    --line-soft:rgba(244,241,234,0.05);
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{
+    background:var(--bg);color:var(--ink);
+    font-family:'Anuphan',sans-serif;font-weight:400;
+    -webkit-font-smoothing:antialiased;
+    line-height:1.5;
+  }
+
+  .banner{
+    background:var(--accent);color:var(--bg);
+    padding:10px;text-align:center;
+    font-size:13px;font-weight:600;letter-spacing:0.5px;
+  }
+
+  /* Section */
+  .pg-section{padding:80px 40px;max-width:1600px;margin:0 auto}
+  .pg-section-head{
+    display:flex;justify-content:space-between;align-items:flex-end;
+    margin-bottom:48px;padding-bottom:24px;border-bottom:1px solid var(--line);
+    flex-wrap:wrap;gap:24px;
+  }
+  .pg-section-num{
+    font-size:11px;color:var(--ink-mute);
+    letter-spacing:0.15em;text-transform:uppercase;margin-bottom:8px;
+  }
+  .pg-section-title{
+    font-size:clamp(28px,3vw,48px);font-weight:600;
+    letter-spacing:-0.025em;line-height:1.05;
+  }
+  .pg-section-meta{font-size:12px;color:var(--ink-mute);letter-spacing:0.05em}
+
+  /* 5-column vertical grid */
+  .pg-grid-5{
+    display:grid;
+    grid-template-columns:repeat(5,1fr);
+    gap:20px;
+  }
+  .pg-item{
+    text-decoration:none;color:inherit;display:block;
+    cursor:pointer;transition:opacity 0.3s ease;
+    position:relative;
+  }
+  .pg-item:hover{opacity:0.92}
+  .pg-item-img{
+    width:100%;
+    aspect-ratio:3/4;       /* PORTRAIT — vertical orientation */
+    background:#1a1a18 center/cover no-repeat;
+    margin-bottom:18px;
+    overflow:hidden;
+    border-radius:2px;
+    position:relative;
+  }
+  .pg-item-img img{
+    display:block;width:100%;height:100%;object-fit:cover;
+    transition:transform 0.8s ease;
+  }
+  .pg-item:hover .pg-item-img img{transform:scale(1.04)}
+
+  /* External-link badge in top-right of image */
+  .pg-item-ext{
+    position:absolute;top:14px;right:14px;
+    width:36px;height:36px;
+    border-radius:50%;
+    background:rgba(10,10,10,0.6);
+    backdrop-filter:blur(8px);
+    display:flex;align-items:center;justify-content:center;
+    color:var(--ink);
+    font-size:14px;
+    transition:all 0.3s ease;
+    border:1px solid rgba(244,241,234,0.15);
+  }
+  .pg-item:hover .pg-item-ext{
+    background:var(--accent);
+    color:var(--bg);
+    border-color:var(--accent);
+    transform:rotate(-45deg);
+  }
+
+  .pg-item-tag{
+    font-size:10px;
+    color:var(--accent);
+    letter-spacing:0.15em;
+    text-transform:uppercase;
+    margin-bottom:10px;
+    font-weight:500;
+  }
+  .pg-item-title{
+    font-size:20px;
+    font-weight:600;
+    line-height:1.2;
+    letter-spacing:-0.02em;
+    margin-bottom:10px;
+  }
+  .pg-item-sub{
+    font-size:13.5px;
+    color:var(--ink-mute);
+    line-height:1.5;
+  }
+  .pg-item-foot{
+    margin-top:14px;
+    padding-top:12px;
+    border-top:1px solid var(--line-soft);
+    font-size:11px;
+    color:var(--ink-mute);
+    letter-spacing:0.08em;
+    text-transform:uppercase;
+    display:flex;justify-content:space-between;align-items:center;
+  }
+  .pg-item-foot .arrow{
+    color:var(--accent);
+    transition:transform 0.3s ease;
+  }
+  .pg-item:hover .pg-item-foot .arrow{transform:translate(3px,-3px)}
+
+  @media (max-width:1100px){
+    .pg-grid-5{grid-template-columns:repeat(3,1fr)}
+  }
+  @media (max-width:700px){
+    .pg-grid-5{grid-template-columns:repeat(2,1fr);gap:14px}
+    .pg-section{padding:60px 20px}
+    .pg-item-img{aspect-ratio:3/4}
+    .pg-item-title{font-size:17px}
+    .pg-item-sub{font-size:12.5px}
+  }
+</style>
+</head>
+<body>
+
+<div class="banner">PREVIEW · Event Properties — 5 vertical cards, each links to its own site</div>
+
+<section class="pg-section">
+  <div class="pg-section-head">
+    <div>
+      <div class="pg-section-num">01 / Properties</div>
+      <h2 class="pg-section-title">Five flagship formats.</h2>
+    </div>
+    <div class="pg-section-meta">Engineered for distinct audiences across F&B</div>
+  </div>
+
+  <div class="pg-grid-5">
+
+    <a class="pg-item" href="https://trcthai.com" target="_blank" rel="noopener">
+      <div class="pg-item-img">
+        <img src="https://images.unsplash.com/photo-1505236858219-8359eb29e329?w=900&q=85" alt="TRC">
+        <div class="pg-item-ext">↗</div>
+      </div>
+      <div class="pg-item-tag">Conference · Flagship</div>
+      <div class="pg-item-title">TRC — Thailand Restaurant Conference</div>
+      <div class="pg-item-sub">Multi-day, multi-track programming for owners and senior operators. The room where annual decisions get made.</div>
+      <div class="pg-item-foot">
+        <span>trcthai.com</span>
+        <span class="arrow">↗</span>
+      </div>
+    </a>
+
+    <a class="pg-item" href="https://damnexpo.com" target="_blank" rel="noopener">
+      <div class="pg-item-img">
+        <img src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?w=900&q=85" alt="Damn Expo">
+        <div class="pg-item-ext">↗</div>
+      </div>
+      <div class="pg-item-tag">Expo · Nightlife</div>
+      <div class="pg-item-title">Damn Expo</div>
+      <div class="pg-item-sub">Nightlife and craft-liquor home expo. Bar owners, distributors, beverage brands on one floor.</div>
+      <div class="pg-item-foot">
+        <span>damnexpo.com</span>
+        <span class="arrow">↗</span>
+      </div>
+    </a>
+
+    <a class="pg-item" href="https://restech.co" target="_blank" rel="noopener">
+      <div class="pg-item-img">
+        <img src="https://images.unsplash.com/photo-1559136555-9303baea8ebd?w=900&q=85" alt="Restech">
+        <div class="pg-item-ext">↗</div>
+      </div>
+      <div class="pg-item-tag">Expo · Tech</div>
+      <div class="pg-item-title">Restech</div>
+      <div class="pg-item-sub">Restaurant tech and equipment expo — live demos, comparison, on-floor procurement.</div>
+      <div class="pg-item-foot">
+        <span>restech.co</span>
+        <span class="arrow">↗</span>
+      </div>
+    </a>
+
+    <a class="pg-item" href="https://cafcon.co" target="_blank" rel="noopener">
+      <div class="pg-item-img">
+        <img src="https://images.unsplash.com/photo-1559339352-11d035aa65de?w=900&q=85" alt="CafCon">
+        <div class="pg-item-ext">↗</div>
+      </div>
+      <div class="pg-item-tag">Conference · Café</div>
+      <div class="pg-item-title">CafCon</div>
+      <div class="pg-item-sub">The café business conference — coffee shop owners, roasters, category suppliers, one playbook.</div>
+      <div class="pg-item-foot">
+        <span>cafcon.co</span>
+        <span class="arrow">↗</span>
+      </div>
+    </a>
+
+    <a class="pg-item" href="https://longkaek.co" target="_blank" rel="noopener">
+      <div class="pg-item-img">
+        <img src="https://images.unsplash.com/photo-1530103862676-de8c9debad1d?w=900&q=85" alt="LongKaek">
+        <div class="pg-item-ext">↗</div>
+      </div>
+      <div class="pg-item-tag">Community · Dinner</div>
+      <div class="pg-item-title">#LongKaek</div>
+      <div class="pg-item-sub">Founder-only peer dinners — competitors turning into trusted allies, by invitation.</div>
+      <div class="pg-item-foot">
+        <span>longkaek.co</span>
+        <span class="arrow">↗</span>
+      </div>
+    </a>
+
+  </div>
+</section>
+
+</body>
+</html>
