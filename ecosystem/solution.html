@@ -86,6 +86,10 @@
   .pg-arrow:hover{background:var(--accent);color:var(--bg);border-color:var(--accent)}
   .pg-item{cursor:default}
   .pg-item:hover{opacity:1}
+  .pg-item-link{margin-top:14px;padding-top:12px;border-top:1px solid var(--line-soft);font-size:11px;color:var(--ink-mute);letter-spacing:0.08em;text-transform:uppercase;display:flex;justify-content:space-between;align-items:center;text-decoration:none;transition:color 0.2s ease}
+  .pg-item-link:hover{color:var(--accent)}
+  .pg-item-link .arrow{color:var(--accent);transition:transform 0.3s ease}
+  .pg-item-link:hover .arrow{transform:translate(3px,-3px)}
   .pg-item-ext{position:absolute;top:14px;right:14px;width:36px;height:36px;border-radius:50%;background:rgba(10,10,10,0.6);backdrop-filter:blur(8px);display:flex;align-items:center;justify-content:center;color:var(--ink);font-size:14px;transition:all 0.3s ease;border:1px solid rgba(244,241,234,0.15)}
   .pg-item:hover .pg-item-ext{background:var(--accent);color:var(--bg);border-color:var(--accent);transform:rotate(-45deg)}
   .pg-item-tag{font-size:10px;color:var(--accent);letter-spacing:0.15em;text-transform:uppercase;margin-bottom:10px;font-weight:500}
@@ -222,6 +226,7 @@
       <div class="pg-item-tag">Strategy · Brand</div>
       <div class="pg-item-title">Brand Strategy Consulting</div>
       <div class="pg-item-sub">Positioning, narrative architecture, and go-to-market playbooks for F&B brands. From challenger startups to established chains, we work with brands ready to scale beyond category norms.</div>
+      <a class="pg-item-link" href="https://penguinx.co/brand-strategy" target="_blank" rel="noopener"><span>penguinx.co/brand-strategy</span><span class="arrow">↗</span></a>
     </div>
     <div class="pg-item">
       <div class="pg-item-img"><div class="pg-track" data-index="0">
@@ -230,6 +235,7 @@
       <div class="pg-item-tag">Growth · Expansion</div>
       <div class="pg-item-title">Business Development</div>
       <div class="pg-item-sub">Franchising frameworks, partnership structuring, and expansion roadmaps. Strategic deals that compound — built around the operator economics that actually work in Thailand.</div>
+      <a class="pg-item-link" href="https://penguinx.co/business-development" target="_blank" rel="noopener"><span>penguinx.co/business-development</span><span class="arrow">↗</span></a>
     </div>
   </div>
 </section>
