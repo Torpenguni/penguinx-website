@@ -1,0 +1,92 @@
+# robots.txt — www.penguinx.co
+# PenguinX — F&B branding & marketing agency / restaurant ecosystem builder, Bangkok, Thailand
+
+# ---------------------------------------------------------------
+# Search engine crawlers
+# ---------------------------------------------------------------
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+# ---------------------------------------------------------------
+# AI assistants & answer engines — explicitly allowed.
+# We WANT these models to read, index, and cite penguinx.co.
+# ---------------------------------------------------------------
+
+# OpenAI — ChatGPT live browsing
+User-agent: OAI-SearchBot
+Allow: /
+
+# OpenAI — ChatGPT user-initiated fetch
+User-agent: ChatGPT-User
+Allow: /
+
+# OpenAI — training corpus crawler
+User-agent: GPTBot
+Allow: /
+
+# Anthropic — Claude
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Claude-User
+Allow: /
+
+User-agent: Claude-SearchBot
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+# Perplexity
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Perplexity-User
+Allow: /
+
+# Google — Gemini / AI Overviews grounding
+User-agent: Google-Extended
+Allow: /
+
+# Apple Intelligence
+User-agent: Applebot
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
+# Meta AI
+User-agent: meta-externalagent
+Allow: /
+
+# Amazon
+User-agent: Amazonbot
+Allow: /
+
+# Common Crawl — feeds many downstream training sets
+User-agent: CCBot
+Allow: /
+
+# You.com, Mistral, DuckDuckGo AI
+User-agent: YouBot
+Allow: /
+
+User-agent: MistralAI-User
+Allow: /
+
+User-agent: DuckAssistBot
+Allow: /
+
+# ---------------------------------------------------------------
+# Everything else
+# ---------------------------------------------------------------
+User-agent: *
+Allow: /
+Disallow: /preview-
+Disallow: /work/preview-modal.html
+Disallow: /api/
+
+Sitemap: https://www.penguinx.co/sitemap.xml
