@@ -1084,10 +1084,10 @@
         <div class="wm-gallery">${gal}</div>
         <div class="wm-foot">
           <button class="wm-nav prev" ${prev?'':'disabled'} data-go="${i-1}">
-            ${prev ? `← <span><span class="lbl">Previous</span><span class="ttl">${prev.name}</span></span>` : '←'}
+            ${prev ? `← <span><span class="lbl">上一篇</span><span class="ttl">${prev.name}</span></span>` : '←'}
           </button>
           <button class="wm-nav next" ${next?'':'disabled'} data-go="${i+1}">
-            ${next ? `→ <span><span class="lbl">Next</span><span class="ttl">${next.name}</span></span>` : '→'}
+            ${next ? `→ <span><span class="lbl">下一篇</span><span class="ttl">${next.name}</span></span>` : '→'}
           </button>
         </div>`;
       inner.querySelectorAll('[data-go]').forEach(b=>{
