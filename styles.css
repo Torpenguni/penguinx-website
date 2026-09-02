@@ -1660,3 +1660,37 @@ body.modal-open{overflow:hidden}
   .lang-switch{margin-right:10px;padding:2px}
   .lang-switch a{padding:3px 7px;font-size:11px}
 }
+
+/* ============================================================
+   ภาษาจีน — ตัวอักษรฮั่นเป็นสี่เหลี่ยมเต็มความกว้าง
+   ต้องปรับ 2 เรื่องที่งานออกแบบเดิมตั้งไว้สำหรับตัวละติน
+   ============================================================ */
+
+/* 1) Anuphan ไม่มีตัวอักษรจีน เบราว์เซอร์จึงเลือกฟอนต์ระบบเอง
+      ปล่อยไว้ Windows จะได้ SimSun ที่เส้นบางและอ่านยากบนพื้นดำ
+      จึงไล่ลำดับฟอนต์จีนเอง โดยคง Anuphan ไว้หน้าสุดให้ตัวละติน
+      กับไทย (ชื่อแบรนด์ ปุ่มสลับภาษา) หน้าตาเหมือนเดิมทุกประการ
+      ใช้ตัวเลือก * เพราะ 36 กฎในไฟล์นี้ประกาศ font-family ซ้ำกันหมด */
+html[lang^="zh"] * {
+  font-family:'Anuphan','PingFang SC','Hiragino Sans GB','Microsoft YaHei',
+              'Source Han Sans SC','Noto Sans SC',sans-serif;
+}
+
+/* 2) letter-spacing ติดลบ (-0.02em ถึง -0.045em) ทำให้ตัวละตินกระชับขึ้น
+      แต่ตัวฮั่นกว้างเต็มช่องอยู่แล้ว บีบเข้าไปอีกจะซ้อนกันจนอ่านไม่ออก */
+html[lang^="zh"] .hero-title,
+html[lang^="zh"] .section-title,
+html[lang^="zh"] .eco-name,
+html[lang^="zh"] .case-name,
+html[lang^="zh"] .cta-title,
+html[lang^="zh"] .shorts-title,
+html[lang^="zh"] .wm-title {
+  letter-spacing:0;
+}
+
+/* 3) ชื่อการ์ดในส่วน ecosystem: ต้นฉบับอังกฤษใส่ <br> ไว้แค่การ์ด
+      Media/Event ทำให้ฉบับจีน Education กับ Solution เหลือบรรทัดเดียว
+      ยาวเต็มความกว้างการ์ดจนดูอึดอัด บังคับให้ทุกใบขึ้นบรรทัดที่ /
+      แล้วซ่อน <br> เดิม ไม่ให้กลายเป็นบรรทัดว่าง */
+html[lang^="zh"] .eco-name .light { display:block }
+html[lang^="zh"] .eco-name br { display:none }

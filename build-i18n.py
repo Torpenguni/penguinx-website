@@ -47,6 +47,24 @@ def hreflangs(rel_path):
     rows.append(f'<link rel="alternate" hreflang="x-default" href="{SITE}/{rel_path}">')
     return '\n'.join(rows)
 
+def translate_blocks(html, blocks):
+    """แทนทั้งก้อน HTML สำหรับหัวข้อที่คำถูกหั่นเป็นหลาย <span>
+
+    ตัวแทนรายคำ (translate_text) ทำหัวข้อพวกนี้ไม่ได้ เพราะคำอย่าง "us"/"to"
+    อยู่คนละ element กัน แปลทีละชิ้นแล้วเรียงกลับมาจะได้ประโยคที่ผิดไวยากรณ์
+    จีน/ไทย ก้อนพวกนี้จึงต้องเขียนใหม่ทั้งอันพร้อมกำหนดจุดขึ้นบรรทัดเอง
+    จับแบบยืดหยุ่นช่องว่าง เพราะต้นฉบับจัดย่อหน้าไว้หลายบรรทัด"""
+    for src, dst in blocks.items():
+        pattern = r'\s+'.join(re.escape(w) for w in src.split())
+        html = re.sub(pattern, lambda m, d=dst: d, html, count=1)
+    return html
+
+def js_config(cfg_js):
+    """ส่งคำแปลให้สคริปต์ฝั่งเบราว์เซอร์ (การ์ดวิดีโอ render ด้วย JS)"""
+    if not cfg_js:
+        return ''
+    return '<script>window.__PX_I18N__=' + json.dumps(cfg_js, ensure_ascii=False) + ';</script>'
+
 def translate_text(html, tmap):
     """แทนข้อความที่มองเห็น + attribute ที่ผู้ใช้อ่าน โดยไม่แตะโครงสร้าง"""
     def node(m):
@@ -61,6 +79,33 @@ def translate_text(html, tmap):
         name, val = m.group(1), m.group(2)
         return f'{name}="{tmap[val]}"' if val in tmap else m.group(0)
     html = re.sub(r'\b(content|alt|title|placeholder|aria-label)="([^"]+)"', attr, html)
+    return html
+
+def localise_assets(html, src_page):
+    """path รูป/ไฟล์แบบสัมพัทธ์ต้องเปลี่ยนเป็นอ้างจากราก
+
+    ต้นฉบับอยู่ที่รากเว็บ src="Community/x.png" จึงชี้ถูก แต่ฉบับแปลถูกย้าย
+    ไปอยู่ /zh/ เบราว์เซอร์จะไปหาที่ /zh/Community/x.png ซึ่งไม่มีอยู่จริง
+    ผลคือรูปทั้งหน้าไม่ขึ้น เปลี่ยนเป็น /Community/x.png ให้ชี้ที่เดียวกัน
+    ทุกภาษาและทุกความลึกของโฟลเดอร์"""
+    base = os.path.dirname(src_page)
+    SKIP = ('http://', 'https://', '//', '/', '#', 'data:', 'mailto:', 'tel:', 'javascript:')
+
+    def to_root(url):
+        # '${...}' คือ template literal ในสคริปต์ ค่าจริงเกิดตอนรัน ห้ามแตะ
+        if not url or '${' in url or url.startswith(SKIP):
+            return None
+        return '/' + os.path.normpath(os.path.join(base, url)).replace(os.sep, '/')
+
+    def fix_attr(m):
+        new = to_root(m.group(2))
+        return f'{m.group(1)}="{new}"' if new else m.group(0)
+    html = re.sub(r'\b(src|poster)="([^"]+)"', fix_attr, html)
+
+    def fix_url(m):
+        quote, new = m.group(1), to_root(m.group(2))
+        return f'url({quote}{new}{quote})' if new else m.group(0)
+    html = re.sub(r'url\((["\']?)([^"\')]+)\1\)', fix_url, html)
     return html
 
 def localise_links(html, code):
@@ -82,6 +127,7 @@ def strip_injected(html):
     ไม่งั้นรันซ้ำทีไร hreflang กับปุ่มสลับภาษาจะทบกันไปเรื่อย ๆ"""
     html = re.sub(r'\s*<link rel="alternate" hreflang="[^"]*" href="[^"]*">', '', html)
     html = re.sub(r'\s*<div class="lang-switch">.*?</div>', '', html, flags=re.S)
+    html = re.sub(r'\s*<script>window\.__PX_I18N__=.*?</script>', '', html, flags=re.S)
     return html
 
 def build(src, code):
@@ -90,8 +136,14 @@ def build(src, code):
     html = strip_injected(open(src, encoding='utf-8').read())
     rel = '' if src == 'index.html' else src
 
+    blocks = tmap.pop('_html', {})
+    cfg_js = tmap.pop('_js', {})
+
+    html = localise_assets(html, src)
     html = localise_links(html, code)
+    html = translate_blocks(html, blocks)
     html = translate_text(html, tmap)
+    html = re.sub(r'(<body[^>]*>)', lambda m: m.group(1) + '\n' + js_config(cfg_js), html, count=1)
     html = re.sub(r'<html[^>]*>', f'<html lang="{cfg["htmlLang"]}">', html, count=1)
     html = html.replace('<meta property="og:locale" content="en_US">',
                         f'<meta property="og:locale" content="{cfg["ogLocale"]}">')

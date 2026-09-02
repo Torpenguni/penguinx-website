@@ -1129,15 +1129,22 @@
     const scroller = document.getElementById('shortsScroller');
     if(!scroller) return;
     function escapeHtml(s){return String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));}
+    // ชื่อคลิปที่ YouTube API ส่งมาเป็นภาษาไทยเสมอ หน้าภาษาอื่นจึงแปลผ่านตาราง
+    // ที่ build-i18n.py ฉีดมาให้ คลิปใหม่ที่ยังไม่อยู่ในตารางจะคงชื่อไทยไว้
+    const I18N = window.__PX_I18N__ || {};
+    const TITLES = I18N.videoTitles || {};
+    const VIEWS_FMT = I18N.viewsFormat || '{n} views';
+    const localTitle = t => TITLES[t] || t;
+    const localViews = n => VIEWS_FMT.replace('{n}', n);
     function render(items){
       scroller.innerHTML = items.map(s=>`
         <a class="short" href="https://www.youtube.com/watch?v=${encodeURIComponent(s.id)}" target="_blank" rel="noopener">
-          <img src="${escapeHtml(s.thumb)}" alt="${escapeHtml(s.title)}" loading="lazy">
+          <img src="${escapeHtml(s.thumb)}" alt="${escapeHtml(localTitle(s.title))}" loading="lazy">
           <div class="short-overlay"></div>
-          ${s.views?`<div class="short-views">${escapeHtml(s.views)} views</div>`:''}
+          ${s.views?`<div class="short-views">${escapeHtml(localViews(s.views))}</div>`:''}
           <div class="short-play"></div>
           ${s.duration?`<div class="short-duration">▶ ${escapeHtml(s.duration)}</div>`:''}
-          <div class="short-title">${escapeHtml(s.title)}</div>
+          <div class="short-title">${escapeHtml(localTitle(s.title))}</div>
         </a>`).join('');
     }
     try{
@@ -1147,7 +1154,7 @@
       if(!data.items || !data.items.length) throw new Error('Empty');
       render(data.items);
     }catch(e){
-      render([
+      render(I18N.fallbackVideos || [
         {id:'',title:'เปิดร้านก๋วยเตี๋ยว ทำไมถึงเจ๊ง',thumb:'https://i.ytimg.com/vi/_/hqdefault.jpg',duration:'12:34',views:'1.2M'},
         {id:'',title:'5 ข้อที่ร้านอาหารต้องรู้ก่อนเปิดสาขา',thumb:'https://i.ytimg.com/vi/_/hqdefault.jpg',duration:'18:02',views:'880K'},
         {id:'',title:'ทำไม Cloud Kitchen ถึงยังไม่ work ในไทย',thumb:'https://i.ytimg.com/vi/_/hqdefault.jpg',duration:'15:45',views:'650K'},
