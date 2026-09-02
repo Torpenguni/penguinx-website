@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>Preview — สไตล์ลิงก์เว็บไซต์ในการ์ด | PenguinX</title>
+<link href="https://fonts.googleapis.com/css2?family=Anuphan:wght@100;200;300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/styles.css">
+<style>
+
+  :root{
+    --bg:#0a0a0a;--bg-2:#141413;--ink:#f4f1ea;--ink-mute:#8a8680;
+    --accent:#dba93a;--line:rgba(244,241,234,0.1);--line-soft:rgba(244,241,234,0.05);
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{background:var(--bg);color:var(--ink);font-family:'Anuphan',sans-serif;font-weight:400;-webkit-font-smoothing:antialiased;overflow-x:hidden;line-height:1.5}
+
+  /* === TOP BAR === */
+  .pg-nav{display:flex;justify-content:space-between;align-items:center;padding:24px 40px;border-bottom:1px solid var(--line)}
+  .pg-back{color:var(--ink-mute);text-decoration:none;font-size:13px;letter-spacing:0.05em;display:inline-flex;align-items:center;gap:8px;transition:color 0.2s ease}
+  .pg-back:hover{color:var(--accent)}
+  .pg-pillar{font-size:11px;letter-spacing:0.15em;text-transform:uppercase;color:var(--ink-mute)}
+  .pg-pillar b{color:var(--accent);font-weight:600}
+
+  /* === HERO === */
+  .pg-hero{padding:120px 40px 80px;border-bottom:1px solid var(--line)}
+  .pg-hero-grid{display:grid;grid-template-columns:1fr 320px;gap:80px;max-width:1600px;margin:0 auto;align-items:end}
+  .pg-hero-title{font-size:clamp(56px,9vw,160px);font-weight:600;line-height:0.92;letter-spacing:-0.045em}
+  .pg-hero-title .light{color:var(--ink-mute);font-weight:300;font-style:italic}
+  .pg-hero-title .accent{color:var(--accent)}
+  .pg-meta{display:flex;flex-direction:column;gap:24px;padding-bottom:12px}
+  .pg-meta-block{display:grid;grid-template-columns:90px 1fr;gap:16px;padding-bottom:18px;border-bottom:1px solid var(--line-soft)}
+  .pg-meta-block:last-child{border-bottom:none}
+  .pg-meta-label{font-size:11px;color:var(--ink-mute);text-transform:uppercase;letter-spacing:0.15em;padding-top:3px}
+  .pg-meta-value{font-size:14px;color:var(--ink);line-height:1.5}
+
+  /* === COVER === */
+  .pg-cover{width:100%;aspect-ratio:21/9;background:#222 center/cover no-repeat}
+  .pg-cover-caption{padding:14px 40px;font-size:12px;color:var(--ink-mute);display:flex;justify-content:space-between;border-bottom:1px solid var(--line)}
+
+  /* === VALUE-PROP === */
+  .vp{padding:56px 40px 40px;max-width:1600px;margin:0 auto}
+  .vp-head{margin-bottom:32px;padding-bottom:18px;border-bottom:1px solid var(--line);display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:24px}
+  .vp-num{font-size:11px;color:var(--ink-mute);letter-spacing:0.15em;text-transform:uppercase;margin-bottom:8px}
+  .vp-title{font-size:clamp(36px,5vw,72px);font-weight:600;line-height:1;letter-spacing:-0.035em}
+  .vp-title .light{color:var(--ink-mute);font-weight:300;font-style:italic}
+  .vp-title .accent{color:var(--accent)}
+  .vp-tag{font-size:11px;color:var(--accent);border:1px solid rgba(219,169,58,0.4);padding:6px 14px;border-radius:100px;letter-spacing:0.12em;text-transform:uppercase}
+  .vp-body{display:grid;grid-template-columns:1.2fr 1fr;gap:48px;align-items:center}
+  .vp-img{width:100%;aspect-ratio:4/3;background:#1a1a18 center/cover no-repeat;border-radius:2px;overflow:hidden;position:relative}
+  .vp-img img{display:block;width:100%;height:100%;object-fit:cover}
+  .vp-img-cap{position:absolute;bottom:0;left:0;right:0;padding:20px 24px;background:linear-gradient(180deg,transparent 0%,rgba(0,0,0,0.7) 100%);font-size:12px;color:var(--ink-mute);display:flex;justify-content:space-between}
+  .vp-text{display:flex;flex-direction:column;gap:24px}
+  .vp-lead{font-size:clamp(17px,1.5vw,22px);line-height:1.5;color:var(--ink);letter-spacing:-0.015em;font-weight:400}
+  .vp-lead em{color:var(--accent);font-style:normal;font-weight:500}
+  .vp-benefits{display:flex;flex-direction:column;gap:0;border-top:1px solid var(--line)}
+  .vp-benefit{padding:16px 0;border-bottom:1px solid var(--line-soft);display:grid;grid-template-columns:48px 1fr;gap:20px;align-items:start}
+  .vp-benefit:last-child{border-bottom:none}
+  .vp-b-num{font-size:14px;color:var(--accent);font-weight:600;letter-spacing:0.05em;padding-top:2px}
+  .vp-b-h{font-size:16px;font-weight:600;color:var(--ink);margin-bottom:6px;letter-spacing:-0.01em}
+  .vp-b-d{font-size:13px;color:var(--ink-mute);line-height:1.5}
+
+  /* === PROPERTIES GRID === */
+  .pg-section{padding:60px 40px 100px;max-width:1600px;margin:0 auto}
+  .pg-section-head{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:48px;padding-bottom:24px;border-bottom:1px solid var(--line);flex-wrap:wrap;gap:24px}
+  .pg-section-num{font-size:11px;color:var(--ink-mute);letter-spacing:0.15em;text-transform:uppercase;margin-bottom:8px}
+  .pg-section-title{font-size:clamp(28px,3vw,48px);font-weight:600;letter-spacing:-0.025em;line-height:1.05}
+  .pg-section-meta{font-size:12px;color:var(--ink-mute);letter-spacing:0.05em}
+  .pg-grid{display:grid;gap:20px}
+  .pg-grid.cols-5{grid-template-columns:repeat(5,1fr)}
+  .pg-grid.cols-3{grid-template-columns:repeat(3,1fr)}
+  .pg-grid.cols-2{grid-template-columns:repeat(2,1fr);gap:32px}
+  .pg-item{text-decoration:none;color:inherit;display:block;cursor:pointer;transition:opacity 0.3s ease;position:relative}
+  .pg-item:hover{opacity:0.92}
+  .pg-item-img{width:100%;aspect-ratio:1/1;background:#1a1a18 center/cover no-repeat;margin-bottom:18px;overflow:hidden;border-radius:2px;position:relative}
+  .pg-grid.cols-2 .pg-item-img{aspect-ratio:1/1}
+  .pg-item-img img{display:block;width:100%;height:100%;object-fit:cover;transition:transform 0.8s ease}
+  .pg-item:hover .pg-item-img img{transform:scale(1.04)}
+  .pg-track{display:flex;width:100%;height:100%;transition:transform 0.45s cubic-bezier(0.4,0,0.2,1)}
+  .pg-track img{flex:0 0 100%;width:100%;height:100%;object-fit:cover}
+  .pg-arrow{position:absolute;top:50%;transform:translateY(-50%);width:36px;height:36px;border-radius:50%;background:rgba(10,10,10,0.6);backdrop-filter:blur(8px);border:1px solid rgba(244,241,234,0.2);color:var(--ink);font-size:20px;line-height:1;cursor:pointer;display:flex;align-items:center;justify-content:center;opacity:0;transition:opacity 0.25s ease, background 0.2s ease;z-index:2;padding:0;font-family:inherit}
+  .pg-item-img:hover .pg-arrow{opacity:1}
+  .pg-arrow.prev{left:10px}
+  .pg-arrow.next{right:10px}
+  .pg-arrow:hover{background:var(--accent);color:var(--bg);border-color:var(--accent)}
+  .pg-item{cursor:default}
+  .pg-item:hover{opacity:1}
+  .pg-item-link{margin-top:14px;padding-top:12px;border-top:1px solid var(--line-soft);font-size:11px;color:var(--ink-mute);letter-spacing:0.08em;text-transform:uppercase;display:flex;justify-content:space-between;align-items:center;text-decoration:none;transition:color 0.2s ease}
+  .pg-item-link:hover{color:var(--accent)}
+  .pg-item-link .arrow{color:var(--accent);transition:transform 0.3s ease}
+  .pg-item-link:hover .arrow{transform:translate(3px,-3px)}
+  .pg-item-ext{position:absolute;top:14px;right:14px;width:36px;height:36px;border-radius:50%;background:rgba(10,10,10,0.6);backdrop-filter:blur(8px);display:flex;align-items:center;justify-content:center;color:var(--ink);font-size:14px;transition:all 0.3s ease;border:1px solid rgba(244,241,234,0.15)}
+  .pg-item:hover .pg-item-ext{background:var(--accent);color:var(--bg);border-color:var(--accent);transform:rotate(-45deg)}
+  .pg-item-tag{font-size:10px;color:var(--accent);letter-spacing:0.15em;text-transform:uppercase;margin-bottom:10px;font-weight:500}
+  .pg-item-title{font-size:20px;font-weight:600;line-height:1.2;letter-spacing:-0.02em;margin-bottom:10px}
+  .pg-grid.cols-2 .pg-item-title{font-size:28px}
+  .pg-item-sub{font-size:13.5px;color:var(--ink-mute);line-height:1.5}
+  .pg-grid.cols-2 .pg-item-sub{font-size:15px}
+  .pg-item-foot{margin-top:14px;padding-top:12px;border-top:1px solid var(--line-soft);font-size:11px;color:var(--ink-mute);letter-spacing:0.08em;text-transform:uppercase;display:flex;justify-content:space-between;align-items:center}
+  .pg-item-foot .arrow{color:var(--accent);transition:transform 0.3s ease}
+  .pg-item:hover .pg-item-foot .arrow{transform:translate(3px,-3px)}
+
+  /* === STATS === */
+  .pg-stats{padding:48px 40px;border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:var(--bg-2)}
+  .pg-stats-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:40px;max-width:1400px;margin:0 auto}
+  .pg-stat .num{font-size:clamp(28px,3vw,44px);font-weight:600;letter-spacing:-0.04em;line-height:1;color:var(--accent)}
+  .pg-stat .lbl{font-size:11px;color:var(--ink-mute);text-transform:uppercase;letter-spacing:0.12em;margin-top:10px}
+
+  /* === NEXT === */
+  .pg-next{padding:120px 40px;border-top:1px solid var(--line);text-align:center}
+  .pg-next-tag{font-size:11px;color:var(--ink-mute);text-transform:uppercase;letter-spacing:0.2em;margin-bottom:24px}
+  .pg-next-title{font-size:clamp(48px,7vw,120px);font-weight:600;line-height:0.95;letter-spacing:-0.04em;margin-bottom:32px}
+  .pg-next-title a{color:var(--ink);text-decoration:none;border-bottom:2px solid transparent;transition:all 0.3s ease}
+  .pg-next-title a:hover{color:var(--accent);border-bottom-color:var(--accent)}
+
+  /* === RESPONSIVE === */
+  @media (max-width:1100px){
+    .pg-hero{padding:80px 32px 50px}
+    .pg-hero-grid{grid-template-columns:1fr;gap:48px}
+    .vp{padding:80px 32px 50px}
+    .vp-body{grid-template-columns:1fr;gap:48px}
+    .vp-img{aspect-ratio:16/10;max-height:560px}
+    .pg-section{padding:50px 32px 80px}
+    .pg-grid.cols-5{grid-template-columns:repeat(3,1fr)}
+  }
+  @media (max-width:900px){
+    .vp-head,.pg-section-head{flex-direction:column;align-items:flex-start;gap:14px}
+    .vp-tag{align-self:flex-start;order:-1}
+    .pg-grid.cols-3{grid-template-columns:repeat(2,1fr)}
+  }
+  @media (max-width:700px){
+    .pg-hero{padding:60px 20px 40px}
+    .pg-cover-caption{padding:14px 20px}
+    .vp{padding:56px 20px 40px}
+    .vp-head{margin-bottom:32px;padding-bottom:18px}
+    .vp-num{font-size:10px}
+    .vp-title{font-size:34px;line-height:1.05}
+    .vp-tag{font-size:10px;padding:5px 12px}
+    .vp-body{gap:32px}
+    .vp-img{aspect-ratio:4/3}
+    .vp-img-cap{padding:14px 18px;font-size:11px}
+    .vp-lead{font-size:18px;line-height:1.45}
+    .vp-text{gap:24px}
+    .vp-benefit{grid-template-columns:32px 1fr;gap:14px;padding:18px 0}
+    .vp-b-num{font-size:13px}
+    .vp-b-h{font-size:15px;margin-bottom:4px}
+    .vp-b-d{font-size:13px;line-height:1.5}
+    .pg-section{padding:32px 0 80px}
+    .pg-section-head{padding:0 20px 18px;margin-bottom:24px}
+    .pg-section-num{font-size:10px}
+    .pg-section-title{font-size:28px}
+    .pg-section-meta{font-size:11px}
+    .pg-grid{grid-template-columns:none;display:flex;overflow-x:auto;overflow-y:hidden;gap:12px;padding:4px 20px 24px;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;scrollbar-width:thin}
+    .pg-grid::-webkit-scrollbar{height:4px}
+    .pg-grid::-webkit-scrollbar-thumb{background:var(--line);border-radius:100px}
+    .pg-item{flex:0 0 72%;min-width:240px;scroll-snap-align:start}
+    .pg-grid.cols-2 .pg-item{flex:0 0 80%}
+    .pg-item-img{aspect-ratio:1/1;margin-bottom:14px}
+    .pg-item-ext{width:32px;height:32px;font-size:12px;top:10px;right:10px}
+    .pg-item-tag{font-size:9px;margin-bottom:8px}
+    .pg-item-title{font-size:17px;margin-bottom:8px}
+    .pg-grid.cols-2 .pg-item-title{font-size:20px}
+    .pg-item-sub{font-size:12.5px;line-height:1.45}
+    .pg-grid.cols-2 .pg-item-sub{font-size:13px}
+    .pg-item-foot{margin-top:10px;padding-top:10px;font-size:10px}
+    .pg-stats{padding:40px 24px}
+    .pg-stats-grid{grid-template-columns:repeat(2,1fr);gap:24px}
+    .pg-next{padding:80px 24px}
+  }
+  @media (max-width:420px){
+    .vp-title{font-size:28px}
+    .vp-lead{font-size:16px}
+    .pg-section-title{font-size:24px}
+    .pg-item{flex:0 0 80%}
+  }
+
+
+  body{background:var(--bg);color:var(--ink);font-family:'Anuphan',sans-serif;margin:0}
+  .wrap{max-width:1400px;margin:0 auto;padding:48px 32px 120px}
+  .lede{border-bottom:1px solid var(--line);padding-bottom:28px;margin-bottom:8px}
+  .lede h1{font-size:clamp(28px,3vw,40px);font-weight:600;letter-spacing:-0.03em;margin:0 0 10px}
+  .lede p{color:var(--ink-mute);font-size:15px;line-height:1.6;max-width:70ch;margin:0}
+  .opt{padding:44px 0;border-bottom:1px solid var(--line)}
+  .opt-head{display:flex;gap:16px;align-items:flex-start;margin-bottom:26px}
+  .opt-key{flex:none;width:34px;height:34px;border-radius:50%;border:1px solid var(--accent);
+    color:var(--accent);display:grid;place-items:center;font-size:12px;font-weight:600}
+  .opt-head h2{font-size:19px;font-weight:600;margin:5px 0 4px;letter-spacing:-0.01em}
+  .opt-head p{color:var(--ink-mute);font-size:13.5px;margin:0;line-height:1.55}
+  .pg-grid.cols-3{grid-template-columns:repeat(3,1fr)}
+  .pg-item-img{max-height:170px;overflow:hidden}
+
+  /* ---- B: ลิงก์ข้อความที่ใหญ่และคมขึ้น ---- */
+  .v-b{margin-top:16px;padding-top:14px;border-top:1px solid var(--line-soft);
+    display:flex;justify-content:space-between;align-items:center;gap:12px;
+    font-size:13px;font-weight:600;letter-spacing:0.05em;text-transform:uppercase;
+    color:var(--ink);text-decoration:none;transition:color .2s ease}
+  .v-b-arrow{flex:none;width:28px;height:28px;border-radius:50%;
+    border:1px solid rgba(244,241,234,0.22);display:grid;place-items:center;
+    color:var(--accent);font-size:13px;transition:all .25s ease}
+  .v-b:hover{color:var(--accent)}
+  .v-b:hover .v-b-arrow{border-color:var(--accent);background:rgba(219,169,58,0.12);transform:translate(2px,-2px)}
+
+  /* ---- C: ปุ่มเส้นขอบ ---- */
+  .v-c{margin-top:18px;align-self:flex-start;
+    display:inline-flex;align-items:center;gap:10px;
+    padding:11px 18px;border:1px solid rgba(244,241,234,0.24);border-radius:100px;
+    font-size:12.5px;font-weight:600;letter-spacing:0.05em;text-transform:uppercase;
+    color:var(--ink);text-decoration:none;
+    transition:color .2s ease,border-color .2s ease,background .2s ease}
+  .v-c-arrow{color:var(--accent);transition:transform .25s ease}
+  .v-c:hover{color:var(--accent);border-color:rgba(219,169,58,0.55);background:rgba(219,169,58,0.07)}
+  .v-c:hover .v-c-arrow{transform:translate(3px,-3px)}
+
+  /* ---- D: ปุ่มทึบ + โดเมนตัวเล็กใต้ปุ่ม ---- */
+  .v-d{margin-top:18px;align-self:flex-start;
+    display:inline-flex;align-items:center;gap:10px;
+    padding:12px 22px;border-radius:100px;
+    background:var(--accent);color:#0f0d09;
+    font-size:13px;font-weight:700;letter-spacing:0.02em;text-decoration:none;
+    transition:transform .25s ease,box-shadow .25s ease,filter .25s ease}
+  .v-d-arrow{font-size:14px}
+  .v-d:hover{transform:translateY(-2px);filter:brightness(1.08);
+    box-shadow:0 8px 24px rgba(219,169,58,0.25)}
+  .v-d-dom{margin-top:9px;font-size:11px;letter-spacing:0.07em;text-transform:uppercase;color:var(--ink-mute)}
+
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="lede">
+    <h1>ลิงก์เว็บไซต์ในการ์ด — 4 แบบให้เลือก</h1>
+    <p>ใช้การ์ดจริงจากหน้า Event เลือกมา 3 ใบ โดยตั้งใจเอา TRC มาด้วยเพราะโดเมนยาวที่สุด
+       จะได้เห็นว่าแต่ละแบบรับข้อความยาวไหวแค่ไหน ลองเอาเมาส์ชี้ที่ลิงก์เพื่อดูอาการตอน hover
+       ทุกแบบใช้สีและฟอนต์ชุดเดิมของเว็บ ไม่ได้เพิ่มสีใหม่</p>
+  </div>
+
+<section class="opt">
+  <div class="opt-head">
+    <div class="opt-key">A</div>
+    <div><h2>แบบปัจจุบัน</h2><p>11px สีจาง ตัวพิมพ์ใหญ่ — อ่านเป็นคำบรรยาย ไม่ใช่ปุ่ม</p></div>
+  </div>
+  <div class="pg-grid cols-3">
+<div class="pg-item">
+      <div class="pg-item-img"><div class="pg-track" data-index="0">
+        <img src="/ecosystem/Event/TRC/trc1.jpg" alt="" loading="lazy">
+        <img src="/ecosystem/Event/TRC/trc2.jpg" alt="" loading="lazy">
+        <img src="/ecosystem/Event/TRC/trc3.jpg" alt="" loading="lazy">
+        <img src="/ecosystem/Event/TRC/trc4.JPG" alt="" loading="lazy">
+        <img src="/ecosystem/Event/TRC/trc5.jpg" alt="" loading="lazy">
+        <img src="/ecosystem/Event/TRC/trc6.jpg" alt="" loading="lazy">
+        <img src="/ecosystem/Event/TRC/trc7.jpg" alt="" loading="lazy">
+        <img src="/ecosystem/Event/TRC/trc8.jpg" alt="" loading="lazy">
+      </div><button class="pg-arrow prev" data-dir="-1" type="button" aria-label="Previous">‹</button><button class="pg-arrow next" data-dir="1" type="button" aria-label="Next">›</button></div>
+      <div class="pg-item-tag">Conference · Flagship</div>
+      <div class="pg-item-title">TRC — Thailand Restaurant Conference</div>
+      <div class="pg-item-sub">Multi-day, multi-track programming for owners and senior operators. The room where annual decisions get made.</div>
+      <a class="pg-item-link" href="https://www.thailandrestaurantconference.org/" target="_blank" rel="noopener"><span>thailandrestaurantconference.org</span><span class="arrow">↗</span></a>
+    </div>
+<div class="pg-item">
+      <div class="pg-item-img"><div class="pg-track" data-index="0">
+        <img src="/ecosystem/Event/Damn/damn1.jpg" alt="" loading="lazy">
+        <img src="/ecosystem/Event/Damn/damn2.jpg" alt="" loading="lazy">
+        <img src="/ecosystem/Event/Damn/damn3.jpg" alt="" loading="lazy">
+        <img src="/ecosystem/Event/Damn/damn4.png" alt="" loading="lazy">
+        <img src="/ecosystem/Event/Damn/damn5.jpg" alt="" loading="lazy">
+        <img src="/ecosystem/Event/Damn/damn6.jpg" alt="" loading="lazy">
+        <img src="/ecosystem/Event/Damn/damn7.jpg" alt="" loading="lazy">
+        <img src="/ecosystem/Event/Damn/damn8.jpg" alt="" loading="lazy">
+      </div><button class="pg-arrow prev" data-dir="-1" type="button" aria-label="Previous">‹</button><button class="pg-arrow next" data-dir="1" type="button" aria-label="Next">›</button></div>
+      <div class="pg-item-tag">Expo · Nightlife</div>
+      <div class="pg-item-title">Damn Expo</div>
+      <div class="pg-item-sub">Nightlife and craft-liquor home expo. Bar owners, distributors, beverage brands on one floor.</div>
+      <a class="pg-item-link" href="https://damnexpo.com" target="_blank" rel="noopener"><span>damnexpo.com</span><span class="arrow">↗</span></a>
+    </div>
+<div class="pg-item">
+      <div class="pg-item-img"><div class="pg-track" data-index="0">
+        <img src="/ecosystem/Event/Restech/restech1.jpg" alt="" loading="lazy">
+        <img src="/ecosystem/Event/Restech/restech2.jpg" alt="" loading="lazy">
+        <img src="/ecosystem/Event/Restech/restech3.jpg" alt="" loading="lazy">
+        <img src="/ecosystem/Event/Restech/restech4.jpg" alt="" loading="lazy">
+        <img src="/ecosystem/Event/Restech/restech5.jpg" alt="" loading="lazy">
+        <img src="/ecosystem/Event/Restech/restech7.jpg" alt="" loading="lazy">
+        <img src="/ecosystem/Event/Restech/restech8.jpg" alt="" loading="lazy">
+      </div><button class="pg-arrow prev" data-dir="-1" type="button" aria-label="Previous">‹</button><button class="pg-arrow next" data-dir="1" type="button" aria-label="Next">›</button></div>
+      <div class="pg-item-tag">Expo · Tech</div>
+      <div class="pg-item-title">Restech</div>
+      <div class="pg-item-sub">Restaurant tech and equipment expo — live demos, comparison, on-floor procurement.</div>
+      <a class="pg-item-link" href="https://www.restechexpo.com/" target="_blank" rel="noopener"><span>restechexpo.com</span><span class="arrow">↗</span></a>
+    </div>
+  </div>
+</section>
+<section class="opt">
+  <div class="opt-head">
+    <div class="opt-key">B</div>
+    <div><h2>แบบ B — ขยายเป็นลิงก์เด่น</h2><p>13px สีขาวเต็ม ตัวหนา ลูกศรอยู่ในวงกลม แตะง่ายขึ้นแต่ยังเรียบ</p></div>
+  </div>
+  <div class="pg-grid cols-3">
+<div class="pg-item">
+      <div class="pg-item-img"><div class="pg-track" data-index="0">
+        <img src="/ecosystem/Event/TRC/trc1.jpg" alt="" loading="lazy">
+        <img src="/ecosystem/Event/TRC/trc2.jpg" alt="" loading="lazy">
+        <img src="/ecosystem/Event/TRC/trc3.jpg" alt="" loading="lazy">
+        <img src="/ecosystem/Event/TRC/trc4.JPG" alt="" loading="lazy">
+        <img src="/ecosystem/Event/TRC/trc5.jpg" alt="" loading="lazy">
+        <img src="/ecosystem/Event/TRC/trc6.jpg" alt="" loading="lazy">
+        <img src="/ecosystem/Event/TRC/trc7.jpg" alt="" loading="lazy">
+        <img src="/ecosystem/Event/TRC/trc8.jpg" alt="" loading="lazy">
+      </div><button class="pg-arrow prev" data-dir="-1" type="button" aria-label="Previous">‹</button><button class="pg-arrow next" data-dir="1" type="button" aria-label="Next">›</button></div>
+      <div class="pg-item-tag">Conference · Flagship</div>
+      <div class="pg-item-title">TRC — Thailand Restaurant Conference</div>
+      <div class="pg-item-sub">Multi-day, multi-track programming for owners and senior operators. The room where annual decisions get made.</div>
+      <a class="v-b" href="https://www.thailandrestaurantconference.org/" target="_blank" rel="noopener"><span>thailandrestaurantconference.org</span><span class="v-b-arrow">↗</span></a>
+    </div>
+<div class="pg-item">
+      <div class="pg-item-img"><div class="pg-track" data-index="0">
+        <img src="/ecosystem/Event/Damn/damn1.jpg" alt="" loading="lazy">
+        <img src="/ecosystem/Event/Damn/damn2.jpg" alt="" loading="lazy">
+        <img src="/ecosystem/Event/Damn/damn3.jpg" alt="" loading="lazy">
+        <img src="/ecosystem/Event/Damn/damn4.png" alt="" loading="lazy">
+        <img src="/ecosystem/Event/Damn/damn5.jpg" alt="" loading="lazy">
+        <img src="/ecosystem/Event/Damn/damn6.jpg" alt="" loading="lazy">
+        <img src="/ecosystem/Event/Damn/damn7.jpg" alt="" loading="lazy">
+        <img src="/ecosystem/Event/Damn/damn8.jpg" alt="" loading="lazy">
+      </div><button class="pg-arrow prev" data-dir="-1" type="button" aria-label="Previous">‹</button><button class="pg-arrow next" data-dir="1" type="button" aria-label="Next">›</button></div>
+      <div class="pg-item-tag">Expo · Nightlife</div>
+      <div class="pg-item-title">Damn Expo</div>
+      <div class="pg-item-sub">Nightlife and craft-liquor home expo. Bar owners, distributors, beverage brands on one floor.</div>
+      <a class="v-b" href="https://damnexpo.com" target="_blank" rel="noopener"><span>damnexpo.com</span><span class="v-b-arrow">↗</span></a>
+    </div>
+<div class="pg-item">
+      <div class="pg-item-img"><div class="pg-track" data-index="0">
+        <img src="/ecosystem/Event/Restech/restech1.jpg" alt="" loading="lazy">
+        <img src="/ecosystem/Event/Restech/restech2.jpg" alt="" loading="lazy">
+        <img src="/ecosystem/Event/Restech/restech3.jpg" alt="" loading="lazy">
+        <img src="/ecosystem/Event/Restech/restech4.jpg" alt="" loading="lazy">
+        <img src="/ecosystem/Event/Restech/restech5.jpg" alt="" loading="lazy">
+        <img src="/ecosystem/Event/Restech/restech7.jpg" alt="" loading="lazy">
+        <img src="/ecosystem/Event/Restech/restech8.jpg" alt="" loading="lazy">
+      </div><button class="pg-arrow prev" data-dir="-1" type="button" aria-label="Previous">‹</button><button class="pg-arrow next" data-dir="1" type="button" aria-label="Next">›</button></div>
+      <div class="pg-item-tag">Expo · Tech</div>
+      <div class="pg-item-title">Restech</div>
+      <div class="pg-item-sub">Restaurant tech and equipment expo — live demos, comparison, on-floor procurement.</div>
+      <a class="v-b" href="https://www.restechexpo.com/" target="_blank" rel="noopener"><span>restechexpo.com</span><span class="v-b-arrow">↗</span></a>
+    </div>
+  </div>
+</section>
+<section class="opt">
+  <div class="opt-head">
+    <div class="opt-key">C</div>
+    <div><h2>แบบ C — ปุ่มเส้นขอบ</h2><p>เป็นปุ่มชัดเจน เข้าชุดกับปุ่ม LinkedIn ที่เพิ่งเพิ่มในหน้าผู้ก่อตั้ง</p></div>
+  </div>
+  <div class="pg-grid cols-3">
+<div class="pg-item">
+      <div class="pg-item-img"><div class="pg-track" data-index="0">
+        <img src="/ecosystem/Event/TRC/trc1.jpg" alt="" loading="lazy">
+        <img src="/ecosystem/Event/TRC/trc2.jpg" alt="" loading="lazy">
+        <img src="/ecosystem/Event/TRC/trc3.jpg" alt="" loading="lazy">
+        <img src="/ecosystem/Event/TRC/trc4.JPG" alt="" loading="lazy">
+        <img src="/ecosystem/Event/TRC/trc5.jpg" alt="" loading="lazy">
+        <img src="/ecosystem/Event/TRC/trc6.jpg" alt="" loading="lazy">
+        <img src="/ecosystem/Event/TRC/trc7.jpg" alt="" loading="lazy">
+        <img src="/ecosystem/Event/TRC/trc8.jpg" alt="" loading="lazy">
+      </div><button class="pg-arrow prev" data-dir="-1" type="button" aria-label="Previous">‹</button><button class="pg-arrow next" data-dir="1" type="button" aria-label="Next">›</button></div>
+      <div class="pg-item-tag">Conference · Flagship</div>
+      <div class="pg-item-title">TRC — Thailand Restaurant Conference</div>
+      <div class="pg-item-sub">Multi-day, multi-track programming for owners and senior operators. The room where annual decisions get made.</div>
+      <a class="v-c" href="https://www.thailandrestaurantconference.org/" target="_blank" rel="noopener"><span>thailandrestaurantconference.org</span><span class="v-c-arrow">↗</span></a>
+    </div>
+<div class="pg-item">
+      <div class="pg-item-img"><div class="pg-track" data-index="0">
+        <img src="/ecosystem/Event/Damn/damn1.jpg" alt="" loading="lazy">
+        <img src="/ecosystem/Event/Damn/damn2.jpg" alt="" loading="lazy">
+        <img src="/ecosystem/Event/Damn/damn3.jpg" alt="" loading="lazy">
+        <img src="/ecosystem/Event/Damn/damn4.png" alt="" loading="lazy">
+        <img src="/ecosystem/Event/Damn/damn5.jpg" alt="" loading="lazy">
+        <img src="/ecosystem/Event/Damn/damn6.jpg" alt="" loading="lazy">
+        <img src="/ecosystem/Event/Damn/damn7.jpg" alt="" loading="lazy">
+        <img src="/ecosystem/Event/Damn/damn8.jpg" alt="" loading="lazy">
+      </div><button class="pg-arrow prev" data-dir="-1" type="button" aria-label="Previous">‹</button><button class="pg-arrow next" data-dir="1" type="button" aria-label="Next">›</button></div>
+      <div class="pg-item-tag">Expo · Nightlife</div>
+      <div class="pg-item-title">Damn Expo</div>
+      <div class="pg-item-sub">Nightlife and craft-liquor home expo. Bar owners, distributors, beverage brands on one floor.</div>
+      <a class="v-c" href="https://damnexpo.com" target="_blank" rel="noopener"><span>damnexpo.com</span><span class="v-c-arrow">↗</span></a>
+    </div>
+<div class="pg-item">
+      <div class="pg-item-img"><div class="pg-track" data-index="0">
+        <img src="/ecosystem/Event/Restech/restech1.jpg" alt="" loading="lazy">
+        <img src="/ecosystem/Event/Restech/restech2.jpg" alt="" loading="lazy">
+        <img src="/ecosystem/Event/Restech/restech3.jpg" alt="" loading="lazy">
+        <img src="/ecosystem/Event/Restech/restech4.jpg" alt="" loading="lazy">
+        <img src="/ecosystem/Event/Restech/restech5.jpg" alt="" loading="lazy">
+        <img src="/ecosystem/Event/Restech/restech7.jpg" alt="" loading="lazy">
+        <img src="/ecosystem/Event/Restech/restech8.jpg" alt="" loading="lazy">
+      </div><button class="pg-arrow prev" data-dir="-1" type="button" aria-label="Previous">‹</button><button class="pg-arrow next" data-dir="1" type="button" aria-label="Next">›</button></div>
+      <div class="pg-item-tag">Expo · Tech</div>
+      <div class="pg-item-title">Restech</div>
+      <div class="pg-item-sub">Restaurant tech and equipment expo — live demos, comparison, on-floor procurement.</div>
+      <a class="v-c" href="https://www.restechexpo.com/" target="_blank" rel="noopener"><span>restechexpo.com</span><span class="v-c-arrow">↗</span></a>
+    </div>
+  </div>
+</section>
+<section class="opt">
+  <div class="opt-head">
+    <div class="opt-key">D</div>
+    <div><h2>แบบ D — ปุ่มทึบสีแบรนด์</h2><p>เด่นที่สุด ข้อความบอกให้ทำอะไร ส่วนโดเมนย้ายไปอยู่ใต้ปุ่มตัวเล็ก</p></div>
+  </div>
+  <div class="pg-grid cols-3">
+<div class="pg-item">
+      <div class="pg-item-img"><div class="pg-track" data-index="0">
+        <img src="/ecosystem/Event/TRC/trc1.jpg" alt="" loading="lazy">
+        <img src="/ecosystem/Event/TRC/trc2.jpg" alt="" loading="lazy">
+        <img src="/ecosystem/Event/TRC/trc3.jpg" alt="" loading="lazy">
+        <img src="/ecosystem/Event/TRC/trc4.JPG" alt="" loading="lazy">
+        <img src="/ecosystem/Event/TRC/trc5.jpg" alt="" loading="lazy">
+        <img src="/ecosystem/Event/TRC/trc6.jpg" alt="" loading="lazy">
+        <img src="/ecosystem/Event/TRC/trc7.jpg" alt="" loading="lazy">
+        <img src="/ecosystem/Event/TRC/trc8.jpg" alt="" loading="lazy">
+      </div><button class="pg-arrow prev" data-dir="-1" type="button" aria-label="Previous">‹</button><button class="pg-arrow next" data-dir="1" type="button" aria-label="Next">›</button></div>
+      <div class="pg-item-tag">Conference · Flagship</div>
+      <div class="pg-item-title">TRC — Thailand Restaurant Conference</div>
+      <div class="pg-item-sub">Multi-day, multi-track programming for owners and senior operators. The room where annual decisions get made.</div>
+      <a class="v-d" href="https://www.thailandrestaurantconference.org/" target="_blank" rel="noopener"><span>เข้าชมเว็บไซต์</span><span class="v-d-arrow">↗</span></a><div class="v-d-dom">thailandrestaurantconference.org</div>
+    </div>
+<div class="pg-item">
+      <div class="pg-item-img"><div class="pg-track" data-index="0">
+        <img src="/ecosystem/Event/Damn/damn1.jpg" alt="" loading="lazy">
+        <img src="/ecosystem/Event/Damn/damn2.jpg" alt="" loading="lazy">
+        <img src="/ecosystem/Event/Damn/damn3.jpg" alt="" loading="lazy">
+        <img src="/ecosystem/Event/Damn/damn4.png" alt="" loading="lazy">
+        <img src="/ecosystem/Event/Damn/damn5.jpg" alt="" loading="lazy">
+        <img src="/ecosystem/Event/Damn/damn6.jpg" alt="" loading="lazy">
+        <img src="/ecosystem/Event/Damn/damn7.jpg" alt="" loading="lazy">
+        <img src="/ecosystem/Event/Damn/damn8.jpg" alt="" loading="lazy">
+      </div><button class="pg-arrow prev" data-dir="-1" type="button" aria-label="Previous">‹</button><button class="pg-arrow next" data-dir="1" type="button" aria-label="Next">›</button></div>
+      <div class="pg-item-tag">Expo · Nightlife</div>
+      <div class="pg-item-title">Damn Expo</div>
+      <div class="pg-item-sub">Nightlife and craft-liquor home expo. Bar owners, distributors, beverage brands on one floor.</div>
+      <a class="v-d" href="https://damnexpo.com" target="_blank" rel="noopener"><span>เข้าชมเว็บไซต์</span><span class="v-d-arrow">↗</span></a><div class="v-d-dom">damnexpo.com</div>
+    </div>
+<div class="pg-item">
+      <div class="pg-item-img"><div class="pg-track" data-index="0">
+        <img src="/ecosystem/Event/Restech/restech1.jpg" alt="" loading="lazy">
+        <img src="/ecosystem/Event/Restech/restech2.jpg" alt="" loading="lazy">
+        <img src="/ecosystem/Event/Restech/restech3.jpg" alt="" loading="lazy">
+        <img src="/ecosystem/Event/Restech/restech4.jpg" alt="" loading="lazy">
+        <img src="/ecosystem/Event/Restech/restech5.jpg" alt="" loading="lazy">
+        <img src="/ecosystem/Event/Restech/restech7.jpg" alt="" loading="lazy">
+        <img src="/ecosystem/Event/Restech/restech8.jpg" alt="" loading="lazy">
+      </div><button class="pg-arrow prev" data-dir="-1" type="button" aria-label="Previous">‹</button><button class="pg-arrow next" data-dir="1" type="button" aria-label="Next">›</button></div>
+      <div class="pg-item-tag">Expo · Tech</div>
+      <div class="pg-item-title">Restech</div>
+      <div class="pg-item-sub">Restaurant tech and equipment expo — live demos, comparison, on-floor procurement.</div>
+      <a class="v-d" href="https://www.restechexpo.com/" target="_blank" rel="noopener"><span>เข้าชมเว็บไซต์</span><span class="v-d-arrow">↗</span></a><div class="v-d-dom">restechexpo.com</div>
+    </div>
+  </div>
+</section>
+</div>
+</body>
+</html>
