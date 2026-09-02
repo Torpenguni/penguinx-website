@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>Preview — แถบโลโก้ลูกค้า | PenguinX</title>
+<link href="https://fonts.googleapis.com/css2?family=Anuphan:wght@100;200;300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0A0A0A;--bg-2:#141414;--ink:#F4F1EA;--ink-mute:#8A8781;--line:#242424;--accent:#DBA93A}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:'Anuphan',sans-serif}
+.wrap{max-width:1360px;margin:0 auto;padding:48px 32px 110px}
+.lede{border-bottom:1px solid var(--line);padding-bottom:26px}
+.lede h1{font-size:clamp(26px,3vw,38px);font-weight:600;letter-spacing:-0.03em;margin:0 0 12px}
+.lede p{color:var(--ink-mute);font-size:15px;line-height:1.7;max-width:74ch;margin:0 0 8px}
+.warn{margin-top:18px;padding:14px 18px;border:1px solid rgba(219,169,58,0.35);border-radius:10px;
+  background:rgba(219,169,58,0.06);color:var(--ink);font-size:13.5px;line-height:1.6}
+.opt{padding:44px 0;border-bottom:1px solid var(--line)}
+.opt-head{display:flex;gap:16px;align-items:flex-start;margin-bottom:24px}
+.opt-key{flex:none;width:34px;height:34px;border-radius:50%;border:1px solid var(--accent);color:var(--accent);
+  display:grid;place-items:center;font-size:12px;font-weight:600}
+.opt-head h2{font-size:19px;font-weight:600;margin:5px 0 5px;letter-spacing:-0.01em}
+.opt-head p{color:var(--ink-mute);font-size:13.5px;margin:0;line-height:1.65;max-width:78ch}
+
+.strip{padding:44px 0;overflow:hidden;position:relative;border-radius:12px}
+.strip-label{text-align:center;margin-bottom:30px;font-size:11px;letter-spacing:0.2em;text-transform:uppercase}
+.track{display:inline-flex;gap:72px;align-items:center;animation:scroll 46s linear infinite}
+@keyframes scroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+@media (prefers-reduced-motion:reduce){.track{animation:none}}
+.lg{height:34px;width:auto;flex:none;display:block}
+
+/* A — แถบขาว สีจริง */
+.strip-a{background:#fff}
+.strip-a .strip-label{color:#6b6b6b}
+
+/* B — แถบขาว ขาวดำ */
+.strip-b{background:#fff}
+.strip-b .strip-label{color:#6b6b6b}
+.strip-b .lg{filter:grayscale(1) opacity(.55);transition:filter .3s ease}
+.strip-b .lg:hover{filter:grayscale(0) opacity(1)}
+
+/* C — พื้นดำ โลโก้ขาว */
+.strip-c{background:var(--bg-2);border:1px solid var(--line)}
+.strip-c .strip-label{color:var(--ink-mute)}
+.strip-c .lg{filter:brightness(0) invert(1) opacity(.5);transition:opacity .3s ease,filter .3s ease}
+.strip-c .lg:hover{filter:brightness(0) invert(1) opacity(1)}
+
+/* D — การ์ดขาวบนพื้นดำ */
+.strip-d{background:var(--bg-2);border:1px solid var(--line);padding:44px 32px}
+.strip-d .strip-label{color:var(--ink-mute)}
+.tiles{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;max-width:1000px;margin:0 auto}
+.tile{background:#fff;border-radius:10px;height:88px;display:grid;place-items:center;padding:16px;
+  transition:transform .3s ease,box-shadow .3s ease}
+.tile:hover{transform:translateY(-3px);box-shadow:0 10px 30px rgba(0,0,0,0.45)}
+@media (max-width:860px){.tiles{grid-template-columns:repeat(2,1fr)}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="lede">
+    <h1>แถบโลโก้ลูกค้า — 4 แบบให้เลือก</h1>
+    <p>ตอนนี้แถบนี้ใช้ตัวหนังสือชื่อแบรนด์ ไม่ใช่โลโก้จริง หน้านี้เทียบให้ดูว่าถ้าเปลี่ยนเป็นโลโก้จริงแล้ว
+       ควรวางบนพื้นแบบไหน ลองเอาเมาส์ชี้ที่โลโก้ในแบบ B กับ C ดูอาการตอน hover</p>
+    <div class="warn"><strong>โลโก้ในหน้านี้เป็นของจำลองทั้งหมด</strong> ผมวาดขึ้นเองให้มีสัดส่วนและสีต่างกัน
+      (แนวยาว / มีสัญลักษณ์นำหน้า / ทรงกลม / ทรงสี่เหลี่ยม) เพื่อให้เห็นปัญหาจริงตอนเอาโลโก้คนละแบบมาเรียงกัน
+      ไม่ใช่โลโก้ของแบรนด์เหล่านั้นจริง ๆ</div>
+  </div>
+
+<section class="opt">
+  <div class="opt-head">
+    <div class="opt-key">A</div>
+    <div><h2>แถบขาว โลโก้สีจริง</h2><p>อ่านง่ายที่สุด จำแบรนด์ได้ทันที แต่แถบขาวตัดกับทั้งเว็บที่เป็นสีดำ และโลโก้หลายสีมาอยู่ด้วยกันจะดูวุ่น</p></div>
+  </div>
+  <div class="strip strip-a">
+    <div class="strip-label">Trusted by 200+ global &amp; F&amp;B brands</div>
+    <div class="track">
+      <svg class="lg" viewBox="0 0 190 44" role="img" aria-label="Lineman (โลโก้จำลอง)"><text x="0" y="30" font-family="Anuphan,sans-serif" font-size="24" font-weight="700" fill="#0FA959" letter-spacing="-0.5">Lineman</text></svg>
+      <svg class="lg" viewBox="0 0 120 44" role="img" aria-label="Grab (โลโก้จำลอง)"><circle cx="22" cy="22" r="17" fill="#00B14F"/><text x="54" y="30" font-family="Anuphan,sans-serif" font-size="21" font-weight="700" fill="#00B14F">Grab</text></svg>
+      <svg class="lg" viewBox="0 0 140 44" role="img" aria-label="Pepsi (โลโก้จำลอง)"><circle cx="22" cy="22" r="18" fill="#004B93"/><circle cx="22" cy="22" r="10" fill="#fff"/><text x="54" y="30" font-family="Anuphan,sans-serif" font-size="21" font-weight="700" fill="#004B93">Pepsi</text></svg>
+      <svg class="lg" viewBox="0 0 220 44" role="img" aria-label="Unilever (โลโก้จำลอง)"><rect x="0" y="5" width="33" height="33" rx="6" fill="#1F36C7"/><text x="45" y="30" font-family="Anuphan,sans-serif" font-size="21" font-weight="700" fill="#1F36C7">Unilever</text></svg>
+      <svg class="lg" viewBox="0 0 170 44" role="img" aria-label="Nestlé (โลโก้จำลอง)"><text x="0" y="30" font-family="Anuphan,sans-serif" font-size="24" font-weight="700" fill="#3B2C1F" letter-spacing="-0.5">Nestlé</text></svg>
+      <svg class="lg" viewBox="0 0 140 44" role="img" aria-label="Makro (โลโก้จำลอง)"><text x="0" y="30" font-family="Anuphan,sans-serif" font-size="24" font-weight="700" fill="#D42027" letter-spacing="-0.5">Makro</text></svg>
+      <svg class="lg" viewBox="0 0 116 44" role="img" aria-label="SCB (โลโก้จำลอง)"><rect x="0" y="5" width="33" height="33" rx="6" fill="#4B2E83"/><text x="45" y="30" font-family="Anuphan,sans-serif" font-size="21" font-weight="700" fill="#4B2E83">SCB</text></svg>
+      <svg class="lg" viewBox="0 0 170 44" role="img" aria-label="Netflix (โลโก้จำลอง)"><text x="0" y="30" font-family="Anuphan,sans-serif" font-size="24" font-weight="700" fill="#E50914" letter-spacing="-0.5">Netflix</text></svg>
+      <svg class="lg" viewBox="0 0 190 44" role="img" aria-label="Lineman (โลโก้จำลอง)"><text x="0" y="30" font-family="Anuphan,sans-serif" font-size="24" font-weight="700" fill="#0FA959" letter-spacing="-0.5">Lineman</text></svg>
+      <svg class="lg" viewBox="0 0 120 44" role="img" aria-label="Grab (โลโก้จำลอง)"><circle cx="22" cy="22" r="17" fill="#00B14F"/><text x="54" y="30" font-family="Anuphan,sans-serif" font-size="21" font-weight="700" fill="#00B14F">Grab</text></svg>
+      <svg class="lg" viewBox="0 0 140 44" role="img" aria-label="Pepsi (โลโก้จำลอง)"><circle cx="22" cy="22" r="18" fill="#004B93"/><circle cx="22" cy="22" r="10" fill="#fff"/><text x="54" y="30" font-family="Anuphan,sans-serif" font-size="21" font-weight="700" fill="#004B93">Pepsi</text></svg>
+      <svg class="lg" viewBox="0 0 220 44" role="img" aria-label="Unilever (โลโก้จำลอง)"><rect x="0" y="5" width="33" height="33" rx="6" fill="#1F36C7"/><text x="45" y="30" font-family="Anuphan,sans-serif" font-size="21" font-weight="700" fill="#1F36C7">Unilever</text></svg>
+      <svg class="lg" viewBox="0 0 170 44" role="img" aria-label="Nestlé (โลโก้จำลอง)"><text x="0" y="30" font-family="Anuphan,sans-serif" font-size="24" font-weight="700" fill="#3B2C1F" letter-spacing="-0.5">Nestlé</text></svg>
+      <svg class="lg" viewBox="0 0 140 44" role="img" aria-label="Makro (โลโก้จำลอง)"><text x="0" y="30" font-family="Anuphan,sans-serif" font-size="24" font-weight="700" fill="#D42027" letter-spacing="-0.5">Makro</text></svg>
+      <svg class="lg" viewBox="0 0 116 44" role="img" aria-label="SCB (โลโก้จำลอง)"><rect x="0" y="5" width="33" height="33" rx="6" fill="#4B2E83"/><text x="45" y="30" font-family="Anuphan,sans-serif" font-size="21" font-weight="700" fill="#4B2E83">SCB</text></svg>
+      <svg class="lg" viewBox="0 0 170 44" role="img" aria-label="Netflix (โลโก้จำลอง)"><text x="0" y="30" font-family="Anuphan,sans-serif" font-size="24" font-weight="700" fill="#E50914" letter-spacing="-0.5">Netflix</text></svg>
+    </div>
+  </div>
+</section>
+<section class="opt">
+  <div class="opt-head">
+    <div class="opt-key">B</div>
+    <div><h2>แถบขาว โลโก้ขาวดำ</h2><p>ยังได้พื้นขาวที่โลโก้ทุกแบบวางได้ แต่ปรับเป็นเทาให้น้ำหนักเท่ากันหมด เอาเมาส์ชี้แล้วกลับมาเป็นสีจริง</p></div>
+  </div>
+  <div class="strip strip-b">
+    <div class="strip-label">Trusted by 200+ global &amp; F&amp;B brands</div>
+    <div class="track">
+      <svg class="lg" viewBox="0 0 190 44" role="img" aria-label="Lineman (โลโก้จำลอง)"><text x="0" y="30" font-family="Anuphan,sans-serif" font-size="24" font-weight="700" fill="#0FA959" letter-spacing="-0.5">Lineman</text></svg>
+      <svg class="lg" viewBox="0 0 120 44" role="img" aria-label="Grab (โลโก้จำลอง)"><circle cx="22" cy="22" r="17" fill="#00B14F"/><text x="54" y="30" font-family="Anuphan,sans-serif" font-size="21" font-weight="700" fill="#00B14F">Grab</text></svg>
+      <svg class="lg" viewBox="0 0 140 44" role="img" aria-label="Pepsi (โลโก้จำลอง)"><circle cx="22" cy="22" r="18" fill="#004B93"/><circle cx="22" cy="22" r="10" fill="#fff"/><text x="54" y="30" font-family="Anuphan,sans-serif" font-size="21" font-weight="700" fill="#004B93">Pepsi</text></svg>
+      <svg class="lg" viewBox="0 0 220 44" role="img" aria-label="Unilever (โลโก้จำลอง)"><rect x="0" y="5" width="33" height="33" rx="6" fill="#1F36C7"/><text x="45" y="30" font-family="Anuphan,sans-serif" font-size="21" font-weight="700" fill="#1F36C7">Unilever</text></svg>
+      <svg class="lg" viewBox="0 0 170 44" role="img" aria-label="Nestlé (โลโก้จำลอง)"><text x="0" y="30" font-family="Anuphan,sans-serif" font-size="24" font-weight="700" fill="#3B2C1F" letter-spacing="-0.5">Nestlé</text></svg>
+      <svg class="lg" viewBox="0 0 140 44" role="img" aria-label="Makro (โลโก้จำลอง)"><text x="0" y="30" font-family="Anuphan,sans-serif" font-size="24" font-weight="700" fill="#D42027" letter-spacing="-0.5">Makro</text></svg>
+      <svg class="lg" viewBox="0 0 116 44" role="img" aria-label="SCB (โลโก้จำลอง)"><rect x="0" y="5" width="33" height="33" rx="6" fill="#4B2E83"/><text x="45" y="30" font-family="Anuphan,sans-serif" font-size="21" font-weight="700" fill="#4B2E83">SCB</text></svg>
+      <svg class="lg" viewBox="0 0 170 44" role="img" aria-label="Netflix (โลโก้จำลอง)"><text x="0" y="30" font-family="Anuphan,sans-serif" font-size="24" font-weight="700" fill="#E50914" letter-spacing="-0.5">Netflix</text></svg>
+      <svg class="lg" viewBox="0 0 190 44" role="img" aria-label="Lineman (โลโก้จำลอง)"><text x="0" y="30" font-family="Anuphan,sans-serif" font-size="24" font-weight="700" fill="#0FA959" letter-spacing="-0.5">Lineman</text></svg>
+      <svg class="lg" viewBox="0 0 120 44" role="img" aria-label="Grab (โลโก้จำลอง)"><circle cx="22" cy="22" r="17" fill="#00B14F"/><text x="54" y="30" font-family="Anuphan,sans-serif" font-size="21" font-weight="700" fill="#00B14F">Grab</text></svg>
+      <svg class="lg" viewBox="0 0 140 44" role="img" aria-label="Pepsi (โลโก้จำลอง)"><circle cx="22" cy="22" r="18" fill="#004B93"/><circle cx="22" cy="22" r="10" fill="#fff"/><text x="54" y="30" font-family="Anuphan,sans-serif" font-size="21" font-weight="700" fill="#004B93">Pepsi</text></svg>
+      <svg class="lg" viewBox="0 0 220 44" role="img" aria-label="Unilever (โลโก้จำลอง)"><rect x="0" y="5" width="33" height="33" rx="6" fill="#1F36C7"/><text x="45" y="30" font-family="Anuphan,sans-serif" font-size="21" font-weight="700" fill="#1F36C7">Unilever</text></svg>
+      <svg class="lg" viewBox="0 0 170 44" role="img" aria-label="Nestlé (โลโก้จำลอง)"><text x="0" y="30" font-family="Anuphan,sans-serif" font-size="24" font-weight="700" fill="#3B2C1F" letter-spacing="-0.5">Nestlé</text></svg>
+      <svg class="lg" viewBox="0 0 140 44" role="img" aria-label="Makro (โลโก้จำลอง)"><text x="0" y="30" font-family="Anuphan,sans-serif" font-size="24" font-weight="700" fill="#D42027" letter-spacing="-0.5">Makro</text></svg>
+      <svg class="lg" viewBox="0 0 116 44" role="img" aria-label="SCB (โลโก้จำลอง)"><rect x="0" y="5" width="33" height="33" rx="6" fill="#4B2E83"/><text x="45" y="30" font-family="Anuphan,sans-serif" font-size="21" font-weight="700" fill="#4B2E83">SCB</text></svg>
+      <svg class="lg" viewBox="0 0 170 44" role="img" aria-label="Netflix (โลโก้จำลอง)"><text x="0" y="30" font-family="Anuphan,sans-serif" font-size="24" font-weight="700" fill="#E50914" letter-spacing="-0.5">Netflix</text></svg>
+    </div>
+  </div>
+</section>
+<section class="opt">
+  <div class="opt-head">
+    <div class="opt-key">C</div>
+    <div><h2>พื้นดำเดิม โลโก้ขาวล้วน</h2><p>คงบุคลิกเว็บไว้ครบ เป็นวิธีที่เอเจนซี่ส่วนใหญ่ใช้ ข้อแลกเปลี่ยนคือแบรนด์ที่จำได้จากสี เช่น Netflix จะจำยากขึ้น</p></div>
+  </div>
+  <div class="strip strip-c">
+    <div class="strip-label">Trusted by 200+ global &amp; F&amp;B brands</div>
+    <div class="track">
+      <svg class="lg" viewBox="0 0 190 44" role="img" aria-label="Lineman (โลโก้จำลอง)"><text x="0" y="30" font-family="Anuphan,sans-serif" font-size="24" font-weight="700" fill="#0FA959" letter-spacing="-0.5">Lineman</text></svg>
+      <svg class="lg" viewBox="0 0 120 44" role="img" aria-label="Grab (โลโก้จำลอง)"><circle cx="22" cy="22" r="17" fill="#00B14F"/><text x="54" y="30" font-family="Anuphan,sans-serif" font-size="21" font-weight="700" fill="#00B14F">Grab</text></svg>
+      <svg class="lg" viewBox="0 0 140 44" role="img" aria-label="Pepsi (โลโก้จำลอง)"><circle cx="22" cy="22" r="18" fill="#004B93"/><circle cx="22" cy="22" r="10" fill="#fff"/><text x="54" y="30" font-family="Anuphan,sans-serif" font-size="21" font-weight="700" fill="#004B93">Pepsi</text></svg>
+      <svg class="lg" viewBox="0 0 220 44" role="img" aria-label="Unilever (โลโก้จำลอง)"><rect x="0" y="5" width="33" height="33" rx="6" fill="#1F36C7"/><text x="45" y="30" font-family="Anuphan,sans-serif" font-size="21" font-weight="700" fill="#1F36C7">Unilever</text></svg>
+      <svg class="lg" viewBox="0 0 170 44" role="img" aria-label="Nestlé (โลโก้จำลอง)"><text x="0" y="30" font-family="Anuphan,sans-serif" font-size="24" font-weight="700" fill="#3B2C1F" letter-spacing="-0.5">Nestlé</text></svg>
+      <svg class="lg" viewBox="0 0 140 44" role="img" aria-label="Makro (โลโก้จำลอง)"><text x="0" y="30" font-family="Anuphan,sans-serif" font-size="24" font-weight="700" fill="#D42027" letter-spacing="-0.5">Makro</text></svg>
+      <svg class="lg" viewBox="0 0 116 44" role="img" aria-label="SCB (โลโก้จำลอง)"><rect x="0" y="5" width="33" height="33" rx="6" fill="#4B2E83"/><text x="45" y="30" font-family="Anuphan,sans-serif" font-size="21" font-weight="700" fill="#4B2E83">SCB</text></svg>
+      <svg class="lg" viewBox="0 0 170 44" role="img" aria-label="Netflix (โลโก้จำลอง)"><text x="0" y="30" font-family="Anuphan,sans-serif" font-size="24" font-weight="700" fill="#E50914" letter-spacing="-0.5">Netflix</text></svg>
+      <svg class="lg" viewBox="0 0 190 44" role="img" aria-label="Lineman (โลโก้จำลอง)"><text x="0" y="30" font-family="Anuphan,sans-serif" font-size="24" font-weight="700" fill="#0FA959" letter-spacing="-0.5">Lineman</text></svg>
+      <svg class="lg" viewBox="0 0 120 44" role="img" aria-label="Grab (โลโก้จำลอง)"><circle cx="22" cy="22" r="17" fill="#00B14F"/><text x="54" y="30" font-family="Anuphan,sans-serif" font-size="21" font-weight="700" fill="#00B14F">Grab</text></svg>
+      <svg class="lg" viewBox="0 0 140 44" role="img" aria-label="Pepsi (โลโก้จำลอง)"><circle cx="22" cy="22" r="18" fill="#004B93"/><circle cx="22" cy="22" r="10" fill="#fff"/><text x="54" y="30" font-family="Anuphan,sans-serif" font-size="21" font-weight="700" fill="#004B93">Pepsi</text></svg>
+      <svg class="lg" viewBox="0 0 220 44" role="img" aria-label="Unilever (โลโก้จำลอง)"><rect x="0" y="5" width="33" height="33" rx="6" fill="#1F36C7"/><text x="45" y="30" font-family="Anuphan,sans-serif" font-size="21" font-weight="700" fill="#1F36C7">Unilever</text></svg>
+      <svg class="lg" viewBox="0 0 170 44" role="img" aria-label="Nestlé (โลโก้จำลอง)"><text x="0" y="30" font-family="Anuphan,sans-serif" font-size="24" font-weight="700" fill="#3B2C1F" letter-spacing="-0.5">Nestlé</text></svg>
+      <svg class="lg" viewBox="0 0 140 44" role="img" aria-label="Makro (โลโก้จำลอง)"><text x="0" y="30" font-family="Anuphan,sans-serif" font-size="24" font-weight="700" fill="#D42027" letter-spacing="-0.5">Makro</text></svg>
+      <svg class="lg" viewBox="0 0 116 44" role="img" aria-label="SCB (โลโก้จำลอง)"><rect x="0" y="5" width="33" height="33" rx="6" fill="#4B2E83"/><text x="45" y="30" font-family="Anuphan,sans-serif" font-size="21" font-weight="700" fill="#4B2E83">SCB</text></svg>
+      <svg class="lg" viewBox="0 0 170 44" role="img" aria-label="Netflix (โลโก้จำลอง)"><text x="0" y="30" font-family="Anuphan,sans-serif" font-size="24" font-weight="700" fill="#E50914" letter-spacing="-0.5">Netflix</text></svg>
+    </div>
+  </div>
+</section>
+<section class="opt">
+  <div class="opt-head">
+    <div class="opt-key">D</div>
+    <div><h2>พื้นดำ วางโลโก้ในการ์ดขาว</h2><p>ได้ทั้งสองอย่าง — โลโก้อยู่บนพื้นขาวจึงใช้สีจริงได้ ส่วนหน้าเว็บยังดำเหมือนเดิม และเรียงเป็นกริดจึงเห็นครบทุกแบรนด์ ไม่ต้องรอเลื่อน</p></div>
+  </div>
+  <div class="strip strip-d">
+    <div class="strip-label">Trusted by 200+ global &amp; F&amp;B brands</div>
+    <div class="tiles">
+      <div class="tile"><svg class="lg" viewBox="0 0 190 44" role="img" aria-label="Lineman (โลโก้จำลอง)"><text x="0" y="30" font-family="Anuphan,sans-serif" font-size="24" font-weight="700" fill="#0FA959" letter-spacing="-0.5">Lineman</text></svg></div>
+      <div class="tile"><svg class="lg" viewBox="0 0 120 44" role="img" aria-label="Grab (โลโก้จำลอง)"><circle cx="22" cy="22" r="17" fill="#00B14F"/><text x="54" y="30" font-family="Anuphan,sans-serif" font-size="21" font-weight="700" fill="#00B14F">Grab</text></svg></div>
+      <div class="tile"><svg class="lg" viewBox="0 0 140 44" role="img" aria-label="Pepsi (โลโก้จำลอง)"><circle cx="22" cy="22" r="18" fill="#004B93"/><circle cx="22" cy="22" r="10" fill="#fff"/><text x="54" y="30" font-family="Anuphan,sans-serif" font-size="21" font-weight="700" fill="#004B93">Pepsi</text></svg></div>
+      <div class="tile"><svg class="lg" viewBox="0 0 220 44" role="img" aria-label="Unilever (โลโก้จำลอง)"><rect x="0" y="5" width="33" height="33" rx="6" fill="#1F36C7"/><text x="45" y="30" font-family="Anuphan,sans-serif" font-size="21" font-weight="700" fill="#1F36C7">Unilever</text></svg></div>
+      <div class="tile"><svg class="lg" viewBox="0 0 170 44" role="img" aria-label="Nestlé (โลโก้จำลอง)"><text x="0" y="30" font-family="Anuphan,sans-serif" font-size="24" font-weight="700" fill="#3B2C1F" letter-spacing="-0.5">Nestlé</text></svg></div>
+      <div class="tile"><svg class="lg" viewBox="0 0 140 44" role="img" aria-label="Makro (โลโก้จำลอง)"><text x="0" y="30" font-family="Anuphan,sans-serif" font-size="24" font-weight="700" fill="#D42027" letter-spacing="-0.5">Makro</text></svg></div>
+      <div class="tile"><svg class="lg" viewBox="0 0 116 44" role="img" aria-label="SCB (โลโก้จำลอง)"><rect x="0" y="5" width="33" height="33" rx="6" fill="#4B2E83"/><text x="45" y="30" font-family="Anuphan,sans-serif" font-size="21" font-weight="700" fill="#4B2E83">SCB</text></svg></div>
+      <div class="tile"><svg class="lg" viewBox="0 0 170 44" role="img" aria-label="Netflix (โลโก้จำลอง)"><text x="0" y="30" font-family="Anuphan,sans-serif" font-size="24" font-weight="700" fill="#E50914" letter-spacing="-0.5">Netflix</text></svg></div>
+    </div>
+  </div>
+</section>
+</div>
+</body>
+</html>
