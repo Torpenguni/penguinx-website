@@ -1632,3 +1632,31 @@ body.modal-open{overflow:hidden}
   .shorts-scroller{margin:0 -20px;padding:4px 20px 24px}
   .short{flex:0 0 85%;min-width:260px}
 }
+
+
+/* ===== Language switcher =====
+   Sits between the nav links and the CTA. Three short labels rather than a
+   dropdown: with only three languages a menu hides the choice behind a click,
+   and the current language should be readable at a glance. */
+.lang-switch{
+  display:flex;align-items:center;gap:2px;
+  margin-left:auto;margin-right:20px;
+  border:1px solid var(--line-soft);border-radius:999px;
+  padding:3px;
+}
+.lang-switch a{
+  display:inline-block;
+  padding:4px 10px;border-radius:999px;
+  font-size:12px;font-weight:600;letter-spacing:.02em;
+  color:var(--muted,#9a9a9a);text-decoration:none;
+  transition:color .15s,background .15s;
+  white-space:nowrap;
+}
+.lang-switch a:hover{color:#fff}
+.lang-switch a[aria-current="true"]{
+  background:var(--accent,#e2571f);color:#fff;
+}
+@media (max-width:860px){
+  .lang-switch{margin-right:10px;padding:2px}
+  .lang-switch a{padding:3px 7px;font-size:11px}
+}
