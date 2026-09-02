@@ -1719,3 +1719,6 @@ html[lang^="zh"] .eco-name br { display:none }
   background:rgba(219,169,58,0.06);
 }
 .founder-linkedin:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+
+/* หัวข้อส่วนข่าวชิดการ์ดแถวแรกพอดี (0px) ให้เว้นเท่าส่วน Selected Work */
+.news .section-title{margin-bottom:64px}

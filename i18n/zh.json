@@ -522,6 +522,8 @@
  "CafCon website": "CafCon 官网",
  "Restaurant Business Academy website": "Restaurant Business Academy 官网",
  "Restaurant MBA website": "Restaurant MBA 官网",
+ "07 / News": "07 / 新闻",
+ "PenguinX named F&amp;B Marketing Agency of the Year 2025": "PenguinX 获选 2025 年度餐饮营销代理商",
  "_html": {
   "<h1 class=\"hero-title\"> <span class=\"light\">We don't just</span><br> market restaurants.<br> <span class=\"light\">We build the</span> <span class=\"accent\">ecosystem</span><br> they grow in<span class=\"end-dot\"></span> </h1>": "<h1 class=\"hero-title\">\n      <span class=\"light\">我们不只是</span><br>\n      为餐厅做营销<br>\n      <span class=\"light\">我们构建</span><span class=\"accent\">生态系统</span><br>\n      让餐厅在其中成长<span class=\"end-dot\"></span>\n    </h1>",
   "<h2 class=\"section-title\"> Brands that grew<br> <span class=\"light\">with</span> <span class=\"accent\">us</span><span class=\"end-dot\"></span> </h2>": "<h2 class=\"section-title\">\n      与我们<br>\n      <span class=\"light\">共同成长的</span><span class=\"accent\">品牌</span><span class=\"end-dot\"></span>\n    </h2>",
@@ -533,7 +535,8 @@
   "<h2 class=\"vp-title\"> <span class=\"light\">How PenguinX</span><br> builds <span class=\"accent\">events that grow</span> your brand. </h2>": "<h2 class=\"vp-title\">\n      <span class=\"light\">PenguinX 如何打造</span><br>\n      <span class=\"accent\">让品牌长大</span>的活动。\n    </h2>",
   "<h2 class=\"vp-title\"> <span class=\"light\">How PenguinX</span><br> teaches the <span class=\"accent\">F&B playbook</span> the industry didn't have. </h2>": "<h2 class=\"vp-title\">\n      <span class=\"light\">PenguinX 如何教出</span><br>\n      这个行业一直缺的<span class=\"accent\">餐饮打法</span>。\n    </h2>",
   "<h2 class=\"vp-title\"> <span class=\"light\">How PenguinX</span><br> turns the ecosystem into <span class=\"accent\">commercial outcomes</span>. </h2>": "<h2 class=\"vp-title\">\n      <span class=\"light\">PenguinX 如何把生态系统</span><br>\n      变成<span class=\"accent\">实际的商业成果</span>。\n    </h2>",
-  "<h1 class=\"article-title\"> How Lineman Wongnai drove nationwide brand activations <span class=\"light\">with PenguinX</span> </h1>": "<h1 class=\"article-title\">\n    Lineman Wongnai 携手 <span class=\"light\">PenguinX</span> 推动全国品牌活动\n  </h1>"
+  "<h1 class=\"article-title\"> How Lineman Wongnai drove nationwide brand activations <span class=\"light\">with PenguinX</span> </h1>": "<h1 class=\"article-title\">\n    Lineman Wongnai 携手 <span class=\"light\">PenguinX</span> 推动全国品牌活动\n  </h1>",
+  "<h2 class=\"section-title\"> From the<br> <span class=\"light\">PenguinX</span> <span class=\"accent\">newsroom</span><span class=\"end-dot\"></span> </h2>": "<h2 class=\"section-title\">\n    来自<br>\n    <span class=\"light\">PenguinX</span> <span class=\"accent\">编辑部</span><span class=\"end-dot\"></span>\n  </h2>"
  },
  "_js": {
   "viewsFormat": "{n} 次观看",

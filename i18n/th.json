@@ -144,7 +144,7 @@
  "— Next Pillar —": "— เสาหลักถัดไป —",
  "← Back to PenguinX": "← กลับไป PenguinX",
  "↑ Back to PenguinX": "↑ กลับไป PenguinX",
- "Industry": "อุตสาหกรรม",
+ "Industry": "วงการ",
  "Category": "หมวดหมู่",
  "Partners": "พาร์ทเนอร์",
  "In the industry": "ในวงการ",
@@ -521,6 +521,8 @@
  "CafCon website": "เว็บไซต์ CafCon",
  "Restaurant Business Academy website": "เว็บไซต์ Restaurant Business Academy",
  "Restaurant MBA website": "เว็บไซต์ Restaurant MBA",
+ "07 / News": "07 / ข่าวสาร",
+ "PenguinX named F&amp;B Marketing Agency of the Year 2025": "PenguinX คว้ารางวัลเอเจนซี่การตลาดอาหารแห่งปี 2025",
  "_html": {
   "<h2 class=\"section-title\"> Brands that grew<br> <span class=\"light\">with</span> <span class=\"accent\">us</span><span class=\"end-dot\"></span> </h2>": "<h2 class=\"section-title\">\n      แบรนด์ที่เติบโต<br>\n      <span class=\"light\">ไปกับ</span> <span class=\"accent\">เรา</span><span class=\"end-dot\"></span>\n    </h2>",
   "<h2 class=\"section-title\"> Turns <span class=\"light\">competitors</span><br> <span class=\"light\">to</span> <span class=\"accent\">community</span><span class=\"end-dot\"></span> </h2>": "<h2 class=\"section-title\">\n      เปลี่ยน <span class=\"light\">คู่แข่ง</span><br>\n      <span class=\"light\">ให้เป็น</span> <span class=\"accent\">เพื่อนร่วมทาง</span><span class=\"end-dot\"></span>\n    </h2>",
@@ -529,7 +531,8 @@
   "<h2 class=\"vp-title\"> <span class=\"light\">How PenguinX</span><br> builds <span class=\"accent\">events that grow</span> your brand. </h2>": "<h2 class=\"vp-title\">\n      <span class=\"light\">PenguinX สร้าง</span><br>\n      <span class=\"accent\">อีเวนต์ที่ทำให้แบรนด์โต</span>อย่างไร\n    </h2>",
   "<h2 class=\"vp-title\"> <span class=\"light\">How PenguinX</span><br> teaches the <span class=\"accent\">F&B playbook</span> the industry didn't have. </h2>": "<h2 class=\"vp-title\">\n      <span class=\"light\">PenguinX สอน</span><br>\n      <span class=\"accent\">คู่มือทำร้านอาหาร</span>ที่วงการนี้ไม่เคยมี\n    </h2>",
   "<h2 class=\"vp-title\"> <span class=\"light\">How PenguinX</span><br> turns the ecosystem into <span class=\"accent\">commercial outcomes</span>. </h2>": "<h2 class=\"vp-title\">\n      <span class=\"light\">PenguinX เปลี่ยนระบบนิเวศ</span><br>\n      ให้เป็น<span class=\"accent\">ผลลัพธ์ทางธุรกิจ</span>อย่างไร\n    </h2>",
-  "<h1 class=\"article-title\"> How Lineman Wongnai drove nationwide brand activations <span class=\"light\">with PenguinX</span> </h1>": "<h1 class=\"article-title\">\n    Lineman Wongnai ขับเคลื่อนกิจกรรมแบรนด์ทั่วประเทศ <span class=\"light\">ร่วมกับ PenguinX</span>\n  </h1>"
+  "<h1 class=\"article-title\"> How Lineman Wongnai drove nationwide brand activations <span class=\"light\">with PenguinX</span> </h1>": "<h1 class=\"article-title\">\n    Lineman Wongnai ขับเคลื่อนกิจกรรมแบรนด์ทั่วประเทศ <span class=\"light\">ร่วมกับ PenguinX</span>\n  </h1>",
+  "<h2 class=\"section-title\"> From the<br> <span class=\"light\">PenguinX</span> <span class=\"accent\">newsroom</span><span class=\"end-dot\"></span> </h2>": "<h2 class=\"section-title\">\n    เรื่องเล่าจาก<br>\n    <span class=\"light\">กองบรรณาธิการ</span> <span class=\"accent\">PenguinX</span><span class=\"end-dot\"></span>\n  </h2>"
  },
  "_js": {
   "viewsFormat": "{n} ครั้ง"

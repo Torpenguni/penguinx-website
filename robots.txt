@@ -87,6 +87,7 @@ User-agent: *
 Allow: /
 Disallow: /preview-
 Disallow: /work/preview-modal.html
+Disallow: /*_template.html
 Disallow: /api/
 
 Sitemap: https://www.penguinx.co/sitemap.xml
