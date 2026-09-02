@@ -186,6 +186,19 @@
     .pg-section-title{font-size:24px}
     .pg-item{flex:0 0 80%}
   }
+
+  /* บล็อกอ่านต่อ — หน้า pillar ไม่ได้โหลด styles.css จึงต้องมีกฎของตัวเอง */
+  .pg-related{padding:72px 32px 0;border-top:1px solid var(--line)}
+  .pg-related .news-grid{margin-top:36px}
+  .news-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:36px 28px; }
+  .news-card{ display:flex; flex-direction:column; gap:16px; cursor:pointer; text-decoration:none; color:inherit; }
+  .news-card:hover .news-thumb{ filter:contrast(1.1) saturate(1.05); transform:scale(1.02); }
+  .news-card:hover .news-title{color:var(--accent)}
+  .news-thumb{ aspect-ratio:16/10; background-color:var(--bg-2); background-size:cover; background-position:center; border-radius:10px; overflow:hidden; border:1px solid var(--line); filter:contrast(1.05) saturate(0.95); transition:filter 0.5s ease, transform 0.5s ease; }
+  .news-meta{ display:flex; align-items:center; gap:10px; font-family:'Anuphan',sans-serif; font-size:11px; color:var(--accent); letter-spacing:0.18em; text-transform:uppercase; font-weight:600; }
+  .news-meta::before{ content:''; width:14px;height:1px; background:var(--accent); }
+  .news-title{ font-family:'Anuphan',sans-serif; font-size:18px; font-weight:600; letter-spacing:-0.02em; line-height:1.3; color:var(--ink); transition:color 0.3s ease; }
+  .news-read{ font-size:11px; color:var(--ink-mute); letter-spacing:0.12em; text-transform:uppercase; margin-top:-4px; }
 </style>
 <!-- ===== AEO/SEO metadata — managed block, do not hand-edit ===== -->
 <meta name="description" content="PenguinX Event จัดงานหลักของวงการอาหาร 5 งาน ได้แก่ TRC (Thailand Restaurant Conference), Damn Expo, Restech และ CafCon">
@@ -416,7 +429,30 @@
   </div>
 </section>
 
-<section class="pg-next">
+<section class="news pg-related">
+    <div class="pg-section-head">
+      <div class="pg-section-num">อ่านต่อ</div>
+    </div>
+    <div class="news-grid">
+      <a href="/th/news/trc-2025-recap.html" class="news-card">
+        <div class="news-thumb" style="background-image:url('/ecosystem/Event/TRC/trc1.jpg')"></div>
+        <div class="news-meta">อีเวนต์</div>
+        <h3 class="news-title">เจาะงาน TRC 2025: เจ้าของร้าน 4,500 คนมารวมกันที่กรุงเทพฯ ได้อย่างไร</h3>
+      </a>
+      <a href="/th/news/damn-expo-returns.html" class="news-card">
+        <div class="news-thumb" style="background-image:url('/ecosystem/Event/Damn/damn1.jpg')"></div>
+        <div class="news-meta">อีเวนต์</div>
+        <h3 class="news-title">Damn Expo กลับมาอีกครั้ง: วงการกลางคืนของไทยมารวมตัวกัน</h3>
+      </a>
+      <a href="/th/news/longkaek-deepdive.html" class="news-card">
+        <div class="news-thumb" style="background-image:url('/ecosystem/Event/%E0%B8%A5%E0%B8%87%E0%B9%81%E0%B8%82%E0%B8%81/%E0%B8%A5%E0%B8%87%E0%B9%81%E0%B8%82%E0%B8%811.png')"></div>
+        <div class="news-meta">คอมมูนิตี้</div>
+        <h3 class="news-title">เบื้องหลัง #ลงแขก — เปลี่ยนคู่แข่งให้เป็นพันธมิตรที่ไว้ใจได้</h3>
+      </a>
+    </div>
+  </section>
+
+  <section class="pg-next">
   <div class="pg-next-tag">— เสาหลักถัดไป —</div>
   <h2 class="pg-next-title"><a href="/th/ecosystem/education.html">การศึกษา ↗</a></h2>
   <a href="/th/" class="pg-back">↑ กลับไป PenguinX</a>
