@@ -1694,3 +1694,28 @@ html[lang^="zh"] .wm-title {
       แล้วซ่อน <br> เดิม ไม่ให้กลายเป็นบรรทัดว่าง */
 html[lang^="zh"] .eco-name .light { display:block }
 html[lang^="zh"] .eco-name br { display:none }
+
+/* ปุ่ม LinkedIn ในการ์ดผู้ก่อตั้ง
+   .founder-body ต้อง flex:1 เพื่อให้ margin-top:auto ดันปุ่มลงล่างสุด
+   ปุ่มของทั้งสองคนจะอยู่ระดับเดียวกันแม้จำนวนบูลเล็ตไม่เท่ากัน */
+.founder-body{flex:1}
+.founder-linkedin{
+  margin-top:auto;
+  align-self:flex-start;
+  display:inline-flex;align-items:center;gap:8px;
+  padding:9px 16px;
+  border:1px solid rgba(244,241,234,0.2);
+  border-radius:100px;
+  font-family:'Anuphan',sans-serif;
+  font-size:12px;font-weight:500;letter-spacing:0.04em;
+  color:var(--ink);
+  text-decoration:none;
+  transition:color 0.2s ease,border-color 0.2s ease,background 0.2s ease;
+}
+.founder-linkedin svg{width:15px;height:15px;fill:currentColor;flex:none}
+.founder-linkedin:hover{
+  color:var(--accent);
+  border-color:rgba(219,169,58,0.55);
+  background:rgba(219,169,58,0.06);
+}
+.founder-linkedin:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
