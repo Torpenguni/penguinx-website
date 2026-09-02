@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="robots" content="noindex,nofollow">
-<title>Preview — สไตล์ลิงก์เว็บไซต์ในการ์ด | PenguinX</title>
+<title>Preview — ปุ่มเว็บไซต์ในการ์ด | PenguinX</title>
 <link href="https://fonts.googleapis.com/css2?family=Anuphan:wght@100;200;300;400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/styles.css">
 <style>
@@ -178,33 +178,21 @@
 
 
   body{background:var(--bg);color:var(--ink);font-family:'Anuphan',sans-serif;margin:0}
-  .wrap{max-width:1400px;margin:0 auto;padding:48px 32px 120px}
-  .lede{border-bottom:1px solid var(--line);padding-bottom:28px;margin-bottom:8px}
-  .lede h1{font-size:clamp(28px,3vw,40px);font-weight:600;letter-spacing:-0.03em;margin:0 0 10px}
-  .lede p{color:var(--ink-mute);font-size:15px;line-height:1.6;max-width:70ch;margin:0}
-  .opt{padding:44px 0;border-bottom:1px solid var(--line)}
-  .opt-head{display:flex;gap:16px;align-items:flex-start;margin-bottom:26px}
+  .wrap{max-width:1300px;margin:0 auto;padding:48px 32px 100px}
+  .lede{border-bottom:1px solid var(--line);padding-bottom:26px}
+  .lede h1{font-size:clamp(26px,3vw,36px);font-weight:600;letter-spacing:-0.03em;margin:0 0 10px}
+  .lede p{color:var(--ink-mute);font-size:15px;line-height:1.65;max-width:70ch;margin:0}
+  .opt{padding:40px 0;border-bottom:1px solid var(--line)}
+  .opt-head{display:flex;gap:16px;align-items:flex-start;margin-bottom:24px}
   .opt-key{flex:none;width:34px;height:34px;border-radius:50%;border:1px solid var(--accent);
-    color:var(--accent);display:grid;place-items:center;font-size:12px;font-weight:600}
+    color:var(--accent);display:grid;place-items:center;font-size:14px;font-weight:600}
   .opt-head h2{font-size:19px;font-weight:600;margin:5px 0 4px;letter-spacing:-0.01em}
-  .opt-head p{color:var(--ink-mute);font-size:13.5px;margin:0;line-height:1.55}
+  .opt-head p{color:var(--ink-mute);font-size:13.5px;margin:0;line-height:1.6;max-width:75ch}
   .pg-grid.cols-3{grid-template-columns:repeat(3,1fr)}
-  .pg-item-img{max-height:170px;overflow:hidden}
-
-  /* ---- B: ลิงก์ข้อความที่ใหญ่และคมขึ้น ---- */
-  .v-b{margin-top:16px;padding-top:14px;border-top:1px solid var(--line-soft);
-    display:flex;justify-content:space-between;align-items:center;gap:12px;
-    font-size:13px;font-weight:600;letter-spacing:0.05em;text-transform:uppercase;
-    color:var(--ink);text-decoration:none;transition:color .2s ease}
-  .v-b-arrow{flex:none;width:28px;height:28px;border-radius:50%;
-    border:1px solid rgba(244,241,234,0.22);display:grid;place-items:center;
-    color:var(--accent);font-size:13px;transition:all .25s ease}
-  .v-b:hover{color:var(--accent)}
-  .v-b:hover .v-b-arrow{border-color:var(--accent);background:rgba(219,169,58,0.12);transform:translate(2px,-2px)}
-
-  /* ---- C: ปุ่มเส้นขอบ ---- */
-  .v-c{margin-top:18px;align-self:flex-start;
-    display:inline-flex;align-items:center;gap:10px;
+  .pg-item-img{max-height:150px;overflow:hidden}
+  .pg-item{display:flex;flex-direction:column}
+  .pg-item-sub{margin-bottom:18px}
+  .v-c{margin-top:auto;align-self:flex-start;display:inline-flex;align-items:center;gap:10px;
     padding:11px 18px;border:1px solid rgba(244,241,234,0.24);border-radius:100px;
     font-size:12.5px;font-weight:600;letter-spacing:0.05em;text-transform:uppercase;
     color:var(--ink);text-decoration:none;
@@ -212,34 +200,25 @@
   .v-c-arrow{color:var(--accent);transition:transform .25s ease}
   .v-c:hover{color:var(--accent);border-color:rgba(219,169,58,0.55);background:rgba(219,169,58,0.07)}
   .v-c:hover .v-c-arrow{transform:translate(3px,-3px)}
-
-  /* ---- D: ปุ่มทึบ + โดเมนตัวเล็กใต้ปุ่ม ---- */
-  .v-d{margin-top:18px;align-self:flex-start;
-    display:inline-flex;align-items:center;gap:10px;
-    padding:12px 22px;border-radius:100px;
-    background:var(--accent);color:#0f0d09;
-    font-size:13px;font-weight:700;letter-spacing:0.02em;text-decoration:none;
-    transition:transform .25s ease,box-shadow .25s ease,filter .25s ease}
-  .v-d-arrow{font-size:14px}
-  .v-d:hover{transform:translateY(-2px);filter:brightness(1.08);
-    box-shadow:0 8px 24px rgba(219,169,58,0.25)}
-  .v-d-dom{margin-top:9px;font-size:11px;letter-spacing:0.07em;text-transform:uppercase;color:var(--ink-mute)}
+  .v-dom{margin-top:9px;font-size:11px;letter-spacing:0.07em;text-transform:uppercase;color:var(--ink-mute)}
 
 </style>
 </head>
 <body>
 <div class="wrap">
   <div class="lede">
-    <h1>ลิงก์เว็บไซต์ในการ์ด — 4 แบบให้เลือก</h1>
-    <p>ใช้การ์ดจริงจากหน้า Event เลือกมา 3 ใบ โดยตั้งใจเอา TRC มาด้วยเพราะโดเมนยาวที่สุด
-       จะได้เห็นว่าแต่ละแบบรับข้อความยาวไหวแค่ไหน ลองเอาเมาส์ชี้ที่ลิงก์เพื่อดูอาการตอน hover
-       ทุกแบบใช้สีและฟอนต์ชุดเดิมของเว็บ ไม่ได้เพิ่มสีใหม่</p>
+    <h1>ปุ่มเว็บไซต์ — ตัวที่ใช้อยู่ กับตัวเทียบ</h1>
+    <p>แบบ C ขึ้นใช้จริงแล้วทั้งสามภาษา หน้านี้เหลือไว้ให้เทียบอย่างเดียวว่า
+       ถ้าเอาโดเมนกลับมาไว้ใต้ปุ่มตัวเล็ก ๆ จะดีกว่าไหม
+       เอา Restaurant MBA มาด้วยเพราะเป็นเคสที่โดเมนมีความหมาย —
+       <strong>gs.utcc.ac.th</strong> บอกว่าหลักสูตรนี้ทำร่วมกับมหาวิทยาลัยหอการค้า
+       ซึ่งเป็นข้อมูลที่หายไปถ้าเขียนแค่ว่า “เว็บไซต์”</p>
   </div>
 
 <section class="opt">
   <div class="opt-head">
-    <div class="opt-key">A</div>
-    <div><h2>แบบปัจจุบัน</h2><p>11px สีจาง ตัวพิมพ์ใหญ่ — อ่านเป็นคำบรรยาย ไม่ใช่ปุ่ม</p></div>
+    <div class="opt-key">✓</div>
+    <div><h2>แบบที่ใช้อยู่ตอนนี้ — ปุ่ม "เว็บไซต์" อย่างเดียว</h2><p>สะอาด ปุ่มกว้างเท่ากันหมด แต่ไม่รู้ว่าจะไปที่ไหนจนกว่าจะกด</p></div>
   </div>
   <div class="pg-grid cols-3">
 <div class="pg-item">
@@ -256,23 +235,7 @@
       <div class="pg-item-tag">Conference · Flagship</div>
       <div class="pg-item-title">TRC — Thailand Restaurant Conference</div>
       <div class="pg-item-sub">Multi-day, multi-track programming for owners and senior operators. The room where annual decisions get made.</div>
-      <a class="pg-item-link" href="https://www.thailandrestaurantconference.org/" target="_blank" rel="noopener"><span>thailandrestaurantconference.org</span><span class="arrow">↗</span></a>
-    </div>
-<div class="pg-item">
-      <div class="pg-item-img"><div class="pg-track" data-index="0">
-        <img src="/ecosystem/Event/Damn/damn1.jpg" alt="" loading="lazy">
-        <img src="/ecosystem/Event/Damn/damn2.jpg" alt="" loading="lazy">
-        <img src="/ecosystem/Event/Damn/damn3.jpg" alt="" loading="lazy">
-        <img src="/ecosystem/Event/Damn/damn4.png" alt="" loading="lazy">
-        <img src="/ecosystem/Event/Damn/damn5.jpg" alt="" loading="lazy">
-        <img src="/ecosystem/Event/Damn/damn6.jpg" alt="" loading="lazy">
-        <img src="/ecosystem/Event/Damn/damn7.jpg" alt="" loading="lazy">
-        <img src="/ecosystem/Event/Damn/damn8.jpg" alt="" loading="lazy">
-      </div><button class="pg-arrow prev" data-dir="-1" type="button" aria-label="Previous">‹</button><button class="pg-arrow next" data-dir="1" type="button" aria-label="Next">›</button></div>
-      <div class="pg-item-tag">Expo · Nightlife</div>
-      <div class="pg-item-title">Damn Expo</div>
-      <div class="pg-item-sub">Nightlife and craft-liquor home expo. Bar owners, distributors, beverage brands on one floor.</div>
-      <a class="pg-item-link" href="https://damnexpo.com" target="_blank" rel="noopener"><span>damnexpo.com</span><span class="arrow">↗</span></a>
+      <a class="v-c" href="https://www.thailandrestaurantconference.org/" target="_blank" rel="noopener"><span>Website</span><span class="v-c-arrow">↗</span></a>
     </div>
 <div class="pg-item">
       <div class="pg-item-img"><div class="pg-track" data-index="0">
@@ -287,14 +250,30 @@
       <div class="pg-item-tag">Expo · Tech</div>
       <div class="pg-item-title">Restech</div>
       <div class="pg-item-sub">Restaurant tech and equipment expo — live demos, comparison, on-floor procurement.</div>
-      <a class="pg-item-link" href="https://www.restechexpo.com/" target="_blank" rel="noopener"><span>restechexpo.com</span><span class="arrow">↗</span></a>
+      <a class="v-c" href="https://www.restechexpo.com/" target="_blank" rel="noopener"><span>Website</span><span class="v-c-arrow">↗</span></a>
+    </div>
+<div class="pg-item">
+      <div class="pg-item-img"><div class="pg-track" data-index="0">
+        <img src="/ecosystem/Event/Damn/damn1.jpg" alt="" loading="lazy">
+        <img src="/ecosystem/Event/Damn/damn2.jpg" alt="" loading="lazy">
+        <img src="/ecosystem/Event/Damn/damn3.jpg" alt="" loading="lazy">
+        <img src="/ecosystem/Event/Damn/damn4.png" alt="" loading="lazy">
+        <img src="/ecosystem/Event/Damn/damn5.jpg" alt="" loading="lazy">
+        <img src="/ecosystem/Event/Damn/damn6.jpg" alt="" loading="lazy">
+        <img src="/ecosystem/Event/Damn/damn7.jpg" alt="" loading="lazy">
+        <img src="/ecosystem/Event/Damn/damn8.jpg" alt="" loading="lazy">
+      </div><button class="pg-arrow prev" data-dir="-1" type="button" aria-label="Previous">‹</button><button class="pg-arrow next" data-dir="1" type="button" aria-label="Next">›</button></div>
+      <div class="pg-item-tag">Expo · Nightlife</div>
+      <div class="pg-item-title">Restaurant MBA</div>
+      <div class="pg-item-sub">Live cohort program for multi-unit operators. Small classes, real case studies, peer accountability.</div>
+      <a class="v-c" href="https://gs.utcc.ac.th/master-degree/restaurant-mba/" target="_blank" rel="noopener"><span>Website</span><span class="v-c-arrow">↗</span></a>
     </div>
   </div>
 </section>
 <section class="opt">
   <div class="opt-head">
-    <div class="opt-key">B</div>
-    <div><h2>แบบ B — ขยายเป็นลิงก์เด่น</h2><p>13px สีขาวเต็ม ตัวหนา ลูกศรอยู่ในวงกลม แตะง่ายขึ้นแต่ยังเรียบ</p></div>
+    <div class="opt-key">?</div>
+    <div><h2>ตัวเทียบ — ปุ่มเดิม + โดเมนตัวเล็กใต้ปุ่ม</h2><p>ยังเป็นปุ่มชัดเหมือนเดิม แต่ได้ข้อมูลปลายทางกลับมา สังเกตการ์ด Restaurant MBA ที่โดเมนบอกว่าเป็นของ ม.หอการค้า</p></div>
   </div>
   <div class="pg-grid cols-3">
 <div class="pg-item">
@@ -311,23 +290,7 @@
       <div class="pg-item-tag">Conference · Flagship</div>
       <div class="pg-item-title">TRC — Thailand Restaurant Conference</div>
       <div class="pg-item-sub">Multi-day, multi-track programming for owners and senior operators. The room where annual decisions get made.</div>
-      <a class="v-b" href="https://www.thailandrestaurantconference.org/" target="_blank" rel="noopener"><span>thailandrestaurantconference.org</span><span class="v-b-arrow">↗</span></a>
-    </div>
-<div class="pg-item">
-      <div class="pg-item-img"><div class="pg-track" data-index="0">
-        <img src="/ecosystem/Event/Damn/damn1.jpg" alt="" loading="lazy">
-        <img src="/ecosystem/Event/Damn/damn2.jpg" alt="" loading="lazy">
-        <img src="/ecosystem/Event/Damn/damn3.jpg" alt="" loading="lazy">
-        <img src="/ecosystem/Event/Damn/damn4.png" alt="" loading="lazy">
-        <img src="/ecosystem/Event/Damn/damn5.jpg" alt="" loading="lazy">
-        <img src="/ecosystem/Event/Damn/damn6.jpg" alt="" loading="lazy">
-        <img src="/ecosystem/Event/Damn/damn7.jpg" alt="" loading="lazy">
-        <img src="/ecosystem/Event/Damn/damn8.jpg" alt="" loading="lazy">
-      </div><button class="pg-arrow prev" data-dir="-1" type="button" aria-label="Previous">‹</button><button class="pg-arrow next" data-dir="1" type="button" aria-label="Next">›</button></div>
-      <div class="pg-item-tag">Expo · Nightlife</div>
-      <div class="pg-item-title">Damn Expo</div>
-      <div class="pg-item-sub">Nightlife and craft-liquor home expo. Bar owners, distributors, beverage brands on one floor.</div>
-      <a class="v-b" href="https://damnexpo.com" target="_blank" rel="noopener"><span>damnexpo.com</span><span class="v-b-arrow">↗</span></a>
+      <a class="v-c" href="https://www.thailandrestaurantconference.org/" target="_blank" rel="noopener"><span>Website</span><span class="v-c-arrow">↗</span></a><div class="v-dom">thailandrestaurantconference.org</div>
     </div>
 <div class="pg-item">
       <div class="pg-item-img"><div class="pg-track" data-index="0">
@@ -342,31 +305,7 @@
       <div class="pg-item-tag">Expo · Tech</div>
       <div class="pg-item-title">Restech</div>
       <div class="pg-item-sub">Restaurant tech and equipment expo — live demos, comparison, on-floor procurement.</div>
-      <a class="v-b" href="https://www.restechexpo.com/" target="_blank" rel="noopener"><span>restechexpo.com</span><span class="v-b-arrow">↗</span></a>
-    </div>
-  </div>
-</section>
-<section class="opt">
-  <div class="opt-head">
-    <div class="opt-key">C</div>
-    <div><h2>แบบ C — ปุ่มเส้นขอบ</h2><p>เป็นปุ่มชัดเจน เข้าชุดกับปุ่ม LinkedIn ที่เพิ่งเพิ่มในหน้าผู้ก่อตั้ง</p></div>
-  </div>
-  <div class="pg-grid cols-3">
-<div class="pg-item">
-      <div class="pg-item-img"><div class="pg-track" data-index="0">
-        <img src="/ecosystem/Event/TRC/trc1.jpg" alt="" loading="lazy">
-        <img src="/ecosystem/Event/TRC/trc2.jpg" alt="" loading="lazy">
-        <img src="/ecosystem/Event/TRC/trc3.jpg" alt="" loading="lazy">
-        <img src="/ecosystem/Event/TRC/trc4.JPG" alt="" loading="lazy">
-        <img src="/ecosystem/Event/TRC/trc5.jpg" alt="" loading="lazy">
-        <img src="/ecosystem/Event/TRC/trc6.jpg" alt="" loading="lazy">
-        <img src="/ecosystem/Event/TRC/trc7.jpg" alt="" loading="lazy">
-        <img src="/ecosystem/Event/TRC/trc8.jpg" alt="" loading="lazy">
-      </div><button class="pg-arrow prev" data-dir="-1" type="button" aria-label="Previous">‹</button><button class="pg-arrow next" data-dir="1" type="button" aria-label="Next">›</button></div>
-      <div class="pg-item-tag">Conference · Flagship</div>
-      <div class="pg-item-title">TRC — Thailand Restaurant Conference</div>
-      <div class="pg-item-sub">Multi-day, multi-track programming for owners and senior operators. The room where annual decisions get made.</div>
-      <a class="v-c" href="https://www.thailandrestaurantconference.org/" target="_blank" rel="noopener"><span>thailandrestaurantconference.org</span><span class="v-c-arrow">↗</span></a>
+      <a class="v-c" href="https://www.restechexpo.com/" target="_blank" rel="noopener"><span>Website</span><span class="v-c-arrow">↗</span></a><div class="v-dom">restechexpo.com</div>
     </div>
 <div class="pg-item">
       <div class="pg-item-img"><div class="pg-track" data-index="0">
@@ -380,79 +319,9 @@
         <img src="/ecosystem/Event/Damn/damn8.jpg" alt="" loading="lazy">
       </div><button class="pg-arrow prev" data-dir="-1" type="button" aria-label="Previous">‹</button><button class="pg-arrow next" data-dir="1" type="button" aria-label="Next">›</button></div>
       <div class="pg-item-tag">Expo · Nightlife</div>
-      <div class="pg-item-title">Damn Expo</div>
-      <div class="pg-item-sub">Nightlife and craft-liquor home expo. Bar owners, distributors, beverage brands on one floor.</div>
-      <a class="v-c" href="https://damnexpo.com" target="_blank" rel="noopener"><span>damnexpo.com</span><span class="v-c-arrow">↗</span></a>
-    </div>
-<div class="pg-item">
-      <div class="pg-item-img"><div class="pg-track" data-index="0">
-        <img src="/ecosystem/Event/Restech/restech1.jpg" alt="" loading="lazy">
-        <img src="/ecosystem/Event/Restech/restech2.jpg" alt="" loading="lazy">
-        <img src="/ecosystem/Event/Restech/restech3.jpg" alt="" loading="lazy">
-        <img src="/ecosystem/Event/Restech/restech4.jpg" alt="" loading="lazy">
-        <img src="/ecosystem/Event/Restech/restech5.jpg" alt="" loading="lazy">
-        <img src="/ecosystem/Event/Restech/restech7.jpg" alt="" loading="lazy">
-        <img src="/ecosystem/Event/Restech/restech8.jpg" alt="" loading="lazy">
-      </div><button class="pg-arrow prev" data-dir="-1" type="button" aria-label="Previous">‹</button><button class="pg-arrow next" data-dir="1" type="button" aria-label="Next">›</button></div>
-      <div class="pg-item-tag">Expo · Tech</div>
-      <div class="pg-item-title">Restech</div>
-      <div class="pg-item-sub">Restaurant tech and equipment expo — live demos, comparison, on-floor procurement.</div>
-      <a class="v-c" href="https://www.restechexpo.com/" target="_blank" rel="noopener"><span>restechexpo.com</span><span class="v-c-arrow">↗</span></a>
-    </div>
-  </div>
-</section>
-<section class="opt">
-  <div class="opt-head">
-    <div class="opt-key">D</div>
-    <div><h2>แบบ D — ปุ่มทึบสีแบรนด์</h2><p>เด่นที่สุด ข้อความบอกให้ทำอะไร ส่วนโดเมนย้ายไปอยู่ใต้ปุ่มตัวเล็ก</p></div>
-  </div>
-  <div class="pg-grid cols-3">
-<div class="pg-item">
-      <div class="pg-item-img"><div class="pg-track" data-index="0">
-        <img src="/ecosystem/Event/TRC/trc1.jpg" alt="" loading="lazy">
-        <img src="/ecosystem/Event/TRC/trc2.jpg" alt="" loading="lazy">
-        <img src="/ecosystem/Event/TRC/trc3.jpg" alt="" loading="lazy">
-        <img src="/ecosystem/Event/TRC/trc4.JPG" alt="" loading="lazy">
-        <img src="/ecosystem/Event/TRC/trc5.jpg" alt="" loading="lazy">
-        <img src="/ecosystem/Event/TRC/trc6.jpg" alt="" loading="lazy">
-        <img src="/ecosystem/Event/TRC/trc7.jpg" alt="" loading="lazy">
-        <img src="/ecosystem/Event/TRC/trc8.jpg" alt="" loading="lazy">
-      </div><button class="pg-arrow prev" data-dir="-1" type="button" aria-label="Previous">‹</button><button class="pg-arrow next" data-dir="1" type="button" aria-label="Next">›</button></div>
-      <div class="pg-item-tag">Conference · Flagship</div>
-      <div class="pg-item-title">TRC — Thailand Restaurant Conference</div>
-      <div class="pg-item-sub">Multi-day, multi-track programming for owners and senior operators. The room where annual decisions get made.</div>
-      <a class="v-d" href="https://www.thailandrestaurantconference.org/" target="_blank" rel="noopener"><span>เข้าชมเว็บไซต์</span><span class="v-d-arrow">↗</span></a><div class="v-d-dom">thailandrestaurantconference.org</div>
-    </div>
-<div class="pg-item">
-      <div class="pg-item-img"><div class="pg-track" data-index="0">
-        <img src="/ecosystem/Event/Damn/damn1.jpg" alt="" loading="lazy">
-        <img src="/ecosystem/Event/Damn/damn2.jpg" alt="" loading="lazy">
-        <img src="/ecosystem/Event/Damn/damn3.jpg" alt="" loading="lazy">
-        <img src="/ecosystem/Event/Damn/damn4.png" alt="" loading="lazy">
-        <img src="/ecosystem/Event/Damn/damn5.jpg" alt="" loading="lazy">
-        <img src="/ecosystem/Event/Damn/damn6.jpg" alt="" loading="lazy">
-        <img src="/ecosystem/Event/Damn/damn7.jpg" alt="" loading="lazy">
-        <img src="/ecosystem/Event/Damn/damn8.jpg" alt="" loading="lazy">
-      </div><button class="pg-arrow prev" data-dir="-1" type="button" aria-label="Previous">‹</button><button class="pg-arrow next" data-dir="1" type="button" aria-label="Next">›</button></div>
-      <div class="pg-item-tag">Expo · Nightlife</div>
-      <div class="pg-item-title">Damn Expo</div>
-      <div class="pg-item-sub">Nightlife and craft-liquor home expo. Bar owners, distributors, beverage brands on one floor.</div>
-      <a class="v-d" href="https://damnexpo.com" target="_blank" rel="noopener"><span>เข้าชมเว็บไซต์</span><span class="v-d-arrow">↗</span></a><div class="v-d-dom">damnexpo.com</div>
-    </div>
-<div class="pg-item">
-      <div class="pg-item-img"><div class="pg-track" data-index="0">
-        <img src="/ecosystem/Event/Restech/restech1.jpg" alt="" loading="lazy">
-        <img src="/ecosystem/Event/Restech/restech2.jpg" alt="" loading="lazy">
-        <img src="/ecosystem/Event/Restech/restech3.jpg" alt="" loading="lazy">
-        <img src="/ecosystem/Event/Restech/restech4.jpg" alt="" loading="lazy">
-        <img src="/ecosystem/Event/Restech/restech5.jpg" alt="" loading="lazy">
-        <img src="/ecosystem/Event/Restech/restech7.jpg" alt="" loading="lazy">
-        <img src="/ecosystem/Event/Restech/restech8.jpg" alt="" loading="lazy">
-      </div><button class="pg-arrow prev" data-dir="-1" type="button" aria-label="Previous">‹</button><button class="pg-arrow next" data-dir="1" type="button" aria-label="Next">›</button></div>
-      <div class="pg-item-tag">Expo · Tech</div>
-      <div class="pg-item-title">Restech</div>
-      <div class="pg-item-sub">Restaurant tech and equipment expo — live demos, comparison, on-floor procurement.</div>
-      <a class="v-d" href="https://www.restechexpo.com/" target="_blank" rel="noopener"><span>เข้าชมเว็บไซต์</span><span class="v-d-arrow">↗</span></a><div class="v-d-dom">restechexpo.com</div>
+      <div class="pg-item-title">Restaurant MBA</div>
+      <div class="pg-item-sub">Live cohort program for multi-unit operators. Small classes, real case studies, peer accountability.</div>
+      <a class="v-c" href="https://gs.utcc.ac.th/master-degree/restaurant-mba/" target="_blank" rel="noopener"><span>Website</span><span class="v-c-arrow">↗</span></a><div class="v-dom">gs.utcc.ac.th</div>
     </div>
   </div>
 </section>

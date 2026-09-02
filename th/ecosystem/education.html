@@ -86,8 +86,20 @@
   .pg-arrow:hover{background:var(--accent);color:var(--bg);border-color:var(--accent)}
   .pg-item{cursor:default}
   .pg-item:hover{opacity:1}
-  .pg-item-link{margin-top:14px;padding-top:12px;border-top:1px solid var(--line-soft);font-size:11px;color:var(--ink-mute);letter-spacing:0.08em;text-transform:uppercase;display:flex;justify-content:space-between;align-items:center;text-decoration:none;transition:color 0.2s ease}
-  .pg-item-link:hover{color:var(--accent)}
+  /* คำบรรยายแต่ละการ์ดยาวไม่เท่ากัน ทำให้การ์ดเป็นคอลัมน์แล้วดันปุ่มลงล่างสุด
+     ปุ่มทั้งแถวจะได้อยู่ระดับเดียวกัน */
+  .pg-item{display:flex;flex-direction:column}
+  .pg-item-link{margin-top:auto;align-self:flex-start;
+    display:inline-flex;align-items:center;gap:10px;
+    padding:11px 18px;border:1px solid rgba(244,241,234,0.24);border-radius:100px;
+    font-size:12.5px;font-weight:600;letter-spacing:0.05em;text-transform:uppercase;
+    color:var(--ink);text-decoration:none;
+    transition:color 0.2s ease,border-color 0.2s ease,background 0.2s ease}
+  .pg-item-sub{margin-bottom:18px}
+  .pg-item-link:hover{color:var(--accent);border-color:rgba(219,169,58,0.55);background:rgba(219,169,58,0.07)}
+  .pg-item-link:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+  /* ตัวอักษรจีนกว้างเต็มช่องอยู่แล้ว ไม่ต้องถ่างเท่าตัวละติน */
+  html[lang^="zh"] .pg-item-link{letter-spacing:0.02em}
   .pg-item-link .arrow{color:var(--accent);transition:transform 0.3s ease}
   .pg-item-link:hover .arrow{transform:translate(3px,-3px)}
   .pg-item-ext{position:absolute;top:14px;right:14px;width:36px;height:36px;border-radius:50%;background:rgba(10,10,10,0.6);backdrop-filter:blur(8px);display:flex;align-items:center;justify-content:center;color:var(--ink);font-size:14px;transition:all 0.3s ease;border:1px solid rgba(244,241,234,0.15)}
@@ -328,7 +340,7 @@
       <div class="pg-item-tag">เรียนเอง · พื้นฐาน</div>
       <div class="pg-item-title">Restaurant Business Academy</div>
       <div class="pg-item-sub">คอร์สเรียนได้ตลอดเวลา ครอบคลุมเรื่องต้นทุนต่อสาขา การบริหารร้าน และการตลาด — พื้นฐานที่คนเปิดร้านใหม่ควรแม่นก่อนเซ็นสัญญาเช่า</div>
-      <a class="pg-item-link" href="https://www.restaurantbusinessacademy.co/" target="_blank" rel="noopener"><span>restaurantbusinessacademy.co</span><span class="arrow">↗</span></a>
+      <a class="pg-item-link" href="https://www.restaurantbusinessacademy.co/" target="_blank" rel="noopener" aria-label="เว็บไซต์ Restaurant Business Academy"><span>เว็บไซต์</span><span class="arrow">↗</span></a>
     </div>
     <div class="pg-item">
       <div class="pg-item-img"><div class="pg-track" data-index="0">
@@ -344,7 +356,7 @@
       <div class="pg-item-tag">คลาสแบบรุ่น · ระดับสูง</div>
       <div class="pg-item-title">Restaurant MBA</div>
       <div class="pg-item-sub">คลาสสดแบบรุ่นสำหรับคนที่มีหลายสาขา ห้องเรียนเล็ก เคสจริง มีเพื่อนร่วมรุ่นคอยผลักดัน — คนที่จบไปกลับมาเป็นวิทยากรรับเชิญ</div>
-      <a class="pg-item-link" href="https://gs.utcc.ac.th/master-degree/restaurant-mba/" target="_blank" rel="noopener"><span>gs.utcc.ac.th</span><span class="arrow">↗</span></a>
+      <a class="pg-item-link" href="https://gs.utcc.ac.th/master-degree/restaurant-mba/" target="_blank" rel="noopener" aria-label="เว็บไซต์ Restaurant MBA"><span>เว็บไซต์</span><span class="arrow">↗</span></a>
     </div>
     <div class="pg-item">
       <div class="pg-item-img"><div class="pg-track" data-index="0">
