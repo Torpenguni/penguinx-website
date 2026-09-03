@@ -1844,3 +1844,8 @@ html[lang^="zh"] .evd-link,html[lang^="zh"] .ev-chip{letter-spacing:0.02em}
   .evd-gallery{columns:1;padding:30px 20px 70px}
 }
 .ev-count i{font-style:normal}
+
+/* หัวข้อ hero ภาษาอังกฤษยาวกว่าอีกสองภาษามาก (บรรทัดยาวสุดกิน 81% ของพื้นที่
+   เทียบกับไทย 52% จีน 28%) ที่ขนาดเดิมจึงหนักและเบียดภาพประกอบด้านขวา
+   ลดเฉพาะภาษาอังกฤษ ไม่แตะไทยกับจีนซึ่งสั้นอยู่แล้วและจะดูอ่อนแรงถ้าเล็กลง */
+html[lang="en"] .hero-title{font-size:clamp(38px,5.6vw,98px)}
