@@ -32,18 +32,40 @@ def pages():
         out.append(f)
     return sorted(out)
 
+LANG_LABELS = (('en', 'EN'), ('th', 'ไทย'), ('zh', '中文'))
+
+# ป้ายของปุ่มเปิดเมนู เขียนไว้ตรงนี้เพราะ switcher ถูกแทรกหลัง translate_text
+# ทำงานเสร็จแล้ว ตัวแปลรายคำจึงมองไม่เห็น aria-label ตัวนี้
+SWITCH_ARIA = {'en': 'Change language', 'th': 'เปลี่ยนภาษา', 'zh': '切换语言'}
+
+
 def switcher(rel_path, current):
-    """rel_path = เส้นทางหน้าเทียบกับราก เช่น '' หรือ 'work/makro.html'"""
+    """rel_path = เส้นทางหน้าเทียบกับราก เช่น '' หรือ 'work/makro.html'
+
+    เป็น <details> ไม่ใช่เมนูที่สร้างด้วย JavaScript โดยตั้งใจ ลิงก์ทุกภาษา
+    อยู่ใน HTML ตั้งแต่แรกเสมอ แค่ถูกซ่อนด้วย CSS — Google จึงยังเดินตาม
+    ลิงก์ไปเจอทุกเวอร์ชันภาษาได้ ถ้าสร้างเมนูตอนคลิกด้วย JS ลิงก์เหล่านี้
+    จะหายไปจากสายตา crawler แล้ว hreflang ก็จะไม่มีอะไรมาหนุน
+
+    และเพราะไม่พึ่ง JS เลย ปุ่มจึงยังใช้ได้ถ้าสคริปต์โหลดไม่ขึ้น
+    """
     def href(code):
         base = '/' if code == 'en' else f'/{code}/'
         return base + rel_path
-    items = []
-    for code, label in (('en', 'EN'), ('th', 'ไทย'), ('zh', '中文')):
+    items, now = [], ''
+    for code, label in LANG_LABELS:
         if code in LANGS and any(rel_path.startswith(x) for x in LANGS[code].get('skip', ())):
             continue          # ยังไม่มีหน้านี้ในภาษานั้น อย่าให้กดไปเจอ 404
-        cur = ' aria-current="true"' if code == current else ''
+        cur = ''
+        if code == current:
+            cur, now = ' aria-current="true"', label
         items.append(f'<a href="{href(code)}" hreflang="{code}"{cur}>{label}</a>')
-    return '<div class="lang-switch">' + ''.join(items) + '</div>'
+    aria = SWITCH_ARIA.get(current, SWITCH_ARIA['en'])
+    return ('<details class="lang-switch">'
+            f'<summary aria-label="{aria}">{now}</summary>'
+            f'<div class="lang-menu">{"".join(items)}</div>'
+            '</details>')
+
 
 def hreflangs(rel_path):
     rows = [f'<link rel="alternate" hreflang="en" href="{SITE}/{rel_path}">']
@@ -148,6 +170,7 @@ def strip_injected(html):
     ไม่งั้นรันซ้ำทีไร hreflang กับปุ่มสลับภาษาจะทบกันไปเรื่อย ๆ"""
     html = re.sub(r'\s*<link rel="alternate" hreflang="[^"]*" href="[^"]*">', '', html)
     html = re.sub(r'\s*<div class="lang-switch">.*?</div>', '', html, flags=re.S)
+    html = re.sub(r'\s*<details class="lang-switch">.*?</details>', '', html, flags=re.S)
     html = re.sub(r'\s*<script>window\.__PX_I18N__=.*?</script>', '', html, flags=re.S)
     return html
 

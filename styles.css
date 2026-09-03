@@ -1652,27 +1652,52 @@ body.modal-open{overflow:hidden}
 
 
 /* ===== Language switcher =====
-   Sits between the nav links and the CTA. Three short labels rather than a
-   dropdown: with only three languages a menu hides the choice behind a click,
-   and the current language should be readable at a glance. */
-.lang-switch{
-  display:flex;align-items:center;gap:2px;
-  margin-left:auto;margin-right:20px;
-  border:1px solid var(--line-soft);border-radius:999px;
-  padding:3px;
-}
-.lang-switch a{
-  display:inline-block;
-  padding:4px 10px;border-radius:999px;
+   A <details> dropdown rather than a row of pills. Three labels fitted on one
+   line; a fourth (Japanese) does not, least of all on a phone. The links stay
+   in the markup either way — CSS hides them, so crawlers still reach every
+   language and the hreflang tags have real links behind them.
+   No JavaScript: the menu opens on click and closes on a second click, which
+   also means it survives a failed script load. */
+.lang-switch { position:relative;margin-left:auto;margin-right:20px; }
+
+.lang-switch > summary {
+  display:flex;align-items:center;gap:6px;
+  padding:5px 12px;border-radius:999px;
+  border:1px solid var(--line-soft);
   font-size:12px;font-weight:600;letter-spacing:.02em;
-  color:var(--muted,#9a9a9a);text-decoration:none;
+  color:var(--muted,#9a9a9a);
+  cursor:pointer;user-select:none;white-space:nowrap;
+  list-style:none;                       /* Firefox */
+  transition:color .15s,border-color .15s;
+}
+.lang-switch > summary::-webkit-details-marker { display:none }   /* Safari */
+.lang-switch > summary::after {
+  content:"";width:5px;height:5px;
+  border-right:1.5px solid currentColor;border-bottom:1.5px solid currentColor;
+  transform:rotate(45deg) translate(-1px,-1px);
+  transition:transform .15s;
+}
+.lang-switch[open] > summary::after { transform:rotate(-135deg) translate(-1px,-1px) }
+.lang-switch > summary:hover { color:#fff;border-color:var(--line) }
+.lang-switch > summary:focus-visible { outline:2px solid var(--accent,#dba93a);outline-offset:2px }
+
+.lang-menu {
+  position:absolute;top:calc(100% + 6px);right:0;z-index:60;
+  display:flex;flex-direction:column;gap:2px;
+  min-width:100%;padding:4px;
+  background:var(--bg,#0a0a0a);
+  border:1px solid var(--line);border-radius:12px;
+  box-shadow:0 12px 32px -12px rgba(0,0,0,.8);
+}
+.lang-menu a {
+  display:block;padding:7px 14px;border-radius:8px;
+  font-size:12px;font-weight:600;letter-spacing:.02em;
+  color:var(--muted,#9a9a9a);text-decoration:none;white-space:nowrap;
   transition:color .15s,background .15s;
-  white-space:nowrap;
 }
-.lang-switch a:hover{color:#fff}
-.lang-switch a[aria-current="true"]{
-  background:var(--accent,#e2571f);color:#fff;
-}
+.lang-menu a:hover { color:#fff;background:var(--line-soft) }
+.lang-menu a:focus-visible { outline:2px solid var(--accent,#dba93a);outline-offset:-2px }
+.lang-menu a[aria-current="true"] { background:var(--accent,#dba93a);color:#fff }
 @media (max-width:860px){
   .lang-switch{margin-right:10px;padding:2px}
   .lang-switch a{padding:3px 7px;font-size:11px}
