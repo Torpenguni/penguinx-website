@@ -1,6 +1,6 @@
 <!DOCTYPE html><html lang="th"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex,nofollow">
-<title>Preview — TRC event page | PenguinX</title>
+<title>Preview — TRC | PenguinX</title>
 <link href="https://fonts.googleapis.com/css2?family=Anuphan:wght@100;200;300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
 :root{--bg:#0A0A0A;--bg-2:#141414;--ink:#F4F1EA;--ink-mute:#8A8781;--line:#242424;--accent:#DBA93A}
@@ -9,67 +9,29 @@ body{margin:0;background:var(--bg);color:var(--ink);font-family:'Anuphan',sans-s
 .wrap{max-width:1320px;margin:0 auto;padding:0 32px}
 .note{max-width:1256px;margin:20px auto 0;padding:13px 18px;border:1px solid rgba(219,169,58,.35);
  border-radius:10px;background:rgba(219,169,58,.06);font-size:13px;line-height:1.6}
-.hero{padding:70px 0 34px}
 .eyebrow{font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--accent);margin-bottom:18px}
-.hero h1{font-size:clamp(38px,5.6vw,76px);font-weight:600;line-height:1.03;letter-spacing:-.04em;margin:0 0 20px}
-.hero h1 .light{color:var(--ink-mute);font-weight:300}
-.hero p{color:var(--ink-mute);font-size:16px;line-height:1.7;max-width:60ch;margin:0}
-.stats{display:flex;gap:48px;margin-top:34px;flex-wrap:wrap}
-.stats .n{font-size:32px;font-weight:600;letter-spacing:-.03em}
-.stats .l{font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-mute);margin-top:4px}
-.filters{display:flex;gap:9px;flex-wrap:wrap;padding:30px 0 26px;border-top:1px solid var(--line);margin-top:40px}
-.chip{background:none;border:1px solid rgba(244,241,234,.2);color:var(--ink-mute);border-radius:100px;
- padding:9px 17px;font-family:inherit;font-size:12.5px;font-weight:500;letter-spacing:.04em;cursor:pointer;
- transition:all .2s}
-.chip:hover{color:var(--ink);border-color:rgba(244,241,234,.4)}
-.chip.on{background:var(--accent);border-color:var(--accent);color:#0f0d09;font-weight:700}
-.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:26px 22px;padding-bottom:80px}
-.ev-card{text-decoration:none;color:inherit;display:flex;flex-direction:column;position:relative}
-.ev-thumb{aspect-ratio:4/3;border-radius:12px;background-size:cover;background-position:center;
- border:1px solid var(--line);position:relative;overflow:hidden;
- filter:grayscale(.25);transition:filter .4s,transform .4s}
-.ev-card:hover .ev-thumb{filter:grayscale(0);transform:translateY(-3px)}
-.ev-count{position:absolute;right:11px;bottom:11px;background:rgba(10,10,10,.72);backdrop-filter:blur(6px);
- border-radius:100px;padding:5px 11px;font-size:10.5px;letter-spacing:.08em;color:var(--ink)}
-.ev-meta{display:flex;gap:8px;align-items:center;font-size:10.5px;letter-spacing:.16em;
- text-transform:uppercase;color:var(--accent);margin:15px 0 8px}
-.ev-meta .g{color:var(--ink-mute)} .ev-meta .dot{color:var(--ink-mute)}
-.ev-name{font-size:20px;font-weight:600;letter-spacing:-.02em;margin:0 0 7px;line-height:1.25}
-.ev-sub{color:var(--ink-mute);font-size:13.5px;line-height:1.55;margin:0}
-.ev-go{margin-top:12px;color:var(--ink-mute);font-size:17px;transition:transform .3s,color .3s}
-.ev-card:hover .ev-go{color:var(--accent);transform:translateX(5px)}
-@media(max-width:960px){.grid{grid-template-columns:repeat(2,1fr)}}
-@media(max-width:620px){.grid{grid-template-columns:1fr}}
 
-.back{display:inline-flex;align-items:center;gap:9px;color:var(--ink-mute);text-decoration:none;
- font-size:12.5px;letter-spacing:.06em;text-transform:uppercase;padding:34px 0 0}
+.back{display:inline-flex;gap:9px;color:var(--ink-mute);text-decoration:none;font-size:12.5px;
+ letter-spacing:.06em;text-transform:uppercase;padding:34px 0 0}
 .back:hover{color:var(--accent)}
-.d-head{padding:26px 0 34px}
+.d-head{padding:26px 0 0}
 .d-head h1{font-size:clamp(34px,4.6vw,62px);font-weight:600;letter-spacing:-.04em;margin:14px 0 16px;line-height:1.05}
-.d-head p{color:var(--ink-mute);font-size:15.5px;line-height:1.7;max-width:60ch;margin:0}
-.d-facts{display:flex;gap:44px;margin-top:30px;flex-wrap:wrap;padding-bottom:34px;border-bottom:1px solid var(--line)}
-.d-facts .n{font-size:28px;font-weight:600;letter-spacing:-.03em}
-.d-facts .l{font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-mute);margin-top:4px}
-.gal{columns:3;column-gap:14px;padding:34px 0 80px}
+.d-head p{color:var(--ink-mute);font-size:15.5px;line-height:1.7;max-width:62ch;
+ margin:0 0 36px;padding-bottom:36px;border-bottom:1px solid var(--line)}
+.gal{columns:3;column-gap:14px;padding:0 0 80px}
 .g-item{margin:0 0 14px;break-inside:avoid}
 .g-item img{width:100%;display:block;border-radius:10px;border:1px solid var(--line)}
 @media(max-width:900px){.gal{columns:2}}
 @media(max-width:600px){.gal{columns:1}}
 </style></head><body>
-<div class="note"><strong>หน้ารายละเอียดของแต่ละงาน</strong> — ตัวอย่างคือ TRC ใช้รูปจริงทั้ง 17 รูปที่มีในโปรเจกต์
-· ตัวเลขด้านล่างเป็นตัวเลขจริงที่เว็บระบุไว้แล้ว งานอื่นที่ยังไม่มีตัวเลขจะเว้นแถวนี้ไป</div>
+<div class="note"><strong>หน้าของแต่ละงาน</strong> — ตัวอย่างคือ TRC ใช้รูปจริง 17 รูป ·
+เหลือแค่ชื่องาน คำอธิบาย และแกลเลอรี ไม่มีตัวเลขแล้ว</div>
 <div class="wrap">
   <a class="back" href="/preview-events-list.html">← กลับไปหน้า Events</a>
   <div class="d-head">
     <div class="eyebrow">Conference · งานของเราเอง</div>
     <h1>TRC — Thailand<br>Restaurant Conference</h1>
     <p>งานประชุมเรือธงของวงการร้านอาหารไทย หลายเวที หลายวัน สำหรับเจ้าของร้านและผู้บริหารระดับสูง — ห้องที่การตัดสินใจประจำปีเกิดขึ้นจริง</p>
-    <div class="d-facts">
-      <div><div class="n">4,500</div><div class="l">Owners</div></div>
-      <div><div class="n">45</div><div class="l">Speakers</div></div>
-      <div><div class="n">3</div><div class="l">Days</div></div>
-      <div><div class="n">45</div><div class="l">Provinces</div></div>
-    </div>
   </div>
   <div class="gal"><figure class="g-item"><img src="/ecosystem/Event/TRC/AW_Promote%20%E0%B8%82%E0%B8%B6%E0%B9%89%E0%B8%99%E0%B8%88%E0%B8%AD-04.jpg" alt="TRC — Thailand Restaurant Conference" loading="lazy"></figure><figure class="g-item"><img src="/ecosystem/Event/TRC/C%20%281%20of%2062%29%20%281%29.jpg" alt="TRC — Thailand Restaurant Conference" loading="lazy"></figure><figure class="g-item"><img src="/ecosystem/Event/TRC/C%20%2811%20of%2062%29.jpg" alt="TRC — Thailand Restaurant Conference" loading="lazy"></figure><figure class="g-item"><img src="/ecosystem/Event/TRC/C%20%2812%20of%2062%29.jpg" alt="TRC — Thailand Restaurant Conference" loading="lazy"></figure><figure class="g-item"><img src="/ecosystem/Event/TRC/C%20%2828%20of%2062%29.jpg" alt="TRC — Thailand Restaurant Conference" loading="lazy"></figure><figure class="g-item"><img src="/ecosystem/Event/TRC/F6A4E49E-4D46-4444-8C30-E7E04084B5B1.jpg" alt="TRC — Thailand Restaurant Conference" loading="lazy"></figure><figure class="g-item"><img src="/ecosystem/Event/TRC/FEC0A596-0CD8-4579-AFFC-16DA272C048A.jpg" alt="TRC — Thailand Restaurant Conference" loading="lazy"></figure><figure class="g-item"><img src="/ecosystem/Event/TRC/trc1.jpg" alt="TRC — Thailand Restaurant Conference" loading="lazy"></figure><figure class="g-item"><img src="/ecosystem/Event/TRC/trc2.jpg" alt="TRC — Thailand Restaurant Conference" loading="lazy"></figure><figure class="g-item"><img src="/ecosystem/Event/TRC/trc3.jpg" alt="TRC — Thailand Restaurant Conference" loading="lazy"></figure><figure class="g-item"><img src="/ecosystem/Event/TRC/trc4.JPG" alt="TRC — Thailand Restaurant Conference" loading="lazy"></figure><figure class="g-item"><img src="/ecosystem/Event/TRC/trc5.jpg" alt="TRC — Thailand Restaurant Conference" loading="lazy"></figure><figure class="g-item"><img src="/ecosystem/Event/TRC/trc6.jpg" alt="TRC — Thailand Restaurant Conference" loading="lazy"></figure><figure class="g-item"><img src="/ecosystem/Event/TRC/trc7.jpg" alt="TRC — Thailand Restaurant Conference" loading="lazy"></figure><figure class="g-item"><img src="/ecosystem/Event/TRC/trc8.jpg" alt="TRC — Thailand Restaurant Conference" loading="lazy"></figure><figure class="g-item"><img src="/ecosystem/Event/TRC/trc9.jpg" alt="TRC — Thailand Restaurant Conference" loading="lazy"></figure><figure class="g-item"><img src="/ecosystem/Event/TRC/%E0%B8%AB%E0%B8%AB%E0%B8%AB%E0%B8%AB.jpg" alt="TRC — Thailand Restaurant Conference" loading="lazy"></figure></div>
 </div></body></html>
