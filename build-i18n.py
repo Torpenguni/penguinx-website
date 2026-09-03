@@ -12,7 +12,10 @@ import json, os, re, sys, glob
 
 LANGS = {
     'th': {'code': 'th', 'htmlLang': 'th', 'ogLocale': 'th_TH', 'label': 'ไทย'},
-    'zh': {'code': 'zh', 'htmlLang': 'zh-Hans', 'ogLocale': 'zh_CN', 'label': '中文'},
+    # หน้า Events ยังไม่แปลจีน เจ้าของเว็บขอรอเนื้อหานิ่งก่อน
+    # ถ้าปล่อยให้สร้าง หน้าจีนจะมีเนื้อหาอังกฤษปนทั้งหน้า จึงกันไว้ทั้งชุด
+    'zh': {'code': 'zh', 'htmlLang': 'zh-Hans', 'ogLocale': 'zh_CN', 'label': '中文',
+           'skip': ('events.html', 'events/')},
 }
 SITE = 'https://www.penguinx.co'
 # ไฟล์ที่ไม่ใช่หน้าเว็บ — ลิงก์พวกนี้ห้ามเติม prefix ภาษา
@@ -36,6 +39,8 @@ def switcher(rel_path, current):
         return base + rel_path
     items = []
     for code, label in (('en', 'EN'), ('th', 'ไทย'), ('zh', '中文')):
+        if code in LANGS and any(rel_path.startswith(x) for x in LANGS[code].get('skip', ())):
+            continue          # ยังไม่มีหน้านี้ในภาษานั้น อย่าให้กดไปเจอ 404
         cur = ' aria-current="true"' if code == current else ''
         items.append(f'<a href="{href(code)}" hreflang="{code}"{cur}>{label}</a>')
     return '<div class="lang-switch">' + ''.join(items) + '</div>'
@@ -43,6 +48,9 @@ def switcher(rel_path, current):
 def hreflangs(rel_path):
     rows = [f'<link rel="alternate" hreflang="en" href="{SITE}/{rel_path}">']
     for code in LANGS:
+        # ภาษาที่ยังไม่ได้แปลหน้านี้ ห้ามประกาศ hreflang ไม่งั้นชี้ไปหน้าที่ไม่มีอยู่
+        if any(rel_path.startswith(x) for x in LANGS[code].get('skip', ())):
+            continue
         rows.append(f'<link rel="alternate" hreflang="{LANGS[code]["htmlLang"]}" href="{SITE}/{code}/{rel_path}">')
     rows.append(f'<link rel="alternate" hreflang="x-default" href="{SITE}/{rel_path}">')
     return '\n'.join(rows)
@@ -190,5 +198,7 @@ if __name__ == '__main__':
     for src in targets:
         add_switcher_to_english(src)
         for code in LANGS:
+            if any(src.startswith(x) for x in LANGS[code].get('skip', ())):
+                continue
             print('  สร้าง', build(src, code))
     print(f'\nเสร็จ {len(targets)} หน้า × {len(LANGS)} ภาษา')

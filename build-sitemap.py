@@ -10,6 +10,8 @@ import glob, subprocess, os
 
 SITE = 'https://www.penguinx.co'
 LANGS = [('en', ''), ('th', 'th/'), ('zh-Hans', 'zh/')]
+# บางหน้ายังไม่ได้แปลครบทุกภาษา ต้องเช็คว่าไฟล์มีอยู่จริงก่อนใส่ลง sitemap
+# ไม่งั้น Google จะไล่เก็บแล้วเจอ 404 ซึ่งเสียคะแนนมากกว่าไม่ประกาศไปเลย
 
 def pages():
     out = []
@@ -32,15 +34,18 @@ def url_of(page, prefix):
     rel = '' if page == 'index.html' else page
     return f'{SITE}/{prefix}{rel}'
 
+def exists(page, prefix):
+    return os.path.exists(page if prefix == '' else prefix + page)
+
 rows = []
 for page in pages():
-    # หน้าเดียวกันมี 3 ภาษา ใช้ commit ล่าสุดของทั้งชุดเป็น lastmod ร่วมกัน
-    mod = lastmod([page, f'th/{page}', f'zh/{page}'])
+    live = [(code, pre) for code, pre in LANGS if exists(page, pre)]
+    mod = lastmod([page] + [pre + page for _, pre in live if pre])
     alts = '\n'.join(
         f'    <xhtml:link rel="alternate" hreflang="{code}" href="{url_of(page, pre)}"/>'
-        for code, pre in LANGS)
+        for code, pre in live)
     alts += f'\n    <xhtml:link rel="alternate" hreflang="x-default" href="{url_of(page, "")}"/>'
-    for _, pre in LANGS:
+    for _, pre in live:
         loc = url_of(page, pre)
         mod_tag = f'\n    <lastmod>{mod}</lastmod>' if mod else ''
         rows.append(f'  <url>\n    <loc>{loc}</loc>{mod_tag}\n{alts}\n  </url>')

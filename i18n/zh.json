@@ -539,7 +539,8 @@
   "<h2 class=\"vp-title\"> <span class=\"light\">How PenguinX</span><br> turns the ecosystem into <span class=\"accent\">commercial outcomes</span>. </h2>": "<h2 class=\"vp-title\">\n      <span class=\"light\">PenguinX 如何把生态系统</span><br>\n      变成<span class=\"accent\">实际的商业成果</span>。\n    </h2>",
   "<h1 class=\"article-title\"> How Lineman Wongnai drove nationwide brand activations <span class=\"light\">with PenguinX</span> </h1>": "<h1 class=\"article-title\">\n    Lineman Wongnai 携手 <span class=\"light\">PenguinX</span> 推动全国品牌活动\n  </h1>",
   "<h2 class=\"section-title\"> From the<br> <span class=\"light\">PenguinX</span> <span class=\"accent\">newsroom</span><span class=\"end-dot\"></span> </h2>": "<h2 class=\"section-title\">\n    来自<br>\n    <span class=\"light\">PenguinX</span> <span class=\"accent\">编辑部</span><span class=\"end-dot\"></span>\n  </h2>",
-  "<div class=\"stat\"> <div class=\"num\">2.0M<span class=\"light\">+</span></div> <div class=\"label\">Followers</div> </div>": "<div class=\"stat\">\n          <div class=\"num\">2.0M<span class=\"light\">+</span></div>\n          <div class=\"label\">餐饮经营者</div>\n        </div>"
+  "<div class=\"stat\"> <div class=\"num\">2.0M<span class=\"light\">+</span></div> <div class=\"label\">Followers</div> </div>": "<div class=\"stat\">\n          <div class=\"num\">2.0M<span class=\"light\">+</span></div>\n          <div class=\"label\">餐饮经营者</div>\n        </div>",
+  "<li><a href=\"/zh/events.html\">Events</a></li>": ""
  },
  "_js": {
   "viewsFormat": "{n} 次观看",

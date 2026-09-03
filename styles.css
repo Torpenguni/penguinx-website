@@ -1735,3 +1735,83 @@ html[lang^="zh"] .eco-name br { display:none }
 
 /* หัวข้อส่วนข่าวชิดการ์ดแถวแรกพอดี (0px) ให้เว้นเท่าส่วน Selected Work */
 .news .section-title{margin-bottom:64px}
+
+/* ============================================================
+   หน้า Events — รายการงาน และแกลเลอรีของแต่ละงาน
+   ============================================================ */
+.ev-hero{padding:120px 32px 44px;max-width:1320px;margin:0 auto}
+.ev-eyebrow{font-size:11px;letter-spacing:0.2em;text-transform:uppercase;color:var(--accent);margin-bottom:18px}
+.ev-title{font-family:'Anuphan',sans-serif;font-size:clamp(38px,5.6vw,76px);font-weight:600;
+  line-height:1.03;letter-spacing:-0.04em;margin:0 0 20px}
+.ev-title .light{color:var(--ink-mute);font-weight:300}
+.ev-title .accent{color:var(--accent)}
+.ev-lead{color:var(--ink-mute);font-size:16px;line-height:1.7;max-width:62ch;margin:0}
+
+.ev-wrap{max-width:1320px;margin:0 auto;padding:0 32px 90px}
+.ev-filters{display:flex;gap:9px;flex-wrap:wrap;padding:30px 0 4px;border-top:1px solid var(--line)}
+.ev-chip{background:none;border:1px solid rgba(244,241,234,0.2);color:var(--ink-mute);border-radius:100px;
+  padding:9px 17px;font-family:'Anuphan',sans-serif;font-size:12.5px;font-weight:500;cursor:pointer;
+  transition:color .2s ease,border-color .2s ease,background .2s ease}
+.ev-chip:hover{color:var(--ink);border-color:rgba(244,241,234,0.4)}
+.ev-chip.on{background:var(--accent);border-color:var(--accent);color:#0f0d09;font-weight:700}
+.ev-chip:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+
+.ev-sec{font-size:11px;letter-spacing:0.18em;text-transform:uppercase;color:var(--ink-mute);
+  margin:34px 0 16px;padding-top:22px;border-top:1px solid var(--line)}
+.ev-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px 22px}
+.ev-grid.last{padding-bottom:10px}
+.ev-card{text-decoration:none;color:inherit;display:flex;flex-direction:column}
+.ev-thumb{aspect-ratio:4/3;border-radius:12px;background-size:cover;background-position:center;
+  border:1px solid var(--line);position:relative;overflow:hidden;
+  filter:grayscale(0.25);transition:filter .4s ease,transform .4s ease}
+a.ev-card:hover .ev-thumb{filter:grayscale(0);transform:translateY(-3px)}
+.ev-thumb.empty{background:var(--bg-2);border-style:dashed;display:grid;place-items:center;
+  color:var(--ink-mute);font-size:12.5px;letter-spacing:0.04em}
+.ev-count{position:absolute;right:11px;bottom:11px;background:rgba(10,10,10,0.72);
+  backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);
+  border-radius:100px;padding:5px 11px;font-size:10.5px;letter-spacing:0.06em;color:var(--ink)}
+.ev-meta{display:flex;gap:8px;font-size:10.5px;letter-spacing:0.16em;text-transform:uppercase;
+  color:var(--accent);margin:15px 0 8px}
+.ev-meta .g,.ev-meta .dot{color:var(--ink-mute)}
+.ev-name{font-family:'Anuphan',sans-serif;font-size:20px;font-weight:600;letter-spacing:-0.02em;
+  margin:0 0 7px;line-height:1.25}
+.ev-sub{color:var(--ink-mute);font-size:13.5px;line-height:1.55;margin:0}
+.ev-go{margin-top:12px;color:var(--ink-mute);font-size:17px;transition:transform .3s ease,color .3s ease}
+a.ev-card:hover .ev-go{color:var(--accent);transform:translateX(5px)}
+/* กล่องที่ยังไม่มีเนื้อหา ทำให้จางลงเพื่อไม่ให้แย่งสายตาจากงานจริง */
+.ev-card.slot{opacity:0.5}
+
+/* หน้าของแต่ละงาน */
+.evd{max-width:1320px;margin:0 auto;padding:104px 32px 0}
+.evd-back{display:inline-flex;align-items:center;gap:9px;color:var(--ink-mute);text-decoration:none;
+  font-size:12.5px;letter-spacing:0.06em;text-transform:uppercase;margin-bottom:26px;transition:color .2s ease}
+.evd-back:hover{color:var(--accent)}
+.evd-title{font-family:'Anuphan',sans-serif;font-size:clamp(34px,4.6vw,62px);font-weight:600;
+  letter-spacing:-0.04em;line-height:1.05;margin:14px 0 16px}
+.evd-sub{color:var(--ink-mute);font-size:15.5px;line-height:1.7;max-width:62ch;margin:0 0 26px}
+.evd-link{display:inline-flex;align-items:center;gap:10px;padding:11px 18px;
+  border:1px solid rgba(244,241,234,0.24);border-radius:100px;font-size:12.5px;font-weight:600;
+  letter-spacing:0.05em;text-transform:uppercase;color:var(--ink);text-decoration:none;
+  transition:color .2s ease,border-color .2s ease,background .2s ease}
+.evd-link .arrow{color:var(--accent);transition:transform .25s ease}
+.evd-link:hover{color:var(--accent);border-color:rgba(219,169,58,0.55);background:rgba(219,169,58,0.07)}
+.evd-link:hover .arrow{transform:translate(3px,-3px)}
+html[lang^="zh"] .evd-link,html[lang^="zh"] .ev-chip{letter-spacing:0.02em}
+
+/* แกลเลอรีแบบ masonry — รูปแนวตั้งแนวนอนคละกันได้โดยไม่ต้องครอป */
+.evd-gallery{max-width:1320px;margin:0 auto;padding:40px 32px 90px;columns:3;column-gap:16px}
+.evg-item{margin:0 0 16px;break-inside:avoid}
+.evg-item img{width:100%;display:block;border-radius:10px;border:1px solid var(--line)}
+
+@media (max-width:960px){
+  .ev-grid{grid-template-columns:repeat(2,1fr)}
+  .evd-gallery{columns:2}
+}
+@media (max-width:620px){
+  .ev-hero{padding:96px 20px 34px}
+  .ev-wrap{padding:0 20px 70px}
+  .ev-grid{grid-template-columns:1fr}
+  .evd{padding:88px 20px 0}
+  .evd-gallery{columns:1;padding:30px 20px 70px}
+}
+.ev-count i{font-style:normal}
