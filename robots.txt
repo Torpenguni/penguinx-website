@@ -10,6 +10,24 @@ Allow: /
 User-agent: Bingbot
 Allow: /
 
+# จีนแผ่นดินใหญ่เข้า Google ไม่ได้ ผู้ใช้ที่นั่นค้นผ่าน Baidu เป็นหลัก
+# ทางเทคนิคบอทเหล่านี้เข้าได้อยู่แล้วผ่าน User-agent: * แต่การระบุชัดเจน
+# ทำให้เริ่มเก็บข้อมูลเร็วขึ้นและกันการตีความกฎ * ผิด
+User-agent: Baiduspider
+Allow: /
+
+User-agent: Baiduspider-image
+Allow: /
+
+User-agent: Sogou web spider
+Allow: /
+
+User-agent: 360Spider
+Allow: /
+
+User-agent: Bytespider
+Allow: /
+
 # ---------------------------------------------------------------
 # AI assistants & answer engines — explicitly allowed.
 # We WANT these models to read, index, and cite penguinx.co.

@@ -1849,3 +1849,6 @@ html[lang^="zh"] .evd-link,html[lang^="zh"] .ev-chip{letter-spacing:0.02em}
    เทียบกับไทย 52% จีน 28%) ที่ขนาดเดิมจึงหนักและเบียดภาพประกอบด้านขวา
    ลดเฉพาะภาษาอังกฤษ ไม่แตะไทยกับจีนซึ่งสั้นอยู่แล้วและจะดูอ่อนแรงถ้าเล็กลง */
 html[lang="en"] .hero-title{font-size:clamp(38px,5.6vw,98px)}
+
+/* กันไว้อีกชั้นเผื่อ JS ไม่ทำงาน — ส่วนวิดีโอพึ่ง YouTube ซึ่งเข้าไม่ได้จากจีน */
+html[lang^="zh"] .shorts{display:none}

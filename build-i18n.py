@@ -15,7 +15,7 @@ LANGS = {
     # หน้า Events ยังไม่แปลจีน เจ้าของเว็บขอรอเนื้อหานิ่งก่อน
     # ถ้าปล่อยให้สร้าง หน้าจีนจะมีเนื้อหาอังกฤษปนทั้งหน้า จึงกันไว้ทั้งชุด
     'zh': {'code': 'zh', 'htmlLang': 'zh-Hans', 'ogLocale': 'zh_CN', 'label': '中文',
-           'skip': ('events.html', 'events/')},
+           'skip': ('events.html', 'events/'), 'alsoHreflang': 'zh-CN'},
 }
 SITE = 'https://www.penguinx.co'
 # ไฟล์ที่ไม่ใช่หน้าเว็บ — ลิงก์พวกนี้ห้ามเติม prefix ภาษา
@@ -74,6 +74,10 @@ def hreflangs(rel_path):
         if any(rel_path.startswith(x) for x in LANGS[code].get('skip', ())):
             continue
         rows.append(f'<link rel="alternate" hreflang="{LANGS[code]["htmlLang"]}" href="{SITE}/{code}/{rel_path}">')
+        # Baidu ตีความ region code (zh-CN) ได้ดีกว่า script code (zh-Hans)
+        # ประกาศทั้งคู่ ไม่ขัดกันเพราะชี้ URL เดียวกัน
+        if LANGS[code].get('alsoHreflang'):
+            rows.append(f'<link rel="alternate" hreflang="{LANGS[code]["alsoHreflang"]}" href="{SITE}/{code}/{rel_path}">')
     rows.append(f'<link rel="alternate" hreflang="x-default" href="{SITE}/{rel_path}">')
     return '\n'.join(rows)
 

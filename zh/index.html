@@ -12,6 +12,7 @@
 <link rel="alternate" hreflang="en" href="https://www.penguinx.co/">
 <link rel="alternate" hreflang="th" href="https://www.penguinx.co/th/">
 <link rel="alternate" hreflang="zh-Hans" href="https://www.penguinx.co/zh/">
+<link rel="alternate" hreflang="zh-CN" href="https://www.penguinx.co/zh/">
 <link rel="alternate" hreflang="x-default" href="https://www.penguinx.co/">
 <link rel="canonical" href="https://www.penguinx.co/zh/">
 <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
@@ -1046,6 +1047,13 @@
   (async function(){
     const scroller = document.getElementById('shortsScroller');
     if(!scroller) return;
+    // YouTube ถูกบล็อกในจีนแผ่นดินใหญ่ ถ้าปล่อยให้ทำงานต่อ ผู้ใช้ที่นั่นจะเจอ
+    // การ์ดว่างและคำขอที่ค้างไปยัง i.ytimg.com จึงหยุดตั้งแต่ต้นและซ่อนทั้งส่วน
+    if (document.documentElement.lang.startsWith('zh')) {
+      const sec = scroller.closest('.shorts');
+      if (sec) sec.remove();
+      return;
+    }
     function escapeHtml(s){return String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));}
     // ชื่อคลิปที่ YouTube API ส่งมาเป็นภาษาไทยเสมอ หน้าภาษาอื่นจึงแปลผ่านตาราง
     // ที่ build-i18n.py ฉีดมาให้ คลิปใหม่ที่ยังไม่อยู่ในตารางจะคงชื่อไทยไว้
