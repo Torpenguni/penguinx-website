@@ -85,7 +85,12 @@ def translate_text(html, tmap):
 
     def attr(m):
         name, val = m.group(1), m.group(2)
-        return f'{name}="{tmap[val]}"' if val in tmap else m.group(0)
+        # HTML เขียน &amp; แต่คีย์ในไฟล์แปลเขียน & ตรง ๆ ต้องลองทั้งสองแบบ
+        # ไม่งั้น meta description ที่มีคำว่า F&B จะไม่ถูกแปลเลย
+        for k in (val, val.replace('&amp;', '&')):
+            if k in tmap:
+                return f'{name}="{tmap[k]}"'
+        return m.group(0)
     html = re.sub(r'\b(content|alt|title|placeholder|aria-label)="([^"]+)"', attr, html)
     return html
 
