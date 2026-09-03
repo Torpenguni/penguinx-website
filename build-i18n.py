@@ -47,16 +47,24 @@ def hreflangs(rel_path):
     rows.append(f'<link rel="alternate" hreflang="x-default" href="{SITE}/{rel_path}">')
     return '\n'.join(rows)
 
-def translate_blocks(html, blocks):
+def translate_blocks(html, blocks, keep):
+    """เก็บผลลัพธ์ไว้เป็นรหัสแทน แล้วค่อยใส่กลับหลังแปลรายคำเสร็จ
+
+    ถ้าปล่อยไว้เฉย ๆ ตัวแปลรายคำจะไล่แปลข้อความข้างในบล็อกซ้ำอีกรอบ
+    ทำให้บล็อกที่ตั้งใจให้คงภาษาอังกฤษ (เช่นการ์ด ecosystem ในหน้าไทย)
+    ถูกแปลทับ การแทนทั้งก้อนต้องถือเป็นที่สิ้นสุด"""
     """แทนทั้งก้อน HTML สำหรับหัวข้อที่คำถูกหั่นเป็นหลาย <span>
 
     ตัวแทนรายคำ (translate_text) ทำหัวข้อพวกนี้ไม่ได้ เพราะคำอย่าง "us"/"to"
     อยู่คนละ element กัน แปลทีละชิ้นแล้วเรียงกลับมาจะได้ประโยคที่ผิดไวยากรณ์
     จีน/ไทย ก้อนพวกนี้จึงต้องเขียนใหม่ทั้งอันพร้อมกำหนดจุดขึ้นบรรทัดเอง
     จับแบบยืดหยุ่นช่องว่าง เพราะต้นฉบับจัดย่อหน้าไว้หลายบรรทัด"""
-    for src, dst in blocks.items():
+    for i, (src, dst) in enumerate(blocks.items()):
         pattern = r'\s+'.join(re.escape(w) for w in src.split())
-        html = re.sub(pattern, lambda m, d=dst: d, html, count=1)
+        token = f'\x00BLOCK{i}\x00'
+        html, n = re.subn(pattern, lambda m, t=token: t, html, count=1)
+        if n:
+            keep[token] = dst
     return html
 
 def js_config(cfg_js):
@@ -141,8 +149,11 @@ def build(src, code):
 
     html = localise_assets(html, src)
     html = localise_links(html, code)
-    html = translate_blocks(html, blocks)
+    kept = {}
+    html = translate_blocks(html, blocks, kept)
     html = translate_text(html, tmap)
+    for token, dst in kept.items():
+        html = html.replace(token, dst, 1)
     html = re.sub(r'(<body[^>]*>)', lambda m: m.group(1) + '\n' + js_config(cfg_js), html, count=1)
     html = re.sub(r'<html[^>]*>', f'<html lang="{cfg["htmlLang"]}">', html, count=1)
     html = html.replace('<meta property="og:locale" content="en_US">',
