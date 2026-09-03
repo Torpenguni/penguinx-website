@@ -8,7 +8,7 @@
 ใช้:  python3 build-i18n.py            # สร้างทุกหน้า
       python3 build-i18n.py index.html # เฉพาะหน้าที่ระบุ
 """
-import json, os, re, sys, glob
+import json, os, re, sys, glob, urllib.parse
 
 LANGS = {
     'th': {'code': 'th', 'htmlLang': 'th', 'ogLocale': 'th_TH', 'label': 'ไทย'},
@@ -16,7 +16,53 @@ LANGS = {
     # ถ้าปล่อยให้สร้าง หน้าจีนจะมีเนื้อหาอังกฤษปนทั้งหน้า จึงกันไว้ทั้งชุด
     'zh': {'code': 'zh', 'htmlLang': 'zh-Hans', 'ogLocale': 'zh_CN', 'label': '中文',
            'skip': ('events.html', 'events/'), 'alsoHreflang': 'zh-CN'},
+    # ญี่ปุ่นเพิ่งเริ่ม ทำเฉพาะหน้าแรกก่อนให้เจ้าของภาษาตรวจ
+    # 'only' คือรายชื่อหน้าที่ภาษานั้นมีจริง หน้าที่เหลือจะไม่ถูกสร้าง
+    # ไม่ประกาศ hreflang และไม่ขึ้นในปุ่มสลับภาษา จนกว่าจะแปลเพิ่ม
+    'ja': {'code': 'ja', 'htmlLang': 'ja', 'ogLocale': 'ja_JP', 'label': '日本語',
+           'only': ('index.html',)},
 }
+
+def has_page(code, rel_path):
+    """ภาษานี้มีหน้านี้จริงไหม — ใช้ตัดสินทั้งการสร้างไฟล์ hreflang และปุ่มสลับภาษา
+    ถ้าไม่เช็ค จะได้ลิงก์ที่กดแล้ว 404 และ sitemap ที่ประกาศ URL ที่ไม่มีอยู่"""
+    cfg = LANGS.get(code)
+    if cfg is None:
+        return True                       # 'en' คือต้นฉบับ มีทุกหน้าเสมอ
+    src = rel_path or 'index.html'
+    if any(src.startswith(x) for x in cfg.get('skip', ())):
+        return False
+    only = cfg.get('only')
+    return src in only if only else True
+
+def withheld(code, rel_path):
+    """หน้าที่ตั้งใจไม่ให้ภาษานี้เห็น (skip) ต่างจากหน้าที่แค่ยังแปลไม่ถึง (only)
+
+    skip = เนื้อหายังไม่พร้อมในภาษานั้น เจ้าของสั่งซ่อน — ต้องลบเมนูทิ้ง
+    only = ภาษาใหม่ที่เพิ่งทำหน้าแรก — เมนูยังต้องมี แต่ให้ชี้ฉบับอังกฤษ
+           ผู้อ่านยังเดินต่อได้ ดีกว่าเมนูว่างเปล่าหรือกดแล้ว 404
+    """
+    cfg = LANGS.get(code)
+    if cfg is None:
+        return False
+    src = rel_path or 'index.html'
+    return any(src.startswith(x) for x in cfg.get('skip', ()))
+
+
+def drop_withheld_links(html, code):
+    """ตัดรายการเมนูที่ชี้ไปหน้าซึ่งภาษานี้สั่งซ่อนไว้"""
+    cfg = LANGS.get(code)
+    if not cfg or not cfg.get('skip'):
+        return html
+
+    def cut(m):
+        url = m.group(1)
+        if url.startswith(('http', '#', 'mailto:', 'tel:', '//')):
+            return m.group(0)
+        target = urllib.parse.unquote(url.lstrip('/').split('#')[0].split('?')[0])
+        return '' if withheld(code, target) else m.group(0)
+
+    return re.sub(r'<li>\s*<a href="([^"]+)"[^>]*>.*?</a>\s*</li>', cut, html, flags=re.S)
 SITE = 'https://www.penguinx.co'
 # ไฟล์ที่ไม่ใช่หน้าเว็บ — ลิงก์พวกนี้ห้ามเติม prefix ภาษา
 ASSET = re.compile(r'\.(css|js|png|jpe?g|JPG|JPEG|svg|webp|ico|gif|mp4|pdf|txt|xml)$', re.I)
@@ -27,16 +73,21 @@ def pages():
         # _template.html is linked from the news page and serves 200 in
         # production, so it needs a translated twin or those links 404 in
         # Thai and Chinese. Only the design previews are genuinely excluded.
-        if any(x in f for x in ('preview-', '/th/', '/zh/')) or f.startswith(('th/', 'zh/')):
+        # โฟลเดอร์ผลลัพธ์ของทุกภาษาต้องไม่ถูกนับเป็นต้นฉบับ อ่านจาก LANGS
+        # ไม่ใช่เขียนชื่อไว้ตรงนี้ ไม่งั้นเพิ่มภาษาใหม่แล้วลืมมาแก้
+        # ตัวสร้างจะกลับไปแปลไฟล์ที่ตัวเองเพิ่งเขียนออกมา
+        outdirs = tuple(f'{c}/' for c in LANGS)
+        if 'preview-' in f or f.startswith(outdirs) or any('/' + d in f for d in outdirs):
             continue
         out.append(f)
     return sorted(out)
 
-LANG_LABELS = (('en', 'EN'), ('th', 'ไทย'), ('zh', '中文'))
+LANG_LABELS = (('en', 'EN'), ('th', 'ไทย'), ('zh', '中文'), ('ja', '日本語'))
 
 # ป้ายของปุ่มเปิดเมนู เขียนไว้ตรงนี้เพราะ switcher ถูกแทรกหลัง translate_text
 # ทำงานเสร็จแล้ว ตัวแปลรายคำจึงมองไม่เห็น aria-label ตัวนี้
-SWITCH_ARIA = {'en': 'Change language', 'th': 'เปลี่ยนภาษา', 'zh': '切换语言'}
+SWITCH_ARIA = {'en': 'Change language', 'th': 'เปลี่ยนภาษา', 'zh': '切换语言',
+               'ja': '言語を切り替える'}
 
 
 def switcher(rel_path, current):
@@ -54,7 +105,7 @@ def switcher(rel_path, current):
         return base + rel_path
     items, now = [], ''
     for code, label in LANG_LABELS:
-        if code in LANGS and any(rel_path.startswith(x) for x in LANGS[code].get('skip', ())):
+        if not has_page(code, rel_path):
             continue          # ยังไม่มีหน้านี้ในภาษานั้น อย่าให้กดไปเจอ 404
         cur = ''
         if code == current:
@@ -71,7 +122,7 @@ def hreflangs(rel_path):
     rows = [f'<link rel="alternate" hreflang="en" href="{SITE}/{rel_path}">']
     for code in LANGS:
         # ภาษาที่ยังไม่ได้แปลหน้านี้ ห้ามประกาศ hreflang ไม่งั้นชี้ไปหน้าที่ไม่มีอยู่
-        if any(rel_path.startswith(x) for x in LANGS[code].get('skip', ())):
+        if not has_page(code, rel_path):
             continue
         rows.append(f'<link rel="alternate" hreflang="{LANGS[code]["htmlLang"]}" href="{SITE}/{code}/{rel_path}">')
         # Baidu ตีความ region code (zh-CN) ได้ดีกว่า script code (zh-Hans)
@@ -156,14 +207,21 @@ def localise_assets(html, src_page):
     return html
 
 def localise_links(html, code):
-    """ลิงก์ภายในให้อยู่ในภาษาเดียวกัน ส่วนไฟล์ภาพ/CSS ปล่อยชี้รากเหมือนเดิม"""
+    """ลิงก์ภายในให้อยู่ในภาษาเดียวกัน ส่วนไฟล์ภาพ/CSS ปล่อยชี้รากเหมือนเดิม
+
+    ภาษาที่ยังแปลไม่ครบทุกหน้า (เช่นญี่ปุ่นที่มีแค่หน้าแรก) ห้ามเปลี่ยน
+    ลิงก์ไปหน้าที่ยังไม่มี ไม่งั้นกดแล้วเจอ 404 กรณีนั้นให้ชี้ไปฉบับ
+    ภาษาอังกฤษไว้ก่อน ผู้ใช้ยังอ่านได้ ดีกว่าหน้าไม่พบ"""
     def fix(m):
         pre, url = m.group(1), m.group(2)
         if url.startswith(('http', '#', 'mailto:', 'tel:', '//')) or ASSET.search(url):
             return m.group(0)
         if url == '/':
-            return f'{pre}"/{code}/"'
+            return f'{pre}"/{code}/"' if has_page(code, '') else m.group(0)
         if url.startswith('/'):
+            target = urllib.parse.unquote(url.lstrip('/').split('#')[0].split('?')[0])
+            if not has_page(code, target):
+                return m.group(0)          # ปล่อยชี้หน้าอังกฤษ
             return f'{pre}"/{code}{url}"'
         return m.group(0)
     return re.sub(r'(href=)"([^"]+)"', fix, html)
@@ -189,6 +247,7 @@ def build(src, code):
 
     html = localise_assets(html, src)
     html = localise_links(html, code)
+    html = drop_withheld_links(html, code)
     kept = {}
     html = translate_blocks(html, blocks, kept)
     html = translate_text(html, tmap)
@@ -225,7 +284,7 @@ if __name__ == '__main__':
     for src in targets:
         add_switcher_to_english(src)
         for code in LANGS:
-            if any(src.startswith(x) for x in LANGS[code].get('skip', ())):
+            if not has_page(code, src):
                 continue
             print('  สร้าง', build(src, code))
     print(f'\nเสร็จ {len(targets)} หน้า × {len(LANGS)} ภาษา')

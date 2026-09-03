@@ -1852,3 +1852,33 @@ html[lang="en"] .hero-title{font-size:clamp(38px,5.6vw,98px)}
 
 /* กันไว้อีกชั้นเผื่อ JS ไม่ทำงาน — ส่วนวิดีโอพึ่ง YouTube ซึ่งเข้าไม่ได้จากจีน */
 html[lang^="zh"] .shorts{display:none}
+
+/* ============================================================
+   ภาษาญี่ปุ่น — Anuphan ไม่มีตัวอักษรญี่ปุ่น เบราว์เซอร์จึงเลือกฟอนต์ระบบเอง
+   ถ้าไม่กำหนดลำดับ Windows จะได้ MS PGothic ที่อ่านยากบนพื้นดำ
+   คง Anuphan ไว้หน้าสุดให้ตัวละติน (ชื่อแบรนด์ ตัวเลข) หน้าตาไม่เปลี่ยน
+   ============================================================ */
+html[lang="ja"] * {
+  font-family:'Anuphan','Hiragino Sans','Hiragino Kaku Gothic ProN','Yu Gothic',
+              'Noto Sans JP','Meiryo',sans-serif;
+}
+/* letter-spacing ติดลบออกแบบไว้สำหรับตัวละติน ตัวคานะ/คันจิกว้างเต็มช่องอยู่แล้ว */
+html[lang="ja"] .hero-title,
+html[lang="ja"] .section-title,
+html[lang="ja"] .eco-name,
+html[lang="ja"] .case-name,
+html[lang="ja"] .cta-title,
+html[lang="ja"] .shorts-title,
+html[lang="ja"] .ev-title,
+html[lang="ja"] .evd-title { letter-spacing:0 }
+html[lang="ja"] .evd-link,
+html[lang="ja"] .ev-chip,
+html[lang="ja"] .pg-item-link { letter-spacing:0.02em }
+
+
+/* ญี่ปุ่นเป็นตัวเต็มความกว้างเหมือนจีน แต่ประโยคยาวกว่ามาก บรรทัดที่ยาวสุด
+   11 ตัว ถ้าใช้ขั้นต่ำ 38px เท่าอังกฤษจะกินพื้นที่ 418px ล้นจอ 390px
+   ลดขั้นต่ำลงให้พอดี ส่วนจอกว้างยังโตตาม vw เหมือนเดิม */
+html[lang="ja"] .hero-title{font-size:clamp(26px,6vw,100px);line-height:1.12}
+html[lang="ja"] .hero-sub,
+html[lang="ja"] .hero-standfirst{text-wrap:pretty}

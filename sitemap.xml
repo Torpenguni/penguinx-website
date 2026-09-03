@@ -225,6 +225,7 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://www.penguinx.co/"/>
     <xhtml:link rel="alternate" hreflang="th" href="https://www.penguinx.co/th/"/>
     <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://www.penguinx.co/zh/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://www.penguinx.co/ja/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.penguinx.co/"/>
   </url>
   <url>
@@ -233,6 +234,7 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://www.penguinx.co/"/>
     <xhtml:link rel="alternate" hreflang="th" href="https://www.penguinx.co/th/"/>
     <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://www.penguinx.co/zh/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://www.penguinx.co/ja/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.penguinx.co/"/>
   </url>
   <url>
@@ -241,6 +243,16 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://www.penguinx.co/"/>
     <xhtml:link rel="alternate" hreflang="th" href="https://www.penguinx.co/th/"/>
     <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://www.penguinx.co/zh/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://www.penguinx.co/ja/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.penguinx.co/"/>
+  </url>
+  <url>
+    <loc>https://www.penguinx.co/ja/</loc>
+    <lastmod>2026-09-03</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.penguinx.co/"/>
+    <xhtml:link rel="alternate" hreflang="th" href="https://www.penguinx.co/th/"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://www.penguinx.co/zh/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://www.penguinx.co/ja/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.penguinx.co/"/>
   </url>
   <url>

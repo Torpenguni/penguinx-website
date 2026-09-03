@@ -9,14 +9,14 @@
 import glob, subprocess, os
 
 SITE = 'https://www.penguinx.co'
-LANGS = [('en', ''), ('th', 'th/'), ('zh-Hans', 'zh/')]
+LANGS = [('en', ''), ('th', 'th/'), ('zh-Hans', 'zh/'), ('ja', 'ja/')]
 # บางหน้ายังไม่ได้แปลครบทุกภาษา ต้องเช็คว่าไฟล์มีอยู่จริงก่อนใส่ลง sitemap
 # ไม่งั้น Google จะไล่เก็บแล้วเจอ 404 ซึ่งเสียคะแนนมากกว่าไม่ประกาศไปเลย
 
 def pages():
     out = []
     for f in glob.glob('**/*.html', recursive=True):
-        if f.startswith(('th/', 'zh/')) or 'preview-' in f or '_template' in f:
+        if f.startswith(('th/', 'zh/', 'ja/')) or 'preview-' in f or '_template' in f:
             continue
         out.append(f)
     return sorted(out)
