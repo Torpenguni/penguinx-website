@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>Preview — Events page | PenguinX</title>
+<link href="https://fonts.googleapis.com/css2?family=Anuphan:wght@100;200;300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0A0A0A;--bg-2:#141414;--ink:#F4F1EA;--ink-mute:#8A8781;--line:#242424;
+ --line-soft:#1c1c1c;--accent:#DBA93A}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:'Anuphan',sans-serif}
+.wrap{max-width:1320px;margin:0 auto;padding:0 32px}
+.note{max-width:1320px;margin:22px auto 0;padding:13px 18px;border:1px solid rgba(219,169,58,.35);
+ border-radius:10px;background:rgba(219,169,58,.06);font-size:13px;line-height:1.6}
+
+/* หัวหน้า */
+.ev-hero{padding:76px 0 52px}
+.eyebrow{font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--accent);margin-bottom:20px}
+.ev-hero h1{font-size:clamp(40px,6vw,84px);font-weight:600;line-height:1.02;letter-spacing:-.04em;margin:0 0 22px}
+.ev-hero h1 .light{color:var(--ink-mute);font-weight:300}
+.ev-hero p{color:var(--ink-mute);font-size:16px;line-height:1.7;max-width:62ch;margin:0}
+.ev-topstats{display:flex;gap:52px;margin-top:40px;flex-wrap:wrap}
+.ev-topstats .n{font-size:34px;font-weight:600;letter-spacing:-.03em}
+.ev-topstats .l{font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-mute);margin-top:5px}
+
+.sec-head{display:flex;align-items:baseline;gap:16px;padding:56px 0 26px;border-top:1px solid var(--line)}
+.sec-num{font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--accent);flex:none}
+.sec-head h2{font-size:clamp(24px,2.6vw,34px);font-weight:600;letter-spacing:-.03em;margin:0}
+.sec-head p{color:var(--ink-mute);font-size:14px;margin:0 0 0 auto;max-width:44ch;line-height:1.6}
+
+/* งานของเราเอง */
+.ev-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
+.ev-grid .ev-card:first-child{grid-column:1 / -1}
+.ev-card{background:var(--bg-2);border:1px solid var(--line);border-radius:14px;overflow:hidden;
+ display:flex;flex-direction:column;transition:border-color .3s ease,transform .3s ease}
+.ev-card:hover{border-color:rgba(219,169,58,.4);transform:translateY(-3px)}
+.ev-img{height:210px;background-size:cover;background-position:center;filter:grayscale(.25) contrast(1.05);
+ transition:filter .5s ease,transform .6s ease}
+.ev-grid .ev-card:first-child .ev-img{height:300px}
+.ev-card:hover .ev-img{filter:grayscale(0) contrast(1.1);transform:scale(1.03)}
+.ev-body{padding:24px 26px 26px;display:flex;flex-direction:column;flex:1}
+.ev-tag{font-size:10.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--accent);font-weight:500}
+.ev-name{font-size:23px;font-weight:600;letter-spacing:-.02em;margin:10px 0 8px}
+.ev-sub{color:var(--ink-mute);font-size:14px;line-height:1.55;margin:0 0 18px;max-width:52ch}
+.ev-stats{display:flex;gap:32px;margin-bottom:18px}
+.ev-stat .n{font-size:22px;font-weight:600;letter-spacing:-.02em}
+.ev-stat .l{font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-mute);margin-top:3px}
+.ev-link{margin-top:auto;align-self:flex-start;display:inline-flex;align-items:center;gap:10px;
+ padding:11px 18px;border:1px solid rgba(244,241,234,.24);border-radius:100px;font-size:12.5px;
+ font-weight:600;letter-spacing:.05em;text-transform:uppercase;color:var(--ink);text-decoration:none;
+ transition:color .2s,border-color .2s,background .2s}
+.ev-link .arrow{color:var(--accent);transition:transform .25s}
+.ev-link:hover{color:var(--accent);border-color:rgba(219,169,58,.55);background:rgba(219,169,58,.07)}
+.ev-link:hover .arrow{transform:translate(3px,-3px)}
+
+/* งานที่ทำให้แบรนด์อื่น — แบบ 1 แถวยาว */
+.cl-list{display:flex;flex-direction:column}
+.cl-row{display:grid;grid-template-columns:132px 1fr 40px;gap:26px;align-items:center;
+ padding:20px 0;border-bottom:1px solid var(--line);text-decoration:none;color:inherit;
+ transition:background .3s ease}
+.cl-row:hover{background:rgba(255,255,255,.02)}
+.cl-thumb{height:82px;border-radius:9px;background-size:cover;background-position:center;
+ filter:grayscale(.3);transition:filter .4s}
+.cl-row:hover .cl-thumb{filter:grayscale(0)}
+.cl-kind{font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--accent)}
+.cl-name{font-size:21px;font-weight:600;letter-spacing:-.02em;margin:7px 0 5px}
+.cl-sub{color:var(--ink-mute);font-size:13.5px;line-height:1.55;margin:0;max-width:76ch}
+.cl-arrow{color:var(--ink-mute);font-size:19px;transition:transform .3s,color .3s}
+.cl-row:hover .cl-arrow{color:var(--accent);transform:translateX(6px)}
+
+/* งานที่ทำให้แบรนด์อื่น — แบบ 2 การ์ด */
+.cl-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.cl-card{background:var(--bg-2);border:1px solid var(--line);border-radius:12px;overflow:hidden;
+ text-decoration:none;color:inherit;transition:border-color .3s,transform .3s}
+.cl-card:hover{border-color:rgba(219,169,58,.4);transform:translateY(-3px)}
+.cl-card-img{height:150px;background-size:cover;background-position:center;filter:grayscale(.3)}
+.cl-card:hover .cl-card-img{filter:grayscale(0)}
+.cl-card-body{padding:20px 22px 24px}
+.pad{padding-bottom:70px}
+@media (max-width:900px){.ev-grid,.cl-grid{grid-template-columns:1fr}
+ .cl-row{grid-template-columns:96px 1fr 28px;gap:16px}.sec-head p{display:none}}
+</style>
+</head>
+<body>
+<div class="note wrap-note" style="max-width:1256px">
+  <strong>นี่คือ preview ของหน้า Events</strong> — ตัวเลขของ TRC และ #ลงแขก เป็นตัวเลขจริงที่มีอยู่ในเว็บแล้ว
+  ส่วน Damn Expo / Restech / CafCon ยังไม่มีตัวเลข จึงเว้นไว้ ไม่ได้ใส่ตัวเลขที่เดาเอง
+  ด้านล่างมี “งานที่ทำให้แบรนด์อื่น” สองแบบให้เลือก
+</div>
+
+<div class="wrap">
+  <section class="ev-hero">
+    <div class="eyebrow">Events</div>
+    <h1>Where the industry<br><span class="light">actually</span> meets<span style="color:var(--accent)">.</span></h1>
+    <p>PenguinX runs five of its own event properties and produces events for the brands that want to reach the people in those rooms. Same team, same audience, two different jobs.</p>
+    <div class="ev-topstats">
+      <div><div class="n">10,000+</div><div class="l">Operators / yr</div></div>
+      <div><div class="n">5</div><div class="l">Owned properties</div></div>
+      <div><div class="n">90+</div><div class="l">Editions hosted</div></div>
+      <div><div class="n">45</div><div class="l">Provinces</div></div>
+    </div>
+  </section>
+
+  <div class="sec-head">
+    <div class="sec-num">01 / Owned</div>
+    <h2>Our own events</h2>
+    <p>Five properties we build, programme and host ourselves.</p>
+  </div>
+  <div class="ev-grid">
+<article class="ev-card">
+      <div class="ev-img" style="background-image:url('/ecosystem/Event/TRC/trc1.jpg')"></div>
+      <div class="ev-body">
+        <div class="ev-tag">Conference · Flagship</div>
+        <h3 class="ev-name">TRC — Thailand Restaurant Conference</h3>
+        <p class="ev-sub">Multi-day, multi-track programming for owners and senior operators. The room where annual decisions get made.</p>
+        <div class="ev-stats"><div class="ev-stat"><div class="n">4,500</div><div class="l">Owners</div></div><div class="ev-stat"><div class="n">45</div><div class="l">Speakers</div></div><div class="ev-stat"><div class="n">3</div><div class="l">Days</div></div></div>
+        <a class="ev-link" href="https://www.thailandrestaurantconference.org/" target="_blank" rel="noopener"><span>Website</span><span class="arrow">↗</span></a>
+      </div>
+    </article>
+<article class="ev-card">
+      <div class="ev-img" style="background-image:url('/ecosystem/Event/Damn/damn1.jpg')"></div>
+      <div class="ev-body">
+        <div class="ev-tag">Expo · Nightlife</div>
+        <h3 class="ev-name">Damn Expo</h3>
+        <p class="ev-sub">Nightlife and craft-liquor home expo. Bar owners, distributors, beverage brands on one floor.</p>
+        
+        <a class="ev-link" href="https://damnexpo.com" target="_blank" rel="noopener"><span>Website</span><span class="arrow">↗</span></a>
+      </div>
+    </article>
+<article class="ev-card">
+      <div class="ev-img" style="background-image:url('/ecosystem/Event/Restech/restech1.jpg')"></div>
+      <div class="ev-body">
+        <div class="ev-tag">Expo · Tech</div>
+        <h3 class="ev-name">Restech</h3>
+        <p class="ev-sub">Restaurant tech and equipment expo — live demos, comparison, on-floor procurement.</p>
+        
+        <a class="ev-link" href="https://www.restechexpo.com/" target="_blank" rel="noopener"><span>Website</span><span class="arrow">↗</span></a>
+      </div>
+    </article>
+<article class="ev-card">
+      <div class="ev-img" style="background-image:url('/ecosystem/Event/Cafcon/cafcon1.jpg')"></div>
+      <div class="ev-body">
+        <div class="ev-tag">Conference · Café</div>
+        <h3 class="ev-name">CafCon</h3>
+        <p class="ev-sub">The café business conference — coffee shop owners, roasters, category suppliers, one playbook.</p>
+        
+        <a class="ev-link" href="https://cafcon.co" target="_blank" rel="noopener"><span>Website</span><span class="arrow">↗</span></a>
+      </div>
+    </article>
+<article class="ev-card">
+      <div class="ev-img" style="background-image:url('/ecosystem/Event/%E0%B8%A5%E0%B8%87%E0%B9%81%E0%B8%82%E0%B8%81/%E0%B8%A5%E0%B8%87%E0%B9%81%E0%B8%82%E0%B8%811.png')"></div>
+      <div class="ev-body">
+        <div class="ev-tag">Community · Dinner</div>
+        <h3 class="ev-name">#LongKaek</h3>
+        <p class="ev-sub">Founder-only peer dinners — competitors turning into trusted allies, by invitation.</p>
+        <div class="ev-stats"><div class="ev-stat"><div class="n">90</div><div class="l">Editions</div></div><div class="ev-stat"><div class="n">45</div><div class="l">Provinces</div></div><div class="ev-stat"><div class="n">10K</div><div class="l">Guests</div></div></div>
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="sec-head">
+    <div class="sec-num">02 / Produced</div>
+    <h2>Events we produce for brands</h2>
+    <p>แบบ A — แถวยาว เห็นคำอธิบายเต็ม เหมาะกับงานที่ต้องเล่าว่าทำอะไร</p>
+  </div>
+  <div class="cl-list">
+<a class="cl-row" href="/work/thaifex-horec.html">
+      <div class="cl-thumb" style="background-image:url('/Selected%20wroks/Thaifex/DSC03984.JPG')"></div>
+      <div class="cl-text">
+        <div class="cl-kind">Conference programming</div>
+        <h3 class="cl-name">Thaifex Horec</h3>
+        <p class="cl-sub">Built the operator-focused conference inside Asia’s biggest food and hospitality trade show — from the speaker list up.</p>
+      </div>
+      <div class="cl-arrow">→</div>
+    </a>
+<a class="cl-row" href="/work/makro.html">
+      <div class="cl-thumb" style="background-image:url('/Selected%20wroks/Makro/AR509216.JPG')"></div>
+      <div class="cl-text">
+        <div class="cl-kind">Co-hosted product launch</div>
+        <h3 class="cl-name">Makro</h3>
+        <p class="cl-sub">Co-hosted the launch of a new F&amp;B product line under the PenguinX brand, with founder-led walkthrough and operator Q&amp;A.</p>
+      </div>
+      <div class="cl-arrow">→</div>
+    </a>
+<a class="cl-row" href="/work/lineman-wongnai.html">
+      <div class="cl-thumb" style="background-image:url('/Selected%20wroks/Lineman/A7R04081.JPG')"></div>
+      <div class="cl-text">
+        <div class="cl-kind">On-floor brand activations</div>
+        <h3 class="cl-name">Lineman Wongnai</h3>
+        <p class="cl-sub">Brand activations at TRC, Restech and CafCon to capture in-person leads from merchants nationwide.</p>
+      </div>
+      <div class="cl-arrow">→</div>
+    </a>
+<a class="cl-row" href="/work/pepsi-co.html">
+      <div class="cl-thumb" style="background-image:url('/Selected%20wroks/Pepsi/AR500564.JPG')"></div>
+      <div class="cl-text">
+        <div class="cl-kind">Nationwide activations</div>
+        <h3 class="cl-name">Pepsi Co.</h3>
+        <p class="cl-sub">On-floor presence across our event properties, plus provincial #LongKaek chapters, to reach independent operators.</p>
+      </div>
+      <div class="cl-arrow">→</div>
+    </a>
+<a class="cl-row" href="/work/impact.html">
+      <div class="cl-thumb" style="background-image:url('/Selected%20wroks/Imoact/DSC07712.JPG')"></div>
+      <div class="cl-text">
+        <div class="cl-kind">Joint event programming</div>
+        <h3 class="cl-name">Impact</h3>
+        <p class="cl-sub">Made a new F&amp;B business unit visible to operators through joint programming at TRC, Damn Expo and Restech.</p>
+      </div>
+      <div class="cl-arrow">→</div>
+    </a>
+<a class="cl-row" href="/work/streamwash.html">
+      <div class="cl-thumb" style="background-image:url('/Selected%20wroks/streamwash/SK8_9154.JPG')"></div>
+      <div class="cl-text">
+        <div class="cl-kind">Demos & lead capture</div>
+        <h3 class="cl-name">Streamwash</h3>
+        <p class="cl-sub">On-floor demos and operator conversations at Restech and CafCon, feeding a measurable sales pipeline.</p>
+      </div>
+      <div class="cl-arrow">→</div>
+    </a>
+  </div>
+
+  <div class="sec-head">
+    <div class="sec-num">02 / Produced</div>
+    <h2>Events we produce for brands</h2>
+    <p>แบบ B — การ์ด เน้นภาพงานจริง เหมาะถ้าอยากให้ดูเป็นผลงานมากกว่าคำอธิบาย</p>
+  </div>
+  <div class="cl-grid pad">
+<a class="cl-card" href="/work/thaifex-horec.html">
+      <div class="cl-card-img" style="background-image:url('/Selected%20wroks/Thaifex/DSC03984.JPG')"></div>
+      <div class="cl-card-body">
+        <div class="cl-kind">Conference programming</div>
+        <h3 class="cl-name">Thaifex Horec</h3>
+        <p class="cl-sub">Built the operator-focused conference inside Asia’s biggest food and hospitality trade show — from the speaker list up.</p>
+      </div>
+    </a>
+<a class="cl-card" href="/work/makro.html">
+      <div class="cl-card-img" style="background-image:url('/Selected%20wroks/Makro/AR509216.JPG')"></div>
+      <div class="cl-card-body">
+        <div class="cl-kind">Co-hosted product launch</div>
+        <h3 class="cl-name">Makro</h3>
+        <p class="cl-sub">Co-hosted the launch of a new F&amp;B product line under the PenguinX brand, with founder-led walkthrough and operator Q&amp;A.</p>
+      </div>
+    </a>
+<a class="cl-card" href="/work/lineman-wongnai.html">
+      <div class="cl-card-img" style="background-image:url('/Selected%20wroks/Lineman/A7R04081.JPG')"></div>
+      <div class="cl-card-body">
+        <div class="cl-kind">On-floor brand activations</div>
+        <h3 class="cl-name">Lineman Wongnai</h3>
+        <p class="cl-sub">Brand activations at TRC, Restech and CafCon to capture in-person leads from merchants nationwide.</p>
+      </div>
+    </a>
+<a class="cl-card" href="/work/pepsi-co.html">
+      <div class="cl-card-img" style="background-image:url('/Selected%20wroks/Pepsi/AR500564.JPG')"></div>
+      <div class="cl-card-body">
+        <div class="cl-kind">Nationwide activations</div>
+        <h3 class="cl-name">Pepsi Co.</h3>
+        <p class="cl-sub">On-floor presence across our event properties, plus provincial #LongKaek chapters, to reach independent operators.</p>
+      </div>
+    </a>
+<a class="cl-card" href="/work/impact.html">
+      <div class="cl-card-img" style="background-image:url('/Selected%20wroks/Imoact/DSC07712.JPG')"></div>
+      <div class="cl-card-body">
+        <div class="cl-kind">Joint event programming</div>
+        <h3 class="cl-name">Impact</h3>
+        <p class="cl-sub">Made a new F&amp;B business unit visible to operators through joint programming at TRC, Damn Expo and Restech.</p>
+      </div>
+    </a>
+<a class="cl-card" href="/work/streamwash.html">
+      <div class="cl-card-img" style="background-image:url('/Selected%20wroks/streamwash/SK8_9154.JPG')"></div>
+      <div class="cl-card-body">
+        <div class="cl-kind">Demos & lead capture</div>
+        <h3 class="cl-name">Streamwash</h3>
+        <p class="cl-sub">On-floor demos and operator conversations at Restech and CafCon, feeding a measurable sales pipeline.</p>
+      </div>
+    </a>
+  </div>
+</div>
+</body>
+</html>
