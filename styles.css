@@ -939,15 +939,15 @@ section{padding:80px 32px;position:relative}
 @keyframes client-scroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
 @media (prefers-reduced-motion:reduce){.client-track{animation:none}}
 .client-tile{
-  flex:none;width:190px;height:74px;
+  flex:none;width:150px;height:74px;
   background:#fff;border-radius:9px;
-  display:grid;place-items:center;padding:12px;
+  display:grid;place-items:center;padding:8px;
 }
 /* ความสูงของโลโก้แต่ละอันกำหนดเป็น inline style รายตัว
    เพราะโลโก้ทรงจัตุรัสต้องสูงกว่าทรงแนวยาวมาก ถึงจะดูใหญ่เท่ากัน */
 .client-tile img{max-width:100%;width:auto;object-fit:contain;display:block}
 @media (max-width:640px){
-  .client-tile{width:150px;height:62px;padding:10px}
+  .client-tile{width:126px;height:62px;padding:7px}
   .client-track{gap:10px}
 }
 
