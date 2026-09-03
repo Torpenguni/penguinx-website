@@ -1374,6 +1374,10 @@ footer{padding:60px 32px 32px;background:var(--bg);border-top:1px solid var(--li
   .why-card{padding:24px 22px;min-height:240px}
   .why-stat{font-size:52px}
   .case-row{grid-template-columns:30px 1fr 60px;gap:16px}
+  /* แถบไฮไลต์ตอน hover ยื่นออกนอกแถวเท่ากับ padding ของ section เพื่อให้เต็มขอบพอดี
+     ตรงนี้ padding ลดจาก 32px เหลือ 20px แต่ค่ายื่นยังเป็น 32px ส่วนเกิน 12px
+     จึงทะลุออกไปทำให้ทั้งหน้าเลื่อนแนวนอนได้บนจอแคบ */
+  .case-row::before{left:-20px;right:-20px}
   .case-tags,.case-result{display:none}
   .case-name{font-size:22px}
   .founder{padding:64px 20px}
