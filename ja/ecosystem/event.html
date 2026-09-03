@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PenguinX Event — 飲食業界が集まる場所</title>
+<link rel="stylesheet" href="/fonts/anuphan.css">
+<style>
+  :root{
+    --bg:#0a0a0a;--bg-2:#141413;--ink:#f4f1ea;--ink-mute:#8a8680;
+    --accent:#dba93a;--line:rgba(244,241,234,0.1);--line-soft:rgba(244,241,234,0.05);
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{background:var(--bg);color:var(--ink);font-family:'Anuphan',sans-serif;font-weight:400;-webkit-font-smoothing:antialiased;overflow-x:hidden;line-height:1.5}
+
+  /* === TOP BAR === */
+  .pg-nav{display:flex;justify-content:space-between;align-items:center;padding:24px 40px;border-bottom:1px solid var(--line)}
+  .pg-back{color:var(--ink-mute);text-decoration:none;font-size:13px;letter-spacing:0.05em;display:inline-flex;align-items:center;gap:8px;transition:color 0.2s ease}
+  .pg-back:hover{color:var(--accent)}
+  .pg-pillar{font-size:11px;letter-spacing:0.15em;text-transform:uppercase;color:var(--ink-mute)}
+  .pg-pillar b{color:var(--accent);font-weight:600}
+
+  /* === HERO === */
+  .pg-hero{padding:120px 40px 80px;border-bottom:1px solid var(--line)}
+  .pg-hero-grid{display:grid;grid-template-columns:1fr 320px;gap:80px;max-width:1600px;margin:0 auto;align-items:end}
+  .pg-hero-title{font-size:clamp(56px,9vw,160px);font-weight:600;line-height:0.92;letter-spacing:-0.045em}
+  .pg-hero-title .light{color:var(--ink-mute);font-weight:300;font-style:italic}
+  .pg-hero-title .accent{color:var(--accent)}
+  .pg-meta{display:flex;flex-direction:column;gap:24px;padding-bottom:12px}
+  .pg-meta-block{display:grid;grid-template-columns:90px 1fr;gap:16px;padding-bottom:18px;border-bottom:1px solid var(--line-soft)}
+  .pg-meta-block:last-child{border-bottom:none}
+  .pg-meta-label{font-size:11px;color:var(--ink-mute);text-transform:uppercase;letter-spacing:0.15em;padding-top:3px}
+  .pg-meta-value{font-size:14px;color:var(--ink);line-height:1.5}
+
+  /* === COVER === */
+  .pg-cover{width:100%;aspect-ratio:21/9;background:#222 center/cover no-repeat}
+  .pg-cover-caption{padding:14px 40px;font-size:12px;color:var(--ink-mute);display:flex;justify-content:space-between;border-bottom:1px solid var(--line)}
+
+  /* === VALUE-PROP === */
+  .vp{padding:56px 40px 40px;max-width:1600px;margin:0 auto}
+  .vp-head{margin-bottom:32px;padding-bottom:18px;border-bottom:1px solid var(--line);display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:24px}
+  .vp-num{font-size:11px;color:var(--ink-mute);letter-spacing:0.15em;text-transform:uppercase;margin-bottom:8px}
+  .vp-title{font-size:clamp(36px,5vw,72px);font-weight:600;line-height:1;letter-spacing:-0.035em}
+  .vp-title .light{color:var(--ink-mute);font-weight:300;font-style:italic}
+  .vp-title .accent{color:var(--accent)}
+  .vp-tag{font-size:11px;color:var(--accent);border:1px solid rgba(219,169,58,0.4);padding:6px 14px;border-radius:100px;letter-spacing:0.12em;text-transform:uppercase}
+  .vp-body{display:grid;grid-template-columns:1.2fr 1fr;gap:48px;align-items:center}
+  .vp-img{width:100%;aspect-ratio:4/3;background:#1a1a18 center/cover no-repeat;border-radius:2px;overflow:hidden;position:relative}
+  .vp-img img{display:block;width:100%;height:100%;object-fit:cover}
+  .vp-img-cap{position:absolute;bottom:0;left:0;right:0;padding:20px 24px;background:linear-gradient(180deg,transparent 0%,rgba(0,0,0,0.7) 100%);font-size:12px;color:var(--ink-mute);display:flex;justify-content:space-between}
+  .vp-text{display:flex;flex-direction:column;gap:24px}
+  .vp-lead{font-size:clamp(17px,1.5vw,22px);line-height:1.5;color:var(--ink);letter-spacing:-0.015em;font-weight:400}
+  .vp-lead em{color:var(--accent);font-style:normal;font-weight:500}
+  .vp-benefits{display:flex;flex-direction:column;gap:0;border-top:1px solid var(--line)}
+  .vp-benefit{padding:16px 0;border-bottom:1px solid var(--line-soft);display:grid;grid-template-columns:48px 1fr;gap:20px;align-items:start}
+  .vp-benefit:last-child{border-bottom:none}
+  .vp-b-num{font-size:14px;color:var(--accent);font-weight:600;letter-spacing:0.05em;padding-top:2px}
+  .vp-b-h{font-size:16px;font-weight:600;color:var(--ink);margin-bottom:6px;letter-spacing:-0.01em}
+  .vp-b-d{font-size:13px;color:var(--ink-mute);line-height:1.5}
+
+  /* === PROPERTIES GRID === */
+  .pg-section{padding:60px 40px 100px;max-width:1600px;margin:0 auto}
+  .pg-section-head{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:48px;padding-bottom:24px;border-bottom:1px solid var(--line);flex-wrap:wrap;gap:24px}
+  .pg-section-num{font-size:11px;color:var(--ink-mute);letter-spacing:0.15em;text-transform:uppercase;margin-bottom:8px}
+  .pg-section-title{font-size:clamp(28px,3vw,48px);font-weight:600;letter-spacing:-0.025em;line-height:1.05}
+  .pg-section-meta{font-size:12px;color:var(--ink-mute);letter-spacing:0.05em}
+  .pg-grid{display:grid;gap:20px}
+  .pg-grid.cols-5{grid-template-columns:repeat(5,1fr)}
+  .pg-grid.cols-3{grid-template-columns:repeat(3,1fr)}
+  .pg-grid.cols-2{grid-template-columns:repeat(2,1fr);gap:32px}
+  .pg-item{text-decoration:none;color:inherit;display:block;cursor:pointer;transition:opacity 0.3s ease;position:relative}
+  .pg-item:hover{opacity:0.92}
+  .pg-item-img{width:100%;aspect-ratio:1/1;background:#1a1a18 center/cover no-repeat;margin-bottom:18px;overflow:hidden;border-radius:2px;position:relative}
+  .pg-grid.cols-2 .pg-item-img{aspect-ratio:1/1}
+  .pg-item-img img{display:block;width:100%;height:100%;object-fit:cover;transition:transform 0.8s ease}
+  .pg-item:hover .pg-item-img img{transform:scale(1.04)}
+  .pg-track{display:flex;width:100%;height:100%;transition:transform 0.45s cubic-bezier(0.4,0,0.2,1)}
+  .pg-track img{flex:0 0 100%;width:100%;height:100%;object-fit:cover}
+  .pg-arrow{position:absolute;top:50%;transform:translateY(-50%);width:36px;height:36px;border-radius:50%;background:rgba(10,10,10,0.6);backdrop-filter:blur(8px);border:1px solid rgba(244,241,234,0.2);color:var(--ink);font-size:20px;line-height:1;cursor:pointer;display:flex;align-items:center;justify-content:center;opacity:0;transition:opacity 0.25s ease, background 0.2s ease;z-index:2;padding:0;font-family:inherit}
+  .pg-item-img:hover .pg-arrow{opacity:1}
+  .pg-arrow.prev{left:10px}
+  .pg-arrow.next{right:10px}
+  .pg-arrow:hover{background:var(--accent);color:var(--bg);border-color:var(--accent)}
+  .pg-item{cursor:default}
+  .pg-item:hover{opacity:1}
+  /* คำบรรยายแต่ละการ์ดยาวไม่เท่ากัน ทำให้การ์ดเป็นคอลัมน์แล้วดันปุ่มลงล่างสุด
+     ปุ่มทั้งแถวจะได้อยู่ระดับเดียวกัน */
+  .pg-item{display:flex;flex-direction:column}
+  .pg-item-link{margin-top:auto;align-self:flex-start;
+    display:inline-flex;align-items:center;gap:10px;
+    padding:11px 18px;border:1px solid rgba(244,241,234,0.24);border-radius:100px;
+    font-size:12.5px;font-weight:600;letter-spacing:0.05em;text-transform:uppercase;
+    color:var(--ink);text-decoration:none;
+    transition:color 0.2s ease,border-color 0.2s ease,background 0.2s ease}
+  .pg-item-sub{margin-bottom:18px}
+  .pg-item-link:hover{color:var(--accent);border-color:rgba(219,169,58,0.55);background:rgba(219,169,58,0.07)}
+  .pg-item-link:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+  /* ตัวอักษรจีนกว้างเต็มช่องอยู่แล้ว ไม่ต้องถ่างเท่าตัวละติน */
+  html[lang^="zh"] .pg-item-link{letter-spacing:0.02em}
+  .pg-item-link .arrow{color:var(--accent);transition:transform 0.3s ease}
+  .pg-item-link:hover .arrow{transform:translate(3px,-3px)}
+  .pg-item-ext{position:absolute;top:14px;right:14px;width:36px;height:36px;border-radius:50%;background:rgba(10,10,10,0.6);backdrop-filter:blur(8px);display:flex;align-items:center;justify-content:center;color:var(--ink);font-size:14px;transition:all 0.3s ease;border:1px solid rgba(244,241,234,0.15)}
+  .pg-item:hover .pg-item-ext{background:var(--accent);color:var(--bg);border-color:var(--accent);transform:rotate(-45deg)}
+  .pg-item-tag{font-size:10px;color:var(--accent);letter-spacing:0.15em;text-transform:uppercase;margin-bottom:10px;font-weight:500}
+  .pg-item-title{font-size:20px;font-weight:600;line-height:1.2;letter-spacing:-0.02em;margin-bottom:10px}
+  .pg-grid.cols-2 .pg-item-title{font-size:28px}
+  .pg-item-sub{font-size:13.5px;color:var(--ink-mute);line-height:1.5}
+  .pg-grid.cols-2 .pg-item-sub{font-size:15px}
+  .pg-item-foot{margin-top:14px;padding-top:12px;border-top:1px solid var(--line-soft);font-size:11px;color:var(--ink-mute);letter-spacing:0.08em;text-transform:uppercase;display:flex;justify-content:space-between;align-items:center}
+  .pg-item-foot .arrow{color:var(--accent);transition:transform 0.3s ease}
+  .pg-item:hover .pg-item-foot .arrow{transform:translate(3px,-3px)}
+
+  /* === STATS === */
+  .pg-stats{padding:48px 40px;border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:var(--bg-2)}
+  .pg-stats-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:40px;max-width:1400px;margin:0 auto}
+  .pg-stat .num{font-size:clamp(28px,3vw,44px);font-weight:600;letter-spacing:-0.04em;line-height:1;color:var(--accent)}
+  .pg-stat .lbl{font-size:11px;color:var(--ink-mute);text-transform:uppercase;letter-spacing:0.12em;margin-top:10px}
+
+  /* === NEXT === */
+  .pg-next{padding:120px 40px;border-top:1px solid var(--line);text-align:center}
+  .pg-next-tag{font-size:11px;color:var(--ink-mute);text-transform:uppercase;letter-spacing:0.2em;margin-bottom:24px}
+  .pg-next-title{font-size:clamp(48px,7vw,120px);font-weight:600;line-height:0.95;letter-spacing:-0.04em;margin-bottom:32px}
+  .pg-next-title a{color:var(--ink);text-decoration:none;border-bottom:2px solid transparent;transition:all 0.3s ease}
+  .pg-next-title a:hover{color:var(--accent);border-bottom-color:var(--accent)}
+
+  /* === RESPONSIVE === */
+  @media (max-width:1100px){
+    .pg-hero{padding:80px 32px 50px}
+    .pg-hero-grid{grid-template-columns:1fr;gap:48px}
+    .vp{padding:80px 32px 50px}
+    .vp-body{grid-template-columns:1fr;gap:48px}
+    .vp-img{aspect-ratio:16/10;max-height:560px}
+    .pg-section{padding:50px 32px 80px}
+    .pg-grid.cols-5{grid-template-columns:repeat(3,1fr)}
+  }
+  @media (max-width:900px){
+    .vp-head,.pg-section-head{flex-direction:column;align-items:flex-start;gap:14px}
+    .vp-tag{align-self:flex-start;order:-1}
+    .pg-grid.cols-3{grid-template-columns:repeat(2,1fr)}
+  }
+  @media (max-width:700px){
+    .pg-hero{padding:60px 20px 40px}
+    .pg-cover-caption{padding:14px 20px}
+    .vp{padding:56px 20px 40px}
+    .vp-head{margin-bottom:32px;padding-bottom:18px}
+    .vp-num{font-size:10px}
+    .vp-title{font-size:34px;line-height:1.05}
+    .vp-tag{font-size:10px;padding:5px 12px}
+    .vp-body{gap:32px}
+    .vp-img{aspect-ratio:4/3}
+    .vp-img-cap{padding:14px 18px;font-size:11px}
+    .vp-lead{font-size:18px;line-height:1.45}
+    .vp-text{gap:24px}
+    .vp-benefit{grid-template-columns:32px 1fr;gap:14px;padding:18px 0}
+    .vp-b-num{font-size:13px}
+    .vp-b-h{font-size:15px;margin-bottom:4px}
+    .vp-b-d{font-size:13px;line-height:1.5}
+    .pg-section{padding:32px 0 80px}
+    .pg-section-head{padding:0 20px 18px;margin-bottom:24px}
+    .pg-section-num{font-size:10px}
+    .pg-section-title{font-size:28px}
+    .pg-section-meta{font-size:11px}
+    .pg-grid{grid-template-columns:none;display:flex;overflow-x:auto;overflow-y:hidden;gap:12px;padding:4px 20px 24px;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;scrollbar-width:thin}
+    .pg-grid::-webkit-scrollbar{height:4px}
+    .pg-grid::-webkit-scrollbar-thumb{background:var(--line);border-radius:100px}
+    .pg-item{flex:0 0 72%;min-width:240px;scroll-snap-align:start}
+    .pg-grid.cols-2 .pg-item{flex:0 0 80%}
+    .pg-item-img{aspect-ratio:1/1;margin-bottom:14px}
+    .pg-item-ext{width:32px;height:32px;font-size:12px;top:10px;right:10px}
+    .pg-item-tag{font-size:9px;margin-bottom:8px}
+    .pg-item-title{font-size:17px;margin-bottom:8px}
+    .pg-grid.cols-2 .pg-item-title{font-size:20px}
+    .pg-item-sub{font-size:12.5px;line-height:1.45}
+    .pg-grid.cols-2 .pg-item-sub{font-size:13px}
+    .pg-item-foot{margin-top:10px;padding-top:10px;font-size:10px}
+    .pg-stats{padding:40px 24px}
+    .pg-stats-grid{grid-template-columns:repeat(2,1fr);gap:24px}
+    .pg-next{padding:80px 24px}
+  }
+  @media (max-width:420px){
+    .vp-title{font-size:28px}
+    .vp-lead{font-size:16px}
+    .pg-section-title{font-size:24px}
+    .pg-item{flex:0 0 80%}
+  }
+
+  /* บล็อกอ่านต่อ — หน้า pillar ไม่ได้โหลด styles.css จึงต้องมีกฎของตัวเอง */
+  .pg-related{padding:72px 32px 0;border-top:1px solid var(--line)}
+  .pg-related .news-grid{margin-top:36px}
+  .news-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:36px 28px; }
+  .news-card{ display:flex; flex-direction:column; gap:16px; cursor:pointer; text-decoration:none; color:inherit; }
+  .news-card:hover .news-thumb{ filter:contrast(1.1) saturate(1.05); transform:scale(1.02); }
+  .news-card:hover .news-title{color:var(--accent)}
+  .news-thumb{ aspect-ratio:16/10; background-color:var(--bg-2); background-size:cover; background-position:center; border-radius:10px; overflow:hidden; border:1px solid var(--line); filter:contrast(1.05) saturate(0.95); transition:filter 0.5s ease, transform 0.5s ease; }
+  .news-meta{ display:flex; align-items:center; gap:10px; font-family:'Anuphan',sans-serif; font-size:11px; color:var(--accent); letter-spacing:0.18em; text-transform:uppercase; font-weight:600; }
+  .news-meta::before{ content:''; width:14px;height:1px; background:var(--accent); }
+  .news-title{ font-family:'Anuphan',sans-serif; font-size:18px; font-weight:600; letter-spacing:-0.02em; line-height:1.3; color:var(--ink); transition:color 0.3s ease; }
+  .news-read{ font-size:11px; color:var(--ink-mute); letter-spacing:0.12em; text-transform:uppercase; margin-top:-4px; }
+</style>
+<!-- ===== AEO/SEO metadata — managed block, do not hand-edit ===== -->
+<meta name="description" content="PenguinX Event は TRC(タイ・レストラン・カンファレンス)、Damn Expo、Restech、CafCon など五つの主催イベントを運営しています。">
+<link rel="alternate" hreflang="en" href="https://www.penguinx.co/ecosystem/event.html">
+<link rel="alternate" hreflang="th" href="https://www.penguinx.co/th/ecosystem/event.html">
+<link rel="alternate" hreflang="zh-Hans" href="https://www.penguinx.co/zh/ecosystem/event.html">
+<link rel="alternate" hreflang="zh-CN" href="https://www.penguinx.co/zh/ecosystem/event.html">
+<link rel="alternate" hreflang="ja" href="https://www.penguinx.co/ja/ecosystem/event.html">
+<link rel="alternate" hreflang="x-default" href="https://www.penguinx.co/ecosystem/event.html">
+<link rel="canonical" href="https://www.penguinx.co/ja/ecosystem/event.html">
+<meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="PenguinX">
+<meta property="og:locale" content="ja_JP">
+<meta property="og:locale:alternate" content="th_TH">
+<meta property="og:title" content="PenguinX Event — 飲食業界が集まる場所">
+<meta property="og:description" content="PenguinX Event は TRC(タイ・レストラン・カンファレンス)、Damn Expo、Restech、CafCon など五つの主催イベントを運営しています。">
+<meta property="og:url" content="https://www.penguinx.co/ja/ecosystem/event.html">
+<meta property="og:image" content="https://www.penguinx.co/cover.JPG">
+<meta property="og:image:width" content="4128">
+<meta property="og:image:height" content="2752">
+<meta property="og:image:alt" content="PenguinX — タイの飲食エコシステム・ビルダー">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="PenguinX Event — 飲食業界が集まる場所">
+<meta name="twitter:description" content="PenguinX Event は TRC(タイ・レストラン・カンファレンス)、Damn Expo、Restech、CafCon など五つの主催イベントを運営しています。">
+<meta name="twitter:image" content="https://www.penguinx.co/cover.JPG">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://www.penguinx.co/#organization",
+      "name": "PenguinX",
+      "url": "https://www.penguinx.co/",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://www.penguinx.co/penguinx-logo.png"
+      }
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://www.penguinx.co/#website",
+      "url": "https://www.penguinx.co/",
+      "name": "PenguinX",
+      "publisher": {
+        "@id": "https://www.penguinx.co/#organization"
+      },
+      "inLanguage": [
+        "en",
+        "th"
+      ]
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://www.penguinx.co/ecosystem/event.html#webpage",
+      "url": "https://www.penguinx.co/ecosystem/event.html",
+      "headline": "PenguinX Event — Where the F&B industry convenes",
+      "name": "PenguinX Event — Where the F&B industry convenes",
+      "description": "PenguinX Event runs five flagship F&B formats including TRC (Thailand Restaurant Conference), Damn Expo, Restech, and CafCon.",
+      "isPartOf": {
+        "@id": "https://www.penguinx.co/#website"
+      },
+      "about": {
+        "@id": "https://www.penguinx.co/#organization"
+      },
+      "publisher": {
+        "@id": "https://www.penguinx.co/#organization"
+      },
+      "image": "https://www.penguinx.co/cover.JPG",
+      "inLanguage": "en",
+      "mainEntityOfPage": "https://www.penguinx.co/ecosystem/event.html"
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://www.penguinx.co/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Ecosystem",
+          "item": "https://www.penguinx.co/#ecosystem"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "PenguinX Event — Where the F&B industry convenes",
+          "item": "https://www.penguinx.co/ecosystem/event.html"
+        }
+      ]
+    }
+  ]
+}
+</script>
+<!-- ===== end metadata block ===== -->
+</head>
+<body>
+<script>window.__PX_I18N__={"viewsFormat": "{n} 回視聴", "videoTitles": {"ร้านเมนูเดียว จะอยู่รอดได้ยังไง? \"กะเพราตาแป๊ะ \" | Torpenguin": "一品勝負の店は、どう生き残るのか？「Kaphrao Ta Pae」| Torpenguin", "คู่แข่งร้านอาหารที่มองไม่เห็น | Hot Kitchen Ep.90 | Torpenguin": "飲食店の見えない競合 | Hot Kitchen Ep.90 | Torpenguin", "ลูกค้าหายไป 10% เพราะลืมเรื่องนี้ !! | Torpenguin": "客数が10%減。見落としていたのはこれ | Torpenguin", "การตลาดที่ดี เริ่มต้นจากคำถามโง่ ๆ !? | Torpenguin": "よいマーケティングは「素朴な問い」から始まる？| Torpenguin", "คนกินข้าวคนเดียว กำลังเป็นลูกค้ากลุ่มใหม่ของร้านอาหาร? | Torpenguin": "「おひとりさま」は飲食店の新しい客層になるか？| Torpenguin", "ถ้าอยากโตแบบก้าวกระโดด…คุณต้องรู้จัก OKR | Torpenguin": "非連続な成長を狙うなら、OKRを知るべき | Torpenguin", "เปิดร้านก๋วยเตี๋ยว ทำไมถึงเจ๊ง": "麺屋を開いて、なぜ潰れるのか", "5 ข้อที่ร้านอาหารต้องรู้ก่อนเปิดสาขา": "多店舗展開の前に知っておくべき5つのこと", "ทำไม Cloud Kitchen ถึงยังไม่ work ในไทย": "クラウドキッチンがタイでまだ機能しない理由", "ราคาวัตถุดิบขึ้น ร้านต้องขึ้นราคามั้ย": "原価が上がったら、値上げすべきか", "เจ้าของร้านควรเข้าครัวเองมั้ย": "オーナーは自ら厨房に立つべきか"}, "fallbackVideos": [{"id": "", "title": "麺屋を開いて、なぜ潰れるのか", "thumb": "https://i.ytimg.com/vi/_/hqdefault.jpg", "duration": "12:34", "views": "1.2M"}, {"id": "", "title": "多店舗展開の前に知っておくべき5つのこと", "thumb": "https://i.ytimg.com/vi/_/hqdefault.jpg", "duration": "18:02", "views": "880K"}, {"id": "", "title": "クラウドキッチンがタイでまだ機能しない理由", "thumb": "https://i.ytimg.com/vi/_/hqdefault.jpg", "duration": "15:45", "views": "650K"}, {"id": "", "title": "原価が上がったら、値上げすべきか", "thumb": "https://i.ytimg.com/vi/_/hqdefault.jpg", "duration": "11:15", "views": "420K"}, {"id": "", "title": "オーナーは自ら厨房に立つべきか", "thumb": "https://i.ytimg.com/vi/_/hqdefault.jpg", "duration": "14:52", "views": "310K"}]};</script>
+
+<div class="pg-nav">
+  <a href="/ja/" class="pg-back">← PenguinX に戻る</a>
+  <div class="pg-pillar">02 / 柱 · <b>イベント</b></div>
+</div>
+
+<section class="vp">
+  <div class="vp-head">
+    <div>
+      <div class="vp-num">01 / 事業内容</div>
+      <h2 class="vp-title">
+      <span class="light">PenguinX は</span><br>
+      ブランドが育つ<br>
+      <span class="accent">イベント</span>を、つくります。
+    </h2>
+    </div>
+    <div class="vp-tag">ブランドパートナーの方へ</div>
+  </div>
+  <div class="vp-body">
+    <div class="vp-img">
+      <img src="/ecosystem/Event/C (25 of 62).jpg" alt="">
+      <div class="vp-img-cap"><span>TRC 2025 · メインステージ</span><span>経営者 10,000人以上 / 年</span></div>
+    </div>
+    <div class="vp-text">
+      <p class="vp-lead">イベントを運営するだけではありません。 <em>業界が動く瞬間を設計します</em> — 出会うべきブランドと飲食店経営者を、決断できるタイミングで同じ部屋に集めます。</p>
+      <div class="vp-benefits">
+        <div class="vp-benefit"><div class="vp-b-num">01</div><div><div class="vp-b-h">決裁者へのアクセス</div><div class="vp-b-d">実際に決裁権を持つ経営者だけを集めた場。多店舗オーナー、調達責任者、飲食部門長。見学者はいません。</div></div></div>
+        <div class="vp-benefit"><div class="vp-b-num">02</div><div><div class="vp-b-h">表示回数ではなく、商談を</div><div class="vp-b-d">マッチング商談、フロアでの実演、そして成約できる経営者の前にブランドを届けるために設計された協賛枠。</div></div></div>
+        <div class="vp-benefit"><div class="vp-b-num">03</div><div><div class="vp-b-h">アーンドメディアの追い風</div><div class="vp-b-d">PenguinX の自社チャンネル(200万+)が全イベントを後押しします。開催前・開催中・開催後まで露出が続きます。</div></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="pg-section">
+  <div class="pg-section-head">
+    <div>
+      <div class="pg-section-num">02 / 主催イベント</div>
+      <h2 class="pg-section-title">五つの主催イベント。</h2>
+    </div>
+    <div class="pg-section-meta">飲食業のそれぞれの相手に合わせて設計</div>
+  </div>
+  <div class="pg-grid cols-5">
+    <div class="pg-item">
+      <div class="pg-item-img"><div class="pg-track" data-index="0">
+        <img src="/ecosystem/Event/TRC/trc1.jpg" alt="" loading="lazy">
+        <img src="/ecosystem/Event/TRC/trc2.jpg" alt="" loading="lazy">
+        <img src="/ecosystem/Event/TRC/trc3.jpg" alt="" loading="lazy">
+        <img src="/ecosystem/Event/TRC/trc4.JPG" alt="" loading="lazy">
+        <img src="/ecosystem/Event/TRC/trc5.jpg" alt="" loading="lazy">
+        <img src="/ecosystem/Event/TRC/trc6.jpg" alt="" loading="lazy">
+        <img src="/ecosystem/Event/TRC/trc7.jpg" alt="" loading="lazy">
+        <img src="/ecosystem/Event/TRC/trc8.jpg" alt="" loading="lazy">
+      </div><button class="pg-arrow prev" data-dir="-1" type="button" aria-label="前へ">‹</button><button class="pg-arrow next" data-dir="1" type="button" aria-label="次へ">›</button></div>
+      <div class="pg-item-tag">カンファレンス · 主力イベント</div>
+      <div class="pg-item-title">TRC — タイ・レストラン・カンファレンス</div>
+      <div class="pg-item-sub">オーナーと上級管理者のための複数日・複数トラック開催。一年の意思決定が下される場所です。</div>
+      <a class="pg-item-link" href="https://www.thailandrestaurantconference.org/" target="_blank" rel="noopener" aria-label="TRC — タイ・レストラン・カンファレンスのウェブサイト"><span>ウェブサイト</span><span class="arrow">↗</span></a>
+    </div>
+    <div class="pg-item">
+      <div class="pg-item-img"><div class="pg-track" data-index="0">
+        <img src="/ecosystem/Event/Damn/damn1.jpg" alt="" loading="lazy">
+        <img src="/ecosystem/Event/Damn/damn2.jpg" alt="" loading="lazy">
+        <img src="/ecosystem/Event/Damn/damn3.jpg" alt="" loading="lazy">
+        <img src="/ecosystem/Event/Damn/damn4.jpg" alt="" loading="lazy">
+        <img src="/ecosystem/Event/Damn/damn5.jpg" alt="" loading="lazy">
+        <img src="/ecosystem/Event/Damn/damn6.jpg" alt="" loading="lazy">
+        <img src="/ecosystem/Event/Damn/damn7.jpg" alt="" loading="lazy">
+        <img src="/ecosystem/Event/Damn/damn8.jpg" alt="" loading="lazy">
+      </div><button class="pg-arrow prev" data-dir="-1" type="button" aria-label="前へ">‹</button><button class="pg-arrow next" data-dir="1" type="button" aria-label="次へ">›</button></div>
+      <div class="pg-item-tag">展示会 · ナイトライフ</div>
+      <div class="pg-item-title">Damn Expo</div>
+      <div class="pg-item-sub">ナイトライフとクラフト酒の専門展示会。バーオーナー、卸、酒類ブランドがひとつのフロアに集まります。</div>
+      <a class="pg-item-link" href="https://damnexpo.com" target="_blank" rel="noopener" aria-label="Damn Expo のウェブサイト"><span>ウェブサイト</span><span class="arrow">↗</span></a>
+    </div>
+    <div class="pg-item">
+      <div class="pg-item-img"><div class="pg-track" data-index="0">
+        <img src="/ecosystem/Event/Restech/restech1.jpg" alt="" loading="lazy">
+        <img src="/ecosystem/Event/Restech/restech2.jpg" alt="" loading="lazy">
+        <img src="/ecosystem/Event/Restech/restech3.jpg" alt="" loading="lazy">
+        <img src="/ecosystem/Event/Restech/restech4.jpg" alt="" loading="lazy">
+        <img src="/ecosystem/Event/Restech/restech5.jpg" alt="" loading="lazy">
+        <img src="/ecosystem/Event/Restech/restech7.jpg" alt="" loading="lazy">
+        <img src="/ecosystem/Event/Restech/restech8.jpg" alt="" loading="lazy">
+      </div><button class="pg-arrow prev" data-dir="-1" type="button" aria-label="前へ">‹</button><button class="pg-arrow next" data-dir="1" type="button" aria-label="次へ">›</button></div>
+      <div class="pg-item-tag">展示会 · テクノロジー</div>
+      <div class="pg-item-title">Restech</div>
+      <div class="pg-item-sub">飲食店向けのテクノロジーと厨房機器の展示会。実機デモ、比較検討、その場での調達まで。</div>
+      <a class="pg-item-link" href="https://www.restechexpo.com/" target="_blank" rel="noopener" aria-label="Restech のウェブサイト"><span>ウェブサイト</span><span class="arrow">↗</span></a>
+    </div>
+    <div class="pg-item">
+      <div class="pg-item-img"><div class="pg-track" data-index="0">
+        <img src="/ecosystem/Event/Cafcon/cafcon1.jpg" alt="" loading="lazy">
+        <img src="/ecosystem/Event/Cafcon/cafcon2.jpg" alt="" loading="lazy">
+        <img src="/ecosystem/Event/Cafcon/cafcon3.jpg" alt="" loading="lazy">
+        <img src="/ecosystem/Event/Cafcon/cafcon4.jpg" alt="" loading="lazy">
+        <img src="/ecosystem/Event/Cafcon/cafcon5.jpg" alt="" loading="lazy">
+      </div><button class="pg-arrow prev" data-dir="-1" type="button" aria-label="前へ">‹</button><button class="pg-arrow next" data-dir="1" type="button" aria-label="次へ">›</button></div>
+      <div class="pg-item-tag">カンファレンス · カフェ</div>
+      <div class="pg-item-title">CafCon</div>
+      <div class="pg-item-sub">カフェ経営のカンファレンス。カフェオーナー、焙煎士、業界サプライヤーが同じ指針を共有します。</div>
+      <a class="pg-item-link" href="https://cafcon.co" target="_blank" rel="noopener" aria-label="CafCon のウェブサイト"><span>ウェブサイト</span><span class="arrow">↗</span></a>
+    </div>
+    <div class="pg-item">
+      <div class="pg-item-img"><div class="pg-track" data-index="0">
+        <img src="/ecosystem/Event/%E0%B8%A5%E0%B8%87%E0%B9%81%E0%B8%82%E0%B8%81/%E0%B8%A5%E0%B8%87%E0%B9%81%E0%B8%82%E0%B8%811.jpg" alt="" loading="lazy">
+        <img src="/ecosystem/Event/%E0%B8%A5%E0%B8%87%E0%B9%81%E0%B8%82%E0%B8%81/%E0%B8%A5%E0%B8%87%E0%B9%81%E0%B8%82%E0%B8%812.jpg" alt="" loading="lazy">
+        <img src="/ecosystem/Event/%E0%B8%A5%E0%B8%87%E0%B9%81%E0%B8%82%E0%B8%81/%E0%B8%A5%E0%B8%87%E0%B9%81%E0%B8%82%E0%B8%813.jpg" alt="" loading="lazy">
+        <img src="/ecosystem/Event/%E0%B8%A5%E0%B8%87%E0%B9%81%E0%B8%82%E0%B8%81/%E0%B8%A5%E0%B8%87%E0%B9%81%E0%B8%82%E0%B8%814.jpg" alt="" loading="lazy">
+        <img src="/ecosystem/Event/%E0%B8%A5%E0%B8%87%E0%B9%81%E0%B8%82%E0%B8%81/%E0%B8%A5%E0%B8%87%E0%B9%81%E0%B8%82%E0%B8%815.jpg" alt="" loading="lazy">
+        <img src="/ecosystem/Event/%E0%B8%A5%E0%B8%87%E0%B9%81%E0%B8%82%E0%B8%81/%E0%B8%A5%E0%B8%87%E0%B9%81%E0%B8%82%E0%B8%816.jpg" alt="" loading="lazy">
+        <img src="/ecosystem/Event/%E0%B8%A5%E0%B8%87%E0%B9%81%E0%B8%82%E0%B8%81/%E0%B8%A5%E0%B8%87%E0%B9%81%E0%B8%82%E0%B8%817.jpg" alt="" loading="lazy">
+        <img src="/ecosystem/Event/%E0%B8%A5%E0%B8%87%E0%B9%81%E0%B8%82%E0%B8%81/%E0%B8%A5%E0%B8%87%E0%B9%81%E0%B8%82%E0%B8%818.jpg" alt="" loading="lazy">
+      </div><button class="pg-arrow prev" data-dir="-1" type="button" aria-label="前へ">‹</button><button class="pg-arrow next" data-dir="1" type="button" aria-label="次へ">›</button></div>
+      <div class="pg-item-tag">コミュニティ · ディナー</div>
+      <div class="pg-item-title">#LongKaek</div>
+      <div class="pg-item-sub">創業者だけの少人数ディナー。競合が信頼できる仲間に変わる、招待制の場です。</div>
+    </div>
+  </div>
+</section>
+
+<section class="pg-stats">
+  <div class="pg-stats-grid">
+    <div class="pg-stat"><div class="num">10,000+</div><div class="lbl">決裁者 / 年</div></div>
+    <div class="pg-stat"><div class="num">5</div><div class="lbl">主催イベント</div></div>
+    <div class="pg-stat"><div class="num">45</div><div class="lbl">参加した県</div></div>
+    <div class="pg-stat"><div class="num">90+</div><div class="lbl">開催実績</div></div>
+  </div>
+</section>
+
+<section class="news pg-related">
+    <div class="pg-section-head">
+      <div class="pg-section-num">あわせて読みたい</div>
+    </div>
+    <div class="news-grid">
+      <a href="/ja/news/trc-2025-recap.html" class="news-card">
+        <div class="news-thumb" style="background-image:url('/ecosystem/Event/TRC/trc1.jpg')"></div>
+        <div class="news-meta">イベント</div>
+        <h3 class="news-title">TRC 2025 の内側：4,500人の飲食店オーナーがバンコクに集まった三日間</h3>
+      </a>
+      <a href="/ja/news/damn-expo-returns.html" class="news-card">
+        <div class="news-thumb" style="background-image:url('/ecosystem/Event/Damn/damn1.jpg')"></div>
+        <div class="news-meta">イベント</div>
+        <h3 class="news-title">Damn Expo が帰ってくる：タイのナイトライフ業界が集まる</h3>
+      </a>
+      <a href="/ja/news/longkaek-deepdive.html" class="news-card">
+        <div class="news-thumb" style="background-image:url('/ecosystem/Event/%E0%B8%A5%E0%B8%87%E0%B9%81%E0%B8%82%E0%B8%81/%E0%B8%A5%E0%B8%87%E0%B9%81%E0%B8%82%E0%B8%811.jpg')"></div>
+        <div class="news-meta">コミュニティ</div>
+        <h3 class="news-title">#LongKaek の舞台裏 — 競合が信頼できる仲間になるまで</h3>
+      </a>
+    </div>
+  </section>
+
+  <section class="pg-next">
+  <div class="pg-next-tag">— 次の柱 —</div>
+  <h2 class="pg-next-title"><a href="/ja/ecosystem/education.html">教育 ↗</a></h2>
+  <a href="/ja/" class="pg-back">↑ PenguinX に戻る</a>
+</section>
+
+
+<script>
+  document.querySelectorAll('.pg-arrow').forEach(btn=>{
+    btn.addEventListener('click', e=>{
+      e.preventDefault(); e.stopPropagation();
+      const track = btn.parentElement.querySelector('.pg-track');
+      if(!track) return;
+      const dir = parseInt(btn.dataset.dir,10);
+      const count = track.children.length;
+      const cur = parseInt(track.dataset.index || '0',10);
+      let next = cur + dir;
+      if(next < 0) next = count - 1;
+      if(next >= count) next = 0;
+      track.dataset.index = next;
+      track.style.transform = 'translateX(-' + (next*100) + '%)';
+    });
+  });
+</script>
+</body>
+</html>

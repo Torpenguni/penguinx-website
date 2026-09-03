@@ -1882,3 +1882,8 @@ html[lang="ja"] .pg-item-link { letter-spacing:0.02em }
 html[lang="ja"] .hero-title{font-size:clamp(26px,6vw,100px);line-height:1.12}
 html[lang="ja"] .hero-sub,
 html[lang="ja"] .hero-standfirst{text-wrap:pretty}
+
+/* ญี่ปุ่นตัดบรรทัดกลางคำได้ตามธรรมชาติของภาษา แต่กับหัวข้อใหญ่แล้ว
+   เหลือ "す。" ห้อยบรรทัดเดียวดูเสีย ใส่ <br> กำหนดเองในไฟล์แปล
+   แล้วห้ามเบราว์เซอร์ตัดซ้ำในจุดที่ไม่ควร */
+html[lang="ja"] .vp-title{line-break:strict;overflow-wrap:normal}

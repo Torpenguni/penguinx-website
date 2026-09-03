@@ -19,8 +19,7 @@ LANGS = {
     # ญี่ปุ่นเพิ่งเริ่ม ทำเฉพาะหน้าแรกก่อนให้เจ้าของภาษาตรวจ
     # 'only' คือรายชื่อหน้าที่ภาษานั้นมีจริง หน้าที่เหลือจะไม่ถูกสร้าง
     # ไม่ประกาศ hreflang และไม่ขึ้นในปุ่มสลับภาษา จนกว่าจะแปลเพิ่ม
-    'ja': {'code': 'ja', 'htmlLang': 'ja', 'ogLocale': 'ja_JP', 'label': '日本語',
-           'only': ('index.html',)},
+    'ja': {'code': 'ja', 'htmlLang': 'ja', 'ogLocale': 'ja_JP', 'label': '日本語'},
 }
 
 def has_page(code, rel_path):
@@ -163,8 +162,12 @@ def translate_text(html, tmap):
     def node(m):
         raw = m.group(1)
         key = raw.strip()
-        if key in tmap:
-            return '>' + raw.replace(key, tmap[key]) + '<'
+        # HTML เขียน &amp; แต่คีย์ในไฟล์แปลเขียน & ตรง ๆ เหมือนกรณี attribute
+        # ไม่ลองทั้งสองแบบ ประโยคที่มี & อย่าง "global & F&B brands"
+        # จะไม่ถูกแปลเลยทุกภาษา
+        for k in (key, key.replace('&amp;', '&')):
+            if k in tmap:
+                return '>' + raw.replace(key, tmap[k]) + '<'
         return m.group(0)
     html = re.sub(r'>([^<>]+)<', node, html)
 
