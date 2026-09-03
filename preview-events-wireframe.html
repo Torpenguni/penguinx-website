@@ -1,0 +1,137 @@
+<!DOCTYPE html><html lang="th"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex,nofollow">
+<title>Wireframe — Events | PenguinX</title>
+<link href="https://fonts.googleapis.com/css2?family=Anuphan:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box}
+body{margin:0;background:#111;color:#ddd;font-family:'Anuphan',sans-serif;padding:26px}
+.wrap{max-width:1240px;margin:0 auto}
+h1{font-size:19px;margin:0 0 6px;color:#fff}
+.sub{color:#888;font-size:13px;margin:0 0 22px;line-height:1.6}
+.screen{border:1px solid #333;border-radius:12px;padding:22px;margin-bottom:26px;background:#161616}
+.screen > .lbl{font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:#DBA93A;margin-bottom:16px}
+.bar{border:1px dashed #444;border-radius:8px;padding:12px 16px;display:flex;gap:22px;align-items:center;
+ font-size:12px;color:#999;margin-bottom:14px}
+.bar b{color:#fff;font-weight:600}
+.bar .on{color:#DBA93A;font-weight:600}
+.blk{border:1px dashed #444;border-radius:8px;padding:18px;margin-bottom:14px;color:#888;font-size:12.5px}
+.blk .big{height:38px;background:#242424;border-radius:5px;width:62%;margin-bottom:9px}
+.blk .med{height:16px;background:#202020;border-radius:4px;width:44%;margin-bottom:7px}
+.stats{display:flex;gap:12px;margin-top:12px}
+.stats div{flex:1;border:1px dashed #3a3a3a;border-radius:6px;padding:11px;text-align:center;font-size:11px;color:#999}
+.chips{display:flex;gap:8px;flex-wrap:wrap;margin:16px 0 14px}
+.chips span{border:1px solid #3a3a3a;border-radius:100px;padding:7px 14px;font-size:11.5px;color:#999}
+.chips span.on{background:#DBA93A;color:#111;border-color:#DBA93A;font-weight:600}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.card{border:1px solid #333;border-radius:9px;padding:11px;background:#191919}
+.card.ghost{border-style:dashed;opacity:.5}
+.ph{height:104px;background:#242424;border-radius:6px;display:flex;align-items:center;justify-content:center;
+ color:#666;font-size:11.5px;position:relative}
+.cnt{position:absolute;right:8px;bottom:7px;background:#111;border-radius:100px;padding:3px 8px;font-size:10px;color:#999}
+.tag{font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:#DBA93A;margin:11px 0 6px}
+.ttl{font-size:14px;color:#fff;font-weight:600;margin-bottom:9px;line-height:1.3}
+.ln{height:8px;background:#212121;border-radius:3px;margin-bottom:5px}
+.ln.short{width:58%}
+.go{color:#666;font-size:14px;margin-top:9px}
+.sec{font-size:12px;color:#DBA93A;letter-spacing:.14em;text-transform:uppercase;margin:20px 0 11px}
+.gal{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
+.gal div{background:#242424;border-radius:6px;display:flex;align-items:center;justify-content:center;
+ color:#666;font-size:11px}
+.gal div:nth-child(1){height:150px}.gal div:nth-child(2){height:110px}
+.gal div:nth-child(3){height:170px}.gal div:nth-child(4){height:120px}
+.gal div:nth-child(5){height:120px}.gal div:nth-child(6){height:165px}
+.gal div:nth-child(7){height:130px}.gal div:nth-child(8){height:145px}
+.q{border:1px solid rgba(219,169,58,.4);background:rgba(219,169,58,.07);border-radius:9px;
+ padding:14px 17px;font-size:13px;line-height:1.65;margin-top:8px}
+</style></head><body><div class="wrap">
+
+<h1>โครงหน้า Events — แบบกล่องคร่าว ๆ</h1>
+<p class="sub">ยังไม่ใส่รูปจริงและยังไม่จัดหน้าตา ดูแค่ว่าอะไรอยู่ตรงไหน · ตัดงาน Streamwash / Makro / Lineman / Impact ออกแล้วตามที่บอก</p>
+
+<div class="screen">
+  <div class="lbl">จอที่ 1 — หน้ารวม /events.html</div>
+  <div class="bar"><b>PenguinX</b><span>Ecosystem</span><span>Work</span><span>Services</span><span>About</span><span class="on">Events ←ใหม่</span><span style="margin-left:auto">EN ไทย 中文</span><b>Let's talk</b></div>
+  <div class="blk">
+    <div style="font-size:10.5px;letter-spacing:.15em;color:#DBA93A;margin-bottom:9px">EVENTS</div>
+    <div class="big"></div><div class="med"></div>
+    <div style="margin-top:4px">หัวข้อใหญ่ + ประโยคอธิบายสั้น ๆ</div>
+    <div class="stats"><div>10,000+<br>ผู้ประกอบการ/ปี</div><div>5<br>งานของเราเอง</div><div>90+<br>ครั้งที่จัด</div><div>45<br>จังหวัด</div></div>
+  </div>
+  <div class="chips"><span class="on">All</span><span>งานของเราเอง</span><span>ทำให้แบรนด์</span><span>Conference</span><span>Expo</span><span>Community</span></div>
+
+  <div class="sec">งานของเราเอง — 5 งาน</div>
+  <div class="grid"><div class="card">
+      <div class="ph">รูปปก<span class="cnt">17 รูป</span></div>
+      <div class="tag">Conference</div>
+      <div class="ttl">TRC — Thailand Restaurant Conference</div>
+      <div class="ln"></div><div class="ln short"></div>
+      <div class="go">→</div>
+    </div><div class="card">
+      <div class="ph">รูปปก<span class="cnt">18 รูป</span></div>
+      <div class="tag">Expo</div>
+      <div class="ttl">Damn Expo</div>
+      <div class="ln"></div><div class="ln short"></div>
+      <div class="go">→</div>
+    </div><div class="card">
+      <div class="ph">รูปปก<span class="cnt">15 รูป</span></div>
+      <div class="tag">Expo</div>
+      <div class="ttl">Restech</div>
+      <div class="ln"></div><div class="ln short"></div>
+      <div class="go">→</div>
+    </div><div class="card">
+      <div class="ph">รูปปก<span class="cnt">12 รูป</span></div>
+      <div class="tag">Conference</div>
+      <div class="ttl">CafCon</div>
+      <div class="ln"></div><div class="ln short"></div>
+      <div class="go">→</div>
+    </div><div class="card">
+      <div class="ph">รูปปก<span class="cnt">11 รูป</span></div>
+      <div class="tag">Community</div>
+      <div class="ttl">#ลงแขก</div>
+      <div class="ln"></div><div class="ln short"></div>
+      <div class="go">→</div>
+    </div></div>
+
+  <div class="sec">งานที่ทำให้แบรนด์</div>
+  <div class="grid"><div class="card">
+      <div class="ph">รูปปก<span class="cnt">12 รูป</span></div>
+      <div class="tag">Conference programming</div>
+      <div class="ttl">Thaifex Horec</div>
+      <div class="ln"></div><div class="ln short"></div>
+      <div class="go">→</div>
+    </div><div class="card ghost">
+      <div class="ph">รูปปก<span class="cnt">รอยืนยัน</span></div>
+      <div class="tag">—</div>
+      <div class="ttl">? งานลูกค้าอื่น</div>
+      <div class="ln"></div><div class="ln short"></div>
+      <div class="go">→</div>
+    </div><div class="card ghost">
+      <div class="ph">รูปปก<span class="cnt">รอยืนยัน</span></div>
+      <div class="tag">—</div>
+      <div class="ttl">? งานลูกค้าอื่น</div>
+      <div class="ln"></div><div class="ln short"></div>
+      <div class="go">→</div>
+    </div></div>
+</div>
+
+<div class="screen">
+  <div class="lbl">จอที่ 2 — กดเข้าไปในงานหนึ่ง /events/trc.html</div>
+  <div class="bar"><b>PenguinX</b><span>Ecosystem</span><span>Work</span><span>Services</span><span>About</span><span class="on">Events</span></div>
+  <div class="blk">← กลับไปหน้า Events
+    <div style="font-size:10.5px;letter-spacing:.15em;color:#DBA93A;margin:12px 0 8px">CONFERENCE · งานของเราเอง</div>
+    <div class="big" style="width:74%"></div>
+    <div class="med" style="width:56%"></div>
+    <div>ชื่องาน + คำอธิบาย 2-3 บรรทัด</div>
+    <div class="stats"><div>4,500<br>ผู้เข้าร่วม</div><div>45<br>สปีกเกอร์</div><div>3<br>วัน</div><div>45<br>จังหวัด</div></div>
+    <div style="margin-top:10px;color:#777;font-size:11.5px">งานที่ยังไม่มีตัวเลข แถวนี้จะไม่ขึ้น</div>
+  </div>
+  <div class="sec">แกลเลอรีรูปในงาน</div>
+  <div class="gal"><div>รูป 1</div><div>รูป 2</div><div>รูป 3</div><div>รูป 4</div><div>รูป 5</div><div>รูป 6</div><div>รูป 7</div><div>รูป 8</div></div>
+  <div style="color:#777;font-size:11.5px;margin-top:10px">เรียงแบบ masonry — รูปแนวตั้งแนวนอนคละกันได้ ไม่ต้องครอป</div>
+</div>
+
+<div class="q"><b>ต้องยืนยัน 2 เรื่องก่อนลงมือ</b><br>
+1. ฝั่ง “งานที่ทำให้แบรนด์” เหลือ <b>Thaifex Horec</b> อยู่งานเดียวที่เป็นงานอีเวนต์จริง — มีงานอื่นอีกไหม ถ้ามีแค่งานเดียวจะขายว่า “รับจัดอีเวนต์ให้แบรนด์” ได้ไม่ค่อยหนัก<br>
+2. งาน <b>Pepsi</b> ที่อยู่ในหน้า Work ตอนนี้เขียนว่าออกบูธในงานของเรา — นับเป็นงานอีเวนต์ด้วยหรือเปล่า
+</div>
+</div></body></html>
