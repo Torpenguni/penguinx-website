@@ -591,7 +591,8 @@
   "<div class=\"eco-name\">Event<br><span class=\"light\">/ Seminar</span></div>": "<div class=\"eco-name\">イベント<br><span class=\"light\">/ セミナー</span></div>",
   "<div class=\"eco-name\">Education <span class=\"light\">/ Knowledge</span></div>": "<div class=\"eco-name\">教育 <span class=\"light\">/ ナレッジ</span></div>",
   "<div class=\"eco-name\">Solution <span class=\"light\">/ Agency</span></div>": "<div class=\"eco-name\">ソリューション <span class=\"light\">/ エージェンシー</span></div>",
-  "<div class=\"pg-item-title\">Business Development</div>": "<div class=\"pg-item-title\">事業開発</div>"
+  "<div class=\"pg-item-title\">Business Development</div>": "<div class=\"pg-item-title\">事業開発</div>",
+  "<h1 class=\"hero-title\">\n      <span class=\"light\">We are Thailand's</span><br>\n      <span class=\"accent\">restaurant ecosystem</span><br>\n      builder<span class=\"end-dot\"></span>\n    </h1>": "<h1 class=\"hero-title\">\n      <span class=\"light\">つなぐだけでは、</span><br>\n      終わらない。<br>\n      <span class=\"light\">みんなが育つ</span><br>\n      <span class=\"accent\">エコシステム</span>を、つくる<span class=\"end-dot\"></span>\n    </h1>"
  },
  "_js": {
   "viewsFormat": "{n} 回視聴",
