@@ -114,12 +114,15 @@
 <!-- ====== NAV ====== -->
 <nav class="top">
   <a href="/" class="logo"><img src="/penguinx-logo.png" alt="PenguinX"></a>
+  <input type="checkbox" id="navtoggle" class="nav-toggle" aria-label="Menu">
+  <label for="navtoggle" class="nav-burger" aria-hidden="true"><span></span></label>
   <ul class="nav-links">
     <li><a href="/#ecosystem">Ecosystem</a></li>
     <li><a href="/#work">Work</a></li>
     <li><a href="/#services">Services</a></li>
     <li><a href="/#about">About</a></li>
     <li><a href="/events.html">Events</a></li>
+    <li class="nav-cta-item"><a href="/#contact" class="nav-cta">Let's talk</a></li>
   </ul>
   <details class="lang-switch"><summary aria-label="Change language">EN</summary><div class="lang-menu"><a href="/news/longkaek-deepdive.html" hreflang="en" aria-current="true">EN</a><a href="/th/news/longkaek-deepdive.html" hreflang="th">ไทย</a><a href="/zh/news/longkaek-deepdive.html" hreflang="zh">中文</a><a href="/ja/news/longkaek-deepdive.html" hreflang="ja">日本語</a></div></details>
   <a href="/#contact" class="nav-cta">Let's talk</a>
@@ -252,5 +255,18 @@
   </div>
 </footer>
 
+<script>
+// ปิดแผงเมนูมือถือหลังกดลิงก์ ลิงก์ในเมนูส่วนใหญ่เป็น #anchor ในหน้าเดียวกัน
+// ถ้าไม่ปิด หน้าจะเลื่อนไปที่ส่วนนั้นโดยมีแผงเมนูบังอยู่
+document.addEventListener('click',function(e){
+  var a=e.target.closest&&e.target.closest('.nav-links a');
+  if(!a) return;
+  var t=document.getElementById('navtoggle'); if(t) t.checked=false;
+});
+document.addEventListener('keydown',function(e){
+  if(e.key!=='Escape') return;
+  var t=document.getElementById('navtoggle'); if(t) t.checked=false;
+});
+</script>
 </body>
 </html>

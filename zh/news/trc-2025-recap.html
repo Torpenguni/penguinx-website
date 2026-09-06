@@ -115,12 +115,15 @@
 <!-- ====== NAV ====== -->
 <nav class="top">
   <a href="/zh/" class="logo"><img src="/penguinx-logo.png" alt="PenguinX"></a>
+  <input type="checkbox" id="navtoggle" class="nav-toggle" aria-label="菜单">
+  <label for="navtoggle" class="nav-burger" aria-hidden="true"><span></span></label>
   <ul class="nav-links">
     <li><a href="/zh/#ecosystem">生态系统</a></li>
     <li><a href="/zh/#work">案例</a></li>
     <li><a href="/zh/#services">服务</a></li>
     <li><a href="/zh/#about">关于我们</a></li>
     
+    <li class="nav-cta-item"><a href="/zh/#contact" class="nav-cta">联系我们</a></li>
   </ul>
   <details class="lang-switch"><summary aria-label="切换语言">中文</summary><div class="lang-menu"><a href="/news/trc-2025-recap.html" hreflang="en">EN</a><a href="/th/news/trc-2025-recap.html" hreflang="th">ไทย</a><a href="/zh/news/trc-2025-recap.html" hreflang="zh" aria-current="true">中文</a><a href="/ja/news/trc-2025-recap.html" hreflang="ja">日本語</a></div></details>
   <a href="/zh/#contact" class="nav-cta">联系我们</a>
@@ -250,5 +253,18 @@
   </div>
 </footer>
 
+<script>
+// ปิดแผงเมนูมือถือหลังกดลิงก์ ลิงก์ในเมนูส่วนใหญ่เป็น #anchor ในหน้าเดียวกัน
+// ถ้าไม่ปิด หน้าจะเลื่อนไปที่ส่วนนั้นโดยมีแผงเมนูบังอยู่
+document.addEventListener('click',function(e){
+  var a=e.target.closest&&e.target.closest('.nav-links a');
+  if(!a) return;
+  var t=document.getElementById('navtoggle'); if(t) t.checked=false;
+});
+document.addEventListener('keydown',function(e){
+  if(e.key!=='Escape') return;
+  var t=document.getElementById('navtoggle'); if(t) t.checked=false;
+});
+</script>
 </body>
 </html>

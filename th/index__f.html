@@ -429,12 +429,15 @@
 <!-- ====== NAV ====== -->
 <nav class="top">
   <a href="/th/" class="logo"><img src="/penguinx-logo.png" alt="PenguinX"></a>
+  <input type="checkbox" id="navtoggle" class="nav-toggle" aria-label="เมนู">
+  <label for="navtoggle" class="nav-burger" aria-hidden="true"><span></span></label>
   <ul class="nav-links">
     <li><a href="#ecosystem">ระบบนิเวศ</a></li>
     <li><a href="#work">ผลงาน</a></li>
     <li><a href="#services">บริการ</a></li>
     <li><a href="#about">เกี่ยวกับเรา</a></li>
     <li><a href="/th/events.html">อีเวนต์</a></li>
+    <li class="nav-cta-item"><a href="#contact" class="nav-cta">คุยกับเรา</a></li>
   </ul>
   <details class="lang-switch"><summary aria-label="เปลี่ยนภาษา">ไทย</summary><div class="lang-menu"><a href="/index__f.html" hreflang="en">EN</a><a href="/th/index__f.html" hreflang="th" aria-current="true">ไทย</a><a href="/zh/index__f.html" hreflang="zh">中文</a><a href="/ja/index__f.html" hreflang="ja">日本語</a></div></details>
   <a href="#contact" class="nav-cta">คุยกับเรา</a>
@@ -1086,5 +1089,18 @@
   })();
 </script>
 
-<script>window.addEventListener("load",function(){setTimeout(function(){document.fonts.ready.then(function(){var loaded=[];document.fonts.forEach(function(f){if(f.status==="loaded")loaded.push(f.family+" "+f.weight)});var h=document.querySelector("h1")||document.querySelector(".hero-title");document.title="PROBE"+JSON.stringify({fontsLoaded:[...new Set(loaded)],usedFamily:getComputedStyle(h).fontFamily.split(",")[0],ext:document.querySelectorAll("link[href^=\"http\"]").length})})},2000)})</script></body>
+<script>window.addEventListener("load",function(){setTimeout(function(){document.fonts.ready.then(function(){var loaded=[];document.fonts.forEach(function(f){if(f.status==="loaded")loaded.push(f.family+" "+f.weight)});var h=document.querySelector("h1")||document.querySelector(".hero-title");document.title="PROBE"+JSON.stringify({fontsLoaded:[...new Set(loaded)],usedFamily:getComputedStyle(h).fontFamily.split(",")[0],ext:document.querySelectorAll("link[href^=\"http\"]").length})})},2000)})</script><script>
+// ปิดแผงเมนูมือถือหลังกดลิงก์ ลิงก์ในเมนูส่วนใหญ่เป็น #anchor ในหน้าเดียวกัน
+// ถ้าไม่ปิด หน้าจะเลื่อนไปที่ส่วนนั้นโดยมีแผงเมนูบังอยู่
+document.addEventListener('click',function(e){
+  var a=e.target.closest&&e.target.closest('.nav-links a');
+  if(!a) return;
+  var t=document.getElementById('navtoggle'); if(t) t.checked=false;
+});
+document.addEventListener('keydown',function(e){
+  if(e.key!=='Escape') return;
+  var t=document.getElementById('navtoggle'); if(t) t.checked=false;
+});
+</script>
+</body>
 </html>

@@ -30,12 +30,15 @@
 
 <nav class="top">
   <a href="/ja/" class="logo"><img src="/penguinx-logo.png" alt="PenguinX"></a>
+  <input type="checkbox" id="navtoggle" class="nav-toggle" aria-label="メニュー">
+  <label for="navtoggle" class="nav-burger" aria-hidden="true"><span></span></label>
   <ul class="nav-links">
     <li><a href="/ja/#ecosystem">エコシステム</a></li>
     <li><a href="/ja/#work">実績</a></li>
     <li><a href="/ja/#services">サービス</a></li>
     <li><a href="/ja/#about">会社概要</a></li>
     <li><a href="/ja/events.html">イベント</a></li>
+    <li class="nav-cta-item"><a href="/ja/#contact" class="nav-cta">お問い合わせ</a></li>
   </ul>
   <details class="lang-switch"><summary aria-label="言語を切り替える">日本語</summary><div class="lang-menu"><a href="/events/sme-d-bank.html" hreflang="en">EN</a><a href="/th/events/sme-d-bank.html" hreflang="th">ไทย</a><a href="/ja/events/sme-d-bank.html" hreflang="ja" aria-current="true">日本語</a></div></details>
   <a href="/ja/#contact" class="nav-cta">お問い合わせ</a>
@@ -98,5 +101,18 @@
     <span class="mono">www.penguinx.co</span>
   </div>
 </footer>
+<script>
+// ปิดแผงเมนูมือถือหลังกดลิงก์ ลิงก์ในเมนูส่วนใหญ่เป็น #anchor ในหน้าเดียวกัน
+// ถ้าไม่ปิด หน้าจะเลื่อนไปที่ส่วนนั้นโดยมีแผงเมนูบังอยู่
+document.addEventListener('click',function(e){
+  var a=e.target.closest&&e.target.closest('.nav-links a');
+  if(!a) return;
+  var t=document.getElementById('navtoggle'); if(t) t.checked=false;
+});
+document.addEventListener('keydown',function(e){
+  if(e.key!=='Escape') return;
+  var t=document.getElementById('navtoggle'); if(t) t.checked=false;
+});
+</script>
 </body>
 </html>
