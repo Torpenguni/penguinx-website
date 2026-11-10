@@ -561,10 +561,10 @@
   "<div class=\"eco-name\">Education <span class=\"light\">/ Knowledge</span></div>": "<div class=\"eco-name\">Education <span class=\"light\">/ Knowledge</span></div>",
   "<div class=\"eco-name\">Solution <span class=\"light\">/ Agency</span></div>": "<div class=\"eco-name\">Solution <span class=\"light\">/ Agency</span></div>",
   "<div class=\"pg-item-title\">Business Development</div>": "<div class=\"pg-item-title\">พัฒนาธุรกิจ</div>",
-  "<div class=\"hero-eyebrow mono\">\n      <span class=\"live\"></span>\n      <span>Building Thailand's F&B Ecosystem</span>\n    </div>": "<div class=\"hero-eyebrow mono\">\n      <span class=\"live\"></span>\n      <span>กำลังสร้างระบบนิเวศธุรกิจอาหารของไทย</span>\n    </div>",
   "<p class=\"hero-desc\">\n      <strong>PenguinX</strong> connects media, events, education, and business matching — putting brands in front of real operators, operators in reach of the right solutions, and the whole industry on the same growth curve.\n    </p>": "<p class=\"hero-desc\">\n      <strong>PenguinX</strong> เชื่อมสื่อ อีเวนต์ การศึกษา และ Business Matching เข้าด้วยกัน — ให้แบรนด์เข้าถึงร้านอาหารตัวจริง ให้ร้านอาหารเจอโซลูชันที่ใช่ และให้ทั้งวงการโตไปพร้อมกัน\n    </p>",
   "<h1 class=\"hero-title\">\n      <span class=\"light\">We don't just</span><br>\n      get brands into restaurants.<br>\n      <span class=\"light\">We build the</span> <span class=\"accent\">ecosystem</span><br>\n      where everyone grows<span class=\"end-dot\"></span>\n    </h1>": "<h1 class=\"hero-title\">\n      <span class=\"light\">เราไม่ได้แค่พาธุรกิจ</span><br>\n      บุกตลาดร้านอาหาร<br>\n      <span class=\"light\">เราสร้าง</span> <span class=\"accent\">ระบบนิเวศ</span><br>\n      ที่ทุกคนโตไปด้วยกัน<span class=\"end-dot\"></span>\n    </h1>",
-  "<h1 class=\"hero-title\">\n      <span class=\"light\">We are Thailand's</span><br>\n      <span class=\"accent\">restaurant ecosystem</span><br>\n      builder<span class=\"end-dot\"></span>\n    </h1>": "<h1 class=\"hero-title\">\n      <span class=\"light\">เราไม่ได้แค่พาธุรกิจ</span><br>\n      บุกตลาดร้านอาหาร<br>\n      <span class=\"light\">เราสร้าง</span> <span class=\"accent\">ระบบนิเวศ</span><br>\n      ที่ทุกคนโตไปด้วยกัน<span class=\"end-dot\"></span>\n    </h1>"
+  "<h1 class=\"hero-title\">\n      <span class=\"light\">We are Thailand's</span><br>\n      <span class=\"accent\">restaurant ecosystem</span><br>\n      builder<span class=\"end-dot\"></span>\n    </h1>": "<h1 class=\"hero-title\">\n      <span class=\"light\">เราไม่ได้แค่พาธุรกิจ</span><br>\n      บุกตลาดร้านอาหาร<br>\n      <span class=\"light\">เราสร้าง</span> <span class=\"accent\">ระบบนิเวศ</span><br>\n      ที่ทุกคนโตไปด้วยกัน<span class=\"end-dot\"></span>\n    </h1>",
+  "<div class=\"hero-eyebrow mono\">\n      <span class=\"live\"></span>\n      <span>Building Thailand's F&B Ecosystem</span>\n      <span class=\"hero-locale\"><span>Bangkok, Thailand</span> <time id=\"bkkTime\">GMT+7</time></span>\n    </div>": "<div class=\"hero-eyebrow mono\">\n      <span class=\"live\"></span>\n      <span>กำลังสร้างระบบนิเวศธุรกิจอาหารของไทย</span>\n      <span class=\"hero-locale\"><span>กรุงเทพฯ ประเทศไทย</span> <time id=\"bkkTime\">GMT+7</time></span>\n    </div>"
  },
  "_js": {
   "viewsFormat": "{n} ครั้ง"
@@ -578,5 +578,20 @@
  "13 yrs": "13 ปี",
  "Full-service video and editorial production for brand partners. Documentary-grade storytelling rooted in 13 years of F&B context.": "งานผลิตวิดีโอและคอนเทนต์ครบวงจรสำหรับแบรนด์พาร์ทเนอร์ เล่าเรื่องระดับสารคดี บนพื้นฐานประสบการณ์ในวงการอาหาร 13 ปี",
  "— built from 13 years of running real restaurants, not lecturing about them.": "— สร้างจากประสบการณ์เปิดร้านจริง 13 ปี ไม่ใช่จากการยืนบรรยายเรื่องร้าน",
- "13 years of operator perspective baked into every brief. We don't learn your category — we've lived it.": "ทุกงานมีมุมมองของคนทำร้าน 13 ปีอยู่ข้างใน เราไม่ต้องมานั่งเรียนหมวดธุรกิจของคุณ — เราอยู่ในนั้นมาแล้ว"
+ "13 years of operator perspective baked into every brief. We don't learn your category — we've lived it.": "ทุกงานมีมุมมองของคนทำร้าน 13 ปีอยู่ข้างใน เราไม่ต้องมานั่งเรียนหมวดธุรกิจของคุณ — เราอยู่ในนั้นมาแล้ว",
+ "Bangkok, Thailand": "กรุงเทพฯ ประเทศไทย",
+ "One loop that keeps compounding": "วงจรเดียว ที่ต่อยอดตัวเองไม่หยุด",
+ "Each part of PenguinX feeds the next. Media builds the audience, the community builds trust, events turn trust into deals, and education makes operators better buyers.": "ทุกส่วนของ PenguinX ส่งต่อกันเป็นทอด ๆ สื่อสร้างผู้ชม คอมมูนิตี้สร้างความไว้ใจ อีเวนต์เปลี่ยนความไว้ใจเป็นดีล และการศึกษาทำให้ผู้ประกอบการเป็นผู้ซื้อที่ตัดสินใจได้ดีขึ้น",
+ "Brands can join the loop at any point.": "แบรนด์เข้ามาร่วมวงจรนี้ได้ทุกจุด",
+ "Select a stage to see what it does.": "เลือกแต่ละขั้นเพื่อดูว่าทำอะไร",
+ "Stages of the PenguinX ecosystem": "ขั้นต่าง ๆ ในระบบนิเวศของ PenguinX",
+ "Brands": "แบรนด์",
+ "Event brands": "แบรนด์อีเวนต์",
+ "Restaurant MBA in Thailand": "หลักสูตร Restaurant MBA แห่งแรกของไทย",
+ "Brand partners": "แบรนด์พาร์ตเนอร์",
+ "Torpenguin and Tungtua put real operators' stories on screen, with 500+ videos a year.": "Torpenguin และ Tungtua เล่าเรื่องจริงของผู้ประกอบการ มากกว่า 500 คลิปต่อปี",
+ "#LongKaek dinners turn rival owners into a peer network. 90 dinners hosted so far.": "มื้อ #ลงแขก เปลี่ยนเจ้าของร้านที่เคยเป็นคู่แข่งให้กลายเป็นเครือข่ายเพื่อน จัดไปแล้ว 90 ครั้ง",
+ "TRC, Damn Expo, Restech and CafCon put brands and operators in the same room.": "TRC, Damn Expo, Restech และ CafCon พาแบรนด์กับผู้ประกอบการมาอยู่ในห้องเดียวกัน",
+ "Restaurant Business Academy, Restaurant MBA and our books make operators better-informed buyers.": "Restaurant Business Academy, Restaurant MBA และหนังสือของเรา ทำให้ผู้ประกอบการเลือกซื้อได้อย่างมีข้อมูลมากขึ้น",
+ "Brands join at any point and reach operators who already trust the platform. Their stories feed the media again.": "แบรนด์เข้าร่วมได้ทุกจุด และเข้าถึงผู้ประกอบการที่เชื่อใจแพลตฟอร์มอยู่แล้ว แล้วเรื่องราวของแบรนด์ก็กลับไปเป็นคอนเทนต์ให้สื่ออีกรอบ"
 }

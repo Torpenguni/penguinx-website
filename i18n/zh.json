@@ -570,11 +570,11 @@
   "<h1 class=\"article-title\"> How Lineman Wongnai drove nationwide brand activations <span class=\"light\">with PenguinX</span> </h1>": "<h1 class=\"article-title\">\n    Lineman Wongnai 携手 <span class=\"light\">PenguinX</span> 推动全国品牌活动\n  </h1>",
   "<h2 class=\"section-title\"> From the<br> <span class=\"light\">PenguinX</span> <span class=\"accent\">newsroom</span><span class=\"end-dot\"></span> </h2>": "<h2 class=\"section-title\">\n    来自<br>\n    <span class=\"light\">PenguinX</span> <span class=\"accent\">编辑部</span><span class=\"end-dot\"></span>\n  </h2>",
   "<div class=\"stat\"> <div class=\"num\">2.0M<span class=\"light\">+</span></div> <div class=\"label\">Followers</div> </div>": "<div class=\"stat\">\n          <div class=\"num\">2.0M<span class=\"light\">+</span></div>\n          <div class=\"label\">粉丝</div>\n        </div>",
-  "<div class=\"hero-eyebrow mono\">\n      <span class=\"live\"></span>\n      <span>Building Thailand's F&B Ecosystem</span>\n    </div>": "<div class=\"hero-eyebrow mono\">\n      <span class=\"live\"></span>\n      <span>构建泰国餐饮生态系统</span>\n    </div>",
   "<p class=\"hero-desc\">\n      <strong>PenguinX</strong> connects media, events, education, and business matching — putting brands in front of real operators, operators in reach of the right solutions, and the whole industry on the same growth curve.\n    </p>": "<p class=\"hero-desc\">\n      <strong>PenguinX</strong> 连接媒体、活动、教育与商业对接——让品牌触达真实的餐饮经营者，让经营者找到合适的解决方案，让整个行业共同成长。\n    </p>",
   "<h1 class=\"hero-title\">\n      <span class=\"light\">We don't just</span><br>\n      get brands into restaurants.<br>\n      <span class=\"light\">We build the</span> <span class=\"accent\">ecosystem</span><br>\n      where everyone grows<span class=\"end-dot\"></span>\n    </h1>": "<h1 class=\"hero-title\">\n      <span class=\"light\">餐饮品牌</span><br>\n      出海泰国<br>\n      <span class=\"light\">的</span><span class=\"accent\">第一站</span><span class=\"end-dot\"></span>\n    </h1>",
   "<h1 class=\"hero-title\">\n      <span class=\"light\">We are Thailand's</span><br>\n      <span class=\"accent\">restaurant ecosystem</span><br>\n      builder<span class=\"end-dot\"></span>\n    </h1>": "<h1 class=\"hero-title\">\n      <span class=\"light\">餐饮品牌</span><br>\n      出海泰国<br>\n      <span class=\"light\">的</span><span class=\"accent\">第一站</span><span class=\"end-dot\"></span>\n    </h1>",
-  "<h1 class=\"ev-title\">Where the industry<br><span class=\"light\">actually</span> <span class=\"accent\">meets</span><span class=\"end-dot\"></span></h1>": "<h1 class=\"ev-title\">餐饮行业<br><span class=\"light\">真正</span><span class=\"accent\">相聚</span>的地方<span class=\"end-dot\"></span></h1>"
+  "<h1 class=\"ev-title\">Where the industry<br><span class=\"light\">actually</span> <span class=\"accent\">meets</span><span class=\"end-dot\"></span></h1>": "<h1 class=\"ev-title\">餐饮行业<br><span class=\"light\">真正</span><span class=\"accent\">相聚</span>的地方<span class=\"end-dot\"></span></h1>",
+  "<div class=\"hero-eyebrow mono\">\n      <span class=\"live\"></span>\n      <span>Building Thailand's F&B Ecosystem</span>\n      <span class=\"hero-locale\"><span>Bangkok, Thailand</span> <time id=\"bkkTime\">GMT+7</time></span>\n    </div>": "<div class=\"hero-eyebrow mono\">\n      <span class=\"live\"></span>\n      <span>构建泰国餐饮生态系统</span>\n      <span class=\"hero-locale\"><span>泰国 曼谷</span> <time id=\"bkkTime\">GMT+7</time></span>\n    </div>"
  },
  "_js": {
   "viewsFormat": "{n} 次观看",
@@ -603,5 +603,20 @@
  "13 yrs": "13 年",
  "Full-service video and editorial production for brand partners. Documentary-grade storytelling rooted in 13 years of F&B context.": "为品牌伙伴提供全流程的影片与内容制作。纪录片级别的叙事，扎根于 13 年的餐饮行业积累。",
  "— built from 13 years of running real restaurants, not lecturing about them.": "——来自 13 年真正开店的经验，而不是站在讲台上讲店。",
- "13 years of operator perspective baked into every brief. We don't learn your category — we've lived it.": "每一份提案都内建 13 年的经营者视角。我们不需要现学你的品类——我们活在里面。"
+ "13 years of operator perspective baked into every brief. We don't learn your category — we've lived it.": "每一份提案都内建 13 年的经营者视角。我们不需要现学你的品类——我们活在里面。",
+ "Bangkok, Thailand": "泰国 曼谷",
+ "One loop that keeps compounding": "一个不断自我放大的循环",
+ "Each part of PenguinX feeds the next. Media builds the audience, the community builds trust, events turn trust into deals, and education makes operators better buyers.": "PenguinX 的每个部分都在推动下一个部分。媒体聚集受众，社群建立信任，活动把信任变成交易，教育让经营者成为更懂行的买家。",
+ "Brands can join the loop at any point.": "品牌可以从任何一个环节加入这个循环。",
+ "Select a stage to see what it does.": "点选任一环节，查看它的作用。",
+ "Stages of the PenguinX ecosystem": "PenguinX 生态系统的各个环节",
+ "Brands": "品牌",
+ "Event brands": "自有活动品牌",
+ "Restaurant MBA in Thailand": "泰国首个餐饮 MBA 课程",
+ "Brand partners": "合作品牌",
+ "Torpenguin and Tungtua put real operators' stories on screen, with 500+ videos a year.": "Torpenguin 与 Tungtua 把真实经营者的故事搬上屏幕，每年 500+ 支影片。",
+ "#LongKaek dinners turn rival owners into a peer network. 90 dinners hosted so far.": "#LongKaek 聚餐把同行对手变成互助网络，至今已举办 90 场。",
+ "TRC, Damn Expo, Restech and CafCon put brands and operators in the same room.": "TRC、Damn Expo、Restech 与 CafCon 让品牌和经营者坐进同一个会场。",
+ "Restaurant Business Academy, Restaurant MBA and our books make operators better-informed buyers.": "Restaurant Business Academy、Restaurant MBA 与我们的书籍，让经营者成为更有判断力的买家。",
+ "Brands join at any point and reach operators who already trust the platform. Their stories feed the media again.": "品牌可从任一环节加入，直接接触已经信任这个平台的经营者；品牌的故事又回流成为媒体内容。"
 }
