@@ -2054,12 +2054,13 @@ nav.top .logo{ margin-right:clamp(8px,2.4vw,32px) }  /* รวม gap แล้�
 .fw-hint::before{content:'';width:28px;height:1px;background:var(--accent)}
 
 .fw-wheel{
-  --size:min(600px, 46vw);
+  --size:min(580px, 40vw);
   --r:calc(var(--size) * 0.4);
   --t:-90deg;
   position:relative;
   width:var(--size);height:var(--size);
-  justify-self:center;
+  justify-self:start;
+  margin-left:clamp(24px, 5vw, 96px);   /* room for the side labels */
 }
 .fw-ring{position:absolute;inset:0;width:100%;height:100%;overflow:visible}
 .fw-ticks line{stroke:rgba(244,241,234,0.16);stroke-width:0.18}
@@ -2126,10 +2127,12 @@ nav.top .logo{ margin-right:clamp(8px,2.4vw,32px) }  /* รวม gap แล้�
 
 @media (max-width:980px){
   .flywheel{grid-template-columns:minmax(0,1fr);gap:56px;padding:96px 20px}
-  .fw-wheel{--size:min(560px, 86vw)}
+  .fw-wheel{--size:min(520px, 70vw);justify-self:center;margin-left:0}
+  .fw-node[data-side="right"] .fw-node-label,
+  .fw-node[data-side="left"] .fw-node-label{transform:translate(-50%,16px)}
 }
 @media (max-width:620px){
-  .fw-wheel{--size:min(400px, 88vw);margin-bottom:220px}
+  .fw-wheel{--size:min(400px, 80vw);margin-bottom:220px}
   .fw-node-label{font-size:12px;padding:5px 10px}
   .fw-node,.fw-node-dot{width:12px;height:12px}
   .fw-node[data-side="right"] .fw-node-label{transform:translate(-50%,14px)}
