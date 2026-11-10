@@ -2080,17 +2080,19 @@ nav.top .logo{ margin-right:clamp(8px,2.4vw,32px) }  /* รวม gap แล้�
 }
 .fw-node{
   position:absolute;left:50%;top:50%;
+  width:16px;height:16px;padding:0;
   transform:translate(-50%,-50%) rotate(var(--a)) translate(var(--r)) rotate(calc(-1 * var(--a)));
-  display:flex;flex-direction:column;align-items:center;gap:10px;
-  background:none;border:0;padding:8px;cursor:pointer;
+  background:none;border:0;cursor:pointer;
   font:inherit;color:var(--ink-mute);
 }
+.fw-node::after{content:'';position:absolute;inset:-14px}   /* larger hit area */
 .fw-node-dot{
-  width:14px;height:14px;border-radius:50%;
+  display:block;width:16px;height:16px;border-radius:50%;
   background:var(--bg);border:1px solid rgba(244,241,234,0.35);
   transition:background .4s ease,border-color .4s ease,transform .4s ease;
 }
 .fw-node-label{
+  position:absolute;left:50%;top:50%;
   font-size:15px;font-weight:600;letter-spacing:-0.01em;
   padding:7px 14px;border-radius:100px;
   border:1px solid var(--line);background:rgba(10,10,10,0.7);
@@ -2098,8 +2100,10 @@ nav.top .logo{ margin-right:clamp(8px,2.4vw,32px) }  /* รวม gap แล้�
   transition:color .4s ease,border-color .4s ease,background .4s ease;
   white-space:nowrap;
 }
-/* the label sits outside the ring on the left/right/bottom stages */
-.fw-node:nth-child(1){flex-direction:column-reverse}
+.fw-node[data-side="top"] .fw-node-label{transform:translate(-50%,calc(-100% - 16px))}
+.fw-node[data-side="bottom"] .fw-node-label{transform:translate(-50%,16px)}
+.fw-node[data-side="right"] .fw-node-label{transform:translate(16px,-50%)}
+.fw-node[data-side="left"] .fw-node-label{transform:translate(calc(-100% - 16px),-50%)}
 .fw-node.is-passed .fw-node-dot{background:rgba(219,169,58,0.5);border-color:transparent}
 .fw-node[aria-selected="true"] .fw-node-dot{background:var(--accent);border-color:var(--accent);transform:scale(1.25)}
 .fw-node[aria-selected="true"] .fw-node-label{color:var(--bg);background:var(--accent);border-color:var(--accent)}
@@ -2127,7 +2131,9 @@ nav.top .logo{ margin-right:clamp(8px,2.4vw,32px) }  /* รวม gap แล้�
 @media (max-width:620px){
   .fw-wheel{--size:min(400px, 88vw);margin-bottom:220px}
   .fw-node-label{font-size:12px;padding:5px 10px}
-  .fw-node-dot{width:10px;height:10px}
+  .fw-node,.fw-node-dot{width:12px;height:12px}
+  .fw-node[data-side="right"] .fw-node-label{transform:translate(-50%,14px)}
+  .fw-node[data-side="left"] .fw-node-label{transform:translate(-50%,14px)}
   .fw-panel{top:auto;bottom:-220px;transform:translate(-50%,0);width:100%}
   .fw-stat{font-size:48px}
 }
