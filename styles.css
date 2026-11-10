@@ -2234,3 +2234,8 @@ nav.top .logo{ margin-right:clamp(8px,2.4vw,32px) }  /* รวม gap แล้�
 @media (max-width:900px){
   .hero-bg{opacity:0.6}
 }
+
+/* Hero stats: suffix and labels carry more weight */
+.hero-stats .stat .num .light{font-weight:700;font-size:0.68em;color:var(--ink);margin-left:2px}
+.hero-stats .stat .label{font-size:14px;font-weight:700;color:var(--accent);letter-spacing:0.08em;margin-top:12px}
+@media (max-width:900px){.hero-stats .stat .label{font-size:12px}}
