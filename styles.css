@@ -2293,3 +2293,4 @@ nav.top .logo{ margin-right:clamp(8px,2.4vw,32px) }  /* รวม gap แล้�
 /* numbers in black, gold carried by the unit */
 .why .why-stat{background:none;-webkit-text-fill-color:#121110;color:#121110}
 .why .why-stat .unit{-webkit-text-fill-color:#b8860b;color:#b8860b;font-weight:700}
+.why .why-stat .unit{font-size:0.55em;letter-spacing:-0.02em;margin-left:2px}
