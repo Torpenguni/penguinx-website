@@ -2262,3 +2262,14 @@ nav.top .logo{ margin-right:clamp(8px,2.4vw,32px) }  /* รวม gap แล้�
 .eco-sub{margin-top:10px}
 .eco-sub span{padding:5px 11px;font-size:12px}
 @media (max-width:900px){.eco-card{padding:18px 20px}}
+
+/* Services: three across and tighter cards (~30% shorter section) */
+.services{padding-top:64px;padding-bottom:64px}
+.services .section-head{margin-bottom:36px}
+.services .service-grid{grid-template-columns:repeat(3,minmax(0,1fr))}
+.services .service-card{padding:18px 20px;gap:8px;min-height:0}
+.services .s-num{font-size:24px}
+.services .s-name{font-size:22px}
+.services .s-desc{font-size:14px;line-height:1.5}
+@media (max-width:900px){.services .service-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:600px){.services .service-grid{grid-template-columns:minmax(0,1fr)}}
