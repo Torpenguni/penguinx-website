@@ -604,44 +604,7 @@
    "ทำไม Cloud Kitchen ถึงยังไม่ work ในไทย": "クラウドキッチンがタイでまだ機能しない理由",
    "ราคาวัตถุดิบขึ้น ร้านต้องขึ้นราคามั้ย": "原価が上がったら、値上げすべきか",
    "เจ้าของร้านควรเข้าครัวเองมั้ย": "オーナーは自ら厨房に立つべきか"
-  },
-  "fallbackVideos": [
-   {
-    "id": "",
-    "title": "麺屋を開いて、なぜ潰れるのか",
-    "thumb": "https://i.ytimg.com/vi/_/hqdefault.jpg",
-    "duration": "12:34",
-    "views": "1.2M"
-   },
-   {
-    "id": "",
-    "title": "多店舗展開の前に知っておくべき5つのこと",
-    "thumb": "https://i.ytimg.com/vi/_/hqdefault.jpg",
-    "duration": "18:02",
-    "views": "880K"
-   },
-   {
-    "id": "",
-    "title": "クラウドキッチンがタイでまだ機能しない理由",
-    "thumb": "https://i.ytimg.com/vi/_/hqdefault.jpg",
-    "duration": "15:45",
-    "views": "650K"
-   },
-   {
-    "id": "",
-    "title": "原価が上がったら、値上げすべきか",
-    "thumb": "https://i.ytimg.com/vi/_/hqdefault.jpg",
-    "duration": "11:15",
-    "views": "420K"
-   },
-   {
-    "id": "",
-    "title": "オーナーは自ら厨房に立つべきか",
-    "thumb": "https://i.ytimg.com/vi/_/hqdefault.jpg",
-    "duration": "14:52",
-    "views": "310K"
-   }
-  ]
+  }
  },
  "Backed by PenguinX's own F&B business media (2.0M+ followers) and a trusted ecosystem of suppliers and operators.": "PenguinX 自社の飲食ビジネスメディア（フォロワー200万人以上）と、サプライヤー・経営者による信頼のネットワークが支えます。",
  "Founder-led content with Tor, reaching a 2M+ F&B audience": "Tor による創業者発信のコンテンツで、200万人以上の飲食ビジネス層へリーチ",

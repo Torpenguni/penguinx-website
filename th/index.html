@@ -1085,13 +1085,10 @@
       if(!data.items || !data.items.length) throw new Error('Empty');
       render(data.items);
     }catch(e){
-      render(I18N.fallbackVideos || [
-        {id:'',title:'เปิดร้านก๋วยเตี๋ยว ทำไมถึงเจ๊ง',thumb:'https://i.ytimg.com/vi/_/hqdefault.jpg',duration:'12:34',views:'1.2M'},
-        {id:'',title:'5 ข้อที่ร้านอาหารต้องรู้ก่อนเปิดสาขา',thumb:'https://i.ytimg.com/vi/_/hqdefault.jpg',duration:'18:02',views:'880K'},
-        {id:'',title:'ทำไม Cloud Kitchen ถึงยังไม่ work ในไทย',thumb:'https://i.ytimg.com/vi/_/hqdefault.jpg',duration:'15:45',views:'650K'},
-        {id:'',title:'ราคาวัตถุดิบขึ้น ร้านต้องขึ้นราคามั้ย',thumb:'https://i.ytimg.com/vi/_/hqdefault.jpg',duration:'11:15',views:'420K'},
-        {id:'',title:'เจ้าของร้านควรเข้าครัวเองมั้ย',thumb:'https://i.ytimg.com/vi/_/hqdefault.jpg',duration:'14:52',views:'310K'},
-      ]);
+      // ดึงคลิปจริงไม่ได้ ซ่อนแถวคลิปไปเลย เหลือปุ่ม Watch on YouTube ไว้
+      // เดิมใส่คลิปตัวอย่างพร้อมยอดวิวสมมติ (1.2M, 880K…) ซึ่งกดแล้วไม่ไปไหน
+      // และคนนอกจะเข้าใจว่าเป็นตัวเลขจริง
+      scroller.remove();
     }
   })();
 </script>
