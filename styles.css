@@ -2252,3 +2252,13 @@ nav.top .logo{ margin-right:clamp(8px,2.4vw,32px) }  /* รวม gap แล้�
   .case-name .light{display:block;font-size:13px;margin-top:3px}
   .case-year{font-size:12px}
 }
+
+/* Ecosystem cards: ~30% shorter */
+.eco-card{min-height:0;padding:18px 24px;gap:12px}
+.eco-card > div:last-of-type{min-height:0}
+.eco-name{font-size:clamp(26px,2.5vw,36px);line-height:1.05}
+.eco-tag{font-size:10px}
+.eco-arrow{top:18px;right:20px;width:32px;height:32px;font-size:12px}
+.eco-sub{margin-top:10px}
+.eco-sub span{padding:5px 11px;font-size:12px}
+@media (max-width:900px){.eco-card{padding:18px 20px}}
