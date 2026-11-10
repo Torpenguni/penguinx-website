@@ -632,7 +632,6 @@
     </h2>
   </div>
   <div class="case-list">
-    <div class="case-peek" aria-hidden="true"><img alt="" decoding="async"></div>
     <a class="case-row" href="/ja/work/lineman-wongnai.html" data-case="0">
       <div class="case-logo"><img src="/clients/lineman.png" alt="" loading="lazy" style="height:18px"></div>
       <div class="case-name">Lineman Wongnai <span class="light">— 認知拡大／ブランドアクティベーション</span></div>
@@ -1244,38 +1243,6 @@ document.addEventListener('keydown',function(e){
   place(0); setActive(0); run();
 })();
 
-/* Work list: a photo from the case follows the cursor on desktop */
-(function(){
-  var list = document.querySelector('.case-list');
-  var peek = list && list.querySelector('.case-peek');
-  if(!peek || typeof WORK_CASES === 'undefined') return;
-  if(!window.matchMedia('(hover: hover) and (pointer: fine)').matches) return;
-  var img = peek.querySelector('img');
-  var srcs = WORK_CASES.map(function(c){ return c.images && c.images[0] ? c.images[0].src : ''; });
-  var x = 0, y = 0, tx = 0, ty = 0, raf = 0, shown = false;
-  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  srcs.forEach(function(s){ if(s){ var i = new Image(); i.decoding = 'async'; i.src = s; } });
-  function loop(){
-    x += (tx - x) * (reduce ? 1 : 0.18); y += (ty - y) * (reduce ? 1 : 0.18);
-    peek.style.transform = 'translate3d(' + x + 'px,' + y + 'px,0)';
-    raf = shown ? requestAnimationFrame(loop) : 0;
-  }
-  list.addEventListener('mousemove', function(e){
-    var r = list.getBoundingClientRect();
-    tx = e.clientX - r.left + 28; ty = e.clientY - r.top - 120;
-    if(!shown){ x = tx; y = ty; }
-  });
-  list.querySelectorAll('.case-row[data-case]').forEach(function(row){
-    row.addEventListener('mouseenter', function(){
-      var s = srcs[Number(row.dataset.case)];
-      if(!s) return;
-      if(img.getAttribute('src') !== s) img.src = s;
-      shown = true; peek.classList.add('is-on');
-      if(!raf) raf = requestAnimationFrame(loop);
-    });
-  });
-  list.addEventListener('mouseleave', function(){ shown = false; peek.classList.remove('is-on'); });
-})();
 </script>
 
 </body>
