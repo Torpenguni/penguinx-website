@@ -2300,3 +2300,27 @@ nav.top .logo{ margin-right:clamp(8px,2.4vw,32px) }  /* รวม gap แล้�
 .shorts-cta .yt{width:32px;height:22px;border-radius:6px}
 .shorts-cta .yt::after{border-width:5.5px 0 5.5px 9px}
 @media (max-width:600px){.shorts-cta{font-size:15px;padding:14px 22px}}
+
+
+/* Work list: results under each client */
+.case-metrics{display:flex;flex-wrap:wrap;gap:6px 22px;margin-top:8px;font-size:13px;font-weight:400;letter-spacing:0;color:var(--ink-mute)}
+.case-metrics b{color:var(--accent);font-weight:700;font-size:15px;margin-right:3px}
+.case-row:hover .case-metrics{color:var(--ink)}
+@media (max-width:900px){.case-metrics{font-size:12px;gap:4px 14px}.case-metrics b{font-size:13px}}
+.article-facts:has(> div:nth-child(4)){grid-template-columns:repeat(4,1fr)}
+@media (max-width:700px){.article-facts:has(> div:nth-child(4)){grid-template-columns:repeat(2,1fr)}}
+
+/* Why: one-line financial proof under the heading */
+.why-note{font-size:17px;color:var(--ink-mute);margin-top:-8px}
+
+/* Leadership: the rest of the team */
+.team-more{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin-top:14px;max-width:none}
+.team-person{border:1px solid var(--line);border-radius:14px;padding:22px 24px;background:var(--bg-2)}
+.team-person strong{display:block;font-size:18px;font-weight:600;color:var(--ink)}
+.team-person span{display:block;margin-top:2px;font-size:13px;color:var(--accent);font-weight:600}
+.team-person p{margin-top:10px;font-size:14px;line-height:1.55;color:var(--ink-mute)}
+.team-specialists strong{font-size:30px;line-height:1;letter-spacing:-0.03em}
+@media (max-width:860px){.team-more{grid-template-columns:minmax(0,1fr)}}
+
+/* CTA note */
+.cta-note{margin-top:18px;font-size:15px;color:var(--ink-mute);max-width:46ch;text-align:center;margin-left:auto;margin-right:auto}

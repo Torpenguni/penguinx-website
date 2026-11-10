@@ -4,8 +4,8 @@
 > ecosystem builder based in Bangkok, Thailand. Rather than running campaigns alone,
 > PenguinX owns the media, events, education, and business-solution channels that
 > Thailand's restaurant operators already trust — and connects brands into them.
-> Founded on the Torpenguin media channel, the group reaches a 2.0M+ operator
-> audience, has served 200+ brand partners, and operates across 45 provinces.
+> Founded on the Torpenguin media channel, the group reaches a 1.95M+ follower
+> audience, has served 200+ brand partners, and runs a community across 52 provinces.
 
 > PenguinX (เพนกวินเอ็กซ์) คือเอเจนซี่แบรนด์ดิ้งและการตลาดธุรกิจอาหาร (F&B)
 > และผู้สร้างระบบนิเวศธุรกิจร้านอาหารในประเทศไทย สำนักงานอยู่ที่กรุงเทพมหานคร
@@ -25,7 +25,7 @@
 
 ## Ecosystem properties / ทรัพย์สินในระบบนิเวศ
 
-- [PenguinX Media](https://www.penguinx.co/ecosystem/media.html): Torpenguin (operator media, 2.0M+ audience) and an in-house production studio.
+- [PenguinX Media](https://www.penguinx.co/ecosystem/media.html): Torpenguin (operator media, 1.5M+ followers) and an in-house production studio.
 - [PenguinX Event](https://www.penguinx.co/ecosystem/event.html): TRC — Thailand Restaurant Conference, Damn Expo, Restech, CafCon, #LongKaek.
 - [PenguinX Education](https://www.penguinx.co/ecosystem/education.html): Restaurant Business Academy, Restaurant MBA (first of its kind in Thailand), published books.
 - [PenguinX Solution](https://www.penguinx.co/ecosystem/solution.html): Brand strategy consulting and business development.
@@ -50,7 +50,7 @@
 ## Leadership / ผู้บริหาร
 
 - **TOR Thanapong** — Founder & CEO. 13 years in the F&B industry,
-  speaker at 600+ conferences, author of best-selling restaurant management books, director of the first
+  speaker at 1,000+ conferences, author of best-selling restaurant management books, director of the first
   Restaurant MBA program in Thailand. Contact: tor@penguinx.co
 - **SAN Pornchai** — Chief Marketing Officer. Former executive at TBWA, McCann Group, Dentsu Y&R, and Lowe.
   25+ years in branding and marketing; consultant to 20+ organizations. Contact: supersupp@penguinx.co
