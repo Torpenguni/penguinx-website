@@ -1,5 +1,5 @@
 # robots.txt — www.penguinx.co
-# PenguinX — F&B branding & marketing agency / restaurant ecosystem builder, Bangkok, Thailand
+# PenguinX — restaurant ecosystem builder, Bangkok, Thailand
 
 # ---------------------------------------------------------------
 # Search engine crawlers
