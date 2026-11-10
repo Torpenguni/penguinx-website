@@ -2132,12 +2132,13 @@ nav.top .logo{ margin-right:clamp(8px,2.4vw,32px) }  /* รวม gap แล้�
   .fw-node[data-side="left"] .fw-node-label{transform:translate(-50%,16px)}
 }
 @media (max-width:620px){
-  .fw-wheel{--size:min(400px, 80vw);margin-bottom:220px}
+  .fw-wheel{--size:min(400px, 80vw);margin-bottom:250px}
   .fw-node-label{font-size:12px;padding:5px 10px}
   .fw-node,.fw-node-dot{width:12px;height:12px}
   .fw-node[data-side="right"] .fw-node-label{transform:translate(-50%,14px)}
   .fw-node[data-side="left"] .fw-node-label{transform:translate(-50%,14px)}
-  .fw-panel{top:auto;bottom:-220px;transform:translate(-50%,0);width:100%}
+  .fw-panel{top:calc(100% + 56px);transform:translate(-50%,0);width:100%}
+  .flywheel{padding-bottom:40px}
   .fw-stat{font-size:48px}
 }
 @media (prefers-reduced-motion:reduce){
