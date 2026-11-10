@@ -2294,3 +2294,9 @@ nav.top .logo{ margin-right:clamp(8px,2.4vw,32px) }  /* รวม gap แล้�
 .why .why-stat{background:none;-webkit-text-fill-color:#121110;color:#121110}
 .why .why-stat .unit{-webkit-text-fill-color:#b8860b;color:#b8860b;font-weight:700}
 .why .why-stat .unit{font-size:0.55em;letter-spacing:-0.02em;margin-left:2px}
+
+/* Watch on YouTube: a bigger, clearer button */
+.shorts-cta{font-size:18px;font-weight:600;padding:18px 32px;gap:14px;border-color:rgba(244,241,234,0.3)}
+.shorts-cta .yt{width:32px;height:22px;border-radius:6px}
+.shorts-cta .yt::after{border-width:5.5px 0 5.5px 9px}
+@media (max-width:600px){.shorts-cta{font-size:15px;padding:14px 22px}}
