@@ -2242,3 +2242,26 @@ nav.top .logo{ margin-right:clamp(8px,2.4vw,32px) }  /* รวม gap แล้�
 
 /* Section headings: one step smaller site-wide, in line with the flywheel heading */
 .section-title{font-size:clamp(34px,4.8vw,72px);line-height:1}
+
+/* Work list: compact rows led by the client's logo */
+.case-row{grid-template-columns:104px minmax(0,1fr) 56px 40px;gap:28px;padding:14px 0}
+.case-logo{
+  width:104px;height:52px;
+  background:#fff;border-radius:8px;
+  display:grid;place-items:center;padding:6px;
+  overflow:hidden;
+  transition:transform .3s ease;
+}
+.case-logo img{display:block;max-width:100%;width:auto;object-fit:contain}
+.case-row:hover .case-logo{transform:scale(1.04)}
+.case-name{font-size:24px;letter-spacing:-0.02em}
+.case-name .light{font-size:0.66em}
+.case-arrow{font-size:18px}
+@media (max-width:900px){
+  .case-row{grid-template-columns:72px minmax(0,1fr) 40px 22px;gap:14px;padding:12px 0}
+  .case-logo{width:72px;height:40px;padding:5px}
+  .case-logo img{transform:scale(0.8)}
+  .case-name{font-size:17px}
+  .case-name .light{display:block;font-size:13px;margin-top:3px}
+  .case-year{font-size:12px}
+}
