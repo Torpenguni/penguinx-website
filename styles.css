@@ -2205,3 +2205,17 @@ nav.top .logo{ margin-right:clamp(8px,2.4vw,32px) }  /* รวม gap แล้�
 .fw-stat-label{text-shadow:0 1px 10px rgba(0,0,0,0.85)}
 @media (max-width:620px){.fw-photos img.is-on{opacity:0.6}}
 @media (prefers-reduced-motion:reduce){.fw-photos img{transition:opacity .6s ease;transform:none}}
+
+/* Hero: let the stage breathe — dark only where the headline sits */
+.hero-bg{opacity:0.72;filter:contrast(1.06) saturate(0.95) brightness(1.12)}
+.hero-overlay{
+  background:
+    linear-gradient(90deg, rgba(10,10,10,0.88) 0%, rgba(10,10,10,0.62) 34%, rgba(10,10,10,0.12) 62%, rgba(10,10,10,0) 80%),
+    linear-gradient(180deg, rgba(10,10,10,0.5) 0%, transparent 22%, transparent 70%, rgba(10,10,10,0.95) 100%);
+}
+@media (max-width:900px){       /* text runs over the whole photo on small screens */
+  .hero-bg{opacity:0.5}
+  .hero-overlay{
+    background:linear-gradient(180deg, rgba(10,10,10,0.55) 0%, rgba(10,10,10,0.35) 40%, rgba(10,10,10,0.6) 70%, rgba(10,10,10,0.95) 100%);
+  }
+}
