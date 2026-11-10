@@ -2180,3 +2180,27 @@ nav.top .logo{ margin-right:clamp(8px,2.4vw,32px) }  /* รวม gap แล้�
   margin-bottom:-0.12em;
 }
 .foot-wordmark span{color:rgba(219,169,58,0.55)}
+
+/* Flywheel: a photo of the current stage shows through the middle of the ring */
+.fw-photos{
+  position:absolute;inset:11%;
+  border-radius:50%;overflow:hidden;
+  -webkit-mask-image:radial-gradient(circle at 50% 50%, #000 38%, rgba(0,0,0,0.55) 58%, transparent 71%);
+          mask-image:radial-gradient(circle at 50% 50%, #000 38%, rgba(0,0,0,0.55) 58%, transparent 71%);
+}
+.fw-photos img{
+  position:absolute;inset:0;width:100%;height:100%;
+  object-fit:cover;
+  opacity:0;transform:scale(1.08);
+  filter:saturate(0.85) contrast(1.05);
+  transition:opacity 1.4s ease, transform 5s ease-out;
+}
+.fw-photos img.is-on{opacity:0.34;transform:scale(1)}
+.fw-photos::after{                       /* keeps the stat and copy readable over the photo */
+  content:'';position:absolute;inset:0;
+  background:radial-gradient(circle at 50% 50%, rgba(10,10,10,0.55) 0%, rgba(10,10,10,0.25) 55%, rgba(10,10,10,0) 75%);
+}
+.fw-detail p{color:rgba(244,241,234,0.74)}
+.fw-stat{text-shadow:0 2px 24px rgba(0,0,0,0.6)}
+@media (max-width:620px){.fw-photos img.is-on{opacity:0.42}}
+@media (prefers-reduced-motion:reduce){.fw-photos img{transition:opacity .6s ease;transform:none}}
