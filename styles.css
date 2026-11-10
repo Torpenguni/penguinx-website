@@ -2273,3 +2273,18 @@ nav.top .logo{ margin-right:clamp(8px,2.4vw,32px) }  /* รวม gap แล้�
 .services .s-desc{font-size:14px;line-height:1.5}
 @media (max-width:900px){.services .service-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media (max-width:600px){.services .service-grid{grid-template-columns:minmax(0,1fr)}}
+
+/* Why PenguinX: milky-white cards with dark type so they stand out */
+.why .why-card{
+  background:rgba(244,241,234,0.92);
+  border-color:rgba(244,241,234,0.6);
+  box-shadow:0 20px 40px -24px rgba(0,0,0,0.6);
+}
+.why .why-card::after{background:radial-gradient(circle at top right,rgba(219,169,58,0.18) 0%,transparent 65%)}
+.why .why-card:hover{background:#f6f3ec;border-color:var(--accent)}
+.why .why-eyebrow{color:#6b665d}
+.why .why-eyebrow::before{background:#b8860b}
+.why .why-stat{color:#a87a10}
+.why .why-stat .unit{color:#6b665d}
+.why .why-title{color:#121110}
+.why .why-desc{color:#3d3a34}
