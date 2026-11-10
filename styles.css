@@ -2290,3 +2290,6 @@ nav.top .logo{ margin-right:clamp(8px,2.4vw,32px) }  /* รวม gap แล้�
 .why .why-desc{color:#3d3a34}
 .why .why-stat{background:linear-gradient(160deg,#b8860b 0%,#8a6208 100%);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
 .why .why-stat .unit{-webkit-text-fill-color:#6b665d}
+/* numbers in black, gold carried by the unit */
+.why .why-stat{background:none;-webkit-text-fill-color:#121110;color:#121110}
+.why .why-stat .unit{-webkit-text-fill-color:#b8860b;color:#b8860b;font-weight:700}
