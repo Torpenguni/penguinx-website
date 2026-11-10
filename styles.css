@@ -2293,3 +2293,12 @@ nav.top .logo{ margin-right:clamp(8px,2.4vw,32px) }  /* รวม gap แล้�
 /* numbers in black, gold carried by the unit */
 .why .why-stat{background:none;-webkit-text-fill-color:#121110;color:#121110}
 .why .why-stat .unit{-webkit-text-fill-color:#b8860b;color:#b8860b;font-weight:700}
+
+/* Why PenguinX: bigger cards and type */
+.why .why-grid{gap:18px}
+.why .why-card{padding:40px 32px 36px;min-height:380px}
+.why .why-eyebrow{font-size:12px}
+.why .why-stat{font-size:clamp(48px,5vw,76px);margin-top:26px}
+.why .why-title{font-size:22px;line-height:1.25}
+.why .why-desc{font-size:15px;line-height:1.65}
+@media (max-width:1100px){.why .why-card{padding:32px 26px;min-height:0}}
