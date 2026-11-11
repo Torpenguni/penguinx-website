@@ -2314,7 +2314,7 @@ nav.top .logo{ margin-right:clamp(8px,2.4vw,32px) }  /* รวม gap แล้�
 .why-note{font-size:17px;color:var(--ink-mute);margin-top:-8px}
 
 /* Leadership: the rest of the team */
-.team-more{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin-top:14px;max-width:none}
+.team-more{display:grid;grid-template-columns:minmax(0,1.45fr) minmax(0,1.45fr) minmax(0,1fr);gap:14px;margin-top:14px;max-width:none}
 .team-person{border:1px solid var(--line);border-radius:14px;padding:22px 24px;background:var(--bg-2)}
 .team-person strong{display:block;font-size:18px;font-weight:600;color:var(--ink)}
 .team-person span{display:block;margin-top:2px;font-size:13px;color:var(--accent);font-weight:600}
