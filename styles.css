@@ -2348,3 +2348,5 @@ nav.top .logo{ margin-right:clamp(8px,2.4vw,32px) }  /* รวม gap แล้�
   .eco-sub span.eco-logo--bare img{height:42px}
   .eco-sub span.eco-logo--wordmark img{height:21px}
 }
+.eco-sub span.eco-logo--badge img{height:36px}
+@media (max-width:900px){.eco-sub span.eco-logo--badge img{height:30px}}
