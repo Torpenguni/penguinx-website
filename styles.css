@@ -2324,3 +2324,18 @@ nav.top .logo{ margin-right:clamp(8px,2.4vw,32px) }  /* รวม gap แล้�
 
 /* CTA note */
 .cta-note{margin-top:18px;font-size:15px;color:var(--ink-mute);max-width:46ch;text-align:center;margin-left:auto;margin-right:auto}
+
+/* Ecosystem cards: brand logos on white chips instead of text pills */
+.eco-sub.eco-logos{align-items:center;gap:8px}
+.eco-sub span.eco-logo{
+  display:inline-flex;align-items:center;
+  height:52px;padding:7px 12px;
+  background:#fff;border:0;border-radius:8px;
+  backdrop-filter:none;-webkit-backdrop-filter:none;
+}
+.eco-sub span.eco-logo img{display:block;height:38px;width:auto}
+.eco-sub span.eco-logo--text{color:#0a0a0a;font-size:15px;font-weight:700;letter-spacing:-0.01em;padding:6px 12px}
+@media (max-width:900px){
+  .eco-sub span.eco-logo{height:42px;padding:5px 9px}
+  .eco-sub span.eco-logo img{height:30px}
+}
