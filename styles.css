@@ -2319,6 +2319,9 @@ nav.top .logo{ margin-right:clamp(8px,2.4vw,32px) }  /* รวม gap แล้�
 .team-person strong{display:block;font-size:18px;font-weight:600;color:var(--ink)}
 .team-person span{display:block;margin-top:2px;font-size:13px;color:var(--accent);font-weight:600}
 .team-person p{margin-top:10px;font-size:14px;line-height:1.55;color:var(--ink-mute)}
+.team-person.has-photo{display:grid;grid-template-columns:112px minmax(0,1fr);gap:20px;align-items:start}
+.team-photo{display:block;width:112px;height:116px;object-fit:cover;object-position:center top;border-radius:10px}
+@media (max-width:860px){.team-person.has-photo{grid-template-columns:88px minmax(0,1fr);gap:16px}.team-photo{width:88px;height:92px}}
 .team-specialists strong{font-size:30px;line-height:1;letter-spacing:-0.03em}
 @media (max-width:860px){.team-more{grid-template-columns:minmax(0,1fr)}}
 
