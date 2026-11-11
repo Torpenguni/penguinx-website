@@ -2342,11 +2342,15 @@ nav.top .logo{ margin-right:clamp(8px,2.4vw,32px) }  /* รวม gap แล้�
 /* Logos made for dark backgrounds: no white chip */
 .eco-sub span.eco-logo--bare{background:transparent;padding:0}
 .eco-sub span.eco-logo--bare img{height:52px}
-.eco-sub span.eco-logo--wordmark{padding:0 4px}
+.eco-sub span.eco-logo--wordmark{padding:0 4px;margin-left:16px}
 .eco-sub span.eco-logo--wordmark img{height:26px}
 @media (max-width:900px){
   .eco-sub span.eco-logo--bare img{height:42px}
   .eco-sub span.eco-logo--wordmark img{height:21px}
+  .eco-sub span.eco-logo--wordmark{margin-left:10px}
 }
 .eco-sub span.eco-logo--badge img{height:36px}
 @media (max-width:900px){.eco-sub span.eco-logo--badge img{height:30px}}
+/* Softer chips: slightly faded white so logos don't pop off the dark photo */
+.eco-sub span.eco-logo:not(.eco-logo--bare){background:rgba(255,255,255,.82)}
+.eco-sub span.eco-logo:not(.eco-logo--bare) img{mix-blend-mode:multiply}
