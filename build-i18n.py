@@ -64,7 +64,7 @@ def drop_withheld_links(html, code):
     return re.sub(r'<li>\s*<a href="([^"]+)"[^>]*>.*?</a>\s*</li>', cut, html, flags=re.S)
 SITE = 'https://www.penguinx.co'
 # ไฟล์ที่ไม่ใช่หน้าเว็บ — ลิงก์พวกนี้ห้ามเติม prefix ภาษา
-ASSET = re.compile(r'\.(css|js|png|jpe?g|JPG|JPEG|svg|webp|ico|gif|mp4|pdf|txt|xml)$', re.I)
+ASSET = re.compile(r'\.(css|js|png|jpe?g|JPG|JPEG|svg|webp|ico|gif|mp4|pdf|txt|xml|webmanifest|json)$', re.I)
 
 def pages():
     out = []
