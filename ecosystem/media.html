@@ -113,6 +113,16 @@
   .pg-grid.cols-2 .pg-item-title{font-size:28px}
   .pg-item-sub{font-size:13.5px;color:var(--ink-mute);line-height:1.5}
   .pg-grid.cols-2 .pg-item-sub{font-size:15px}
+  .pg-media3 .pg-item-title{font-size:26px}
+  .pg-media3 .pg-item-sub{font-size:15px}
+  .pg-soon{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;background:radial-gradient(120% 90% at 50% 40%,#2a2620 0%,#141311 60%,#0d0d0c 100%);border:1px solid var(--line)}
+  .pg-soon .pg-soon-logo{width:62%;max-width:300px;height:auto;object-fit:contain}
+  .pg-item:hover .pg-soon .pg-soon-logo{transform:none}
+  .pg-soon-url{font-size:13px;letter-spacing:0.12em;color:var(--ink-mute)}
+  .pg-soon-badge{position:absolute;top:16px;right:16px;font-size:10px;letter-spacing:0.18em;text-transform:uppercase;color:var(--accent);border:1px solid rgba(219,169,58,0.5);border-radius:999px;padding:6px 12px;background:rgba(219,169,58,0.08)}
+  .pg-item-link--soon{cursor:default;opacity:0.6}
+  .pg-item-link--soon:hover{color:inherit;border-color:inherit;background:transparent}
+  .pg-item-link--soon .arrow{font-size:11px;letter-spacing:0.12em;text-transform:uppercase}
   .pg-item-foot{margin-top:14px;padding-top:12px;border-top:1px solid var(--line-soft);font-size:11px;color:var(--ink-mute);letter-spacing:0.08em;text-transform:uppercase;display:flex;justify-content:space-between;align-items:center}
   .pg-item-foot .arrow{color:var(--accent);transition:transform 0.3s ease}
   .pg-item:hover .pg-item-foot .arrow{transform:translate(3px,-3px)}
@@ -341,11 +351,11 @@
   <div class="pg-section-head">
     <div>
       <div class="pg-section-num">02 / Properties</div>
-      <h2 class="pg-section-title">Two media operations.</h2>
+      <h2 class="pg-section-title">Three media operations.</h2>
     </div>
     <div class="pg-section-meta">Each tuned to a different audience and intent</div>
   </div>
-  <div class="pg-grid cols-2">
+  <div class="pg-grid cols-3 pg-media3">
     <div class="pg-item">
       <div class="pg-item-img"><div class="pg-track" data-index="0">
         <img src="/ecosystem/Media/torpenguin/tp1.jpg" alt="" loading="lazy">
@@ -372,6 +382,17 @@
       <div class="pg-item-tag">Studio · Service</div>
       <div class="pg-item-title">Media Production</div>
       <div class="pg-item-sub">Full-service video and editorial production for brand partners. Documentary-grade storytelling rooted in 13 years of F&B context.</div>
+    </div>
+    <div class="pg-item">
+      <div class="pg-item-img pg-soon">
+        <img class="pg-soon-logo" src="/brands/spoonasia.png" alt="SpoonAsia" loading="lazy">
+        <div class="pg-soon-url">SpoonAsia.com</div>
+        <div class="pg-soon-badge">Launching soon</div>
+      </div>
+      <div class="pg-item-tag">Global · Coming soon</div>
+      <div class="pg-item-title">SpoonAsia</div>
+      <div class="pg-item-sub">Global media on Thailand's restaurant and food market, in English — introducing Thai food, restaurant brands and the people behind them to an international audience.</div>
+      <span class="pg-item-link pg-item-link--soon" aria-disabled="true"><span>SpoonAsia.com</span><span class="arrow">Soon</span></span>
     </div>
   </div>
 </section>
