@@ -2155,21 +2155,6 @@ nav.top .logo{ margin-right:clamp(8px,2.4vw,32px) }  /* รวม gap แล้�
 .case-list{position:relative}
 @media (max-width:900px){.case-row{grid-template-columns:30px 1fr 44px 40px}}
 
-/* Footer wordmark */
-.foot-wordmark{
-  margin-top:56px;
-  font-size:clamp(72px,19vw,300px);
-  font-weight:700;
-  line-height:0.78;
-  letter-spacing:-0.06em;
-  color:#1b1a18;
-  user-select:none;
-  white-space:nowrap;
-  overflow:hidden;
-  margin-bottom:-0.12em;
-}
-.foot-wordmark span{color:rgba(219,169,58,0.55)}
-
 /* Flywheel: a photo of the current stage shows through the middle of the ring */
 .fw-photos{
   position:absolute;inset:11%;
