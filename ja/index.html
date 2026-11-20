@@ -3,6 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script src="/analytics.js"></script>
 <meta name="google-site-verification" content="0iXH3Yr04CFRQfFy7IOcoVhPkDzgcY2k17awuXO-GVI">
 <title>PenguinX — タイ飲食エコシステム・ビルダー</title>
 <link rel="icon" href="/favicon.ico" sizes="48x48">
@@ -957,8 +958,26 @@
       <span class="light">私たちの</span><span class="accent">エコシステム</span><span class="end-dot"></span>
     </h2>
   <div class="cta-eyebrow mono">— 一緒に、つくりましょう —</div>
-  <a href="mailto:tor@penguinx.co?subject=Discovery%20call%20with%20PenguinX" class="cta-btn">30分の無料相談を予約</a>
   <p class="cta-note">ブランドと目標をお聞かせください。関連事例とタイ市場の見立てをお伝えします。</p>
+  <form class="lead-form" id="leadForm" novalidate>
+    <div class="lead-grid">
+      <label><span>お名前</span><input name="name" type="text" autocomplete="name" required maxlength="120"></label>
+      <label><span>会社 / ブランド</span><input name="company" type="text" autocomplete="organization" maxlength="160"></label>
+      <label><span>メールアドレス</span><input name="email" type="email" autocomplete="email" required maxlength="200"></label>
+      <label><span>電話 / LINE ID</span><input name="phone" type="text" autocomplete="tel" maxlength="60"></label>
+      <label class="lead-wide"><span>タイ市場で実現したいことは？</span><textarea name="message" rows="4" maxlength="3000"></textarea></label>
+    </div>
+    <input class="lead-hp" name="website" type="text" tabindex="-1" autocomplete="off" aria-hidden="true">
+    <button type="submit" class="cta-btn" id="cta-lead-submit">30分の無料相談を予約</button>
+    <p class="lead-status" role="status" aria-live="polite"></p>
+    <span hidden data-msg="sending">送信中…</span>
+    <span hidden data-msg="success">ありがとうございます。1営業日以内にご連絡します。</span>
+    <span hidden data-msg="invalid">お名前と有効なメールアドレスをご入力ください。</span>
+    <span hidden data-msg="fallback">メールアプリを開きます。そのまま送信してください。</span>
+  </form>
+  <p class="cta-note lead-privacy">ご入力いただいた情報は、お問い合わせへの返信にのみ使用します。</p>
+  <p class="cta-note lead-alt">メールをご希望ですか？ <a href="mailto:tor@penguinx.co?subject=Discovery%20call%20with%20PenguinX">tor@penguinx.co</a></p>
+  <script src="/lead-form.js" defer></script>
 </section>
 
 <!-- ====== FOOTER ====== -->
@@ -987,6 +1006,7 @@
       <a href="mailto:supersupp@penguinx.co">supersupp@penguinx.co</a>
       <a href="tel:+66939514265">+66 93 951 4265</a>
       <a href="tel:+66894493399">+66 89 449 3399</a>
+      <a href="#" data-cookie-settings>Cookie 設定</a>
     </div>
   </div>
   <div class="foot-bottom">

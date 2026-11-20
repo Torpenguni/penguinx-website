@@ -1,0 +1,57 @@
+# Analytics, SEO & Google Ads — setup guide
+
+โค้ดฝั่งเว็บทำไว้ครบแล้ว เหลืองานฝั่งบัญชี Google ตามลำดับข้างล่าง
+
+## 0. ทางลัด: GA4 ตรง ไม่ต้องมี GTM
+ใส่ Measurement ID ใน `analytics.js` บรรทัด `var GA4_ID = '';` → `'G-XXXXXXXXXX'` แล้ว push
+event ทั้งหมด (`generate_lead`, `contact_click`, `cta_click`) ส่งเข้า GA4 อัตโนมัติ
+จากนั้นใน GA4 → Admin → Key events → ติ๊ก `generate_lead` แล้วลิงก์ GA4 กับ Google Ads และ import key event นี้เป็น conversion
+(วิธีนี้ไม่ต้องติด Google Ads tag ในเว็บเลย) — ถ้าภายหลังใช้ GTM ให้ใส่ GTM_ID แล้วตั้ง GA4 ใน GTM แทน
+
+## 1. เปิดใช้ GTM (5 นาที)
+1. สร้าง container ที่ tagmanager.google.com (ประเภท Web, ชื่อ `penguinx.co`)
+2. ใส่ ID ใน `analytics.js` บรรทัด `var GTM_ID = '';` → `'GTM-XXXXXXX'`
+3. push ขึ้น `main` → Vercel deploy เอง ทุกหน้า (136 หน้า × 4 ภาษา) โหลดไฟล์นี้ไฟล์เดียว
+
+## 2. ตั้งค่าใน GTM
+| Tag | Trigger |
+|---|---|
+| Google tag (GA4 Measurement ID `G-…`) | Initialization – All Pages |
+| Conversion Linker | All Pages |
+| GA4 Event `generate_lead` | Custom Event = `generate_lead` |
+| GA4 Event `contact_click` (ส่ง parameter `contact_method`) | Custom Event = `contact_click` |
+| Google Ads Conversion "Lead – form" | Custom Event = `generate_lead` |
+
+สร้าง Data Layer Variable: `contact_method`, `page_language`, `lead_method`, `cta_id`
+แล้ว Preview → ทดสอบส่งฟอร์มและกดอีเมล/โทร → Publish
+
+## 3. Conversion hierarchy (สำคัญต่อ Smart Bidding)
+- **Primary:** `generate_lead` (ฟอร์มส่งสำเร็จจริง) — ใช้ประมูล
+- **Secondary:** `contact_click` (อีเมล/โทร/LINE) — วัดผลอย่างเดียว ไม่ใช้ประมูล
+- อย่า import conversion เดียวกันทั้งจาก GA4 และ Ads tag พร้อมกัน (นับซ้ำ)
+- เปิด Enhanced Conversions for leads ใน Google Ads
+
+## 4. ฟอร์ม lead → อีเมล (Vercel env vars)
+| Variable | ค่า |
+|---|---|
+| `RESEND_API_KEY` | key จาก resend.com (จำเป็น) |
+| `LEAD_TO_EMAIL` | ผู้รับ เช่น `tor@penguinx.co,supersupp@penguinx.co` |
+| `LEAD_FROM_EMAIL` | เช่น `PenguinX <leads@penguinx.co>` (ต้อง verify โดเมนใน Resend) |
+
+ถ้ายังไม่ตั้ง key ฟอร์มจะเปิดแอปอีเมลพร้อมข้อมูลที่กรอกไว้แทน (lead ไม่หาย แต่นับเป็น `contact_click: email_fallback` ไม่ใช่ `generate_lead`)
+
+## 5. เชื่อมบัญชี
+- Search Console: ยืนยันแล้ว (meta tag) — แนะนำเพิ่ม Domain property ผ่าน DNS TXT แล้ว submit `https://www.penguinx.co/sitemap.xml`
+- GA4 → Admin → Product links: Google Ads, Search Console
+- Google Ads → Tools → Linked accounts: GA4
+
+## 6. PDPA / Cookie consent (ทำแล้ว)
+- ค่าเริ่มต้น `denied` ทุกภูมิภาค → แบนเนอร์ 4 ภาษาให้กดยอมรับ/ปฏิเสธ จำค่าไว้ 12 เดือน
+- ลิงก์ "Cookie settings" ใน footer ทุกหน้า เปิดแบนเนอร์ใหม่เพื่อถอนความยินยอมได้
+- GTM: ใช้ Consent Mode แบบ Advanced — tag ของ Google ปรับตาม consent เอง ไม่ต้องตั้ง trigger เพิ่ม
+- ผลต่อตัวเลข: ผู้ที่ปฏิเสธจะไม่ถูกนับแบบมี cookie ตัวเลขใน GA4/Ads จะต่ำกว่าจริง Google จะประมาณ (modeling) ส่วนที่หายให้เมื่อ traffic ถึงเกณฑ์
+- ยังขาด: หน้า Privacy Policy (ฟอร์มเก็บข้อมูลส่วนบุคคล ควรมีประกาศความเป็นส่วนตัวตาม PDPA) — ควรให้ฝ่ายกฎหมายร่าง
+
+## 7. ถัดไป
+- เพิ่มหน้าใหม่: หน้า HTML ใหม่ต้องมี `<script src="/analytics.js"></script>` ใน `<head>` (หน้าแปลจาก `build-i18n.py` ได้ตามต้นฉบับอัตโนมัติ)
+- หลังเพิ่ม/ลบหน้า: `python3 build-sitemap.py` (ต้องมีประวัติ git เต็ม ไม่งั้น lastmod เพี้ยน)

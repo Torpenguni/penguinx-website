@@ -3,6 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script src="/analytics.js"></script>
 <meta name="google-site-verification" content="0iXH3Yr04CFRQfFy7IOcoVhPkDzgcY2k17awuXO-GVI">
 <title>PenguinX — F&B Ecosystem Builder</title>
 <link rel="icon" href="/favicon.ico" sizes="48x48">
@@ -955,8 +956,26 @@
     <span class="light">Our</span> <span class="accent">ecosystem</span><span class="end-dot"></span>
   </h2>
   <div class="cta-eyebrow mono">— Let's build something together —</div>
-  <a href="mailto:tor@penguinx.co?subject=Discovery%20call%20with%20PenguinX" class="cta-btn">Book a free 30-minute call</a>
   <p class="cta-note">Tell us about your brand and goals. We will share relevant cases and our view of the Thai market.</p>
+  <form class="lead-form" id="leadForm" novalidate>
+    <div class="lead-grid">
+      <label><span>Name</span><input name="name" type="text" autocomplete="name" required maxlength="120"></label>
+      <label><span>Company / Brand</span><input name="company" type="text" autocomplete="organization" maxlength="160"></label>
+      <label><span>Email</span><input name="email" type="email" autocomplete="email" required maxlength="200"></label>
+      <label><span>Phone / LINE ID</span><input name="phone" type="text" autocomplete="tel" maxlength="60"></label>
+      <label class="lead-wide"><span>What do you want to achieve in Thailand?</span><textarea name="message" rows="4" maxlength="3000"></textarea></label>
+    </div>
+    <input class="lead-hp" name="website" type="text" tabindex="-1" autocomplete="off" aria-hidden="true">
+    <button type="submit" class="cta-btn" id="cta-lead-submit">Book a free 30-minute call</button>
+    <p class="lead-status" role="status" aria-live="polite"></p>
+    <span hidden data-msg="sending">Sending…</span>
+    <span hidden data-msg="success">Thank you. We will reply within one business day.</span>
+    <span hidden data-msg="invalid">Please add your name and a valid email.</span>
+    <span hidden data-msg="fallback">Opening your email app so you can send this directly.</span>
+  </form>
+  <p class="cta-note lead-privacy">We use these details only to reply to your enquiry.</p>
+  <p class="cta-note lead-alt">Prefer email? <a href="mailto:tor@penguinx.co?subject=Discovery%20call%20with%20PenguinX">tor@penguinx.co</a></p>
+  <script src="/lead-form.js" defer></script>
 </section>
 
 <!-- ====== FOOTER ====== -->
@@ -985,6 +1004,7 @@
       <a href="mailto:supersupp@penguinx.co">supersupp@penguinx.co</a>
       <a href="tel:+66939514265">+66 93 951 4265</a>
       <a href="tel:+66894493399">+66 89 449 3399</a>
+      <a href="#" data-cookie-settings>Cookie settings</a>
     </div>
   </div>
   <div class="foot-bottom">

@@ -2344,3 +2344,23 @@ nav.top .logo{ margin-right:clamp(8px,2.4vw,32px) }  /* รวม gap แล้�
 /* Softer chips: slightly faded white so logos don't pop off the dark photo */
 .eco-sub span.eco-logo:not(.eco-logo--bare){background:rgba(255,255,255,.82)}
 .eco-sub span.eco-logo:not(.eco-logo--bare) img{mix-blend-mode:multiply}
+
+/* ===== Lead form (CTA) ===== */
+.lead-form{max-width:720px;margin:32px auto 0;text-align:left}
+.lead-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.lead-form label{display:flex;flex-direction:column;gap:6px;font-size:13px;color:var(--ink-mute)}
+.lead-form .lead-wide{grid-column:1/-1}
+.lead-form input,.lead-form textarea{
+  background:var(--bg-2);border:1px solid var(--line);border-radius:12px;
+  color:var(--ink);font:inherit;font-size:15px;padding:13px 14px;resize:vertical;
+}
+.lead-form input:focus,.lead-form textarea:focus{outline:none;border-color:var(--accent)}
+.lead-form .cta-btn{border:0;cursor:pointer;font-family:inherit;display:flex;margin:24px auto 0}
+.lead-form .cta-btn:disabled{opacity:.6;cursor:wait;transform:none}
+.lead-hp{position:absolute;left:-9999px;width:1px;height:1px;opacity:0}
+.lead-status{min-height:1.4em;margin-top:14px;text-align:center;font-size:14px;color:var(--ink-mute)}
+.lead-status.is-ok{color:var(--accent)}
+.lead-status.is-err{color:#e8826a}
+.lead-alt a{color:var(--ink);text-decoration:underline;text-underline-offset:3px}
+@media (max-width:640px){.lead-grid{grid-template-columns:1fr}}
+.lead-privacy{font-size:13px;margin-top:10px}
