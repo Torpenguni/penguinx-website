@@ -51,7 +51,7 @@
       }
     }).catch(function () {
       // ไม่นับเป็น generate_lead เพราะไม่รู้ว่าผู้ใช้กดส่งอีเมลจริงหรือไม่ — นับเป็น contact_click แทน
-      (window.dataLayer = window.dataLayer || []).push({ event: 'contact_click', contact_method: 'email_fallback', page_language: d.lang });
+      if (window.pxTrack) window.pxTrack('contact_click', { contact_method: 'email_fallback', page_language: d.lang });
       say(msg('fallback'));
       mailtoFallback(d);
     }).then(function () { btn.disabled = false; });

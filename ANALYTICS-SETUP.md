@@ -2,6 +2,12 @@
 
 โค้ดฝั่งเว็บทำไว้ครบแล้ว เหลืองานฝั่งบัญชี Google ตามลำดับข้างล่าง
 
+## 0. ทางลัด: GA4 ตรง ไม่ต้องมี GTM
+ใส่ Measurement ID ใน `analytics.js` บรรทัด `var GA4_ID = '';` → `'G-XXXXXXXXXX'` แล้ว push
+event ทั้งหมด (`generate_lead`, `contact_click`, `cta_click`) ส่งเข้า GA4 อัตโนมัติ
+จากนั้นใน GA4 → Admin → Key events → ติ๊ก `generate_lead` แล้วลิงก์ GA4 กับ Google Ads และ import key event นี้เป็น conversion
+(วิธีนี้ไม่ต้องติด Google Ads tag ในเว็บเลย) — ถ้าภายหลังใช้ GTM ให้ใส่ GTM_ID แล้วตั้ง GA4 ใน GTM แทน
+
 ## 1. เปิดใช้ GTM (5 นาที)
 1. สร้าง container ที่ tagmanager.google.com (ประเภท Web, ชื่อ `penguinx.co`)
 2. ใส่ ID ใน `analytics.js` บรรทัด `var GTM_ID = '';` → `'GTM-XXXXXXX'`

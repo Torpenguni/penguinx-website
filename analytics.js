@@ -11,7 +11,9 @@
  *   consent_update  — ผู้ใช้กดยอมรับ/ปฏิเสธคุกกี้ (consent)
  */
 (function () {
-  var GTM_ID = ''; // ← ใส่ 'GTM-XXXXXXX' ตรงนี้
+  // ใส่อย่างใดอย่างหนึ่ง (ถ้าใส่ทั้งคู่ จะใช้ GTM และให้ GTM เป็นคนโหลด GA4 เอง)
+  var GTM_ID = '';  // ← 'GTM-XXXXXXX'  ใช้เมื่อต้องการจัดการ tag หลายตัวผ่าน GTM
+  var GA4_ID = '';  // ← 'G-XXXXXXXXXX' ส่งเข้า GA4 ตรง ไม่ต้องมี GTM
 
   window.dataLayer = window.dataLayer || [];
   function gtag() { window.dataLayer.push(arguments); }
@@ -43,7 +45,23 @@
     s.async = true;
     s.src = 'https://www.googletagmanager.com/gtm.js?id=' + GTM_ID;
     document.head.appendChild(s);
+  } else if (/^G-[A-Z0-9]+$/.test(GA4_ID)) {
+    var g = document.createElement('script');
+    g.async = true;
+    g.src = 'https://www.googletagmanager.com/gtag/js?id=' + GA4_ID;
+    document.head.appendChild(g);
+    gtag('js', new Date());
+    gtag('config', GA4_ID);
   }
+  var DIRECT = !/^GTM-/.test(GTM_ID) && /^G-/.test(GA4_ID);
+
+  // ส่ง event ทางเดียว: GTM อ่านจาก dataLayer object, โหมด GA4 ตรงใช้ gtag('event')
+  function track(name, params) {
+    params = params || {};
+    if (DIRECT) gtag('event', name, params);
+    else window.dataLayer.push(Object.assign({ event: name }, params));
+  }
+  window.pxTrack = track;
 
   // ---- Conversion events (ใช้ event delegation จับได้ทุกหน้าโดยไม่ต้องแก้ HTML) ----
   function lang() { return document.documentElement.lang || 'en'; }
@@ -58,15 +76,14 @@
     else if (/(^|\/\/)(lin\.ee|line\.me)\//.test(href)) method = 'line';
 
     if (method) {
-      window.dataLayer.push({
-        event: 'contact_click',
+      track('contact_click', {
         contact_method: method,
         contact_target: href.replace(/^(mailto:|tel:)/, '').split('?')[0],
         page_language: lang()
       });
     }
     if (a.classList.contains('cta-btn')) {
-      window.dataLayer.push({ event: 'cta_click', cta_id: a.id || 'cta-btn', page_language: lang() });
+      track('cta_click', { cta_id: a.id || 'cta-btn', page_language: lang() });
     }
   }, true);
 
@@ -80,7 +97,7 @@
   function setConsent(v) {
     try { localStorage.setItem(CONSENT_KEY, JSON.stringify({ v: v, t: Date.now() })); } catch (e) {}
     gtag('consent', 'update', consentState(v));
-    window.dataLayer.push({ event: 'consent_update', consent: v });
+    track('consent_update', { consent: v });
   }
   function showBanner() {
     if (document.getElementById('pxConsent')) return;
@@ -125,6 +142,6 @@
 
   // ฟอร์ม lead เรียกใช้ฟังก์ชันนี้เมื่อส่งสำเร็จ
   window.pxTrackLead = function (detail) {
-    window.dataLayer.push(Object.assign({ event: 'generate_lead', page_language: lang() }, detail || {}));
+    track('generate_lead', Object.assign({ page_language: lang() }, detail || {}));
   };
 })();
