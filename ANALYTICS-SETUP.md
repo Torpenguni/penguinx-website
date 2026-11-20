@@ -39,7 +39,13 @@
 - GA4 → Admin → Product links: Google Ads, Search Console
 - Google Ads → Tools → Linked accounts: GA4
 
-## 6. ถัดไป
-- PDPA cookie banner: ถ้าจะทำ เปลี่ยน consent default ใน `analytics.js` เป็น `denied` แล้ว `gtag('consent','update',…)` เมื่อผู้ใช้ยอมรับ
+## 6. PDPA / Cookie consent (ทำแล้ว)
+- ค่าเริ่มต้น `denied` ทุกภูมิภาค → แบนเนอร์ 4 ภาษาให้กดยอมรับ/ปฏิเสธ จำค่าไว้ 12 เดือน
+- ลิงก์ "Cookie settings" ใน footer ทุกหน้า เปิดแบนเนอร์ใหม่เพื่อถอนความยินยอมได้
+- GTM: ใช้ Consent Mode แบบ Advanced — tag ของ Google ปรับตาม consent เอง ไม่ต้องตั้ง trigger เพิ่ม
+- ผลต่อตัวเลข: ผู้ที่ปฏิเสธจะไม่ถูกนับแบบมี cookie ตัวเลขใน GA4/Ads จะต่ำกว่าจริง Google จะประมาณ (modeling) ส่วนที่หายให้เมื่อ traffic ถึงเกณฑ์
+- ยังขาด: หน้า Privacy Policy (ฟอร์มเก็บข้อมูลส่วนบุคคล ควรมีประกาศความเป็นส่วนตัวตาม PDPA) — ควรให้ฝ่ายกฎหมายร่าง
+
+## 7. ถัดไป
 - เพิ่มหน้าใหม่: หน้า HTML ใหม่ต้องมี `<script src="/analytics.js"></script>` ใน `<head>` (หน้าแปลจาก `build-i18n.py` ได้ตามต้นฉบับอัตโนมัติ)
 - หลังเพิ่ม/ลบหน้า: `python3 build-sitemap.py` (ต้องมีประวัติ git เต็ม ไม่งั้น lastmod เพี้ยน)

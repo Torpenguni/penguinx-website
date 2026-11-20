@@ -2363,3 +2363,4 @@ nav.top .logo{ margin-right:clamp(8px,2.4vw,32px) }  /* รวม gap แล้�
 .lead-status.is-err{color:#e8826a}
 .lead-alt a{color:var(--ink);text-decoration:underline;text-underline-offset:3px}
 @media (max-width:640px){.lead-grid{grid-template-columns:1fr}}
+.lead-privacy{font-size:13px;margin-top:10px}

@@ -633,8 +633,10 @@
  "Phone / LINE ID": "โทรศัพท์ / LINE ID",
  "What do you want to achieve in Thailand?": "อยากให้แบรนด์ไปถึงจุดไหนในตลาดไทย?",
  "Sending…": "กำลังส่ง…",
- "Thank you. We will reply within one business day.": "ขอบคุณครับ ทีมงานจะติดต่อกลับภายใน 1 วันทำการ",
+ "Thank you. We will reply within one business day.": "ขอบคุณที่ติดต่อเรา ทีมงานจะติดต่อกลับภายใน 1 วันทำการ",
  "Please add your name and a valid email.": "กรุณากรอกชื่อและอีเมลให้ถูกต้อง",
  "Opening your email app so you can send this directly.": "กำลังเปิดแอปอีเมลเพื่อให้คุณส่งข้อมูลถึงเราโดยตรง",
- "Prefer email?": "สะดวกส่งอีเมล?"
+ "Prefer email?": "สะดวกส่งอีเมล?",
+ "We use these details only to reply to your enquiry.": "เราใช้ข้อมูลนี้เพื่อติดต่อกลับเรื่องที่คุณสอบถามเท่านั้น",
+ "Cookie settings": "ตั้งค่าคุกกี้"
 }

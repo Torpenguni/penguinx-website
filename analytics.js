@@ -8,6 +8,7 @@
  *   generate_lead   — ส่งฟอร์ม "Book a call" สำเร็จ          → Primary conversion
  *   contact_click   — กดอีเมล / โทร / LINE (contact_method)  → Secondary conversion
  *   cta_click       — กดปุ่ม CTA หลัก (cta_id)
+ *   consent_update  — ผู้ใช้กดยอมรับ/ปฏิเสธคุกกี้ (consent)
  */
 (function () {
   var GTM_ID = ''; // ← ใส่ 'GTM-XXXXXXX' ตรงนี้
@@ -15,19 +16,26 @@
   window.dataLayer = window.dataLayer || [];
   function gtag() { window.dataLayer.push(arguments); }
 
-  // Consent Mode v2 — Google บังคับใช้กับผู้ใช้ใน EEA/UK/CH (ตั้ง denied จนกว่าจะยินยอม)
-  // ผู้ใช้ภูมิภาคอื่นรวมไทย: granted ตามค่าเริ่มต้น
-  // ถ้าจะทำ cookie banner ตาม PDPA ภายหลัง ให้เปลี่ยนตรงนี้เป็น denied แล้วเรียก gtag('consent','update',...)
-  gtag('consent', 'default', {
-    ad_storage: 'denied', ad_user_data: 'denied', ad_personalization: 'denied',
-    analytics_storage: 'denied', wait_for_update: 500,
-    region: ['AT','BE','BG','HR','CY','CZ','DK','EE','FI','FR','DE','GR','HU','IE','IT','LV',
-             'LT','LU','MT','NL','PL','PT','RO','SK','SI','ES','SE','IS','LI','NO','GB','CH']
-  });
-  gtag('consent', 'default', {
-    ad_storage: 'granted', ad_user_data: 'granted', ad_personalization: 'granted',
-    analytics_storage: 'granted'
-  });
+  // ---- Consent (PDPA / Consent Mode v2) ----
+  // ค่าเริ่มต้น denied ทุกภูมิภาค: Google ยังส่ง ping แบบไม่มี cookie ให้ระบบประมาณ conversion ได้
+  // เมื่อผู้ใช้กดยอมรับ → update เป็น granted และจำไว้ 12 เดือนใน localStorage
+  var CONSENT_KEY = 'px_consent';
+  var CONSENT_TTL = 365 * 24 * 3600 * 1000;
+  function readConsent() {
+    try {
+      var c = JSON.parse(localStorage.getItem(CONSENT_KEY) || 'null');
+      return c && Date.now() - c.t < CONSENT_TTL ? c.v : null;
+    } catch (e) { return null; }
+  }
+  function consentState(v) {
+    var g = v === 'granted' ? 'granted' : 'denied';
+    return { ad_storage: g, ad_user_data: g, ad_personalization: g, analytics_storage: g };
+  }
+  var saved = readConsent();
+  var dflt = consentState('denied');
+  dflt.wait_for_update = 500;
+  gtag('consent', 'default', dflt);
+  if (saved) gtag('consent', 'update', consentState(saved));
 
   if (/^GTM-[A-Z0-9]+$/.test(GTM_ID)) {
     window.dataLayer.push({ 'gtm.start': Date.now(), event: 'gtm.js' });
@@ -61,6 +69,59 @@
       window.dataLayer.push({ event: 'cta_click', cta_id: a.id || 'cta-btn', page_language: lang() });
     }
   }, true);
+
+  // ---- Cookie banner ----
+  var TXT = {
+    en: ['We use cookies to measure site performance and the results of our ads. You can accept or decline.', 'Accept', 'Decline'],
+    th: ['เว็บไซต์นี้ใช้คุกกี้เพื่อวัดผลการใช้งานเว็บไซต์และประสิทธิภาพโฆษณา คุณเลือกยอมรับหรือปฏิเสธได้', 'ยอมรับ', 'ปฏิเสธ'],
+    zh: ['本网站使用 Cookie 衡量网站表现和广告效果。你可以选择接受或拒绝。', '接受', '拒绝'],
+    ja: ['当サイトはサイトの利用状況と広告効果の測定に Cookie を使用します。同意または拒否を選択できます。', '同意する', '拒否する']
+  };
+  function setConsent(v) {
+    try { localStorage.setItem(CONSENT_KEY, JSON.stringify({ v: v, t: Date.now() })); } catch (e) {}
+    gtag('consent', 'update', consentState(v));
+    window.dataLayer.push({ event: 'consent_update', consent: v });
+  }
+  function showBanner() {
+    if (document.getElementById('pxConsent')) return;
+    var t = TXT[(lang().split('-')[0])] || TXT.en;
+    var css = document.createElement('style');
+    css.textContent =
+      '#pxConsent{position:fixed;left:16px;right:16px;bottom:16px;z-index:9999;max-width:720px;margin:0 auto;' +
+      'display:flex;gap:16px;align-items:center;padding:16px 18px;background:#141413;color:#f4f1ea;' +
+      'border:1px solid rgba(244,241,234,.12);border-radius:16px;box-shadow:0 12px 40px rgba(0,0,0,.45);' +
+      'font:14px/1.5 Anuphan,sans-serif}' +
+      '#pxConsent p{flex:1;margin:0;color:#c9c5bd}' +
+      '#pxConsent button{font:inherit;font-weight:600;border-radius:100px;padding:9px 18px;cursor:pointer;white-space:nowrap}' +
+      '#pxConsent .ok{background:#dba93a;color:#0a0a0a;border:0}' +
+      '#pxConsent .no{background:transparent;color:#f4f1ea;border:1px solid rgba(244,241,234,.25)}' +
+      '@media(max-width:560px){#pxConsent{flex-direction:column;align-items:stretch;text-align:center}}';
+    var box = document.createElement('div');
+    box.id = 'pxConsent';
+    box.setAttribute('role', 'dialog');
+    box.setAttribute('aria-live', 'polite');
+    box.innerHTML = '<p></p><button type="button" class="no"></button><button type="button" class="ok"></button>';
+    box.querySelector('p').textContent = t[0];
+    box.querySelector('.ok').textContent = t[1];
+    box.querySelector('.no').textContent = t[2];
+    box.addEventListener('click', function (e) {
+      var b = e.target.closest('button');
+      if (!b) return;
+      setConsent(b.classList.contains('ok') ? 'granted' : 'denied');
+      box.remove();
+    });
+    document.head.appendChild(css);
+    document.body.appendChild(box);
+  }
+  // เปิดแบนเนอร์ใหม่ได้จากลิงก์ใดก็ได้ที่มี data-cookie-settings
+  window.pxConsent = { open: showBanner, set: setConsent };
+  document.addEventListener('click', function (e) {
+    if (e.target.closest && e.target.closest('[data-cookie-settings]')) { e.preventDefault(); showBanner(); }
+  });
+  if (!saved) {
+    if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', showBanner);
+    else showBanner();
+  }
 
   // ฟอร์ม lead เรียกใช้ฟังก์ชันนี้เมื่อส่งสำเร็จ
   window.pxTrackLead = function (detail) {
