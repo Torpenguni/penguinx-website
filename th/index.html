@@ -3,6 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script src="/analytics.js"></script>
 <meta name="google-site-verification" content="0iXH3Yr04CFRQfFy7IOcoVhPkDzgcY2k17awuXO-GVI">
 <title>PenguinX — ผู้สร้างระบบนิเวศธุรกิจอาหาร</title>
 <link rel="icon" href="/favicon.ico" sizes="48x48">
@@ -957,8 +958,25 @@
       <span class="accent">ระบบนิเวศ</span> <span class="light">ของเรา</span><span class="end-dot"></span>
     </h2>
   <div class="cta-eyebrow mono">— มาสร้างอะไรบางอย่างด้วยกัน —</div>
-  <a href="mailto:tor@penguinx.co?subject=Discovery%20call%20with%20PenguinX" class="cta-btn">นัดคุยฟรี 30 นาที</a>
   <p class="cta-note">เล่าเรื่องแบรนด์และเป้าหมายของคุณ แล้วเราจะแชร์เคสที่เกี่ยวข้องและมุมมองต่อตลาดไทย</p>
+  <form class="lead-form" id="leadForm" novalidate>
+    <div class="lead-grid">
+      <label><span>ชื่อ</span><input name="name" type="text" autocomplete="name" required maxlength="120"></label>
+      <label><span>บริษัท / แบรนด์</span><input name="company" type="text" autocomplete="organization" maxlength="160"></label>
+      <label><span>อีเมล</span><input name="email" type="email" autocomplete="email" required maxlength="200"></label>
+      <label><span>โทรศัพท์ / LINE ID</span><input name="phone" type="text" autocomplete="tel" maxlength="60"></label>
+      <label class="lead-wide"><span>อยากให้แบรนด์ไปถึงจุดไหนในตลาดไทย?</span><textarea name="message" rows="4" maxlength="3000"></textarea></label>
+    </div>
+    <input class="lead-hp" name="website" type="text" tabindex="-1" autocomplete="off" aria-hidden="true">
+    <button type="submit" class="cta-btn" id="cta-lead-submit">นัดคุยฟรี 30 นาที</button>
+    <p class="lead-status" role="status" aria-live="polite"></p>
+    <span hidden data-msg="sending">กำลังส่ง…</span>
+    <span hidden data-msg="success">ขอบคุณครับ ทีมงานจะติดต่อกลับภายใน 1 วันทำการ</span>
+    <span hidden data-msg="invalid">กรุณากรอกชื่อและอีเมลให้ถูกต้อง</span>
+    <span hidden data-msg="fallback">กำลังเปิดแอปอีเมลเพื่อให้คุณส่งข้อมูลถึงเราโดยตรง</span>
+  </form>
+  <p class="cta-note lead-alt">สะดวกส่งอีเมล? <a href="mailto:tor@penguinx.co?subject=Discovery%20call%20with%20PenguinX">tor@penguinx.co</a></p>
+  <script src="/lead-form.js" defer></script>
 </section>
 
 <!-- ====== FOOTER ====== -->

@@ -2,42 +2,6 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://www.penguinx.co/_news-section.disabled.html</loc>
-    <lastmod>2026-09-06</lastmod>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.penguinx.co/_news-section.disabled.html"/>
-    <xhtml:link rel="alternate" hreflang="th" href="https://www.penguinx.co/th/_news-section.disabled.html"/>
-    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://www.penguinx.co/zh/_news-section.disabled.html"/>
-    <xhtml:link rel="alternate" hreflang="ja" href="https://www.penguinx.co/ja/_news-section.disabled.html"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.penguinx.co/_news-section.disabled.html"/>
-  </url>
-  <url>
-    <loc>https://www.penguinx.co/th/_news-section.disabled.html</loc>
-    <lastmod>2026-09-06</lastmod>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.penguinx.co/_news-section.disabled.html"/>
-    <xhtml:link rel="alternate" hreflang="th" href="https://www.penguinx.co/th/_news-section.disabled.html"/>
-    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://www.penguinx.co/zh/_news-section.disabled.html"/>
-    <xhtml:link rel="alternate" hreflang="ja" href="https://www.penguinx.co/ja/_news-section.disabled.html"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.penguinx.co/_news-section.disabled.html"/>
-  </url>
-  <url>
-    <loc>https://www.penguinx.co/zh/_news-section.disabled.html</loc>
-    <lastmod>2026-09-06</lastmod>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.penguinx.co/_news-section.disabled.html"/>
-    <xhtml:link rel="alternate" hreflang="th" href="https://www.penguinx.co/th/_news-section.disabled.html"/>
-    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://www.penguinx.co/zh/_news-section.disabled.html"/>
-    <xhtml:link rel="alternate" hreflang="ja" href="https://www.penguinx.co/ja/_news-section.disabled.html"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.penguinx.co/_news-section.disabled.html"/>
-  </url>
-  <url>
-    <loc>https://www.penguinx.co/ja/_news-section.disabled.html</loc>
-    <lastmod>2026-09-06</lastmod>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.penguinx.co/_news-section.disabled.html"/>
-    <xhtml:link rel="alternate" hreflang="th" href="https://www.penguinx.co/th/_news-section.disabled.html"/>
-    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://www.penguinx.co/zh/_news-section.disabled.html"/>
-    <xhtml:link rel="alternate" hreflang="ja" href="https://www.penguinx.co/ja/_news-section.disabled.html"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.penguinx.co/_news-section.disabled.html"/>
-  </url>
-  <url>
     <loc>https://www.penguinx.co/ecosystem/education.html</loc>
     <lastmod>2026-11-11</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.penguinx.co/ecosystem/education.html"/>
@@ -75,7 +39,7 @@
   </url>
   <url>
     <loc>https://www.penguinx.co/ecosystem/event.html</loc>
-    <lastmod>2026-09-06</lastmod>
+    <lastmod>2026-11-11</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.penguinx.co/ecosystem/event.html"/>
     <xhtml:link rel="alternate" hreflang="th" href="https://www.penguinx.co/th/ecosystem/event.html"/>
     <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://www.penguinx.co/zh/ecosystem/event.html"/>
@@ -84,7 +48,7 @@
   </url>
   <url>
     <loc>https://www.penguinx.co/th/ecosystem/event.html</loc>
-    <lastmod>2026-09-06</lastmod>
+    <lastmod>2026-11-11</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.penguinx.co/ecosystem/event.html"/>
     <xhtml:link rel="alternate" hreflang="th" href="https://www.penguinx.co/th/ecosystem/event.html"/>
     <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://www.penguinx.co/zh/ecosystem/event.html"/>
@@ -93,7 +57,7 @@
   </url>
   <url>
     <loc>https://www.penguinx.co/zh/ecosystem/event.html</loc>
-    <lastmod>2026-09-06</lastmod>
+    <lastmod>2026-11-11</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.penguinx.co/ecosystem/event.html"/>
     <xhtml:link rel="alternate" hreflang="th" href="https://www.penguinx.co/th/ecosystem/event.html"/>
     <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://www.penguinx.co/zh/ecosystem/event.html"/>
@@ -102,7 +66,7 @@
   </url>
   <url>
     <loc>https://www.penguinx.co/ja/ecosystem/event.html</loc>
-    <lastmod>2026-09-06</lastmod>
+    <lastmod>2026-11-11</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.penguinx.co/ecosystem/event.html"/>
     <xhtml:link rel="alternate" hreflang="th" href="https://www.penguinx.co/th/ecosystem/event.html"/>
     <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://www.penguinx.co/zh/ecosystem/event.html"/>
@@ -651,7 +615,7 @@
   </url>
   <url>
     <loc>https://www.penguinx.co/</loc>
-    <lastmod>2026-11-11</lastmod>
+    <lastmod>2026-11-12</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.penguinx.co/"/>
     <xhtml:link rel="alternate" hreflang="th" href="https://www.penguinx.co/th/"/>
     <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://www.penguinx.co/zh/"/>
@@ -660,7 +624,7 @@
   </url>
   <url>
     <loc>https://www.penguinx.co/th/</loc>
-    <lastmod>2026-11-11</lastmod>
+    <lastmod>2026-11-12</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.penguinx.co/"/>
     <xhtml:link rel="alternate" hreflang="th" href="https://www.penguinx.co/th/"/>
     <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://www.penguinx.co/zh/"/>
@@ -669,7 +633,7 @@
   </url>
   <url>
     <loc>https://www.penguinx.co/zh/</loc>
-    <lastmod>2026-11-11</lastmod>
+    <lastmod>2026-11-12</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.penguinx.co/"/>
     <xhtml:link rel="alternate" hreflang="th" href="https://www.penguinx.co/th/"/>
     <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://www.penguinx.co/zh/"/>
@@ -678,84 +642,12 @@
   </url>
   <url>
     <loc>https://www.penguinx.co/ja/</loc>
-    <lastmod>2026-11-11</lastmod>
+    <lastmod>2026-11-12</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.penguinx.co/"/>
     <xhtml:link rel="alternate" hreflang="th" href="https://www.penguinx.co/th/"/>
     <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://www.penguinx.co/zh/"/>
     <xhtml:link rel="alternate" hreflang="ja" href="https://www.penguinx.co/ja/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.penguinx.co/"/>
-  </url>
-  <url>
-    <loc>https://www.penguinx.co/index__f.html</loc>
-    <lastmod>2026-09-06</lastmod>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.penguinx.co/index__f.html"/>
-    <xhtml:link rel="alternate" hreflang="th" href="https://www.penguinx.co/th/index__f.html"/>
-    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://www.penguinx.co/zh/index__f.html"/>
-    <xhtml:link rel="alternate" hreflang="ja" href="https://www.penguinx.co/ja/index__f.html"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.penguinx.co/index__f.html"/>
-  </url>
-  <url>
-    <loc>https://www.penguinx.co/th/index__f.html</loc>
-    <lastmod>2026-09-06</lastmod>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.penguinx.co/index__f.html"/>
-    <xhtml:link rel="alternate" hreflang="th" href="https://www.penguinx.co/th/index__f.html"/>
-    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://www.penguinx.co/zh/index__f.html"/>
-    <xhtml:link rel="alternate" hreflang="ja" href="https://www.penguinx.co/ja/index__f.html"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.penguinx.co/index__f.html"/>
-  </url>
-  <url>
-    <loc>https://www.penguinx.co/zh/index__f.html</loc>
-    <lastmod>2026-09-06</lastmod>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.penguinx.co/index__f.html"/>
-    <xhtml:link rel="alternate" hreflang="th" href="https://www.penguinx.co/th/index__f.html"/>
-    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://www.penguinx.co/zh/index__f.html"/>
-    <xhtml:link rel="alternate" hreflang="ja" href="https://www.penguinx.co/ja/index__f.html"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.penguinx.co/index__f.html"/>
-  </url>
-  <url>
-    <loc>https://www.penguinx.co/ja/index__f.html</loc>
-    <lastmod>2026-09-06</lastmod>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.penguinx.co/index__f.html"/>
-    <xhtml:link rel="alternate" hreflang="th" href="https://www.penguinx.co/th/index__f.html"/>
-    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://www.penguinx.co/zh/index__f.html"/>
-    <xhtml:link rel="alternate" hreflang="ja" href="https://www.penguinx.co/ja/index__f.html"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.penguinx.co/index__f.html"/>
-  </url>
-  <url>
-    <loc>https://www.penguinx.co/index__x.html</loc>
-    <lastmod>2026-09-06</lastmod>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.penguinx.co/index__x.html"/>
-    <xhtml:link rel="alternate" hreflang="th" href="https://www.penguinx.co/th/index__x.html"/>
-    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://www.penguinx.co/zh/index__x.html"/>
-    <xhtml:link rel="alternate" hreflang="ja" href="https://www.penguinx.co/ja/index__x.html"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.penguinx.co/index__x.html"/>
-  </url>
-  <url>
-    <loc>https://www.penguinx.co/th/index__x.html</loc>
-    <lastmod>2026-09-06</lastmod>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.penguinx.co/index__x.html"/>
-    <xhtml:link rel="alternate" hreflang="th" href="https://www.penguinx.co/th/index__x.html"/>
-    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://www.penguinx.co/zh/index__x.html"/>
-    <xhtml:link rel="alternate" hreflang="ja" href="https://www.penguinx.co/ja/index__x.html"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.penguinx.co/index__x.html"/>
-  </url>
-  <url>
-    <loc>https://www.penguinx.co/zh/index__x.html</loc>
-    <lastmod>2026-09-06</lastmod>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.penguinx.co/index__x.html"/>
-    <xhtml:link rel="alternate" hreflang="th" href="https://www.penguinx.co/th/index__x.html"/>
-    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://www.penguinx.co/zh/index__x.html"/>
-    <xhtml:link rel="alternate" hreflang="ja" href="https://www.penguinx.co/ja/index__x.html"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.penguinx.co/index__x.html"/>
-  </url>
-  <url>
-    <loc>https://www.penguinx.co/ja/index__x.html</loc>
-    <lastmod>2026-09-06</lastmod>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.penguinx.co/index__x.html"/>
-    <xhtml:link rel="alternate" hreflang="th" href="https://www.penguinx.co/th/index__x.html"/>
-    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://www.penguinx.co/zh/index__x.html"/>
-    <xhtml:link rel="alternate" hreflang="ja" href="https://www.penguinx.co/ja/index__x.html"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.penguinx.co/index__x.html"/>
   </url>
   <url>
     <loc>https://www.penguinx.co/news/damn-expo-returns.html</loc>

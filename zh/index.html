@@ -3,6 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script src="/analytics.js"></script>
 <meta name="google-site-verification" content="0iXH3Yr04CFRQfFy7IOcoVhPkDzgcY2k17awuXO-GVI">
 <title>PenguinX — 品牌出海泰国的第一站</title>
 <link rel="icon" href="/favicon.ico" sizes="48x48">
@@ -956,8 +957,25 @@
       <span class="light">我们的</span><span class="accent">生态系统</span><span class="end-dot"></span>
     </h2>
   <div class="cta-eyebrow mono">— 让我们一起打造 —</div>
-  <a href="mailto:tor@penguinx.co?subject=Discovery%20call%20with%20PenguinX" class="cta-btn">预约 30 分钟免费通话</a>
   <p class="cta-note">告诉我们你的品牌与目标，我们会分享相关案例和对泰国市场的看法。</p>
+  <form class="lead-form" id="leadForm" novalidate>
+    <div class="lead-grid">
+      <label><span>姓名</span><input name="name" type="text" autocomplete="name" required maxlength="120"></label>
+      <label><span>公司 / 品牌</span><input name="company" type="text" autocomplete="organization" maxlength="160"></label>
+      <label><span>邮箱</span><input name="email" type="email" autocomplete="email" required maxlength="200"></label>
+      <label><span>电话 / LINE ID</span><input name="phone" type="text" autocomplete="tel" maxlength="60"></label>
+      <label class="lead-wide"><span>你希望在泰国市场实现什么目标？</span><textarea name="message" rows="4" maxlength="3000"></textarea></label>
+    </div>
+    <input class="lead-hp" name="website" type="text" tabindex="-1" autocomplete="off" aria-hidden="true">
+    <button type="submit" class="cta-btn" id="cta-lead-submit">预约 30 分钟免费通话</button>
+    <p class="lead-status" role="status" aria-live="polite"></p>
+    <span hidden data-msg="sending">发送中…</span>
+    <span hidden data-msg="success">谢谢！我们会在一个工作日内回复。</span>
+    <span hidden data-msg="invalid">请填写姓名和有效的邮箱。</span>
+    <span hidden data-msg="fallback">正在打开你的邮件应用，你可以直接发送给我们。</span>
+  </form>
+  <p class="cta-note lead-alt">更习惯发邮件？ <a href="mailto:tor@penguinx.co?subject=Discovery%20call%20with%20PenguinX">tor@penguinx.co</a></p>
+  <script src="/lead-form.js" defer></script>
 </section>
 
 <!-- ====== FOOTER ====== -->
