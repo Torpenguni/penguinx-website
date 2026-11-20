@@ -13,7 +13,7 @@
 (function () {
   // ใส่อย่างใดอย่างหนึ่ง (ถ้าใส่ทั้งคู่ จะใช้ GTM และให้ GTM เป็นคนโหลด GA4 เอง)
   var GTM_ID = '';  // ← 'GTM-XXXXXXX'  ใช้เมื่อต้องการจัดการ tag หลายตัวผ่าน GTM
-  var GA4_ID = '';  // ← 'G-XXXXXXXXXX' ส่งเข้า GA4 ตรง ไม่ต้องมี GTM
+  var GA4_ID = 'G-2CGLNQ8R5R';  // PenguinX Website (GA4 property 565233510) — เดิม: 'G-XXXXXXXXXX' ส่งเข้า GA4 ตรง ไม่ต้องมี GTM
 
   window.dataLayer = window.dataLayer || [];
   function gtag() { window.dataLayer.push(arguments); }
