@@ -2483,3 +2483,12 @@ html[lang="en"] .hero-title{font-size:clamp(2rem,4.2vw,4.4rem)}
   .book-badge{font-size:11px;padding:5px 10px}
 }
 html[lang^="th"] .book-cat,html[lang^="zh"] .book-cat,html[lang^="ja"] .book-cat{letter-spacing:.02em;font-size:13px}
+
+/* How it works: วงดำไล่จากกลางวงกลมออกไป บังรูปพื้นหลังงานอีเวนต์ที่ซ้อนอยู่
+   ให้รูปของแต่ละ BU (fw-photos) เด่นขึ้น และเปิดรูป BU ให้ทึบขึ้น */
+.fw-wheel::before{
+  content:'';position:absolute;inset:4%;border-radius:50%;pointer-events:none;
+  background:radial-gradient(circle at 50% 50%, rgba(0,0,0,.94) 0%, rgba(0,0,0,.9) 48%, rgba(0,0,0,.55) 62%, rgba(0,0,0,0) 72%);
+}
+.fw-photos img.is-on{opacity:.82}
+@media (max-width:620px){.fw-photos img.is-on{opacity:.82}}
