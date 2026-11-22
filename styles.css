@@ -2398,7 +2398,7 @@ nav.top .logo{ margin-right:clamp(8px,2.4vw,32px) }  /* รวม gap แล้�
    จึงเลื่อนภาพไปทางซ้าย (15%) และลดความทึบ overlay ให้ฝูงทะลุหลังหัวข้อ */
 :root{
   --bg:#07182a;--bg-2:#0c2238;--bg-3:#112c47;
-  --ink:#eef6fb;--ink-mute:#8fa9bf;
+  --ink:#eef6fb;--ink-mute:#b8b8b8;  /* เทาอ่อน (เดิม #8fa9bf น้ำเงินอมเทา ไม่ใช่ CI) */
   --line:rgba(200,228,245,.14);--line-soft:rgba(200,228,245,.06);
   --accent:#dba93a;--accent-2:#e8c050;
 }
