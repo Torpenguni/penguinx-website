@@ -2375,7 +2375,7 @@ nav.top .logo{ margin-right:clamp(8px,2.4vw,32px) }  /* รวม gap แล้�
   --accent:#dba93a;--accent-2:#e8c050;
 }
 body{background:#07182a}
-.hero-bg{background-image:url('/cover-penguin.jpg');opacity:.9;filter:saturate(1.05) contrast(1.05);background-size:cover;background-position:15% center}
+.hero-bg{background-image:url('/cover-penguin-v2.jpg');opacity:.9;filter:saturate(1.05) contrast(1.05);background-size:cover;background-position:15% center}
 .hero-overlay{
   background:
     linear-gradient(90deg, rgba(7,24,42,.85) 0%, rgba(7,24,42,.62) 32%, rgba(7,24,42,.18) 56%, rgba(7,24,42,0) 72%),
@@ -2393,3 +2393,15 @@ html[lang="en"] .hero-title{font-size:clamp(2rem,4.2vw,4.4rem)}
   .hero-bg{opacity:.75;background-position:62% center}
   .hero-overlay{background:linear-gradient(rgba(7,24,42,.55) 0%, rgba(7,24,42,.35) 40%, rgba(7,24,42,.7) 70%, rgba(7,24,42,.95) 100%)}
 }
+
+/* ป้าย "your first penguin" ลอยเหนือตัวที่กระโดด — ตำแหน่งและขนาดคำนวณใน hero-tag.js
+   ขนาดตัวอักษรสเกลตามภาพ เพื่อให้สัดส่วนกับตัวเพนกวินคงที่ทุกขนาดจอ */
+.first-penguin-tag{
+  position:absolute;z-index:1;pointer-events:none;
+  transform:translate(-50%,-100%);
+  font-weight:300;letter-spacing:.12em;line-height:1;white-space:nowrap;
+  color:#f4f8fb;text-shadow:0 1px 12px rgba(7,24,42,.35);
+  opacity:0;transition:opacity .9s ease .4s;
+}
+.first-penguin-tag .dot{color:#f26b2a;font-weight:600}
+.first-penguin-tag.is-visible{opacity:1}
