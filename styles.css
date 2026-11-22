@@ -2382,7 +2382,7 @@ body{background:#07182a}
     linear-gradient(0deg, rgba(7,24,42,.95) 0%, rgba(7,24,42,0) 35%);
 }
 .hero-title{letter-spacing:-0.02em;max-width:19ch;font-size:clamp(2.2rem,4.4vw,4.6rem);line-height:1.08}
-.hero-title .light{color:#9fc3dc;font-weight:300}
+.hero-title .light{color:#fff;font-weight:300}
 .hero-title .accent{color:#dba93a}
 .hero-title .end-dot{background:#dba93a}
 /* กฎ html[lang="en"] ด้านบน (5.6vw) specificity สูงกว่า .hero-title จึงทับขนาดของธีมนี้
