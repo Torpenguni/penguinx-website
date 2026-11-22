@@ -2461,4 +2461,5 @@ html[lang="en"] .hero-title{font-size:clamp(2rem,4.2vw,4.4rem)}
 .why .section-title .light,
 .community .section-title .light,
 .founder .section-title .light,
-.shorts .shorts-title .light{color:#fff}
+.shorts .shorts-title .light,
+.cta .cta-title .light{color:#fff}
