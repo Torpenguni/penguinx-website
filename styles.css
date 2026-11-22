@@ -2403,7 +2403,7 @@ html[lang="en"] .hero-title{font-size:clamp(2rem,4.2vw,4.4rem)}
   color:#f4f8fb;text-shadow:0 1px 12px rgba(7,24,42,.35);
   opacity:0;transition:opacity .9s ease .4s;
 }
-.first-penguin-tag .dot{color:#f26b2a;font-weight:600}
+.first-penguin-tag .dot{color:#dba93a;font-weight:600}
 .first-penguin-tag.is-visible{opacity:1}
 
 /* Hero stats: always stacked on the left, under the description, at every screen width */
