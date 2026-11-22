@@ -2413,7 +2413,7 @@ html[lang="en"] .hero-title{font-size:clamp(2rem,4.2vw,4.4rem)}
   background:radial-gradient(circle at var(--spot-x,75%) var(--spot-y,60%),
     rgba(7,24,42,0) 0,
     rgba(7,24,42,0) var(--spot-r,90px),
-    rgba(7,24,42,.45) calc(var(--spot-r,90px)*2),
+    rgba(7,24,42,.35) calc(var(--spot-r,90px)*2),
     rgba(7,24,42,.7) calc(var(--spot-r,90px)*3.6));
   opacity:0;transition:opacity 1.2s ease;
 }
