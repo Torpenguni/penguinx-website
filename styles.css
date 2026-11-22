@@ -2470,12 +2470,12 @@ html[lang="en"] .hero-title{font-size:clamp(2rem,4.2vw,4.4rem)}
 .book-cover img{display:block;width:100%;height:100%;object-fit:fill;border-radius:3px;box-shadow:0 22px 44px -16px rgba(0,0,0,.8),0 2px 6px rgba(0,0,0,.35)}
 .book:hover .book-cover{transform:translateY(-6px)}
 /* ป้าย Best Seller: สีแดง ลอยคร่อมขอบบนของปก ขอบสีพื้นหลัง + เงาแดงให้แยกออกจากพื้น */
-.book-badge{position:absolute;top:-8px;left:50%;z-index:1;transform:translate(-50%,-50%);padding:6px 14px;border-radius:100px;background:#e3262b;color:#fff;font-size:12px;font-weight:700;letter-spacing:.02em;white-space:nowrap;box-shadow:0 0 0 3px var(--bg),0 8px 24px rgba(227,38,43,.6)}
+.book-badge{position:absolute;top:2px;left:50%;z-index:1;transform:translate(-50%,-100%);padding:6px 14px;border-radius:100px;background:#e3262b;color:#fff;font-size:12px;font-weight:700;letter-spacing:.02em;white-space:nowrap;box-shadow:0 0 0 3px var(--bg),0 8px 24px rgba(227,38,43,.6)}
 .book-cat{margin-top:16px;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--accent)}
 .book-title{margin-top:6px;font-size:17px;font-weight:500;line-height:1.4;color:var(--ink)}
 @media (max-width:1100px){.book-row{grid-template-columns:repeat(3,minmax(0,1fr));gap:28px 18px}}
 @media (max-width:620px){
-  .book-row{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;gap:14px;margin:0;padding:26px 0 8px;scrollbar-width:none}
+  .book-row{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;gap:14px;margin:0;padding:32px 0 8px;scrollbar-width:none}
   .book-row::-webkit-scrollbar{display:none}
   .book{flex:0 0 42%;scroll-snap-align:start}
   .book-cat{margin-top:12px}
