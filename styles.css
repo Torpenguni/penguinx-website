@@ -2197,7 +2197,7 @@ nav.top .logo{ margin-right:clamp(8px,2.4vw,32px) }  /* รวม gap แล้�
   content:'';position:absolute;inset:0;
   background:radial-gradient(circle at 50% 50%, rgba(10,10,10,0.5) 0%, rgba(10,10,10,0.18) 55%, rgba(10,10,10,0) 75%);
 }
-.fw-detail p{color:rgba(244,241,234,0.82);text-shadow:0 1px 12px rgba(0,0,0,0.85)}
+.fw-detail p{color:#fff;text-shadow:0 1px 12px rgba(0,0,0,0.85)}
 .fw-stat{text-shadow:0 2px 24px rgba(0,0,0,0.75)}
 .fw-stat-label{text-shadow:0 1px 10px rgba(0,0,0,0.85)}
 @media (max-width:620px){.fw-photos img.is-on{opacity:0.6}}
