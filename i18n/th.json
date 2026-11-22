@@ -530,6 +530,7 @@
  "Conference · For brands": "งานสัมมนา · ทำให้แบรนด์",
  "Menu": "เมนู",
  "_html": {
+  "<h2 class=\"section-title\" id=\"fwTitle\">One ecosystem.<br><span class=\"light\">A home for every <span class=\"accent\">food business.</span></span></h2>": "<h2 class=\"section-title\" id=\"fwTitle\">หนึ่ง ecosystem<br><span class=\"light\">บ้านของ<span class=\"accent\">ธุรกิจอาหาร</span></span></h2>",
   "<h2 class=\"section-title\"> Brands that grew<br> <span class=\"light\">with</span> <span class=\"accent\">us</span><span class=\"end-dot\"></span> </h2>": "<h2 class=\"section-title\">\n      แบรนด์ที่เติบโต<br>\n      <span class=\"light\">ไปกับ</span> <span class=\"accent\">เรา</span><span class=\"end-dot\"></span>\n    </h2>",
   "<h2 class=\"section-title\"> Turns <span class=\"light\">competitors</span><br> <span class=\"light\">to</span> <span class=\"accent\">community</span><span class=\"end-dot\"></span> </h2>": "<h2 class=\"section-title\">\n      เปลี่ยน <span class=\"light\">คู่แข่ง</span><br>\n      <span class=\"light\">ให้เป็น</span> <span class=\"accent\">เพื่อนร่วมทาง</span><span class=\"end-dot\"></span>\n    </h2>",
   "<h2 class=\"cta-title\"> Your brand<span class=\"end-dot\"></span><br> <span class=\"light\">Our</span> <span class=\"accent\">ecosystem</span><span class=\"end-dot\"></span> </h2>": "<h2 class=\"cta-title\">\n      แบรนด์ของคุณ<span class=\"end-dot\"></span><br>\n      <span class=\"accent\">ระบบนิเวศ</span> <span class=\"light\">ของเรา</span><span class=\"end-dot\"></span>\n    </h2>",
@@ -581,7 +582,6 @@
  "Torpenguin and our in-house studio put real operators' stories on screen, with 500+ videos a year.": "Torpenguin และสตูดิโอของเราเอง เล่าเรื่องจริงของผู้ประกอบการ มากกว่า 500 คลิปต่อปี",
  "Two media operations.": "สองหน่วยงานมีเดีย",
  "One ecosystem.": "หนึ่ง ecosystem",
- "A home for every food business.": "บ้านของธุรกิจอาหาร",
  "Backed by PenguinX's own F&B business media (1.95M+ followers) and a trusted ecosystem of suppliers and operators.": "หนุนหลังด้วยสื่อธุรกิจอาหารของ PenguinX เอง (ผู้ติดตาม 1.95M+) และเครือข่ายซัพพลายเออร์กับผู้ประกอบการที่เชื่อถือได้",
  "Founder-led content with Tor, reaching a 1.95M+ F&B audience": "คอนเทนต์ที่ตอร์ลงเอง เข้าถึงผู้ติดตามสายธุรกิจอาหาร 1.95M+",
  "Torpenguin · 1.5M+ followers": "Torpenguin · ผู้ติดตาม 1.5M+",

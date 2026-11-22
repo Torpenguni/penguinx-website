@@ -541,6 +541,7 @@
  "Workshop · For brands": "工作坊 · 为品牌操办",
  "Conference · For brands": "大会 · 为品牌操办",
  "_html": {
+  "<h2 class=\"section-title\" id=\"fwTitle\">One ecosystem.<br><span class=\"light\">A home for every <span class=\"accent\">food business.</span></span></h2>": "<h2 class=\"section-title\" id=\"fwTitle\">一个生态系统，<br><span class=\"light\">每一家<span class=\"accent\">餐饮企业</span>的家</span></h2>",
   "<h2 class=\"section-title\"> Brands that grew<br> <span class=\"light\">with</span> <span class=\"accent\">us</span><span class=\"end-dot\"></span> </h2>": "<h2 class=\"section-title\">\n      与我们<br>\n      <span class=\"light\">共同成长的</span><span class=\"accent\">品牌</span><span class=\"end-dot\"></span>\n    </h2>",
   "<h2 class=\"section-title\"> Turns <span class=\"light\">competitors</span><br> <span class=\"light\">to</span> <span class=\"accent\">community</span><span class=\"end-dot\"></span> </h2>": "<h2 class=\"section-title\">\n      把<span class=\"light\">竞争者</span><br>\n      <span class=\"light\">变成</span><span class=\"accent\">伙伴</span><span class=\"end-dot\"></span>\n    </h2>",
   "<h2 class=\"section-title\"> Leadership<br> <span class=\"light\">that understands</span> <span class=\"accent\">brands</span> <span class=\"light\">and</span> <span class=\"accent\">operators</span><span class=\"end-dot\"></span> </h2>": "<h2 class=\"section-title\">\n      领导团队<br>\n      <span class=\"light\">既懂</span><span class=\"accent\">品牌</span><span class=\"light\">，也懂</span><span class=\"accent\">经营者</span><span class=\"end-dot\"></span>\n    </h2>",
@@ -606,7 +607,6 @@
  "Torpenguin and our in-house studio put real operators' stories on screen, with 500+ videos a year.": "Torpenguin 与自有制作团队把真实经营者的故事搬上屏幕，每年 500+ 支影片。",
  "Two media operations.": "两条媒体业务线。",
  "One ecosystem.": "一个生态系统，",
- "A home for every food business.": "每一家餐饮企业的家",
  "Backed by PenguinX's own F&B business media (1.95M+ followers) and a trusted ecosystem of suppliers and operators.": "背靠 PenguinX 自有的餐饮商业媒体（195 万+ 粉丝），以及值得信赖的供应商与经营者生态。",
  "Founder-led content with Tor, reaching a 1.95M+ F&B audience": "由 Tor 亲自出镜的内容，触达 195 万+ 餐饮圈受众",
  "Torpenguin · 1.5M+ followers": "Torpenguin · 150 万+ 粉丝",
