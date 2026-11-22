@@ -2385,6 +2385,9 @@ body{background:#07182a}
 .hero-title .light{color:#9fc3dc;font-weight:300}
 .hero-title .accent{color:#dba93a}
 .hero-title .end-dot{background:#dba93a}
+/* กฎ html[lang="en"] ด้านบน (5.6vw) specificity สูงกว่า .hero-title จึงทับขนาดของธีมนี้
+   หัวข้อใหม่ยาวสองประโยค ที่ 5.6vw ใหญ่จนบังฝูงเพนกวิน ลดภาษาอังกฤษลงเหลือ 4.2vw */
+html[lang="en"] .hero-title{font-size:clamp(2rem,4.2vw,4.4rem)}
 @media (max-width:900px){
   /* จอแคบ: ให้ตัวที่กระโดดอยู่ในเฟรม และใช้ overlay แนวตั้งให้ตัวหนังสืออ่านได้ */
   .hero-bg{opacity:.75;background-position:62% center}
