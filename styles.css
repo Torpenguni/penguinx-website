@@ -2118,8 +2118,9 @@ nav.top .logo{ margin-right:clamp(8px,2.4vw,32px) }  /* รวม gap แล้�
   position:absolute;left:50%;top:50%;
   font-size:15px;font-weight:600;letter-spacing:-0.01em;
   padding:7px 14px;border-radius:100px;
-  border:1px solid var(--line);background:rgba(10,10,10,0.7);
-  backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);
+  color:#6b7280;
+  border:1px solid #fff;background:#fff;
+  box-shadow:0 4px 14px rgba(0,0,0,0.25);
   transition:color .4s ease,border-color .4s ease,background .4s ease;
   white-space:nowrap;
 }
@@ -2130,7 +2131,7 @@ nav.top .logo{ margin-right:clamp(8px,2.4vw,32px) }  /* รวม gap แล้�
 .fw-node.is-passed .fw-node-dot{background:rgba(219,169,58,0.5);border-color:transparent}
 .fw-node[aria-selected="true"] .fw-node-dot{background:var(--accent);border-color:var(--accent);transform:scale(1.25)}
 .fw-node[aria-selected="true"] .fw-node-label{color:var(--bg);background:var(--accent);border-color:var(--accent)}
-.fw-node:hover .fw-node-label{color:var(--ink);border-color:rgba(244,241,234,0.35)}
+.fw-node:hover .fw-node-label{color:#1f2937;border-color:#fff}
 .fw-node[aria-selected="true"]:hover .fw-node-label{color:var(--bg)}
 .fw-node:focus-visible{outline:none}
 .fw-node:focus-visible .fw-node-label{outline:2px solid var(--accent-2);outline-offset:3px}
