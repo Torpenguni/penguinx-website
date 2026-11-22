@@ -2448,3 +2448,7 @@ html[lang="en"] .hero-title{font-size:clamp(2rem,4.2vw,4.4rem)}
 #fwTitle .light .accent{font-weight:600}
 /* How it works: "A home for every" เป็นสีขาว */
 #fwTitle .light{color:#fff}
+/* Ecosystem: "One" ในหัวข้อ Four pillars เป็นสีขาว */
+.ecosystem .section-title .light{color:#fff}
+/* Work: "with" ในหัวข้อ Brands ... with us เป็นสีขาว */
+.showcase .section-title .light{color:#fff}
