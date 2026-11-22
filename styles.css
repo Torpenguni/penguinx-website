@@ -2375,7 +2375,7 @@ nav.top .logo{ margin-right:clamp(8px,2.4vw,32px) }  /* รวม gap แล้�
   --accent:#dba93a;--accent-2:#e8c050;
 }
 body{background:#07182a}
-.hero-bg{background-image:url('/cover-penguin-v2.jpg');opacity:.9;filter:saturate(1.05) contrast(1.05);background-size:cover;background-position:15% center}
+.hero-bg{background-image:url('/cover-penguin-v3.jpg');opacity:.9;filter:saturate(1.05) contrast(1.05);background-size:cover;background-position:15% center}
 .hero-overlay{
   background:
     linear-gradient(90deg, rgba(7,24,42,.85) 0%, rgba(7,24,42,.62) 32%, rgba(7,24,42,.18) 56%, rgba(7,24,42,0) 72%),
@@ -2405,6 +2405,9 @@ html[lang="en"] .hero-title{font-size:clamp(2rem,4.2vw,4.4rem)}
 }
 .first-penguin-tag .dot{color:#dba93a;font-weight:600}
 .first-penguin-tag.is-visible{opacity:1}
+
+/* Spotlight ตัวที่กระโดด: อบไว้ในไฟล์ภาพ cover-penguin-v3.jpg เลย (หรี่รอบๆ เหลือวงสว่างรอบตัวเพนกวิน)
+   เป็นภาพเดียวกัน จึงขยับตามตัวเพนกวินทุกขนาดจอโดยไม่ต้องคำนวณ */
 
 /* Hero stats: always stacked on the left, under the description, at every screen width */
 .hero-bottom{flex-direction:column;align-items:flex-start;justify-content:flex-start;gap:20px}
