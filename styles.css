@@ -2364,3 +2364,29 @@ nav.top .logo{ margin-right:clamp(8px,2.4vw,32px) }  /* รวม gap แล้�
 .lead-alt a{color:var(--ink);text-decoration:underline;text-underline-offset:3px}
 @media (max-width:640px){.lead-grid{grid-template-columns:1fr}}
 .lead-privacy{font-size:13px;margin-top:10px}
+
+/* Arctic theme + "first penguin" hero (Be your first penguin)
+   ภาพฝูงเพนกวินรอบนน้ำแข็ง + ตัวแรกที่กระโดด — ต้องเห็นทั้งสองอย่างถึงจะเล่าสโลแกนได้
+   จึงเลื่อนภาพไปทางซ้าย (15%) และลดความทึบ overlay ให้ฝูงทะลุหลังหัวข้อ */
+:root{
+  --bg:#07182a;--bg-2:#0c2238;--bg-3:#112c47;
+  --ink:#eef6fb;--ink-mute:#8fa9bf;
+  --line:rgba(200,228,245,.14);--line-soft:rgba(200,228,245,.06);
+  --accent:#dba93a;--accent-2:#e8c050;
+}
+body{background:#07182a}
+.hero-bg{background-image:url('/cover-penguin.jpg');opacity:.9;filter:saturate(1.05) contrast(1.05);background-size:cover;background-position:15% center}
+.hero-overlay{
+  background:
+    linear-gradient(90deg, rgba(7,24,42,.85) 0%, rgba(7,24,42,.62) 32%, rgba(7,24,42,.18) 56%, rgba(7,24,42,0) 72%),
+    linear-gradient(0deg, rgba(7,24,42,.95) 0%, rgba(7,24,42,0) 35%);
+}
+.hero-title{letter-spacing:-0.02em;max-width:19ch;font-size:clamp(2.2rem,4.4vw,4.6rem);line-height:1.08}
+.hero-title .light{color:#9fc3dc;font-weight:300}
+.hero-title .accent{color:#dba93a}
+.hero-title .end-dot{background:#dba93a}
+@media (max-width:900px){
+  /* จอแคบ: ให้ตัวที่กระโดดอยู่ในเฟรม และใช้ overlay แนวตั้งให้ตัวหนังสืออ่านได้ */
+  .hero-bg{opacity:.75;background-position:62% center}
+  .hero-overlay{background:linear-gradient(rgba(7,24,42,.55) 0%, rgba(7,24,42,.35) 40%, rgba(7,24,42,.7) 70%, rgba(7,24,42,.95) 100%)}
+}
