@@ -2069,7 +2069,7 @@ nav.top .logo{ margin-right:clamp(8px,2.4vw,32px) }  /* รวม gap แล้�
 }
 .fw-intro{max-width:520px;text-shadow:0 1px 14px rgba(0,0,0,0.75),0 0 2px rgba(0,0,0,0.5)}
 .fw-intro .section-title{font-size:clamp(36px,4.6vw,68px);margin:24px 0 32px;text-wrap:balance}
-.fw-lede{font-size:17px;line-height:1.75;color:var(--ink-mute);max-width:46ch}
+.fw-lede{font-size:17px;line-height:1.75;color:#fff;max-width:46ch}
 .fw-lede + .fw-lede{margin-top:14px}
 .fw-lede-strong{color:var(--ink);font-weight:500}
 .fw-hint{margin-top:40px;font-size:13px;color:var(--ink-mute);display:flex;gap:10px;align-items:center}
