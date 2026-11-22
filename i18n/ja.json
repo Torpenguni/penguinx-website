@@ -251,7 +251,7 @@
  "Not just a strategy deck. We sit beside you from positioning to launch, with the team that actually runs the work.": "戦略資料だけで終わりません。ポジショニングから立ち上げまで、実際に手を動かすチームが隣にいます。",
  "Strategy through execution": "戦略から実行まで",
  "Practice areas": "専門領域",
- "Brands served": "支援したブランド",
+ "Brands served": "取引ブランド",
  "Provinces covered": "カバーした県",
  "Franchise readiness": "フランチャイズ適性の診断",
  "Multi-brand strategy": "複数ブランド戦略",
@@ -560,7 +560,8 @@
   "<div class=\"eco-name\">Solution <span class=\"light\">/ Agency</span></div>": "<div class=\"eco-name\">ソリューション <span class=\"light\">/ エージェンシー</span></div>",
   "<div class=\"pg-item-title\">Business Development</div>": "<div class=\"pg-item-title\">事業開発</div>",
   "<h1 class=\"hero-title\">\n      <span class=\"light\">We are Thailand's</span><br>\n      <span class=\"accent\">restaurant ecosystem</span><br>\n      builder<span class=\"end-dot\"></span>\n    </h1>": "<h1 class=\"hero-title\">\n      <span class=\"light\">つなぐだけでは、</span><br>\n      終わらない。<br>\n      <span class=\"light\">みんなが育つ</span><br>\n      <span class=\"accent\">エコシステム</span>を、つくる<span class=\"end-dot\"></span>\n    </h1>",
-  "<h1 class=\"hero-title\">\n      <span class=\"light\">We don't go first to be ahead of everyone.</span><br>\n      <span class=\"accent\">We go first</span> to move everyone forward<span class=\"end-dot\"></span>\n    </h1>": "<h1 class=\"hero-title\">\n      <span class=\"light\">先を行くのは、誰かより前に出るためではない。</span><br>\n      <span class=\"accent\">先に飛び込む</span>のは、みんなを前へ進めるため<span class=\"end-dot\"></span>\n    </h1>"
+  "<h1 class=\"hero-title\">\n      <span class=\"light\">We don't go first to be ahead of everyone.</span><br>\n      <span class=\"accent\">We go first</span> to move everyone forward<span class=\"end-dot\"></span>\n    </h1>": "<h1 class=\"hero-title\">\n      <span class=\"light\">先を行くのは、誰かより前に出るためではない。</span><br>\n      <span class=\"accent\">先に飛び込む</span>のは、みんなを前へ進めるため<span class=\"end-dot\"></span>\n    </h1>",
+  "<h2 class=\"section-title\">\n      The <span class=\"accent\">playbook</span><br>\n      <span class=\"light\">Thai operators learn from.</span>\n    </h2>": "<h2 class=\"section-title\">\n      タイの飲食店オーナーが<br>\n      <span class=\"light\">学ぶ</span><span class=\"accent\">教科書</span>\n    </h2>"
  },
  "_js": {
   "viewsFormat": "{n} 回視聴",
@@ -594,7 +595,6 @@
  "Brands": "ブランド",
  "Event brands": "主催イベントブランド",
  "Restaurant MBA in Thailand": "タイ初のレストランMBA",
- "Brands served": "取引ブランド",
  "TRC, Damn Expo, Restech and CafCon put brands and operators in the same room.": "TRC、Damn Expo、Restech、CafCon が、ブランドと経営者を同じ場に集めます。",
  "Restaurant Business Academy, Restaurant MBA and our books make operators better-informed buyers.": "Restaurant Business Academy、Restaurant MBA、そして書籍が、経営者をより知識のある買い手にします。",
  "Brands join at any point and reach operators who already trust the platform. Their stories feed the media again.": "ブランドはどこからでも参加でき、すでにプラットフォームを信頼している経営者に届きます。そのストーリーが再びメディアの素材になります。",
@@ -665,5 +665,15 @@
  "Prefer email?": "メールをご希望ですか？",
  "We use these details only to reply to your enquiry.": "ご入力いただいた情報は、お問い合わせへの返信にのみ使用します。",
  "Cookie settings": "Cookie 設定",
- "Experiences": "経験"
+ "Experiences": "経験",
+ "04 / Thought Leadership": "04 / ソートリーダーシップ",
+ "Six books since 2019, written for owners who start, run, and grow restaurants.": "2019年から6冊。飲食店を始め、運営し、成長させるオーナーのために。",
+ "Startup": "開業",
+ "Operation": "店舗運営",
+ "Food Delivery": "フードデリバリー",
+ "Feasibility Study": "フィジビリティスタディ",
+ "Marketing": "マーケティング",
+ "Café": "カフェ",
+ "Best Seller": "ベストセラー",
+ "No.1 Best Seller": "No.1 ベストセラー"
 }
