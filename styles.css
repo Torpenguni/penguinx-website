@@ -2378,8 +2378,8 @@ body{background:#07182a}
 .hero-bg{background-image:url('/cover-penguin-v3.jpg');opacity:.9;filter:saturate(1.05) contrast(1.05);background-size:cover;background-position:15% center}
 .hero-overlay{
   background:
-    linear-gradient(90deg, rgba(7,24,42,.85) 0%, rgba(7,24,42,.62) 32%, rgba(7,24,42,.18) 56%, rgba(7,24,42,0) 72%),
-    linear-gradient(0deg, rgba(7,24,42,.95) 0%, rgba(7,24,42,0) 35%);
+    linear-gradient(90deg, rgba(7,24,42,.68) 0%, rgba(7,24,42,.5) 32%, rgba(7,24,42,.14) 56%, rgba(7,24,42,0) 72%),
+    linear-gradient(0deg, rgba(7,24,42,.76) 0%, rgba(7,24,42,0) 35%);
 }
 .hero-title{letter-spacing:-0.02em;max-width:19ch;font-size:clamp(2.2rem,4.4vw,4.6rem);line-height:1.08}
 .hero-title .light{color:#fff;font-weight:300}
@@ -2391,7 +2391,7 @@ html[lang="en"] .hero-title{font-size:clamp(2rem,4.2vw,4.4rem)}
 @media (max-width:900px){
   /* จอแคบ: ให้ตัวที่กระโดดอยู่ในเฟรม และใช้ overlay แนวตั้งให้ตัวหนังสืออ่านได้ */
   .hero-bg{opacity:.75;background-position:62% center}
-  .hero-overlay{background:linear-gradient(rgba(7,24,42,.55) 0%, rgba(7,24,42,.35) 40%, rgba(7,24,42,.7) 70%, rgba(7,24,42,.95) 100%)}
+  .hero-overlay{background:linear-gradient(rgba(7,24,42,.44) 0%, rgba(7,24,42,.28) 40%, rgba(7,24,42,.56) 70%, rgba(7,24,42,.76) 100%)}
 }
 
 /* ป้าย "your first penguin" ลอยเหนือตัวที่กระโดด — ตำแหน่งและขนาดคำนวณใน hero-tag.js
