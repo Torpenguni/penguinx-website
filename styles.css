@@ -2472,13 +2472,14 @@ html[lang="en"] .hero-title{font-size:clamp(2rem,4.2vw,4.4rem)}
 /* ป้าย Best Seller: สีแดง ลอยคร่อมขอบบนของปก ขอบสีพื้นหลัง + เงาแดงให้แยกออกจากพื้น */
 .book-badge{position:absolute;top:0;left:50%;z-index:1;transform:translate(-50%,-50%);padding:6px 14px;border-radius:100px;background:#e3262b;color:#fff;font-size:12px;font-weight:700;letter-spacing:.02em;white-space:nowrap;box-shadow:0 0 0 3px var(--bg),0 8px 24px rgba(227,38,43,.6)}
 .book-cat{margin-top:16px;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--accent)}
-.book-title{margin-top:6px;font-size:14px;line-height:1.45;color:var(--ink-mute)}
+.book-title{margin-top:6px;font-size:17px;font-weight:500;line-height:1.4;color:var(--ink)}
 @media (max-width:1100px){.book-row{grid-template-columns:repeat(3,minmax(0,1fr));gap:28px 18px}}
 @media (max-width:620px){
   .book-row{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;gap:14px;margin:0;padding:18px 0 8px;scrollbar-width:none}
   .book-row::-webkit-scrollbar{display:none}
   .book{flex:0 0 42%;scroll-snap-align:start}
   .book-cat{margin-top:12px}
+  .book-title{font-size:15px}
   .book-badge{font-size:11px;padding:5px 10px}
 }
 html[lang^="th"] .book-cat,html[lang^="zh"] .book-cat,html[lang^="ja"] .book-cat{letter-spacing:.02em;font-size:13px}
