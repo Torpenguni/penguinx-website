@@ -2446,3 +2446,5 @@ html[lang="en"] .hero-title{font-size:clamp(2rem,4.2vw,4.4rem)}
 
 /* How it works: คำสีเหลือง (food business.) เป็นตัวหนาเท่า "One ecosystem." ทั้งที่อยู่ในบรรทัดตัวบาง */
 #fwTitle .light .accent{font-weight:600}
+/* How it works: "A home for every" เป็นสีขาว */
+#fwTitle .light{color:#fff}
