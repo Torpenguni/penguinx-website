@@ -2487,8 +2487,13 @@ html[lang^="th"] .book-cat,html[lang^="zh"] .book-cat,html[lang^="ja"] .book-cat
 /* How it works: วงดำไล่จากกลางวงกลมออกไป บังรูปพื้นหลังงานอีเวนต์ที่ซ้อนอยู่
    ให้รูปของแต่ละ BU (fw-photos) เด่นขึ้น และเปิดรูป BU ให้ทึบขึ้น */
 .fw-wheel::before{
-  content:'';position:absolute;inset:4%;border-radius:50%;pointer-events:none;
-  background:radial-gradient(circle at 50% 50%, rgba(0,0,0,.94) 0%, rgba(0,0,0,.9) 48%, rgba(0,0,0,.55) 62%, rgba(0,0,0,0) 72%);
+  content:'';position:absolute;inset:10%;border-radius:50%;pointer-events:none;   /* inset 10% = พอดีเส้นวงกลม (r = 40%) */
+  background:radial-gradient(closest-side, rgba(0,0,0,.94) 0%, rgba(0,0,0,.9) 60%, rgba(0,0,0,.72) 100%);
+}
+/* รูป BU เต็มถึงเส้นวงกลม ไม่ล้นออกนอกวง */
+.fw-photos{inset:10%;
+  -webkit-mask-image:radial-gradient(closest-side, #000 82%, transparent 100%);
+          mask-image:radial-gradient(closest-side, #000 82%, transparent 100%);
 }
 .fw-photos img.is-on{opacity:.82}
 @media (max-width:620px){.fw-photos img.is-on{opacity:.82}}
