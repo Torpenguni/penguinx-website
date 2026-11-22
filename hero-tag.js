@@ -4,7 +4,8 @@
    ถ้าเปลี่ยนรูป hero ต้องแก้ IMG_W/IMG_H และพิกัด ANCHOR ให้ตรงกับรูปใหม่ */
 (function () {
   var IMG_W = 2148, IMG_H = 1332;      // ขนาดจริงของ cover-penguin-v2.jpg
-  var ANCHOR = { x: 1585, y: 672 };     // จุดเหนือหลังตัวที่กระโดด (พิกเซลในภาพ)
+  var ANCHOR = { x: 1600, y: 655 };     // ขอบล่างกึ่งกลางของข้อความ เหนือปลายปีกตัวที่กระโดด (พิกเซลในภาพ)
+  var FONT = 43;                        // ขนาดตัวอักษรเทียบพิกเซลในภาพ (~1.5 เท่าความยาวตัวเพนกวิน)
   var bg = document.querySelector('.hero-bg');
   var tag = document.querySelector('.first-penguin-tag');
   if (!bg || !tag) return;
@@ -21,6 +22,7 @@
     var y = (H - rh) * py + ANCHOR.y * s;
     tag.style.left = x + 'px';
     tag.style.top = y + 'px';
+    tag.style.fontSize = Math.max(13, FONT * s) + 'px';
     // ถ้าตัวเพนกวินหลุดเฟรม (จอแคบมาก) ก็ซ่อนป้าย
     tag.classList.toggle('is-visible', x > 60 && x < W - 60);
   }
