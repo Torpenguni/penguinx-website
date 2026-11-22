@@ -2503,3 +2503,5 @@ html[lang^="th"] .book-cat,html[lang^="zh"] .book-cat,html[lang^="ja"] .book-cat
 .book-award b{display:block;font-size:11px;font-weight:700;letter-spacing:.01em;line-height:1.2}
 .book-award-name{display:block;font-size:11px;line-height:1.3;color:#5d7a1f;font-weight:600}
 @media (max-width:620px){.book-award img{height:30px}.book-award{padding-right:8px}}
+/* ปกหนังสือเล็กลง 20% ให้มีที่หายใจระหว่างเล่ม (มือถือคงเดิม) */
+@media (min-width:621px){.book-cover{width:80%}}
