@@ -2405,3 +2405,15 @@ html[lang="en"] .hero-title{font-size:clamp(2rem,4.2vw,4.4rem)}
 }
 .first-penguin-tag .dot{color:#f26b2a;font-weight:600}
 .first-penguin-tag.is-visible{opacity:1}
+
+/* Hero stats: always stacked on the left, under the description, at every screen width */
+.hero-bottom{flex-direction:column;align-items:flex-start;justify-content:flex-start;gap:20px}
+.hero-desc{flex:0 0 auto;color:#d6dbe3}
+.hero-desc strong{color:#fff}
+.hero-desc .logo-x{color:#ffd60a}
+@media (min-width:901px){
+  .hero-stats{grid-template-columns:repeat(4,max-content);column-gap:56px}
+}
+@media (max-width:900px){
+  .hero-bottom{gap:20px}
+}
