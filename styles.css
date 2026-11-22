@@ -2159,7 +2159,12 @@ nav.top .logo{ margin-right:clamp(8px,2.4vw,32px) }  /* รวม gap แล้�
 @media (max-width:620px){
   .fw-wheel{--size:min(400px, 80vw);margin-bottom:250px}
   .fw-node-label{font-size:12px;padding:5px 10px}
-  .fw-node,.fw-node-dot{width:12px;height:12px}
+  .fw-node,.fw-node-dot{width:18px;height:18px}
+  .fw-node-dot{border:2px solid rgba(244,241,234,0.75)}
+  /* เส้นเหลืองและวงกลมหนาขึ้นบนมือถือ ให้มองเห็นชัด */
+  .fw-progress{stroke-width:1.5;opacity:1}
+  .fw-track{stroke-width:0.8;stroke:rgba(244,241,234,0.35)}
+  .fw-dot{width:18px;height:18px;margin:-9px 0 0 -9px}
   .fw-node[data-side="right"] .fw-node-label{transform:translate(-50%,14px)}
   .fw-node[data-side="left"] .fw-node-label{transform:translate(-50%,14px)}
   .fw-panel{top:calc(100% + 56px);transform:translate(-50%,0);width:100%}
@@ -2393,7 +2398,7 @@ nav.top .logo{ margin-right:clamp(8px,2.4vw,32px) }  /* รวม gap แล้�
    จึงเลื่อนภาพไปทางซ้าย (15%) และลดความทึบ overlay ให้ฝูงทะลุหลังหัวข้อ */
 :root{
   --bg:#07182a;--bg-2:#0c2238;--bg-3:#112c47;
-  --ink:#eef6fb;--ink-mute:#8fa9bf;
+  --ink:#eef6fb;--ink-mute:#b8b8b8;  /* เทาอ่อน (เดิม #8fa9bf น้ำเงินอมเทา ไม่ใช่ CI) */
   --line:rgba(200,228,245,.14);--line-soft:rgba(200,228,245,.06);
   --accent:#dba93a;--accent-2:#e8c050;
 }
@@ -2446,3 +2451,15 @@ html[lang="en"] .hero-title{font-size:clamp(2rem,4.2vw,4.4rem)}
 
 /* How it works: คำสีเหลือง (food business.) เป็นตัวหนาเท่า "One ecosystem." ทั้งที่อยู่ในบรรทัดตัวบาง */
 #fwTitle .light .accent{font-weight:600}
+/* How it works: "A home for every" เป็นสีขาว */
+#fwTitle .light{color:#fff}
+/* Ecosystem: "One" ในหัวข้อ Four pillars เป็นสีขาว */
+.ecosystem .section-title .light{color:#fff}
+/* Work: "with" ในหัวข้อ Brands ... with us เป็นสีขาว */
+.showcase .section-title .light{color:#fff}
+/* Why / Community / Founder / Shorts: คำตัวบางในหัวข้อเป็นสีขาว */
+.why .section-title .light,
+.community .section-title .light,
+.founder .section-title .light,
+.shorts .shorts-title .light,
+.cta .cta-title .light{color:#fff}
