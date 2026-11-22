@@ -2507,3 +2507,6 @@ html[lang^="th"] .book-cat,html[lang^="zh"] .book-cat,html[lang^="ja"] .book-cat
 @media (min-width:621px){.book-cover{width:80%}}
 .why .why-note{max-width:64ch;line-height:1.6}
 html[lang^="th"] .why .why-note{max-width:none}
+/* ลดช่องว่างระหว่างส่วนหนังสือกับ Community */
+.why{padding-bottom:48px}
+@media (max-width:620px){.why{padding-bottom:16px}.book-row{padding-bottom:0}.community{padding-top:32px}}
