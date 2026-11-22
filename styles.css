@@ -2505,3 +2505,5 @@ html[lang^="th"] .book-cat,html[lang^="zh"] .book-cat,html[lang^="ja"] .book-cat
 @media (max-width:620px){.book-award img{height:34px}.book-award{gap:8px}}
 /* ปกหนังสือเล็กลง 20% ให้มีที่หายใจระหว่างเล่ม (มือถือคงเดิม) */
 @media (min-width:621px){.book-cover{width:80%}}
+.why .why-note{max-width:64ch;line-height:1.6}
+html[lang^="th"] .why .why-note{max-width:none}
