@@ -3,10 +3,9 @@
    สคริปต์นี้คำนวณว่าจุดในภาพไปตกตรงไหนบนจอ แล้ววางป้ายตรงนั้น
    ถ้าเปลี่ยนรูป hero ต้องแก้ IMG_W/IMG_H และพิกัด ANCHOR ให้ตรงกับรูปใหม่ */
 (function () {
-  var IMG_W = 2148, IMG_H = 1332;      // ขนาดจริงของ cover-penguin-v2.jpg
+  var IMG_W = 2148, IMG_H = 1332;      // ขนาดจริงของ cover-penguin-v3.jpg (v2 + spotlight อบในภาพ)
   var ANCHOR = { x: 1600, y: 655 };     // ขอบล่างกึ่งกลางของข้อความ เหนือปลายปีกตัวที่กระโดด (พิกเซลในภาพ)
   var FONT = 30;                        // ขนาดตัวอักษรเทียบพิกเซลในภาพ (~1.5 เท่าความยาวตัวเพนกวิน)
-  var SPOT = { x: 1580, y: 790, r: 170 }; // กึ่งกลางลำตัวตัวที่กระโดด + รัศมีวงสว่าง (พิกเซลในภาพ)
   var bg = document.querySelector('.hero-bg');
   var tag = document.querySelector('.first-penguin-tag');
   if (!bg || !tag) return;
@@ -24,12 +23,6 @@
     tag.style.left = x + 'px';
     tag.style.top = y + 'px';
     tag.style.fontSize = Math.max(11, FONT * s) + 'px';
-    // spotlight: ส่งพิกัดตัวที่กระโดดให้ CSS หรี่ภาพรอบๆ
-    var hero = bg.parentElement;
-    hero.style.setProperty('--spot-x', ((W - rw) * px + SPOT.x * s) + 'px');
-    hero.style.setProperty('--spot-y', ((H - rh) * py + SPOT.y * s) + 'px');
-    hero.style.setProperty('--spot-r', (SPOT.r * s) + 'px');
-    hero.classList.add('has-spot');
     // ถ้าตัวเพนกวินหลุดเฟรม (จอแคบมาก) ก็ซ่อนป้าย
     tag.classList.toggle('is-visible', x > 60 && x < W - 60);
   }
