@@ -2457,3 +2457,8 @@ html[lang="en"] .hero-title{font-size:clamp(2rem,4.2vw,4.4rem)}
 .ecosystem .section-title .light{color:#fff}
 /* Work: "with" ในหัวข้อ Brands ... with us เป็นสีขาว */
 .showcase .section-title .light{color:#fff}
+/* Why / Community / Founder / Shorts: คำตัวบางในหัวข้อเป็นสีขาว */
+.why .section-title .light,
+.community .section-title .light,
+.founder .section-title .light,
+.shorts .shorts-title .light{color:#fff}
