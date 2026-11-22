@@ -240,7 +240,7 @@
  "Not just a strategy deck. We sit beside you from positioning to launch, with the team that actually runs the work.": "ไม่ใช่แค่สไลด์กลยุทธ์ เรานั่งอยู่ข้างคุณตั้งแต่วางตำแหน่งจนถึงวันเปิดตัว ด้วยทีมที่ลงมือทำงานจริง",
  "Strategy through execution": "ตั้งแต่วางกลยุทธ์จนลงมือทำ",
  "Practice areas": "สายงาน",
- "Brands served": "แบรนด์ที่ดูแล",
+ "Brands served": "แบรนด์ที่เคยดูแล",
  "Provinces covered": "จังหวัดที่ครอบคลุม",
  "Franchise readiness": "ความพร้อมสู่แฟรนไชส์",
  "Multi-brand strategy": "กลยุทธ์หลายแบรนด์",
@@ -549,7 +549,8 @@
   "<h1 class=\"hero-title\">\n      <span class=\"light\">We don't just</span><br>\n      get brands into restaurants.<br>\n      <span class=\"light\">We build the</span> <span class=\"accent\">ecosystem</span><br>\n      where everyone grows<span class=\"end-dot\"></span>\n    </h1>": "<h1 class=\"hero-title\">\n      <span class=\"light\">เราไม่ได้แค่พาธุรกิจ</span><br>\n      บุกตลาดร้านอาหาร<br>\n      <span class=\"light\">เราสร้าง</span> <span class=\"accent\">ระบบนิเวศ</span><br>\n      ที่ทุกคนโตไปด้วยกัน<span class=\"end-dot\"></span>\n    </h1>",
   "<h1 class=\"hero-title\">\n      <span class=\"light\">We are Thailand's</span><br>\n      <span class=\"accent\">restaurant ecosystem</span><br>\n      builder<span class=\"end-dot\"></span>\n    </h1>": "<h1 class=\"hero-title\">\n      <span class=\"light\">เราไม่ได้แค่พาธุรกิจ</span><br>\n      บุกตลาดร้านอาหาร<br>\n      <span class=\"light\">เราสร้าง</span> <span class=\"accent\">ระบบนิเวศ</span><br>\n      ที่ทุกคนโตไปด้วยกัน<span class=\"end-dot\"></span>\n    </h1>",
   "<div class=\"hero-eyebrow mono\">\n      <span class=\"live\"></span>\n      <span>Building Thailand's F&B Ecosystem</span>\n      <span class=\"hero-locale\"><span>Bangkok, Thailand</span> <time id=\"bkkTime\">GMT+7</time></span>\n    </div>": "<div class=\"hero-eyebrow mono\">\n      <span class=\"live\"></span>\n      <span>กำลังสร้างระบบนิเวศธุรกิจอาหารของไทย</span>\n      <span class=\"hero-locale\"><span>กรุงเทพฯ ประเทศไทย</span> <time id=\"bkkTime\">GMT+7</time></span>\n    </div>",
-  "<h1 class=\"hero-title\">\n      <span class=\"light\">We don't go first to be ahead of everyone.</span><br>\n      <span class=\"accent\">We go first</span> to move everyone forward<span class=\"end-dot\"></span>\n    </h1>": "<h1 class=\"hero-title\">\n      <span class=\"light\">เราไม่ได้ไปก่อน เพื่อนำหน้าใคร</span><br>\n      <span class=\"accent\">เราไปก่อน</span> เพื่อพาทุกคนไปข้างหน้า<span class=\"end-dot\"></span>\n    </h1>"
+  "<h1 class=\"hero-title\">\n      <span class=\"light\">We don't go first to be ahead of everyone.</span><br>\n      <span class=\"accent\">We go first</span> to move everyone forward<span class=\"end-dot\"></span>\n    </h1>": "<h1 class=\"hero-title\">\n      <span class=\"light\">เราไม่ได้ไปก่อน เพื่อนำหน้าใคร</span><br>\n      <span class=\"accent\">เราไปก่อน</span> เพื่อพาทุกคนไปข้างหน้า<span class=\"end-dot\"></span>\n    </h1>",
+  "<h2 class=\"section-title\">\n      The <span class=\"accent\">playbook</span><br>\n      <span class=\"light\">Thai operators learn from.</span>\n    </h2>": "<h2 class=\"section-title\">\n      <span class=\"accent\">ตำรา</span>ที่คนทำ<br>\n      <span class=\"light\">ร้านอาหารใช้เรียนรู้</span>\n    </h2>"
  },
  "_js": {
   "viewsFormat": "{n} ครั้ง"
@@ -570,7 +571,6 @@
  "Brands": "แบรนด์",
  "Event brands": "แบรนด์อีเวนต์",
  "Restaurant MBA in Thailand": "หลักสูตร Restaurant MBA แห่งแรกของไทย",
- "Brands served": "แบรนด์ที่เคยดูแล",
  "TRC, Damn Expo, Restech and CafCon put brands and operators in the same room.": "TRC, Damn Expo, Restech และ CafCon พาแบรนด์กับผู้ประกอบการมาอยู่ในห้องเดียวกัน",
  "Restaurant Business Academy, Restaurant MBA and our books make operators better-informed buyers.": "Restaurant Business Academy, Restaurant MBA และหนังสือของเรา ทำให้ผู้ประกอบการเลือกซื้อได้อย่างมีข้อมูลมากขึ้น",
  "Brands join at any point and reach operators who already trust the platform. Their stories feed the media again.": "แบรนด์เข้าร่วมได้ทุกจุด และเข้าถึงผู้ประกอบการที่เชื่อใจแพลตฟอร์มอยู่แล้ว แล้วเรื่องราวของแบรนด์ก็กลับไปเป็นคอนเทนต์ให้สื่ออีกรอบ",
@@ -641,5 +641,13 @@
  "Prefer email?": "สะดวกส่งอีเมล?",
  "We use these details only to reply to your enquiry.": "เราใช้ข้อมูลนี้เพื่อติดต่อกลับเรื่องที่คุณสอบถามเท่านั้น",
  "Cookie settings": "ตั้งค่าคุกกี้",
- "Experiences": "ประสบการณ์"
+ "Experiences": "ประสบการณ์",
+ "04 / Thought Leadership": "04 / ผู้นำทางความคิด",
+ "Six books since 2019, written for owners who start, run, and grow restaurants.": "หนังสือ 6 เล่มตั้งแต่ปี 2019 สำหรับเจ้าของร้านที่จะเริ่ม บริหาร และขยายร้านอาหาร",
+ "Startup": "เริ่มธุรกิจ",
+ "Operation": "บริหารร้าน",
+ "Food Delivery": "ฟู้ดเดลิเวอรี",
+ "Feasibility Study": "ศึกษาความเป็นไปได้",
+ "Marketing": "การตลาด",
+ "Café": "คาเฟ่"
 }

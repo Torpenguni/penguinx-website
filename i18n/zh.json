@@ -559,7 +559,8 @@
   "<h1 class=\"hero-title\">\n      <span class=\"light\">We are Thailand's</span><br>\n      <span class=\"accent\">restaurant ecosystem</span><br>\n      builder<span class=\"end-dot\"></span>\n    </h1>": "<h1 class=\"hero-title\">\n      <span class=\"light\">餐饮品牌</span><br>\n      出海泰国<br>\n      <span class=\"light\">的</span><span class=\"accent\">第一站</span><span class=\"end-dot\"></span>\n    </h1>",
   "<h1 class=\"ev-title\">Where the industry<br><span class=\"light\">actually</span> <span class=\"accent\">meets</span><span class=\"end-dot\"></span></h1>": "<h1 class=\"ev-title\">餐饮行业<br><span class=\"light\">真正</span><span class=\"accent\">相聚</span>的地方<span class=\"end-dot\"></span></h1>",
   "<div class=\"hero-eyebrow mono\">\n      <span class=\"live\"></span>\n      <span>Building Thailand's F&B Ecosystem</span>\n      <span class=\"hero-locale\"><span>Bangkok, Thailand</span> <time id=\"bkkTime\">GMT+7</time></span>\n    </div>": "<div class=\"hero-eyebrow mono\">\n      <span class=\"live\"></span>\n      <span>构建泰国餐饮生态系统</span>\n      <span class=\"hero-locale\"><span>泰国 曼谷</span> <time id=\"bkkTime\">GMT+7</time></span>\n    </div>",
-  "<h1 class=\"hero-title\">\n      <span class=\"light\">We don't go first to be ahead of everyone.</span><br>\n      <span class=\"accent\">We go first</span> to move everyone forward<span class=\"end-dot\"></span>\n    </h1>": "<h1 class=\"hero-title\">\n      <span class=\"light\">我们先行，不是为了领先他人。</span><br>\n      <span class=\"accent\">我们先行</span>，是为了带动大家一起前进<span class=\"end-dot\"></span>\n    </h1>"
+  "<h1 class=\"hero-title\">\n      <span class=\"light\">We don't go first to be ahead of everyone.</span><br>\n      <span class=\"accent\">We go first</span> to move everyone forward<span class=\"end-dot\"></span>\n    </h1>": "<h1 class=\"hero-title\">\n      <span class=\"light\">我们先行，不是为了领先他人。</span><br>\n      <span class=\"accent\">我们先行</span>，是为了带动大家一起前进<span class=\"end-dot\"></span>\n    </h1>",
+  "<h2 class=\"section-title\">\n      The <span class=\"accent\">playbook</span><br>\n      <span class=\"light\">Thai operators learn from.</span>\n    </h2>": "<h2 class=\"section-title\">\n      泰国餐饮经营者<br>\n      <span class=\"light\">学习的</span><span class=\"accent\">经营指南</span>\n    </h2>"
  },
  "_js": {
   "viewsFormat": "{n} 次观看",
@@ -595,7 +596,6 @@
  "Brands": "品牌",
  "Event brands": "自有活动品牌",
  "Restaurant MBA in Thailand": "泰国首个餐饮 MBA 课程",
- "Brands served": "服务过的品牌",
  "TRC, Damn Expo, Restech and CafCon put brands and operators in the same room.": "TRC、Damn Expo、Restech 与 CafCon 让品牌和经营者坐进同一个会场。",
  "Restaurant Business Academy, Restaurant MBA and our books make operators better-informed buyers.": "Restaurant Business Academy、Restaurant MBA 与我们的书籍，让经营者成为更有判断力的买家。",
  "Brands join at any point and reach operators who already trust the platform. Their stories feed the media again.": "品牌可从任一环节加入，直接接触已经信任这个平台的经营者；品牌的故事又回流成为媒体内容。",
@@ -666,5 +666,15 @@
  "Prefer email?": "更习惯发邮件？",
  "We use these details only to reply to your enquiry.": "这些信息仅用于回复你的咨询。",
  "Cookie settings": "Cookie 设置",
- "Experiences": "经验"
+ "Experiences": "经验",
+ "04 / Thought Leadership": "04 / 思想领导力",
+ "Six books since 2019, written for owners who start, run, and grow restaurants.": "自 2019 年以来出版 6 本书，写给创业、经营和扩张餐厅的店主。",
+ "Startup": "创业",
+ "Operation": "运营管理",
+ "Food Delivery": "外卖",
+ "Feasibility Study": "可行性研究",
+ "Marketing": "营销",
+ "Café": "咖啡馆",
+ "Best Seller": "畅销书",
+ "No.1 Best Seller": "No.1 畅销书"
 }
