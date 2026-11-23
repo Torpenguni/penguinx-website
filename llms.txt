@@ -1,5 +1,9 @@
 # PenguinX
 
+> PenguinX helps food brands and suppliers reach Thai restaurant owners through Torpenguin media, our own trade events (TRC, Restech, DAMN Expo, CafCon), strategy, branding and business matching.
+
+> PenguinX ช่วยแบรนด์และซัพพลายเออร์ธุรกิจอาหารเข้าถึงเจ้าของร้านอาหารไทย ผ่านสื่อ Torpenguin อีเวนต์ของเราเอง (TRC, Restech, DAMN Expo, CafCon) การวางกลยุทธ์ แบรนดิ้ง และ Business Matching
+
 > PenguinX (เพนกวินเอ็กซ์) is a restaurant ecosystem builder and F&B
 > ecosystem builder based in Bangkok, Thailand. Rather than running campaigns alone,
 > PenguinX owns the media, events, education, and business-solution channels that
@@ -12,7 +16,7 @@
 > จุดต่างคือ PenguinX ไม่ได้รับจ้างทำแคมเปญอย่างเดียว แต่เป็นเจ้าของสื่อ อีเวนต์
 > หลักสูตรการศึกษา และโซลูชันธุรกิจ ที่ผู้ประกอบการร้านอาหารไทยเชื่อถืออยู่แล้ว
 > แล้วเชื่อมแบรนด์เข้าไปในระบบนิเวศนั้น เริ่มต้นจากช่อง Torpenguin ปัจจุบันเข้าถึง
-> ผู้ประกอบการกว่า 2 ล้านคน ให้บริการแบรนด์พาร์ตเนอร์กว่า 200 ราย ครอบคลุม 45 จังหวัด
+> ผู้ติดตามกว่า 1.95 ล้านคน ให้บริการแบรนด์พาร์ตเนอร์กว่า 200 ราย และมีคอมมูนิตี้ใน 52 จังหวัด
 
 ## What PenguinX does / บริการของ PenguinX
 
@@ -49,7 +53,7 @@
 
 ## Leadership / ผู้บริหาร
 
-- **TOR Thanapong** — Founder & CEO. 13 years in the F&B industry,
+- **Thanapong "Tor" Vongchinsri** (ธนพงศ์ วงศ์ชินศรี) — Founder & CEO. 13 years in the F&B industry,
   speaker at 1,000+ conferences, author of best-selling restaurant management books, director of the first
   Restaurant MBA program in Thailand. Contact: tor@penguinx.co
 - **SAN Pornchai** — Chief Marketing Officer. Former executive at TBWA, McCann Group, Dentsu Y&R, and Lowe.
