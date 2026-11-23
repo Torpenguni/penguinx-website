@@ -163,8 +163,8 @@ def translate_blocks(html, blocks, keep):
     return html
 
 def keep_english(html, code, keep):
-    """ภาษาที่ตั้ง keepEnglish: ล็อกเมนูบนสุด (ยกเว้นปุ่ม CTA) และลิงก์ที่มี
-    data-keep-en ไว้เป็นภาษาอังกฤษ
+    """ภาษาที่ตั้ง keepEnglish: ล็อกเมนูบนสุด (ยกเว้นปุ่ม CTA) และลิงก์/ป้าย
+    (a, div, span) ที่มี data-keep-en ไว้เป็นภาษาอังกฤษ
 
     ใช้ตัวแทนแบบเดียวกับ translate_blocks เพราะ translate_text แปลตามข้อความ
     ล้วน ๆ ไม่รู้บริบท ถ้าลบคำว่า "Media" ออกจากไฟล์แปลแทน หัวข้อและการ์ด
@@ -178,7 +178,7 @@ def keep_english(html, code, keep):
 
     def lock(fragment):
         token = f'<!--PXKEEP{len(keep)}-->'
-        keep[token] = re.sub(r'<a ', '<a lang="en" ', fragment, count=1)
+        keep[token] = re.sub(r'<(a|div|span) ', r'<\1 lang="en" ', fragment, count=1)
         return token
 
     def nav(m):
@@ -186,7 +186,7 @@ def keep_english(html, code, keep):
                       lambda li: li.group(0) if 'nav-cta' in li.group(0) else lock(li.group(0)),
                       m.group(0))
     html = re.sub(r'<ul class="nav-links">.*?</ul>', nav, html, count=1, flags=re.S)
-    html = re.sub(r'<a [^>]*\bdata-keep-en\b[^>]*>[^<]*</a>', lambda m: lock(m.group(0)), html)
+    html = re.sub(r'<(a|div|span) [^>]*\bdata-keep-en\b[^>]*>[^<]*</\1>', lambda m: lock(m.group(0)), html)
     return html
 
 def js_config(cfg_js):
