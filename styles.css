@@ -1893,6 +1893,17 @@ html[lang="ja"] .hero-standfirst{text-wrap:pretty}
    แล้วห้ามเบราว์เซอร์ตัดซ้ำในจุดที่ไม่ควร */
 html[lang="ja"] .vp-title{line-break:strict;overflow-wrap:normal}
 
+/* หัวข้อภาษาญี่ปุ่น/จีน: ห้ามตัดกลางวลี
+   ภาษาที่ไม่มีเว้นวรรคถูกตัดได้ทุกตัวอักษร เลยเจอ "みん|な" "エコシステ|ム" "带动大|家"
+   .nw = วลีที่ห้ามแยก (ใส่ในไฟล์แปล) ทำงานได้ทุกเบราว์เซอร์รวม Safari บน iPhone
+   keep-all = ตัดเฉพาะตรง <wbr> ที่ build-i18n.py ใส่ไว้ระหว่างวลี (และเว้นวรรค/เครื่องหมาย)
+   anywhere = กันล้นจอ ถ้าวลีเดียวยาวเกินบรรทัดก็ยอมให้ตัดได้
+   pretty กันไม่ให้เหลือคำเดียวห้อยบรรทัดสุดท้าย */
+html[lang="ja"] .nw,
+html[lang^="zh"] .nw{white-space:nowrap}
+html[lang="ja"] :is(.hero-title,.section-title,.cta-title,.shorts-title,.vp-title,.ev-title,.evd-title,.article-title,.eco-name,.case-name,.news-title,.case-title,.ev-name),
+html[lang^="zh"] :is(.hero-title,.section-title,.cta-title,.shorts-title,.vp-title,.ev-title,.evd-title,.article-title,.eco-name,.case-name,.news-title,.case-title,.ev-name){word-break:keep-all;overflow-wrap:anywhere;text-wrap:pretty}
+
 /* ============================================================
    ระยะระหว่างโลโก้กับเมนูบนแถบบน
 
