@@ -9,14 +9,14 @@
 import glob, subprocess, os
 
 SITE = 'https://www.penguinx.co'
-LANGS = [('en', ''), ('th', 'th/'), ('zh-Hans', 'zh/'), ('ja', 'ja/')]
+LANGS = [('en', ''), ('th', 'th/'), ('zh-Hans', 'zh/'), ('ja', 'ja/'), ('ko', 'ko/')]
 # บางหน้ายังไม่ได้แปลครบทุกภาษา ต้องเช็คว่าไฟล์มีอยู่จริงก่อนใส่ลง sitemap
 # ไม่งั้น Google จะไล่เก็บแล้วเจอ 404 ซึ่งเสียคะแนนมากกว่าไม่ประกาศไปเลย
 
 def pages():
     out = []
     for f in glob.glob('**/*.html', recursive=True):
-        if f.startswith(('th/', 'zh/', 'ja/')) or 'preview-' in f or '_template' in f:
+        if f.startswith(('th/', 'zh/', 'ja/', 'ko/')) or 'preview-' in f or '_template' in f:
             continue
         # ไฟล์ร่าง/ทดลองที่ไม่ใช่หน้าจริง: ชื่อขึ้นต้น _ (เช่น _news-section.disabled.html),
         # มี __ (index__f, index__x) หรือ .disabled ถ้าใส่ลง sitemap Google จะเก็บเป็นหน้าซ้ำกับหน้าแรก

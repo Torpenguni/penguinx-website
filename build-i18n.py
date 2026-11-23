@@ -23,6 +23,13 @@ LANGS = {
     # 'only' คือรายชื่อหน้าที่ภาษานั้นมีจริง หน้าที่เหลือจะไม่ถูกสร้าง
     # ไม่ประกาศ hreflang และไม่ขึ้นในปุ่มสลับภาษา จนกว่าจะแปลเพิ่ม
     'ja': {'code': 'ja', 'htmlLang': 'ja', 'ogLocale': 'ja_JP', 'label': '日本語'},
+    # เกาหลีเฟส 1: หน้าที่ลูกค้าเกาหลีใช้ตัดสินใจ (หน้าแรก ประวัติ Tor อีเวนต์ และ 4 เสาหลัก)
+    # หน้า Work/News ยังไม่แปล ลิงก์จากหน้าเกาหลีจะชี้ฉบับอังกฤษแทน
+    # ต้องใส่ทั้งชื่อไฟล์และ URL แบบโฟลเดอร์ (about/tor/) เพราะฟังก์ชันต่าง ๆ ส่งมาคนละแบบ
+    'ko': {'code': 'ko', 'htmlLang': 'ko', 'ogLocale': 'ko_KR', 'label': '한국어',
+           'only': ('index.html', 'about/tor/index.html', 'about/tor/', 'events.html',
+                    'ecosystem/media.html', 'ecosystem/event.html',
+                    'ecosystem/education.html', 'ecosystem/solution.html')},
 }
 
 def has_page(code, rel_path):
@@ -92,12 +99,12 @@ def pages():
         out.append(f)
     return sorted(out)
 
-LANG_LABELS = (('en', 'EN'), ('th', 'ไทย'), ('zh', '中文'), ('ja', '日本語'))
+LANG_LABELS = (('en', 'EN'), ('th', 'ไทย'), ('zh', '中文'), ('ja', '日本語'), ('ko', '한국어'))
 
 # ป้ายของปุ่มเปิดเมนู เขียนไว้ตรงนี้เพราะ switcher ถูกแทรกหลัง translate_text
 # ทำงานเสร็จแล้ว ตัวแปลรายคำจึงมองไม่เห็น aria-label ตัวนี้
 SWITCH_ARIA = {'en': 'Change language', 'th': 'เปลี่ยนภาษา', 'zh': '切换语言',
-               'ja': '言語を切り替える'}
+               'ja': '言語を切り替える', 'ko': '언어 변경'}
 
 
 def switcher(rel_path, current):

@@ -1900,7 +1900,8 @@ html[lang="ja"] .vp-title{line-break:strict;overflow-wrap:normal}
    anywhere = กันล้นจอ ถ้าวลีเดียวยาวเกินบรรทัดก็ยอมให้ตัดได้
    pretty กันไม่ให้เหลือคำเดียวห้อยบรรทัดสุดท้าย */
 html[lang="ja"] .nw,
-html[lang^="zh"] .nw{white-space:nowrap}
+html[lang^="zh"] .nw,
+html[lang="ko"] .nw{white-space:nowrap}
 html[lang="ja"] :is(.hero-title,.section-title,.cta-title,.shorts-title,.vp-title,.ev-title,.evd-title,.article-title,.eco-name,.case-name,.news-title,.case-title,.ev-name),
 html[lang^="zh"] :is(.hero-title,.section-title,.cta-title,.shorts-title,.vp-title,.ev-title,.evd-title,.article-title,.eco-name,.case-name,.news-title,.case-title,.ev-name){word-break:keep-all;overflow-wrap:anywhere;text-wrap:pretty}
 
@@ -2627,3 +2628,18 @@ html[lang="th"] .prof-facts dt{letter-spacing:.04em;font-size:13px}
   .ins-author{grid-template-columns:64px 1fr}
   .ins-author img{width:64px;height:64px}
 }
+
+/* ============================================================
+   ภาษาเกาหลี — Anuphan ไม่มีตัวฮันกึล ให้ใช้ฟอนต์ระบบที่อ่านง่าย
+   (Mac/iPhone: Apple SD Gothic Neo, Windows: Malgun Gothic)
+   เกาหลีเว้นวรรคระหว่างคำ keep-all ทำให้คำไม่ถูกตัดกลาง ซึ่งเป็นมาตรฐานเว็บเกาหลี
+   ============================================================ */
+html[lang="ko"] * {
+  font-family:'Anuphan','Apple SD Gothic Neo','Malgun Gothic','Noto Sans KR',sans-serif;
+}
+html[lang="ko"] body{word-break:keep-all;overflow-wrap:break-word}
+html[lang="ko"] :is(.hero-title,.section-title,.cta-title,.shorts-title,.vp-title,.ev-title,.evd-title,.article-title,.eco-name,.case-name,.news-title,.ev-name){letter-spacing:-0.01em;text-wrap:pretty}
+html[lang="ko"] .book-cat{letter-spacing:.02em;font-size:13px}
+
+/* ป้ายเล็กที่ออกแบบให้ตัวห่าง (0.1–0.2em) สำหรับตัวละติน พอเป็นฮันกึลจะอ่านเป็น "직 책" ลดลงให้อ่านเป็นคำ */
+html[lang="ko"] :is(.label,.section-num,.clients-label,.shorts-num,.cta-eyebrow,.category,dt,h4,.ev-eyebrow,.ev-sec,.ev-chip,.pg-pillar,.vp-num,.vp-tag,.pg-section-num,.pg-item-tag,.pg-soon-badge,.lbl,.news-meta,.news-read,.pg-next-tag,.mono){letter-spacing:0.02em}
