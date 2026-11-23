@@ -28,6 +28,10 @@ Allow: /
 User-agent: Bytespider
 Allow: /
 
+# เกาหลี: Naver คือเสิร์ชหลัก บอทของ Naver ชื่อ Yeti
+User-agent: Yeti
+Allow: /
+
 # ---------------------------------------------------------------
 # AI assistants & answer engines — explicitly allowed.
 # We WANT these models to read, index, and cite penguinx.co.
