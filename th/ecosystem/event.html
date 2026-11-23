@@ -211,6 +211,11 @@
   html[lang="ja"] .nw, html[lang^="zh"] .nw{ white-space:nowrap; }
   html[lang="ja"] :is(.vp-title,.section-title,.news-title,.pg-item-title),
   html[lang^="zh"] :is(.vp-title,.section-title,.news-title,.pg-item-title){ word-break:keep-all; overflow-wrap:anywhere; text-wrap:pretty; }
+
+  /* เกาหลี: ฟอนต์ฮันกึลและห้ามตัดกลางคำ (หน้านี้ไม่ได้โหลด styles.css) */
+  html[lang="ko"] *{ font-family:'Anuphan','Apple SD Gothic Neo','Malgun Gothic','Noto Sans KR',sans-serif; }
+  html[lang="ko"] body{ word-break:keep-all; overflow-wrap:break-word; }
+  html[lang="ko"] :is(.label,.section-num,.clients-label,.shorts-num,.cta-eyebrow,.category,dt,h4,.ev-eyebrow,.ev-sec,.ev-chip,.pg-pillar,.vp-num,.vp-tag,.pg-section-num,.pg-item-tag,.pg-soon-badge,.lbl,.news-meta,.news-read,.pg-next-tag,.mono){letter-spacing:0.02em}
 </style>
 <!-- ===== AEO/SEO metadata — managed block, do not hand-edit ===== -->
 <meta name="description" content="PenguinX Event จัดงานหลักของวงการอาหาร 5 งาน ได้แก่ TRC (Thailand Restaurant Conference), Damn Expo, Restech และ CafCon">
@@ -219,6 +224,7 @@
 <link rel="alternate" hreflang="zh-Hans" href="https://www.penguinx.co/zh/ecosystem/event.html">
 <link rel="alternate" hreflang="zh-CN" href="https://www.penguinx.co/zh/ecosystem/event.html">
 <link rel="alternate" hreflang="ja" href="https://www.penguinx.co/ja/ecosystem/event.html">
+<link rel="alternate" hreflang="ko" href="https://www.penguinx.co/ko/ecosystem/event.html">
 <link rel="alternate" hreflang="x-default" href="https://www.penguinx.co/ecosystem/event.html">
 <link rel="canonical" href="https://www.penguinx.co/th/ecosystem/event.html">
 <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">

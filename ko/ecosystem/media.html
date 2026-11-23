@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script src="/analytics.js"></script>
+<title>PenguinX Media — 태국 F&B 업계를 움직이는 목소리</title>
+<link rel="icon" href="/favicon.ico" sizes="48x48">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/favicon-96x96.png" sizes="96x96" type="image/png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+<meta name="theme-color" content="#0a0a0a">
+<link rel="stylesheet" href="/fonts/anuphan.css">
+<style>
+  :root{
+    --bg:#0a0a0a;--bg-2:#141413;--ink:#f4f1ea;--ink-mute:#8a8680;
+    --accent:#dba93a;--line:rgba(244,241,234,0.1);--line-soft:rgba(244,241,234,0.05);
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{background:var(--bg);color:var(--ink);font-family:'Anuphan',sans-serif;font-weight:400;-webkit-font-smoothing:antialiased;overflow-x:hidden;line-height:1.5}
+
+  /* === TOP BAR === */
+  .pg-nav{display:flex;justify-content:space-between;align-items:center;padding:24px 40px;border-bottom:1px solid var(--line)}
+  .pg-back{color:var(--ink-mute);text-decoration:none;font-size:13px;letter-spacing:0.05em;display:inline-flex;align-items:center;gap:8px;transition:color 0.2s ease}
+  .pg-back:hover{color:var(--accent)}
+  .pg-pillar{font-size:11px;letter-spacing:0.15em;text-transform:uppercase;color:var(--ink-mute)}
+  .pg-pillar b{color:var(--accent);font-weight:600}
+
+  /* === HERO === */
+  .pg-hero{padding:120px 40px 80px;border-bottom:1px solid var(--line)}
+  .pg-hero-grid{display:grid;grid-template-columns:1fr 320px;gap:80px;max-width:1600px;margin:0 auto;align-items:end}
+  .pg-hero-title{font-size:clamp(56px,9vw,160px);font-weight:600;line-height:0.92;letter-spacing:-0.045em}
+  .pg-hero-title .light{color:var(--ink-mute);font-weight:300;font-style:italic}
+  .pg-hero-title .accent{color:var(--accent)}
+  .pg-meta{display:flex;flex-direction:column;gap:24px;padding-bottom:12px}
+  .pg-meta-block{display:grid;grid-template-columns:90px 1fr;gap:16px;padding-bottom:18px;border-bottom:1px solid var(--line-soft)}
+  .pg-meta-block:last-child{border-bottom:none}
+  .pg-meta-label{font-size:11px;color:var(--ink-mute);text-transform:uppercase;letter-spacing:0.15em;padding-top:3px}
+  .pg-meta-value{font-size:14px;color:var(--ink);line-height:1.5}
+
+  /* === COVER === */
+  .pg-cover{width:100%;aspect-ratio:21/9;background:#222 center/cover no-repeat}
+  .pg-cover-caption{padding:14px 40px;font-size:12px;color:var(--ink-mute);display:flex;justify-content:space-between;border-bottom:1px solid var(--line)}
+
+  /* === VALUE-PROP === */
+  .vp{padding:56px 40px 40px;max-width:1600px;margin:0 auto}
+  .vp-head{margin-bottom:32px;padding-bottom:18px;border-bottom:1px solid var(--line);display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:24px}
+  .vp-num{font-size:11px;color:var(--ink-mute);letter-spacing:0.15em;text-transform:uppercase;margin-bottom:8px}
+  .vp-title{font-size:clamp(36px,5vw,72px);font-weight:600;line-height:1;letter-spacing:-0.035em}
+  .vp-title .light{color:var(--ink-mute);font-weight:300;font-style:italic}
+  .vp-title .accent{color:var(--accent)}
+  .vp-tag{font-size:11px;color:var(--accent);border:1px solid rgba(219,169,58,0.4);padding:6px 14px;border-radius:100px;letter-spacing:0.12em;text-transform:uppercase}
+  .vp-body{display:grid;grid-template-columns:1.2fr 1fr;gap:48px;align-items:center}
+  .vp-img{width:100%;aspect-ratio:4/3;background:#1a1a18 center/cover no-repeat;border-radius:2px;overflow:hidden;position:relative}
+  .vp-img img{display:block;width:100%;height:100%;object-fit:cover}
+  .vp-img-cap{position:absolute;bottom:0;left:0;right:0;padding:20px 24px;background:linear-gradient(180deg,transparent 0%,rgba(0,0,0,0.7) 100%);font-size:12px;color:var(--ink-mute);display:flex;justify-content:space-between}
+  .vp-text{display:flex;flex-direction:column;gap:24px}
+  .vp-lead{font-size:clamp(17px,1.5vw,22px);line-height:1.5;color:var(--ink);letter-spacing:-0.015em;font-weight:400}
+  .vp-lead em{color:var(--accent);font-style:normal;font-weight:500}
+  .vp-benefits{display:flex;flex-direction:column;gap:0;border-top:1px solid var(--line)}
+  .vp-benefit{padding:16px 0;border-bottom:1px solid var(--line-soft);display:grid;grid-template-columns:48px 1fr;gap:20px;align-items:start}
+  .vp-benefit:last-child{border-bottom:none}
+  .vp-b-num{font-size:14px;color:var(--accent);font-weight:600;letter-spacing:0.05em;padding-top:2px}
+  .vp-b-h{font-size:16px;font-weight:600;color:var(--ink);margin-bottom:6px;letter-spacing:-0.01em}
+  .vp-b-d{font-size:13px;color:var(--ink-mute);line-height:1.5}
+
+  /* === PROPERTIES GRID === */
+  .pg-section{padding:60px 40px 100px;max-width:1600px;margin:0 auto}
+  .pg-section-head{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:48px;padding-bottom:24px;border-bottom:1px solid var(--line);flex-wrap:wrap;gap:24px}
+  .pg-section-num{font-size:11px;color:var(--ink-mute);letter-spacing:0.15em;text-transform:uppercase;margin-bottom:8px}
+  .pg-section-title{font-size:clamp(28px,3vw,48px);font-weight:600;letter-spacing:-0.025em;line-height:1.05}
+  .pg-section-meta{font-size:12px;color:var(--ink-mute);letter-spacing:0.05em}
+  .pg-grid{display:grid;gap:20px}
+  .pg-grid.cols-5{grid-template-columns:repeat(5,1fr)}
+  .pg-grid.cols-3{grid-template-columns:repeat(3,1fr)}
+  .pg-grid.cols-2{grid-template-columns:repeat(2,1fr);gap:32px}
+  .pg-item{text-decoration:none;color:inherit;display:block;cursor:pointer;transition:opacity 0.3s ease;position:relative}
+  .pg-item:hover{opacity:0.92}
+  .pg-item-img{width:100%;aspect-ratio:1/1;background:#1a1a18 center/cover no-repeat;margin-bottom:18px;overflow:hidden;border-radius:2px;position:relative}
+  .pg-grid.cols-2 .pg-item-img{aspect-ratio:1/1}
+  .pg-item-img img{display:block;width:100%;height:100%;object-fit:cover;transition:transform 0.8s ease}
+  .pg-item:hover .pg-item-img img{transform:scale(1.04)}
+  .pg-track{display:flex;width:100%;height:100%;transition:transform 0.45s cubic-bezier(0.4,0,0.2,1)}
+  .pg-track img{flex:0 0 100%;width:100%;height:100%;object-fit:cover}
+  .pg-arrow{position:absolute;top:50%;transform:translateY(-50%);width:36px;height:36px;border-radius:50%;background:rgba(10,10,10,0.6);backdrop-filter:blur(8px);border:1px solid rgba(244,241,234,0.2);color:var(--ink);font-size:20px;line-height:1;cursor:pointer;display:flex;align-items:center;justify-content:center;opacity:0;transition:opacity 0.25s ease, background 0.2s ease;z-index:2;padding:0;font-family:inherit}
+  .pg-item-img:hover .pg-arrow{opacity:1}
+  .pg-arrow.prev{left:10px}
+  .pg-arrow.next{right:10px}
+  .pg-arrow:hover{background:var(--accent);color:var(--bg);border-color:var(--accent)}
+  .pg-item{cursor:default}
+  .pg-item:hover{opacity:1}
+  /* คำบรรยายแต่ละการ์ดยาวไม่เท่ากัน ทำให้การ์ดเป็นคอลัมน์แล้วดันปุ่มลงล่างสุด
+     ปุ่มทั้งแถวจะได้อยู่ระดับเดียวกัน */
+  .pg-item{display:flex;flex-direction:column}
+  .pg-item-link{margin-top:auto;align-self:flex-start;
+    display:inline-flex;align-items:center;gap:10px;
+    padding:11px 18px;border:1px solid rgba(244,241,234,0.24);border-radius:100px;
+    font-size:12.5px;font-weight:600;letter-spacing:0.05em;text-transform:uppercase;
+    color:var(--ink);text-decoration:none;
+    transition:color 0.2s ease,border-color 0.2s ease,background 0.2s ease}
+  .pg-item-sub{margin-bottom:18px}
+  .pg-item-link:hover{color:var(--accent);border-color:rgba(219,169,58,0.55);background:rgba(219,169,58,0.07)}
+  .pg-item-link:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+  /* ตัวอักษรจีนกว้างเต็มช่องอยู่แล้ว ไม่ต้องถ่างเท่าตัวละติน */
+  html[lang^="zh"] .pg-item-link{letter-spacing:0.02em}
+  .pg-item-link .arrow{color:var(--accent);transition:transform 0.3s ease}
+  .pg-item-link:hover .arrow{transform:translate(3px,-3px)}
+  .pg-item-ext{position:absolute;top:14px;right:14px;width:36px;height:36px;border-radius:50%;background:rgba(10,10,10,0.6);backdrop-filter:blur(8px);display:flex;align-items:center;justify-content:center;color:var(--ink);font-size:14px;transition:all 0.3s ease;border:1px solid rgba(244,241,234,0.15)}
+  .pg-item:hover .pg-item-ext{background:var(--accent);color:var(--bg);border-color:var(--accent);transform:rotate(-45deg)}
+  .pg-item-tag{font-size:10px;color:var(--accent);letter-spacing:0.15em;text-transform:uppercase;margin-bottom:10px;font-weight:500}
+  .pg-item-title{font-size:20px;font-weight:600;line-height:1.2;letter-spacing:-0.02em;margin-bottom:10px}
+  .pg-grid.cols-2 .pg-item-title{font-size:28px}
+  .pg-item-sub{font-size:13.5px;color:var(--ink-mute);line-height:1.5}
+  .pg-grid.cols-2 .pg-item-sub{font-size:15px}
+  .pg-media3 .pg-item-title{font-size:26px}
+  .pg-media3 .pg-item-sub{font-size:15px}
+  .pg-soon{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;background:radial-gradient(120% 90% at 50% 40%,#2a2620 0%,#141311 60%,#0d0d0c 100%);border:1px solid var(--line)}
+  .pg-soon .pg-soon-logo{width:62%;max-width:300px;height:auto;object-fit:contain}
+  .pg-item:hover .pg-soon .pg-soon-logo{transform:none}
+  .pg-soon-url{font-size:13px;letter-spacing:0.12em;color:var(--ink-mute)}
+  .pg-soon-badge{position:absolute;top:16px;right:16px;font-size:10px;letter-spacing:0.18em;text-transform:uppercase;color:var(--accent);border:1px solid rgba(219,169,58,0.5);border-radius:999px;padding:6px 12px;background:rgba(219,169,58,0.08)}
+  .pg-item-link--soon{cursor:default;opacity:0.6}
+  .pg-item-link--soon:hover{color:inherit;border-color:inherit;background:transparent}
+  .pg-item-link--soon .arrow{font-size:11px;letter-spacing:0.12em;text-transform:uppercase}
+  .pg-item-foot{margin-top:14px;padding-top:12px;border-top:1px solid var(--line-soft);font-size:11px;color:var(--ink-mute);letter-spacing:0.08em;text-transform:uppercase;display:flex;justify-content:space-between;align-items:center}
+  .pg-item-foot .arrow{color:var(--accent);transition:transform 0.3s ease}
+  .pg-item:hover .pg-item-foot .arrow{transform:translate(3px,-3px)}
+
+  /* === STATS === */
+  .pg-stats{padding:48px 40px;border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:var(--bg-2)}
+  .pg-stats-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:40px;max-width:1400px;margin:0 auto}
+  .pg-stat .num{font-size:clamp(28px,3vw,44px);font-weight:600;letter-spacing:-0.04em;line-height:1;color:var(--accent)}
+  .pg-stat .lbl{font-size:11px;color:var(--ink-mute);text-transform:uppercase;letter-spacing:0.12em;margin-top:10px}
+
+  /* === NEXT === */
+  .pg-next{padding:120px 40px;border-top:1px solid var(--line);text-align:center}
+  .pg-next-tag{font-size:11px;color:var(--ink-mute);text-transform:uppercase;letter-spacing:0.2em;margin-bottom:24px}
+  .pg-next-title{font-size:clamp(48px,7vw,120px);font-weight:600;line-height:0.95;letter-spacing:-0.04em;margin-bottom:32px}
+  .pg-next-title a{color:var(--ink);text-decoration:none;border-bottom:2px solid transparent;transition:all 0.3s ease}
+  .pg-next-title a:hover{color:var(--accent);border-bottom-color:var(--accent)}
+
+  /* === RESPONSIVE === */
+  @media (max-width:1100px){
+    .pg-hero{padding:80px 32px 50px}
+    .pg-hero-grid{grid-template-columns:1fr;gap:48px}
+    .vp{padding:80px 32px 50px}
+    .vp-body{grid-template-columns:1fr;gap:48px}
+    .vp-img{aspect-ratio:16/10;max-height:560px}
+    .pg-section{padding:50px 32px 80px}
+    .pg-grid.cols-5{grid-template-columns:repeat(3,1fr)}
+  }
+  @media (max-width:900px){
+    .vp-head,.pg-section-head{flex-direction:column;align-items:flex-start;gap:14px}
+    .vp-tag{align-self:flex-start;order:-1}
+    .pg-grid.cols-3{grid-template-columns:repeat(2,1fr)}
+  }
+  @media (max-width:700px){
+    .pg-hero{padding:60px 20px 40px}
+    .pg-cover-caption{padding:14px 20px}
+    .vp{padding:56px 20px 40px}
+    .vp-head{margin-bottom:32px;padding-bottom:18px}
+    .vp-num{font-size:10px}
+    .vp-title{font-size:34px;line-height:1.05}
+    .vp-tag{font-size:10px;padding:5px 12px}
+    .vp-body{gap:32px}
+    .vp-img{aspect-ratio:4/3}
+    .vp-img-cap{padding:14px 18px;font-size:11px}
+    .vp-lead{font-size:18px;line-height:1.45}
+    .vp-text{gap:24px}
+    .vp-benefit{grid-template-columns:32px 1fr;gap:14px;padding:18px 0}
+    .vp-b-num{font-size:13px}
+    .vp-b-h{font-size:15px;margin-bottom:4px}
+    .vp-b-d{font-size:13px;line-height:1.5}
+    .pg-section{padding:32px 0 80px}
+    .pg-section-head{padding:0 20px 18px;margin-bottom:24px}
+    .pg-section-num{font-size:10px}
+    .pg-section-title{font-size:28px}
+    .pg-section-meta{font-size:11px}
+    .pg-grid{grid-template-columns:none;display:flex;overflow-x:auto;overflow-y:hidden;gap:12px;padding:4px 20px 24px;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;scrollbar-width:thin}
+    .pg-grid::-webkit-scrollbar{height:4px}
+    .pg-grid::-webkit-scrollbar-thumb{background:var(--line);border-radius:100px}
+    .pg-item{flex:0 0 72%;min-width:240px;scroll-snap-align:start}
+    .pg-grid.cols-2 .pg-item{flex:0 0 80%}
+    .pg-item-img{aspect-ratio:1/1;margin-bottom:14px}
+    .pg-item-ext{width:32px;height:32px;font-size:12px;top:10px;right:10px}
+    .pg-item-tag{font-size:9px;margin-bottom:8px}
+    .pg-item-title{font-size:17px;margin-bottom:8px}
+    .pg-grid.cols-2 .pg-item-title{font-size:20px}
+    .pg-item-sub{font-size:12.5px;line-height:1.45}
+    .pg-grid.cols-2 .pg-item-sub{font-size:13px}
+    .pg-item-foot{margin-top:10px;padding-top:10px;font-size:10px}
+    .pg-stats{padding:40px 24px}
+    .pg-stats-grid{grid-template-columns:repeat(2,1fr);gap:24px}
+    .pg-next{padding:80px 24px}
+  }
+  @media (max-width:420px){
+    .vp-title{font-size:28px}
+    .vp-lead{font-size:16px}
+    .pg-section-title{font-size:24px}
+    .pg-item{flex:0 0 80%}
+  }
+
+  /* บล็อกอ่านต่อ — หน้า pillar ไม่ได้โหลด styles.css จึงต้องมีกฎของตัวเอง */
+  .pg-related{padding:72px 32px 0;border-top:1px solid var(--line)}
+  .pg-related .news-grid{margin-top:36px}
+  .news-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:36px 28px; }
+  @media (max-width:1100px){ .news-grid{ grid-template-columns:repeat(2,1fr); } }
+  @media (max-width:560px){ .news-grid{ grid-template-columns:1fr; } }
+  .news-card{ display:flex; flex-direction:column; gap:16px; cursor:pointer; text-decoration:none; color:inherit; }
+  .news-card:hover .news-thumb{ filter:contrast(1.1) saturate(1.05); transform:scale(1.02); }
+  .news-card:hover .news-title{color:var(--accent)}
+  .news-thumb{ aspect-ratio:16/10; background-color:var(--bg-2); background-size:cover; background-position:center; border-radius:10px; overflow:hidden; border:1px solid var(--line); filter:contrast(1.05) saturate(0.95); transition:filter 0.5s ease, transform 0.5s ease; }
+  .news-meta{ display:flex; align-items:center; gap:10px; font-family:'Anuphan',sans-serif; font-size:11px; color:var(--accent); letter-spacing:0.18em; text-transform:uppercase; font-weight:600; }
+  .news-meta::before{ content:''; width:14px;height:1px; background:var(--accent); }
+  .news-title{ font-family:'Anuphan',sans-serif; font-size:18px; font-weight:600; letter-spacing:-0.02em; line-height:1.3; color:var(--ink); transition:color 0.3s ease; }
+  .news-read{ font-size:11px; color:var(--ink-mute); letter-spacing:0.12em; text-transform:uppercase; margin-top:-4px; }
+
+  /* หัวข้อภาษาญี่ปุ่น/จีน: ห้ามตัดกลางวลี (เหมือนใน styles.css — หน้านี้ไม่ได้โหลดไฟล์นั้น) */
+  html[lang="ja"] .nw, html[lang^="zh"] .nw{ white-space:nowrap; }
+  html[lang="ja"] :is(.vp-title,.section-title,.news-title,.pg-item-title),
+  html[lang^="zh"] :is(.vp-title,.section-title,.news-title,.pg-item-title){ word-break:keep-all; overflow-wrap:anywhere; text-wrap:pretty; }
+
+  /* เกาหลี: ฟอนต์ฮันกึลและห้ามตัดกลางคำ (หน้านี้ไม่ได้โหลด styles.css) */
+  html[lang="ko"] *{ font-family:'Anuphan','Apple SD Gothic Neo','Malgun Gothic','Noto Sans KR',sans-serif; }
+  html[lang="ko"] body{ word-break:keep-all; overflow-wrap:break-word; }
+  html[lang="ko"] :is(.label,.section-num,.clients-label,.shorts-num,.cta-eyebrow,.category,dt,h4,.ev-eyebrow,.ev-sec,.ev-chip,.pg-pillar,.vp-num,.vp-tag,.pg-section-num,.pg-item-tag,.pg-soon-badge,.lbl,.news-meta,.news-read,.pg-next-tag,.mono){letter-spacing:0.02em}
+</style>
+<!-- ===== AEO/SEO metadata — managed block, do not hand-edit ===== -->
+<meta name="description" content="PenguinX Media는 Torpenguin과 자체 스튜디오를 운영합니다. 태국 F&B 업계의 화제를 만드는 경영자 채널이자 제작팀입니다.">
+<link rel="alternate" hreflang="en" href="https://www.penguinx.co/ecosystem/media.html">
+<link rel="alternate" hreflang="th" href="https://www.penguinx.co/th/ecosystem/media.html">
+<link rel="alternate" hreflang="zh-Hans" href="https://www.penguinx.co/zh/ecosystem/media.html">
+<link rel="alternate" hreflang="zh-CN" href="https://www.penguinx.co/zh/ecosystem/media.html">
+<link rel="alternate" hreflang="ja" href="https://www.penguinx.co/ja/ecosystem/media.html">
+<link rel="alternate" hreflang="ko" href="https://www.penguinx.co/ko/ecosystem/media.html">
+<link rel="alternate" hreflang="x-default" href="https://www.penguinx.co/ecosystem/media.html">
+<link rel="canonical" href="https://www.penguinx.co/ko/ecosystem/media.html">
+<meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="PenguinX">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:locale:alternate" content="th_TH">
+<meta property="og:title" content="PenguinX Media — 태국 F&B 업계를 움직이는 목소리">
+<meta property="og:description" content="PenguinX Media는 Torpenguin과 자체 스튜디오를 운영합니다. 태국 F&B 업계의 화제를 만드는 경영자 채널이자 제작팀입니다.">
+<meta property="og:url" content="https://www.penguinx.co/ko/ecosystem/media.html">
+<meta property="og:image" content="https://www.penguinx.co/cover.JPG">
+<meta property="og:image:width" content="4128">
+<meta property="og:image:height" content="2752">
+<meta property="og:image:alt" content="PenguinX — 태국의 F&B 생태계 빌더">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="PenguinX Media — 태국 F&B 업계를 움직이는 목소리">
+<meta name="twitter:description" content="PenguinX Media는 Torpenguin과 자체 스튜디오를 운영합니다. 태국 F&B 업계의 화제를 만드는 경영자 채널이자 제작팀입니다.">
+<meta name="twitter:image" content="https://www.penguinx.co/cover.JPG">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://www.penguinx.co/#organization",
+      "name": "PenguinX",
+      "url": "https://www.penguinx.co/",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://www.penguinx.co/penguinx-logo.png"
+      }
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://www.penguinx.co/#website",
+      "url": "https://www.penguinx.co/",
+      "name": "PenguinX",
+      "publisher": {
+        "@id": "https://www.penguinx.co/#organization"
+      },
+      "inLanguage": [
+        "en",
+        "th"
+      ]
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://www.penguinx.co/ecosystem/media.html#webpage",
+      "url": "https://www.penguinx.co/ecosystem/media.html",
+      "headline": "PenguinX Media — The voices that move F&B Thailand",
+      "name": "PenguinX Media — The voices that move F&B Thailand",
+      "description": "PenguinX Media runs Torpenguin and an in-house studio — the operator channel and production team that shape the F&B conversation in Thailand.",
+      "isPartOf": {
+        "@id": "https://www.penguinx.co/#website"
+      },
+      "about": {
+        "@id": "https://www.penguinx.co/#organization"
+      },
+      "publisher": {
+        "@id": "https://www.penguinx.co/#organization"
+      },
+      "image": "https://www.penguinx.co/cover.JPG",
+      "inLanguage": "en",
+      "mainEntityOfPage": "https://www.penguinx.co/ecosystem/media.html"
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://www.penguinx.co/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Ecosystem",
+          "item": "https://www.penguinx.co/#ecosystem"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "PenguinX Media — The voices that move F&B Thailand",
+          "item": "https://www.penguinx.co/ecosystem/media.html"
+        }
+      ]
+    }
+  ]
+}
+</script>
+<!-- ===== end metadata block ===== -->
+</head>
+<body>
+<script>window.__PX_I18N__={"viewsFormat": "{n}회 시청", "videoTitles": {"ร้านเมนูเดียว จะอยู่รอดได้ยังไง? \"กะเพราตาแป๊ะ \" | Torpenguin": "단일 메뉴 식당은 어떻게 살아남을까? \"Kaphrao Ta Pae\" | Torpenguin", "คู่แข่งร้านอาหารที่มองไม่เห็น | Hot Kitchen Ep.90 | Torpenguin": "식당의 보이지 않는 경쟁자 | Hot Kitchen Ep.90 | Torpenguin", "ลูกค้าหายไป 10% เพราะลืมเรื่องนี้ !! | Torpenguin": "이것을 놓쳐서 손님이 10% 줄었다! | Torpenguin", "การตลาดที่ดี เริ่มต้นจากคำถามโง่ ๆ !? | Torpenguin": "좋은 마케팅은 엉뚱한 질문에서 시작된다? | Torpenguin", "คนกินข้าวคนเดียว กำลังเป็นลูกค้ากลุ่มใหม่ของร้านอาหาร? | Torpenguin": "혼밥족, 식당의 새로운 고객층이 되고 있을까? | Torpenguin", "บุกบูธคนดูช่อง Torpenguin ทำธุรกิจอะไรกันบ้าง THAIFEX - Anuga Asia 2026  | Torpenguin": "Torpenguin 시청자들의 부스 탐방, 어떤 사업을 하고 있을까 THAIFEX - Anuga Asia 2026 | Torpenguin", "ถ้าอยากโตแบบก้าวกระโดด…คุณต้องรู้จัก OKR | Torpenguin": "폭발적으로 성장하고 싶다면… OKR을 알아야 합니다 | Torpenguin", "บุกโรงงานผงเขย่า อาวุธลับรสชาติร้านอาหาร \"Thychef\" | หนุ่มโรงงาน EP.12": "시즈닝 파우더 공장 탐방, 식당 맛의 비밀 무기 \"Thychef\" | 공장 청년 EP.12", "เปิดร้านก๋วยเตี๋ยว ทำไมถึงเจ๊ง": "쌀국수 가게를 열면 왜 망할까", "5 ข้อที่ร้านอาหารต้องรู้ก่อนเปิดสาขา": "분점을 내기 전에 식당이 알아야 할 5가지", "ทำไม Cloud Kitchen ถึงยังไม่ work ในไทย": "클라우드 키친이 태국에서 아직 통하지 않는 이유", "ราคาวัตถุดิบขึ้น ร้านต้องขึ้นราคามั้ย": "식재료값이 오르면 가격도 올려야 할까", "เจ้าของร้านควรเข้าครัวเองมั้ย": "사장이 직접 주방에 들어가야 할까"}};</script>
+<div class="pg-nav">
+  <a href="/ko/" class="pg-back">← PenguinX로 돌아가기</a>
+  <div class="pg-pillar">01 / 핵심 영역 · <b>미디어</b></div>
+</div>
+
+<section class="vp">
+  <div class="vp-head">
+    <div>
+      <div class="vp-num">01 / 하는 일</div>
+      <h1 class="vp-title">
+      <span class="light">PenguinX는</span><br>
+      경영자의 신뢰를 얻는<br>
+      <span class="accent">미디어</span>를 만듭니다.
+    </h1>
+    </div>
+    <div class="vp-tag">브랜드 파트너를 위해</div>
+  </div>
+  <div class="vp-body">
+    <div class="vp-img">
+      <img src="/ecosystem/Media/media1.jpg" alt="">
+      <div class="vp-img-cap"><span>Torpenguin · 팔로워 195만 명 이상</span><span>경영자 중심의 시청자층</span></div>
+    </div>
+    <div class="vp-text">
+      <p class="vp-lead">우리는 광고를 만들지 않습니다. 우리가 만드는 것은 <em>경영자들이 이미 신뢰하는 대화입니다</em> — 편집의 신뢰성은 그대로 지키면서, 그 대화 안으로 브랜드 파트너를 모십니다.</p>
+      <div class="vp-benefits">
+        <div class="vp-benefit"><div class="vp-b-num">01</div><div><div class="vp-b-h">경영자가 신뢰하는 목소리</div><div class="vp-b-d">PenguinX의 채널은 식당 대표와 경영자들이 업계 소식을 얻는 곳입니다. 귀사의 브랜드가 등장하는 순간, 그 신뢰도 함께 얻게 됩니다.</div></div></div>
+        <div class="vp-benefit"><div class="vp-b-num">02</div><div><div class="vp-b-h">기획부터 제작까지 원스톱</div><div class="vp-b-d">기획, 대본, 촬영, 편집, 배포까지. F&B 스토리텔링에 최적화된 자체 팀이 모두 맡으며, 외부 대행사로 넘기지 않습니다.</div></div></div>
+        <div class="vp-benefit"><div class="vp-b-num">03</div><div><div class="vp-b-h">멀티채널 배포</div><div class="vp-b-d">모든 콘텐츠는 Torpenguin, 파트너 채널, 언드 미디어로 확산됩니다. 나중에 끼워 맞추는 것이 아니라 처음부터 채널 조합을 전제로 기획합니다.</div></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="pg-section">
+  <div class="pg-section-head">
+    <div>
+      <div class="pg-section-num">02 / 세부 구성</div>
+      <h2 class="pg-section-title">세 가지 미디어 사업.</h2>
+    </div>
+    <div class="pg-section-meta">각각 다른 대상과 목적에 맞췄습니다</div>
+  </div>
+  <div class="pg-grid cols-3 pg-media3">
+    <div class="pg-item">
+      <div class="pg-item-img"><div class="pg-track" data-index="0">
+        <img src="/ecosystem/Media/torpenguin/tp-facebook.jpg" alt="" loading="lazy">
+        <img src="/ecosystem/Media/torpenguin/Tp2.jpg" alt="" loading="lazy">
+        <img src="/ecosystem/Media/torpenguin/tp3.jpg" alt="" loading="lazy">
+        <img src="/ecosystem/Media/torpenguin/tp4.jpg" alt="" loading="lazy">
+        <img src="/ecosystem/Media/torpenguin/tp5.jpg" alt="" loading="lazy">
+        <img src="/ecosystem/Media/torpenguin/tp6.jpg" alt="" loading="lazy">
+        <img src="/ecosystem/Media/torpenguin/tp7.jpg" alt="" loading="lazy">
+      </div><button class="pg-arrow prev" data-dir="-1" type="button" aria-label="이전">‹</button><button class="pg-arrow next" data-dir="1" type="button" aria-label="다음">›</button></div>
+      <div class="pg-item-tag">경영자 대상 · 대표 채널</div>
+      <div class="pg-item-title">Torpenguin</div>
+      <div class="pg-item-sub">PenguinX의 대표 채널. 식당 대표, 다점포 경영자, 공급망 책임자가 보는, 태국에서 가장 많이 시청되는 외식 경영 채널입니다.</div>
+      <a class="pg-item-link" href="https://torpenguin.com/" target="_blank" rel="noopener" aria-label="Torpenguin 웹사이트"><span>웹사이트</span><span class="arrow">↗</span></a>
+    </div>
+    <div class="pg-item">
+      <div class="pg-item-img"><div class="pg-track" data-index="0">
+        <img src="/ecosystem/Media/Production/Production.jpg" alt="" loading="lazy">
+        <img src="/ecosystem/Media/Production/1000035581.JPG" alt="" loading="lazy">
+        <img src="/ecosystem/Media/Production/5F40640A-6D26-4A42-85CC-2808680E3749.jpg" alt="" loading="lazy">
+        <img src="/ecosystem/Media/Production/C%20%282%20of%207%29.jpg" alt="" loading="lazy">
+        <img src="/ecosystem/Media/Production/C%20%287%20of%207%29.jpg" alt="" loading="lazy">
+      </div><button class="pg-arrow prev" data-dir="-1" type="button" aria-label="이전">‹</button><button class="pg-arrow next" data-dir="1" type="button" aria-label="다음">›</button></div>
+      <div class="pg-item-tag">스튜디오 · 제작 서비스</div>
+      <div class="pg-item-title">미디어 제작</div>
+      <div class="pg-item-sub">브랜드 파트너를 위한 영상·콘텐츠 풀서비스 제작. 13년간 쌓은 F&B 업계 이해를 바탕으로 한 다큐멘터리급 스토리텔링.</div>
+    </div>
+    <div class="pg-item">
+      <div class="pg-item-img pg-soon">
+        <img class="pg-soon-logo" src="/brands/spoonasia.png" alt="SpoonAsia" loading="lazy">
+        <div class="pg-soon-url">SpoonAsia.com</div>
+        <div class="pg-soon-badge">곧 공개</div>
+      </div>
+      <div class="pg-item-tag">글로벌 · 곧 공개</div>
+      <div class="pg-item-title">SpoonAsia</div>
+      <div class="pg-item-sub">태국 외식·식품 시장을 영어로 전하는 글로벌 미디어. 태국 음식과 레스토랑 브랜드, 그리고 그 뒤의 사람들을 해외에 소개합니다.</div>
+      <span class="pg-item-link pg-item-link--soon" aria-disabled="true"><span>SpoonAsia.com</span><span class="arrow">곧 공개</span></span>
+    </div>
+  </div>
+</section>
+
+<section class="pg-stats">
+  <div class="pg-stats-grid">
+    <div class="pg-stat"><div class="num">1.95M+</div><div class="lbl">팔로워</div></div>
+    <div class="pg-stat"><div class="num">500+</div><div class="lbl">연간 영상</div></div>
+    <div class="pg-stat"><div class="num">13년</div><div class="lbl">방송 기간</div></div>
+    <div class="pg-stat"><div class="num">45</div><div class="lbl">활동 지역(주)</div></div>
+  </div>
+</section>
+
+<section class="news pg-related">
+    <div class="pg-section-head">
+      <div class="pg-section-num">함께 읽기</div>
+    </div>
+    <div class="news-grid">
+      <a href="/news/trc-2025-recap.html" class="news-card">
+        <div class="news-thumb" style="background-image:url('/ecosystem/Event/TRC/trc1.jpg')"></div>
+        <div class="news-meta">이벤트</div>
+        <h3 class="news-title">TRC 2025 현장: 4,500명의 식당 대표가 방콕에 모이다</h3>
+        <div class="news-read">5분 분량</div>
+      </a>
+      <a href="/news/lineman-wongnai-spotlight.html" class="news-card">
+        <div class="news-thumb" style="background-image:url('/Selected%20wroks/Lineman/A7R04081.JPG')"></div>
+        <div class="news-meta">사례 연구</div>
+        <h3 class="news-title">Lineman Wongnai는 어떻게 전국 단위 브랜드 활동을 이끌었나</h3>
+      </a>
+      <a href="/news/longkaek-deepdive.html" class="news-card">
+        <div class="news-thumb" style="background-image:url('/ecosystem/Event/%E0%B8%A5%E0%B8%87%E0%B9%81%E0%B8%82%E0%B8%81/%E0%B8%A5%E0%B8%87%E0%B9%81%E0%B8%82%E0%B8%811.jpg')"></div>
+        <div class="news-meta">커뮤니티</div>
+        <h3 class="news-title">#LongKaek 이야기 — 경쟁자가 믿을 수 있는 동료가 되기까지</h3>
+      </a>
+    </div>
+  </section>
+
+  <section class="pg-next">
+  <div class="pg-next-tag">— 다음 영역 —</div>
+  <h2 class="pg-next-title"><a href="/ko/ecosystem/event.html">이벤트 ↗</a></h2>
+  <a href="/ko/" class="pg-back">↑ PenguinX로 돌아가기</a>
+</section>
+
+
+<script>
+  document.querySelectorAll('.pg-arrow').forEach(btn=>{
+    btn.addEventListener('click', e=>{
+      e.preventDefault(); e.stopPropagation();
+      const track = btn.parentElement.querySelector('.pg-track');
+      if(!track) return;
+      const dir = parseInt(btn.dataset.dir,10);
+      const count = track.children.length;
+      const cur = parseInt(track.dataset.index || '0',10);
+      let next = cur + dir;
+      if(next < 0) next = count - 1;
+      if(next >= count) next = 0;
+      track.dataset.index = next;
+      track.style.transform = 'translateX(-' + (next*100) + '%)';
+    });
+  });
+</script>
+</body>
+</html>
