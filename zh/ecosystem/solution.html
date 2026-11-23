@@ -196,6 +196,8 @@
   .pg-related{padding:72px 32px 0;border-top:1px solid var(--line)}
   .pg-related .news-grid{margin-top:36px}
   .news-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:36px 28px; }
+  @media (max-width:1100px){ .news-grid{ grid-template-columns:repeat(2,1fr); } }
+  @media (max-width:560px){ .news-grid{ grid-template-columns:1fr; } }
   .news-card{ display:flex; flex-direction:column; gap:16px; cursor:pointer; text-decoration:none; color:inherit; }
   .news-card:hover .news-thumb{ filter:contrast(1.1) saturate(1.05); transform:scale(1.02); }
   .news-card:hover .news-title{color:var(--accent)}
@@ -204,6 +206,11 @@
   .news-meta::before{ content:''; width:14px;height:1px; background:var(--accent); }
   .news-title{ font-family:'Anuphan',sans-serif; font-size:18px; font-weight:600; letter-spacing:-0.02em; line-height:1.3; color:var(--ink); transition:color 0.3s ease; }
   .news-read{ font-size:11px; color:var(--ink-mute); letter-spacing:0.12em; text-transform:uppercase; margin-top:-4px; }
+
+  /* หัวข้อภาษาญี่ปุ่น/จีน: ห้ามตัดกลางวลี (เหมือนใน styles.css — หน้านี้ไม่ได้โหลดไฟล์นั้น) */
+  html[lang="ja"] .nw, html[lang^="zh"] .nw{ white-space:nowrap; }
+  html[lang="ja"] :is(.vp-title,.section-title,.news-title,.pg-item-title),
+  html[lang^="zh"] :is(.vp-title,.section-title,.news-title,.pg-item-title){ word-break:keep-all; overflow-wrap:anywhere; text-wrap:pretty; }
 </style>
 <!-- ===== AEO/SEO metadata — managed block, do not hand-edit ===== -->
 <meta name="description" content="PenguinX Solution 是集团的代理业务——为餐饮品牌提供品牌策略咨询与业务拓展。已服务 45 个府、200+ 个品牌。">
@@ -317,8 +324,8 @@
     <div>
       <div class="vp-num">01 / 我们做什么</div>
       <h1 class="vp-title">
-      <span class="light">PenguinX 如何把生态系统</span><br>
-      变成<span class="accent">实际的商业成果</span>。
+      <span class="light">PenguinX 如何<wbr>把<wbr>生态系统</span><br>
+      变成<span class="accent">实际的<wbr>商业<wbr>成果</span>。
     </h1>
     </div>
     <div class="vp-tag">给品牌合作伙伴</div>
@@ -343,7 +350,7 @@
   <div class="pg-section-head">
     <div>
       <div class="pg-section-num">02 / 旗下活动</div>
-      <h2 class="pg-section-title">两大业务领域。</h2>
+      <h2 class="pg-section-title">两大<wbr>业务<wbr>领域。</h2>
     </div>
     <div class="pg-section-meta">为餐饮而生的品牌与业务增长</div>
   </div>
@@ -354,7 +361,7 @@
         <img src="/ecosystem/Solution/ECEDCC0F-0FC2-4456-A271-7700EB227BEA.jpg" alt="" loading="lazy">
       </div><button class="pg-arrow prev" data-dir="-1" type="button" aria-label="上一篇">‹</button><button class="pg-arrow next" data-dir="1" type="button" aria-label="下一篇">›</button></div>
       <div class="pg-item-tag">策略 · 品牌</div>
-      <div class="pg-item-title">品牌策略咨询</div>
+      <div class="pg-item-title">品牌策略<wbr>咨询</div>
       <div class="pg-item-sub">为餐饮品牌做定位、叙事架构与上市打法。从挑战者初创到成熟连锁，我们服务准备好突破品类常规的品牌。</div>
     </div>
     <div class="pg-item">
@@ -362,7 +369,7 @@
         <img src="/ecosystem/Solution/F94CA0BB-9006-4279-8C3A-3F8EB5985E93.jpg" alt="" loading="lazy">
       </div><button class="pg-arrow prev" data-dir="-1" type="button" aria-label="上一篇">‹</button><button class="pg-arrow next" data-dir="1" type="button" aria-label="下一篇">›</button></div>
       <div class="pg-item-tag">增长 · 扩张</div>
-      <div class="pg-item-title">业务拓展</div>
+      <div class="pg-item-title">业务<wbr>拓展</div>
       <div class="pg-item-sub">加盟体系、合作架构与扩张路线图。能持续累积价值的策略性合作——建立在真正适用于泰国的门店经济模型之上。</div>
     </div>
   </div>
@@ -385,18 +392,18 @@
       <a href="/zh/news/lineman-wongnai-spotlight.html" class="news-card">
         <div class="news-thumb" style="background-image:url('/Selected%20wroks/Lineman/A7R04081.JPG')"></div>
         <div class="news-meta">案例研究</div>
-        <h3 class="news-title">Lineman Wongnai 如何推动全国性的品牌活动</h3>
+        <h3 class="news-title">Lineman Wongnai 如何<wbr>推动<wbr>全国性的<wbr>品牌<wbr>活动</h3>
       </a>
       <a href="/zh/news/trc-2025-recap.html" class="news-card">
         <div class="news-thumb" style="background-image:url('/ecosystem/Event/TRC/trc1.jpg')"></div>
         <div class="news-meta">活动</div>
-        <h3 class="news-title">TRC 2025 现场：4,500 位餐厅老板如何齐聚曼谷</h3>
+        <h3 class="news-title">TRC 2025 现场：4,500 位<wbr>餐厅<wbr>老板<wbr>如何<wbr>齐聚<wbr>曼谷</h3>
         <div class="news-read">阅读约 5 分钟</div>
       </a>
       <a href="/zh/news/restaurant-mba-cohort-2.html" class="news-card">
         <div class="news-thumb" style="background-image:url('/ecosystem/Education/RMBA/rmba1.jpg')"></div>
         <div class="news-meta">教育</div>
-        <h3 class="news-title">Restaurant MBA 开放 2025 年第二期招生</h3>
+        <h3 class="news-title">Restaurant MBA 开放 2025 年<wbr>第二期<wbr>招生</h3>
       </a>
     </div>
   </section>

@@ -189,6 +189,93 @@ def keep_english(html, code, keep):
     html = re.sub(r'<(a|div|span) [^>]*\bdata-keep-en\b[^>]*>[^<]*</\1>', lambda m: lock(m.group(0)), html)
     return html
 
+CJK_CH = r'[぀-ヿ㐀-鿿＀-￯　-〿]'
+
+def cjk_join(html, code):
+    """ญี่ปุ่น/จีนไม่เว้นวรรคระหว่างคำ
+
+    หัวข้อที่ต้นฉบับอังกฤษแบ่งคำเป็นหลาย <span> คั่นด้วยช่องว่าง พอแปลทีละชิ้น
+    ช่องว่างนั้นติดมาด้วย เลยได้ "同一个 生态系统" "品牌 与 经营者"
+    ตัดช่องว่างที่อยู่ระหว่างตัวอักษรจีน/ญี่ปุ่นสองตัวที่คั่นด้วย tag เท่านั้น
+    ช่องว่างข้างตัวละติน (PenguinX 如何) ไม่แตะ"""
+    if code not in ('zh', 'ja'):
+        return html
+    tag = r'(?:</?span[^>]*>)+'
+    pat = re.compile(r'(' + CJK_CH + r')((?:' + tag + r')?)\s+((?:' + tag + r')?)(?=' + CJK_CH + r')')
+    def fix(m):
+        if not (m.group(2) or m.group(3)):
+            return m.group(0)          # ข้อความล้วนไม่มี tag คั่น ปล่อยไว้ตามคำแปล
+        return m.group(1) + m.group(2) + m.group(3)
+    return pat.sub(fix, html)
+
+# ---- ตัดบรรทัดหัวข้อภาษาญี่ปุ่น/จีนตามวลี -------------------------------
+# ภาษาที่ไม่มีเว้นวรรคถูกเบราว์เซอร์ตัดได้ทุกตัวอักษร หัวข้อเลยแตกกลางคำ
+# ("みん|な" "泰|国") ใส่ <wbr> ไว้ระหว่างวลี แล้วให้ CSS (word-break:keep-all)
+# ตัดเฉพาะตรงนั้น ใช้ได้ทุกเบราว์เซอร์รวม Safari บน iPhone
+# ญี่ปุ่นใช้ BudouX (ของ Google) จีนใช้ jieba ซึ่งแบ่งคำจีนแม่นกว่า
+# ถ้ายังไม่ได้ติดตั้ง: pip install budoux jieba  (ไม่มีก็ build ได้ แค่ไม่ใส่ <wbr>)
+TITLE_CLASSES = ('hero-title', 'section-title', 'cta-title', 'shorts-title', 'vp-title',
+                 'ev-title', 'evd-title', 'article-title', 'news-title', 'ev-name',
+                 'eco-name', 'case-name', 'pg-item-title')
+_SEGMENTERS = {}
+
+def _segmenter(code):
+    if code in _SEGMENTERS:
+        return _SEGMENTERS[code]
+    seg = None
+    try:
+        if code == 'ja':
+            import budoux
+            seg = budoux.load_default_japanese_parser().parse
+        elif code == 'zh':
+            import jieba, logging
+            jieba.setLogLevel(logging.WARNING)
+            # คำเฉพาะของเว็บที่ jieba ไม่รู้จัก ถ้าไม่บอกจะตัดเป็น "全|链路" "联合|主办"
+            for w in ('全链路', '生态系统', '获客', '餐旅展', '会展场馆', '联合主办', '单店经济模型',
+                      '经营者', '夜生活', '品牌认知', '商业对接', '餐饮企业'):
+                jieba.add_word(w)
+            GLUE = {'的', '了', '地', '得', '之', '们'}
+            def seg(text):
+                out = []
+                for w in jieba.cut(text):
+                    if out and (w in GLUE or w[:1] in '，。、：；！？）」”'):
+                        out[-1] += w          # คำเชื่อม/เครื่องหมาย ห้ามขึ้นต้นบรรทัด
+                    else:
+                        out.append(w)
+                return out
+    except ImportError:
+        print(f'  ! ไม่พบตัวตัดวลีภาษา {code} — pip install budoux jieba แล้ว build ใหม่')
+    _SEGMENTERS[code] = seg
+    return seg
+
+def cjk_phrases(html, code):
+    seg = _segmenter(code) if code in ('ja', 'zh') else None
+    if not seg:
+        return html
+    def text_part(m):
+        t = m.group(1)
+        if not re.search(CJK_CH, t):
+            return m.group(0)
+        parts = [p for p in seg(t) if p]
+        out = parts[0]
+        for p in parts[1:]:
+            # ใส่ <wbr> เฉพาะระหว่างอักษรจีน/ญี่ปุ่นสองตัว ห้ามแทรกกลางตัวเลขหรือคำอังกฤษ
+            # ไม่งั้น "4,500" จะถูกตัดเป็น "4, | 500"
+            if re.match(CJK_CH, out[-1]) and re.match(CJK_CH, p[0]):
+                out += '<wbr>' + p
+            else:
+                out += p
+        return '>' + out + '<'
+    def element(m):
+        # หัวข้อที่กำหนดวลีเองด้วย .nw ในไฟล์แปลแล้ว ไม่ต้องแตะ
+        # <wbr> ที่อยู่ใน nowrap ยังเป็นจุดตัดได้ ถ้าใส่เพิ่มจะไปทำลายวลีที่ตั้งใจไว้
+        if re.search(r'class="[^"]*\bnw\b', m.group(0)):
+            return m.group(0)
+        return re.sub(r'>([^<>]+)<', text_part, m.group(0))
+    cls = '|'.join(TITLE_CLASSES)
+    pat = re.compile(r'<(h[1-3]|div)\b[^>]*class="[^"]*\b(?:' + cls + r')\b[^"]*"[^>]*>.*?</\1>', re.S)
+    return pat.sub(element, html)
+
 def js_config(cfg_js):
     """ส่งคำแปลให้สคริปต์ฝั่งเบราว์เซอร์ (การ์ดวิดีโอ render ด้วย JS)"""
     if not cfg_js:
@@ -310,6 +397,8 @@ def build(src, code):
     html = translate_text(html, tmap)
     for token, dst in kept.items():
         html = html.replace(token, dst, 1)
+    html = cjk_join(html, code)
+    html = cjk_phrases(html, code)
     html = re.sub(r'(<body[^>]*>)', lambda m: m.group(1) + '\n' + js_config(cfg_js), html, count=1)
     html = re.sub(r'<html[^>]*>', f'<html lang="{cfg["htmlLang"]}">', html, count=1)
     html = html.replace('<meta property="og:locale" content="en_US">',

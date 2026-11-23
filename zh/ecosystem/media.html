@@ -206,6 +206,8 @@
   .pg-related{padding:72px 32px 0;border-top:1px solid var(--line)}
   .pg-related .news-grid{margin-top:36px}
   .news-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:36px 28px; }
+  @media (max-width:1100px){ .news-grid{ grid-template-columns:repeat(2,1fr); } }
+  @media (max-width:560px){ .news-grid{ grid-template-columns:1fr; } }
   .news-card{ display:flex; flex-direction:column; gap:16px; cursor:pointer; text-decoration:none; color:inherit; }
   .news-card:hover .news-thumb{ filter:contrast(1.1) saturate(1.05); transform:scale(1.02); }
   .news-card:hover .news-title{color:var(--accent)}
@@ -214,6 +216,11 @@
   .news-meta::before{ content:''; width:14px;height:1px; background:var(--accent); }
   .news-title{ font-family:'Anuphan',sans-serif; font-size:18px; font-weight:600; letter-spacing:-0.02em; line-height:1.3; color:var(--ink); transition:color 0.3s ease; }
   .news-read{ font-size:11px; color:var(--ink-mute); letter-spacing:0.12em; text-transform:uppercase; margin-top:-4px; }
+
+  /* หัวข้อภาษาญี่ปุ่น/จีน: ห้ามตัดกลางวลี (เหมือนใน styles.css — หน้านี้ไม่ได้โหลดไฟล์นั้น) */
+  html[lang="ja"] .nw, html[lang^="zh"] .nw{ white-space:nowrap; }
+  html[lang="ja"] :is(.vp-title,.section-title,.news-title,.pg-item-title),
+  html[lang^="zh"] :is(.vp-title,.section-title,.news-title,.pg-item-title){ word-break:keep-all; overflow-wrap:anywhere; text-wrap:pretty; }
 </style>
 <!-- ===== AEO/SEO metadata — managed block, do not hand-edit ===== -->
 <meta name="description" content="PenguinX Media 旗下有 Torpenguin 和自有制作团队——在泰国主导餐饮话题的经营者频道与内容团队。">
@@ -327,8 +334,8 @@
     <div>
       <div class="vp-num">01 / 我们做什么</div>
       <h1 class="vp-title">
-      <span class="light">PenguinX 如何打造</span><br>
-      <span class="accent">赢得经营者信任</span>的媒体。
+      <span class="light">PenguinX 如何<wbr>打造</span><br>
+      <span class="accent">赢得<wbr>经营者<wbr>信任</span>的<wbr>媒体。
     </h1>
     </div>
     <div class="vp-tag">给品牌合作伙伴</div>
@@ -353,7 +360,7 @@
   <div class="pg-section-head">
     <div>
       <div class="pg-section-num">02 / 旗下活动</div>
-      <h2 class="pg-section-title">三条媒体业务线。</h2>
+      <h2 class="pg-section-title">三条<wbr>媒体<wbr>业务<wbr>线。</h2>
     </div>
     <div class="pg-section-meta">各自面向不同的受众与目的</div>
   </div>
@@ -382,7 +389,7 @@
         <img src="/ecosystem/Media/Production/C%20%287%20of%207%29.jpg" alt="" loading="lazy">
       </div><button class="pg-arrow prev" data-dir="-1" type="button" aria-label="上一篇">‹</button><button class="pg-arrow next" data-dir="1" type="button" aria-label="下一篇">›</button></div>
       <div class="pg-item-tag">制作 · 服务</div>
-      <div class="pg-item-title">内容制作</div>
+      <div class="pg-item-title">内容<wbr>制作</div>
       <div class="pg-item-sub">为品牌伙伴提供全流程的视频与内容制作。纪录片级别的叙事，扎根于 13 年的餐饮行业积累。</div>
     </div>
     <div class="pg-item">
@@ -416,18 +423,18 @@
       <a href="/zh/news/trc-2025-recap.html" class="news-card">
         <div class="news-thumb" style="background-image:url('/ecosystem/Event/TRC/trc1.jpg')"></div>
         <div class="news-meta">活动</div>
-        <h3 class="news-title">TRC 2025 现场：4,500 位餐厅老板如何齐聚曼谷</h3>
+        <h3 class="news-title">TRC 2025 现场：4,500 位<wbr>餐厅<wbr>老板<wbr>如何<wbr>齐聚<wbr>曼谷</h3>
         <div class="news-read">阅读约 5 分钟</div>
       </a>
       <a href="/zh/news/lineman-wongnai-spotlight.html" class="news-card">
         <div class="news-thumb" style="background-image:url('/Selected%20wroks/Lineman/A7R04081.JPG')"></div>
         <div class="news-meta">案例研究</div>
-        <h3 class="news-title">Lineman Wongnai 如何推动全国性的品牌活动</h3>
+        <h3 class="news-title">Lineman Wongnai 如何<wbr>推动<wbr>全国性的<wbr>品牌<wbr>活动</h3>
       </a>
       <a href="/zh/news/longkaek-deepdive.html" class="news-card">
         <div class="news-thumb" style="background-image:url('/ecosystem/Event/%E0%B8%A5%E0%B8%87%E0%B9%81%E0%B8%82%E0%B8%81/%E0%B8%A5%E0%B8%87%E0%B9%81%E0%B8%82%E0%B8%811.jpg')"></div>
         <div class="news-meta">社群</div>
-        <h3 class="news-title">#LongKaek 的背后 — 把竞争者变成可信的伙伴</h3>
+        <h3 class="news-title">#LongKaek 的<wbr>背后 — 把<wbr>竞争者<wbr>变成<wbr>可信的<wbr>伙伴</h3>
       </a>
     </div>
   </section>
