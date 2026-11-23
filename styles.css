@@ -2643,3 +2643,21 @@ html[lang="ko"] .book-cat{letter-spacing:.02em;font-size:13px}
 
 /* ป้ายเล็กที่ออกแบบให้ตัวห่าง (0.1–0.2em) สำหรับตัวละติน พอเป็นฮันกึลจะอ่านเป็น "직 책" ลดลงให้อ่านเป็นคำ */
 html[lang="ko"] :is(.label,.section-num,.clients-label,.shorts-num,.cta-eyebrow,.category,dt,h4,.ev-eyebrow,.ev-sec,.ev-chip,.pg-pillar,.vp-num,.vp-tag,.pg-section-num,.pg-item-tag,.pg-soon-badge,.lbl,.news-meta,.news-read,.pg-next-tag,.mono){letter-spacing:0.02em}
+
+/* === ญี่ปุ่นเท่านั้น: ทางเข้า 3 ทางสำหรับบริษัทญี่ปุ่น (/ja/ หน้าแรก) ===
+   section นี้ถูกแทรกเฉพาะฉบับญี่ปุ่นผ่าน _html ใน i18n/ja.json
+   ฉบับภาษาอื่นไม่มี markup นี้ CSS ชุดนี้จึงไม่มีผลกับหน้าอื่น */
+.jp-doors{background:var(--bg);border-top:1px solid var(--line)}
+.jp-doors .section-head{margin-bottom:48px}
+.jp-doors-note{font-size:15px;color:rgba(244,241,234,0.72);letter-spacing:0.02em}
+.jp-doors-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px;max-width:1280px}
+.jp-door{display:flex;flex-direction:column;gap:14px;padding:28px 26px 24px;border:1px solid var(--line);background:var(--bg-2);color:var(--ink);text-decoration:none;border-radius:2px;transition:border-color 0.3s ease,transform 0.3s ease}
+.jp-door:hover{border-color:rgba(219,169,58,0.6);transform:translateY(-2px)}
+.jp-door:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+.jp-door-tag{font-size:11px;color:var(--accent);letter-spacing:0.08em;font-weight:500}
+.jp-door-title{font-size:clamp(22px,2.2vw,30px);font-weight:600;line-height:1.25;letter-spacing:-0.01em}
+.jp-door-desc{font-size:15px;line-height:1.7;color:rgba(244,241,234,0.72)}
+.jp-door-link{margin-top:auto;padding-top:14px;border-top:1px solid var(--line-soft);display:flex;justify-content:space-between;font-size:13px;color:#fff;font-weight:300}
+.jp-door-link .arrow{color:var(--accent);transition:transform 0.3s ease}
+.jp-door:hover .jp-door-link .arrow{transform:translateX(4px)}
+@media (max-width:900px){.jp-doors-grid{grid-template-columns:1fr}}

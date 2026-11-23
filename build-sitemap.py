@@ -58,7 +58,8 @@ for page in pages():
 
 # ส่วนที่มีแค่บางภาษา ไม่มีต้นฉบับอังกฤษ (Insights เขียนให้ผู้อ่านไทยก่อน)
 # ไม่ใส่ hreflang ข้ามภาษา เพราะไม่มีหน้าคู่ที่เป็นเนื้อหาเดียวกันจริง
-LANG_ONLY = ['th/insights/']
+# หน้าสำหรับบริษัทญี่ปุ่น 3 กลุ่ม (เข้าตลาดไทย / ขายเข้าร้านอาหาร / ขยายสาขา) เขียนเป็นภาษาญี่ปุ่นอย่างเดียว
+LANG_ONLY = ['th/insights/', 'ja/thailand-entry/', 'ja/reach-thai-restaurants/', 'ja/expand-in-thailand/']
 for folder in LANG_ONLY:
     for f in sorted(glob.glob(folder + '**/*.html', recursive=True)):
         if os.path.basename(f).startswith('_'):

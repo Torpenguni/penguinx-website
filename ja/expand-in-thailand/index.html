@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="naver-site-verification" content="1ffedaababb5c20178689c2c44a941b5000c388c">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script src="/analytics.js"></script>
+<title>タイでの多店舗展開・フランチャイズ支援｜在タイ日本食レストラン向け — PenguinX</title>
+<link rel="icon" href="/favicon.ico" sizes="48x48">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/favicon-96x96.png" sizes="96x96" type="image/png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+<meta name="theme-color" content="#0a0a0a">
+<link rel="stylesheet" href="/fonts/anuphan.css">
+<style>
+  :root{
+    --bg:#0a0a0a;--bg-2:#141413;--ink:#f4f1ea;--ink-mute:#8a8680;
+    --accent:#dba93a;--line:rgba(244,241,234,0.1);--line-soft:rgba(244,241,234,0.05);
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{background:var(--bg);color:var(--ink);font-family:'Anuphan',sans-serif;font-weight:400;-webkit-font-smoothing:antialiased;overflow-x:hidden;line-height:1.5}
+
+  /* === TOP BAR === */
+  .pg-nav{display:flex;justify-content:space-between;align-items:center;padding:24px 40px;border-bottom:1px solid var(--line)}
+  .pg-back{color:var(--ink-mute);text-decoration:none;font-size:13px;letter-spacing:0.05em;display:inline-flex;align-items:center;gap:8px;transition:color 0.2s ease}
+  .pg-back:hover{color:var(--accent)}
+  .pg-pillar{font-size:11px;letter-spacing:0.15em;text-transform:uppercase;color:var(--ink-mute)}
+  .pg-pillar b{color:var(--accent);font-weight:600}
+
+  /* === HERO === */
+  .pg-hero{padding:120px 40px 80px;border-bottom:1px solid var(--line)}
+  .pg-hero-grid{display:grid;grid-template-columns:1fr 320px;gap:80px;max-width:1600px;margin:0 auto;align-items:end}
+  .pg-hero-title{font-size:clamp(56px,9vw,160px);font-weight:600;line-height:0.92;letter-spacing:-0.045em}
+  .pg-hero-title .light{color:var(--ink-mute);font-weight:300;font-style:italic}
+  .pg-hero-title .accent{color:var(--accent)}
+  .pg-meta{display:flex;flex-direction:column;gap:24px;padding-bottom:12px}
+  .pg-meta-block{display:grid;grid-template-columns:90px 1fr;gap:16px;padding-bottom:18px;border-bottom:1px solid var(--line-soft)}
+  .pg-meta-block:last-child{border-bottom:none}
+  .pg-meta-label{font-size:11px;color:var(--ink-mute);text-transform:uppercase;letter-spacing:0.15em;padding-top:3px}
+  .pg-meta-value{font-size:14px;color:var(--ink);line-height:1.5}
+
+  /* === COVER === */
+  .pg-cover{width:100%;aspect-ratio:21/9;background:#222 center/cover no-repeat}
+  .pg-cover-caption{padding:14px 40px;font-size:12px;color:var(--ink-mute);display:flex;justify-content:space-between;border-bottom:1px solid var(--line)}
+
+  /* === VALUE-PROP === */
+  .vp{padding:56px 40px 40px;max-width:1600px;margin:0 auto}
+  .vp-head{margin-bottom:32px;padding-bottom:18px;border-bottom:1px solid var(--line);display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:24px}
+  .vp-num{font-size:11px;color:var(--ink-mute);letter-spacing:0.15em;text-transform:uppercase;margin-bottom:8px}
+  .vp-title{font-size:clamp(36px,5vw,72px);font-weight:600;line-height:1;letter-spacing:-0.035em}
+  .vp-title .light{color:var(--ink-mute);font-weight:300;font-style:italic}
+  .vp-title .accent{color:var(--accent)}
+  .vp-tag{font-size:11px;color:var(--accent);border:1px solid rgba(219,169,58,0.4);padding:6px 14px;border-radius:100px;letter-spacing:0.12em;text-transform:uppercase}
+  .vp-body{display:grid;grid-template-columns:1.2fr 1fr;gap:48px;align-items:center}
+  .vp-img{width:100%;aspect-ratio:4/3;background:#1a1a18 center/cover no-repeat;border-radius:2px;overflow:hidden;position:relative}
+  .vp-img img{display:block;width:100%;height:100%;object-fit:cover}
+  .vp-img-cap{position:absolute;bottom:0;left:0;right:0;padding:20px 24px;background:linear-gradient(180deg,transparent 0%,rgba(0,0,0,0.7) 100%);font-size:12px;color:var(--ink-mute);display:flex;justify-content:space-between}
+  .vp-text{display:flex;flex-direction:column;gap:24px}
+  .vp-lead{font-size:clamp(17px,1.5vw,22px);line-height:1.5;color:var(--ink);letter-spacing:-0.015em;font-weight:400}
+  .vp-lead em{color:var(--accent);font-style:normal;font-weight:500}
+  .vp-benefits{display:flex;flex-direction:column;gap:0;border-top:1px solid var(--line)}
+  .vp-benefit{padding:16px 0;border-bottom:1px solid var(--line-soft);display:grid;grid-template-columns:48px 1fr;gap:20px;align-items:start}
+  .vp-benefit:last-child{border-bottom:none}
+  .vp-b-num{font-size:14px;color:var(--accent);font-weight:600;letter-spacing:0.05em;padding-top:2px}
+  .vp-b-h{font-size:16px;font-weight:600;color:var(--ink);margin-bottom:6px;letter-spacing:-0.01em}
+  .vp-b-d{font-size:13px;color:var(--ink-mute);line-height:1.5}
+
+  /* === PROPERTIES GRID === */
+  .pg-section{padding:60px 40px 100px;max-width:1600px;margin:0 auto}
+  .pg-section-head{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:48px;padding-bottom:24px;border-bottom:1px solid var(--line);flex-wrap:wrap;gap:24px}
+  .pg-section-num{font-size:11px;color:var(--ink-mute);letter-spacing:0.15em;text-transform:uppercase;margin-bottom:8px}
+  .pg-section-title{font-size:clamp(28px,3vw,48px);font-weight:600;letter-spacing:-0.025em;line-height:1.05}
+  .pg-section-meta{font-size:12px;color:var(--ink-mute);letter-spacing:0.05em}
+  .pg-grid{display:grid;gap:20px}
+  .pg-grid.cols-5{grid-template-columns:repeat(5,1fr)}
+  .pg-grid.cols-3{grid-template-columns:repeat(3,1fr)}
+  .pg-grid.cols-2{grid-template-columns:repeat(2,1fr);gap:32px}
+  .pg-item{text-decoration:none;color:inherit;display:block;cursor:pointer;transition:opacity 0.3s ease;position:relative}
+  .pg-item:hover{opacity:0.92}
+  .pg-item-img{width:100%;aspect-ratio:1/1;background:#1a1a18 center/cover no-repeat;margin-bottom:18px;overflow:hidden;border-radius:2px;position:relative}
+  .pg-grid.cols-2 .pg-item-img{aspect-ratio:1/1}
+  .pg-item-img img{display:block;width:100%;height:100%;object-fit:cover;transition:transform 0.8s ease}
+  .pg-item:hover .pg-item-img img{transform:scale(1.04)}
+  .pg-track{display:flex;width:100%;height:100%;transition:transform 0.45s cubic-bezier(0.4,0,0.2,1)}
+  .pg-track img{flex:0 0 100%;width:100%;height:100%;object-fit:cover}
+  .pg-arrow{position:absolute;top:50%;transform:translateY(-50%);width:36px;height:36px;border-radius:50%;background:rgba(10,10,10,0.6);backdrop-filter:blur(8px);border:1px solid rgba(244,241,234,0.2);color:var(--ink);font-size:20px;line-height:1;cursor:pointer;display:flex;align-items:center;justify-content:center;opacity:0;transition:opacity 0.25s ease, background 0.2s ease;z-index:2;padding:0;font-family:inherit}
+  .pg-item-img:hover .pg-arrow{opacity:1}
+  .pg-arrow.prev{left:10px}
+  .pg-arrow.next{right:10px}
+  .pg-arrow:hover{background:var(--accent);color:var(--bg);border-color:var(--accent)}
+  .pg-item{cursor:default}
+  .pg-item:hover{opacity:1}
+  /* คำบรรยายแต่ละการ์ดยาวไม่เท่ากัน ทำให้การ์ดเป็นคอลัมน์แล้วดันปุ่มลงล่างสุด
+     ปุ่มทั้งแถวจะได้อยู่ระดับเดียวกัน */
+  .pg-item{display:flex;flex-direction:column}
+  .pg-item-link{margin-top:auto;align-self:flex-start;
+    display:inline-flex;align-items:center;gap:10px;
+    padding:11px 18px;border:1px solid rgba(244,241,234,0.24);border-radius:100px;
+    font-size:12.5px;font-weight:600;letter-spacing:0.05em;text-transform:uppercase;
+    color:var(--ink);text-decoration:none;
+    transition:color 0.2s ease,border-color 0.2s ease,background 0.2s ease}
+  .pg-item-sub{margin-bottom:18px}
+  .pg-item-link:hover{color:var(--accent);border-color:rgba(219,169,58,0.55);background:rgba(219,169,58,0.07)}
+  .pg-item-link:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+  /* ตัวอักษรจีนกว้างเต็มช่องอยู่แล้ว ไม่ต้องถ่างเท่าตัวละติน */
+  html[lang^="zh"] .pg-item-link{letter-spacing:0.02em}
+  .pg-item-link .arrow{color:var(--accent);transition:transform 0.3s ease}
+  .pg-item-link:hover .arrow{transform:translate(3px,-3px)}
+  .pg-item-ext{position:absolute;top:14px;right:14px;width:36px;height:36px;border-radius:50%;background:rgba(10,10,10,0.6);backdrop-filter:blur(8px);display:flex;align-items:center;justify-content:center;color:var(--ink);font-size:14px;transition:all 0.3s ease;border:1px solid rgba(244,241,234,0.15)}
+  .pg-item:hover .pg-item-ext{background:var(--accent);color:var(--bg);border-color:var(--accent);transform:rotate(-45deg)}
+  .pg-item-tag{font-size:10px;color:var(--accent);letter-spacing:0.15em;text-transform:uppercase;margin-bottom:10px;font-weight:500}
+  .pg-item-title{font-size:20px;font-weight:600;line-height:1.2;letter-spacing:-0.02em;margin-bottom:10px}
+  .pg-grid.cols-2 .pg-item-title{font-size:28px}
+  .pg-item-sub{font-size:13.5px;color:var(--ink-mute);line-height:1.5}
+  .pg-grid.cols-2 .pg-item-sub{font-size:15px}
+  .pg-item-foot{margin-top:14px;padding-top:12px;border-top:1px solid var(--line-soft);font-size:11px;color:var(--ink-mute);letter-spacing:0.08em;text-transform:uppercase;display:flex;justify-content:space-between;align-items:center}
+  .pg-item-foot .arrow{color:var(--accent);transition:transform 0.3s ease}
+  .pg-item:hover .pg-item-foot .arrow{transform:translate(3px,-3px)}
+
+  /* === STATS === */
+  .pg-stats{padding:48px 40px;border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:var(--bg-2)}
+  .pg-stats-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:40px;max-width:1400px;margin:0 auto}
+  .pg-stat .num{font-size:clamp(28px,3vw,44px);font-weight:600;letter-spacing:-0.04em;line-height:1;color:var(--accent)}
+  .pg-stat .lbl{font-size:11px;color:var(--ink-mute);text-transform:uppercase;letter-spacing:0.12em;margin-top:10px}
+
+  /* === NEXT === */
+  .pg-next{padding:120px 40px;border-top:1px solid var(--line);text-align:center}
+  .pg-next-tag{font-size:11px;color:var(--ink-mute);text-transform:uppercase;letter-spacing:0.2em;margin-bottom:24px}
+  .pg-next-title{font-size:clamp(48px,7vw,120px);font-weight:600;line-height:0.95;letter-spacing:-0.04em;margin-bottom:32px}
+  .pg-next-title a{color:var(--ink);text-decoration:none;border-bottom:2px solid transparent;transition:all 0.3s ease}
+  .pg-next-title a:hover{color:var(--accent);border-bottom-color:var(--accent)}
+
+  /* === RESPONSIVE === */
+  @media (max-width:1100px){
+    .pg-hero{padding:80px 32px 50px}
+    .pg-hero-grid{grid-template-columns:1fr;gap:48px}
+    .vp{padding:80px 32px 50px}
+    .vp-body{grid-template-columns:1fr;gap:48px}
+    .vp-img{aspect-ratio:16/10;max-height:560px}
+    .pg-section{padding:50px 32px 80px}
+    .pg-grid.cols-5{grid-template-columns:repeat(3,1fr)}
+  }
+  @media (max-width:900px){
+    .vp-head,.pg-section-head{flex-direction:column;align-items:flex-start;gap:14px}
+    .vp-tag{align-self:flex-start;order:-1}
+    .pg-grid.cols-3{grid-template-columns:repeat(2,1fr)}
+  }
+  @media (max-width:700px){
+    .pg-hero{padding:60px 20px 40px}
+    .pg-cover-caption{padding:14px 20px}
+    .vp{padding:56px 20px 40px}
+    .vp-head{margin-bottom:32px;padding-bottom:18px}
+    .vp-num{font-size:10px}
+    .vp-title{font-size:34px;line-height:1.05}
+    .vp-tag{font-size:10px;padding:5px 12px}
+    .vp-body{gap:32px}
+    .vp-img{aspect-ratio:4/3}
+    .vp-img-cap{padding:14px 18px;font-size:11px}
+    .vp-lead{font-size:18px;line-height:1.45}
+    .vp-text{gap:24px}
+    .vp-benefit{grid-template-columns:32px 1fr;gap:14px;padding:18px 0}
+    .vp-b-num{font-size:13px}
+    .vp-b-h{font-size:15px;margin-bottom:4px}
+    .vp-b-d{font-size:13px;line-height:1.5}
+    .pg-section{padding:32px 0 80px}
+    .pg-section-head{padding:0 20px 18px;margin-bottom:24px}
+    .pg-section-num{font-size:10px}
+    .pg-section-title{font-size:28px}
+    .pg-section-meta{font-size:11px}
+    .pg-grid{grid-template-columns:none;display:flex;overflow-x:auto;overflow-y:hidden;gap:12px;padding:4px 20px 24px;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;scrollbar-width:thin}
+    .pg-grid::-webkit-scrollbar{height:4px}
+    .pg-grid::-webkit-scrollbar-thumb{background:var(--line);border-radius:100px}
+    .pg-item{flex:0 0 72%;min-width:240px;scroll-snap-align:start}
+    .pg-grid.cols-2 .pg-item{flex:0 0 80%}
+    .pg-item-img{aspect-ratio:1/1;margin-bottom:14px}
+    .pg-item-ext{width:32px;height:32px;font-size:12px;top:10px;right:10px}
+    .pg-item-tag{font-size:9px;margin-bottom:8px}
+    .pg-item-title{font-size:17px;margin-bottom:8px}
+    .pg-grid.cols-2 .pg-item-title{font-size:20px}
+    .pg-item-sub{font-size:12.5px;line-height:1.45}
+    .pg-grid.cols-2 .pg-item-sub{font-size:13px}
+    .pg-item-foot{margin-top:10px;padding-top:10px;font-size:10px}
+    .pg-stats{padding:40px 24px}
+    .pg-stats-grid{grid-template-columns:repeat(2,1fr);gap:24px}
+    .pg-next{padding:80px 24px}
+  }
+  @media (max-width:420px){
+    .vp-title{font-size:28px}
+    .vp-lead{font-size:16px}
+    .pg-section-title{font-size:24px}
+    .pg-item{flex:0 0 80%}
+  }
+
+  /* บล็อกอ่านต่อ — หน้า pillar ไม่ได้โหลด styles.css จึงต้องมีกฎของตัวเอง */
+  .pg-related{padding:72px 32px 0;border-top:1px solid var(--line)}
+  .pg-related .news-grid{margin-top:36px}
+  .news-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:36px 28px; }
+  @media (max-width:1100px){ .news-grid{ grid-template-columns:repeat(2,1fr); } }
+  @media (max-width:560px){ .news-grid{ grid-template-columns:1fr; } }
+  .news-card{ display:flex; flex-direction:column; gap:16px; cursor:pointer; text-decoration:none; color:inherit; }
+  .news-card:hover .news-thumb{ filter:contrast(1.1) saturate(1.05); transform:scale(1.02); }
+  .news-card:hover .news-title{color:var(--accent)}
+  .news-thumb{ aspect-ratio:16/10; background-color:var(--bg-2); background-size:cover; background-position:center; border-radius:10px; overflow:hidden; border:1px solid var(--line); filter:contrast(1.05) saturate(0.95); transition:filter 0.5s ease, transform 0.5s ease; }
+  .news-meta{ display:flex; align-items:center; gap:10px; font-family:'Anuphan',sans-serif; font-size:11px; color:var(--accent); letter-spacing:0.18em; text-transform:uppercase; font-weight:600; }
+  .news-meta::before{ content:''; width:14px;height:1px; background:var(--accent); }
+  .news-title{ font-family:'Anuphan',sans-serif; font-size:18px; font-weight:600; letter-spacing:-0.02em; line-height:1.3; color:var(--ink); transition:color 0.3s ease; }
+  .news-read{ font-size:11px; color:var(--ink-mute); letter-spacing:0.12em; text-transform:uppercase; margin-top:-4px; }
+
+  /* หัวข้อภาษาญี่ปุ่น/จีน: ห้ามตัดกลางวลี (เหมือนใน styles.css — หน้านี้ไม่ได้โหลดไฟล์นั้น) */
+  html[lang="ja"] .nw, html[lang^="zh"] .nw{ white-space:nowrap; }
+  html[lang="ja"] :is(.vp-title,.section-title,.news-title,.pg-item-title),
+  html[lang^="zh"] :is(.vp-title,.section-title,.news-title,.pg-item-title){ word-break:keep-all; overflow-wrap:anywhere; text-wrap:pretty; }
+
+  /* เกาหลี: ฟอนต์ฮันกึลและห้ามตัดกลางคำ (หน้านี้ไม่ได้โหลด styles.css) */
+  html[lang="ko"] *{ font-family:'Anuphan','Apple SD Gothic Neo','Malgun Gothic','Noto Sans KR',sans-serif; }
+  html[lang="ko"] body{ word-break:keep-all; overflow-wrap:break-word; }
+  html[lang="ko"] :is(.label,.section-num,.clients-label,.shorts-num,.cta-eyebrow,.category,dt,h4,.ev-eyebrow,.ev-sec,.ev-chip,.pg-pillar,.vp-num,.vp-tag,.pg-section-num,.pg-item-tag,.pg-soon-badge,.lbl,.news-meta,.news-read,.pg-next-tag,.mono){letter-spacing:0.02em}
+</style>
+<style>
+  /* ญี่ปุ่นเท่านั้น: การ์ดไม่มีรูป ต้องมีกรอบให้อ่านเป็นก้อน */
+  .pg-grid.cols-4{grid-template-columns:repeat(4,1fr)}
+  .jp-cards .pg-item{padding:24px;border:1px solid var(--line);background:var(--bg-2);border-radius:2px}
+  .jp-cards a.pg-item{cursor:pointer;transition:border-color 0.3s ease}
+  .jp-cards a.pg-item:hover{border-color:rgba(219,169,58,0.55);opacity:1}
+  .jp-cards .pg-item-sub{color:rgba(244,241,234,0.72);margin-bottom:0}
+  .jp-cards .pg-item-foot{margin-top:auto}
+  .pg-faq{border-bottom:1px solid var(--line);padding:22px 0;max-width:960px}
+  .pg-faq summary{cursor:pointer;font-size:18px;font-weight:600;line-height:1.5;list-style:none;display:flex;justify-content:space-between;gap:24px}
+  .pg-faq summary::-webkit-details-marker{display:none}
+  .pg-faq summary::after{content:'+';color:var(--accent);font-weight:300;font-size:24px;line-height:1}
+  .pg-faq[open] summary::after{content:'−'}
+  .pg-faq p{margin-top:12px;font-size:15px;line-height:1.8;color:rgba(244,241,234,0.72)}
+  .pg-faq a{color:var(--accent)}
+  .jp-contact-note{margin-top:8px;font-size:15px;color:rgba(244,241,234,0.72)}
+  @media (max-width:1100px){.pg-grid.cols-4{grid-template-columns:repeat(2,1fr)}}
+  /* มือถือ: การ์ดใช้แบบปัดซ้ายขวาเหมือนหน้าอื่นของเว็บ, FAQ ต้องมีขอบเท่ากับหัวข้อ */
+  @media (max-width:700px){.jp-cards{scroll-padding-left:20px}.jp-cards .pg-item{flex:0 0 78%;scroll-snap-align:start}.pg-faq{margin:0 20px}.pg-faq summary{font-size:16px}}
+</style>
+<meta name="description" content="タイで店舗を広げたい日本食レストランへ。タイ・フランチャイズ＆ライセンス協会会長のネットワークを活かした加盟店・投資家探しと、経営者向け講座で多店舗化を支えます。日本人担当者が日本語で対応します。">
+<!-- หน้านี้มีเฉพาะภาษาญี่ปุ่น จึงไม่ประกาศ hreflang ข้ามภาษา (แบบเดียวกับ th/insights) -->
+<link rel="canonical" href="https://www.penguinx.co/ja/expand-in-thailand/">
+<meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="PenguinX">
+<meta property="og:locale" content="ja_JP">
+<meta property="og:title" content="タイでの多店舗展開・フランチャイズ支援｜在タイ日本食レストラン向け — PenguinX">
+<meta property="og:description" content="タイで店舗を広げたい日本食レストランへ。タイ・フランチャイズ＆ライセンス協会会長のネットワークを活かした加盟店・投資家探しと、経営者向け講座で多店舗化を支えます。日本人担当者が日本語で対応します。">
+<meta property="og:url" content="https://www.penguinx.co/ja/expand-in-thailand/">
+<meta property="og:image" content="https://www.penguinx.co/cover.JPG">
+<meta property="og:image:width" content="4128">
+<meta property="og:image:height" content="2752">
+<meta property="og:image:alt" content="PenguinX — タイの飲食エコシステム・ビルダー">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="タイでの多店舗展開・フランチャイズ支援｜在タイ日本食レストラン向け — PenguinX">
+<meta name="twitter:description" content="タイで店舗を広げたい日本食レストランへ。タイ・フランチャイズ＆ライセンス協会会長のネットワークを活かした加盟店・投資家探しと、経営者向け講座で多店舗化を支えます。日本人担当者が日本語で対応します。">
+<meta name="twitter:image" content="https://www.penguinx.co/cover.JPG">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://www.penguinx.co/#organization",
+      "name": "PenguinX",
+      "url": "https://www.penguinx.co/",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://www.penguinx.co/penguinx-logo.png"
+      }
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://www.penguinx.co/#website",
+      "url": "https://www.penguinx.co/",
+      "name": "PenguinX",
+      "publisher": {
+        "@id": "https://www.penguinx.co/#organization"
+      }
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://www.penguinx.co/ja/expand-in-thailand/#webpage",
+      "url": "https://www.penguinx.co/ja/expand-in-thailand/",
+      "name": "タイでの多店舗展開・フランチャイズ支援｜在タイ日本食レストラン向け — PenguinX",
+      "description": "タイで店舗を広げたい日本食レストランへ。タイ・フランチャイズ＆ライセンス協会会長のネットワークを活かした加盟店・投資家探しと、経営者向け講座で多店舗化を支えます。日本人担当者が日本語で対応します。",
+      "inLanguage": "ja",
+      "isPartOf": {
+        "@id": "https://www.penguinx.co/#website"
+      },
+      "about": {
+        "@id": "https://www.penguinx.co/ja/expand-in-thailand/#service"
+      },
+      "publisher": {
+        "@id": "https://www.penguinx.co/#organization"
+      },
+      "image": "https://www.penguinx.co/cover.JPG",
+      "breadcrumb": {
+        "@id": "https://www.penguinx.co/ja/expand-in-thailand/#breadcrumb"
+      }
+    },
+    {
+      "@type": "Service",
+      "@id": "https://www.penguinx.co/ja/expand-in-thailand/#service",
+      "name": "タイでの多店舗展開・フランチャイズ支援",
+      "description": "タイ・フランチャイズ＆ライセンス協会のネットワークを活かした加盟店・投資家とのマッチングと、経営者向け講座で、日本食レストランの多店舗化を支援します。",
+      "provider": {
+        "@id": "https://www.penguinx.co/#organization"
+      },
+      "areaServed": {
+        "@type": "Country",
+        "name": "Thailand"
+      },
+      "audience": {
+        "@type": "BusinessAudience",
+        "audienceType": "タイで店舗を広げたい在タイ日本食レストラン"
+      },
+      "availableChannel": {
+        "@type": "ServiceChannel",
+        "serviceUrl": "https://www.penguinx.co/ja/expand-in-thailand/",
+        "availableLanguage": [
+          "ja",
+          "th",
+          "en"
+        ]
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://www.penguinx.co/ja/expand-in-thailand/#faq",
+      "inLanguage": "ja",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "まだ1店舗でも相談できますか？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "はい。多店舗化を考え始めた段階からご相談いただけます。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "加盟希望者や投資家はどのように見つけますか？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "タイ・フランチャイズ＆ライセンス協会のネットワーク、主催イベント、経営者向けメディアでの発信を通じてアプローチします。フランチャイズに特化した主催イベント「Franchise On Tour」も準備中です。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "お店の集客（一般のお客様向け）も依頼できますか？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "一般のお客様向けの集客（SNS運用・広告など）は Super Supp が担当します。supersupp@penguinx.co までお問い合わせください。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "費用はどのくらいかかりますか？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "目的と範囲によって異なるため、ヒアリングの後に個別にお見積りします。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "日本語で相談できますか？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "はい。PenguinXには日本人の担当者がおり、お問い合わせから打ち合わせまで日本語で対応します。"
+          }
+        }
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://www.penguinx.co/ja/expand-in-thailand/#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "PenguinX",
+          "item": "https://www.penguinx.co/ja/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "多店舗展開・フランチャイズ支援",
+          "item": "https://www.penguinx.co/ja/expand-in-thailand/"
+        }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+<div class="pg-nav">
+  <a href="/ja/" class="pg-back">← PenguinXに戻る</a>
+  <div class="pg-pillar">日本企業の皆さまへ · <b>多店舗展開・フランチャイズ支援</b></div>
+</div>
+
+<section class="vp">
+  <div class="vp-head">
+    <div>
+      <div class="vp-num">01 / 多店舗展開・フランチャイズ支援</div>
+      <h1 class="vp-title">
+      <span class="light">日本の<wbr>味を、</span><br>
+      タイで<span class="accent">次の<wbr>一店舗</span>へ、<br>
+      次の<wbr>街へ。
+    </h1>
+    </div>
+    <div class="vp-tag">在タイ日本食レストランの方へ</div>
+  </div>
+  <div class="vp-body">
+    <div class="vp-img">
+      <img src="/ecosystem/Education/RBA/RBA.jpg" alt="Restaurant Business Academyの講座を受講する飲食店経営者たち">
+      <div class="vp-img-cap"><span>Restaurant Business Academy｜講座</span><span>受講した経営者5,000人以上</span></div>
+    </div>
+    <div class="vp-text">
+      <p class="vp-lead">1店舗目の成功と多店舗展開は、まったく別のゲームです。PenguinXは、タイのフランチャイズ業界と飲食店経営者のネットワークを活かし、<em>加盟店・投資家探しと経営者教育</em>の両面から、日本食レストランの拡大を支えます。</p>
+      <div class="vp-benefits">
+        <div class="vp-benefit"><div class="vp-b-num">01</div><div><div class="vp-b-h">加盟店・投資家と出会う</div><div class="vp-b-d">タイ・フランチャイズ＆ライセンス協会会長を務める代表のネットワークと主催イベントを通じて、フランチャイズに本気で取り組みたい経営者や投資家と出会えます。</div></div></div>
+        <div class="vp-benefit"><div class="vp-b-num">02</div><div><div class="vp-b-h">広げる前に、仕組みを学ぶ</div><div class="vp-b-d">Restaurant Business Academyの講座で、多店舗化・フランチャイズ化に必要な数字と運営の考え方を学べます。</div></div></div>
+        <div class="vp-benefit"><div class="vp-b-num">03</div><div><div class="vp-b-h">展開後も、仲間とともに</div><div class="vp-b-d">全国52県に広がる経営者コミュニティで、同じ課題に向き合う経営者とつながり、学び合えます。</div></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="pg-stats">
+  <div class="pg-stats-grid">
+    <div class="pg-stat"><div class="num">5,000+</div><div class="lbl">講座を受講した経営者</div></div>
+    <div class="pg-stat"><div class="num">52</div><div class="lbl">県に広がるコミュニティ</div></div>
+    <div class="pg-stat"><div class="num">1.95M+</div><div class="lbl">メディアのフォロワー</div></div>
+    <div class="pg-stat"><div class="num">13</div><div class="lbl">年 — 代表の飲食業界での経験</div></div>
+  </div>
+</section>
+
+<section class="pg-section">
+  <div class="pg-section-head">
+    <div>
+      <div class="pg-section-num">02 / 進め方</div>
+      <h2 class="pg-section-title">広げる<wbr>準備から、<wbr>加盟店探しまで。</h2>
+    </div>
+  </div>
+  <div class="pg-grid cols-4 jp-cards">
+    <div class="pg-item"><div class="pg-item-tag">STEP 01</div><div class="pg-item-title">ヒアリング</div><div class="pg-item-sub">現在の店舗の状況と、展開の目標・スピードを伺います。</div></div>
+    <div class="pg-item"><div class="pg-item-tag">STEP 02</div><div class="pg-item-title">展開プランの<wbr>整理</div><div class="pg-item-sub">直営で広げるか、フランチャイズか、投資家と組むか。進め方を一緒に整理します。</div></div>
+    <div class="pg-item"><div class="pg-item-tag">STEP 03</div><div class="pg-item-title">マッチング</div><div class="pg-item-sub">協会のネットワーク、イベント、メディアを通じて、加盟希望者・投資家にアプローチします。</div></div>
+    <div class="pg-item"><div class="pg-item-tag">STEP 04</div><div class="pg-item-title">育成と<wbr>継続支援</div><div class="pg-item-sub">講座と経営者コミュニティで、展開後の運営を支えます。</div></div>
+  </div>
+</section>
+
+<section class="pg-section" id="faq">
+  <div class="pg-section-head">
+    <div>
+      <div class="pg-section-num">03 / よくあるご質問</div>
+      <h2 class="pg-section-title">よく<wbr>ある<wbr>ご質問</h2>
+    </div>
+  </div>
+  <details class="pg-faq"><summary>まだ1店舗でも相談できますか？</summary><p>はい。多店舗化を考え始めた段階からご相談いただけます。</p></details>
+  <details class="pg-faq"><summary>加盟希望者や投資家はどのように見つけますか？</summary><p>タイ・フランチャイズ＆ライセンス協会のネットワーク、主催イベント、経営者向けメディアでの発信を通じてアプローチします。フランチャイズに特化した主催イベント「Franchise On Tour」も準備中です。</p></details>
+  <details class="pg-faq"><summary>お店の集客（一般のお客様向け）も依頼できますか？</summary><p>一般のお客様向けの集客（SNS運用・広告など）は Super Supp が担当します。<a href="mailto:supersupp@penguinx.co">supersupp@penguinx.co</a> までお問い合わせください。</p></details>
+  <details class="pg-faq"><summary>費用はどのくらいかかりますか？</summary><p>目的と範囲によって異なるため、ヒアリングの後に個別にお見積りします。</p></details>
+  <details class="pg-faq"><summary>日本語で相談できますか？</summary><p>はい。PenguinXには日本人の担当者がおり、お問い合わせから打ち合わせまで日本語で対応します。</p></details>
+</section>
+
+<section class="pg-next">
+  <div class="pg-next-tag">— 日本語でお気軽にご相談ください —</div>
+  <h2 class="pg-next-title"><a href="mailto:tor@penguinx.co?subject=Japan%20inquiry%20-%20Expand%20in%20Thailand">無料相談 ↗</a></h2>
+  <a href="/ja/" class="pg-back">↑ PenguinXに戻る</a>
+</section>
+
+</body>
+</html>
