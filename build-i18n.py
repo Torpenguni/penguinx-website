@@ -66,6 +66,14 @@ SITE = 'https://www.penguinx.co'
 # ไฟล์ที่ไม่ใช่หน้าเว็บ — ลิงก์พวกนี้ห้ามเติม prefix ภาษา
 ASSET = re.compile(r'\.(css|js|png|jpe?g|JPG|JPEG|svg|webp|ico|gif|mp4|pdf|txt|xml|webmanifest|json)$', re.I)
 
+def page_url(src):
+    """เส้นทาง URL ของหน้า เทียบกับราก: index.html ในโฟลเดอร์ใช้ URL แบบ /โฟลเดอร์/
+
+    หน้าใหม่ที่อยู่ในโฟลเดอร์ของตัวเอง (เช่น about/tor/index.html) ควรมี
+    canonical และ hreflang เป็น /about/tor/ ไม่ใช่ /about/tor/index.html
+    ไม่งั้น Google จะเห็นสอง URL สำหรับหน้าเดียว"""
+    return re.sub(r'(^|/)index\.html$', r'\1', src)
+
 def pages():
     out = []
     for f in glob.glob('**/*.html', recursive=True):
@@ -221,6 +229,8 @@ def localise_links(html, code):
             return m.group(0)
         if url == '/':
             return f'{pre}"/{code}/"' if has_page(code, '') else m.group(0)
+        if url.startswith(tuple(f'/{c}/' for c in LANGS)):
+            return m.group(0)              # ชี้หน้าภาษาเฉพาะอยู่แล้ว เช่น /th/insights/
         if url.startswith('/'):
             target = urllib.parse.unquote(url.lstrip('/').split('#')[0].split('?')[0])
             if not has_page(code, target):
@@ -228,6 +238,18 @@ def localise_links(html, code):
             return f'{pre}"/{code}{url}"'
         return m.group(0)
     return re.sub(r'(href=)"([^"]+)"', fix, html)
+
+
+def drop_only_th(html, code):
+    """เมนูที่ชี้ไปหน้าซึ่งมีแค่ภาษาไทย (เช่น Insights) ใส่ class="only-th"
+
+    ฉบับจีน/ญี่ปุ่นตัดทิ้งไปเลย ส่วนต้นฉบับอังกฤษซ่อนด้วย CSS
+    (html:not([lang="th"]) .only-th) เพราะไฟล์อังกฤษถูกเสิร์ฟตรงจากต้นฉบับ"""
+    if code == 'th':
+        return html
+    html = re.sub(r'\s*<li class="only-th">.*?</li>', '', html, flags=re.S)
+    html = re.sub(r'\s*<a class="only-th"[^>]*>.*?</a>', '', html, flags=re.S)
+    return html
 
 
 def strip_injected(html):
@@ -243,7 +265,7 @@ def build(src, code):
     cfg = LANGS[code]
     tmap = json.load(open(f'i18n/{code}.json', encoding='utf-8'))
     html = strip_injected(open(src, encoding='utf-8').read())
-    rel = '' if src == 'index.html' else src
+    rel = page_url(src)
 
     blocks = tmap.pop('_html', {})
     cfg_js = tmap.pop('_js', {})
@@ -251,6 +273,7 @@ def build(src, code):
     html = localise_assets(html, src)
     html = localise_links(html, code)
     html = drop_withheld_links(html, code)
+    html = drop_only_th(html, code)
     kept = {}
     html = translate_blocks(html, blocks, kept)
     html = translate_text(html, tmap)
@@ -276,7 +299,7 @@ def build(src, code):
 
 def add_switcher_to_english(src):
     html = strip_injected(open(src, encoding='utf-8').read())
-    rel = '' if src == 'index.html' else src
+    rel = page_url(src)
     html = re.sub(r'(<ul class="nav-links">.*?</ul>)', r'\1\n  ' + switcher(rel, 'en'),
                   html, count=1, flags=re.S)
     html = html.replace('<link rel="canonical"', hreflangs(rel) + '\n<link rel="canonical"', 1)

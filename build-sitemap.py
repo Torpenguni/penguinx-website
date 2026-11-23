@@ -36,7 +36,8 @@ def lastmod(paths):
     return None
 
 def url_of(page, prefix):
-    rel = '' if page == 'index.html' else page
+    # index.html ในโฟลเดอร์ใช้ URL แบบ /โฟลเดอร์/ ให้ตรงกับ canonical ของหน้า
+    rel = page[:-len('index.html')] if page.endswith('index.html') else page
     return f'{SITE}/{prefix}{rel}'
 
 def exists(page, prefix):
@@ -54,6 +55,18 @@ for page in pages():
         loc = url_of(page, pre)
         mod_tag = f'\n    <lastmod>{mod}</lastmod>' if mod else ''
         rows.append(f'  <url>\n    <loc>{loc}</loc>{mod_tag}\n{alts}\n  </url>')
+
+# ส่วนที่มีแค่บางภาษา ไม่มีต้นฉบับอังกฤษ (Insights เขียนให้ผู้อ่านไทยก่อน)
+# ไม่ใส่ hreflang ข้ามภาษา เพราะไม่มีหน้าคู่ที่เป็นเนื้อหาเดียวกันจริง
+LANG_ONLY = ['th/insights/']
+for folder in LANG_ONLY:
+    for f in sorted(glob.glob(folder + '**/*.html', recursive=True)):
+        if os.path.basename(f).startswith('_'):
+            continue
+        loc = f'{SITE}/' + (f[:-len('index.html')] if f.endswith('index.html') else f)
+        mod = lastmod([f])
+        mod_tag = f'\n    <lastmod>{mod}</lastmod>' if mod else ''
+        rows.append(f'  <url>\n    <loc>{loc}</loc>{mod_tag}\n  </url>')
 
 xml = ('<?xml version="1.0" encoding="UTF-8"?>\n'
        '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"\n'

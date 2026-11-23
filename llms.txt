@@ -29,7 +29,7 @@
 
 ## Ecosystem properties / ทรัพย์สินในระบบนิเวศ
 
-- [PenguinX Media](https://www.penguinx.co/ecosystem/media.html): Torpenguin (operator media, 1.5M+ followers) and an in-house production studio.
+- [PenguinX Media](https://www.penguinx.co/ecosystem/media.html): Torpenguin (operator media, 1.95M+ followers) and an in-house production studio.
 - [PenguinX Event](https://www.penguinx.co/ecosystem/event.html): TRC — Thailand Restaurant Conference, Damn Expo, Restech, CafCon, #LongKaek.
 - [PenguinX Education](https://www.penguinx.co/ecosystem/education.html): Restaurant Business Academy, Restaurant MBA (first of its kind in Thailand), published books.
 - [PenguinX Solution](https://www.penguinx.co/ecosystem/solution.html): Brand strategy consulting and business development.
@@ -51,11 +51,18 @@
 - [Restaurant MBA opens second cohort](https://www.penguinx.co/news/restaurant-mba-cohort-2.html)
 - [Damn Expo returns](https://www.penguinx.co/news/damn-expo-returns.html)
 
+## Insights for brands and suppliers / Insights สำหรับแบรนด์และซัพพลายเออร์ (Thai)
+
+- [การตลาดธุรกิจอาหารสำหรับ Supplier: วิธีเข้าถึงเจ้าของร้านอาหารในไทย](https://www.penguinx.co/th/insights/):
+  Supplier เข้าถึงเจ้าของร้านอาหารไทยได้ 4 ทาง: สื่อที่เจ้าของร้านติดตาม อีเวนต์ที่เจ้าของร้านมาเอง
+  การทดลองใช้ในเมนูจริง และ Business Matching
+
 ## Leadership / ผู้บริหาร
 
 - **Thanapong "Tor" Vongchinsri** (ธนพงศ์ วงศ์ชินศรี) — Founder & CEO. 13 years in the F&B industry,
-  speaker at 1,000+ conferences, author of best-selling restaurant management books, director of the first
-  Restaurant MBA program in Thailand. Contact: tor@penguinx.co
+  speaker at 1,000+ conferences, author of six restaurant business books, director of the first
+  Restaurant MBA program in Thailand, President-elect of the Franchise & License Association (Thailand).
+  Profile: https://www.penguinx.co/about/tor/ (Thai: https://www.penguinx.co/th/about/tor/). Contact: tor@penguinx.co
 - **SAN Pornchai** — Chief Marketing Officer. Former executive at TBWA, McCann Group, Dentsu Y&R, and Lowe.
   25+ years in branding and marketing; consultant to 20+ organizations. Contact: supersupp@penguinx.co
 
