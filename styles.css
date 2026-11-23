@@ -2515,3 +2515,104 @@ html[lang^="th"] .why .why-note{max-width:none}
 /* ลดช่องว่างระหว่างส่วนหนังสือกับ Community */
 .why{padding-bottom:48px}
 @media (max-width:620px){.why{padding-bottom:16px}.book-row{padding-bottom:0}.community{padding-top:32px}}
+
+/* ============================================================
+   เมนูที่ชี้หน้าภาษาไทยอย่างเดียว (Insights)
+   ฉบับจีน/ญี่ปุ่นถูกตัดออกตอน build ส่วนต้นฉบับอังกฤษซ่อนด้วยกฎนี้
+   ============================================================ */
+html:not([lang="th"]) .only-th{display:none!important}
+
+/* ลิงก์ไปหน้าโปรไฟล์ในการ์ดผู้ก่อตั้ง: ดันลงล่างแทนปุ่ม LinkedIn แล้วให้ LinkedIn ต่อท้าย */
+.founder-profile{
+  margin-top:auto;align-self:flex-start;
+  font-size:13px;font-weight:500;color:var(--accent);
+  text-decoration:none;border-bottom:1px solid rgba(219,169,58,.45);padding-bottom:2px;
+}
+.founder-profile::after{content:' →'}
+.founder-profile:hover{border-bottom-color:var(--accent)}
+.founder-profile + .founder-linkedin{margin-top:14px}
+
+/* ============================================================
+   หน้าโปรไฟล์ /about/tor/
+   ============================================================ */
+.prof-top{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,1fr);gap:28px;align-items:center;margin-bottom:8px}
+.prof-photo{width:100%;height:auto;aspect-ratio:4/3;object-fit:cover;object-position:center 30%;border-radius:4px}
+.prof-facts{display:flex;flex-direction:column;gap:16px;margin:0}
+.prof-facts div{border-top:1px solid var(--line);padding-top:12px}
+.prof-facts dt{font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-mute);margin-bottom:4px}
+.prof-facts dd{margin:0;font-size:16px;line-height:1.5}
+html[lang="th"] .prof-facts dt{letter-spacing:.04em;font-size:13px}
+.prof-body .book-row{display:grid;flex-direction:row;grid-template-columns:repeat(3,minmax(0,1fr));gap:44px 22px;margin:44px 0 8px;padding:0}
+.prof-body .book-row li{line-height:1.4}
+.prof-body .book-title{font-size:15px}
+.prof-links{list-style:none;margin-left:0!important;flex-direction:row!important;flex-wrap:wrap;gap:10px!important}
+.prof-links a{display:inline-block;padding:8px 16px;border:1px solid rgba(244,241,234,.2);border-radius:100px;text-decoration:none!important;font-size:14px}
+.prof-links a:hover{border-color:var(--accent)}
+@media (max-width:700px){
+  .prof-top{grid-template-columns:1fr}
+}
+@media (max-width:620px){
+  .prof-body .book-row{display:flex;gap:14px;padding:32px 0 8px;overflow-x:auto}
+}
+
+/* ============================================================
+   Insights (/th/insights/) — หน้ารวมและบทความ
+   ============================================================ */
+.ins-byline{margin-top:28px;font-size:14px;color:var(--ink-mute);display:flex;flex-wrap:wrap;gap:6px 14px;align-items:center}
+.ins-byline a{color:var(--ink);text-decoration:underline;text-underline-offset:3px}
+.ins-byline .sep{opacity:.5}
+.ins-answer{
+  background:var(--bg-2);border:1px solid var(--line);border-left:3px solid var(--accent);
+  border-radius:4px;padding:22px 24px;margin:0 0 36px;
+}
+.ins-answer-label{font-size:12px;font-weight:600;letter-spacing:.06em;color:var(--accent);margin-bottom:8px}
+.article-body .ins-answer p{margin-bottom:0;font-size:17px}
+.ins-toc{border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:18px 0;margin:0 0 12px}
+.ins-toc-label{font-size:12px;letter-spacing:.06em;color:var(--ink-mute);margin-bottom:8px}
+.article-body .ins-toc ol{margin:0 0 0 20px;gap:4px}
+.article-body .ins-toc a{color:var(--ink);text-decoration:none}
+.article-body .ins-toc a:hover{color:var(--accent)}
+.article-body h2[id],.article-body h3[id]{scroll-margin-top:96px}
+.ins-table-wrap{overflow-x:auto;margin:24px 0 28px;-webkit-overflow-scrolling:touch}
+.ins-table{width:100%;min-width:620px;border-collapse:collapse;font-size:15px;line-height:1.55}
+.ins-table th,.ins-table td{text-align:left;vertical-align:top;padding:12px 14px;border-bottom:1px solid var(--line)}
+.ins-table thead th{font-size:13px;font-weight:600;color:var(--accent);border-bottom:1px solid rgba(219,169,58,.45)}
+.ins-table tbody th{font-weight:600;color:var(--ink);white-space:nowrap}
+.ins-cases{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;margin:22px 0 8px}
+.article-body a.ins-case{
+  display:flex;flex-direction:column;gap:6px;padding:18px 20px;border:1px solid var(--line);border-radius:4px;
+  text-decoration:none;color:var(--ink);background:var(--bg-2);transition:border-color .2s ease
+}
+.article-body a.ins-case:hover{border-color:rgba(219,169,58,.55)}
+.ins-case-tag{font-size:12px;color:var(--accent);letter-spacing:.04em}
+.ins-case-title{font-weight:600;font-size:17px;line-height:1.35}
+.ins-case-desc{font-size:14px;line-height:1.6;color:var(--ink-mute)}
+.ins-counter{border:1px dashed rgba(244,241,234,.28);border-radius:4px;padding:22px 24px;margin:40px 0}
+.ins-counter-label{font-size:12px;font-weight:600;letter-spacing:.06em;color:var(--ink-mute);margin-bottom:8px}
+.article-body .ins-counter ul{margin-bottom:0}
+.ins-topics{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin:22px 0 0}
+.ins-topic{border:1px solid var(--line);border-radius:4px;padding:16px 18px}
+.ins-topic-name{font-weight:600;margin-bottom:4px}
+.ins-topic-desc{font-size:14px;line-height:1.6;color:var(--ink-mute)}
+.article-body .ins-topic a{font-size:14px}
+.ins-author{display:grid;grid-template-columns:88px 1fr;gap:18px;align-items:start;border-top:1px solid var(--line);padding-top:28px;margin-top:48px}
+.ins-author img{width:88px;height:88px;border-radius:50%;object-fit:cover;object-position:center 25%}
+.ins-author-label{font-size:12px;color:var(--ink-mute);margin-bottom:2px}
+.ins-author-name{font-weight:600;font-size:18px}
+.article-body .ins-author p{font-size:15px;line-height:1.65;color:var(--ink-mute);margin:6px 0 8px}
+.ins-author-links{display:flex;flex-wrap:wrap;gap:6px 16px;font-size:14px}
+.ins-sub{background:var(--bg-2);border:1px solid var(--line);border-radius:4px;padding:26px 24px;margin-top:48px}
+.ins-sub h2{margin-top:0!important}
+.ins-sub .lead-form{margin-top:18px}
+.ins-sub .lead-grid{grid-template-columns:repeat(3,minmax(0,1fr))}
+.ins-sub .lead-form input{width:100%;min-width:0}
+.ins-sub .cta-note{font-size:13px;color:var(--ink-mute);text-align:center;margin-top:8px}
+.ins-close{font-size:19px;line-height:1.6;color:var(--ink);border-left:2px solid var(--accent);padding-left:18px;margin:40px 0 20px}
+.ins-cta{display:inline-flex;align-items:center;gap:10px;padding:13px 22px;border-radius:100px;background:var(--accent);color:#111!important;font-weight:600;text-decoration:none!important}
+.ins-cta:hover{background:var(--accent-2)}
+@media (max-width:700px){
+  .ins-cases,.ins-topics{grid-template-columns:1fr}
+  .ins-sub .lead-grid{grid-template-columns:1fr}
+  .ins-author{grid-template-columns:64px 1fr}
+  .ins-author img{width:64px;height:64px}
+}
