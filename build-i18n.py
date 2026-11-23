@@ -11,7 +11,10 @@
 import json, os, re, sys, glob, urllib.parse
 
 LANGS = {
-    'th': {'code': 'th', 'htmlLang': 'th', 'ogLocale': 'th_TH', 'label': 'ไทย'},
+    # keepEnglish: เมนูบนสุดและป้ายที่ติด data-keep-en คงเป็นภาษาอังกฤษในหน้าไทย
+    # เจ้าของเว็บต้องการให้ชื่อเมนูและชื่อเสาหลัก (Media/Event/...) เป็นคำเดียวกันทุกภาษา
+    'th': {'code': 'th', 'htmlLang': 'th', 'ogLocale': 'th_TH', 'label': 'ไทย',
+           'keepEnglish': True},
     # หน้า Events ยังไม่แปลจีน เจ้าของเว็บขอรอเนื้อหานิ่งก่อน
     # ถ้าปล่อยให้สร้าง หน้าจีนจะมีเนื้อหาอังกฤษปนทั้งหน้า จึงกันไว้ทั้งชุด
     'zh': {'code': 'zh', 'htmlLang': 'zh-Hans', 'ogLocale': 'zh_CN', 'label': '中文',
@@ -159,6 +162,33 @@ def translate_blocks(html, blocks, keep):
             keep[token] = dst
     return html
 
+def keep_english(html, code, keep):
+    """ภาษาที่ตั้ง keepEnglish: ล็อกเมนูบนสุด (ยกเว้นปุ่ม CTA) และลิงก์ที่มี
+    data-keep-en ไว้เป็นภาษาอังกฤษ
+
+    ใช้ตัวแทนแบบเดียวกับ translate_blocks เพราะ translate_text แปลตามข้อความ
+    ล้วน ๆ ไม่รู้บริบท ถ้าลบคำว่า "Media" ออกจากไฟล์แปลแทน หัวข้อและการ์ด
+    ทุกที่ที่ใช้คำเดียวกันจะกลายเป็นอังกฤษตามไปด้วย
+    ใส่ lang="en" ให้ด้วย โปรแกรมอ่านหน้าจอจะได้ออกเสียงถูก
+    ตัวแทนเป็น comment ของ HTML เพื่อให้ข้อความที่ตามหลังลิงก์ (": Torpenguin ...")
+    ยังเป็น text node แยกที่ตัวแปลจับได้ ถ้าใช้ตัวแทนเป็นข้อความธรรมดา
+    มันจะไปติดหน้าประโยคแล้วประโยคนั้นจะไม่ถูกแปล"""
+    if not LANGS[code].get('keepEnglish'):
+        return html
+
+    def lock(fragment):
+        token = f'<!--PXKEEP{len(keep)}-->'
+        keep[token] = re.sub(r'<a ', '<a lang="en" ', fragment, count=1)
+        return token
+
+    def nav(m):
+        return re.sub(r'<li[^>]*>\s*<a [^>]*>[^<]*</a>\s*</li>',
+                      lambda li: li.group(0) if 'nav-cta' in li.group(0) else lock(li.group(0)),
+                      m.group(0))
+    html = re.sub(r'<ul class="nav-links">.*?</ul>', nav, html, count=1, flags=re.S)
+    html = re.sub(r'<a [^>]*\bdata-keep-en\b[^>]*>[^<]*</a>', lambda m: lock(m.group(0)), html)
+    return html
+
 def js_config(cfg_js):
     """ส่งคำแปลให้สคริปต์ฝั่งเบราว์เซอร์ (การ์ดวิดีโอ render ด้วย JS)"""
     if not cfg_js:
@@ -276,6 +306,7 @@ def build(src, code):
     html = drop_only_th(html, code)
     kept = {}
     html = translate_blocks(html, blocks, kept)
+    html = keep_english(html, code, kept)
     html = translate_text(html, tmap)
     for token, dst in kept.items():
         html = html.replace(token, dst, 1)
