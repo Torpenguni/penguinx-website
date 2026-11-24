@@ -2748,3 +2748,8 @@ html[lang^="th"] .bl-cat,html[lang^="zh"] .bl-cat,html[lang^="ja"] .bl-cat,html[
 .prof-body .speak-logos{background:#fff;border-radius:12px;padding:22px 26px;margin:20px 0 8px}
 .prof-body .speak-logos img{margin:0;border:0;border-radius:0;width:100%;height:auto}
 @media (max-width:620px){.prof-body .speak-logos{padding:14px 12px;border-radius:10px}}
+
+/* หน้าโปรไฟล์ Tor: ไม่มีกล่องข้อมูลข้างรูปแล้ว รูปเต็มความกว้าง อีเมลติดต่อบรรทัดเดียวใต้รูป */
+.prof-body .prof-top{display:block}
+.prof-body .prof-contact{margin:12px 0 0;font-size:15px;color:var(--ink-mute)}
+.prof-body .prof-contact span::after{content:':';margin-right:8px}
