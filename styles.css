@@ -947,8 +947,11 @@ section{padding:80px 32px;position:relative}
    เพราะโลโก้ทรงจัตุรัสต้องสูงกว่าทรงแนวยาวมาก ถึงจะดูใหญ่เท่ากัน */
 .client-tile img{max-width:100%;width:auto;object-fit:contain;display:block}
 @media (max-width:640px){
-  .client-tile{width:126px;height:62px;padding:7px}
-  .client-track{gap:10px}
+  /* มือถือ: กล่องเล็กลง ~20% และย่อโลโก้ตามสัดส่วน (ความสูง inline ตั้งไว้สำหรับกล่อง 74px) */
+  .client-tile{width:100px;height:50px;padding:6px;border-radius:7px}
+  .client-tile img{zoom:.66;max-height:100%}
+  .client-track{gap:8px}
+  .client-rows{gap:8px}
 }
 
 /* === NEWS === */
