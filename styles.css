@@ -2677,3 +2677,6 @@ html[lang="ko"] :is(.label,.section-num,.clients-label,.shorts-num,.cta-eyebrow,
 /* ไทย/จีน/ญี่ปุ่น/เกาหลี: ตัวที่ขนาดเท่ากันดูเล็กกว่าละติน และการถ่างตัวอักษรทำให้อ่านยาก */
 :lang(th) .hero-eyebrow .hero-id,:lang(zh) .hero-eyebrow .hero-id,
 :lang(ja) .hero-eyebrow .hero-id,:lang(ko) .hero-eyebrow .hero-id{font-size:clamp(17px,1.3vw,20px);letter-spacing:0;text-transform:none}
+
+/* หน้าไทยใช้หัวข้อภาษาอังกฤษ (h1/h2 ติด lang="en") ให้ขนาดหัวข้อ hero เท่าหน้าอังกฤษ */
+.hero-title[lang="en"]{font-size:clamp(2rem,4.2vw,4.4rem)}
