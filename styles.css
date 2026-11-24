@@ -2743,6 +2743,3 @@ html[lang^="th"] .bl-cat,html[lang^="zh"] .bl-cat,html[lang^="ja"] .bl-cat,html[
 .bl-award b{font-weight:600;color:var(--ink)}
 .prof-body .book-list-buy{display:inline-block;margin-top:8px;font-size:14px;font-weight:500;text-decoration:none;border-bottom:1px solid rgba(219,169,58,.45);padding-bottom:2px}
 .prof-body .book-list-buy::after{content:' →'}
-
-/* หน้าโปรไฟล์ Tor: รูปตัดพื้นหลังออก (PNG โปร่งใส) แสดงเต็มรูป ไม่ครอป ไม่มีมุมโค้ง */
-.prof-body .prof-photo.prof-photo-cutout{aspect-ratio:auto;object-fit:contain;border-radius:0;border:0}
