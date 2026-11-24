@@ -2782,10 +2782,11 @@ html[lang^="th"] .bl-cat,html[lang^="zh"] .bl-cat,html[lang^="ja"] .bl-cat,html[
 .prof-body ul li{color:#c4c4c4}
 /* "Contact:" ตัวหนา */
 .prof-hero .prof-contact span{font-weight:700;color:var(--ink)}
-.team-line{display:flex;flex-wrap:wrap;align-items:baseline;gap:8px 0;margin-top:18px;padding:0;list-style:none;font-size:14px;line-height:1.5}
-.team-line li{display:inline-flex;flex-wrap:wrap;align-items:baseline;gap:0 8px}
-.team-line li+li::before{content:"\00B7";margin:0 14px;color:var(--ink-mute)}
+.team-line{display:grid;grid-template-columns:repeat(3,minmax(0,auto));justify-content:start;margin-top:18px;padding:0;list-style:none;font-size:14px;line-height:1.5}
+.team-line li{display:flex;flex-wrap:wrap;align-items:baseline;gap:0 8px;padding:0 28px}
+.team-line li:first-child{padding-left:0}
+.team-line li+li{border-left:1px solid var(--line)}
 .team-line strong{font-weight:600;color:var(--ink)}
 .team-line span{font-weight:600;color:var(--accent)}
 .team-line em{font-style:normal;color:var(--ink-mute)}
-@media (max-width:860px){.team-line{flex-direction:column;gap:6px}.team-line li+li::before{content:none}}
+@media (max-width:860px){.team-line{grid-template-columns:minmax(0,1fr);gap:8px}.team-line li{padding:0}.team-line li+li{border-left:0}}
