@@ -23,6 +23,10 @@ def pages():
         name = os.path.basename(f)
         if name.startswith('_') or '__' in name or '.disabled' in name:
             continue
+        # หน้าที่ตั้ง noindex ไว้ (เช่นหน้ารายละเอียดอีเวนต์ที่เนื้อหายังบาง) ต้องไม่อยู่ใน sitemap
+        # ประกาศหน้าที่บอก Google ว่าห้ามเก็บ = ส่งสัญญาณขัดกันเอง
+        if 'name="robots" content="noindex' in open(f, encoding='utf-8').read():
+            continue
         out.append(f)
     return sorted(out)
 
