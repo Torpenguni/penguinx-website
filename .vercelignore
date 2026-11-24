@@ -1,0 +1,6 @@
+# ไฟล์ภายในที่ไม่ใช่หน้าเว็บ — ไม่ต้องขึ้น production
+# ก่อนหน้านี้ Vercel เสิร์ฟทุกไฟล์ใน repo คนทั่วไปเปิด penguinx.co/build-i18n.py ได้
+CLAUDE.md
+ANALYTICS-SETUP.md
+*.py
+requirements-build.txt
