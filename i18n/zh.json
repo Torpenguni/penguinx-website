@@ -844,5 +844,18 @@
  "50K": "5 万",
  "20M+": "2,000 万+",
  "10M+": "1,000 万+",
- "Logos of organizations Tor has given keynotes or corporate training for, including OR, CP, GO Wholesale, Makro, LINE, Betagro, Mitr Phol, SCGJWD, True Digital, AIS Academy, Grab, LINE MAN, Wongnai, Robinhood, Ocean, Unilever, Singha, Shell, Bridgestone, Tyson, Punthai Coffee, AP Thailand, Knight Frank, KCG Corporation, Hop Inn, Jagota, SC Asset, Origin Property, Impact Muang Thong Thani, THAIFEX – HOREC Asia, SCB, ttb, KBank, Krungsri, Government Savings Bank, SME Development Bank, Tourism Authority of Thailand, National Innovation Agency (NIA), TED Fund, Department of Business Development (DBD), Department of Industrial Promotion (DIPROM), Chulalongkorn University, Thammasat University (Faculty of Public Health), Kasetsart University, Rangsit University, University of the Thai Chamber of Commerce (UTCC), Ramkhamhaeng University": "Tor 曾为其做主题演讲或企业培训的机构标志，包括：OR, CP, GO Wholesale, Makro, LINE, Betagro, Mitr Phol, SCGJWD, True Digital, AIS Academy, Grab, LINE MAN, Wongnai, Robinhood, Ocean, Unilever, Singha, Shell, Bridgestone, Tyson, Punthai Coffee, AP Thailand, Knight Frank, KCG Corporation, Hop Inn, Jagota, SC Asset, Origin Property, Impact Muang Thong Thani, THAIFEX – HOREC Asia, SCB, ttb, KBank, Krungsri, Government Savings Bank, SME Development Bank, Tourism Authority of Thailand, National Innovation Agency (NIA), TED Fund, Department of Business Development (DBD), Department of Industrial Promotion (DIPROM), Chulalongkorn University, Thammasat University (Faculty of Public Health), Kasetsart University, Rangsit University, University of the Thai Chamber of Commerce (UTCC), Ramkhamhaeng University"
+ "Logos of organizations Tor has given keynotes or corporate training for, including OR, CP, GO Wholesale, Makro, LINE, Betagro, Mitr Phol, SCGJWD, True Digital, AIS Academy, Grab, LINE MAN, Wongnai, Robinhood, Ocean, Unilever, Singha, Shell, Bridgestone, Tyson, Punthai Coffee, AP Thailand, Knight Frank, KCG Corporation, Hop Inn, Jagota, SC Asset, Origin Property, Impact Muang Thong Thani, THAIFEX – HOREC Asia, SCB, ttb, KBank, Krungsri, Government Savings Bank, SME Development Bank, Tourism Authority of Thailand, National Innovation Agency (NIA), TED Fund, Department of Business Development (DBD), Department of Industrial Promotion (DIPROM), Chulalongkorn University, Thammasat University (Faculty of Public Health), Kasetsart University, Rangsit University, University of the Thai Chamber of Commerce (UTCC), Ramkhamhaeng University": "Tor 曾为其做主题演讲或企业培训的机构标志，包括：OR, CP, GO Wholesale, Makro, LINE, Betagro, Mitr Phol, SCGJWD, True Digital, AIS Academy, Grab, LINE MAN, Wongnai, Robinhood, Ocean, Unilever, Singha, Shell, Bridgestone, Tyson, Punthai Coffee, AP Thailand, Knight Frank, KCG Corporation, Hop Inn, Jagota, SC Asset, Origin Property, Impact Muang Thong Thani, THAIFEX – HOREC Asia, SCB, ttb, KBank, Krungsri, Government Savings Bank, SME Development Bank, Tourism Authority of Thailand, National Innovation Agency (NIA), TED Fund, Department of Business Development (DBD), Department of Industrial Promotion (DIPROM), Chulalongkorn University, Thammasat University (Faculty of Public Health), Kasetsart University, Rangsit University, University of the Thai Chamber of Commerce (UTCC), Ramkhamhaeng University",
+ "Business type": "企业类型",
+ "Supplier": "供应商",
+ "Foreign brand": "海外品牌",
+ "Restaurant chain": "连锁餐饮",
+ "Other": "其他",
+ "Services you're interested in": "感兴趣的服务",
+ "Choose any": "可多选",
+ "Budget (optional)": "预算（选填）",
+ "Prefer not to say yet": "暂不透露",
+ "Under ฿100,000": "10 万泰铢以下",
+ "฿100,000–500,000": "10 万–50 万泰铢",
+ "฿500,000–1,000,000": "50 万–100 万泰铢",
+ "Over ฿1,000,000": "100 万泰铢以上"
 }

@@ -18,7 +18,8 @@
 
   function mailtoFallback(d) {
     var body = 'Name: ' + d.name + '\nCompany: ' + d.company + '\nEmail: ' + d.email +
-               '\nPhone / LINE: ' + d.phone + '\n\n' + d.message;
+               '\nPhone / LINE: ' + d.phone + '\nBusiness type: ' + (d.business_type || '') +
+               '\nServices: ' + (d.services || '') + '\nBudget: ' + (d.budget || '') + '\n\n' + d.message;
     location.href = 'mailto:tor@penguinx.co?subject=' + encodeURIComponent('Discovery call with PenguinX') +
                     '&body=' + encodeURIComponent(body);
   }
@@ -29,6 +30,8 @@
     var fd = new FormData(form);
     var d = {};
     fd.forEach(function (v, k) { d[k] = String(v); });
+    // ช่อง "บริการที่สนใจ" เลือกได้หลายข้อ FormData.forEach จะเก็บแค่ค่าสุดท้าย จึงต้องรวมเอง
+    d.services = fd.getAll('services').join(', ');
     d.page = location.pathname;
     d.lang = document.documentElement.lang || 'en';
 

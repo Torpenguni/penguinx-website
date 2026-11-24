@@ -1042,6 +1042,35 @@
       <label><span>会社 / ブランド</span><input name="company" type="text" autocomplete="organization" maxlength="160"></label>
       <label><span>メールアドレス</span><input name="email" type="email" autocomplete="email" required maxlength="200"></label>
       <label><span>電話 / LINE ID</span><input name="phone" type="text" autocomplete="tel" maxlength="60"></label>
+      <fieldset class="lead-wide lead-choice">
+        <legend>業種</legend>
+        <div class="lead-chips">
+          <label><input type="radio" name="business_type" value="Supplier" required><span>サプライヤー</span></label>
+          <label><input type="radio" name="business_type" value="Foreign brand"><span>海外ブランド</span></label>
+          <label><input type="radio" name="business_type" value="Restaurant chain"><span>飲食チェーン</span></label>
+          <label><input type="radio" name="business_type" value="Other"><span>その他</span></label>
+        </div>
+      </fieldset>
+      <fieldset class="lead-wide lead-choice">
+        <legend>関心のあるサービス <small>複数選択可</small></legend>
+        <div class="lead-chips">
+          <label><input type="checkbox" name="services" value="Exhibit & Meet"><span>出展・商談</span></label>
+          <label><input type="checkbox" name="services" value="Co-host Seminars"><span>セミナー共催</span></label>
+          <label><input type="checkbox" name="services" value="Brand Storytelling"><span>ブランドストーリーづくり</span></label>
+          <label><input type="checkbox" name="services" value="Market Testing"><span>テストマーケティング</span></label>
+          <label><input type="checkbox" name="services" value="Partner Matching"><span>パートナー探し</span></label>
+          <label><input type="checkbox" name="services" value="Team Training"><span>チーム研修</span></label>
+        </div>
+      </fieldset>
+      <label class="lead-wide"><span>ご予算（任意）</span>
+        <select name="budget">
+          <option value="">まだ決めていない</option>
+          <option value="Under THB 100,000">10万バーツ未満</option>
+          <option value="THB 100,000-500,000">10万〜50万バーツ</option>
+          <option value="THB 500,000-1,000,000">50万〜100万バーツ</option>
+          <option value="Over THB 1,000,000">100万バーツ以上</option>
+        </select>
+      </label>
       <label class="lead-wide"><span>タイ市場で実現したいことは？</span><textarea name="message" rows="4" maxlength="3000"></textarea></label>
     </div>
     <input class="lead-hp" name="website" type="text" tabindex="-1" autocomplete="off" aria-hidden="true">

@@ -1013,6 +1013,35 @@
       <label><span>회사 / 브랜드</span><input name="company" type="text" autocomplete="organization" maxlength="160"></label>
       <label><span>이메일</span><input name="email" type="email" autocomplete="email" required maxlength="200"></label>
       <label><span>전화 / 카카오톡 ID</span><input name="phone" type="text" autocomplete="tel" maxlength="60"></label>
+      <fieldset class="lead-wide lead-choice">
+        <legend>사업 유형</legend>
+        <div class="lead-chips">
+          <label><input type="radio" name="business_type" value="Supplier" required><span>공급업체</span></label>
+          <label><input type="radio" name="business_type" value="Foreign brand"><span>해외 브랜드</span></label>
+          <label><input type="radio" name="business_type" value="Restaurant chain"><span>외식 체인</span></label>
+          <label><input type="radio" name="business_type" value="Other"><span>기타</span></label>
+        </div>
+      </fieldset>
+      <fieldset class="lead-wide lead-choice">
+        <legend>관심 있는 서비스 <small>복수 선택 가능</small></legend>
+        <div class="lead-chips">
+          <label><input type="checkbox" name="services" value="Exhibit & Meet"><span>전시·상담</span></label>
+          <label><input type="checkbox" name="services" value="Co-host Seminars"><span>세미나 공동 개최</span></label>
+          <label><input type="checkbox" name="services" value="Brand Storytelling"><span>브랜드 스토리텔링</span></label>
+          <label><input type="checkbox" name="services" value="Market Testing"><span>시장 테스트</span></label>
+          <label><input type="checkbox" name="services" value="Partner Matching"><span>파트너 매칭</span></label>
+          <label><input type="checkbox" name="services" value="Team Training"><span>팀 교육</span></label>
+        </div>
+      </fieldset>
+      <label class="lead-wide"><span>예산 (선택)</span>
+        <select name="budget">
+          <option value="">아직 미정</option>
+          <option value="Under THB 100,000">10만 바트 미만</option>
+          <option value="THB 100,000-500,000">10만~50만 바트</option>
+          <option value="THB 500,000-1,000,000">50만~100만 바트</option>
+          <option value="Over THB 1,000,000">100만 바트 이상</option>
+        </select>
+      </label>
       <label class="lead-wide"><span>태국 시장에서 이루고 싶은 목표는 무엇인가요?</span><textarea name="message" rows="4" maxlength="3000"></textarea></label>
     </div>
     <input class="lead-hp" name="website" type="text" tabindex="-1" autocomplete="off" aria-hidden="true">

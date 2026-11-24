@@ -1013,6 +1013,35 @@
       <label><span>Company / Brand</span><input name="company" type="text" autocomplete="organization" maxlength="160"></label>
       <label><span>Email</span><input name="email" type="email" autocomplete="email" required maxlength="200"></label>
       <label><span>Phone / LINE ID</span><input name="phone" type="text" autocomplete="tel" maxlength="60"></label>
+      <fieldset class="lead-wide lead-choice">
+        <legend>Business type</legend>
+        <div class="lead-chips">
+          <label><input type="radio" name="business_type" value="Supplier" required><span>Supplier</span></label>
+          <label><input type="radio" name="business_type" value="Foreign brand"><span>Foreign brand</span></label>
+          <label><input type="radio" name="business_type" value="Restaurant chain"><span>Restaurant chain</span></label>
+          <label><input type="radio" name="business_type" value="Other"><span>Other</span></label>
+        </div>
+      </fieldset>
+      <fieldset class="lead-wide lead-choice">
+        <legend>Services you're interested in <small>Choose any</small></legend>
+        <div class="lead-chips">
+          <label><input type="checkbox" name="services" value="Exhibit & Meet"><span>Exhibit &amp; Meet</span></label>
+          <label><input type="checkbox" name="services" value="Co-host Seminars"><span>Co-host Seminars</span></label>
+          <label><input type="checkbox" name="services" value="Brand Storytelling"><span>Brand Storytelling</span></label>
+          <label><input type="checkbox" name="services" value="Market Testing"><span>Market Testing</span></label>
+          <label><input type="checkbox" name="services" value="Partner Matching"><span>Partner Matching</span></label>
+          <label><input type="checkbox" name="services" value="Team Training"><span>Team Training</span></label>
+        </div>
+      </fieldset>
+      <label class="lead-wide"><span>Budget (optional)</span>
+        <select name="budget">
+          <option value="">Prefer not to say yet</option>
+          <option value="Under THB 100,000">Under ฿100,000</option>
+          <option value="THB 100,000-500,000">฿100,000–500,000</option>
+          <option value="THB 500,000-1,000,000">฿500,000–1,000,000</option>
+          <option value="Over THB 1,000,000">Over ฿1,000,000</option>
+        </select>
+      </label>
       <label class="lead-wide"><span>What do you want to achieve in Thailand?</span><textarea name="message" rows="4" maxlength="3000"></textarea></label>
     </div>
     <input class="lead-hp" name="website" type="text" tabindex="-1" autocomplete="off" aria-hidden="true">
