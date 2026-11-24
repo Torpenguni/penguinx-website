@@ -2773,3 +2773,18 @@ html[lang^="th"] .bl-cat,html[lang^="zh"] .bl-cat,html[lang^="ja"] .bl-cat,html[
 /* หน้าโปรไฟล์ Tor: รายการบรรทัดชิดขึ้น */
 .prof-body ul{gap:2px;margin:16px 0 16px 24px}
 .prof-body li{line-height:1.55}
+/* แผ่นโลโก้: ลดความสดของสีลง ไม่ให้โดดเกินไป */
+.prof-body .speak-logos img{filter:saturate(.55) contrast(.92)}
+/* แผ่นโลโก้: ตัดกรอบขาวรอบนอกออก ให้ตัวรูปเป็นการ์ดเอง */
+.prof-body .speak-logos{background:none;padding:0;border-radius:0}
+.prof-body .speak-logos img{border-radius:12px}
+/* ระยะห่างรูปกับจุดยืน: ตัด margin ของรูป (จาก .article-body img) และลดช่องว่างตอนเรียงซ้อน */
+.prof-body .prof-photo{margin:0}
+.prof-body .prof-stance{margin:0}
+@media (max-width:900px){.prof-body .prof-top{gap:16px}}
+/* หน้าโปรไฟล์ Tor: ปุ่มชวนติดต่อท้ายหน้า */
+.prof-body .prof-cta{margin:36px 0 8px;padding:24px 26px;border:1px solid var(--line);border-radius:12px;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:14px 24px}
+.prof-body .prof-cta p{margin:0;font-size:17px;line-height:1.5}
+.prof-body .prof-cta-btn{display:inline-block;background:var(--accent);color:#0b0b0b;padding:11px 22px;border-radius:100px;font-weight:600;font-size:15px;text-decoration:none;white-space:nowrap}
+.prof-body .prof-cta-btn:hover{background:var(--accent-2)}
+.prof-body .speak-logos picture{display:block}
