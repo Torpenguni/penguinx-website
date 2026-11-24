@@ -2534,6 +2534,12 @@ html[lang^="th"] .book-cat,html[lang^="zh"] .book-cat,html[lang^="ja"] .book-cat
 @media (min-width:621px) and (max-width:1050px){
   .why .book-row{grid-template-columns:repeat(4,var(--book-w))}
 }
+/* รางวัล B2S: 2 บรรทัด (ชื่อรางวัล / ชื่อสาขา) ไม่ตัดคำ */
+.why .book-award{gap:6px;white-space:nowrap;width:max-content;margin-top:10px}
+.why .book-award img{height:28px}
+.why .book-award b,.why .book-award-name{font-size:11px;line-height:1.3}
+/* ลดช่องว่างระหว่างส่วนหนังสือกับ Community (เดิม 48+60px) */
+@media (min-width:621px){.why{padding-bottom:16px}.community{padding-top:40px}}
 .why .why-note{max-width:64ch;line-height:1.6}
 html[lang^="th"] .why .why-note{max-width:none}
 /* ลดช่องว่างระหว่างส่วนหนังสือกับ Community */
