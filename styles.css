@@ -2680,3 +2680,7 @@ html[lang="ko"] :is(.label,.section-num,.clients-label,.shorts-num,.cta-eyebrow,
 
 /* หน้าไทยใช้หัวข้อภาษาอังกฤษ (h1/h2 ติด lang="en") ให้ขนาดหัวข้อ hero เท่าหน้าอังกฤษ */
 .hero-title[lang="en"]{font-size:clamp(2rem,4.2vw,4.4rem)}
+
+/* บริการ: ป้ายเล็กบอกว่าเหมาะกับใคร + หลักฐานจาก ecosystem (ต.ค.–พ.ย. 2026 เปลี่ยนจากรายการแบบเอเจนซี่เป็น 6 บริการตามสิ่งที่ลูกค้าได้) */
+.s-tag{margin-top:14px;font-size:12.5px;line-height:1.45;font-weight:600;letter-spacing:.02em;color:rgba(0,0,0,.72);transition:color .4s ease;position:relative}
+.service-card:hover .s-tag{color:var(--accent)}
