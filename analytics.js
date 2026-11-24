@@ -92,6 +92,7 @@
     en: ['We use cookies to measure site performance and the results of our ads. You can accept or decline.', 'Accept', 'Decline'],
     th: ['เว็บไซต์นี้ใช้คุกกี้เพื่อวัดผลการใช้งานเว็บไซต์และประสิทธิภาพโฆษณา คุณเลือกยอมรับหรือปฏิเสธได้', 'ยอมรับ', 'ปฏิเสธ'],
     zh: ['本网站使用 Cookie 衡量网站表现和广告效果。你可以选择接受或拒绝。', '接受', '拒绝'],
+    'zh-Hant': ['本網站使用 Cookie 衡量網站表現與廣告成效。你可以選擇接受或拒絕。', '接受', '拒絕'],
     ja: ['当サイトはサイトの利用状況と広告効果の測定に Cookie を使用します。同意または拒否を選択できます。', '同意する', '拒否する'],
     ko: ['이 웹사이트는 사이트 이용 현황과 광고 효과를 측정하기 위해 쿠키를 사용합니다. 동의 여부를 선택하실 수 있습니다.', '동의', '거부']
   };
@@ -102,7 +103,7 @@
   }
   function showBanner() {
     if (document.getElementById('pxConsent')) return;
-    var t = TXT[(lang().split('-')[0])] || TXT.en;
+    var t = TXT[lang()] || TXT[(lang().split('-')[0])] || TXT.en;
     var css = document.createElement('style');
     css.textContent =
       '#pxConsent{position:fixed;left:16px;right:16px;bottom:16px;z-index:9999;max-width:720px;margin:0 auto;' +

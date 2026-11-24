@@ -19,13 +19,16 @@
     en: { home: '/',    msg: 'This page is available in English.', cta: 'View in English' },
     th: { home: '/th/', msg: 'หน้านี้มีภาษาไทย',                    cta: 'อ่านภาษาไทย' },
     zh: { home: '/zh/', msg: '本页面有中文版。',                      cta: '查看中文版' },
+    'zh-hant': { home: '/zh-hant/', msg: '本頁面有繁體中文版。',       cta: '查看繁體中文版' },
     ja: { home: '/ja/', msg: '日本語のページがあります。',              cta: '日本語で見る' },
     ko: { home: '/ko/', msg: '한국어 페이지가 있습니다.',              cta: '한국어로 보기' }
   };
-  var CLOSE = { en: 'Close', th: 'ปิด', zh: '关闭', ja: '閉じる', ko: '닫기' };
+  var CLOSE = { en: 'Close', th: 'ปิด', zh: '关闭', 'zh-hant': '關閉', ja: '閉じる', ko: '닫기' };
 
   function norm(tag) {
     tag = String(tag || '').toLowerCase();
+    // จีนตัวเต็ม (ไต้หวัน ฮ่องกง มาเก๊า) แยกจากจีนตัวย่อ
+    if (/^zh-(hant|tw|hk|mo)/.test(tag)) return 'zh-hant';
     var base = tag.split('-')[0];
     return LANGS[base] ? base : null;
   }
