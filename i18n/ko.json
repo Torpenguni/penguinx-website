@@ -335,8 +335,8 @@
   "<h1 class=\"vp-title\"> <span class=\"light\">How PenguinX</span><br> teaches the <span class=\"accent\">F&B playbook</span> the industry didn't have. </h1>": "<h1 class=\"vp-title\">\n      <span class=\"light\">PenguinX는</span><br>\n      업계에 없던<br>\n      <span class=\"accent\">F&B 플레이북</span>을 가르칩니다.\n    </h1>",
   "<h1 class=\"vp-title\"> <span class=\"light\">How PenguinX</span><br> turns the ecosystem into <span class=\"accent\">commercial outcomes</span>. </h1>": "<h1 class=\"vp-title\">\n      <span class=\"light\">PenguinX는</span><br>\n      생태계를<br>\n      <span class=\"accent\">실제 사업 성과</span>로 바꿉니다.\n    </h1>",
   "<div class=\"pg-item-title\">Business Development</div>": "<div class=\"pg-item-title\">사업 개발</div>",
-  "<p class=\"hero-desc\">\n      <strong>Penguin<span class=\"logo-x\">X</span></strong> is Thailand's restaurant business ecosystem. We connect restaurant owners with the F&B brands and suppliers who help them grow — through media, events, education, and community.\n    </p>": "<p class=\"hero-desc\">\n      <strong>Penguin<span class=\"logo-x\">X</span></strong>는 태국 외식 비즈니스 생태계입니다. 미디어, 이벤트, 교육, 커뮤니티를 통해 식당 대표와 그 성장을 돕는 F&B 브랜드·공급업체를 연결합니다.\n    </p>",
-  "<div class=\"hero-eyebrow mono\">\n      <span class=\"live\"></span>\n      <span>Building Thailand's F&B Ecosystem</span>\n      <span class=\"hero-locale\"><span>Bangkok, Thailand</span> <time id=\"bkkTime\">GMT+7</time></span>\n    </div>": "<div class=\"hero-eyebrow mono\">\n      <span class=\"live\"></span>\n      <span>태국 F&B 시장 진출의 첫걸음</span>\n      <span class=\"hero-locale\"><span>태국 방콕</span> <time id=\"bkkTime\">GMT+7</time></span>\n    </div>"
+  "<p class=\"hero-desc\">\n      <strong>Penguin<span class=\"logo-x\">X</span></strong> connects restaurant owners with the F&B brands and suppliers who help them grow — through media, events, education, and community.\n    </p>": "<p class=\"hero-desc\">\n      <strong>Penguin<span class=\"logo-x\">X</span></strong>는 태국 외식 비즈니스 생태계입니다. 미디어, 이벤트, 교육, 커뮤니티를 통해 식당 대표와 그 성장을 돕는 F&B 브랜드·공급업체를 연결합니다.\n    </p>",
+  "<div class=\"hero-eyebrow mono\">\n      <span class=\"live\"></span>\n      <span class=\"hero-id\">Thailand's Restaurant Business Ecosystem</span>\n      <span class=\"hero-locale\"><span>Bangkok, Thailand</span> <time id=\"bkkTime\">GMT+7</time></span>\n    </div>": "<div class=\"hero-eyebrow mono\">\n      <span class=\"live\"></span>\n      <span class=\"hero-id\">태국 F&B 시장 진출의 첫걸음</span>\n      <span class=\"hero-locale\"><span>태국 방콕</span> <time id=\"bkkTime\">GMT+7</time></span>\n    </div>"
  },
  "_js": {
   "viewsFormat": "{n}회 시청",
@@ -355,5 +355,7 @@
    "ราคาวัตถุดิบขึ้น ร้านต้องขึ้นราคามั้ย": "식재료값이 오르면 가격도 올려야 할까",
    "เจ้าของร้านควรเข้าครัวเองมั้ย": "사장이 직접 주방에 들어가야 할까"
   }
- }
+ },
+ "Thailand's Restaurant Business Ecosystem": "태국 F&B 시장 진출의 첫걸음",
+ "connects restaurant owners with the F&B brands and suppliers who help them grow — through media, events, education, and community.": "는 태국 외식 비즈니스 생태계입니다. 미디어, 이벤트, 교육, 커뮤니티를 통해 식당 대표와 그 성장을 돕는 F&B 브랜드·공급업체를 연결합니다."
 }

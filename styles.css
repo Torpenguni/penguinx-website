@@ -2670,3 +2670,10 @@ html[lang="ko"] :is(.label,.section-num,.clients-label,.shorts-num,.cta-eyebrow,
 .evd-body strong{color:var(--ink)}
 .evd-body a{color:inherit;text-decoration:underline;text-underline-offset:3px}
 @media (max-width:760px){.evd-body{padding:4px 20px 0;margin-left:0}}
+
+/* บรรทัดบอกตัวตนเหนือหัวข้อ hero — คนที่ไม่รู้จักเราต้องรู้ภายใน 3–5 วินาทีว่าเราทำธุรกิจร้านอาหาร
+   สโลแกนยังเป็นตัวใหญ่สุด บรรทัดนี้แค่ต้องอ่านออกชัด (เดิม 11px สีเทา) */
+.hero-eyebrow .hero-id{font-size:clamp(15px,1.15vw,18px);font-weight:600;color:#fff;letter-spacing:0.06em}
+/* ไทย/จีน/ญี่ปุ่น/เกาหลี: ตัวที่ขนาดเท่ากันดูเล็กกว่าละติน และการถ่างตัวอักษรทำให้อ่านยาก */
+:lang(th) .hero-eyebrow .hero-id,:lang(zh) .hero-eyebrow .hero-id,
+:lang(ja) .hero-eyebrow .hero-id,:lang(ko) .hero-eyebrow .hero-id{font-size:clamp(17px,1.3vw,20px);letter-spacing:0;text-transform:none}
