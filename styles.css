@@ -2743,3 +2743,33 @@ html[lang^="th"] .bl-cat,html[lang^="zh"] .bl-cat,html[lang^="ja"] .bl-cat,html[
 .bl-award b{font-weight:600;color:var(--ink)}
 .prof-body .book-list-buy{display:inline-block;margin-top:8px;font-size:14px;font-weight:500;text-decoration:none;border-bottom:1px solid rgba(219,169,58,.45);padding-bottom:2px}
 .prof-body .book-list-buy::after{content:' →'}
+
+/* หน้าโปรไฟล์ Tor: โลโก้องค์กรที่เคยบรรยาย/อบรม บนแผ่นสีขาว แทนรายชื่อยาว */
+.prof-body .speak-logos{background:#fff;border-radius:12px;padding:22px 26px;margin:20px 0 8px}
+.prof-body .speak-logos img{margin:0;border:0;border-radius:0;width:100%;height:auto}
+@media (max-width:620px){.prof-body .speak-logos{padding:14px 12px;border-radius:10px}}
+
+/* หน้าโปรไฟล์ Tor: อีเมลติดต่อบรรทัดเดียวใต้รูป คอลัมน์ขวาไว้ใส่จุดยืน (prof-stance) */
+.prof-body .prof-contact{margin:12px 0 0;font-size:15px;color:var(--ink-mute)}
+.prof-body .prof-contact span::after{content:':';margin-right:8px}
+.prof-body .prof-stance{margin:0;padding:4px 0 4px 24px;border-left:2px solid var(--accent);font-style:normal}
+.prof-body .prof-stance-label{display:block;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--accent);margin-bottom:14px}
+.prof-body .prof-stance p{margin:0 0 14px;font-size:19px;line-height:1.6;color:var(--ink)}
+.prof-body .prof-stance p:last-child{margin-bottom:0}
+@media (max-width:620px){.prof-body .prof-stance{margin-top:20px}.prof-body .prof-stance p{font-size:17px}}
+/* จุดยืน: แบบคำพูด มีเครื่องหมายคำพูด ตัวเอียง ไม่มีเส้นข้าง */
+.prof-body .prof-stance{border-left:0;padding:4px 0}
+.prof-body .prof-stance p{font-style:italic}
+.prof-body .prof-stance p:first-of-type::before{content:'\201C'}
+.prof-body .prof-stance p:last-of-type::after{content:'\201D'}
+/* อีเมลติดต่อย้ายขึ้นไปต่อท้ายย่อหน้าแนะนำตัว (ส่วนหัวหน้า) */
+.prof-hero .prof-contact{margin:14px 0 0;font-size:15px;color:var(--ink-mute)}
+.prof-hero .prof-contact span::after{content:':';margin-right:8px}
+.prof-hero .prof-contact a{color:var(--accent)}
+/* หน้าโปรไฟล์ Tor: ไม่มีเส้นคั่นใต้ส่วนหัว และดันรูปขึ้นชิดย่อหน้าแนะนำตัว */
+.article-hero.prof-hero{border-bottom:0;padding-bottom:12px}
+.prof-body.article-body{padding-top:24px}
+@media (max-width:1100px){.prof-body.article-body{padding-top:16px}}
+/* หน้าโปรไฟล์ Tor: รายการบรรทัดชิดขึ้น */
+.prof-body ul{gap:2px;margin:16px 0 16px 24px}
+.prof-body li{line-height:1.55}
