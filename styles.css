@@ -2730,3 +2730,16 @@ html[lang="ko"] :is(.label,.section-num,.clients-label,.shorts-num,.cta-eyebrow,
 @media (max-width:1100px){
   .founder-linkedin,.founder-profile + .founder-linkedin{top:24px;right:22px}
 }
+
+/* หน้าโปรไฟล์ Tor: รายชื่อหนังสือแบบไม่มีรูปปก (ปกโชว์บนหน้าแรกแล้ว) */
+.prof-body .book-list{list-style:none;margin:24px 0 8px;padding:0;gap:0}
+.prof-body .book-list li{display:flex;flex-wrap:wrap;align-items:center;gap:6px 12px;padding:12px 0;border-bottom:1px solid var(--line);line-height:1.4}
+.prof-body .book-list li:first-child{border-top:1px solid var(--line)}
+.bl-title{font-size:16px;font-weight:500;color:var(--ink)}
+.bl-cat{font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--accent)}
+html[lang^="th"] .bl-cat,html[lang^="zh"] .bl-cat,html[lang^="ja"] .bl-cat,html[lang="ko"] .bl-cat{letter-spacing:.02em;font-size:12px}
+.bl-badge{font-size:11px;font-weight:700;color:#fff;background:#e3262b;padding:2px 9px;border-radius:100px}
+.bl-award{font-size:12px;color:var(--ink-mute)}
+.bl-award b{font-weight:600;color:var(--ink)}
+.prof-body .book-list-buy{display:inline-block;margin-top:8px;font-size:14px;font-weight:500;text-decoration:none;border-bottom:1px solid rgba(219,169,58,.45);padding-bottom:2px}
+.prof-body .book-list-buy::after{content:' →'}
