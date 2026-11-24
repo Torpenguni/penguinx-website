@@ -2522,6 +2522,18 @@ html[lang^="th"] .book-cat,html[lang^="zh"] .book-cat,html[lang^="ja"] .book-cat
 @media (max-width:620px){.book-award img{height:34px}.book-award{gap:8px}}
 /* ปกหนังสือเล็กลง 20% ให้มีที่หายใจระหว่างเล่ม (มือถือคงเดิม) */
 @media (min-width:621px){.book-cover{width:80%}}
+/* หน้าแรก: ปกหนังสือขนาดคงที่ ไม่ขยายตามจอ (เดิมจอเล็กลงแล้วตัดเหลือ 3 คอลัมน์ ปกเลยใหญ่ขึ้น)
+   จอ 1920 เล็กลง ~30% จากเดิม, ชิดซ้าย เหลือพื้นที่ว่างด้านขวา */
+@media (min-width:621px){
+  .why .book-row{--book-w:clamp(112px,8.6vw,165px);display:grid;grid-template-columns:repeat(6,var(--book-w));justify-content:start;gap:36px 28px}
+  .why .book-cover{width:100%}
+  .why .book-title{font-size:15px}
+  .why .book-award{gap:8px}
+  .why .book-award img{height:34px}
+}
+@media (min-width:621px) and (max-width:900px){
+  .why .book-row{grid-template-columns:repeat(3,var(--book-w))}
+}
 .why .why-note{max-width:64ch;line-height:1.6}
 html[lang^="th"] .why .why-note{max-width:none}
 /* ลดช่องว่างระหว่างส่วนหนังสือกับ Community */
