@@ -2702,3 +2702,14 @@ html[lang="ko"] :is(.label,.section-num,.clients-label,.shorts-num,.cta-eyebrow,
 /* บริการ: ป้ายเล็กบอกว่าเหมาะกับใคร + หลักฐานจาก ecosystem (ต.ค.–พ.ย. 2026 เปลี่ยนจากรายการแบบเอเจนซี่เป็น 6 บริการตามสิ่งที่ลูกค้าได้) */
 .s-tag{margin-top:14px;font-size:12.5px;line-height:1.45;font-weight:600;letter-spacing:.02em;color:rgba(0,0,0,.72);transition:color .4s ease;position:relative}
 .service-card:hover .s-tag{color:var(--accent)}
+
+/* ปุ่ม "ซื้อหนังสือ" บนปก: ชี้เมาส์แล้วขึ้น กดไป LINE SHOPPING (@torpenguin)
+   จอที่ไม่มีเมาส์ (มือถือ/แท็บเล็ต) โชว์ปุ่มไว้ตลอด */
+.book-buy{position:absolute;inset:0;z-index:2;display:flex;align-items:flex-end;justify-content:center;padding-bottom:10%;border-radius:3px;text-decoration:none;background:linear-gradient(to top,rgba(0,0,0,.75),rgba(0,0,0,0) 60%);opacity:0;transition:opacity .25s ease}
+.book-buy span{padding:6px 14px;border-radius:100px;background:var(--accent);color:#0b0b0b;font-size:12px;font-weight:700;white-space:nowrap;box-shadow:0 6px 18px rgba(0,0,0,.45)}
+.book:hover .book-buy,.book-buy:focus-visible{opacity:1}
+.book-buy:hover span{background:var(--accent-2)}
+@media (hover:none){
+  .book-buy{opacity:1;background:none;padding-bottom:8px}
+  .book-buy span{padding:4px 10px;font-size:11px}
+}
