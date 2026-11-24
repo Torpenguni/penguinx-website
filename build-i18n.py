@@ -9,6 +9,7 @@
       python3 build-i18n.py index.html # เฉพาะหน้าที่ระบุ
 """
 import json, os, re, sys, glob, urllib.parse
+import html as html_lib
 
 LANGS = {
     # keepEnglish: เมนูบนสุดและป้ายที่ติด data-keep-en คงเป็นภาษาอังกฤษในหน้าไทย
@@ -29,7 +30,10 @@ LANGS = {
     'ko': {'code': 'ko', 'htmlLang': 'ko', 'ogLocale': 'ko_KR', 'label': '한국어',
            'only': ('index.html', 'about/tor/index.html', 'about/tor/', 'events.html',
                     'ecosystem/media.html', 'ecosystem/event.html',
-                    'ecosystem/education.html', 'ecosystem/solution.html')},
+                    'ecosystem/education.html', 'ecosystem/solution.html',
+                    # 6 หน้าบริการเป็นชั้นตัวตนบริษัท ต้องมีครบทุกภาษา (พ.ย. 2026)
+                    'services/exhibit-and-meet.html', 'services/co-host-seminars.html', 'services/brand-storytelling.html',
+                    'services/market-testing.html', 'services/partner-matching.html', 'services/team-training.html')},
     # จีนตัวเต็มสำหรับไต้หวันและฮ่องกง (ทั้งสองที่ใช้ Google เป็นหลัก)
     # ไม่มีไฟล์แปลของตัวเอง: สร้างจากคำแปลจีนตัวย่อ (fromLang) แล้วแปลงตัวอักษร
     # ด้วย OpenCC แบบ s2twp (ตัวเต็มไต้หวัน + ปรับศัพท์ เช่น 视频→影片 软件→軟體)
@@ -39,7 +43,9 @@ LANGS = {
                 'fromLang': 'zh', 'opencc': 's2twp', 'alsoHreflang': ('zh-TW', 'zh-HK'),
                 'only': ('index.html', 'about/tor/index.html', 'about/tor/',
                          'ecosystem/media.html', 'ecosystem/event.html',
-                         'ecosystem/education.html', 'ecosystem/solution.html')},
+                         'ecosystem/education.html', 'ecosystem/solution.html',
+                         'services/exhibit-and-meet.html', 'services/co-host-seminars.html', 'services/brand-storytelling.html',
+                         'services/market-testing.html', 'services/partner-matching.html', 'services/team-training.html')},
 }
 
 # ศัพท์ธุรกิจแบบจีนแผ่นดินใหญ่ที่ OpenCC ไม่เปลี่ยน แต่คนไต้หวันใช้อีกคำ
@@ -471,6 +477,27 @@ def strip_injected(html):
     html = re.sub(r'\s*<script>window\.__PX_I18N__=.*?</script>', '', html, flags=re.S)
     return html
 
+def sync_faq_schema(html):
+    """สร้าง FAQPage JSON-LD จากคำถาม-คำตอบที่มองเห็นบนหน้า (<details class="faq-item">)
+
+    Google กำหนดให้ข้อความใน FAQ schema ตรงกับที่ผู้อ่านเห็นบนหน้า
+    ตัวแปลรายคำแปล JSON-LD ไม่ได้ (ทั้งก้อนเป็น text node เดียว) ถ้าไม่สร้างใหม่
+    หน้าไทย/จีน/ญี่ปุ่นจะมี schema ภาษาอังกฤษไม่ตรงกับหน้า จึงอ่านจาก HTML ที่แปลแล้วทุกครั้ง
+    ใช้กับหน้าที่มี <script type="application/ld+json" id="faq-schema"> เท่านั้น"""
+    slot = re.compile(r'<script type="application/ld\+json" id="faq-schema">.*?</script>', re.S)
+    if not slot.search(html):
+        return html
+    def clean(fragment):
+        text = html_lib.unescape(re.sub(r'<[^>]+>', '', fragment))
+        return re.sub(r'\s+', ' ', text).strip()
+    qa = re.findall(r'<details class="faq-item">\s*<summary>(.*?)</summary>\s*<div class="faq-a">(.*?)</div>\s*</details>',
+                    html, re.S)
+    data = {'@context': 'https://schema.org', '@type': 'FAQPage', 'mainEntity': [
+        {'@type': 'Question', 'name': clean(q), 'acceptedAnswer': {'@type': 'Answer', 'text': clean(a)}}
+        for q, a in qa]}
+    body = json.dumps(data, ensure_ascii=False).replace('</', '<\\/')
+    return slot.sub(lambda m: f'<script type="application/ld+json" id="faq-schema">{body}</script>', html, count=1)
+
 def build(src, code):
     cfg = LANGS[code]
     tcode = cfg.get('fromLang', code)     # จีนตัวเต็มใช้คำแปลของจีนตัวย่อ
@@ -500,6 +527,7 @@ def build(src, code):
         html = to_traditional(html, cfg['opencc'])
         for cn, tw in TW_TERMS:
             html = html.replace(cn, tw)
+    html = sync_faq_schema(html)
     html = re.sub(r'<html[^>]*>', f'<html lang="{cfg["htmlLang"]}">', html, count=1)
     html = html.replace('<meta property="og:locale" content="en_US">',
                         f'<meta property="og:locale" content="{cfg["ogLocale"]}">')
@@ -530,6 +558,7 @@ def add_switcher_to_english(src):
     html = re.sub(r'(<ul class="nav-links">.*?</ul>)', r'\1\n  ' + switcher(rel, 'en'),
                   html, count=1, flags=re.S)
     html = html.replace('<link rel="canonical"', hreflangs(rel) + '\n<link rel="canonical"', 1)
+    html = sync_faq_schema(html)
     open(src, 'w', encoding='utf-8').write(html)
 
 if __name__ == '__main__':
