@@ -2721,3 +2721,12 @@ html[lang="ko"] :is(.label,.section-num,.clients-label,.shorts-num,.cta-eyebrow,
   .book-buy{opacity:1;background:none;padding-bottom:8px}
   .book-buy span{padding:4px 10px;font-size:11px}
 }
+
+/* ปุ่ม LinkedIn ย้ายไปมุมขวาบนของการ์ดผู้ก่อตั้ง (เดิมอยู่ล่างสุด) การ์ดจะเตี้ยลง
+   หัวการ์ดเว้นที่ขวาไว้ให้ปุ่ม ชื่อยาวจะได้ไม่ทับ */
+.founder-body{position:relative}
+.founder-linkedin,.founder-profile + .founder-linkedin{position:absolute;top:28px;right:28px;margin:0;padding:7px 12px}
+.founder-head{padding-right:112px}
+@media (max-width:1100px){
+  .founder-linkedin,.founder-profile + .founder-linkedin{top:24px;right:22px}
+}
