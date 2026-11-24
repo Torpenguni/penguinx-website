@@ -3,50 +3,66 @@
         xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://www.penguinx.co/about/tor/</loc>
-    <lastmod>2026-11-24</lastmod>
+    <lastmod>2026-11-25</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.penguinx.co/about/tor/"/>
     <xhtml:link rel="alternate" hreflang="th" href="https://www.penguinx.co/th/about/tor/"/>
     <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://www.penguinx.co/zh/about/tor/"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://www.penguinx.co/zh-hant/about/tor/"/>
     <xhtml:link rel="alternate" hreflang="ja" href="https://www.penguinx.co/ja/about/tor/"/>
     <xhtml:link rel="alternate" hreflang="ko" href="https://www.penguinx.co/ko/about/tor/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.penguinx.co/about/tor/"/>
   </url>
   <url>
     <loc>https://www.penguinx.co/th/about/tor/</loc>
-    <lastmod>2026-11-24</lastmod>
+    <lastmod>2026-11-25</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.penguinx.co/about/tor/"/>
     <xhtml:link rel="alternate" hreflang="th" href="https://www.penguinx.co/th/about/tor/"/>
     <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://www.penguinx.co/zh/about/tor/"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://www.penguinx.co/zh-hant/about/tor/"/>
     <xhtml:link rel="alternate" hreflang="ja" href="https://www.penguinx.co/ja/about/tor/"/>
     <xhtml:link rel="alternate" hreflang="ko" href="https://www.penguinx.co/ko/about/tor/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.penguinx.co/about/tor/"/>
   </url>
   <url>
     <loc>https://www.penguinx.co/zh/about/tor/</loc>
-    <lastmod>2026-11-24</lastmod>
+    <lastmod>2026-11-25</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.penguinx.co/about/tor/"/>
     <xhtml:link rel="alternate" hreflang="th" href="https://www.penguinx.co/th/about/tor/"/>
     <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://www.penguinx.co/zh/about/tor/"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://www.penguinx.co/zh-hant/about/tor/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://www.penguinx.co/ja/about/tor/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://www.penguinx.co/ko/about/tor/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.penguinx.co/about/tor/"/>
+  </url>
+  <url>
+    <loc>https://www.penguinx.co/zh-hant/about/tor/</loc>
+    <lastmod>2026-11-25</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.penguinx.co/about/tor/"/>
+    <xhtml:link rel="alternate" hreflang="th" href="https://www.penguinx.co/th/about/tor/"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://www.penguinx.co/zh/about/tor/"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://www.penguinx.co/zh-hant/about/tor/"/>
     <xhtml:link rel="alternate" hreflang="ja" href="https://www.penguinx.co/ja/about/tor/"/>
     <xhtml:link rel="alternate" hreflang="ko" href="https://www.penguinx.co/ko/about/tor/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.penguinx.co/about/tor/"/>
   </url>
   <url>
     <loc>https://www.penguinx.co/ja/about/tor/</loc>
-    <lastmod>2026-11-24</lastmod>
+    <lastmod>2026-11-25</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.penguinx.co/about/tor/"/>
     <xhtml:link rel="alternate" hreflang="th" href="https://www.penguinx.co/th/about/tor/"/>
     <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://www.penguinx.co/zh/about/tor/"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://www.penguinx.co/zh-hant/about/tor/"/>
     <xhtml:link rel="alternate" hreflang="ja" href="https://www.penguinx.co/ja/about/tor/"/>
     <xhtml:link rel="alternate" hreflang="ko" href="https://www.penguinx.co/ko/about/tor/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.penguinx.co/about/tor/"/>
   </url>
   <url>
     <loc>https://www.penguinx.co/ko/about/tor/</loc>
-    <lastmod>2026-11-24</lastmod>
+    <lastmod>2026-11-25</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.penguinx.co/about/tor/"/>
     <xhtml:link rel="alternate" hreflang="th" href="https://www.penguinx.co/th/about/tor/"/>
     <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://www.penguinx.co/zh/about/tor/"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://www.penguinx.co/zh-hant/about/tor/"/>
     <xhtml:link rel="alternate" hreflang="ja" href="https://www.penguinx.co/ja/about/tor/"/>
     <xhtml:link rel="alternate" hreflang="ko" href="https://www.penguinx.co/ko/about/tor/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.penguinx.co/about/tor/"/>
@@ -57,6 +73,7 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://www.penguinx.co/ecosystem/education.html"/>
     <xhtml:link rel="alternate" hreflang="th" href="https://www.penguinx.co/th/ecosystem/education.html"/>
     <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://www.penguinx.co/zh/ecosystem/education.html"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://www.penguinx.co/zh-hant/ecosystem/education.html"/>
     <xhtml:link rel="alternate" hreflang="ja" href="https://www.penguinx.co/ja/ecosystem/education.html"/>
     <xhtml:link rel="alternate" hreflang="ko" href="https://www.penguinx.co/ko/ecosystem/education.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.penguinx.co/ecosystem/education.html"/>
@@ -67,6 +84,7 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://www.penguinx.co/ecosystem/education.html"/>
     <xhtml:link rel="alternate" hreflang="th" href="https://www.penguinx.co/th/ecosystem/education.html"/>
     <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://www.penguinx.co/zh/ecosystem/education.html"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://www.penguinx.co/zh-hant/ecosystem/education.html"/>
     <xhtml:link rel="alternate" hreflang="ja" href="https://www.penguinx.co/ja/ecosystem/education.html"/>
     <xhtml:link rel="alternate" hreflang="ko" href="https://www.penguinx.co/ko/ecosystem/education.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.penguinx.co/ecosystem/education.html"/>
@@ -77,6 +95,18 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://www.penguinx.co/ecosystem/education.html"/>
     <xhtml:link rel="alternate" hreflang="th" href="https://www.penguinx.co/th/ecosystem/education.html"/>
     <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://www.penguinx.co/zh/ecosystem/education.html"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://www.penguinx.co/zh-hant/ecosystem/education.html"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://www.penguinx.co/ja/ecosystem/education.html"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://www.penguinx.co/ko/ecosystem/education.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.penguinx.co/ecosystem/education.html"/>
+  </url>
+  <url>
+    <loc>https://www.penguinx.co/zh-hant/ecosystem/education.html</loc>
+    <lastmod>2026-11-24</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.penguinx.co/ecosystem/education.html"/>
+    <xhtml:link rel="alternate" hreflang="th" href="https://www.penguinx.co/th/ecosystem/education.html"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://www.penguinx.co/zh/ecosystem/education.html"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://www.penguinx.co/zh-hant/ecosystem/education.html"/>
     <xhtml:link rel="alternate" hreflang="ja" href="https://www.penguinx.co/ja/ecosystem/education.html"/>
     <xhtml:link rel="alternate" hreflang="ko" href="https://www.penguinx.co/ko/ecosystem/education.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.penguinx.co/ecosystem/education.html"/>
@@ -87,6 +117,7 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://www.penguinx.co/ecosystem/education.html"/>
     <xhtml:link rel="alternate" hreflang="th" href="https://www.penguinx.co/th/ecosystem/education.html"/>
     <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://www.penguinx.co/zh/ecosystem/education.html"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://www.penguinx.co/zh-hant/ecosystem/education.html"/>
     <xhtml:link rel="alternate" hreflang="ja" href="https://www.penguinx.co/ja/ecosystem/education.html"/>
     <xhtml:link rel="alternate" hreflang="ko" href="https://www.penguinx.co/ko/ecosystem/education.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.penguinx.co/ecosystem/education.html"/>
@@ -97,6 +128,7 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://www.penguinx.co/ecosystem/education.html"/>
     <xhtml:link rel="alternate" hreflang="th" href="https://www.penguinx.co/th/ecosystem/education.html"/>
     <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://www.penguinx.co/zh/ecosystem/education.html"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://www.penguinx.co/zh-hant/ecosystem/education.html"/>
     <xhtml:link rel="alternate" hreflang="ja" href="https://www.penguinx.co/ja/ecosystem/education.html"/>
     <xhtml:link rel="alternate" hreflang="ko" href="https://www.penguinx.co/ko/ecosystem/education.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.penguinx.co/ecosystem/education.html"/>
@@ -107,6 +139,7 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://www.penguinx.co/ecosystem/event.html"/>
     <xhtml:link rel="alternate" hreflang="th" href="https://www.penguinx.co/th/ecosystem/event.html"/>
     <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://www.penguinx.co/zh/ecosystem/event.html"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://www.penguinx.co/zh-hant/ecosystem/event.html"/>
     <xhtml:link rel="alternate" hreflang="ja" href="https://www.penguinx.co/ja/ecosystem/event.html"/>
     <xhtml:link rel="alternate" hreflang="ko" href="https://www.penguinx.co/ko/ecosystem/event.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.penguinx.co/ecosystem/event.html"/>
@@ -117,6 +150,7 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://www.penguinx.co/ecosystem/event.html"/>
     <xhtml:link rel="alternate" hreflang="th" href="https://www.penguinx.co/th/ecosystem/event.html"/>
     <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://www.penguinx.co/zh/ecosystem/event.html"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://www.penguinx.co/zh-hant/ecosystem/event.html"/>
     <xhtml:link rel="alternate" hreflang="ja" href="https://www.penguinx.co/ja/ecosystem/event.html"/>
     <xhtml:link rel="alternate" hreflang="ko" href="https://www.penguinx.co/ko/ecosystem/event.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.penguinx.co/ecosystem/event.html"/>
@@ -127,6 +161,18 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://www.penguinx.co/ecosystem/event.html"/>
     <xhtml:link rel="alternate" hreflang="th" href="https://www.penguinx.co/th/ecosystem/event.html"/>
     <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://www.penguinx.co/zh/ecosystem/event.html"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://www.penguinx.co/zh-hant/ecosystem/event.html"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://www.penguinx.co/ja/ecosystem/event.html"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://www.penguinx.co/ko/ecosystem/event.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.penguinx.co/ecosystem/event.html"/>
+  </url>
+  <url>
+    <loc>https://www.penguinx.co/zh-hant/ecosystem/event.html</loc>
+    <lastmod>2026-11-24</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.penguinx.co/ecosystem/event.html"/>
+    <xhtml:link rel="alternate" hreflang="th" href="https://www.penguinx.co/th/ecosystem/event.html"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://www.penguinx.co/zh/ecosystem/event.html"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://www.penguinx.co/zh-hant/ecosystem/event.html"/>
     <xhtml:link rel="alternate" hreflang="ja" href="https://www.penguinx.co/ja/ecosystem/event.html"/>
     <xhtml:link rel="alternate" hreflang="ko" href="https://www.penguinx.co/ko/ecosystem/event.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.penguinx.co/ecosystem/event.html"/>
@@ -137,6 +183,7 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://www.penguinx.co/ecosystem/event.html"/>
     <xhtml:link rel="alternate" hreflang="th" href="https://www.penguinx.co/th/ecosystem/event.html"/>
     <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://www.penguinx.co/zh/ecosystem/event.html"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://www.penguinx.co/zh-hant/ecosystem/event.html"/>
     <xhtml:link rel="alternate" hreflang="ja" href="https://www.penguinx.co/ja/ecosystem/event.html"/>
     <xhtml:link rel="alternate" hreflang="ko" href="https://www.penguinx.co/ko/ecosystem/event.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.penguinx.co/ecosystem/event.html"/>
@@ -147,6 +194,7 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://www.penguinx.co/ecosystem/event.html"/>
     <xhtml:link rel="alternate" hreflang="th" href="https://www.penguinx.co/th/ecosystem/event.html"/>
     <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://www.penguinx.co/zh/ecosystem/event.html"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://www.penguinx.co/zh-hant/ecosystem/event.html"/>
     <xhtml:link rel="alternate" hreflang="ja" href="https://www.penguinx.co/ja/ecosystem/event.html"/>
     <xhtml:link rel="alternate" hreflang="ko" href="https://www.penguinx.co/ko/ecosystem/event.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.penguinx.co/ecosystem/event.html"/>
@@ -157,6 +205,7 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://www.penguinx.co/ecosystem/media.html"/>
     <xhtml:link rel="alternate" hreflang="th" href="https://www.penguinx.co/th/ecosystem/media.html"/>
     <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://www.penguinx.co/zh/ecosystem/media.html"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://www.penguinx.co/zh-hant/ecosystem/media.html"/>
     <xhtml:link rel="alternate" hreflang="ja" href="https://www.penguinx.co/ja/ecosystem/media.html"/>
     <xhtml:link rel="alternate" hreflang="ko" href="https://www.penguinx.co/ko/ecosystem/media.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.penguinx.co/ecosystem/media.html"/>
@@ -167,6 +216,7 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://www.penguinx.co/ecosystem/media.html"/>
     <xhtml:link rel="alternate" hreflang="th" href="https://www.penguinx.co/th/ecosystem/media.html"/>
     <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://www.penguinx.co/zh/ecosystem/media.html"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://www.penguinx.co/zh-hant/ecosystem/media.html"/>
     <xhtml:link rel="alternate" hreflang="ja" href="https://www.penguinx.co/ja/ecosystem/media.html"/>
     <xhtml:link rel="alternate" hreflang="ko" href="https://www.penguinx.co/ko/ecosystem/media.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.penguinx.co/ecosystem/media.html"/>
@@ -177,6 +227,18 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://www.penguinx.co/ecosystem/media.html"/>
     <xhtml:link rel="alternate" hreflang="th" href="https://www.penguinx.co/th/ecosystem/media.html"/>
     <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://www.penguinx.co/zh/ecosystem/media.html"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://www.penguinx.co/zh-hant/ecosystem/media.html"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://www.penguinx.co/ja/ecosystem/media.html"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://www.penguinx.co/ko/ecosystem/media.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.penguinx.co/ecosystem/media.html"/>
+  </url>
+  <url>
+    <loc>https://www.penguinx.co/zh-hant/ecosystem/media.html</loc>
+    <lastmod>2026-11-24</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.penguinx.co/ecosystem/media.html"/>
+    <xhtml:link rel="alternate" hreflang="th" href="https://www.penguinx.co/th/ecosystem/media.html"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://www.penguinx.co/zh/ecosystem/media.html"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://www.penguinx.co/zh-hant/ecosystem/media.html"/>
     <xhtml:link rel="alternate" hreflang="ja" href="https://www.penguinx.co/ja/ecosystem/media.html"/>
     <xhtml:link rel="alternate" hreflang="ko" href="https://www.penguinx.co/ko/ecosystem/media.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.penguinx.co/ecosystem/media.html"/>
@@ -187,6 +249,7 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://www.penguinx.co/ecosystem/media.html"/>
     <xhtml:link rel="alternate" hreflang="th" href="https://www.penguinx.co/th/ecosystem/media.html"/>
     <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://www.penguinx.co/zh/ecosystem/media.html"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://www.penguinx.co/zh-hant/ecosystem/media.html"/>
     <xhtml:link rel="alternate" hreflang="ja" href="https://www.penguinx.co/ja/ecosystem/media.html"/>
     <xhtml:link rel="alternate" hreflang="ko" href="https://www.penguinx.co/ko/ecosystem/media.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.penguinx.co/ecosystem/media.html"/>
@@ -197,6 +260,7 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://www.penguinx.co/ecosystem/media.html"/>
     <xhtml:link rel="alternate" hreflang="th" href="https://www.penguinx.co/th/ecosystem/media.html"/>
     <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://www.penguinx.co/zh/ecosystem/media.html"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://www.penguinx.co/zh-hant/ecosystem/media.html"/>
     <xhtml:link rel="alternate" hreflang="ja" href="https://www.penguinx.co/ja/ecosystem/media.html"/>
     <xhtml:link rel="alternate" hreflang="ko" href="https://www.penguinx.co/ko/ecosystem/media.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.penguinx.co/ecosystem/media.html"/>
@@ -207,6 +271,7 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://www.penguinx.co/ecosystem/solution.html"/>
     <xhtml:link rel="alternate" hreflang="th" href="https://www.penguinx.co/th/ecosystem/solution.html"/>
     <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://www.penguinx.co/zh/ecosystem/solution.html"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://www.penguinx.co/zh-hant/ecosystem/solution.html"/>
     <xhtml:link rel="alternate" hreflang="ja" href="https://www.penguinx.co/ja/ecosystem/solution.html"/>
     <xhtml:link rel="alternate" hreflang="ko" href="https://www.penguinx.co/ko/ecosystem/solution.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.penguinx.co/ecosystem/solution.html"/>
@@ -217,6 +282,7 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://www.penguinx.co/ecosystem/solution.html"/>
     <xhtml:link rel="alternate" hreflang="th" href="https://www.penguinx.co/th/ecosystem/solution.html"/>
     <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://www.penguinx.co/zh/ecosystem/solution.html"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://www.penguinx.co/zh-hant/ecosystem/solution.html"/>
     <xhtml:link rel="alternate" hreflang="ja" href="https://www.penguinx.co/ja/ecosystem/solution.html"/>
     <xhtml:link rel="alternate" hreflang="ko" href="https://www.penguinx.co/ko/ecosystem/solution.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.penguinx.co/ecosystem/solution.html"/>
@@ -227,6 +293,18 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://www.penguinx.co/ecosystem/solution.html"/>
     <xhtml:link rel="alternate" hreflang="th" href="https://www.penguinx.co/th/ecosystem/solution.html"/>
     <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://www.penguinx.co/zh/ecosystem/solution.html"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://www.penguinx.co/zh-hant/ecosystem/solution.html"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://www.penguinx.co/ja/ecosystem/solution.html"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://www.penguinx.co/ko/ecosystem/solution.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.penguinx.co/ecosystem/solution.html"/>
+  </url>
+  <url>
+    <loc>https://www.penguinx.co/zh-hant/ecosystem/solution.html</loc>
+    <lastmod>2026-11-24</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.penguinx.co/ecosystem/solution.html"/>
+    <xhtml:link rel="alternate" hreflang="th" href="https://www.penguinx.co/th/ecosystem/solution.html"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://www.penguinx.co/zh/ecosystem/solution.html"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://www.penguinx.co/zh-hant/ecosystem/solution.html"/>
     <xhtml:link rel="alternate" hreflang="ja" href="https://www.penguinx.co/ja/ecosystem/solution.html"/>
     <xhtml:link rel="alternate" hreflang="ko" href="https://www.penguinx.co/ko/ecosystem/solution.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.penguinx.co/ecosystem/solution.html"/>
@@ -237,6 +315,7 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://www.penguinx.co/ecosystem/solution.html"/>
     <xhtml:link rel="alternate" hreflang="th" href="https://www.penguinx.co/th/ecosystem/solution.html"/>
     <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://www.penguinx.co/zh/ecosystem/solution.html"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://www.penguinx.co/zh-hant/ecosystem/solution.html"/>
     <xhtml:link rel="alternate" hreflang="ja" href="https://www.penguinx.co/ja/ecosystem/solution.html"/>
     <xhtml:link rel="alternate" hreflang="ko" href="https://www.penguinx.co/ko/ecosystem/solution.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.penguinx.co/ecosystem/solution.html"/>
@@ -247,6 +326,7 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://www.penguinx.co/ecosystem/solution.html"/>
     <xhtml:link rel="alternate" hreflang="th" href="https://www.penguinx.co/th/ecosystem/solution.html"/>
     <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://www.penguinx.co/zh/ecosystem/solution.html"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://www.penguinx.co/zh-hant/ecosystem/solution.html"/>
     <xhtml:link rel="alternate" hreflang="ja" href="https://www.penguinx.co/ja/ecosystem/solution.html"/>
     <xhtml:link rel="alternate" hreflang="ko" href="https://www.penguinx.co/ko/ecosystem/solution.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.penguinx.co/ecosystem/solution.html"/>
@@ -487,6 +567,7 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://www.penguinx.co/"/>
     <xhtml:link rel="alternate" hreflang="th" href="https://www.penguinx.co/th/"/>
     <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://www.penguinx.co/zh/"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://www.penguinx.co/zh-hant/"/>
     <xhtml:link rel="alternate" hreflang="ja" href="https://www.penguinx.co/ja/"/>
     <xhtml:link rel="alternate" hreflang="ko" href="https://www.penguinx.co/ko/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.penguinx.co/"/>
@@ -497,6 +578,7 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://www.penguinx.co/"/>
     <xhtml:link rel="alternate" hreflang="th" href="https://www.penguinx.co/th/"/>
     <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://www.penguinx.co/zh/"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://www.penguinx.co/zh-hant/"/>
     <xhtml:link rel="alternate" hreflang="ja" href="https://www.penguinx.co/ja/"/>
     <xhtml:link rel="alternate" hreflang="ko" href="https://www.penguinx.co/ko/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.penguinx.co/"/>
@@ -507,6 +589,18 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://www.penguinx.co/"/>
     <xhtml:link rel="alternate" hreflang="th" href="https://www.penguinx.co/th/"/>
     <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://www.penguinx.co/zh/"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://www.penguinx.co/zh-hant/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://www.penguinx.co/ja/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://www.penguinx.co/ko/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.penguinx.co/"/>
+  </url>
+  <url>
+    <loc>https://www.penguinx.co/zh-hant/</loc>
+    <lastmod>2026-11-24</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.penguinx.co/"/>
+    <xhtml:link rel="alternate" hreflang="th" href="https://www.penguinx.co/th/"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://www.penguinx.co/zh/"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://www.penguinx.co/zh-hant/"/>
     <xhtml:link rel="alternate" hreflang="ja" href="https://www.penguinx.co/ja/"/>
     <xhtml:link rel="alternate" hreflang="ko" href="https://www.penguinx.co/ko/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.penguinx.co/"/>
@@ -517,6 +611,7 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://www.penguinx.co/"/>
     <xhtml:link rel="alternate" hreflang="th" href="https://www.penguinx.co/th/"/>
     <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://www.penguinx.co/zh/"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://www.penguinx.co/zh-hant/"/>
     <xhtml:link rel="alternate" hreflang="ja" href="https://www.penguinx.co/ja/"/>
     <xhtml:link rel="alternate" hreflang="ko" href="https://www.penguinx.co/ko/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.penguinx.co/"/>
@@ -527,6 +622,7 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://www.penguinx.co/"/>
     <xhtml:link rel="alternate" hreflang="th" href="https://www.penguinx.co/th/"/>
     <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://www.penguinx.co/zh/"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://www.penguinx.co/zh-hant/"/>
     <xhtml:link rel="alternate" hreflang="ja" href="https://www.penguinx.co/ja/"/>
     <xhtml:link rel="alternate" hreflang="ko" href="https://www.penguinx.co/ko/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.penguinx.co/"/>

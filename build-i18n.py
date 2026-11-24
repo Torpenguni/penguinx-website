@@ -30,7 +30,37 @@ LANGS = {
            'only': ('index.html', 'about/tor/index.html', 'about/tor/', 'events.html',
                     'ecosystem/media.html', 'ecosystem/event.html',
                     'ecosystem/education.html', 'ecosystem/solution.html')},
+    # จีนตัวเต็มสำหรับไต้หวันและฮ่องกง (ทั้งสองที่ใช้ Google เป็นหลัก)
+    # ไม่มีไฟล์แปลของตัวเอง: สร้างจากคำแปลจีนตัวย่อ (fromLang) แล้วแปลงตัวอักษร
+    # ด้วย OpenCC แบบ s2twp (ตัวเต็มไต้หวัน + ปรับศัพท์ เช่น 视频→影片 软件→軟體)
+    # ใช้ฉบับเดียวให้ทั้งไต้หวันและฮ่องกง จึงประกาศ hreflang zh-TW และ zh-HK ชี้ URL เดียวกัน
+    # เฟส 1 เฉพาะชั้นตัวตนบริษัท: หน้าแรก ประวัติ Tor และ 4 เสาหลัก
+    'zh-hant': {'code': 'zh-hant', 'htmlLang': 'zh-Hant', 'ogLocale': 'zh_TW', 'label': '繁體中文',
+                'fromLang': 'zh', 'opencc': 's2twp', 'alsoHreflang': ('zh-TW', 'zh-HK'),
+                'only': ('index.html', 'about/tor/index.html', 'about/tor/',
+                         'ecosystem/media.html', 'ecosystem/event.html',
+                         'ecosystem/education.html', 'ecosystem/solution.html')},
 }
+
+# ศัพท์ธุรกิจแบบจีนแผ่นดินใหญ่ที่ OpenCC ไม่เปลี่ยน แต่คนไต้หวันใช้อีกคำ
+# เรียงคำยาวก่อนคำสั้น (市場營銷 ก่อน 營銷) ไม่งั้นแทนซ้อนกันผิด
+# ยังต้องให้คนไต้หวันตรวจรอบสุดท้าย รายการนี้แค่แก้คำที่เห็นชัด
+TW_TERMS = (
+    ('市場營銷', '行銷'), ('營銷', '行銷'),
+    ('特許經營', '加盟'), ('門店', '門市'),
+    ('企業培訓', '企業內訓'), ('關注', '追蹤'),
+    ('出海泰國', '進軍泰國'), ('品牌出海', '品牌進軍海外'), ('出海', '進軍海外'),
+    ('項目', '專案'), ('質量', '品質'),
+)
+
+_OPENCC = {}
+def to_traditional(html, profile):
+    """แปลงจีนตัวย่อเป็นตัวเต็มทั้งหน้า (ข้อความ, meta, JSON-LD)
+    OpenCC แตะเฉพาะอักษรจีน URL และ markup ที่เป็น ASCII ไม่เปลี่ยน"""
+    if profile not in _OPENCC:
+        import opencc
+        _OPENCC[profile] = opencc.OpenCC(profile)
+    return _OPENCC[profile].convert(html)
 
 def has_page(code, rel_path):
     """ภาษานี้มีหน้านี้จริงไหม — ใช้ตัดสินทั้งการสร้างไฟล์ hreflang และปุ่มสลับภาษา
@@ -99,11 +129,11 @@ def pages():
         out.append(f)
     return sorted(out)
 
-LANG_LABELS = (('en', 'EN'), ('th', 'ไทย'), ('zh', '中文'), ('ja', '日本語'), ('ko', '한국어'))
+LANG_LABELS = (('en', 'EN'), ('th', 'ไทย'), ('zh', '简体中文'), ('zh-hant', '繁體中文'), ('ja', '日本語'), ('ko', '한국어'))
 
 # ป้ายของปุ่มเปิดเมนู เขียนไว้ตรงนี้เพราะ switcher ถูกแทรกหลัง translate_text
 # ทำงานเสร็จแล้ว ตัวแปลรายคำจึงมองไม่เห็น aria-label ตัวนี้
-SWITCH_ARIA = {'en': 'Change language', 'th': 'เปลี่ยนภาษา', 'zh': '切换语言',
+SWITCH_ARIA = {'en': 'Change language', 'th': 'เปลี่ยนภาษา', 'zh': '切换语言', 'zh-hant': '切換語言',
                'ja': '言語を切り替える', 'ko': '언어 변경'}
 
 
@@ -144,8 +174,9 @@ def hreflangs(rel_path):
         rows.append(f'<link rel="alternate" hreflang="{LANGS[code]["htmlLang"]}" href="{SITE}/{code}/{rel_path}">')
         # Baidu ตีความ region code (zh-CN) ได้ดีกว่า script code (zh-Hans)
         # ประกาศทั้งคู่ ไม่ขัดกันเพราะชี้ URL เดียวกัน
-        if LANGS[code].get('alsoHreflang'):
-            rows.append(f'<link rel="alternate" hreflang="{LANGS[code]["alsoHreflang"]}" href="{SITE}/{code}/{rel_path}">')
+        also = LANGS[code].get('alsoHreflang') or ()
+        for alt in ((also,) if isinstance(also, str) else also):
+            rows.append(f'<link rel="alternate" hreflang="{alt}" href="{SITE}/{code}/{rel_path}">')
     rows.append(f'<link rel="alternate" hreflang="x-default" href="{SITE}/{rel_path}">')
     return '\n'.join(rows)
 
@@ -414,7 +445,8 @@ def strip_injected(html):
 
 def build(src, code):
     cfg = LANGS[code]
-    tmap = json.load(open(f'i18n/{code}.json', encoding='utf-8'))
+    tcode = cfg.get('fromLang', code)     # จีนตัวเต็มใช้คำแปลของจีนตัวย่อ
+    tmap = json.load(open(f'i18n/{tcode}.json', encoding='utf-8'))
     html = strip_injected(open(src, encoding='utf-8').read())
     rel = page_url(src)
 
@@ -426,15 +458,20 @@ def build(src, code):
     html = drop_withheld_links(html, code)
     html = drop_only_th(html, code)
     kept = {}
-    html = keep_english_headings(html, code, kept, src)
+    html = keep_english_headings(html, tcode, kept, src)
     html = translate_blocks(html, blocks, kept)
-    html = keep_english(html, code, kept)
+    html = keep_english(html, tcode, kept)
     html = translate_text(html, tmap)
     for token, dst in kept.items():
         html = html.replace(token, dst, 1)
-    html = cjk_join(html, code)
-    html = cjk_phrases(html, code)
+    html = cjk_join(html, tcode)
+    html = cjk_phrases(html, tcode)
     html = re.sub(r'(<body[^>]*>)', lambda m: m.group(1) + '\n' + js_config(cfg_js), html, count=1)
+    # แปลงตัวเต็มก่อนใส่ปุ่มสลับภาษา ไม่งั้นป้าย "简体中文" ในเมนูจะถูกแปลงไปด้วย
+    if cfg.get('opencc'):
+        html = to_traditional(html, cfg['opencc'])
+        for cn, tw in TW_TERMS:
+            html = html.replace(cn, tw)
     html = re.sub(r'<html[^>]*>', f'<html lang="{cfg["htmlLang"]}">', html, count=1)
     html = html.replace('<meta property="og:locale" content="en_US">',
                         f'<meta property="og:locale" content="{cfg["ogLocale"]}">')

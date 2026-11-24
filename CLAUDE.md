@@ -1,6 +1,8 @@
 # penguinx.co — คำสั่งสำหรับ Claude
 
-เว็บ static หลายภาษา (EN ต้นฉบับ, TH, ZH, JA, KO) deploy อัตโนมัติจาก `main` ผ่าน Vercel
+เว็บ static หลายภาษา (EN ต้นฉบับ, TH, ZH ตัวย่อ, ZH ตัวเต็ม, JA, KO) deploy อัตโนมัติจาก `main` ผ่าน Vercel
+- จีนตัวเต็ม (`zh-hant/`, สำหรับไต้หวัน/ฮ่องกง) ไม่มีไฟล์แปลของตัวเอง สร้างจาก `i18n/zh.json` แล้วแปลงด้วย OpenCC (s2twp) + ตาราง `TW_TERMS` ใน build-i18n.py
+  แก้คำแปลจีนที่ `zh.json` ที่เดียว ถ้าศัพท์ไต้หวันผิด ให้เพิ่มใน `TW_TERMS`
 หน้าภาษาอื่นสร้างจากต้นฉบับอังกฤษด้วย `python3 build-i18n.py` แล้วสร้าง sitemap ด้วย `python3 build-sitemap.py`
 
 ## กฎเนื้อหาหลายภาษา
