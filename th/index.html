@@ -1014,6 +1014,35 @@
       <label><span>บริษัท / แบรนด์</span><input name="company" type="text" autocomplete="organization" maxlength="160"></label>
       <label><span>อีเมล</span><input name="email" type="email" autocomplete="email" required maxlength="200"></label>
       <label><span>โทรศัพท์ / LINE ID</span><input name="phone" type="text" autocomplete="tel" maxlength="60"></label>
+      <fieldset class="lead-wide lead-choice">
+        <legend>ประเภทธุรกิจ</legend>
+        <div class="lead-chips">
+          <label><input type="radio" name="business_type" value="Supplier" required><span>ซัพพลายเออร์</span></label>
+          <label><input type="radio" name="business_type" value="Foreign brand"><span>แบรนด์ต่างชาติ</span></label>
+          <label><input type="radio" name="business_type" value="Restaurant chain"><span>เชนร้านอาหาร</span></label>
+          <label><input type="radio" name="business_type" value="Other"><span>อื่น ๆ</span></label>
+        </div>
+      </fieldset>
+      <fieldset class="lead-wide lead-choice">
+        <legend>บริการที่สนใจ <small>เลือกได้หลายข้อ</small></legend>
+        <div class="lead-chips">
+          <label><input type="checkbox" name="services" value="Exhibit & Meet"><span>Exhibit &amp; Meet</span></label>
+          <label><input type="checkbox" name="services" value="Co-host Seminars"><span>Co-host Seminars</span></label>
+          <label><input type="checkbox" name="services" value="Brand Storytelling"><span>Brand Storytelling</span></label>
+          <label><input type="checkbox" name="services" value="Market Testing"><span>Market Testing</span></label>
+          <label><input type="checkbox" name="services" value="Partner Matching"><span>Partner Matching</span></label>
+          <label><input type="checkbox" name="services" value="Team Training"><span>Team Training</span></label>
+        </div>
+      </fieldset>
+      <label class="lead-wide"><span>งบประมาณ (ไม่บังคับ)</span>
+        <select name="budget">
+          <option value="">ยังไม่ระบุตอนนี้</option>
+          <option value="Under THB 100,000">ต่ำกว่า 100,000 บาท</option>
+          <option value="THB 100,000-500,000">100,000–500,000 บาท</option>
+          <option value="THB 500,000-1,000,000">500,000–1,000,000 บาท</option>
+          <option value="Over THB 1,000,000">มากกว่า 1,000,000 บาท</option>
+        </select>
+      </label>
       <label class="lead-wide"><span>อยากให้แบรนด์ไปถึงจุดไหนในตลาดไทย?</span><textarea name="message" rows="4" maxlength="3000"></textarea></label>
     </div>
     <input class="lead-hp" name="website" type="text" tabindex="-1" autocomplete="off" aria-hidden="true">

@@ -1012,6 +1012,35 @@
       <label><span>公司 / 品牌</span><input name="company" type="text" autocomplete="organization" maxlength="160"></label>
       <label><span>電子郵件</span><input name="email" type="email" autocomplete="email" required maxlength="200"></label>
       <label><span>電話 / LINE / 微信 ID</span><input name="phone" type="text" autocomplete="tel" maxlength="60"></label>
+      <fieldset class="lead-wide lead-choice">
+        <legend>企業型別</legend>
+        <div class="lead-chips">
+          <label><input type="radio" name="business_type" value="Supplier" required><span>供應商</span></label>
+          <label><input type="radio" name="business_type" value="Foreign brand"><span>海外品牌</span></label>
+          <label><input type="radio" name="business_type" value="Restaurant chain"><span>連鎖餐飲</span></label>
+          <label><input type="radio" name="business_type" value="Other"><span>其他</span></label>
+        </div>
+      </fieldset>
+      <fieldset class="lead-wide lead-choice">
+        <legend>感興趣的服務 <small>可多選</small></legend>
+        <div class="lead-chips">
+          <label><input type="checkbox" name="services" value="Exhibit & Meet"><span>參展媒合</span></label>
+          <label><input type="checkbox" name="services" value="Co-host Seminars"><span>聯合舉辦研討會</span></label>
+          <label><input type="checkbox" name="services" value="Brand Storytelling"><span>品牌故事</span></label>
+          <label><input type="checkbox" name="services" value="Market Testing"><span>市場測試</span></label>
+          <label><input type="checkbox" name="services" value="Partner Matching"><span>合作夥伴媒合</span></label>
+          <label><input type="checkbox" name="services" value="Team Training"><span>團隊培訓</span></label>
+        </div>
+      </fieldset>
+      <label class="lead-wide"><span>預算（選填）</span>
+        <select name="budget">
+          <option value="">暫不透露</option>
+          <option value="Under THB 100,000">10 萬泰銖以下</option>
+          <option value="THB 100,000-500,000">10 萬–50 萬泰銖</option>
+          <option value="THB 500,000-1,000,000">50 萬–100 萬泰銖</option>
+          <option value="Over THB 1,000,000">100 萬泰銖以上</option>
+        </select>
+      </label>
       <label class="lead-wide"><span>您希望在泰國市場實現什麼目標？</span><textarea name="message" rows="4" maxlength="3000"></textarea></label>
     </div>
     <input class="lead-hp" name="website" type="text" tabindex="-1" autocomplete="off" aria-hidden="true">

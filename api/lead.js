@@ -10,7 +10,8 @@
 // ลูกค้าจึงติดต่อได้เสมอ lead ไม่หาย
 export const config = { runtime: 'edge' };
 
-const MAX = { name: 120, company: 160, email: 200, phone: 60, message: 3000, page: 300, lang: 10 };
+const MAX = { name: 120, company: 160, email: 200, phone: 60, business_type: 40, services: 200, budget: 40,
+              message: 3000, page: 300, lang: 10 };
 
 function json(body, status) {
   return new Response(JSON.stringify(body), {
@@ -41,7 +42,8 @@ export default async function handler(req) {
   const from = process.env.LEAD_FROM_EMAIL || 'PenguinX Website <onboarding@resend.dev>';
 
   const rows = [['Name', f.name], ['Company / Brand', f.company], ['Email', f.email],
-                ['Phone / LINE', f.phone], ['Page', f.page], ['Language', f.lang]]
+                ['Phone / LINE', f.phone], ['Business type', f.business_type], ['Services', f.services],
+                ['Budget', f.budget], ['Page', f.page], ['Language', f.lang]]
     .map(([k, v]) => `<tr><td style="padding:4px 12px 4px 0;color:#666">${k}</td><td>${esc(v || '-')}</td></tr>`).join('');
   const html = `<h2>New discovery-call request</h2><table>${rows}</table>
     <p style="white-space:pre-wrap;border-left:3px solid #dba93a;padding-left:12px">${esc(f.message || '-')}</p>`;
@@ -51,7 +53,7 @@ export default async function handler(req) {
     headers: { authorization: `Bearer ${key}`, 'content-type': 'application/json' },
     body: JSON.stringify({
       from, to, reply_to: f.email,
-      subject: `[PenguinX lead] ${f.name}${f.company ? ' — ' + f.company : ''}`,
+      subject: `[PenguinX lead] ${f.name}${f.company ? ' — ' + f.company : ''}${f.business_type ? ' (' + f.business_type + ')' : ''}`,
       html
     })
   });
