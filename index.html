@@ -1072,26 +1072,27 @@
       <label><span>Company / Brand</span><input name="company" type="text" autocomplete="organization" maxlength="160"></label>
       <label><span>Email</span><input name="email" type="email" autocomplete="email" required maxlength="200"></label>
       <label><span>Phone / LINE ID</span><input name="phone" type="text" autocomplete="tel" maxlength="60"></label>
-      <fieldset class="lead-wide lead-choice">
-        <legend>Business type</legend>
-        <div class="lead-chips">
-          <label><input type="radio" name="business_type" value="Supplier" required><span>Supplier</span></label>
-          <label><input type="radio" name="business_type" value="Foreign brand"><span>Foreign brand</span></label>
-          <label><input type="radio" name="business_type" value="Restaurant chain"><span>Restaurant chain</span></label>
-          <label><input type="radio" name="business_type" value="Other"><span>Other</span></label>
-        </div>
-      </fieldset>
-      <fieldset class="lead-wide lead-choice">
-        <legend>Services you're interested in <small>Choose any</small></legend>
-        <div class="lead-chips">
-          <label><input type="checkbox" name="services" value="Exhibit & Meet"><span>Exhibit &amp; Meet</span></label>
-          <label><input type="checkbox" name="services" value="Co-host Seminars"><span>Co-host Seminars</span></label>
-          <label><input type="checkbox" name="services" value="Brand Storytelling"><span>Brand Storytelling</span></label>
-          <label><input type="checkbox" name="services" value="Market Testing"><span>Market Testing</span></label>
-          <label><input type="checkbox" name="services" value="Partner Matching"><span>Partner Matching</span></label>
-          <label><input type="checkbox" name="services" value="Team Training"><span>Team Training</span></label>
-        </div>
-      </fieldset>
+      <label><span>Business type</span>
+        <select name="business_type" required>
+          <option value="" disabled selected>Select…</option>
+          <option value="Supplier">Supplier</option>
+          <option value="Foreign brand">Foreign brand</option>
+          <option value="Restaurant chain">Restaurant chain</option>
+          <option value="Other">Other</option>
+        </select>
+      </label>
+      <label><span>Services you're interested in</span>
+        <select name="services">
+          <option value="">Not sure yet</option>
+          <option value="Exhibit & Meet">Exhibit &amp; Meet</option>
+          <option value="Co-host Seminars">Co-host Seminars</option>
+          <option value="Brand Storytelling">Brand Storytelling</option>
+          <option value="Market Testing">Market Testing</option>
+          <option value="Partner Matching">Partner Matching</option>
+          <option value="Team Training">Team Training</option>
+          <option value="Several services">Several services</option>
+        </select>
+      </label>
       <label class="lead-wide"><span>Budget (optional)</span>
         <select name="budget">
           <option value="">Prefer not to say yet</option>

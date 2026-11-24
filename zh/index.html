@@ -1074,26 +1074,27 @@
       <label><span>公司 / 品牌</span><input name="company" type="text" autocomplete="organization" maxlength="160"></label>
       <label><span>邮箱</span><input name="email" type="email" autocomplete="email" required maxlength="200"></label>
       <label><span>电话 / LINE / 微信号</span><input name="phone" type="text" autocomplete="tel" maxlength="60"></label>
-      <fieldset class="lead-wide lead-choice">
-        <legend>企业类型</legend>
-        <div class="lead-chips">
-          <label><input type="radio" name="business_type" value="Supplier" required><span>供应商</span></label>
-          <label><input type="radio" name="business_type" value="Foreign brand"><span>海外品牌</span></label>
-          <label><input type="radio" name="business_type" value="Restaurant chain"><span>连锁餐饮</span></label>
-          <label><input type="radio" name="business_type" value="Other"><span>其他</span></label>
-        </div>
-      </fieldset>
-      <fieldset class="lead-wide lead-choice">
-        <legend>感兴趣的服务 <small>可多选</small></legend>
-        <div class="lead-chips">
-          <label><input type="checkbox" name="services" value="Exhibit & Meet"><span>参展对接</span></label>
-          <label><input type="checkbox" name="services" value="Co-host Seminars"><span>联合举办研讨会</span></label>
-          <label><input type="checkbox" name="services" value="Brand Storytelling"><span>品牌故事</span></label>
-          <label><input type="checkbox" name="services" value="Market Testing"><span>市场测试</span></label>
-          <label><input type="checkbox" name="services" value="Partner Matching"><span>合作伙伴对接</span></label>
-          <label><input type="checkbox" name="services" value="Team Training"><span>团队培训</span></label>
-        </div>
-      </fieldset>
+      <label><span>企业类型</span>
+        <select name="business_type" required>
+          <option value="" disabled selected>请选择</option>
+          <option value="Supplier">供应商</option>
+          <option value="Foreign brand">海外品牌</option>
+          <option value="Restaurant chain">连锁餐饮</option>
+          <option value="Other">其他</option>
+        </select>
+      </label>
+      <label><span>感兴趣的服务</span>
+        <select name="services">
+          <option value="">还不确定</option>
+          <option value="Exhibit & Meet">参展对接</option>
+          <option value="Co-host Seminars">联合举办研讨会</option>
+          <option value="Brand Storytelling">品牌故事</option>
+          <option value="Market Testing">市场测试</option>
+          <option value="Partner Matching">合作伙伴对接</option>
+          <option value="Team Training">团队培训</option>
+          <option value="Several services">多项服务</option>
+        </select>
+      </label>
       <label class="lead-wide"><span>预算（选填）</span>
         <select name="budget">
           <option value="">暂不透露</option>
