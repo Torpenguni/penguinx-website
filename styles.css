@@ -2752,3 +2752,8 @@ html[lang^="th"] .bl-cat,html[lang^="zh"] .bl-cat,html[lang^="ja"] .bl-cat,html[
 /* หน้าโปรไฟล์ Tor: อีเมลติดต่อบรรทัดเดียวใต้รูป คอลัมน์ขวาไว้ใส่จุดยืน (prof-stance) */
 .prof-body .prof-contact{margin:12px 0 0;font-size:15px;color:var(--ink-mute)}
 .prof-body .prof-contact span::after{content:':';margin-right:8px}
+.prof-body .prof-stance{margin:0;padding:4px 0 4px 24px;border-left:2px solid var(--accent);font-style:normal}
+.prof-body .prof-stance-label{display:block;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--accent);margin-bottom:14px}
+.prof-body .prof-stance p{margin:0 0 14px;font-size:19px;line-height:1.6;color:var(--ink)}
+.prof-body .prof-stance p:last-child{margin-bottom:0}
+@media (max-width:620px){.prof-body .prof-stance{margin-top:20px}.prof-body .prof-stance p{font-size:17px}}
