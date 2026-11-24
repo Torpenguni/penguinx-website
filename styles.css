@@ -2762,3 +2762,7 @@ html[lang^="th"] .bl-cat,html[lang^="zh"] .bl-cat,html[lang^="ja"] .bl-cat,html[
 .prof-body .prof-stance p{font-style:italic}
 .prof-body .prof-stance p:first-of-type::before{content:'\201C'}
 .prof-body .prof-stance p:last-of-type::after{content:'\201D'}
+/* อีเมลติดต่อย้ายขึ้นไปต่อท้ายย่อหน้าแนะนำตัว (ส่วนหัวหน้า) */
+.prof-hero .prof-contact{margin:14px 0 0;font-size:15px;color:var(--ink-mute)}
+.prof-hero .prof-contact span::after{content:':';margin-right:8px}
+.prof-hero .prof-contact a{color:var(--accent)}
