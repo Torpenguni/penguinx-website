@@ -905,20 +905,20 @@ section{padding:80px 32px;position:relative}
   list-style:none;
   display:flex;
   flex-direction:column;
-  gap:10px;
+  gap:5px;
 }
 .founder-points li{
   position:relative;
   padding-left:18px;
   font-size:14px;
-  line-height:1.55;
+  line-height:1.42;
   color:var(--ink);
   font-weight:400;
 }
 .founder-points li::before{
   content:'';
   position:absolute;
-  left:0;top:0.6em;
+  left:0;top:0.55em;
   width:5px;height:5px;
   background:var(--accent);
   border-radius:50%;
