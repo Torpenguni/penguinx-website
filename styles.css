@@ -2354,6 +2354,16 @@ nav.top .logo{ margin-right:clamp(8px,2.4vw,32px) }  /* รวม gap แล้�
 .why-note{font-size:17px;color:var(--ink-mute);margin-top:-8px}
 
 /* Leadership: the rest of the team */
+.team-more{display:grid;grid-template-columns:minmax(0,1.45fr) minmax(0,1.45fr) minmax(0,1fr);gap:14px;margin-top:14px;max-width:none}
+.team-person{border:1px solid var(--line);border-radius:14px;padding:22px 24px;background:var(--bg-2)}
+.team-person strong{display:block;font-size:18px;font-weight:600;color:var(--ink)}
+.team-person span{display:block;margin-top:2px;font-size:13px;color:var(--accent);font-weight:600}
+.team-person p{margin-top:10px;font-size:14px;line-height:1.55;color:var(--ink-mute)}
+.team-person.has-photo{display:grid;grid-template-columns:112px minmax(0,1fr);gap:20px;align-items:start}
+.team-photo{display:block;width:112px;height:116px;object-fit:cover;object-position:center top;border-radius:10px}
+@media (max-width:860px){.team-person.has-photo{grid-template-columns:88px minmax(0,1fr);gap:16px}.team-photo{width:88px;height:92px}}
+.team-specialists strong{font-size:30px;line-height:1;letter-spacing:-0.03em}
+@media (max-width:860px){.team-more{grid-template-columns:minmax(0,1fr)}}
 
 /* CTA note */
 .cta-note{margin-top:18px;font-size:15px;color:var(--ink-mute);max-width:46ch;text-align:center;margin-left:auto;margin-right:auto}
@@ -2782,11 +2792,3 @@ html[lang^="th"] .bl-cat,html[lang^="zh"] .bl-cat,html[lang^="ja"] .bl-cat,html[
 .prof-body ul li{color:#c4c4c4}
 /* "Contact:" ตัวหนา */
 .prof-hero .prof-contact span{font-weight:700;color:var(--ink)}
-.team-line{display:grid;grid-template-columns:repeat(3,minmax(0,auto));justify-content:start;margin-top:18px;padding:0;list-style:none;font-size:14px;line-height:1.5}
-.team-line li{display:flex;flex-wrap:wrap;align-items:baseline;gap:0 8px;padding:0 28px}
-.team-line li:first-child{padding-left:0}
-.team-line li+li{border-left:1px solid var(--line)}
-.team-line strong{font-weight:600;color:var(--ink)}
-.team-line span{font-weight:600;color:var(--accent)}
-.team-line em{font-style:normal;color:var(--ink-mute)}
-@media (max-width:860px){.team-line{grid-template-columns:minmax(0,1fr);gap:8px}.team-line li{padding:0}.team-line li+li{border-left:0}}
