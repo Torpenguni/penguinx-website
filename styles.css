@@ -2757,3 +2757,8 @@ html[lang^="th"] .bl-cat,html[lang^="zh"] .bl-cat,html[lang^="ja"] .bl-cat,html[
 .prof-body .prof-stance p{margin:0 0 14px;font-size:19px;line-height:1.6;color:var(--ink)}
 .prof-body .prof-stance p:last-child{margin-bottom:0}
 @media (max-width:620px){.prof-body .prof-stance{margin-top:20px}.prof-body .prof-stance p{font-size:17px}}
+/* จุดยืน: แบบคำพูด มีเครื่องหมายคำพูด ตัวเอียง ไม่มีเส้นข้าง */
+.prof-body .prof-stance{border-left:0;padding:4px 0}
+.prof-body .prof-stance p{font-style:italic}
+.prof-body .prof-stance p:first-of-type::before{content:'\201C'}
+.prof-body .prof-stance p:last-of-type::after{content:'\201D'}
