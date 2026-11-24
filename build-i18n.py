@@ -196,6 +196,26 @@ def keep_english(html, code, keep):
     html = re.sub(r'<(a|div|span) [^>]*\bdata-keep-en\b[^>]*>[^<]*</\1>', lambda m: lock(m.group(0)), html)
     return html
 
+def keep_english_headings(html, code, keep):
+    """หัวข้อ (h1/h2) ที่ติด data-keep-en คงภาษาอังกฤษในภาษาที่ตั้ง keepEnglish
+
+    เจ้าของเว็บต้องการให้หัวข้อ section ในหน้าไทยเป็นภาษาอังกฤษ (พ.ย. 2026)
+    เพราะอ่านแล้วเข้าใจง่ายกว่า เนื้อหาข้างใต้ยังเป็นภาษาไทย
+    ต้องรันก่อน translate_blocks เพราะหัวข้อพวกนี้มีคำแปลทั้งก้อนใน _html
+    และหัวข้อมี <span> ซ้อนอยู่ข้างใน keep_english (ที่จับเฉพาะ element ไม่มีลูก) จึงจับไม่ได้"""
+    if not LANGS[code].get('keepEnglish'):
+        # ภาษาอื่นแปลหัวข้อตามปกติ คำแปลทั้งก้อนใน _html จับจากแท็กเปิดแบบตรงตัว
+        # ถ้าไม่ลบ attribute นี้ทิ้ง หัวข้อจีน/ญี่ปุ่น/เกาหลีจะกลายเป็นอังกฤษหมด
+        return re.sub(r'(<(?:h1|h2|div class="(?:section|shorts)-num"|div class="eco-name")[^>]*?) data-keep-en', r'\1', html)
+
+    def lock(m):
+        token = f'<!--PXKEEP{len(keep)}-->'
+        keep[token] = re.sub(r'^<(h1|h2|div)\b', r'<\1 lang="en"', m.group(0), count=1)
+        return token
+    html = re.sub(r'<(h1|h2)\b[^>]*\bdata-keep-en\b[^>]*>.*?</\1>', lock, html, flags=re.S)
+    # ชื่อเสาหลักบนการ์ด (Media / Storytelling) มี <span> ซ้อน ใช้ชื่อเดียวกันทุกภาษา
+    return re.sub(r'<div class="eco-name" data-keep-en>.*?</div>', lock, html, flags=re.S)
+
 CJK_CH = r'[぀-ヿ㐀-鿿＀-￯　-〿]'
 
 def cjk_join(html, code):
@@ -399,6 +419,7 @@ def build(src, code):
     html = drop_withheld_links(html, code)
     html = drop_only_th(html, code)
     kept = {}
+    html = keep_english_headings(html, code, kept)
     html = translate_blocks(html, blocks, kept)
     html = keep_english(html, code, kept)
     html = translate_text(html, tmap)
