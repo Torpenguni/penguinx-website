@@ -2766,3 +2766,7 @@ html[lang^="th"] .bl-cat,html[lang^="zh"] .bl-cat,html[lang^="ja"] .bl-cat,html[
 .prof-hero .prof-contact{margin:14px 0 0;font-size:15px;color:var(--ink-mute)}
 .prof-hero .prof-contact span::after{content:':';margin-right:8px}
 .prof-hero .prof-contact a{color:var(--accent)}
+/* หน้าโปรไฟล์ Tor: ไม่มีเส้นคั่นใต้ส่วนหัว และดันรูปขึ้นชิดย่อหน้าแนะนำตัว */
+.article-hero.prof-hero{border-bottom:0;padding-bottom:12px}
+.prof-body.article-body{padding-top:24px}
+@media (max-width:1100px){.prof-body.article-body{padding-top:16px}}
