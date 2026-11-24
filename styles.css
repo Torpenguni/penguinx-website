@@ -2775,3 +2775,6 @@ html[lang^="th"] .bl-cat,html[lang^="zh"] .bl-cat,html[lang^="ja"] .bl-cat,html[
 .prof-body li{line-height:1.55}
 /* แผ่นโลโก้: ลดความสดของสีลง ไม่ให้โดดเกินไป */
 .prof-body .speak-logos img{filter:saturate(.55) contrast(.92)}
+/* แผ่นโลโก้: ตัดกรอบขาวรอบนอกออก ให้ตัวรูปเป็นการ์ดเอง */
+.prof-body .speak-logos{background:none;padding:0;border-radius:0}
+.prof-body .speak-logos img{border-radius:12px}
