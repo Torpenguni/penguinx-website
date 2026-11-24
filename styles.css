@@ -2770,3 +2770,6 @@ html[lang^="th"] .bl-cat,html[lang^="zh"] .bl-cat,html[lang^="ja"] .bl-cat,html[
 .article-hero.prof-hero{border-bottom:0;padding-bottom:12px}
 .prof-body.article-body{padding-top:24px}
 @media (max-width:1100px){.prof-body.article-body{padding-top:16px}}
+/* หน้าโปรไฟล์ Tor: รายการบรรทัดชิดขึ้น */
+.prof-body ul{gap:2px;margin:16px 0 16px 24px}
+.prof-body li{line-height:1.55}
