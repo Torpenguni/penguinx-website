@@ -2773,3 +2773,5 @@ html[lang^="th"] .bl-cat,html[lang^="zh"] .bl-cat,html[lang^="ja"] .bl-cat,html[
 /* หน้าโปรไฟล์ Tor: รายการบรรทัดชิดขึ้น */
 .prof-body ul{gap:2px;margin:16px 0 16px 24px}
 .prof-body li{line-height:1.55}
+/* แผ่นโลโก้: ลดความสดของสีลง ไม่ให้โดดเกินไป */
+.prof-body .speak-logos img{filter:saturate(.55) contrast(.92)}
