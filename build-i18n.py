@@ -480,6 +480,13 @@ def build(src, code):
     html = re.sub(r'<meta property="og:url" content="[^"]*">',
                   f'<meta property="og:url" content="{SITE}/{code}/{rel}">', html, count=1)
     html = html.replace('<link rel="canonical"', hreflangs(rel) + '\n<link rel="canonical"', 1)
+    if code == 'zh':
+        # Baidu: ห้ามแปลงหน้า (转码) เป็นหน้ามือถือของ Baidu เอง และบอกว่าเว็บเป็น responsive
+        # ไม่ต้องมีบัญชี Baidu Webmaster ก็ใช้ได้
+        html = html.replace('<link rel="canonical"',
+            '<meta http-equiv="Cache-Control" content="no-transform">\n'
+            '<meta http-equiv="Cache-Control" content="no-siteapp">\n'
+            '<meta name="applicable-device" content="pc,mobile">\n<link rel="canonical"', 1)
 
     sw = switcher(rel, code)
     html = re.sub(r'(<ul class="nav-links">.*?</ul>)', r'\1\n  ' + sw, html, count=1, flags=re.S)
