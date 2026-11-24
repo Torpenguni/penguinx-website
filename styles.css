@@ -2778,3 +2778,7 @@ html[lang^="th"] .bl-cat,html[lang^="zh"] .bl-cat,html[lang^="ja"] .bl-cat,html[
 /* แผ่นโลโก้: ตัดกรอบขาวรอบนอกออก ให้ตัวรูปเป็นการ์ดเอง */
 .prof-body .speak-logos{background:none;padding:0;border-radius:0}
 .prof-body .speak-logos img{border-radius:12px}
+/* ระยะห่างรูปกับจุดยืน: ตัด margin ของรูป (จาก .article-body img) และลดช่องว่างตอนเรียงซ้อน */
+.prof-body .prof-photo{margin:0}
+.prof-body .prof-stance{margin:0}
+@media (max-width:900px){.prof-body .prof-top{gap:16px}}
