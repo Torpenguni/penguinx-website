@@ -196,7 +196,7 @@ def keep_english(html, code, keep):
     html = re.sub(r'<(a|div|span) [^>]*\bdata-keep-en\b[^>]*>[^<]*</\1>', lambda m: lock(m.group(0)), html)
     return html
 
-def keep_english_headings(html, code, keep):
+def keep_english_headings(html, code, keep, src=''):
     """หัวข้อ (h1/h2) ที่ติด data-keep-en คงภาษาอังกฤษในภาษาที่ตั้ง keepEnglish
 
     เจ้าของเว็บต้องการให้หัวข้อ section ในหน้าไทยเป็นภาษาอังกฤษ (พ.ย. 2026)
@@ -212,7 +212,14 @@ def keep_english_headings(html, code, keep):
         token = f'<!--PXKEEP{len(keep)}-->'
         keep[token] = re.sub(r'^<(h1|h2|div)\b', r'<\1 lang="en"', m.group(0), count=1)
         return token
-    html = re.sub(r'<(h1|h2)\b[^>]*\bdata-keep-en\b[^>]*>.*?</\1>', lock, html, flags=re.S)
+    # หน้าแรกเลือกเป็นรายหัวข้อด้วย data-keep-en ส่วนหน้าตัวตนบริษัทอื่น (ประวัติ Tor,
+    # 4 เสาหลัก, อีเวนต์, ผลงาน) ใช้หัวข้อ h1/h2 ภาษาอังกฤษทั้งหน้า
+    # ไม่รวม news/ เพราะพาดหัวข่าวเป็นเนื้อหาที่คนไทยค้นหาและอ่าน
+    rel = src.replace('\\', '/')
+    whole_page = rel != 'index.html' and not rel.startswith('news/')
+    pat = (r'<(h1|h2)\b[^>]*>.*?</\1>' if whole_page
+           else r'<(h1|h2)\b[^>]*\bdata-keep-en\b[^>]*>.*?</\1>')
+    html = re.sub(pat, lock, html, flags=re.S)
     # ชื่อเสาหลักบนการ์ด (Media / Storytelling) มี <span> ซ้อน ใช้ชื่อเดียวกันทุกภาษา
     return re.sub(r'<div class="eco-name" data-keep-en>.*?</div>', lock, html, flags=re.S)
 
@@ -419,7 +426,7 @@ def build(src, code):
     html = drop_withheld_links(html, code)
     html = drop_only_th(html, code)
     kept = {}
-    html = keep_english_headings(html, code, kept)
+    html = keep_english_headings(html, code, kept, src)
     html = translate_blocks(html, blocks, kept)
     html = keep_english(html, code, kept)
     html = translate_text(html, tmap)
