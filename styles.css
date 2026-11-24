@@ -2817,3 +2817,24 @@ html[lang^="th"] .bl-cat,html[lang^="zh"] .bl-cat,html[lang^="ja"] .bl-cat,html[
   background-image:linear-gradient(45deg,transparent 50%,var(--ink-mute) 50%),linear-gradient(135deg,var(--ink-mute) 50%,transparent 50%);
   background-position:calc(100% - 20px) 55%,calc(100% - 15px) 55%;background-size:5px 5px;background-repeat:no-repeat}
 .lead-form select:focus{outline:none;border-color:var(--accent)}
+/* ===== Service cards link to /services/*.html (Nov 2026) ===== */
+a.service-card{color:inherit;text-decoration:none}
+a.service-card:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+
+/* ===== Homepage FAQ — question/answer pairs also published as FAQPage schema ===== */
+.faq-home{padding:80px 32px;border-top:1px solid var(--line);background:var(--bg)}
+.faq-home .faq-list{border-top:1px solid var(--line);max-width:1100px;margin-top:40px}
+.faq-home .faq-item{border-bottom:1px solid var(--line)}
+.faq-home .faq-item summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;align-items:flex-start;gap:24px;padding:22px 0;font-size:18px;font-weight:600;letter-spacing:-0.01em;line-height:1.4;color:var(--ink)}
+.faq-home .faq-item summary::-webkit-details-marker{display:none}
+.faq-home .faq-item summary::after{content:'+';color:var(--accent);font-size:24px;font-weight:300;line-height:1;transition:transform 0.25s ease;flex:none}
+.faq-home .faq-item[open] summary::after{transform:rotate(45deg)}
+.faq-home .faq-item summary:hover{color:var(--accent)}
+.faq-home .faq-item summary:focus-visible{outline:2px solid var(--accent);outline-offset:4px}
+.faq-home .faq-a{padding:0 48px 24px 0}
+.faq-home .faq-a p{font-size:15.5px;line-height:1.7;color:var(--ink-mute)}
+@media (max-width:700px){
+  .faq-home{padding:56px 20px}
+  .faq-home .faq-item summary{font-size:16px;padding:18px 0}
+  .faq-home .faq-a{padding-right:0}
+}
