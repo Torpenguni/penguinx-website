@@ -63,13 +63,15 @@
   }
 
   // จอแคบ: วางตัวที่กระโดดลงในช่องว่างระหว่างหัวข้อ (a) กับคำอธิบาย (b)
+  // ขนาดตัวเพนกวินคุมจากความกว้างจอ (~40% ของจอ ไม่เกิน 230px ใกล้เคียงบนเดสก์ท็อป)
+  // ถ้าปล่อยให้ภาพ cover ตามความสูงจอแนวตั้ง ตัวเพนกวินจะกว้างเกือบเต็มจอมือถือ
+  // ผลคือภาพไม่เต็มความสูง hero ส่วนที่เหลือเป็นสีพื้น navy และขอบบน-ล่างของภาพถูกเฟดด้วย mask
   function bandPlacement(f) {
-    var pad = Math.max(13, FONT * f.H / IMG_H) * 1.6;   // ที่สำหรับป้ายเหนือปลายปีก
-    var top = f.a + 10;
-    // ขยายภาพจนพอให้เลื่อนขึ้นได้ถึงช่องว่าง (ตัวที่กระโดดอยู่กลางภาพพอดี)
-    var s = Math.max(f.W / IMG_W, f.H / IMG_H, (f.H - top - pad) / (IMG_H - ANCHOR.y));
-    var rw = IMG_W * s, rh = IMG_H * s;
-    var oy = Math.max(f.H - rh, Math.min(0, top + pad - ANCHOR.y * s));
+    var s = Math.max(f.W / IMG_W, Math.min(230, 0.4 * f.W) / (BODY.x2 - BODY.x1));
+    var pad = Math.max(13, FONT * s) * 1.7;              // ที่สำหรับป้ายเหนือปลายปีก
+    var top = f.a + 14;
+    var rw = IMG_W * s;
+    var oy = top + pad - ANCHOR.y * s;
     var tw = tag.offsetWidth || 0;
     var ax = 0.6 * f.W;
     ax = Math.min(ax, f.W - EDGE - Math.max(tw / 2, (BODY.x2 - ANCHOR.x) * s));
@@ -80,6 +82,7 @@
 
   function place() {
     bg.style.backgroundSize = ''; bg.style.backgroundPosition = '';
+    bg.style.webkitMaskImage = bg.style.maskImage = '';
     if (bottom) bottom.style.marginTop = '';
     var f = frame();
     if (!f.W || !f.H) return;
@@ -100,6 +103,12 @@
     q = bandPlacement(f);
     bg.style.backgroundSize = (IMG_W * q.s) + 'px ' + (IMG_H * q.s) + 'px';
     bg.style.backgroundPosition = q.ox + 'px ' + q.oy + 'px';
+    bg.style.backgroundRepeat = 'no-repeat';
+    // เฟดขอบบนและล่างของภาพเข้าสีพื้น ไม่ให้เห็นเป็นเส้นตัด
+    var y1 = q.oy, y2 = q.oy + IMG_H * q.s, fade = 0.22 * IMG_H * q.s;
+    var m = 'linear-gradient(to bottom, transparent ' + y1 + 'px, #000 ' + (y1 + fade) + 'px, #000 ' +
+            (y2 - fade) + 'px, transparent ' + y2 + 'px)';
+    bg.style.webkitMaskImage = bg.style.maskImage = m;
     draw(q.s, q.ox, q.oy);
     tag.classList.add('is-visible');
   }
