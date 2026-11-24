@@ -2802,21 +2802,13 @@ html[lang^="th"] .bl-cat,html[lang^="zh"] .bl-cat,html[lang^="ja"] .bl-cat,html[
   linear-gradient(to bottom, var(--bg) 0%, rgba(0,0,0,0.72) 14%, rgba(0,0,0,0.8) 55%, var(--bg) 100%)}
 .cta .cta-title,.cta .cta-eyebrow,.cta .cta-note{text-shadow:0 1px 14px rgba(0,0,0,0.75)}
 
-/* Lead form: business type (required, one) and services (any) as chips; budget optional */
-.lead-form fieldset.lead-choice{border:0;padding:0;margin:4px 0 0;min-width:0}
-.lead-form .lead-choice legend{font-size:13px;color:var(--ink-mute);margin-bottom:8px;padding:0}
-.lead-form .lead-choice legend small{font-size:12px;opacity:0.7;margin-left:6px}
-.lead-chips{display:flex;flex-wrap:wrap;gap:8px}
-.lead-form .lead-chips label{flex-direction:row;align-items:center;gap:0;font-size:14px;color:var(--ink);cursor:pointer}
-.lead-chips input{position:absolute;opacity:0;width:1px;height:1px}
-.lead-chips span{display:inline-block;padding:9px 15px;border:1px solid var(--line);border-radius:100px;background:var(--bg-2);transition:border-color .2s ease,background .2s ease,color .2s ease}
-.lead-chips label:hover span{border-color:rgba(219,169,58,0.55)}
-.lead-chips input:checked + span{border-color:var(--accent);background:rgba(219,169,58,0.14);color:var(--accent)}
-.lead-chips input:focus-visible + span{outline:2px solid var(--accent);outline-offset:2px}
+/* Lead form: business type (required), service and budget (optional) as dropdowns */
 .lead-form select{background:var(--bg-2);border:1px solid var(--line);border-radius:12px;color:var(--ink);font:inherit;font-size:15px;padding:13px 14px;appearance:none;-webkit-appearance:none;
   background-image:linear-gradient(45deg,transparent 50%,var(--ink-mute) 50%),linear-gradient(135deg,var(--ink-mute) 50%,transparent 50%);
   background-position:calc(100% - 20px) 55%,calc(100% - 15px) 55%;background-size:5px 5px;background-repeat:no-repeat}
 .lead-form select:focus{outline:none;border-color:var(--accent)}
+.lead-form select:invalid{color:var(--ink-mute)}
+.lead-form select option{color:var(--ink);background:var(--bg-2)}
 /* ===== Service cards link to /services/*.html (Nov 2026) ===== */
 a.service-card{color:inherit;text-decoration:none}
 a.service-card:focus-visible{outline:2px solid var(--accent);outline-offset:3px}

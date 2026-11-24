@@ -851,7 +851,6 @@
  "Restaurant chain": "连锁餐饮",
  "Other": "其他",
  "Services you're interested in": "感兴趣的服务",
- "Choose any": "可多选",
  "Budget (optional)": "预算（选填）",
  "Prefer not to say yet": "暂不透露",
  "Under ฿100,000": "10 万泰铢以下",
@@ -1112,5 +1111,8 @@
  "Founder & CEO Thanapong \"Tor\" Vongchinsri, the creator of Torpenguin. He has 13 years in the F&B industry, has written seven books on running restaurants, directs the Restaurant MBA at UTCC and is president of the Franchise & License Association (Thailand).": "创始人兼 CEO Thanapong“Tor”Vongchinsri，也是 Torpenguin 的创作者。他在餐饮行业深耕 13 年，著有 7 本餐饮经营书籍，主持泰国商会大学（UTCC）的 Restaurant MBA 项目，并担任泰国特许经营与授权协会会长。",
  "How do we get started?": "如何开始合作？",
  "Book a free 30-minute call through the form on this page, or email tor@penguinx.co. Tell us your product, target restaurants and timeline, and we will come back with relevant cases and a suggested first step.": "通过本页表单预约 30 分钟免费通话，或发邮件至 tor@penguinx.co。告诉我们您的产品、目标餐厅和时间安排，我们会回复相关案例与建议的第一步。",
- "View service": "查看服务"
+ "View service": "查看服务",
+ "Select…": "请选择",
+ "Not sure yet": "还不确定",
+ "Several services": "多项服务"
 }
