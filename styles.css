@@ -2414,17 +2414,17 @@ nav.top .logo{ margin-right:clamp(8px,2.4vw,32px) }  /* รวม gap แล้�
    ภาพฝูงเพนกวินรอบนน้ำแข็ง + ตัวแรกที่กระโดด — ต้องเห็นทั้งสองอย่างถึงจะเล่าสโลแกนได้
    จึงเลื่อนภาพไปทางซ้าย (15%) และลดความทึบ overlay ให้ฝูงทะลุหลังหัวข้อ */
 :root{
-  --bg:#07182a;--bg-2:#0c2238;--bg-3:#112c47;
+  --bg:#0a0e14;--bg-2:#10151d;--bg-3:#171e28;  /* ดำอมน้ำเงินนิดๆ ตาม CI (เดิม navy #07182a) */
   --ink:#eef6fb;--ink-mute:#b8b8b8;  /* เทาอ่อน (เดิม #8fa9bf น้ำเงินอมเทา ไม่ใช่ CI) */
   --line:rgba(200,228,245,.14);--line-soft:rgba(200,228,245,.06);
   --accent:#dba93a;--accent-2:#e8c050;
 }
-body{background:#07182a}
-.hero-bg{background-image:url('/cover-penguin-v3.jpg');opacity:.9;filter:saturate(1.05) contrast(1.05);background-size:cover;background-position:15% center}
+body{background:#0a0e14}
+.hero-bg{background-image:url('/cover-penguin-v3.jpg');opacity:.9;filter:saturate(.72) contrast(1.06) brightness(.92);background-size:cover;background-position:15% center}
 .hero-overlay{
   background:
-    linear-gradient(90deg, rgba(7,24,42,.85) 0%, rgba(7,24,42,.62) 32%, rgba(7,24,42,.18) 56%, rgba(7,24,42,0) 72%),
-    linear-gradient(0deg, rgba(7,24,42,.95) 0%, rgba(7,24,42,0) 35%);
+    linear-gradient(90deg, rgba(10,14,20,.85) 0%, rgba(10,14,20,.62) 32%, rgba(10,14,20,.18) 56%, rgba(10,14,20,0) 72%),
+    linear-gradient(0deg, rgba(10,14,20,.95) 0%, rgba(10,14,20,0) 35%);
 }
 .hero-title{letter-spacing:-0.02em;max-width:19ch;font-size:clamp(2.2rem,4.4vw,4.6rem);line-height:1.08}
 .hero-title .light{color:#fff;font-weight:300}
@@ -2436,7 +2436,7 @@ html[lang="en"] .hero-title{font-size:clamp(2rem,4.2vw,4.4rem)}
 @media (max-width:900px){
   /* จอแคบ: ให้ตัวที่กระโดดอยู่ในเฟรม และใช้ overlay แนวตั้งให้ตัวหนังสืออ่านได้ */
   .hero-bg{opacity:.75;background-position:62% center}
-  .hero-overlay{background:linear-gradient(rgba(7,24,42,.55) 0%, rgba(7,24,42,.35) 40%, rgba(7,24,42,.7) 70%, rgba(7,24,42,.95) 100%)}
+  .hero-overlay{background:linear-gradient(rgba(10,14,20,.55) 0%, rgba(10,14,20,.35) 40%, rgba(10,14,20,.7) 70%, rgba(10,14,20,.95) 100%)}
 }
 
 /* ป้าย "your first penguin" ลอยเหนือตัวที่กระโดด — ตำแหน่งและขนาดคำนวณใน hero-tag.js
@@ -2445,7 +2445,7 @@ html[lang="en"] .hero-title{font-size:clamp(2rem,4.2vw,4.4rem)}
   position:absolute;z-index:1;pointer-events:none;
   transform:translate(-50%,-100%);
   font-weight:300;letter-spacing:.12em;line-height:1;white-space:nowrap;
-  color:#f4f8fb;text-shadow:0 1px 12px rgba(7,24,42,.35);
+  color:#f4f8fb;text-shadow:0 1px 12px rgba(10,14,20,.35);
   opacity:0;transition:opacity .9s ease .4s;
 }
 .first-penguin-tag .dot{color:#dba93a;font-weight:600}
