@@ -905,20 +905,20 @@ section{padding:80px 32px;position:relative}
   list-style:none;
   display:flex;
   flex-direction:column;
-  gap:10px;
+  gap:5px;
 }
 .founder-points li{
   position:relative;
   padding-left:18px;
   font-size:14px;
-  line-height:1.55;
+  line-height:1.42;
   color:var(--ink);
   font-weight:400;
 }
 .founder-points li::before{
   content:'';
   position:absolute;
-  left:0;top:0.6em;
+  left:0;top:0.55em;
   width:5px;height:5px;
   background:var(--accent);
   border-radius:50%;
@@ -947,8 +947,11 @@ section{padding:80px 32px;position:relative}
    เพราะโลโก้ทรงจัตุรัสต้องสูงกว่าทรงแนวยาวมาก ถึงจะดูใหญ่เท่ากัน */
 .client-tile img{max-width:100%;width:auto;object-fit:contain;display:block}
 @media (max-width:640px){
-  .client-tile{width:126px;height:62px;padding:7px}
-  .client-track{gap:10px}
+  /* มือถือ: กล่องเล็กลง ~20% และย่อโลโก้ตามสัดส่วน (ความสูง inline ตั้งไว้สำหรับกล่อง 74px) */
+  .client-tile{width:100px;height:50px;padding:6px;border-radius:7px}
+  .client-tile img{zoom:.66;max-height:100%}
+  .client-track{gap:8px}
+  .client-rows{gap:8px}
 }
 
 /* === NEWS === */
@@ -2277,7 +2280,7 @@ nav.top .logo{ margin-right:clamp(8px,2.4vw,32px) }  /* รวม gap แล้�
   overflow:hidden;
   transition:transform .3s ease;
 }
-.case-logo img{display:block;max-width:100%;width:auto;object-fit:contain}
+.case-logo img{display:block;max-width:100%;max-height:100%;width:auto;object-fit:contain} /* max-height: โลโก้ที่ตั้งสูง 44px ไม่ล้นกรอบขาว (กรอบเหลือที่ว่างจริง 40px, มือถือ 30px) */
 .case-row:hover .case-logo{transform:scale(1.04)}
 .case-name{font-size:24px;letter-spacing:-0.02em}
 .case-name .light{font-size:0.66em}
@@ -2285,7 +2288,6 @@ nav.top .logo{ margin-right:clamp(8px,2.4vw,32px) }  /* รวม gap แล้�
 @media (max-width:900px){
   .case-row{grid-template-columns:72px minmax(0,1fr) 40px 22px;gap:14px;padding:12px 0}
   .case-logo{width:72px;height:40px;padding:5px}
-  .case-logo img{transform:scale(0.8)}
   .case-name{font-size:17px}
   .case-name .light{display:block;font-size:13px;margin-top:3px}
   .case-year{font-size:12px}
@@ -2719,3 +2721,25 @@ html[lang="ko"] :is(.label,.section-num,.clients-label,.shorts-num,.cta-eyebrow,
   .book-buy{opacity:1;background:none;padding-bottom:8px}
   .book-buy span{padding:4px 10px;font-size:11px}
 }
+
+/* ปุ่ม LinkedIn ย้ายไปมุมขวาบนของการ์ดผู้ก่อตั้ง (เดิมอยู่ล่างสุด) การ์ดจะเตี้ยลง
+   หัวการ์ดเว้นที่ขวาไว้ให้ปุ่ม ชื่อยาวจะได้ไม่ทับ */
+.founder-body{position:relative}
+.founder-linkedin,.founder-profile + .founder-linkedin{position:absolute;top:28px;right:28px;margin:0;padding:7px 12px}
+.founder-head{padding-right:112px}
+@media (max-width:1100px){
+  .founder-linkedin,.founder-profile + .founder-linkedin{top:24px;right:22px}
+}
+
+/* หน้าโปรไฟล์ Tor: รายชื่อหนังสือแบบไม่มีรูปปก (ปกโชว์บนหน้าแรกแล้ว) */
+.prof-body .book-list{list-style:none;margin:24px 0 8px;padding:0;gap:0}
+.prof-body .book-list li{display:flex;flex-wrap:wrap;align-items:center;gap:6px 12px;padding:12px 0;border-bottom:1px solid var(--line);line-height:1.4}
+.prof-body .book-list li:first-child{border-top:1px solid var(--line)}
+.bl-title{font-size:16px;font-weight:500;color:var(--ink)}
+.bl-cat{font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--accent)}
+html[lang^="th"] .bl-cat,html[lang^="zh"] .bl-cat,html[lang^="ja"] .bl-cat,html[lang="ko"] .bl-cat{letter-spacing:.02em;font-size:12px}
+.bl-badge{font-size:11px;font-weight:700;color:#fff;background:#e3262b;padding:2px 9px;border-radius:100px}
+.bl-award{font-size:12px;color:var(--ink-mute)}
+.bl-award b{font-weight:600;color:var(--ink)}
+.prof-body .book-list-buy{display:inline-block;margin-top:8px;font-size:14px;font-weight:500;text-decoration:none;border-bottom:1px solid rgba(219,169,58,.45);padding-bottom:2px}
+.prof-body .book-list-buy::after{content:' →'}
