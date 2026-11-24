@@ -2788,3 +2788,5 @@ html[lang^="th"] .bl-cat,html[lang^="zh"] .bl-cat,html[lang^="ja"] .bl-cat,html[
 .prof-body .prof-cta-btn{display:inline-block;background:var(--accent);color:#0b0b0b;padding:11px 22px;border-radius:100px;font-weight:600;font-size:15px;text-decoration:none;white-space:nowrap}
 .prof-body .prof-cta-btn:hover{background:var(--accent-2)}
 .prof-body .speak-logos picture{display:block}
+/* หน้าโปรไฟล์ Tor: ข้อความในรายการเป็นเทาอ่อน (เดิมขาว) ลิงก์ยังเป็นสีทอง */
+.prof-body ul li{color:#c4c4c4}
