@@ -6,7 +6,7 @@
 
 ใช้:  python3 build-sitemap.py
 """
-import glob, subprocess, os
+import glob, subprocess, os, re
 
 SITE = 'https://www.penguinx.co'
 LANGS = [('en', ''), ('th', 'th/'), ('zh-Hans', 'zh/'), ('ja', 'ja/'), ('ko', 'ko/')]
@@ -22,6 +22,9 @@ def pages():
         # มี __ (index__f, index__x) หรือ .disabled ถ้าใส่ลง sitemap Google จะเก็บเป็นหน้าซ้ำกับหน้าแรก
         name = os.path.basename(f)
         if name.startswith('_') or '__' in name or '.disabled' in name:
+            continue
+        # ไฟล์ยืนยันความเป็นเจ้าของเว็บของ search engine (เช่น naver….html, google….html) ไม่ใช่หน้าเนื้อหา
+        if re.match(r'(naver|google)[0-9a-f]+\.html$', name):
             continue
         # หน้าที่ตั้ง noindex ไว้ (เช่นหน้ารายละเอียดอีเวนต์ที่เนื้อหายังบาง) ต้องไม่อยู่ใน sitemap
         # ประกาศหน้าที่บอก Google ว่าห้ามเก็บ = ส่งสัญญาณขัดกันเอง
