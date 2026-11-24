@@ -2790,3 +2790,5 @@ html[lang^="th"] .bl-cat,html[lang^="zh"] .bl-cat,html[lang^="ja"] .bl-cat,html[
 .prof-body .speak-logos picture{display:block}
 /* หน้าโปรไฟล์ Tor: ข้อความในรายการเป็นเทาอ่อน (เดิมขาว) ลิงก์ยังเป็นสีทอง */
 .prof-body ul li{color:#c4c4c4}
+/* "Contact:" ตัวหนา */
+.prof-hero .prof-contact span{font-weight:700;color:var(--ink)}
