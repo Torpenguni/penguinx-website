@@ -2830,3 +2830,22 @@ a.service-card:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
   .faq-home .faq-item summary{font-size:16px;padding:18px 0}
   .faq-home .faq-a{padding-right:0}
 }
+
+/* === TIGHTER SECTION SPACING (Nov 2026) ===
+   ลดช่องว่างระหว่าง section ทั้งเว็บ ไว้ท้ายไฟล์เพื่อให้ทับค่าเดิมและย้อนกลับง่าย (ลบทั้งบล็อกนี้) */
+section{padding-top:56px;padding-bottom:56px}
+.section-head{margin-bottom:40px}
+.showcase{padding-bottom:32px}
+.services{padding-top:48px;padding-bottom:48px}
+.why{padding-top:56px;padding-bottom:56px}
+.community{padding-top:40px;padding-bottom:24px}
+.founder{padding-top:64px;padding-bottom:64px}
+.faq-home{padding-top:56px;padding-bottom:56px}
+.cta{padding-top:64px;padding-bottom:64px}
+@media (max-width:900px){
+  section{padding-top:40px;padding-bottom:40px}
+  .section-head{margin-bottom:28px}
+  .services,.why,.founder,.faq-home,.cta,.shorts{padding-top:40px;padding-bottom:40px}
+  .community{padding-top:32px;padding-bottom:20px}
+  .flywheel{padding-top:40px;padding-bottom:32px}
+}
