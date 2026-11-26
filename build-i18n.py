@@ -96,6 +96,10 @@ def to_traditional(html, profile):
         _OPENCC[profile] = opencc.OpenCC(profile)
     return _OPENCC[profile].convert(html)
 
+# หน้าที่มีแค่ภาษาอังกฤษ ไม่สร้างฉบับแปล (เช่น เอกสารกฎหมาย ที่ต้องมีฉบับเดียวที่เป็นทางการ)
+# ลิงก์จากหน้าภาษาอื่นจะชี้มาฉบับอังกฤษ และไม่ประกาศ hreflang ภาษาอื่น
+EN_ONLY = ('privacy.html',)
+
 def has_page(code, rel_path):
     """ภาษานี้มีหน้านี้จริงไหม — ใช้ตัดสินทั้งการสร้างไฟล์ hreflang และปุ่มสลับภาษา
     ถ้าไม่เช็ค จะได้ลิงก์ที่กดแล้ว 404 และ sitemap ที่ประกาศ URL ที่ไม่มีอยู่"""
@@ -103,6 +107,8 @@ def has_page(code, rel_path):
     if cfg is None:
         return True                       # 'en' คือต้นฉบับ มีทุกหน้าเสมอ
     src = rel_path or 'index.html'
+    if src in EN_ONLY:
+        return False
     if any(src.startswith(x) for x in cfg.get('skip', ())):
         return False
     only = cfg.get('only')
