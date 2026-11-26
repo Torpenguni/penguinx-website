@@ -4,3 +4,8 @@ CLAUDE.md
 ANALYTICS-SETUP.md
 *.py
 requirements-build.txt
+# หน้าทดลองดีไซน์และแม่แบบ ใช้ทำงานภายใน ไม่ใช่หน้าเว็บจริง
+preview-*.html
+**/preview-*.html
+**/_template.html
+_template.html
