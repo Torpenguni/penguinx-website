@@ -808,7 +808,13 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.penguinx.co/news/trc-2025-recap.html"/>
   </url>
   <url>
+    <loc>https://www.penguinx.co/privacy.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.penguinx.co/privacy.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.penguinx.co/privacy.html"/>
+  </url>
+  <url>
     <loc>https://www.penguinx.co/services/brand-storytelling.html</loc>
+    <lastmod>2026-11-25</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.penguinx.co/services/brand-storytelling.html"/>
     <xhtml:link rel="alternate" hreflang="th" href="https://www.penguinx.co/th/services/brand-storytelling.html"/>
     <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://www.penguinx.co/zh/services/brand-storytelling.html"/>
@@ -819,6 +825,7 @@
   </url>
   <url>
     <loc>https://www.penguinx.co/th/services/brand-storytelling.html</loc>
+    <lastmod>2026-11-25</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.penguinx.co/services/brand-storytelling.html"/>
     <xhtml:link rel="alternate" hreflang="th" href="https://www.penguinx.co/th/services/brand-storytelling.html"/>
     <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://www.penguinx.co/zh/services/brand-storytelling.html"/>
@@ -829,6 +836,7 @@
   </url>
   <url>
     <loc>https://www.penguinx.co/zh/services/brand-storytelling.html</loc>
+    <lastmod>2026-11-25</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.penguinx.co/services/brand-storytelling.html"/>
     <xhtml:link rel="alternate" hreflang="th" href="https://www.penguinx.co/th/services/brand-storytelling.html"/>
     <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://www.penguinx.co/zh/services/brand-storytelling.html"/>
@@ -839,6 +847,7 @@
   </url>
   <url>
     <loc>https://www.penguinx.co/zh-hant/services/brand-storytelling.html</loc>
+    <lastmod>2026-11-25</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.penguinx.co/services/brand-storytelling.html"/>
     <xhtml:link rel="alternate" hreflang="th" href="https://www.penguinx.co/th/services/brand-storytelling.html"/>
     <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://www.penguinx.co/zh/services/brand-storytelling.html"/>
@@ -849,6 +858,7 @@
   </url>
   <url>
     <loc>https://www.penguinx.co/ja/services/brand-storytelling.html</loc>
+    <lastmod>2026-11-25</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.penguinx.co/services/brand-storytelling.html"/>
     <xhtml:link rel="alternate" hreflang="th" href="https://www.penguinx.co/th/services/brand-storytelling.html"/>
     <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://www.penguinx.co/zh/services/brand-storytelling.html"/>
@@ -859,6 +869,7 @@
   </url>
   <url>
     <loc>https://www.penguinx.co/ko/services/brand-storytelling.html</loc>
+    <lastmod>2026-11-25</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.penguinx.co/services/brand-storytelling.html"/>
     <xhtml:link rel="alternate" hreflang="th" href="https://www.penguinx.co/th/services/brand-storytelling.html"/>
     <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://www.penguinx.co/zh/services/brand-storytelling.html"/>
@@ -869,6 +880,7 @@
   </url>
   <url>
     <loc>https://www.penguinx.co/services/co-host-seminars.html</loc>
+    <lastmod>2026-11-25</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.penguinx.co/services/co-host-seminars.html"/>
     <xhtml:link rel="alternate" hreflang="th" href="https://www.penguinx.co/th/services/co-host-seminars.html"/>
     <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://www.penguinx.co/zh/services/co-host-seminars.html"/>
@@ -879,6 +891,7 @@
   </url>
   <url>
     <loc>https://www.penguinx.co/th/services/co-host-seminars.html</loc>
+    <lastmod>2026-11-25</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.penguinx.co/services/co-host-seminars.html"/>
     <xhtml:link rel="alternate" hreflang="th" href="https://www.penguinx.co/th/services/co-host-seminars.html"/>
     <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://www.penguinx.co/zh/services/co-host-seminars.html"/>
@@ -889,6 +902,7 @@
   </url>
   <url>
     <loc>https://www.penguinx.co/zh/services/co-host-seminars.html</loc>
+    <lastmod>2026-11-25</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.penguinx.co/services/co-host-seminars.html"/>
     <xhtml:link rel="alternate" hreflang="th" href="https://www.penguinx.co/th/services/co-host-seminars.html"/>
     <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://www.penguinx.co/zh/services/co-host-seminars.html"/>
@@ -899,6 +913,7 @@
   </url>
   <url>
     <loc>https://www.penguinx.co/zh-hant/services/co-host-seminars.html</loc>
+    <lastmod>2026-11-25</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.penguinx.co/services/co-host-seminars.html"/>
     <xhtml:link rel="alternate" hreflang="th" href="https://www.penguinx.co/th/services/co-host-seminars.html"/>
     <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://www.penguinx.co/zh/services/co-host-seminars.html"/>
@@ -909,6 +924,7 @@
   </url>
   <url>
     <loc>https://www.penguinx.co/ja/services/co-host-seminars.html</loc>
+    <lastmod>2026-11-25</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.penguinx.co/services/co-host-seminars.html"/>
     <xhtml:link rel="alternate" hreflang="th" href="https://www.penguinx.co/th/services/co-host-seminars.html"/>
     <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://www.penguinx.co/zh/services/co-host-seminars.html"/>
@@ -919,6 +935,7 @@
   </url>
   <url>
     <loc>https://www.penguinx.co/ko/services/co-host-seminars.html</loc>
+    <lastmod>2026-11-25</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.penguinx.co/services/co-host-seminars.html"/>
     <xhtml:link rel="alternate" hreflang="th" href="https://www.penguinx.co/th/services/co-host-seminars.html"/>
     <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://www.penguinx.co/zh/services/co-host-seminars.html"/>
@@ -929,6 +946,7 @@
   </url>
   <url>
     <loc>https://www.penguinx.co/services/exhibit-and-meet.html</loc>
+    <lastmod>2026-11-25</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.penguinx.co/services/exhibit-and-meet.html"/>
     <xhtml:link rel="alternate" hreflang="th" href="https://www.penguinx.co/th/services/exhibit-and-meet.html"/>
     <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://www.penguinx.co/zh/services/exhibit-and-meet.html"/>
@@ -939,6 +957,7 @@
   </url>
   <url>
     <loc>https://www.penguinx.co/th/services/exhibit-and-meet.html</loc>
+    <lastmod>2026-11-25</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.penguinx.co/services/exhibit-and-meet.html"/>
     <xhtml:link rel="alternate" hreflang="th" href="https://www.penguinx.co/th/services/exhibit-and-meet.html"/>
     <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://www.penguinx.co/zh/services/exhibit-and-meet.html"/>
@@ -949,6 +968,7 @@
   </url>
   <url>
     <loc>https://www.penguinx.co/zh/services/exhibit-and-meet.html</loc>
+    <lastmod>2026-11-25</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.penguinx.co/services/exhibit-and-meet.html"/>
     <xhtml:link rel="alternate" hreflang="th" href="https://www.penguinx.co/th/services/exhibit-and-meet.html"/>
     <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://www.penguinx.co/zh/services/exhibit-and-meet.html"/>
@@ -959,6 +979,7 @@
   </url>
   <url>
     <loc>https://www.penguinx.co/zh-hant/services/exhibit-and-meet.html</loc>
+    <lastmod>2026-11-25</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.penguinx.co/services/exhibit-and-meet.html"/>
     <xhtml:link rel="alternate" hreflang="th" href="https://www.penguinx.co/th/services/exhibit-and-meet.html"/>
     <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://www.penguinx.co/zh/services/exhibit-and-meet.html"/>
@@ -969,6 +990,7 @@
   </url>
   <url>
     <loc>https://www.penguinx.co/ja/services/exhibit-and-meet.html</loc>
+    <lastmod>2026-11-25</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.penguinx.co/services/exhibit-and-meet.html"/>
     <xhtml:link rel="alternate" hreflang="th" href="https://www.penguinx.co/th/services/exhibit-and-meet.html"/>
     <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://www.penguinx.co/zh/services/exhibit-and-meet.html"/>
@@ -979,6 +1001,7 @@
   </url>
   <url>
     <loc>https://www.penguinx.co/ko/services/exhibit-and-meet.html</loc>
+    <lastmod>2026-11-25</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.penguinx.co/services/exhibit-and-meet.html"/>
     <xhtml:link rel="alternate" hreflang="th" href="https://www.penguinx.co/th/services/exhibit-and-meet.html"/>
     <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://www.penguinx.co/zh/services/exhibit-and-meet.html"/>
@@ -989,6 +1012,7 @@
   </url>
   <url>
     <loc>https://www.penguinx.co/services/market-testing.html</loc>
+    <lastmod>2026-11-25</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.penguinx.co/services/market-testing.html"/>
     <xhtml:link rel="alternate" hreflang="th" href="https://www.penguinx.co/th/services/market-testing.html"/>
     <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://www.penguinx.co/zh/services/market-testing.html"/>
@@ -999,6 +1023,7 @@
   </url>
   <url>
     <loc>https://www.penguinx.co/th/services/market-testing.html</loc>
+    <lastmod>2026-11-25</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.penguinx.co/services/market-testing.html"/>
     <xhtml:link rel="alternate" hreflang="th" href="https://www.penguinx.co/th/services/market-testing.html"/>
     <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://www.penguinx.co/zh/services/market-testing.html"/>
@@ -1009,6 +1034,7 @@
   </url>
   <url>
     <loc>https://www.penguinx.co/zh/services/market-testing.html</loc>
+    <lastmod>2026-11-25</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.penguinx.co/services/market-testing.html"/>
     <xhtml:link rel="alternate" hreflang="th" href="https://www.penguinx.co/th/services/market-testing.html"/>
     <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://www.penguinx.co/zh/services/market-testing.html"/>
@@ -1019,6 +1045,7 @@
   </url>
   <url>
     <loc>https://www.penguinx.co/zh-hant/services/market-testing.html</loc>
+    <lastmod>2026-11-25</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.penguinx.co/services/market-testing.html"/>
     <xhtml:link rel="alternate" hreflang="th" href="https://www.penguinx.co/th/services/market-testing.html"/>
     <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://www.penguinx.co/zh/services/market-testing.html"/>
@@ -1029,6 +1056,7 @@
   </url>
   <url>
     <loc>https://www.penguinx.co/ja/services/market-testing.html</loc>
+    <lastmod>2026-11-25</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.penguinx.co/services/market-testing.html"/>
     <xhtml:link rel="alternate" hreflang="th" href="https://www.penguinx.co/th/services/market-testing.html"/>
     <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://www.penguinx.co/zh/services/market-testing.html"/>
@@ -1039,6 +1067,7 @@
   </url>
   <url>
     <loc>https://www.penguinx.co/ko/services/market-testing.html</loc>
+    <lastmod>2026-11-25</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.penguinx.co/services/market-testing.html"/>
     <xhtml:link rel="alternate" hreflang="th" href="https://www.penguinx.co/th/services/market-testing.html"/>
     <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://www.penguinx.co/zh/services/market-testing.html"/>
@@ -1049,6 +1078,7 @@
   </url>
   <url>
     <loc>https://www.penguinx.co/services/partner-matching.html</loc>
+    <lastmod>2026-11-25</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.penguinx.co/services/partner-matching.html"/>
     <xhtml:link rel="alternate" hreflang="th" href="https://www.penguinx.co/th/services/partner-matching.html"/>
     <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://www.penguinx.co/zh/services/partner-matching.html"/>
@@ -1059,6 +1089,7 @@
   </url>
   <url>
     <loc>https://www.penguinx.co/th/services/partner-matching.html</loc>
+    <lastmod>2026-11-25</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.penguinx.co/services/partner-matching.html"/>
     <xhtml:link rel="alternate" hreflang="th" href="https://www.penguinx.co/th/services/partner-matching.html"/>
     <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://www.penguinx.co/zh/services/partner-matching.html"/>
@@ -1069,6 +1100,7 @@
   </url>
   <url>
     <loc>https://www.penguinx.co/zh/services/partner-matching.html</loc>
+    <lastmod>2026-11-25</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.penguinx.co/services/partner-matching.html"/>
     <xhtml:link rel="alternate" hreflang="th" href="https://www.penguinx.co/th/services/partner-matching.html"/>
     <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://www.penguinx.co/zh/services/partner-matching.html"/>
@@ -1079,6 +1111,7 @@
   </url>
   <url>
     <loc>https://www.penguinx.co/zh-hant/services/partner-matching.html</loc>
+    <lastmod>2026-11-25</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.penguinx.co/services/partner-matching.html"/>
     <xhtml:link rel="alternate" hreflang="th" href="https://www.penguinx.co/th/services/partner-matching.html"/>
     <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://www.penguinx.co/zh/services/partner-matching.html"/>
@@ -1089,6 +1122,7 @@
   </url>
   <url>
     <loc>https://www.penguinx.co/ja/services/partner-matching.html</loc>
+    <lastmod>2026-11-25</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.penguinx.co/services/partner-matching.html"/>
     <xhtml:link rel="alternate" hreflang="th" href="https://www.penguinx.co/th/services/partner-matching.html"/>
     <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://www.penguinx.co/zh/services/partner-matching.html"/>
@@ -1099,6 +1133,7 @@
   </url>
   <url>
     <loc>https://www.penguinx.co/ko/services/partner-matching.html</loc>
+    <lastmod>2026-11-25</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.penguinx.co/services/partner-matching.html"/>
     <xhtml:link rel="alternate" hreflang="th" href="https://www.penguinx.co/th/services/partner-matching.html"/>
     <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://www.penguinx.co/zh/services/partner-matching.html"/>
@@ -1109,6 +1144,7 @@
   </url>
   <url>
     <loc>https://www.penguinx.co/services/team-training.html</loc>
+    <lastmod>2026-11-25</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.penguinx.co/services/team-training.html"/>
     <xhtml:link rel="alternate" hreflang="th" href="https://www.penguinx.co/th/services/team-training.html"/>
     <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://www.penguinx.co/zh/services/team-training.html"/>
@@ -1119,6 +1155,7 @@
   </url>
   <url>
     <loc>https://www.penguinx.co/th/services/team-training.html</loc>
+    <lastmod>2026-11-25</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.penguinx.co/services/team-training.html"/>
     <xhtml:link rel="alternate" hreflang="th" href="https://www.penguinx.co/th/services/team-training.html"/>
     <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://www.penguinx.co/zh/services/team-training.html"/>
@@ -1129,6 +1166,7 @@
   </url>
   <url>
     <loc>https://www.penguinx.co/zh/services/team-training.html</loc>
+    <lastmod>2026-11-25</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.penguinx.co/services/team-training.html"/>
     <xhtml:link rel="alternate" hreflang="th" href="https://www.penguinx.co/th/services/team-training.html"/>
     <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://www.penguinx.co/zh/services/team-training.html"/>
@@ -1139,6 +1177,7 @@
   </url>
   <url>
     <loc>https://www.penguinx.co/zh-hant/services/team-training.html</loc>
+    <lastmod>2026-11-25</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.penguinx.co/services/team-training.html"/>
     <xhtml:link rel="alternate" hreflang="th" href="https://www.penguinx.co/th/services/team-training.html"/>
     <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://www.penguinx.co/zh/services/team-training.html"/>
@@ -1149,6 +1188,7 @@
   </url>
   <url>
     <loc>https://www.penguinx.co/ja/services/team-training.html</loc>
+    <lastmod>2026-11-25</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.penguinx.co/services/team-training.html"/>
     <xhtml:link rel="alternate" hreflang="th" href="https://www.penguinx.co/th/services/team-training.html"/>
     <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://www.penguinx.co/zh/services/team-training.html"/>
@@ -1159,6 +1199,7 @@
   </url>
   <url>
     <loc>https://www.penguinx.co/ko/services/team-training.html</loc>
+    <lastmod>2026-11-25</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.penguinx.co/services/team-training.html"/>
     <xhtml:link rel="alternate" hreflang="th" href="https://www.penguinx.co/th/services/team-training.html"/>
     <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://www.penguinx.co/zh/services/team-training.html"/>
@@ -1385,18 +1426,18 @@
   </url>
   <url>
     <loc>https://www.penguinx.co/th/insights/</loc>
-    <lastmod>2026-11-25</lastmod>
+    <lastmod>2026-11-24</lastmod>
   </url>
   <url>
     <loc>https://www.penguinx.co/ja/thailand-entry/</loc>
-    <lastmod>2026-11-25</lastmod>
+    <lastmod>2026-11-24</lastmod>
   </url>
   <url>
     <loc>https://www.penguinx.co/ja/reach-thai-restaurants/</loc>
-    <lastmod>2026-11-25</lastmod>
+    <lastmod>2026-11-24</lastmod>
   </url>
   <url>
     <loc>https://www.penguinx.co/ja/expand-in-thailand/</loc>
-    <lastmod>2026-11-25</lastmod>
+    <lastmod>2026-11-24</lastmod>
   </url>
 </urlset>

@@ -89,12 +89,12 @@
 
   // ---- Cookie banner ----
   var TXT = {
-    en: ['We use cookies to measure site performance and the results of our ads. You can accept or decline.', 'Accept', 'Decline'],
-    th: ['เว็บไซต์นี้ใช้คุกกี้เพื่อวัดผลการใช้งานเว็บไซต์และประสิทธิภาพโฆษณา คุณเลือกยอมรับหรือปฏิเสธได้', 'ยอมรับ', 'ปฏิเสธ'],
-    zh: ['本网站使用 Cookie 衡量网站表现和广告效果。你可以选择接受或拒绝。', '接受', '拒绝'],
-    'zh-Hant': ['本網站使用 Cookie 衡量網站表現與廣告成效。你可以選擇接受或拒絕。', '接受', '拒絕'],
-    ja: ['当サイトはサイトの利用状況と広告効果の測定に Cookie を使用します。同意または拒否を選択できます。', '同意する', '拒否する'],
-    ko: ['이 웹사이트는 사이트 이용 현황과 광고 효과를 측정하기 위해 쿠키를 사용합니다. 동의 여부를 선택하실 수 있습니다.', '동의', '거부']
+    en: ['We use cookies to measure site performance and the results of our ads. You can accept or decline.', 'Accept', 'Decline', 'Privacy Policy'],
+    th: ['เว็บไซต์นี้ใช้คุกกี้เพื่อวัดผลการใช้งานเว็บไซต์และประสิทธิภาพโฆษณา คุณเลือกยอมรับหรือปฏิเสธได้', 'ยอมรับ', 'ปฏิเสธ', 'นโยบายความเป็นส่วนตัว'],
+    zh: ['本网站使用 Cookie 衡量网站表现和广告效果。你可以选择接受或拒绝。', '接受', '拒绝', '隐私政策'],
+    'zh-Hant': ['本網站使用 Cookie 衡量網站表現與廣告成效。你可以選擇接受或拒絕。', '接受', '拒絕', '隱私政策'],
+    ja: ['当サイトはサイトの利用状況と広告効果の測定に Cookie を使用します。同意または拒否を選択できます。', '同意する', '拒否する', 'プライバシーポリシー'],
+    ko: ['이 웹사이트는 사이트 이용 현황과 광고 효과를 측정하기 위해 쿠키를 사용합니다. 동의 여부를 선택하실 수 있습니다.', '동의', '거부', '개인정보 처리방침']
   };
   function setConsent(v) {
     try { localStorage.setItem(CONSENT_KEY, JSON.stringify({ v: v, t: Date.now() })); } catch (e) {}
@@ -110,7 +110,7 @@
       'display:flex;gap:16px;align-items:center;padding:16px 18px;background:#141413;color:#f4f1ea;' +
       'border:1px solid rgba(244,241,234,.12);border-radius:16px;box-shadow:0 12px 40px rgba(0,0,0,.45);' +
       'font:14px/1.5 Anuphan,sans-serif}' +
-      '#pxConsent p{flex:1;margin:0;color:#c9c5bd}' +
+      '#pxConsent p{flex:1;margin:0;color:#c9c5bd}#pxConsent p a{color:#f4f1ea;text-decoration:underline;text-underline-offset:3px;white-space:nowrap}' +
       '#pxConsent button{font:inherit;font-weight:600;border-radius:100px;padding:9px 18px;cursor:pointer;white-space:nowrap}' +
       '#pxConsent .ok{background:#dba93a;color:#0a0a0a;border:0}' +
       '#pxConsent .no{background:transparent;color:#f4f1ea;border:1px solid rgba(244,241,234,.25)}' +
@@ -120,7 +120,12 @@
     box.setAttribute('role', 'dialog');
     box.setAttribute('aria-live', 'polite');
     box.innerHTML = '<p></p><button type="button" class="no"></button><button type="button" class="ok"></button>';
-    box.querySelector('p').textContent = t[0];
+    box.querySelector('p').textContent = t[0] + ' ';
+    // ลิงก์ไปหน้า Privacy Policy (มีฉบับอังกฤษฉบับเดียว)
+    var pl = document.createElement('a');
+    pl.href = '/privacy.html';
+    pl.textContent = t[3];
+    box.querySelector('p').appendChild(pl);
     box.querySelector('.ok').textContent = t[1];
     box.querySelector('.no').textContent = t[2];
     box.addEventListener('click', function (e) {
