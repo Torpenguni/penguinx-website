@@ -2849,3 +2849,10 @@ section{padding-top:56px;padding-bottom:56px}
   .community{padding-top:32px;padding-bottom:20px}
   .flywheel{padding-top:40px;padding-bottom:32px}
 }
+
+/* === FAQ หน้าแรก กระชับขึ้น (Nov 2026) — ระยะแถวแคบลง คำถามไม่หนา === */
+.faq-home .faq-item summary{padding:14px 0;font-size:17px;font-weight:400;line-height:1.45}
+.faq-home .faq-a{padding-bottom:16px}
+@media (max-width:700px){
+  .faq-home .faq-item summary{font-size:16px;padding:12px 0}
+}
