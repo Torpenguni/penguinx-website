@@ -159,14 +159,13 @@ def page_url(src):
 def pages():
     out = []
     for f in glob.glob('**/*.html', recursive=True):
-        # _template.html is linked from the news page and serves 200 in
-        # production, so it needs a translated twin or those links 404 in
-        # Thai and Chinese. Only the design previews are genuinely excluded.
+        # หน้า preview-* และ _template.html เป็นไฟล์ทำงานภายใน ไม่สร้างฉบับแปล
+        # (ไม่มีหน้าไหนลิงก์ไปแล้ว และ .vercelignore กันไม่ให้ขึ้น production)
         # โฟลเดอร์ผลลัพธ์ของทุกภาษาต้องไม่ถูกนับเป็นต้นฉบับ อ่านจาก LANGS
         # ไม่ใช่เขียนชื่อไว้ตรงนี้ ไม่งั้นเพิ่มภาษาใหม่แล้วลืมมาแก้
         # ตัวสร้างจะกลับไปแปลไฟล์ที่ตัวเองเพิ่งเขียนออกมา
         outdirs = tuple(f'{c}/' for c in LANGS)
-        if 'preview-' in f or f.startswith(outdirs) or any('/' + d in f for d in outdirs):
+        if 'preview-' in f or '_template' in f or f.startswith(outdirs) or any('/' + d in f for d in outdirs):
             continue
         out.append(f)
     return sorted(out)
