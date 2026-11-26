@@ -2856,3 +2856,6 @@ section{padding-top:56px;padding-bottom:56px}
 @media (max-width:700px){
   .faq-home .faq-item summary{font-size:16px;padding:12px 0}
 }
+
+/* หน้าแรกเกาหลี: ตอนนี้มีประตูเดียว ไม่ต้องแบ่ง 3 คอลัมน์ */
+.jp-doors-grid.ko-doors-one{grid-template-columns:minmax(0,1fr);max-width:640px}
