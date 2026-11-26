@@ -2874,3 +2874,11 @@ section{padding-top:56px;padding-bottom:56px}
 .prof-hero .prof-contact a.prof-social:first-of-type{margin-left:0}
 .prof-hero .prof-contact a[href^="mailto"]{margin-right:8px}
 .prof-hero .prof-contact a.prof-social:hover{color:var(--accent);opacity:1}
+
+/* ระยะระหว่างแถวคลิปกับ FAQ บนหน้าแรก แคบลง (Nov 2026) */
+.shorts{padding-bottom:28px}
+.shorts-scroller{padding-bottom:12px}
+.faq-home{padding-top:48px}
+@media (max-width:900px){.shorts{padding-bottom:20px}.faq-home{padding-top:36px}}
+/* ป้ายความยาวคลิปย้ายไปมุมบนซ้าย ไม่ให้ทับชื่อคลิป 2 บรรทัด */
+.short-duration{top:12px;bottom:auto}
